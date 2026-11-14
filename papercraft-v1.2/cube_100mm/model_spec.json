@@ -1,0 +1,521 @@
+{
+  "schema_version": "1.2.0",
+  "model_id": "PPM-CUBE-100",
+  "version": "1.2.0",
+  "locked": true,
+  "units": "mm",
+  "paper": {
+    "name": "US Letter",
+    "page_mm": [
+      215.9,
+      279.4
+    ],
+    "scale": 1.0,
+    "printable_body_mm": [
+      8.0,
+      20.0,
+      207.9,
+      255.0
+    ],
+    "tab_depth_mm": 7.0
+  },
+  "geometry_source": "deterministic parametric 3D faces, not generated image",
+  "geometry_sha256": "6233542cc4d9bcfa5adada5b3e7fd78589d3c6bf1a83b5916ff92f35af0ac9df",
+  "geometry": {
+    "model": {
+      "type": "cube",
+      "side_mm": 100,
+      "panel_grid": [
+        1,
+        1
+      ],
+      "name": "Cube 100 mm"
+    },
+    "panels": [
+      {
+        "id": "FR-R1C1",
+        "face": "FRONT",
+        "width_mm": 100.0,
+        "height_mm": 100.0,
+        "origin_uv_mm": [
+          0.0,
+          0.0
+        ],
+        "edge_codes": {
+          "W": "E01.01",
+          "S": "E03.01",
+          "N": "E05.01",
+          "E": "E09.01"
+        },
+        "vertices_3d_mm": [
+          [
+            -50.0,
+            -50.0,
+            -50.0
+          ],
+          [
+            50.0,
+            -50.0,
+            -50.0
+          ],
+          [
+            50.0,
+            -50.0,
+            50.0
+          ],
+          [
+            -50.0,
+            -50.0,
+            50.0
+          ]
+        ]
+      },
+      {
+        "id": "RI-R1C1",
+        "face": "RIGHT",
+        "width_mm": 100.0,
+        "height_mm": 100.0,
+        "origin_uv_mm": [
+          0.0,
+          0.0
+        ],
+        "edge_codes": {
+          "W": "E09.01",
+          "S": "E10.01",
+          "N": "E11.01",
+          "E": "E12.01"
+        },
+        "vertices_3d_mm": [
+          [
+            50.0,
+            -50.0,
+            -50.0
+          ],
+          [
+            50.0,
+            50.0,
+            -50.0
+          ],
+          [
+            50.0,
+            50.0,
+            50.0
+          ],
+          [
+            50.0,
+            -50.0,
+            50.0
+          ]
+        ]
+      },
+      {
+        "id": "BA-R1C1",
+        "face": "BACK",
+        "width_mm": 100.0,
+        "height_mm": 100.0,
+        "origin_uv_mm": [
+          0.0,
+          0.0
+        ],
+        "edge_codes": {
+          "E": "E06.01",
+          "S": "E07.01",
+          "N": "E08.01",
+          "W": "E12.01"
+        },
+        "vertices_3d_mm": [
+          [
+            50.0,
+            50.0,
+            -50.0
+          ],
+          [
+            -50.0,
+            50.0,
+            -50.0
+          ],
+          [
+            -50.0,
+            50.0,
+            50.0
+          ],
+          [
+            50.0,
+            50.0,
+            50.0
+          ]
+        ]
+      },
+      {
+        "id": "LE-R1C1",
+        "face": "LEFT",
+        "width_mm": 100.0,
+        "height_mm": 100.0,
+        "origin_uv_mm": [
+          0.0,
+          0.0
+        ],
+        "edge_codes": {
+          "E": "E01.01",
+          "S": "E02.01",
+          "N": "E04.01",
+          "W": "E06.01"
+        },
+        "vertices_3d_mm": [
+          [
+            -50.0,
+            50.0,
+            -50.0
+          ],
+          [
+            -50.0,
+            -50.0,
+            -50.0
+          ],
+          [
+            -50.0,
+            -50.0,
+            50.0
+          ],
+          [
+            -50.0,
+            50.0,
+            50.0
+          ]
+        ]
+      },
+      {
+        "id": "TO-R1C1",
+        "face": "TOP",
+        "width_mm": 100.0,
+        "height_mm": 100.0,
+        "origin_uv_mm": [
+          0.0,
+          0.0
+        ],
+        "edge_codes": {
+          "W": "E04.01",
+          "S": "E05.01",
+          "N": "E08.01",
+          "E": "E11.01"
+        },
+        "vertices_3d_mm": [
+          [
+            -50.0,
+            -50.0,
+            50.0
+          ],
+          [
+            50.0,
+            -50.0,
+            50.0
+          ],
+          [
+            50.0,
+            50.0,
+            50.0
+          ],
+          [
+            -50.0,
+            50.0,
+            50.0
+          ]
+        ]
+      },
+      {
+        "id": "BO-R1C1",
+        "face": "BOTTOM",
+        "width_mm": 100.0,
+        "height_mm": 100.0,
+        "origin_uv_mm": [
+          0.0,
+          0.0
+        ],
+        "edge_codes": {
+          "W": "E02.01",
+          "N": "E03.01",
+          "S": "E07.01",
+          "E": "E10.01"
+        },
+        "vertices_3d_mm": [
+          [
+            -50.0,
+            50.0,
+            -50.0
+          ],
+          [
+            50.0,
+            50.0,
+            -50.0
+          ],
+          [
+            50.0,
+            -50.0,
+            -50.0
+          ],
+          [
+            -50.0,
+            -50.0,
+            -50.0
+          ]
+        ]
+      }
+    ],
+    "seams": [
+      {
+        "id": "E01.01",
+        "kind": "cube_corner",
+        "length_mm": 100.0,
+        "fold_degrees": 90,
+        "mates": [
+          {
+            "panel": "FR-R1C1",
+            "edge": "W"
+          },
+          {
+            "panel": "LE-R1C1",
+            "edge": "E"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "E02.01",
+        "kind": "cube_corner",
+        "length_mm": 100.0,
+        "fold_degrees": 90,
+        "mates": [
+          {
+            "panel": "LE-R1C1",
+            "edge": "S"
+          },
+          {
+            "panel": "BO-R1C1",
+            "edge": "W"
+          }
+        ],
+        "hinged_uncut": true
+      },
+      {
+        "id": "E03.01",
+        "kind": "cube_corner",
+        "length_mm": 100.0,
+        "fold_degrees": 90,
+        "mates": [
+          {
+            "panel": "FR-R1C1",
+            "edge": "S"
+          },
+          {
+            "panel": "BO-R1C1",
+            "edge": "N"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "E04.01",
+        "kind": "cube_corner",
+        "length_mm": 100.0,
+        "fold_degrees": 90,
+        "mates": [
+          {
+            "panel": "LE-R1C1",
+            "edge": "N"
+          },
+          {
+            "panel": "TO-R1C1",
+            "edge": "W"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "E05.01",
+        "kind": "cube_corner",
+        "length_mm": 100.0,
+        "fold_degrees": 90,
+        "mates": [
+          {
+            "panel": "FR-R1C1",
+            "edge": "N"
+          },
+          {
+            "panel": "TO-R1C1",
+            "edge": "S"
+          }
+        ],
+        "hinged_uncut": true
+      },
+      {
+        "id": "E06.01",
+        "kind": "cube_corner",
+        "length_mm": 100.0,
+        "fold_degrees": 90,
+        "mates": [
+          {
+            "panel": "BA-R1C1",
+            "edge": "E"
+          },
+          {
+            "panel": "LE-R1C1",
+            "edge": "W"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "E07.01",
+        "kind": "cube_corner",
+        "length_mm": 100.0,
+        "fold_degrees": 90,
+        "mates": [
+          {
+            "panel": "BA-R1C1",
+            "edge": "S"
+          },
+          {
+            "panel": "BO-R1C1",
+            "edge": "S"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "E08.01",
+        "kind": "cube_corner",
+        "length_mm": 100.0,
+        "fold_degrees": 90,
+        "mates": [
+          {
+            "panel": "BA-R1C1",
+            "edge": "N"
+          },
+          {
+            "panel": "TO-R1C1",
+            "edge": "N"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "E09.01",
+        "kind": "cube_corner",
+        "length_mm": 100.0,
+        "fold_degrees": 90,
+        "mates": [
+          {
+            "panel": "FR-R1C1",
+            "edge": "E"
+          },
+          {
+            "panel": "RI-R1C1",
+            "edge": "W"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "E10.01",
+        "kind": "cube_corner",
+        "length_mm": 100.0,
+        "fold_degrees": 90,
+        "mates": [
+          {
+            "panel": "RI-R1C1",
+            "edge": "S"
+          },
+          {
+            "panel": "BO-R1C1",
+            "edge": "E"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "E11.01",
+        "kind": "cube_corner",
+        "length_mm": 100.0,
+        "fold_degrees": 90,
+        "mates": [
+          {
+            "panel": "RI-R1C1",
+            "edge": "N"
+          },
+          {
+            "panel": "TO-R1C1",
+            "edge": "E"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "E12.01",
+        "kind": "cube_corner",
+        "length_mm": 100.0,
+        "fold_degrees": 90,
+        "mates": [
+          {
+            "panel": "RI-R1C1",
+            "edge": "E"
+          },
+          {
+            "panel": "BA-R1C1",
+            "edge": "W"
+          }
+        ],
+        "hinged_uncut": true
+      }
+    ]
+  },
+  "unfold_strategy": "Prefer pairs of genuine adjacent angled faces on the same sheet with one uncut 90-degree crease; fallback to separate panels when too large",
+  "print_units": [
+    {
+      "panel_ids": [
+        "LE-R1C1",
+        "BO-R1C1"
+      ],
+      "sheet_number": 3,
+      "fold_code": "E02.01",
+      "orientation_degrees": 0,
+      "bounds_mm": [
+        8.0,
+        20.0,
+        108.0,
+        227.0
+      ]
+    },
+    {
+      "panel_ids": [
+        "FR-R1C1",
+        "TO-R1C1"
+      ],
+      "sheet_number": 2,
+      "fold_code": "E05.01",
+      "orientation_degrees": 0,
+      "bounds_mm": [
+        8.0,
+        20.0,
+        122.0,
+        227.0
+      ]
+    },
+    {
+      "panel_ids": [
+        "RI-R1C1",
+        "BA-R1C1"
+      ],
+      "sheet_number": 1,
+      "fold_code": "E12.01",
+      "orientation_degrees": 90,
+      "bounds_mm": [
+        8.0,
+        20.0,
+        122.0,
+        227.0
+      ]
+    }
+  ],
+  "sheet_count": 3,
+  "physical_assembly": "NOT_TESTED"
+}

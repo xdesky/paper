@@ -1,0 +1,47 @@
+import {test,expect} from '@playwright/test';
+test('create, generate, inspect SVG and 3D, download real ZIP, invalidate stale artifacts',async({page,request})=>{
+ const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.goto('/');
+ await page.getByRole('button',{name:'＋ Dự án mới',exact:true}).click();
+ const form=page.locator('form');await form.getByLabel('Tên dự án').fill('Browser smoke');
+ await form.getByRole('combobox',{name:'Mẫu',exact:true}).selectOption('house_frame');
+ await form.getByRole('button',{name:'Tạo dự án',exact:true}).click();
+ await expect(page.getByRole('heading',{name:'Browser smoke',exact:true})).toBeVisible();
+ await page.getByRole('button',{name:'✧ Generate',exact:true}).click();
+ await expect(page.locator('.svg-sheet svg')).toBeVisible({timeout:45000});
+ await expect(page.locator('.model-view canvas')).toBeVisible();
+ await expect(page.locator('.metrics')).toContainText('2');
+ await page.getByRole('combobox',{name:'Chọn trang in'}).selectOption('1');
+ await expect(page.locator('.svg-sheet svg')).toContainText('Page 2/2');
+ await page.locator('.seam-code').first().click();
+ await expect(page.locator('.page-footer')).toContainText('Đang chọn:');
+ const [download]=await Promise.all([page.waitForEvent('download'),page.getByRole('link',{name:'↓ Export All'}).click()]);
+ expect(download.suggestedFilename()).toBe('project.zip');
+ await page.getByRole('button',{name:'✓ Kiểm định QA',exact:true}).click();
+ await expect(page.locator('.results')).toContainText('pdf_40mm_calibration');
+ await page.getByRole('button',{name:'▧ Workspace',exact:true}).click();
+ await page.screenshot({path:'../test-results/studio-desktop.png',fullPage:true});
+ await page.setViewportSize({width:390,height:844});
+ await expect(page.locator('.svg-sheet svg')).toBeVisible();
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBeTruthy();
+ await page.screenshot({path:'../test-results/studio-mobile.png',fullPage:true});
+ await page.getByLabel('Mẫu hình học').selectOption('cube_100');
+ await page.getByRole('button',{name:'Lưu thay đổi',exact:true}).click();
+ await expect(page.getByRole('link',{name:'↓ Export All'})).toHaveCount(0);
+ await expect(page.locator('.header-actions')).toContainText('Cần tạo lại');
+ await page.getByRole('combobox',{name:'Mẫu hình học',exact:true}).selectOption('cube_200');
+ await page.getByRole('button',{name:'✧ Generate',exact:true}).click();
+ await expect(page.getByRole('combobox',{name:'Chọn trang in'}).locator('option')).toHaveCount(12,{timeout:45000});
+ expect(errors).toEqual([]);
+ const all=await (await request.get('/api/projects')).json();
+ const p=all.find((x:{name:string})=>x.name==='Browser smoke');
+ await request.delete(`/api/projects/${p.id}`);
+});
+
+test('refresh seeded demo with the final production adapter', async({request})=>{
+ const projects=await (await request.get('/api/projects')).json();
+ const demo=projects.find((p:{name:string;preset:string})=>p.name==='Cube 100 mm');
+ await request.patch(`/api/projects/${demo.id}`,{data:{preset:'cube_100'}});
+ const job=await (await request.post(`/api/projects/${demo.id}/generate`)).json();
+ await expect.poll(async()=> (await (await request.get(`/api/jobs/${job.id}`)).json()).status,{timeout:45000}).toBe('SUCCEEDED');
+});

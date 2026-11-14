@@ -1,0 +1,709 @@
+{
+  "model_id": "GB-FOREST",
+  "version": "gingerbread-1.0.1",
+  "project_id": "sample-gb_forest",
+  "revision": 1,
+  "geometry_sha256": "d0b3d6554285a98d8fba35c1e10f286ff4aad96af1299d1ac53ed46de7a02880",
+  "source_spec_hash": "f2132c073a71df1899396ae113d1d95559a4e36b2230725cb8df2d4ca5786085",
+  "design_sha256": "01de89a262c41335a74b8e8aea97c30281628176e17cc97681172005fd503d80",
+  "template_version": "1.0.0",
+  "schema_version": "gingerbread-1.0.0",
+  "locked": true,
+  "units": "mm",
+  "paper": {
+    "name": "US Letter",
+    "page_mm": [
+      215.9,
+      279.4
+    ],
+    "scale": 1.0,
+    "printable_body_mm": [
+      8.0,
+      20.0,
+      207.9,
+      255.0
+    ],
+    "tab_depth_mm": 5
+  },
+  "geometry": {
+    "model": {
+      "type": "gable_house_open_bottom",
+      "name": "Căn nhà rừng thông",
+      "width_mm": 85,
+      "depth_mm": 65,
+      "wall_height_mm": 95,
+      "roof_rise_mm": 50,
+      "height_mm": 145,
+      "open_bottom": true
+    },
+    "panels": [
+      {
+        "id": "FRONT",
+        "face": "FRONT",
+        "width_mm": 85.0,
+        "height_mm": 145.0,
+        "polygon_mm": [
+          [
+            0,
+            0
+          ],
+          [
+            85,
+            0
+          ],
+          [
+            85,
+            95
+          ],
+          [
+            42.5,
+            145
+          ],
+          [
+            0,
+            95
+          ]
+        ],
+        "vertices_3d_mm": [
+          [
+            -42.5,
+            -32.5,
+            0
+          ],
+          [
+            42.5,
+            -32.5,
+            0
+          ],
+          [
+            42.5,
+            -32.5,
+            95
+          ],
+          [
+            0.0,
+            -32.5,
+            145
+          ],
+          [
+            -42.5,
+            -32.5,
+            95
+          ]
+        ],
+        "edge_codes": {
+          "4": "G01",
+          "3": "G03",
+          "2": "G07",
+          "1": "G09"
+        }
+      },
+      {
+        "id": "RIGHT",
+        "face": "RIGHT",
+        "width_mm": 65.0,
+        "height_mm": 95.0,
+        "polygon_mm": [
+          [
+            0,
+            0
+          ],
+          [
+            65,
+            0
+          ],
+          [
+            65,
+            95
+          ],
+          [
+            0,
+            95
+          ]
+        ],
+        "vertices_3d_mm": [
+          [
+            42.5,
+            -32.5,
+            0
+          ],
+          [
+            42.5,
+            32.5,
+            0
+          ],
+          [
+            42.5,
+            32.5,
+            95
+          ],
+          [
+            42.5,
+            -32.5,
+            95
+          ]
+        ],
+        "edge_codes": {
+          "3": "G09",
+          "2": "G10",
+          "1": "G11"
+        }
+      },
+      {
+        "id": "BACK",
+        "face": "BACK",
+        "width_mm": 85.0,
+        "height_mm": 145.0,
+        "polygon_mm": [
+          [
+            0,
+            0
+          ],
+          [
+            85,
+            0
+          ],
+          [
+            85,
+            95
+          ],
+          [
+            42.5,
+            145
+          ],
+          [
+            0,
+            95
+          ]
+        ],
+        "vertices_3d_mm": [
+          [
+            42.5,
+            32.5,
+            0
+          ],
+          [
+            -42.5,
+            32.5,
+            0
+          ],
+          [
+            -42.5,
+            32.5,
+            95
+          ],
+          [
+            0.0,
+            32.5,
+            145
+          ],
+          [
+            42.5,
+            32.5,
+            95
+          ]
+        ],
+        "edge_codes": {
+          "1": "G04",
+          "2": "G05",
+          "3": "G08",
+          "4": "G11"
+        }
+      },
+      {
+        "id": "LEFT",
+        "face": "LEFT",
+        "width_mm": 65.0,
+        "height_mm": 95.0,
+        "polygon_mm": [
+          [
+            0,
+            0
+          ],
+          [
+            65,
+            0
+          ],
+          [
+            65,
+            95
+          ],
+          [
+            0,
+            95
+          ]
+        ],
+        "vertices_3d_mm": [
+          [
+            -42.5,
+            32.5,
+            0
+          ],
+          [
+            -42.5,
+            -32.5,
+            0
+          ],
+          [
+            -42.5,
+            -32.5,
+            95
+          ],
+          [
+            -42.5,
+            32.5,
+            95
+          ]
+        ],
+        "edge_codes": {
+          "1": "G01",
+          "2": "G02",
+          "3": "G04"
+        }
+      },
+      {
+        "id": "ROOF_RIGHT",
+        "face": "ROOF_RIGHT",
+        "width_mm": 65.0,
+        "height_mm": 65.62202374203343,
+        "polygon_mm": [
+          [
+            0,
+            0
+          ],
+          [
+            65,
+            0
+          ],
+          [
+            65,
+            65.62202374203343
+          ],
+          [
+            0,
+            65.62202374203343
+          ]
+        ],
+        "vertices_3d_mm": [
+          [
+            42.5,
+            -32.5,
+            95.0
+          ],
+          [
+            42.5,
+            32.5,
+            95.0
+          ],
+          [
+            0.0,
+            32.5,
+            145.0
+          ],
+          [
+            0.0,
+            -32.5,
+            145.0
+          ]
+        ],
+        "edge_codes": {
+          "2": "G06",
+          "3": "G07",
+          "1": "G08",
+          "0": "G10"
+        }
+      },
+      {
+        "id": "ROOF_LEFT",
+        "face": "ROOF_LEFT",
+        "width_mm": 65.0,
+        "height_mm": 65.62202374203343,
+        "polygon_mm": [
+          [
+            0,
+            0
+          ],
+          [
+            65,
+            0
+          ],
+          [
+            65,
+            65.62202374203343
+          ],
+          [
+            0,
+            65.62202374203343
+          ]
+        ],
+        "vertices_3d_mm": [
+          [
+            -42.5,
+            32.5,
+            95.0
+          ],
+          [
+            -42.5,
+            -32.5,
+            95.0
+          ],
+          [
+            0.0,
+            -32.5,
+            145.0
+          ],
+          [
+            0.0,
+            32.5,
+            145.0
+          ]
+        ],
+        "edge_codes": {
+          "0": "G02",
+          "1": "G03",
+          "3": "G05",
+          "2": "G06"
+        }
+      }
+    ],
+    "seams": [
+      {
+        "id": "G01",
+        "kind": "house_edge",
+        "length_mm": 95.0,
+        "fold_degrees": 90.0,
+        "mates": [
+          {
+            "panel": "FRONT",
+            "edge": "4"
+          },
+          {
+            "panel": "LEFT",
+            "edge": "1"
+          }
+        ],
+        "hinged_uncut": false,
+        "fold_direction": "MOUNTAIN_FROM_PRINTED_OUTSIDE"
+      },
+      {
+        "id": "G02",
+        "kind": "house_edge",
+        "length_mm": 65.0,
+        "fold_degrees": 40.36453657309736,
+        "mates": [
+          {
+            "panel": "LEFT",
+            "edge": "2"
+          },
+          {
+            "panel": "ROOF_LEFT",
+            "edge": "0"
+          }
+        ],
+        "hinged_uncut": false,
+        "fold_direction": "MOUNTAIN_FROM_PRINTED_OUTSIDE"
+      },
+      {
+        "id": "G03",
+        "kind": "house_edge",
+        "length_mm": 65.62202374203343,
+        "fold_degrees": 90.0,
+        "mates": [
+          {
+            "panel": "FRONT",
+            "edge": "3"
+          },
+          {
+            "panel": "ROOF_LEFT",
+            "edge": "1"
+          }
+        ],
+        "hinged_uncut": false,
+        "fold_direction": "MOUNTAIN_FROM_PRINTED_OUTSIDE"
+      },
+      {
+        "id": "G04",
+        "kind": "house_edge",
+        "length_mm": 95.0,
+        "fold_degrees": 90.0,
+        "mates": [
+          {
+            "panel": "BACK",
+            "edge": "1"
+          },
+          {
+            "panel": "LEFT",
+            "edge": "3"
+          }
+        ],
+        "hinged_uncut": true,
+        "fold_direction": "MOUNTAIN_FROM_PRINTED_OUTSIDE"
+      },
+      {
+        "id": "G05",
+        "kind": "house_edge",
+        "length_mm": 65.62202374203343,
+        "fold_degrees": 90.0,
+        "mates": [
+          {
+            "panel": "BACK",
+            "edge": "2"
+          },
+          {
+            "panel": "ROOF_LEFT",
+            "edge": "3"
+          }
+        ],
+        "hinged_uncut": false,
+        "fold_direction": "MOUNTAIN_FROM_PRINTED_OUTSIDE"
+      },
+      {
+        "id": "G06",
+        "kind": "house_edge",
+        "length_mm": 65.0,
+        "fold_degrees": 99.27092685380529,
+        "mates": [
+          {
+            "panel": "ROOF_RIGHT",
+            "edge": "2"
+          },
+          {
+            "panel": "ROOF_LEFT",
+            "edge": "2"
+          }
+        ],
+        "hinged_uncut": true,
+        "fold_direction": "MOUNTAIN_FROM_PRINTED_OUTSIDE"
+      },
+      {
+        "id": "G07",
+        "kind": "house_edge",
+        "length_mm": 65.62202374203343,
+        "fold_degrees": 90.0,
+        "mates": [
+          {
+            "panel": "FRONT",
+            "edge": "2"
+          },
+          {
+            "panel": "ROOF_RIGHT",
+            "edge": "3"
+          }
+        ],
+        "hinged_uncut": false,
+        "fold_direction": "MOUNTAIN_FROM_PRINTED_OUTSIDE"
+      },
+      {
+        "id": "G08",
+        "kind": "house_edge",
+        "length_mm": 65.62202374203343,
+        "fold_degrees": 90.0,
+        "mates": [
+          {
+            "panel": "BACK",
+            "edge": "3"
+          },
+          {
+            "panel": "ROOF_RIGHT",
+            "edge": "1"
+          }
+        ],
+        "hinged_uncut": false,
+        "fold_direction": "MOUNTAIN_FROM_PRINTED_OUTSIDE"
+      },
+      {
+        "id": "G09",
+        "kind": "house_edge",
+        "length_mm": 95.0,
+        "fold_degrees": 90.0,
+        "mates": [
+          {
+            "panel": "FRONT",
+            "edge": "1"
+          },
+          {
+            "panel": "RIGHT",
+            "edge": "3"
+          }
+        ],
+        "hinged_uncut": true,
+        "fold_direction": "MOUNTAIN_FROM_PRINTED_OUTSIDE"
+      },
+      {
+        "id": "G10",
+        "kind": "house_edge",
+        "length_mm": 65.0,
+        "fold_degrees": 40.36453657309736,
+        "mates": [
+          {
+            "panel": "RIGHT",
+            "edge": "2"
+          },
+          {
+            "panel": "ROOF_RIGHT",
+            "edge": "0"
+          }
+        ],
+        "hinged_uncut": false,
+        "fold_direction": "MOUNTAIN_FROM_PRINTED_OUTSIDE"
+      },
+      {
+        "id": "G11",
+        "kind": "house_edge",
+        "length_mm": 95.0,
+        "fold_degrees": 90.0,
+        "mates": [
+          {
+            "panel": "RIGHT",
+            "edge": "1"
+          },
+          {
+            "panel": "BACK",
+            "edge": "4"
+          }
+        ],
+        "hinged_uncut": false,
+        "fold_direction": "MOUNTAIN_FROM_PRINTED_OUTSIDE"
+      }
+    ],
+    "open_boundary": [
+      {
+        "endpoints": [
+          [
+            -42.5,
+            -32.5,
+            0.0
+          ],
+          [
+            -42.5,
+            32.5,
+            0.0
+          ]
+        ],
+        "mate": {
+          "panel": "LEFT",
+          "edge": "0"
+        }
+      },
+      {
+        "endpoints": [
+          [
+            -42.5,
+            -32.5,
+            0.0
+          ],
+          [
+            42.5,
+            -32.5,
+            0.0
+          ]
+        ],
+        "mate": {
+          "panel": "FRONT",
+          "edge": "0"
+        }
+      },
+      {
+        "endpoints": [
+          [
+            -42.5,
+            32.5,
+            0.0
+          ],
+          [
+            42.5,
+            32.5,
+            0.0
+          ]
+        ],
+        "mate": {
+          "panel": "BACK",
+          "edge": "0"
+        }
+      },
+      {
+        "endpoints": [
+          [
+            42.5,
+            -32.5,
+            0.0
+          ],
+          [
+            42.5,
+            32.5,
+            0.0
+          ]
+        ],
+        "mate": {
+          "panel": "RIGHT",
+          "edge": "0"
+        }
+      }
+    ]
+  },
+  "sheet_count": 2,
+  "physical_assembly": "NOT_TESTED",
+  "print_units": [
+    {
+      "panel_ids": [
+        "BACK",
+        "LEFT"
+      ],
+      "sheet_number": 2,
+      "fold_code": "G04",
+      "bounds_mm": [
+        8.0,
+        20.0,
+        158.0,
+        165.0
+      ],
+      "orientation_degrees": 0
+    },
+    {
+      "panel_ids": [
+        "ROOF_RIGHT",
+        "ROOF_LEFT"
+      ],
+      "sheet_number": 1,
+      "fold_code": "G06",
+      "bounds_mm": [
+        8.0,
+        169.0,
+        139.24404748406687,
+        234.0
+      ],
+      "orientation_degrees": 90
+    },
+    {
+      "panel_ids": [
+        "FRONT",
+        "RIGHT"
+      ],
+      "sheet_number": 1,
+      "fold_code": "G09",
+      "bounds_mm": [
+        8.0,
+        20.0,
+        168.0,
+        165.0
+      ],
+      "orientation_degrees": 0
+    }
+  ],
+  "appearance": {
+    "template_id": "gb_forest",
+    "motif": "forest",
+    "panels": {
+      "FRONT": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"85.0mm\" height=\"145.0mm\" viewBox=\"0 0 85.0 145.0\"><polygon points=\"0.000000,145.000000 85.000000,145.000000 85.000000,50.000000 42.500000,0.000000 0.000000,50.000000\" fill=\"#a7774f\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"3.000000,142.000000 3.000000,51.102731 42.500000,4.632143 82.000000,51.102731 82.000000,142.000000 3.000000,142.000000\" fill=\"none\" stroke=\"#fff7e7\" stroke-width=\"1.7\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"32.500000,140.000000 52.500000,140.000000 52.500000,108.000000 32.500000,108.000000\" fill=\"#2a6851\" stroke=\"#fff7e7\" stroke-width=\"2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"47.7\" cy=\"126.56\" r=\"1.1\" fill=\"#f8d788\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"11.200000,97.400000 26.200000,97.400000 26.200000,82.400000 11.200000,82.400000\" fill=\"#f8d788\" stroke=\"#fff7e7\" stroke-width=\"1.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"11.200000,89.900000 26.200000,89.900000\" fill=\"none\" stroke=\"#fff7e7\" stroke-width=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"18.700000,97.400000 18.700000,82.400000\" fill=\"none\" stroke=\"#fff7e7\" stroke-width=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"9.200000,100.400000 28.200000,100.400000 28.200000,98.400000 9.200000,98.400000\" fill=\"#fff7e7\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"58.800000,97.400000 73.800000,97.400000 73.800000,82.400000 58.800000,82.400000\" fill=\"#f8d788\" stroke=\"#fff7e7\" stroke-width=\"1.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"58.800000,89.900000 73.800000,89.900000\" fill=\"none\" stroke=\"#fff7e7\" stroke-width=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"66.300000,97.400000 66.300000,82.400000\" fill=\"none\" stroke=\"#fff7e7\" stroke-width=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"56.800000,100.400000 75.800000,100.400000 75.800000,98.400000 56.800000,98.400000\" fill=\"#fff7e7\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"42.5\" cy=\"70.89999999999999\" r=\"5\" fill=\"#39785a\" stroke=\"#fff7e7\" stroke-width=\"0.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"42.5\" cy=\"70.89999999999999\" r=\"2.8\" fill=\"#a7774f\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"40.5\" cy=\"74.39999999999999\" r=\"1.7\" fill=\"#d14c47\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"44.5\" cy=\"74.39999999999999\" r=\"1.7\" fill=\"#d14c47\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"42.5\" cy=\"32.5\" r=\"4.5\" fill=\"#f8d788\" stroke=\"#fff7e7\" stroke-width=\"1.6\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"39.500000,32.500000 45.500000,32.500000\" fill=\"none\" stroke=\"#fff7e7\" stroke-width=\"0.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"10.450000,138.000000 14.450000,123.000000 18.450000,138.000000\" fill=\"#2a6851\" stroke=\"#fff7e7\" stroke-width=\"0.6\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"66.550000,138.000000 70.550000,123.000000 74.550000,138.000000\" fill=\"#2a6851\" stroke=\"#fff7e7\" stroke-width=\"0.6\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /></svg>",
+      "RIGHT": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"65.0mm\" height=\"95.0mm\" viewBox=\"0 0 65.0 95.0\"><polygon points=\"0.000000,95.000000 65.000000,95.000000 65.000000,0.000000 0.000000,0.000000\" fill=\"#a7774f\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"3.000000,92.000000 3.000000,3.000000 62.000000,3.000000 62.000000,92.000000 3.000000,92.000000\" fill=\"none\" stroke=\"#fff7e7\" stroke-width=\"1.7\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"11.700000,50.550000 27.300000,50.550000 27.300000,34.950000 11.700000,34.950000\" fill=\"#f8d788\" stroke=\"#fff7e7\" stroke-width=\"1.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"11.700000,42.750000 27.300000,42.750000\" fill=\"none\" stroke=\"#fff7e7\" stroke-width=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"19.500000,50.550000 19.500000,34.950000\" fill=\"none\" stroke=\"#fff7e7\" stroke-width=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"9.700000,53.550000 29.300000,53.550000 29.300000,51.550000 9.700000,51.550000\" fill=\"#fff7e7\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"37.700000,50.550000 53.300000,50.550000 53.300000,34.950000 37.700000,34.950000\" fill=\"#f8d788\" stroke=\"#fff7e7\" stroke-width=\"1.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"37.700000,42.750000 53.300000,42.750000\" fill=\"none\" stroke=\"#fff7e7\" stroke-width=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"45.500000,50.550000 45.500000,34.950000\" fill=\"none\" stroke=\"#fff7e7\" stroke-width=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"35.700000,53.550000 55.300000,53.550000 55.300000,51.550000 35.700000,51.550000\" fill=\"#fff7e7\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"7.050000,88.000000 11.050000,73.000000 15.050000,88.000000\" fill=\"#2a6851\" stroke=\"#fff7e7\" stroke-width=\"0.6\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"49.950000,88.000000 53.950000,73.000000 57.950000,88.000000\" fill=\"#2a6851\" stroke=\"#fff7e7\" stroke-width=\"0.6\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /></svg>",
+      "BACK": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"85.0mm\" height=\"145.0mm\" viewBox=\"0 0 85.0 145.0\"><polygon points=\"0.000000,145.000000 85.000000,145.000000 85.000000,50.000000 42.500000,0.000000 0.000000,50.000000\" fill=\"#a7774f\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"3.000000,142.000000 3.000000,51.102731 42.500000,4.632143 82.000000,51.102731 82.000000,142.000000 3.000000,142.000000\" fill=\"none\" stroke=\"#fff7e7\" stroke-width=\"1.7\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"17.000000,101.250000 34.000000,101.250000 34.000000,84.250000 17.000000,84.250000\" fill=\"#f8d788\" stroke=\"#fff7e7\" stroke-width=\"1.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"17.000000,92.750000 34.000000,92.750000\" fill=\"none\" stroke=\"#fff7e7\" stroke-width=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"25.500000,101.250000 25.500000,84.250000\" fill=\"none\" stroke=\"#fff7e7\" stroke-width=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"15.000000,104.250000 36.000000,104.250000 36.000000,102.250000 15.000000,102.250000\" fill=\"#fff7e7\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"51.000000,101.250000 68.000000,101.250000 68.000000,84.250000 51.000000,84.250000\" fill=\"#f8d788\" stroke=\"#fff7e7\" stroke-width=\"1.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"51.000000,92.750000 68.000000,92.750000\" fill=\"none\" stroke=\"#fff7e7\" stroke-width=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"59.500000,101.250000 59.500000,84.250000\" fill=\"none\" stroke=\"#fff7e7\" stroke-width=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"49.000000,104.250000 70.000000,104.250000 70.000000,102.250000 49.000000,102.250000\" fill=\"#fff7e7\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"42.5\" cy=\"32.5\" r=\"4.5\" fill=\"#f8d788\" stroke=\"#fff7e7\" stroke-width=\"1.6\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"39.500000,32.500000 45.500000,32.500000\" fill=\"none\" stroke=\"#fff7e7\" stroke-width=\"0.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"10.450000,138.000000 14.450000,123.000000 18.450000,138.000000\" fill=\"#2a6851\" stroke=\"#fff7e7\" stroke-width=\"0.6\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"66.550000,138.000000 70.550000,123.000000 74.550000,138.000000\" fill=\"#2a6851\" stroke=\"#fff7e7\" stroke-width=\"0.6\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /></svg>",
+      "LEFT": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"65.0mm\" height=\"95.0mm\" viewBox=\"0 0 65.0 95.0\"><polygon points=\"0.000000,95.000000 65.000000,95.000000 65.000000,0.000000 0.000000,0.000000\" fill=\"#a7774f\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"3.000000,92.000000 3.000000,3.000000 62.000000,3.000000 62.000000,92.000000 3.000000,92.000000\" fill=\"none\" stroke=\"#fff7e7\" stroke-width=\"1.7\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"11.700000,50.550000 27.300000,50.550000 27.300000,34.950000 11.700000,34.950000\" fill=\"#f8d788\" stroke=\"#fff7e7\" stroke-width=\"1.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"11.700000,42.750000 27.300000,42.750000\" fill=\"none\" stroke=\"#fff7e7\" stroke-width=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"19.500000,50.550000 19.500000,34.950000\" fill=\"none\" stroke=\"#fff7e7\" stroke-width=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"9.700000,53.550000 29.300000,53.550000 29.300000,51.550000 9.700000,51.550000\" fill=\"#fff7e7\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"37.700000,50.550000 53.300000,50.550000 53.300000,34.950000 37.700000,34.950000\" fill=\"#f8d788\" stroke=\"#fff7e7\" stroke-width=\"1.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"37.700000,42.750000 53.300000,42.750000\" fill=\"none\" stroke=\"#fff7e7\" stroke-width=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"45.500000,50.550000 45.500000,34.950000\" fill=\"none\" stroke=\"#fff7e7\" stroke-width=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"35.700000,53.550000 55.300000,53.550000 55.300000,51.550000 35.700000,51.550000\" fill=\"#fff7e7\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"7.050000,88.000000 11.050000,73.000000 15.050000,88.000000\" fill=\"#2a6851\" stroke=\"#fff7e7\" stroke-width=\"0.6\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"49.950000,88.000000 53.950000,73.000000 57.950000,88.000000\" fill=\"#2a6851\" stroke=\"#fff7e7\" stroke-width=\"0.6\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /></svg>",
+      "ROOF_RIGHT": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"65.0mm\" height=\"65.62202374203343mm\" viewBox=\"0 0 65.0 65.62202374203343\"><polygon points=\"0.000000,65.622024 65.000000,65.622024 65.000000,0.000000 0.000000,0.000000\" fill=\"#356657\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"3.000000,62.622024 3.000000,3.000000 62.000000,3.000000 62.000000,62.622024 3.000000,62.622024\" fill=\"none\" stroke=\"#fff7e7\" stroke-width=\"1.7\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"5.000000,53.422024 6.410256,53.634433 7.820513,54.230644 9.230769,55.095529 10.641026,56.062080 12.051282,56.943657 13.461538,57.570027 14.871795,57.820240 16.282051,57.645979 17.692308,57.080894 19.102564,56.234102 20.512821,55.269119 21.923077,54.372281 23.333333,53.716768 24.743590,53.429158 26.153846,53.564988 27.564103,54.098030 28.974359,54.925354 30.384615,55.887204 31.794872,56.797849 33.205128,57.481442 34.615385,57.805983 36.025641,57.708804 37.435897,57.208669 38.846154,56.402154 40.256410,55.444997 41.666667,54.522024 43.076923,53.811459 44.487179,53.450513 45.897436,53.508884 47.307692,53.975300 48.717949,54.759697 50.128205,55.710609 51.538462,56.644415 52.948718,57.380798 54.358974,57.777563 55.769231,57.758096 57.179487,57.326155 58.589744,56.565147 60.000000,55.622024\" fill=\"none\" stroke=\"#fff7e7\" stroke-width=\"1.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"5.000000,43.422024 6.410256,43.634433 7.820513,44.230644 9.230769,45.095529 10.641026,46.062080 12.051282,46.943657 13.461538,47.570027 14.871795,47.820240 16.282051,47.645979 17.692308,47.080894 19.102564,46.234102 20.512821,45.269119 21.923077,44.372281 23.333333,43.716768 24.743590,43.429158 26.153846,43.564988 27.564103,44.098030 28.974359,44.925354 30.384615,45.887204 31.794872,46.797849 33.205128,47.481442 34.615385,47.805983 36.025641,47.708804 37.435897,47.208669 38.846154,46.402154 40.256410,45.444997 41.666667,44.522024 43.076923,43.811459 44.487179,43.450513 45.897436,43.508884 47.307692,43.975300 48.717949,44.759697 50.128205,45.710609 51.538462,46.644415 52.948718,47.380798 54.358974,47.777563 55.769231,47.758096 57.179487,47.326155 58.589744,46.565147 60.000000,45.622024\" fill=\"none\" stroke=\"#fff7e7\" stroke-width=\"1.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"5.000000,33.422024 6.410256,33.634433 7.820513,34.230644 9.230769,35.095529 10.641026,36.062080 12.051282,36.943657 13.461538,37.570027 14.871795,37.820240 16.282051,37.645979 17.692308,37.080894 19.102564,36.234102 20.512821,35.269119 21.923077,34.372281 23.333333,33.716768 24.743590,33.429158 26.153846,33.564988 27.564103,34.098030 28.974359,34.925354 30.384615,35.887204 31.794872,36.797849 33.205128,37.481442 34.615385,37.805983 36.025641,37.708804 37.435897,37.208669 38.846154,36.402154 40.256410,35.444997 41.666667,34.522024 43.076923,33.811459 44.487179,33.450513 45.897436,33.508884 47.307692,33.975300 48.717949,34.759697 50.128205,35.710609 51.538462,36.644415 52.948718,37.380798 54.358974,37.777563 55.769231,37.758096 57.179487,37.326155 58.589744,36.565147 60.000000,35.622024\" fill=\"none\" stroke=\"#fff7e7\" stroke-width=\"1.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"5.000000,23.422024 6.410256,23.634433 7.820513,24.230644 9.230769,25.095529 10.641026,26.062080 12.051282,26.943657 13.461538,27.570027 14.871795,27.820240 16.282051,27.645979 17.692308,27.080894 19.102564,26.234102 20.512821,25.269119 21.923077,24.372281 23.333333,23.716768 24.743590,23.429158 26.153846,23.564988 27.564103,24.098030 28.974359,24.925354 30.384615,25.887204 31.794872,26.797849 33.205128,27.481442 34.615385,27.805983 36.025641,27.708804 37.435897,27.208669 38.846154,26.402154 40.256410,25.444997 41.666667,24.522024 43.076923,23.811459 44.487179,23.450513 45.897436,23.508884 47.307692,23.975300 48.717949,24.759697 50.128205,25.710609 51.538462,26.644415 52.948718,27.380798 54.358974,27.777563 55.769231,27.758096 57.179487,27.326155 58.589744,26.565147 60.000000,25.622024\" fill=\"none\" stroke=\"#fff7e7\" stroke-width=\"1.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"5.000000,13.422024 6.410256,13.634433 7.820513,14.230644 9.230769,15.095529 10.641026,16.062080 12.051282,16.943657 13.461538,17.570027 14.871795,17.820240 16.282051,17.645979 17.692308,17.080894 19.102564,16.234102 20.512821,15.269119 21.923077,14.372281 23.333333,13.716768 24.743590,13.429158 26.153846,13.564988 27.564103,14.098030 28.974359,14.925354 30.384615,15.887204 31.794872,16.797849 33.205128,17.481442 34.615385,17.805983 36.025641,17.708804 37.435897,17.208669 38.846154,16.402154 40.256410,15.444997 41.666667,14.522024 43.076923,13.811459 44.487179,13.450513 45.897436,13.508884 47.307692,13.975300 48.717949,14.759697 50.128205,15.710609 51.538462,16.644415 52.948718,17.380798 54.358974,17.777563 55.769231,17.758096 57.179487,17.326155 58.589744,16.565147 60.000000,15.622024\" fill=\"none\" stroke=\"#fff7e7\" stroke-width=\"1.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"5.000000,3.422024 6.410256,3.634433 7.820513,4.230644 9.230769,5.095529 10.641026,6.062080 12.051282,6.943657 13.461538,7.570027 14.871795,7.820240 16.282051,7.645979 17.692308,7.080894 19.102564,6.234102 20.512821,5.269119 21.923077,4.372281 23.333333,3.716768 24.743590,3.429158 26.153846,3.564988 27.564103,4.098030 28.974359,4.925354 30.384615,5.887204 31.794872,6.797849 33.205128,7.481442 34.615385,7.805983 36.025641,7.708804 37.435897,7.208669 38.846154,6.402154 40.256410,5.444997 41.666667,4.522024 43.076923,3.811459 44.487179,3.450513 45.897436,3.508884 47.307692,3.975300 48.717949,4.759697 50.128205,5.710609 51.538462,6.644415 52.948718,7.380798 54.358974,7.777563 55.769231,7.758096 57.179487,7.326155 58.589744,6.565147 60.000000,5.622024\" fill=\"none\" stroke=\"#fff7e7\" stroke-width=\"1.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"10.0\" cy=\"55.622023742033434\" r=\"1.6\" fill=\"#2a6851\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"10.0\" cy=\"35.622023742033434\" r=\"1.6\" fill=\"#2a6851\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"10.0\" cy=\"15.622023742033434\" r=\"1.6\" fill=\"#2a6851\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"25.0\" cy=\"55.622023742033434\" r=\"1.6\" fill=\"#2a6851\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"25.0\" cy=\"35.622023742033434\" r=\"1.6\" fill=\"#2a6851\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"25.0\" cy=\"15.622023742033434\" r=\"1.6\" fill=\"#2a6851\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"40.0\" cy=\"55.622023742033434\" r=\"1.6\" fill=\"#2a6851\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"40.0\" cy=\"35.622023742033434\" r=\"1.6\" fill=\"#2a6851\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"40.0\" cy=\"15.622023742033434\" r=\"1.6\" fill=\"#2a6851\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"55.0\" cy=\"55.622023742033434\" r=\"1.6\" fill=\"#2a6851\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"55.0\" cy=\"35.622023742033434\" r=\"1.6\" fill=\"#2a6851\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"55.0\" cy=\"15.622023742033434\" r=\"1.6\" fill=\"#2a6851\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /></svg>",
+      "ROOF_LEFT": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"65.0mm\" height=\"65.62202374203343mm\" viewBox=\"0 0 65.0 65.62202374203343\"><polygon points=\"0.000000,65.622024 65.000000,65.622024 65.000000,0.000000 0.000000,0.000000\" fill=\"#356657\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"3.000000,62.622024 3.000000,3.000000 62.000000,3.000000 62.000000,62.622024 3.000000,62.622024\" fill=\"none\" stroke=\"#fff7e7\" stroke-width=\"1.7\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"5.000000,53.422024 6.410256,53.634433 7.820513,54.230644 9.230769,55.095529 10.641026,56.062080 12.051282,56.943657 13.461538,57.570027 14.871795,57.820240 16.282051,57.645979 17.692308,57.080894 19.102564,56.234102 20.512821,55.269119 21.923077,54.372281 23.333333,53.716768 24.743590,53.429158 26.153846,53.564988 27.564103,54.098030 28.974359,54.925354 30.384615,55.887204 31.794872,56.797849 33.205128,57.481442 34.615385,57.805983 36.025641,57.708804 37.435897,57.208669 38.846154,56.402154 40.256410,55.444997 41.666667,54.522024 43.076923,53.811459 44.487179,53.450513 45.897436,53.508884 47.307692,53.975300 48.717949,54.759697 50.128205,55.710609 51.538462,56.644415 52.948718,57.380798 54.358974,57.777563 55.769231,57.758096 57.179487,57.326155 58.589744,56.565147 60.000000,55.622024\" fill=\"none\" stroke=\"#fff7e7\" stroke-width=\"1.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"5.000000,43.422024 6.410256,43.634433 7.820513,44.230644 9.230769,45.095529 10.641026,46.062080 12.051282,46.943657 13.461538,47.570027 14.871795,47.820240 16.282051,47.645979 17.692308,47.080894 19.102564,46.234102 20.512821,45.269119 21.923077,44.372281 23.333333,43.716768 24.743590,43.429158 26.153846,43.564988 27.564103,44.098030 28.974359,44.925354 30.384615,45.887204 31.794872,46.797849 33.205128,47.481442 34.615385,47.805983 36.025641,47.708804 37.435897,47.208669 38.846154,46.402154 40.256410,45.444997 41.666667,44.522024 43.076923,43.811459 44.487179,43.450513 45.897436,43.508884 47.307692,43.975300 48.717949,44.759697 50.128205,45.710609 51.538462,46.644415 52.948718,47.380798 54.358974,47.777563 55.769231,47.758096 57.179487,47.326155 58.589744,46.565147 60.000000,45.622024\" fill=\"none\" stroke=\"#fff7e7\" stroke-width=\"1.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"5.000000,33.422024 6.410256,33.634433 7.820513,34.230644 9.230769,35.095529 10.641026,36.062080 12.051282,36.943657 13.461538,37.570027 14.871795,37.820240 16.282051,37.645979 17.692308,37.080894 19.102564,36.234102 20.512821,35.269119 21.923077,34.372281 23.333333,33.716768 24.743590,33.429158 26.153846,33.564988 27.564103,34.098030 28.974359,34.925354 30.384615,35.887204 31.794872,36.797849 33.205128,37.481442 34.615385,37.805983 36.025641,37.708804 37.435897,37.208669 38.846154,36.402154 40.256410,35.444997 41.666667,34.522024 43.076923,33.811459 44.487179,33.450513 45.897436,33.508884 47.307692,33.975300 48.717949,34.759697 50.128205,35.710609 51.538462,36.644415 52.948718,37.380798 54.358974,37.777563 55.769231,37.758096 57.179487,37.326155 58.589744,36.565147 60.000000,35.622024\" fill=\"none\" stroke=\"#fff7e7\" stroke-width=\"1.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"5.000000,23.422024 6.410256,23.634433 7.820513,24.230644 9.230769,25.095529 10.641026,26.062080 12.051282,26.943657 13.461538,27.570027 14.871795,27.820240 16.282051,27.645979 17.692308,27.080894 19.102564,26.234102 20.512821,25.269119 21.923077,24.372281 23.333333,23.716768 24.743590,23.429158 26.153846,23.564988 27.564103,24.098030 28.974359,24.925354 30.384615,25.887204 31.794872,26.797849 33.205128,27.481442 34.615385,27.805983 36.025641,27.708804 37.435897,27.208669 38.846154,26.402154 40.256410,25.444997 41.666667,24.522024 43.076923,23.811459 44.487179,23.450513 45.897436,23.508884 47.307692,23.975300 48.717949,24.759697 50.128205,25.710609 51.538462,26.644415 52.948718,27.380798 54.358974,27.777563 55.769231,27.758096 57.179487,27.326155 58.589744,26.565147 60.000000,25.622024\" fill=\"none\" stroke=\"#fff7e7\" stroke-width=\"1.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"5.000000,13.422024 6.410256,13.634433 7.820513,14.230644 9.230769,15.095529 10.641026,16.062080 12.051282,16.943657 13.461538,17.570027 14.871795,17.820240 16.282051,17.645979 17.692308,17.080894 19.102564,16.234102 20.512821,15.269119 21.923077,14.372281 23.333333,13.716768 24.743590,13.429158 26.153846,13.564988 27.564103,14.098030 28.974359,14.925354 30.384615,15.887204 31.794872,16.797849 33.205128,17.481442 34.615385,17.805983 36.025641,17.708804 37.435897,17.208669 38.846154,16.402154 40.256410,15.444997 41.666667,14.522024 43.076923,13.811459 44.487179,13.450513 45.897436,13.508884 47.307692,13.975300 48.717949,14.759697 50.128205,15.710609 51.538462,16.644415 52.948718,17.380798 54.358974,17.777563 55.769231,17.758096 57.179487,17.326155 58.589744,16.565147 60.000000,15.622024\" fill=\"none\" stroke=\"#fff7e7\" stroke-width=\"1.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"5.000000,3.422024 6.410256,3.634433 7.820513,4.230644 9.230769,5.095529 10.641026,6.062080 12.051282,6.943657 13.461538,7.570027 14.871795,7.820240 16.282051,7.645979 17.692308,7.080894 19.102564,6.234102 20.512821,5.269119 21.923077,4.372281 23.333333,3.716768 24.743590,3.429158 26.153846,3.564988 27.564103,4.098030 28.974359,4.925354 30.384615,5.887204 31.794872,6.797849 33.205128,7.481442 34.615385,7.805983 36.025641,7.708804 37.435897,7.208669 38.846154,6.402154 40.256410,5.444997 41.666667,4.522024 43.076923,3.811459 44.487179,3.450513 45.897436,3.508884 47.307692,3.975300 48.717949,4.759697 50.128205,5.710609 51.538462,6.644415 52.948718,7.380798 54.358974,7.777563 55.769231,7.758096 57.179487,7.326155 58.589744,6.565147 60.000000,5.622024\" fill=\"none\" stroke=\"#fff7e7\" stroke-width=\"1.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"10.0\" cy=\"55.622023742033434\" r=\"1.6\" fill=\"#2a6851\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"10.0\" cy=\"35.622023742033434\" r=\"1.6\" fill=\"#2a6851\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"10.0\" cy=\"15.622023742033434\" r=\"1.6\" fill=\"#2a6851\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"25.0\" cy=\"55.622023742033434\" r=\"1.6\" fill=\"#2a6851\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"25.0\" cy=\"35.622023742033434\" r=\"1.6\" fill=\"#2a6851\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"25.0\" cy=\"15.622023742033434\" r=\"1.6\" fill=\"#2a6851\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"40.0\" cy=\"55.622023742033434\" r=\"1.6\" fill=\"#2a6851\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"40.0\" cy=\"35.622023742033434\" r=\"1.6\" fill=\"#2a6851\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"40.0\" cy=\"15.622023742033434\" r=\"1.6\" fill=\"#2a6851\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"55.0\" cy=\"55.622023742033434\" r=\"1.6\" fill=\"#2a6851\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"55.0\" cy=\"35.622023742033434\" r=\"1.6\" fill=\"#2a6851\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"55.0\" cy=\"15.622023742033434\" r=\"1.6\" fill=\"#2a6851\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /></svg>"
+    }
+  },
+  "limitations": [
+    "Open bottom; no floor or chimney. Doors and windows are printed decorations, not cut-outs.",
+    "Fixed preset dimensions. Physical assembly NOT_TESTED."
+  ]
+}

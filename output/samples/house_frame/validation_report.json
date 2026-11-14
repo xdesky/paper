@@ -1,0 +1,228 @@
+{
+  "version": "1.2.0",
+  "model_id": "PPM-HOUSE-WALL-120x90x180",
+  "model_geometry_sha256": "2c38be0b63432f961589455ebdb0e52213b3821f29821ebf878ce15e00d1c6f1",
+  "overall_status": "PASS",
+  "summary": {
+    "model": {
+      "type": "open_house_wall_frame",
+      "width_mm": 120,
+      "depth_mm": 90,
+      "wall_height_mm": 180,
+      "name": "House wall frame 120x90x180 mm",
+      "open_top": true,
+      "open_bottom": true
+    },
+    "faces_or_tiles": 4,
+    "cut_pieces": 2,
+    "sheets": 2,
+    "fold_hinges": 2,
+    "flat_continuous_joins": 0,
+    "glue_seams": 2,
+    "total_seams": 4,
+    "glue_saved": 2,
+    "eligible_hinge_candidates": 4,
+    "limitation": "All joined wall folds are uncut geometrically; physical trial remains pending."
+  },
+  "tests": [
+    {
+      "name": "all_panels_placed_exactly_once",
+      "status": "PASS",
+      "detail": "4 panels"
+    },
+    {
+      "name": "all_seams_have_two_distinct_mates",
+      "status": "PASS",
+      "detail": "4 seams"
+    },
+    {
+      "name": "seam_2d_lengths_match",
+      "status": "PASS",
+      "detail": "all seam lengths matched in millimetres"
+    },
+    {
+      "name": "seam_3d_endpoints_and_fold_angle",
+      "status": "PASS",
+      "detail": "3D seam endpoints agree with reverse winding and 0°/90° dihedral angle"
+    },
+    {
+      "name": "one_hinge_per_pair",
+      "status": "PASS",
+      "detail": "pairs each have one uncut center crease"
+    },
+    {
+      "name": "uncut_join_angles_valid",
+      "status": "PASS",
+      "detail": "uncut joints are flat 0° or fold 90°"
+    },
+    {
+      "name": "uncut_joint_tabs_removed",
+      "status": "PASS",
+      "detail": "no tab on continuous folds"
+    },
+    {
+      "name": "exactly_one_tab_per_glued_seam",
+      "status": "PASS",
+      "detail": "one glue flap per remaining seam"
+    },
+    {
+      "name": "connected_cut_contours_valid",
+      "status": "PASS",
+      "detail": "all merged cut boundaries are single valid polygons"
+    },
+    {
+      "name": "uncut_joint_endpoints_coincident",
+      "status": "PASS",
+      "detail": "two panels share exactly the same uncut crease"
+    },
+    {
+      "name": "no_printed_shape_overlap",
+      "status": "PASS",
+      "detail": "2 pieces"
+    },
+    {
+      "name": "all_cut_contours_in_printable_area",
+      "status": "PASS",
+      "detail": "US Letter 8 mm side margins, fixed header/footer"
+    },
+    {
+      "name": "units_geometry_area_conserved",
+      "status": "PASS",
+      "detail": "area equals face area plus glue tabs"
+    },
+    {
+      "name": "numbered_seam_codes_on_panels",
+      "status": "PASS",
+      "detail": "every seam has matching two-side code"
+    },
+    {
+      "name": "paper_size_exact",
+      "status": "PASS",
+      "detail": "physical US Letter media boxes"
+    },
+    {
+      "name": "pdf_page_count",
+      "status": "PASS",
+      "detail": "2 pages"
+    },
+    {
+      "name": "us_letter_vector_page_dimensions",
+      "status": "PASS",
+      "detail": [
+        [
+          215.9,
+          279.4
+        ],
+        [
+          215.9,
+          279.4
+        ]
+      ]
+    },
+    {
+      "name": "pdf_cut_paths_one_per_unit",
+      "status": "PASS",
+      "detail": {
+        "found": [
+          1,
+          1
+        ],
+        "expected": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "name": "pdf_cut_coordinates_match_source_mm",
+      "status": "PASS",
+      "detail": "exact cut geometry within 0.04 mm² symmetric difference"
+    },
+    {
+      "name": "pdf_hinge_vectors_exact_count",
+      "status": "PASS",
+      "detail": {
+        "found": [
+          1,
+          1
+        ],
+        "expected": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "name": "pdf_40mm_calibration",
+      "status": "PASS",
+      "detail": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "svg_one_page_per_letter",
+      "status": "PASS",
+      "detail": "2 SVGs"
+    },
+    {
+      "name": "svg_physical_dimensions",
+      "status": "PASS",
+      "detail": "mm page widths and heights"
+    },
+    {
+      "name": "svg_cut_contour_count",
+      "status": "PASS",
+      "detail": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "svg_cut_coordinates_match_source_mm",
+      "status": "PASS",
+      "detail": "exact SVG cut geometry within 0.04 mm² symmetric difference"
+    },
+    {
+      "name": "svg_hinge_count",
+      "status": "PASS",
+      "detail": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "pdf_seam_labels_exactly_twice",
+      "status": "PASS",
+      "detail": "Reopened PDF seam labels"
+    },
+    {
+      "name": "pdf_text_within_page_margins",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "name": "guide_text_bounds_and_complete_legend",
+      "status": "PASS",
+      "detail": "All four legend entries present within page"
+    },
+    {
+      "name": "svg_40mm_calibration",
+      "status": "PASS",
+      "detail": [
+        true,
+        true
+      ]
+    },
+    {
+      "name": "model_spec_schema",
+      "status": "PASS",
+      "detail": "Upstream schema 1.2.0"
+    }
+  ],
+  "physical_assembly": "NOT_TESTED",
+  "project_id": "sample-house_frame",
+  "revision": 1,
+  "geometry_sha256": "2c38be0b63432f961589455ebdb0e52213b3821f29821ebf878ce15e00d1c6f1",
+  "source_spec_hash": "f48261b1e05476b0ca3e302d529a6ee817455b396eee33ef683a92fad2107545"
+}

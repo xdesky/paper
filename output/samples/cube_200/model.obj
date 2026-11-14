@@ -1,0 +1,28 @@
+# {"model_id": "PPM-CUBE-200", "version": "1.2.0", "project_id": "sample-cube_200", "revision": 1, "geometry_sha256": "e00ecaa1fd894fe01b53ed0e3cebfc83fef4c51bfd28d6e397af83da612d5ebf", "source_spec_hash": "fcf1a36d892dc5c864bf9c289d388eac8f06ef2467e33784ee901295432cbe6d"}
+# Papercraft Engine 1.1.0, cube 200 mm - outward winding
+v -100.0000000 -100.0000000 -100.0000000
+v -100.0000000 -100.0000000 100.0000000
+v -100.0000000 100.0000000 -100.0000000
+v -100.0000000 100.0000000 100.0000000
+v 100.0000000 -100.0000000 -100.0000000
+v 100.0000000 -100.0000000 100.0000000
+v 100.0000000 100.0000000 -100.0000000
+v 100.0000000 100.0000000 100.0000000
+
+g FRONT
+f 1 5 6 2
+
+g RIGHT
+f 5 7 8 6
+
+g BACK
+f 7 3 4 8
+
+g LEFT
+f 3 1 2 4
+
+g TOP
+f 2 6 8 4
+
+g BOTTOM
+f 3 7 5 1

@@ -1,0 +1,2111 @@
+{
+  "schema_version": "1.2.0",
+  "model_id": "PPM-CUBE-300",
+  "version": "1.2.0",
+  "locked": true,
+  "units": "mm",
+  "paper": {
+    "name": "US Letter",
+    "page_mm": [
+      215.9,
+      279.4
+    ],
+    "scale": 1.0,
+    "printable_body_mm": [
+      8.0,
+      20.0,
+      207.9,
+      255.0
+    ],
+    "tab_depth_mm": 7.0
+  },
+  "geometry_source": "deterministic parametric 3D faces, not generated image",
+  "geometry_sha256": "9bc8d667fbfd8d0ba5cc0a43697b5aa9ae0ca86bd7b20d09114c6262c58d3bfd",
+  "geometry": {
+    "model": {
+      "type": "cube",
+      "side_mm": 300,
+      "panel_grid": [
+        2,
+        2
+      ],
+      "name": "Cube 300 mm"
+    },
+    "panels": [
+      {
+        "id": "FR-R1C1",
+        "face": "FRONT",
+        "width_mm": 150.0,
+        "height_mm": 150.0,
+        "origin_uv_mm": [
+          0.0,
+          0.0
+        ],
+        "edge_codes": {
+          "N": "F001",
+          "E": "F002",
+          "W": "E01.01",
+          "S": "E03.01"
+        },
+        "vertices_3d_mm": [
+          [
+            -150.0,
+            -150.0,
+            -150.0
+          ],
+          [
+            0.0,
+            -150.0,
+            -150.0
+          ],
+          [
+            0.0,
+            -150.0,
+            0.0
+          ],
+          [
+            -150.0,
+            -150.0,
+            0.0
+          ]
+        ]
+      },
+      {
+        "id": "FR-R1C2",
+        "face": "FRONT",
+        "width_mm": 150.0,
+        "height_mm": 150.0,
+        "origin_uv_mm": [
+          150.0,
+          0.0
+        ],
+        "edge_codes": {
+          "W": "F002",
+          "N": "F004",
+          "S": "E03.02",
+          "E": "E09.01"
+        },
+        "vertices_3d_mm": [
+          [
+            0.0,
+            -150.0,
+            -150.0
+          ],
+          [
+            150.0,
+            -150.0,
+            -150.0
+          ],
+          [
+            150.0,
+            -150.0,
+            0.0
+          ],
+          [
+            0.0,
+            -150.0,
+            0.0
+          ]
+        ]
+      },
+      {
+        "id": "FR-R2C1",
+        "face": "FRONT",
+        "width_mm": 150.0,
+        "height_mm": 150.0,
+        "origin_uv_mm": [
+          0.0,
+          150.0
+        ],
+        "edge_codes": {
+          "S": "F001",
+          "E": "F003",
+          "W": "E01.02",
+          "N": "E05.01"
+        },
+        "vertices_3d_mm": [
+          [
+            -150.0,
+            -150.0,
+            0.0
+          ],
+          [
+            0.0,
+            -150.0,
+            0.0
+          ],
+          [
+            0.0,
+            -150.0,
+            150.0
+          ],
+          [
+            -150.0,
+            -150.0,
+            150.0
+          ]
+        ]
+      },
+      {
+        "id": "FR-R2C2",
+        "face": "FRONT",
+        "width_mm": 150.0,
+        "height_mm": 150.0,
+        "origin_uv_mm": [
+          150.0,
+          150.0
+        ],
+        "edge_codes": {
+          "W": "F003",
+          "S": "F004",
+          "N": "E05.02",
+          "E": "E09.02"
+        },
+        "vertices_3d_mm": [
+          [
+            0.0,
+            -150.0,
+            0.0
+          ],
+          [
+            150.0,
+            -150.0,
+            0.0
+          ],
+          [
+            150.0,
+            -150.0,
+            150.0
+          ],
+          [
+            0.0,
+            -150.0,
+            150.0
+          ]
+        ]
+      },
+      {
+        "id": "RI-R1C1",
+        "face": "RIGHT",
+        "width_mm": 150.0,
+        "height_mm": 150.0,
+        "origin_uv_mm": [
+          0.0,
+          0.0
+        ],
+        "edge_codes": {
+          "N": "F005",
+          "E": "F006",
+          "W": "E09.01",
+          "S": "E10.01"
+        },
+        "vertices_3d_mm": [
+          [
+            150.0,
+            -150.0,
+            -150.0
+          ],
+          [
+            150.0,
+            0.0,
+            -150.0
+          ],
+          [
+            150.0,
+            0.0,
+            0.0
+          ],
+          [
+            150.0,
+            -150.0,
+            0.0
+          ]
+        ]
+      },
+      {
+        "id": "RI-R1C2",
+        "face": "RIGHT",
+        "width_mm": 150.0,
+        "height_mm": 150.0,
+        "origin_uv_mm": [
+          150.0,
+          0.0
+        ],
+        "edge_codes": {
+          "W": "F006",
+          "N": "F008",
+          "S": "E10.02",
+          "E": "E12.01"
+        },
+        "vertices_3d_mm": [
+          [
+            150.0,
+            0.0,
+            -150.0
+          ],
+          [
+            150.0,
+            150.0,
+            -150.0
+          ],
+          [
+            150.0,
+            150.0,
+            0.0
+          ],
+          [
+            150.0,
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      {
+        "id": "RI-R2C1",
+        "face": "RIGHT",
+        "width_mm": 150.0,
+        "height_mm": 150.0,
+        "origin_uv_mm": [
+          0.0,
+          150.0
+        ],
+        "edge_codes": {
+          "S": "F005",
+          "E": "F007",
+          "W": "E09.02",
+          "N": "E11.01"
+        },
+        "vertices_3d_mm": [
+          [
+            150.0,
+            -150.0,
+            0.0
+          ],
+          [
+            150.0,
+            0.0,
+            0.0
+          ],
+          [
+            150.0,
+            0.0,
+            150.0
+          ],
+          [
+            150.0,
+            -150.0,
+            150.0
+          ]
+        ]
+      },
+      {
+        "id": "RI-R2C2",
+        "face": "RIGHT",
+        "width_mm": 150.0,
+        "height_mm": 150.0,
+        "origin_uv_mm": [
+          150.0,
+          150.0
+        ],
+        "edge_codes": {
+          "W": "F007",
+          "S": "F008",
+          "N": "E11.02",
+          "E": "E12.02"
+        },
+        "vertices_3d_mm": [
+          [
+            150.0,
+            0.0,
+            0.0
+          ],
+          [
+            150.0,
+            150.0,
+            0.0
+          ],
+          [
+            150.0,
+            150.0,
+            150.0
+          ],
+          [
+            150.0,
+            0.0,
+            150.0
+          ]
+        ]
+      },
+      {
+        "id": "BA-R1C1",
+        "face": "BACK",
+        "width_mm": 150.0,
+        "height_mm": 150.0,
+        "origin_uv_mm": [
+          0.0,
+          0.0
+        ],
+        "edge_codes": {
+          "E": "F010",
+          "N": "F012",
+          "S": "E07.02",
+          "W": "E12.01"
+        },
+        "vertices_3d_mm": [
+          [
+            150.0,
+            150.0,
+            -150.0
+          ],
+          [
+            0.0,
+            150.0,
+            -150.0
+          ],
+          [
+            0.0,
+            150.0,
+            0.0
+          ],
+          [
+            150.0,
+            150.0,
+            0.0
+          ]
+        ]
+      },
+      {
+        "id": "BA-R1C2",
+        "face": "BACK",
+        "width_mm": 150.0,
+        "height_mm": 150.0,
+        "origin_uv_mm": [
+          150.0,
+          0.0
+        ],
+        "edge_codes": {
+          "N": "F009",
+          "W": "F010",
+          "E": "E06.01",
+          "S": "E07.01"
+        },
+        "vertices_3d_mm": [
+          [
+            0.0,
+            150.0,
+            -150.0
+          ],
+          [
+            -150.0,
+            150.0,
+            -150.0
+          ],
+          [
+            -150.0,
+            150.0,
+            0.0
+          ],
+          [
+            0.0,
+            150.0,
+            0.0
+          ]
+        ]
+      },
+      {
+        "id": "BA-R2C1",
+        "face": "BACK",
+        "width_mm": 150.0,
+        "height_mm": 150.0,
+        "origin_uv_mm": [
+          0.0,
+          150.0
+        ],
+        "edge_codes": {
+          "E": "F011",
+          "S": "F012",
+          "N": "E08.02",
+          "W": "E12.02"
+        },
+        "vertices_3d_mm": [
+          [
+            150.0,
+            150.0,
+            0.0
+          ],
+          [
+            0.0,
+            150.0,
+            0.0
+          ],
+          [
+            0.0,
+            150.0,
+            150.0
+          ],
+          [
+            150.0,
+            150.0,
+            150.0
+          ]
+        ]
+      },
+      {
+        "id": "BA-R2C2",
+        "face": "BACK",
+        "width_mm": 150.0,
+        "height_mm": 150.0,
+        "origin_uv_mm": [
+          150.0,
+          150.0
+        ],
+        "edge_codes": {
+          "S": "F009",
+          "W": "F011",
+          "E": "E06.02",
+          "N": "E08.01"
+        },
+        "vertices_3d_mm": [
+          [
+            0.0,
+            150.0,
+            0.0
+          ],
+          [
+            -150.0,
+            150.0,
+            0.0
+          ],
+          [
+            -150.0,
+            150.0,
+            150.0
+          ],
+          [
+            0.0,
+            150.0,
+            150.0
+          ]
+        ]
+      },
+      {
+        "id": "LE-R1C1",
+        "face": "LEFT",
+        "width_mm": 150.0,
+        "height_mm": 150.0,
+        "origin_uv_mm": [
+          0.0,
+          0.0
+        ],
+        "edge_codes": {
+          "E": "F014",
+          "N": "F016",
+          "S": "E02.02",
+          "W": "E06.01"
+        },
+        "vertices_3d_mm": [
+          [
+            -150.0,
+            150.0,
+            -150.0
+          ],
+          [
+            -150.0,
+            0.0,
+            -150.0
+          ],
+          [
+            -150.0,
+            0.0,
+            0.0
+          ],
+          [
+            -150.0,
+            150.0,
+            0.0
+          ]
+        ]
+      },
+      {
+        "id": "LE-R1C2",
+        "face": "LEFT",
+        "width_mm": 150.0,
+        "height_mm": 150.0,
+        "origin_uv_mm": [
+          150.0,
+          0.0
+        ],
+        "edge_codes": {
+          "N": "F013",
+          "W": "F014",
+          "E": "E01.01",
+          "S": "E02.01"
+        },
+        "vertices_3d_mm": [
+          [
+            -150.0,
+            0.0,
+            -150.0
+          ],
+          [
+            -150.0,
+            -150.0,
+            -150.0
+          ],
+          [
+            -150.0,
+            -150.0,
+            0.0
+          ],
+          [
+            -150.0,
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      {
+        "id": "LE-R2C1",
+        "face": "LEFT",
+        "width_mm": 150.0,
+        "height_mm": 150.0,
+        "origin_uv_mm": [
+          0.0,
+          150.0
+        ],
+        "edge_codes": {
+          "E": "F015",
+          "S": "F016",
+          "N": "E04.02",
+          "W": "E06.02"
+        },
+        "vertices_3d_mm": [
+          [
+            -150.0,
+            150.0,
+            0.0
+          ],
+          [
+            -150.0,
+            0.0,
+            0.0
+          ],
+          [
+            -150.0,
+            0.0,
+            150.0
+          ],
+          [
+            -150.0,
+            150.0,
+            150.0
+          ]
+        ]
+      },
+      {
+        "id": "LE-R2C2",
+        "face": "LEFT",
+        "width_mm": 150.0,
+        "height_mm": 150.0,
+        "origin_uv_mm": [
+          150.0,
+          150.0
+        ],
+        "edge_codes": {
+          "S": "F013",
+          "W": "F015",
+          "E": "E01.02",
+          "N": "E04.01"
+        },
+        "vertices_3d_mm": [
+          [
+            -150.0,
+            0.0,
+            0.0
+          ],
+          [
+            -150.0,
+            -150.0,
+            0.0
+          ],
+          [
+            -150.0,
+            -150.0,
+            150.0
+          ],
+          [
+            -150.0,
+            0.0,
+            150.0
+          ]
+        ]
+      },
+      {
+        "id": "TO-R1C1",
+        "face": "TOP",
+        "width_mm": 150.0,
+        "height_mm": 150.0,
+        "origin_uv_mm": [
+          0.0,
+          0.0
+        ],
+        "edge_codes": {
+          "N": "F017",
+          "E": "F018",
+          "W": "E04.01",
+          "S": "E05.01"
+        },
+        "vertices_3d_mm": [
+          [
+            -150.0,
+            -150.0,
+            150.0
+          ],
+          [
+            0.0,
+            -150.0,
+            150.0
+          ],
+          [
+            0.0,
+            0.0,
+            150.0
+          ],
+          [
+            -150.0,
+            0.0,
+            150.0
+          ]
+        ]
+      },
+      {
+        "id": "TO-R1C2",
+        "face": "TOP",
+        "width_mm": 150.0,
+        "height_mm": 150.0,
+        "origin_uv_mm": [
+          150.0,
+          0.0
+        ],
+        "edge_codes": {
+          "W": "F018",
+          "N": "F020",
+          "S": "E05.02",
+          "E": "E11.01"
+        },
+        "vertices_3d_mm": [
+          [
+            0.0,
+            -150.0,
+            150.0
+          ],
+          [
+            150.0,
+            -150.0,
+            150.0
+          ],
+          [
+            150.0,
+            0.0,
+            150.0
+          ],
+          [
+            0.0,
+            0.0,
+            150.0
+          ]
+        ]
+      },
+      {
+        "id": "TO-R2C1",
+        "face": "TOP",
+        "width_mm": 150.0,
+        "height_mm": 150.0,
+        "origin_uv_mm": [
+          0.0,
+          150.0
+        ],
+        "edge_codes": {
+          "S": "F017",
+          "E": "F019",
+          "W": "E04.02",
+          "N": "E08.01"
+        },
+        "vertices_3d_mm": [
+          [
+            -150.0,
+            0.0,
+            150.0
+          ],
+          [
+            0.0,
+            0.0,
+            150.0
+          ],
+          [
+            0.0,
+            150.0,
+            150.0
+          ],
+          [
+            -150.0,
+            150.0,
+            150.0
+          ]
+        ]
+      },
+      {
+        "id": "TO-R2C2",
+        "face": "TOP",
+        "width_mm": 150.0,
+        "height_mm": 150.0,
+        "origin_uv_mm": [
+          150.0,
+          150.0
+        ],
+        "edge_codes": {
+          "W": "F019",
+          "S": "F020",
+          "N": "E08.02",
+          "E": "E11.02"
+        },
+        "vertices_3d_mm": [
+          [
+            0.0,
+            0.0,
+            150.0
+          ],
+          [
+            150.0,
+            0.0,
+            150.0
+          ],
+          [
+            150.0,
+            150.0,
+            150.0
+          ],
+          [
+            0.0,
+            150.0,
+            150.0
+          ]
+        ]
+      },
+      {
+        "id": "BO-R1C1",
+        "face": "BOTTOM",
+        "width_mm": 150.0,
+        "height_mm": 150.0,
+        "origin_uv_mm": [
+          0.0,
+          0.0
+        ],
+        "edge_codes": {
+          "N": "F021",
+          "E": "F023",
+          "W": "E02.02",
+          "S": "E07.01"
+        },
+        "vertices_3d_mm": [
+          [
+            -150.0,
+            150.0,
+            -150.0
+          ],
+          [
+            0.0,
+            150.0,
+            -150.0
+          ],
+          [
+            0.0,
+            0.0,
+            -150.0
+          ],
+          [
+            -150.0,
+            0.0,
+            -150.0
+          ]
+        ]
+      },
+      {
+        "id": "BO-R1C2",
+        "face": "BOTTOM",
+        "width_mm": 150.0,
+        "height_mm": 150.0,
+        "origin_uv_mm": [
+          150.0,
+          0.0
+        ],
+        "edge_codes": {
+          "W": "F023",
+          "N": "F024",
+          "S": "E07.02",
+          "E": "E10.02"
+        },
+        "vertices_3d_mm": [
+          [
+            0.0,
+            150.0,
+            -150.0
+          ],
+          [
+            150.0,
+            150.0,
+            -150.0
+          ],
+          [
+            150.0,
+            0.0,
+            -150.0
+          ],
+          [
+            0.0,
+            0.0,
+            -150.0
+          ]
+        ]
+      },
+      {
+        "id": "BO-R2C1",
+        "face": "BOTTOM",
+        "width_mm": 150.0,
+        "height_mm": 150.0,
+        "origin_uv_mm": [
+          0.0,
+          150.0
+        ],
+        "edge_codes": {
+          "S": "F021",
+          "E": "F022",
+          "W": "E02.01",
+          "N": "E03.01"
+        },
+        "vertices_3d_mm": [
+          [
+            -150.0,
+            0.0,
+            -150.0
+          ],
+          [
+            0.0,
+            0.0,
+            -150.0
+          ],
+          [
+            0.0,
+            -150.0,
+            -150.0
+          ],
+          [
+            -150.0,
+            -150.0,
+            -150.0
+          ]
+        ]
+      },
+      {
+        "id": "BO-R2C2",
+        "face": "BOTTOM",
+        "width_mm": 150.0,
+        "height_mm": 150.0,
+        "origin_uv_mm": [
+          150.0,
+          150.0
+        ],
+        "edge_codes": {
+          "W": "F022",
+          "S": "F024",
+          "N": "E03.02",
+          "E": "E10.01"
+        },
+        "vertices_3d_mm": [
+          [
+            0.0,
+            0.0,
+            -150.0
+          ],
+          [
+            150.0,
+            0.0,
+            -150.0
+          ],
+          [
+            150.0,
+            -150.0,
+            -150.0
+          ],
+          [
+            0.0,
+            -150.0,
+            -150.0
+          ]
+        ]
+      }
+    ],
+    "seams": [
+      {
+        "id": "F001",
+        "kind": "flat_panel",
+        "length_mm": 150.0,
+        "fold_degrees": 0,
+        "mates": [
+          {
+            "panel": "FR-R1C1",
+            "edge": "N"
+          },
+          {
+            "panel": "FR-R2C1",
+            "edge": "S"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "F002",
+        "kind": "flat_panel",
+        "length_mm": 150.0,
+        "fold_degrees": 0,
+        "mates": [
+          {
+            "panel": "FR-R1C1",
+            "edge": "E"
+          },
+          {
+            "panel": "FR-R1C2",
+            "edge": "W"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "F003",
+        "kind": "flat_panel",
+        "length_mm": 150.0,
+        "fold_degrees": 0,
+        "mates": [
+          {
+            "panel": "FR-R2C1",
+            "edge": "E"
+          },
+          {
+            "panel": "FR-R2C2",
+            "edge": "W"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "F004",
+        "kind": "flat_panel",
+        "length_mm": 150.0,
+        "fold_degrees": 0,
+        "mates": [
+          {
+            "panel": "FR-R1C2",
+            "edge": "N"
+          },
+          {
+            "panel": "FR-R2C2",
+            "edge": "S"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "F005",
+        "kind": "flat_panel",
+        "length_mm": 150.0,
+        "fold_degrees": 0,
+        "mates": [
+          {
+            "panel": "RI-R1C1",
+            "edge": "N"
+          },
+          {
+            "panel": "RI-R2C1",
+            "edge": "S"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "F006",
+        "kind": "flat_panel",
+        "length_mm": 150.0,
+        "fold_degrees": 0,
+        "mates": [
+          {
+            "panel": "RI-R1C1",
+            "edge": "E"
+          },
+          {
+            "panel": "RI-R1C2",
+            "edge": "W"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "F007",
+        "kind": "flat_panel",
+        "length_mm": 150.0,
+        "fold_degrees": 0,
+        "mates": [
+          {
+            "panel": "RI-R2C1",
+            "edge": "E"
+          },
+          {
+            "panel": "RI-R2C2",
+            "edge": "W"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "F008",
+        "kind": "flat_panel",
+        "length_mm": 150.0,
+        "fold_degrees": 0,
+        "mates": [
+          {
+            "panel": "RI-R1C2",
+            "edge": "N"
+          },
+          {
+            "panel": "RI-R2C2",
+            "edge": "S"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "F009",
+        "kind": "flat_panel",
+        "length_mm": 150.0,
+        "fold_degrees": 0,
+        "mates": [
+          {
+            "panel": "BA-R1C2",
+            "edge": "N"
+          },
+          {
+            "panel": "BA-R2C2",
+            "edge": "S"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "F010",
+        "kind": "flat_panel",
+        "length_mm": 150.0,
+        "fold_degrees": 0,
+        "mates": [
+          {
+            "panel": "BA-R1C1",
+            "edge": "E"
+          },
+          {
+            "panel": "BA-R1C2",
+            "edge": "W"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "F011",
+        "kind": "flat_panel",
+        "length_mm": 150.0,
+        "fold_degrees": 0,
+        "mates": [
+          {
+            "panel": "BA-R2C1",
+            "edge": "E"
+          },
+          {
+            "panel": "BA-R2C2",
+            "edge": "W"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "F012",
+        "kind": "flat_panel",
+        "length_mm": 150.0,
+        "fold_degrees": 0,
+        "mates": [
+          {
+            "panel": "BA-R1C1",
+            "edge": "N"
+          },
+          {
+            "panel": "BA-R2C1",
+            "edge": "S"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "F013",
+        "kind": "flat_panel",
+        "length_mm": 150.0,
+        "fold_degrees": 0,
+        "mates": [
+          {
+            "panel": "LE-R1C2",
+            "edge": "N"
+          },
+          {
+            "panel": "LE-R2C2",
+            "edge": "S"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "F014",
+        "kind": "flat_panel",
+        "length_mm": 150.0,
+        "fold_degrees": 0,
+        "mates": [
+          {
+            "panel": "LE-R1C1",
+            "edge": "E"
+          },
+          {
+            "panel": "LE-R1C2",
+            "edge": "W"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "F015",
+        "kind": "flat_panel",
+        "length_mm": 150.0,
+        "fold_degrees": 0,
+        "mates": [
+          {
+            "panel": "LE-R2C1",
+            "edge": "E"
+          },
+          {
+            "panel": "LE-R2C2",
+            "edge": "W"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "F016",
+        "kind": "flat_panel",
+        "length_mm": 150.0,
+        "fold_degrees": 0,
+        "mates": [
+          {
+            "panel": "LE-R1C1",
+            "edge": "N"
+          },
+          {
+            "panel": "LE-R2C1",
+            "edge": "S"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "F017",
+        "kind": "flat_panel",
+        "length_mm": 150.0,
+        "fold_degrees": 0,
+        "mates": [
+          {
+            "panel": "TO-R1C1",
+            "edge": "N"
+          },
+          {
+            "panel": "TO-R2C1",
+            "edge": "S"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "F018",
+        "kind": "flat_panel",
+        "length_mm": 150.0,
+        "fold_degrees": 0,
+        "mates": [
+          {
+            "panel": "TO-R1C1",
+            "edge": "E"
+          },
+          {
+            "panel": "TO-R1C2",
+            "edge": "W"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "F019",
+        "kind": "flat_panel",
+        "length_mm": 150.0,
+        "fold_degrees": 0,
+        "mates": [
+          {
+            "panel": "TO-R2C1",
+            "edge": "E"
+          },
+          {
+            "panel": "TO-R2C2",
+            "edge": "W"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "F020",
+        "kind": "flat_panel",
+        "length_mm": 150.0,
+        "fold_degrees": 0,
+        "mates": [
+          {
+            "panel": "TO-R1C2",
+            "edge": "N"
+          },
+          {
+            "panel": "TO-R2C2",
+            "edge": "S"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "F021",
+        "kind": "flat_panel",
+        "length_mm": 150.0,
+        "fold_degrees": 0,
+        "mates": [
+          {
+            "panel": "BO-R1C1",
+            "edge": "N"
+          },
+          {
+            "panel": "BO-R2C1",
+            "edge": "S"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "F022",
+        "kind": "flat_panel",
+        "length_mm": 150.0,
+        "fold_degrees": 0,
+        "mates": [
+          {
+            "panel": "BO-R2C1",
+            "edge": "E"
+          },
+          {
+            "panel": "BO-R2C2",
+            "edge": "W"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "F023",
+        "kind": "flat_panel",
+        "length_mm": 150.0,
+        "fold_degrees": 0,
+        "mates": [
+          {
+            "panel": "BO-R1C1",
+            "edge": "E"
+          },
+          {
+            "panel": "BO-R1C2",
+            "edge": "W"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "F024",
+        "kind": "flat_panel",
+        "length_mm": 150.0,
+        "fold_degrees": 0,
+        "mates": [
+          {
+            "panel": "BO-R1C2",
+            "edge": "N"
+          },
+          {
+            "panel": "BO-R2C2",
+            "edge": "S"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "E01.01",
+        "kind": "cube_corner",
+        "length_mm": 150.0,
+        "fold_degrees": 90,
+        "mates": [
+          {
+            "panel": "FR-R1C1",
+            "edge": "W"
+          },
+          {
+            "panel": "LE-R1C2",
+            "edge": "E"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "E01.02",
+        "kind": "cube_corner",
+        "length_mm": 150.0,
+        "fold_degrees": 90,
+        "mates": [
+          {
+            "panel": "FR-R2C1",
+            "edge": "W"
+          },
+          {
+            "panel": "LE-R2C2",
+            "edge": "E"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "E02.01",
+        "kind": "cube_corner",
+        "length_mm": 150.0,
+        "fold_degrees": 90,
+        "mates": [
+          {
+            "panel": "LE-R1C2",
+            "edge": "S"
+          },
+          {
+            "panel": "BO-R2C1",
+            "edge": "W"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "E02.02",
+        "kind": "cube_corner",
+        "length_mm": 150.0,
+        "fold_degrees": 90,
+        "mates": [
+          {
+            "panel": "LE-R1C1",
+            "edge": "S"
+          },
+          {
+            "panel": "BO-R1C1",
+            "edge": "W"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "E03.01",
+        "kind": "cube_corner",
+        "length_mm": 150.0,
+        "fold_degrees": 90,
+        "mates": [
+          {
+            "panel": "FR-R1C1",
+            "edge": "S"
+          },
+          {
+            "panel": "BO-R2C1",
+            "edge": "N"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "E03.02",
+        "kind": "cube_corner",
+        "length_mm": 150.0,
+        "fold_degrees": 90,
+        "mates": [
+          {
+            "panel": "FR-R1C2",
+            "edge": "S"
+          },
+          {
+            "panel": "BO-R2C2",
+            "edge": "N"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "E04.01",
+        "kind": "cube_corner",
+        "length_mm": 150.0,
+        "fold_degrees": 90,
+        "mates": [
+          {
+            "panel": "LE-R2C2",
+            "edge": "N"
+          },
+          {
+            "panel": "TO-R1C1",
+            "edge": "W"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "E04.02",
+        "kind": "cube_corner",
+        "length_mm": 150.0,
+        "fold_degrees": 90,
+        "mates": [
+          {
+            "panel": "LE-R2C1",
+            "edge": "N"
+          },
+          {
+            "panel": "TO-R2C1",
+            "edge": "W"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "E05.01",
+        "kind": "cube_corner",
+        "length_mm": 150.0,
+        "fold_degrees": 90,
+        "mates": [
+          {
+            "panel": "FR-R2C1",
+            "edge": "N"
+          },
+          {
+            "panel": "TO-R1C1",
+            "edge": "S"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "E05.02",
+        "kind": "cube_corner",
+        "length_mm": 150.0,
+        "fold_degrees": 90,
+        "mates": [
+          {
+            "panel": "FR-R2C2",
+            "edge": "N"
+          },
+          {
+            "panel": "TO-R1C2",
+            "edge": "S"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "E06.01",
+        "kind": "cube_corner",
+        "length_mm": 150.0,
+        "fold_degrees": 90,
+        "mates": [
+          {
+            "panel": "BA-R1C2",
+            "edge": "E"
+          },
+          {
+            "panel": "LE-R1C1",
+            "edge": "W"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "E06.02",
+        "kind": "cube_corner",
+        "length_mm": 150.0,
+        "fold_degrees": 90,
+        "mates": [
+          {
+            "panel": "BA-R2C2",
+            "edge": "E"
+          },
+          {
+            "panel": "LE-R2C1",
+            "edge": "W"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "E07.01",
+        "kind": "cube_corner",
+        "length_mm": 150.0,
+        "fold_degrees": 90,
+        "mates": [
+          {
+            "panel": "BA-R1C2",
+            "edge": "S"
+          },
+          {
+            "panel": "BO-R1C1",
+            "edge": "S"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "E07.02",
+        "kind": "cube_corner",
+        "length_mm": 150.0,
+        "fold_degrees": 90,
+        "mates": [
+          {
+            "panel": "BA-R1C1",
+            "edge": "S"
+          },
+          {
+            "panel": "BO-R1C2",
+            "edge": "S"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "E08.01",
+        "kind": "cube_corner",
+        "length_mm": 150.0,
+        "fold_degrees": 90,
+        "mates": [
+          {
+            "panel": "BA-R2C2",
+            "edge": "N"
+          },
+          {
+            "panel": "TO-R2C1",
+            "edge": "N"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "E08.02",
+        "kind": "cube_corner",
+        "length_mm": 150.0,
+        "fold_degrees": 90,
+        "mates": [
+          {
+            "panel": "BA-R2C1",
+            "edge": "N"
+          },
+          {
+            "panel": "TO-R2C2",
+            "edge": "N"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "E09.01",
+        "kind": "cube_corner",
+        "length_mm": 150.0,
+        "fold_degrees": 90,
+        "mates": [
+          {
+            "panel": "FR-R1C2",
+            "edge": "E"
+          },
+          {
+            "panel": "RI-R1C1",
+            "edge": "W"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "E09.02",
+        "kind": "cube_corner",
+        "length_mm": 150.0,
+        "fold_degrees": 90,
+        "mates": [
+          {
+            "panel": "FR-R2C2",
+            "edge": "E"
+          },
+          {
+            "panel": "RI-R2C1",
+            "edge": "W"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "E10.01",
+        "kind": "cube_corner",
+        "length_mm": 150.0,
+        "fold_degrees": 90,
+        "mates": [
+          {
+            "panel": "RI-R1C1",
+            "edge": "S"
+          },
+          {
+            "panel": "BO-R2C2",
+            "edge": "E"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "E10.02",
+        "kind": "cube_corner",
+        "length_mm": 150.0,
+        "fold_degrees": 90,
+        "mates": [
+          {
+            "panel": "RI-R1C2",
+            "edge": "S"
+          },
+          {
+            "panel": "BO-R1C2",
+            "edge": "E"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "E11.01",
+        "kind": "cube_corner",
+        "length_mm": 150.0,
+        "fold_degrees": 90,
+        "mates": [
+          {
+            "panel": "RI-R2C1",
+            "edge": "N"
+          },
+          {
+            "panel": "TO-R1C2",
+            "edge": "E"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "E11.02",
+        "kind": "cube_corner",
+        "length_mm": 150.0,
+        "fold_degrees": 90,
+        "mates": [
+          {
+            "panel": "RI-R2C2",
+            "edge": "N"
+          },
+          {
+            "panel": "TO-R2C2",
+            "edge": "E"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "E12.01",
+        "kind": "cube_corner",
+        "length_mm": 150.0,
+        "fold_degrees": 90,
+        "mates": [
+          {
+            "panel": "RI-R1C2",
+            "edge": "E"
+          },
+          {
+            "panel": "BA-R1C1",
+            "edge": "W"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "E12.02",
+        "kind": "cube_corner",
+        "length_mm": 150.0,
+        "fold_degrees": 90,
+        "mates": [
+          {
+            "panel": "RI-R2C2",
+            "edge": "E"
+          },
+          {
+            "panel": "BA-R2C1",
+            "edge": "W"
+          }
+        ],
+        "hinged_uncut": false
+      }
+    ]
+  },
+  "unfold_strategy": "Prefer pairs of genuine adjacent angled faces on the same sheet with one uncut 90-degree crease; fallback to separate panels when too large",
+  "print_units": [
+    {
+      "panel_ids": [
+        "BA-R1C1"
+      ],
+      "sheet_number": 2,
+      "fold_code": null,
+      "orientation_degrees": 0,
+      "bounds_mm": [
+        8.0,
+        20.0,
+        165.0,
+        184.0
+      ]
+    },
+    {
+      "panel_ids": [
+        "BA-R1C2"
+      ],
+      "sheet_number": 3,
+      "fold_code": null,
+      "orientation_degrees": 0,
+      "bounds_mm": [
+        8.0,
+        20.0,
+        165.0,
+        184.0
+      ]
+    },
+    {
+      "panel_ids": [
+        "BA-R2C1"
+      ],
+      "sheet_number": 9,
+      "fold_code": null,
+      "orientation_degrees": 0,
+      "bounds_mm": [
+        8.0,
+        20.0,
+        165.0,
+        177.0
+      ]
+    },
+    {
+      "panel_ids": [
+        "BA-R2C2"
+      ],
+      "sheet_number": 10,
+      "fold_code": null,
+      "orientation_degrees": 0,
+      "bounds_mm": [
+        8.0,
+        20.0,
+        165.0,
+        177.0
+      ]
+    },
+    {
+      "panel_ids": [
+        "BO-R1C1"
+      ],
+      "sheet_number": 11,
+      "fold_code": null,
+      "orientation_degrees": 0,
+      "bounds_mm": [
+        8.0,
+        20.0,
+        165.0,
+        177.0
+      ]
+    },
+    {
+      "panel_ids": [
+        "BO-R1C2"
+      ],
+      "sheet_number": 18,
+      "fold_code": null,
+      "orientation_degrees": 0,
+      "bounds_mm": [
+        8.0,
+        20.0,
+        158.0,
+        177.0
+      ]
+    },
+    {
+      "panel_ids": [
+        "BO-R2C1"
+      ],
+      "sheet_number": 19,
+      "fold_code": null,
+      "orientation_degrees": 0,
+      "bounds_mm": [
+        8.0,
+        20.0,
+        165.0,
+        170.0
+      ]
+    },
+    {
+      "panel_ids": [
+        "BO-R2C2"
+      ],
+      "sheet_number": 23,
+      "fold_code": null,
+      "orientation_degrees": 0,
+      "bounds_mm": [
+        8.0,
+        20.0,
+        158.0,
+        170.0
+      ]
+    },
+    {
+      "panel_ids": [
+        "FR-R1C1"
+      ],
+      "sheet_number": 1,
+      "fold_code": null,
+      "orientation_degrees": 0,
+      "bounds_mm": [
+        8.0,
+        20.0,
+        172.0,
+        184.0
+      ]
+    },
+    {
+      "panel_ids": [
+        "FR-R1C2"
+      ],
+      "sheet_number": 4,
+      "fold_code": null,
+      "orientation_degrees": 0,
+      "bounds_mm": [
+        8.0,
+        20.0,
+        165.0,
+        184.0
+      ]
+    },
+    {
+      "panel_ids": [
+        "FR-R2C1"
+      ],
+      "sheet_number": 5,
+      "fold_code": null,
+      "orientation_degrees": 0,
+      "bounds_mm": [
+        8.0,
+        20.0,
+        172.0,
+        177.0
+      ]
+    },
+    {
+      "panel_ids": [
+        "FR-R2C2"
+      ],
+      "sheet_number": 12,
+      "fold_code": null,
+      "orientation_degrees": 0,
+      "bounds_mm": [
+        8.0,
+        20.0,
+        165.0,
+        177.0
+      ]
+    },
+    {
+      "panel_ids": [
+        "LE-R1C1"
+      ],
+      "sheet_number": 6,
+      "fold_code": null,
+      "orientation_degrees": 0,
+      "bounds_mm": [
+        8.0,
+        20.0,
+        165.0,
+        184.0
+      ]
+    },
+    {
+      "panel_ids": [
+        "LE-R1C2"
+      ],
+      "sheet_number": 13,
+      "fold_code": null,
+      "orientation_degrees": 0,
+      "bounds_mm": [
+        8.0,
+        20.0,
+        158.0,
+        184.0
+      ]
+    },
+    {
+      "panel_ids": [
+        "LE-R2C1"
+      ],
+      "sheet_number": 14,
+      "fold_code": null,
+      "orientation_degrees": 0,
+      "bounds_mm": [
+        8.0,
+        20.0,
+        165.0,
+        177.0
+      ]
+    },
+    {
+      "panel_ids": [
+        "LE-R2C2"
+      ],
+      "sheet_number": 20,
+      "fold_code": null,
+      "orientation_degrees": 0,
+      "bounds_mm": [
+        8.0,
+        20.0,
+        158.0,
+        177.0
+      ]
+    },
+    {
+      "panel_ids": [
+        "RI-R1C1"
+      ],
+      "sheet_number": 7,
+      "fold_code": null,
+      "orientation_degrees": 0,
+      "bounds_mm": [
+        8.0,
+        20.0,
+        165.0,
+        184.0
+      ]
+    },
+    {
+      "panel_ids": [
+        "RI-R1C2"
+      ],
+      "sheet_number": 8,
+      "fold_code": null,
+      "orientation_degrees": 0,
+      "bounds_mm": [
+        8.0,
+        20.0,
+        165.0,
+        184.0
+      ]
+    },
+    {
+      "panel_ids": [
+        "RI-R2C1"
+      ],
+      "sheet_number": 15,
+      "fold_code": null,
+      "orientation_degrees": 0,
+      "bounds_mm": [
+        8.0,
+        20.0,
+        165.0,
+        177.0
+      ]
+    },
+    {
+      "panel_ids": [
+        "RI-R2C2"
+      ],
+      "sheet_number": 16,
+      "fold_code": null,
+      "orientation_degrees": 0,
+      "bounds_mm": [
+        8.0,
+        20.0,
+        165.0,
+        177.0
+      ]
+    },
+    {
+      "panel_ids": [
+        "TO-R1C1"
+      ],
+      "sheet_number": 17,
+      "fold_code": null,
+      "orientation_degrees": 0,
+      "bounds_mm": [
+        8.0,
+        20.0,
+        165.0,
+        177.0
+      ]
+    },
+    {
+      "panel_ids": [
+        "TO-R1C2"
+      ],
+      "sheet_number": 21,
+      "fold_code": null,
+      "orientation_degrees": 0,
+      "bounds_mm": [
+        8.0,
+        20.0,
+        158.0,
+        177.0
+      ]
+    },
+    {
+      "panel_ids": [
+        "TO-R2C1"
+      ],
+      "sheet_number": 22,
+      "fold_code": null,
+      "orientation_degrees": 0,
+      "bounds_mm": [
+        8.0,
+        20.0,
+        165.0,
+        170.0
+      ]
+    },
+    {
+      "panel_ids": [
+        "TO-R2C2"
+      ],
+      "sheet_number": 24,
+      "fold_code": null,
+      "orientation_degrees": 0,
+      "bounds_mm": [
+        8.0,
+        20.0,
+        158.0,
+        170.0
+      ]
+    }
+  ],
+  "sheet_count": 24,
+  "physical_assembly": "NOT_TESTED",
+  "project_id": "sample-cube_300",
+  "revision": 1,
+  "source_spec_hash": "a3d86048aba471bb79bb59a49af7b709ee2869be5d124bca3786e265895872c3"
+}

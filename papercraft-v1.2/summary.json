@@ -1,0 +1,86 @@
+[
+  {
+    "model": {
+      "type": "cube",
+      "side_mm": 100,
+      "panel_grid": [
+        1,
+        1
+      ],
+      "name": "Cube 100 mm"
+    },
+    "faces_or_tiles": 6,
+    "cut_pieces": 3,
+    "sheets": 3,
+    "fold_hinges": 3,
+    "flat_continuous_joins": 0,
+    "glue_seams": 9,
+    "total_seams": 12,
+    "glue_saved": 3,
+    "eligible_hinge_candidates": 12,
+    "limitation": "All joined wall folds are uncut geometrically; physical trial remains pending."
+  },
+  {
+    "model": {
+      "type": "cube",
+      "side_mm": 200,
+      "panel_grid": [
+        2,
+        2
+      ],
+      "name": "Cube 200 mm"
+    },
+    "faces_or_tiles": 24,
+    "cut_pieces": 12,
+    "sheets": 12,
+    "fold_hinges": 8,
+    "flat_continuous_joins": 4,
+    "glue_seams": 36,
+    "total_seams": 48,
+    "glue_saved": 12,
+    "eligible_hinge_candidates": 28,
+    "limitation": "All joined wall folds are uncut geometrically; physical trial remains pending."
+  },
+  {
+    "model": {
+      "type": "cube",
+      "side_mm": 300,
+      "panel_grid": [
+        2,
+        2
+      ],
+      "name": "Cube 300 mm"
+    },
+    "faces_or_tiles": 24,
+    "cut_pieces": 24,
+    "sheets": 24,
+    "fold_hinges": 0,
+    "flat_continuous_joins": 0,
+    "glue_seams": 48,
+    "total_seams": 48,
+    "glue_saved": 0,
+    "eligible_hinge_candidates": 0,
+    "limitation": "No 150x150 mm paired tiles fit one US Letter sheet without splitting; retained glue-friendly 2x2 grid and avoided a worse 3x3 split."
+  },
+  {
+    "model": {
+      "type": "open_house_wall_frame",
+      "width_mm": 120,
+      "depth_mm": 90,
+      "wall_height_mm": 180,
+      "name": "House wall frame 120x90x180 mm",
+      "open_top": true,
+      "open_bottom": true
+    },
+    "faces_or_tiles": 4,
+    "cut_pieces": 2,
+    "sheets": 2,
+    "fold_hinges": 2,
+    "flat_continuous_joins": 0,
+    "glue_seams": 2,
+    "total_seams": 4,
+    "glue_saved": 2,
+    "eligible_hinge_candidates": 4,
+    "limitation": "All joined wall folds are uncut geometrically; physical trial remains pending."
+  }
+]

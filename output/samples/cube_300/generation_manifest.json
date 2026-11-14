@@ -1,0 +1,331 @@
+{
+  "model_id": "PPM-CUBE-300",
+  "version": "1.2.0",
+  "project_id": "sample-cube_300",
+  "revision": 1,
+  "geometry_sha256": "9bc8d667fbfd8d0ba5cc0a43697b5aa9ae0ca86bd7b20d09114c6262c58d3bfd",
+  "source_spec_hash": "a3d86048aba471bb79bb59a49af7b709ee2869be5d124bca3786e265895872c3",
+  "input": {
+    "project_id": "sample-cube_300",
+    "revision": 1,
+    "preset": "cube_300",
+    "paper": "US Letter",
+    "scale": 1.0,
+    "engine_version": "1.2.0"
+  },
+  "algorithm": "papercraft-v1.2 paired fold-first + shelf packing (heuristic)",
+  "qa_status": "PASS",
+  "physical_assembly": "NOT_TESTED",
+  "artifacts": [
+    {
+      "path": "assembly_guide.pdf",
+      "sha256": "e33bc9321376649a6f10f471a1e26191f887a7a43edf412505eb5b43bd281193",
+      "model_id": "PPM-CUBE-300",
+      "version": "1.2.0",
+      "project_id": "sample-cube_300",
+      "revision": 1,
+      "geometry_sha256": "9bc8d667fbfd8d0ba5cc0a43697b5aa9ae0ca86bd7b20d09114c6262c58d3bfd",
+      "source_spec_hash": "a3d86048aba471bb79bb59a49af7b709ee2869be5d124bca3786e265895872c3"
+    },
+    {
+      "path": "model.obj",
+      "sha256": "8021552e6e4f9e3c8ce74314bc6f75c232eaa9692798cf559bd770afa7befa88",
+      "model_id": "PPM-CUBE-300",
+      "version": "1.2.0",
+      "project_id": "sample-cube_300",
+      "revision": 1,
+      "geometry_sha256": "9bc8d667fbfd8d0ba5cc0a43697b5aa9ae0ca86bd7b20d09114c6262c58d3bfd",
+      "source_spec_hash": "a3d86048aba471bb79bb59a49af7b709ee2869be5d124bca3786e265895872c3"
+    },
+    {
+      "path": "model_3d_preview.png",
+      "sha256": "ca5bf55f44bedff59d2e3b363566592ff07160b46e7757f5c5f2b7d7e956ce23",
+      "model_id": "PPM-CUBE-300",
+      "version": "1.2.0",
+      "project_id": "sample-cube_300",
+      "revision": 1,
+      "geometry_sha256": "9bc8d667fbfd8d0ba5cc0a43697b5aa9ae0ca86bd7b20d09114c6262c58d3bfd",
+      "source_spec_hash": "a3d86048aba471bb79bb59a49af7b709ee2869be5d124bca3786e265895872c3"
+    },
+    {
+      "path": "model_spec.json",
+      "sha256": "7e15a14d191a90eadf4421e162dd58d38153d909165c6b08492add5f0bb481e5",
+      "model_id": "PPM-CUBE-300",
+      "version": "1.2.0",
+      "project_id": "sample-cube_300",
+      "revision": 1,
+      "geometry_sha256": "9bc8d667fbfd8d0ba5cc0a43697b5aa9ae0ca86bd7b20d09114c6262c58d3bfd",
+      "source_spec_hash": "a3d86048aba471bb79bb59a49af7b709ee2869be5d124bca3786e265895872c3"
+    },
+    {
+      "path": "printable_preview.png",
+      "sha256": "fc482af25262ba79f0f226ddd3f767a349637fe9cb7d7d62f07ffafd7bd14dfc",
+      "model_id": "PPM-CUBE-300",
+      "version": "1.2.0",
+      "project_id": "sample-cube_300",
+      "revision": 1,
+      "geometry_sha256": "9bc8d667fbfd8d0ba5cc0a43697b5aa9ae0ca86bd7b20d09114c6262c58d3bfd",
+      "source_spec_hash": "a3d86048aba471bb79bb59a49af7b709ee2869be5d124bca3786e265895872c3"
+    },
+    {
+      "path": "printable_us_letter.pdf",
+      "sha256": "53742b7cb31cd538c9c9965f7ad749d6b12918d49b0fe9ce1a612f7d015378ec",
+      "model_id": "PPM-CUBE-300",
+      "version": "1.2.0",
+      "project_id": "sample-cube_300",
+      "revision": 1,
+      "geometry_sha256": "9bc8d667fbfd8d0ba5cc0a43697b5aa9ae0ca86bd7b20d09114c6262c58d3bfd",
+      "source_spec_hash": "a3d86048aba471bb79bb59a49af7b709ee2869be5d124bca3786e265895872c3"
+    },
+    {
+      "path": "svg_pages/page_001.svg",
+      "sha256": "025d6642492e8830582848b1914bc5a07f0691186a7318363e5e75a2b5463e05",
+      "model_id": "PPM-CUBE-300",
+      "version": "1.2.0",
+      "project_id": "sample-cube_300",
+      "revision": 1,
+      "geometry_sha256": "9bc8d667fbfd8d0ba5cc0a43697b5aa9ae0ca86bd7b20d09114c6262c58d3bfd",
+      "source_spec_hash": "a3d86048aba471bb79bb59a49af7b709ee2869be5d124bca3786e265895872c3"
+    },
+    {
+      "path": "svg_pages/page_002.svg",
+      "sha256": "2cd5c5bfad22088ae2ca0251fd97e6b851931abb1a35207f50e3174419251f1f",
+      "model_id": "PPM-CUBE-300",
+      "version": "1.2.0",
+      "project_id": "sample-cube_300",
+      "revision": 1,
+      "geometry_sha256": "9bc8d667fbfd8d0ba5cc0a43697b5aa9ae0ca86bd7b20d09114c6262c58d3bfd",
+      "source_spec_hash": "a3d86048aba471bb79bb59a49af7b709ee2869be5d124bca3786e265895872c3"
+    },
+    {
+      "path": "svg_pages/page_003.svg",
+      "sha256": "b643c4c3ffab4bfd20729a91b884fe2500355919b950b5b58886adf4a5a177f4",
+      "model_id": "PPM-CUBE-300",
+      "version": "1.2.0",
+      "project_id": "sample-cube_300",
+      "revision": 1,
+      "geometry_sha256": "9bc8d667fbfd8d0ba5cc0a43697b5aa9ae0ca86bd7b20d09114c6262c58d3bfd",
+      "source_spec_hash": "a3d86048aba471bb79bb59a49af7b709ee2869be5d124bca3786e265895872c3"
+    },
+    {
+      "path": "svg_pages/page_004.svg",
+      "sha256": "db9556b4602406683753c679b7f5443adfc6a1a84c215e60f1fe9b686ae1b48a",
+      "model_id": "PPM-CUBE-300",
+      "version": "1.2.0",
+      "project_id": "sample-cube_300",
+      "revision": 1,
+      "geometry_sha256": "9bc8d667fbfd8d0ba5cc0a43697b5aa9ae0ca86bd7b20d09114c6262c58d3bfd",
+      "source_spec_hash": "a3d86048aba471bb79bb59a49af7b709ee2869be5d124bca3786e265895872c3"
+    },
+    {
+      "path": "svg_pages/page_005.svg",
+      "sha256": "c56ddffee16e40cf7ace9479e44b470b05b347a8c906c6b3a484e04b7f16b62b",
+      "model_id": "PPM-CUBE-300",
+      "version": "1.2.0",
+      "project_id": "sample-cube_300",
+      "revision": 1,
+      "geometry_sha256": "9bc8d667fbfd8d0ba5cc0a43697b5aa9ae0ca86bd7b20d09114c6262c58d3bfd",
+      "source_spec_hash": "a3d86048aba471bb79bb59a49af7b709ee2869be5d124bca3786e265895872c3"
+    },
+    {
+      "path": "svg_pages/page_006.svg",
+      "sha256": "3b6606840c8767b4438ceb508812aedfe92ea2ef13ee0150e86e6b585f14648c",
+      "model_id": "PPM-CUBE-300",
+      "version": "1.2.0",
+      "project_id": "sample-cube_300",
+      "revision": 1,
+      "geometry_sha256": "9bc8d667fbfd8d0ba5cc0a43697b5aa9ae0ca86bd7b20d09114c6262c58d3bfd",
+      "source_spec_hash": "a3d86048aba471bb79bb59a49af7b709ee2869be5d124bca3786e265895872c3"
+    },
+    {
+      "path": "svg_pages/page_007.svg",
+      "sha256": "1f7fa0c75f37f911acbc626e76395116787421183fbb2974a02a9a39a59898e0",
+      "model_id": "PPM-CUBE-300",
+      "version": "1.2.0",
+      "project_id": "sample-cube_300",
+      "revision": 1,
+      "geometry_sha256": "9bc8d667fbfd8d0ba5cc0a43697b5aa9ae0ca86bd7b20d09114c6262c58d3bfd",
+      "source_spec_hash": "a3d86048aba471bb79bb59a49af7b709ee2869be5d124bca3786e265895872c3"
+    },
+    {
+      "path": "svg_pages/page_008.svg",
+      "sha256": "c02fef6596a73cb09899098d6733c3c485a3636c75ce96398adbc8512af404a8",
+      "model_id": "PPM-CUBE-300",
+      "version": "1.2.0",
+      "project_id": "sample-cube_300",
+      "revision": 1,
+      "geometry_sha256": "9bc8d667fbfd8d0ba5cc0a43697b5aa9ae0ca86bd7b20d09114c6262c58d3bfd",
+      "source_spec_hash": "a3d86048aba471bb79bb59a49af7b709ee2869be5d124bca3786e265895872c3"
+    },
+    {
+      "path": "svg_pages/page_009.svg",
+      "sha256": "e71d4c2f7f26d17fb3c45ebaa54bb7a64e5334dd66cc08cfe660f99f3ffdf79a",
+      "model_id": "PPM-CUBE-300",
+      "version": "1.2.0",
+      "project_id": "sample-cube_300",
+      "revision": 1,
+      "geometry_sha256": "9bc8d667fbfd8d0ba5cc0a43697b5aa9ae0ca86bd7b20d09114c6262c58d3bfd",
+      "source_spec_hash": "a3d86048aba471bb79bb59a49af7b709ee2869be5d124bca3786e265895872c3"
+    },
+    {
+      "path": "svg_pages/page_010.svg",
+      "sha256": "ddac5d7ab256adc22bb0a044c66f7d174d442f4733eb2e5f289be262b2557601",
+      "model_id": "PPM-CUBE-300",
+      "version": "1.2.0",
+      "project_id": "sample-cube_300",
+      "revision": 1,
+      "geometry_sha256": "9bc8d667fbfd8d0ba5cc0a43697b5aa9ae0ca86bd7b20d09114c6262c58d3bfd",
+      "source_spec_hash": "a3d86048aba471bb79bb59a49af7b709ee2869be5d124bca3786e265895872c3"
+    },
+    {
+      "path": "svg_pages/page_011.svg",
+      "sha256": "d8d732bf4168f4f1e293aa8c2d49b2ac19e96bf31de89e0a65c9e797b42a6c52",
+      "model_id": "PPM-CUBE-300",
+      "version": "1.2.0",
+      "project_id": "sample-cube_300",
+      "revision": 1,
+      "geometry_sha256": "9bc8d667fbfd8d0ba5cc0a43697b5aa9ae0ca86bd7b20d09114c6262c58d3bfd",
+      "source_spec_hash": "a3d86048aba471bb79bb59a49af7b709ee2869be5d124bca3786e265895872c3"
+    },
+    {
+      "path": "svg_pages/page_012.svg",
+      "sha256": "cbae578581893b179eac7acd02a8eb06dd511b5fbc5943f5066fe7af114a26c0",
+      "model_id": "PPM-CUBE-300",
+      "version": "1.2.0",
+      "project_id": "sample-cube_300",
+      "revision": 1,
+      "geometry_sha256": "9bc8d667fbfd8d0ba5cc0a43697b5aa9ae0ca86bd7b20d09114c6262c58d3bfd",
+      "source_spec_hash": "a3d86048aba471bb79bb59a49af7b709ee2869be5d124bca3786e265895872c3"
+    },
+    {
+      "path": "svg_pages/page_013.svg",
+      "sha256": "2d92c0e7993b9a289c1d4d8a634e6e708a6a28366a3ddb78d4b258ae2a0986bd",
+      "model_id": "PPM-CUBE-300",
+      "version": "1.2.0",
+      "project_id": "sample-cube_300",
+      "revision": 1,
+      "geometry_sha256": "9bc8d667fbfd8d0ba5cc0a43697b5aa9ae0ca86bd7b20d09114c6262c58d3bfd",
+      "source_spec_hash": "a3d86048aba471bb79bb59a49af7b709ee2869be5d124bca3786e265895872c3"
+    },
+    {
+      "path": "svg_pages/page_014.svg",
+      "sha256": "e5b7239f844f7c44688268b71dfa14c3a98ef4eb1f5c7a942d1af0497a32ad1b",
+      "model_id": "PPM-CUBE-300",
+      "version": "1.2.0",
+      "project_id": "sample-cube_300",
+      "revision": 1,
+      "geometry_sha256": "9bc8d667fbfd8d0ba5cc0a43697b5aa9ae0ca86bd7b20d09114c6262c58d3bfd",
+      "source_spec_hash": "a3d86048aba471bb79bb59a49af7b709ee2869be5d124bca3786e265895872c3"
+    },
+    {
+      "path": "svg_pages/page_015.svg",
+      "sha256": "66a0a788e8b2e57543402eb4df57e02f0184a0c5e8569233e18d0e722b14893a",
+      "model_id": "PPM-CUBE-300",
+      "version": "1.2.0",
+      "project_id": "sample-cube_300",
+      "revision": 1,
+      "geometry_sha256": "9bc8d667fbfd8d0ba5cc0a43697b5aa9ae0ca86bd7b20d09114c6262c58d3bfd",
+      "source_spec_hash": "a3d86048aba471bb79bb59a49af7b709ee2869be5d124bca3786e265895872c3"
+    },
+    {
+      "path": "svg_pages/page_016.svg",
+      "sha256": "3b30a762dd2a991923745a7eec25c60f6b680b235e256e814e1ca5e12a46345b",
+      "model_id": "PPM-CUBE-300",
+      "version": "1.2.0",
+      "project_id": "sample-cube_300",
+      "revision": 1,
+      "geometry_sha256": "9bc8d667fbfd8d0ba5cc0a43697b5aa9ae0ca86bd7b20d09114c6262c58d3bfd",
+      "source_spec_hash": "a3d86048aba471bb79bb59a49af7b709ee2869be5d124bca3786e265895872c3"
+    },
+    {
+      "path": "svg_pages/page_017.svg",
+      "sha256": "a91435764e6e88110e5e23503f95e991106b95128c41f34ce64e4fbff087868e",
+      "model_id": "PPM-CUBE-300",
+      "version": "1.2.0",
+      "project_id": "sample-cube_300",
+      "revision": 1,
+      "geometry_sha256": "9bc8d667fbfd8d0ba5cc0a43697b5aa9ae0ca86bd7b20d09114c6262c58d3bfd",
+      "source_spec_hash": "a3d86048aba471bb79bb59a49af7b709ee2869be5d124bca3786e265895872c3"
+    },
+    {
+      "path": "svg_pages/page_018.svg",
+      "sha256": "cc5e11d56787b30bee245abbca090a4f0a42f8de85411bd95872377405426491",
+      "model_id": "PPM-CUBE-300",
+      "version": "1.2.0",
+      "project_id": "sample-cube_300",
+      "revision": 1,
+      "geometry_sha256": "9bc8d667fbfd8d0ba5cc0a43697b5aa9ae0ca86bd7b20d09114c6262c58d3bfd",
+      "source_spec_hash": "a3d86048aba471bb79bb59a49af7b709ee2869be5d124bca3786e265895872c3"
+    },
+    {
+      "path": "svg_pages/page_019.svg",
+      "sha256": "6e68683e84e481b96ad2e61559a1395daec0037850af9dd0263bee5ab9f62acc",
+      "model_id": "PPM-CUBE-300",
+      "version": "1.2.0",
+      "project_id": "sample-cube_300",
+      "revision": 1,
+      "geometry_sha256": "9bc8d667fbfd8d0ba5cc0a43697b5aa9ae0ca86bd7b20d09114c6262c58d3bfd",
+      "source_spec_hash": "a3d86048aba471bb79bb59a49af7b709ee2869be5d124bca3786e265895872c3"
+    },
+    {
+      "path": "svg_pages/page_020.svg",
+      "sha256": "ceb055766e5d7b3b8fa0c2163f4d3e5db12c26e72017e1e804466f582959ca84",
+      "model_id": "PPM-CUBE-300",
+      "version": "1.2.0",
+      "project_id": "sample-cube_300",
+      "revision": 1,
+      "geometry_sha256": "9bc8d667fbfd8d0ba5cc0a43697b5aa9ae0ca86bd7b20d09114c6262c58d3bfd",
+      "source_spec_hash": "a3d86048aba471bb79bb59a49af7b709ee2869be5d124bca3786e265895872c3"
+    },
+    {
+      "path": "svg_pages/page_021.svg",
+      "sha256": "43f4e3d0e37cd889f98f7ed2006be003457bffe5f67674b76255b8b0d9ef3200",
+      "model_id": "PPM-CUBE-300",
+      "version": "1.2.0",
+      "project_id": "sample-cube_300",
+      "revision": 1,
+      "geometry_sha256": "9bc8d667fbfd8d0ba5cc0a43697b5aa9ae0ca86bd7b20d09114c6262c58d3bfd",
+      "source_spec_hash": "a3d86048aba471bb79bb59a49af7b709ee2869be5d124bca3786e265895872c3"
+    },
+    {
+      "path": "svg_pages/page_022.svg",
+      "sha256": "32024e7de96b1ae28dc25e484084508da407fc2958d83553335a7580aaeb4a81",
+      "model_id": "PPM-CUBE-300",
+      "version": "1.2.0",
+      "project_id": "sample-cube_300",
+      "revision": 1,
+      "geometry_sha256": "9bc8d667fbfd8d0ba5cc0a43697b5aa9ae0ca86bd7b20d09114c6262c58d3bfd",
+      "source_spec_hash": "a3d86048aba471bb79bb59a49af7b709ee2869be5d124bca3786e265895872c3"
+    },
+    {
+      "path": "svg_pages/page_023.svg",
+      "sha256": "87bc8ec05a966c338a9e417f65c991f438f188bb6e5e2486bebbcd05bae8296e",
+      "model_id": "PPM-CUBE-300",
+      "version": "1.2.0",
+      "project_id": "sample-cube_300",
+      "revision": 1,
+      "geometry_sha256": "9bc8d667fbfd8d0ba5cc0a43697b5aa9ae0ca86bd7b20d09114c6262c58d3bfd",
+      "source_spec_hash": "a3d86048aba471bb79bb59a49af7b709ee2869be5d124bca3786e265895872c3"
+    },
+    {
+      "path": "svg_pages/page_024.svg",
+      "sha256": "89c4eb140bad77295639b7465f72c208cb1ff4c23f76a8b74cf3c300620670b8",
+      "model_id": "PPM-CUBE-300",
+      "version": "1.2.0",
+      "project_id": "sample-cube_300",
+      "revision": 1,
+      "geometry_sha256": "9bc8d667fbfd8d0ba5cc0a43697b5aa9ae0ca86bd7b20d09114c6262c58d3bfd",
+      "source_spec_hash": "a3d86048aba471bb79bb59a49af7b709ee2869be5d124bca3786e265895872c3"
+    },
+    {
+      "path": "validation_report.json",
+      "sha256": "9490f5430729b4982005b5319ece4f0903cc794bdc4e8ed6caac65f8f8d94664",
+      "model_id": "PPM-CUBE-300",
+      "version": "1.2.0",
+      "project_id": "sample-cube_300",
+      "revision": 1,
+      "geometry_sha256": "9bc8d667fbfd8d0ba5cc0a43697b5aa9ae0ca86bd7b20d09114c6262c58d3bfd",
+      "source_spec_hash": "a3d86048aba471bb79bb59a49af7b709ee2869be5d124bca3786e265895872c3"
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "model_id": "GB-FROST",
+  "version": "gingerbread-1.0.1",
+  "project_id": "sample-gb_frost",
+  "revision": 1,
+  "geometry_sha256": "8f005a8a1ab5a4e51de992b99daf09867402828cad535bb34b69909ad103534d",
+  "source_spec_hash": "5faaaa474d7971c346ac03d3bb14bca8e86a9e8910870a4d1eb056d7c3f3a81a",
+  "design_sha256": "c1c581b24b82bbee475535e3778e49ff4426b8c9800dd98a8f446529725d886b",
+  "template_version": "1.0.0",
+  "overall_status": "PASS",
+  "physical_assembly": "NOT_TESTED",
+  "tests": [
+    {
+      "name": "all_six_faces_placed_once",
+      "status": "PASS",
+      "detail": "4 walls + 2 roof panels"
+    },
+    {
+      "name": "open_bottom_boundary_only",
+      "status": "PASS",
+      "detail": "Intentional open-bottom shell"
+    },
+    {
+      "name": "seam_pairs_unique",
+      "status": "PASS",
+      "detail": 11
+    },
+    {
+      "name": "seam_2d_lengths",
+      "status": "PASS",
+      "detail": "Exact matching seam lengths"
+    },
+    {
+      "name": "seam_3d_endpoints",
+      "status": "PASS",
+      "detail": "Reverse-winding shared 3D endpoints"
+    },
+    {
+      "name": "rigid_unfold_area",
+      "status": "PASS",
+      "detail": "No scaling or reflection"
+    },
+    {
+      "name": "tabs_only_on_glue_seams",
+      "status": "PASS",
+      "detail": "No hinge tabs; one tab per glue seam"
+    },
+    {
+      "name": "valid_connected_outlines",
+      "status": "PASS",
+      "detail": "Connected cut polygons"
+    },
+    {
+      "name": "hinges_coincident_and_not_cut",
+      "status": "PASS",
+      "detail": "Three interior uncut creases"
+    },
+    {
+      "name": "face_plus_tab_area_conserved",
+      "status": "PASS",
+      "detail": "No overlaps within connected units"
+    },
+    {
+      "name": "no_inter_piece_overlap",
+      "status": "PASS",
+      "detail": "No page collisions"
+    },
+    {
+      "name": "printable_bounds",
+      "status": "PASS",
+      "detail": [
+        8.0,
+        20.0,
+        207.9,
+        255.0
+      ]
+    },
+    {
+      "name": "finished_dimensions_mm",
+      "status": "PASS",
+      "detail": [
+        75.0,
+        65.0,
+        152.5
+      ]
+    },
+    {
+      "name": "pdf_page_count",
+      "status": "PASS",
+      "detail": 2
+    },
+    {
+      "name": "pdf_us_letter",
+      "status": "PASS",
+      "detail": "215.9 × 279.4 mm"
+    },
+    {
+      "name": "pdf_cut_vectors_match_geometry",
+      "status": "PASS",
+      "detail": [
+        true,
+        true
+      ]
+    },
+    {
+      "name": "pdf_fold_count",
+      "status": "PASS",
+      "detail": [
+        true,
+        true
+      ]
+    },
+    {
+      "name": "pdf_40mm_calibration",
+      "status": "PASS",
+      "detail": [
+        true,
+        true
+      ]
+    },
+    {
+      "name": "pdf_codes_on_glue_tabs_only",
+      "status": "PASS",
+      "detail": "One concealed code per glue tab; none on decorated faces"
+    },
+    {
+      "name": "pdf_no_face_names_on_artwork",
+      "status": "PASS",
+      "detail": "Panel names moved to assembly map"
+    },
+    {
+      "name": "pdf_text_margins",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "name": "svg_size_vectors_calibration",
+      "status": "PASS",
+      "detail": [
+        true,
+        true
+      ]
+    },
+    {
+      "name": "guide_seam_map_has_both_mates",
+      "status": "PASS",
+      "detail": "All seam pairs labeled on reference diagrams"
+    },
+    {
+      "name": "guide_complete_within_page",
+      "status": "PASS",
+      "detail": []
+    }
+  ],
+  "summary": {
+    "sheets": 2,
+    "cut_pieces": 3,
+    "fold_hinges": 3,
+    "glue_seams": 8,
+    "flat_continuous_joins": 0,
+    "faces_or_tiles": 6
+  }
+}

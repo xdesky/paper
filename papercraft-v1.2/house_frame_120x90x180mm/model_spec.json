@@ -1,0 +1,286 @@
+{
+  "schema_version": "1.2.0",
+  "model_id": "PPM-HOUSE-WALL-120x90x180",
+  "version": "1.2.0",
+  "locked": true,
+  "units": "mm",
+  "paper": {
+    "name": "US Letter",
+    "page_mm": [
+      215.9,
+      279.4
+    ],
+    "scale": 1.0,
+    "printable_body_mm": [
+      8.0,
+      20.0,
+      207.9,
+      255.0
+    ],
+    "tab_depth_mm": 7.0
+  },
+  "geometry_source": "deterministic parametric 3D faces, not generated image",
+  "geometry_sha256": "2c38be0b63432f961589455ebdb0e52213b3821f29821ebf878ce15e00d1c6f1",
+  "geometry": {
+    "model": {
+      "type": "open_house_wall_frame",
+      "width_mm": 120,
+      "depth_mm": 90,
+      "wall_height_mm": 180,
+      "name": "House wall frame 120x90x180 mm",
+      "open_top": true,
+      "open_bottom": true
+    },
+    "panels": [
+      {
+        "id": "FRONT",
+        "face": "HOUSE_FRONT",
+        "width_mm": 120,
+        "height_mm": 180,
+        "origin_uv_mm": [
+          0,
+          0
+        ],
+        "edge_codes": {
+          "E": "H01",
+          "W": "H04"
+        },
+        "vertices_3d_mm": [
+          [
+            -60.0,
+            -45.0,
+            0.0
+          ],
+          [
+            60.0,
+            -45.0,
+            0.0
+          ],
+          [
+            60.0,
+            -45.0,
+            180.0
+          ],
+          [
+            -60.0,
+            -45.0,
+            180.0
+          ]
+        ]
+      },
+      {
+        "id": "RIGHT",
+        "face": "HOUSE_RIGHT",
+        "width_mm": 90,
+        "height_mm": 180,
+        "origin_uv_mm": [
+          0,
+          0
+        ],
+        "edge_codes": {
+          "W": "H01",
+          "E": "H02"
+        },
+        "vertices_3d_mm": [
+          [
+            60.0,
+            -45.0,
+            0.0
+          ],
+          [
+            60.0,
+            45.0,
+            0.0
+          ],
+          [
+            60.0,
+            45.0,
+            180.0
+          ],
+          [
+            60.0,
+            -45.0,
+            180.0
+          ]
+        ]
+      },
+      {
+        "id": "BACK",
+        "face": "HOUSE_BACK",
+        "width_mm": 120,
+        "height_mm": 180,
+        "origin_uv_mm": [
+          0,
+          0
+        ],
+        "edge_codes": {
+          "W": "H02",
+          "E": "H03"
+        },
+        "vertices_3d_mm": [
+          [
+            60.0,
+            45.0,
+            0.0
+          ],
+          [
+            -60.0,
+            45.0,
+            0.0
+          ],
+          [
+            -60.0,
+            45.0,
+            180.0
+          ],
+          [
+            60.0,
+            45.0,
+            180.0
+          ]
+        ]
+      },
+      {
+        "id": "LEFT",
+        "face": "HOUSE_LEFT",
+        "width_mm": 90,
+        "height_mm": 180,
+        "origin_uv_mm": [
+          0,
+          0
+        ],
+        "edge_codes": {
+          "W": "H03",
+          "E": "H04"
+        },
+        "vertices_3d_mm": [
+          [
+            -60.0,
+            45.0,
+            0.0
+          ],
+          [
+            -60.0,
+            -45.0,
+            0.0
+          ],
+          [
+            -60.0,
+            -45.0,
+            180.0
+          ],
+          [
+            -60.0,
+            45.0,
+            180.0
+          ]
+        ]
+      }
+    ],
+    "seams": [
+      {
+        "id": "H01",
+        "kind": "house_corner",
+        "length_mm": 180,
+        "fold_degrees": 90,
+        "mates": [
+          {
+            "panel": "FRONT",
+            "edge": "E"
+          },
+          {
+            "panel": "RIGHT",
+            "edge": "W"
+          }
+        ],
+        "hinged_uncut": true
+      },
+      {
+        "id": "H02",
+        "kind": "house_corner",
+        "length_mm": 180,
+        "fold_degrees": 90,
+        "mates": [
+          {
+            "panel": "RIGHT",
+            "edge": "E"
+          },
+          {
+            "panel": "BACK",
+            "edge": "W"
+          }
+        ],
+        "hinged_uncut": false
+      },
+      {
+        "id": "H03",
+        "kind": "house_corner",
+        "length_mm": 180,
+        "fold_degrees": 90,
+        "mates": [
+          {
+            "panel": "BACK",
+            "edge": "E"
+          },
+          {
+            "panel": "LEFT",
+            "edge": "W"
+          }
+        ],
+        "hinged_uncut": true
+      },
+      {
+        "id": "H04",
+        "kind": "house_corner",
+        "length_mm": 180,
+        "fold_degrees": 90,
+        "mates": [
+          {
+            "panel": "LEFT",
+            "edge": "E"
+          },
+          {
+            "panel": "FRONT",
+            "edge": "W"
+          }
+        ],
+        "hinged_uncut": false
+      }
+    ]
+  },
+  "unfold_strategy": "Prefer pairs of genuine adjacent angled faces on the same sheet with one uncut 90-degree crease; fallback to separate panels when too large",
+  "print_units": [
+    {
+      "panel_ids": [
+        "FRONT",
+        "RIGHT"
+      ],
+      "sheet_number": 2,
+      "fold_code": "H01",
+      "orientation_degrees": 90,
+      "bounds_mm": [
+        8.0,
+        20.0,
+        188.0,
+        237.0
+      ]
+    },
+    {
+      "panel_ids": [
+        "BACK",
+        "LEFT"
+      ],
+      "sheet_number": 1,
+      "fold_code": "H03",
+      "orientation_degrees": 90,
+      "bounds_mm": [
+        8.0,
+        20.0,
+        188.0,
+        237.0
+      ]
+    }
+  ],
+  "sheet_count": 2,
+  "physical_assembly": "NOT_TESTED"
+}

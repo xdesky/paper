@@ -1,0 +1,448 @@
+{
+  "version": "1.2.0",
+  "model_id": "PPM-CUBE-300",
+  "model_geometry_sha256": "9bc8d667fbfd8d0ba5cc0a43697b5aa9ae0ca86bd7b20d09114c6262c58d3bfd",
+  "overall_status": "PASS",
+  "summary": {
+    "model": {
+      "type": "cube",
+      "side_mm": 300,
+      "panel_grid": [
+        2,
+        2
+      ],
+      "name": "Cube 300 mm"
+    },
+    "faces_or_tiles": 24,
+    "cut_pieces": 24,
+    "sheets": 24,
+    "fold_hinges": 0,
+    "flat_continuous_joins": 0,
+    "glue_seams": 48,
+    "total_seams": 48,
+    "glue_saved": 0,
+    "eligible_hinge_candidates": 0,
+    "limitation": "No 150x150 mm paired tiles fit one US Letter sheet without splitting; retained glue-friendly 2x2 grid and avoided a worse 3x3 split."
+  },
+  "tests": [
+    {
+      "name": "all_panels_placed_exactly_once",
+      "status": "PASS",
+      "detail": "24 panels"
+    },
+    {
+      "name": "all_seams_have_two_distinct_mates",
+      "status": "PASS",
+      "detail": "48 seams"
+    },
+    {
+      "name": "seam_2d_lengths_match",
+      "status": "PASS",
+      "detail": "all seam lengths matched in millimetres"
+    },
+    {
+      "name": "seam_3d_endpoints_and_fold_angle",
+      "status": "PASS",
+      "detail": "3D seam endpoints agree with reverse winding and 0°/90° dihedral angle"
+    },
+    {
+      "name": "one_hinge_per_pair",
+      "status": "PASS",
+      "detail": "pairs each have one uncut center crease"
+    },
+    {
+      "name": "uncut_join_angles_valid",
+      "status": "PASS",
+      "detail": "uncut joints are flat 0° or fold 90°"
+    },
+    {
+      "name": "uncut_joint_tabs_removed",
+      "status": "PASS",
+      "detail": "no tab on continuous folds"
+    },
+    {
+      "name": "exactly_one_tab_per_glued_seam",
+      "status": "PASS",
+      "detail": "one glue flap per remaining seam"
+    },
+    {
+      "name": "connected_cut_contours_valid",
+      "status": "PASS",
+      "detail": "all merged cut boundaries are single valid polygons"
+    },
+    {
+      "name": "uncut_joint_endpoints_coincident",
+      "status": "PASS",
+      "detail": "two panels share exactly the same uncut crease"
+    },
+    {
+      "name": "no_printed_shape_overlap",
+      "status": "PASS",
+      "detail": "24 pieces"
+    },
+    {
+      "name": "all_cut_contours_in_printable_area",
+      "status": "PASS",
+      "detail": "US Letter 8 mm side margins, fixed header/footer"
+    },
+    {
+      "name": "units_geometry_area_conserved",
+      "status": "PASS",
+      "detail": "area equals face area plus glue tabs"
+    },
+    {
+      "name": "numbered_seam_codes_on_panels",
+      "status": "PASS",
+      "detail": "every seam has matching two-side code"
+    },
+    {
+      "name": "paper_size_exact",
+      "status": "PASS",
+      "detail": "physical US Letter media boxes"
+    },
+    {
+      "name": "pdf_page_count",
+      "status": "PASS",
+      "detail": "24 pages"
+    },
+    {
+      "name": "us_letter_vector_page_dimensions",
+      "status": "PASS",
+      "detail": [
+        [
+          215.9,
+          279.4
+        ],
+        [
+          215.9,
+          279.4
+        ],
+        [
+          215.9,
+          279.4
+        ],
+        [
+          215.9,
+          279.4
+        ],
+        [
+          215.9,
+          279.4
+        ],
+        [
+          215.9,
+          279.4
+        ],
+        [
+          215.9,
+          279.4
+        ],
+        [
+          215.9,
+          279.4
+        ],
+        [
+          215.9,
+          279.4
+        ],
+        [
+          215.9,
+          279.4
+        ],
+        [
+          215.9,
+          279.4
+        ],
+        [
+          215.9,
+          279.4
+        ],
+        [
+          215.9,
+          279.4
+        ],
+        [
+          215.9,
+          279.4
+        ],
+        [
+          215.9,
+          279.4
+        ],
+        [
+          215.9,
+          279.4
+        ],
+        [
+          215.9,
+          279.4
+        ],
+        [
+          215.9,
+          279.4
+        ],
+        [
+          215.9,
+          279.4
+        ],
+        [
+          215.9,
+          279.4
+        ],
+        [
+          215.9,
+          279.4
+        ],
+        [
+          215.9,
+          279.4
+        ],
+        [
+          215.9,
+          279.4
+        ],
+        [
+          215.9,
+          279.4
+        ]
+      ]
+    },
+    {
+      "name": "pdf_cut_paths_one_per_unit",
+      "status": "PASS",
+      "detail": {
+        "found": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "expected": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "name": "pdf_cut_coordinates_match_source_mm",
+      "status": "PASS",
+      "detail": "exact cut geometry within 0.04 mm² symmetric difference"
+    },
+    {
+      "name": "pdf_hinge_vectors_exact_count",
+      "status": "PASS",
+      "detail": {
+        "found": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "expected": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "name": "pdf_40mm_calibration",
+      "status": "PASS",
+      "detail": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "name": "svg_one_page_per_letter",
+      "status": "PASS",
+      "detail": "24 SVGs"
+    },
+    {
+      "name": "svg_physical_dimensions",
+      "status": "PASS",
+      "detail": "mm page widths and heights"
+    },
+    {
+      "name": "svg_cut_contour_count",
+      "status": "PASS",
+      "detail": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "name": "svg_cut_coordinates_match_source_mm",
+      "status": "PASS",
+      "detail": "exact SVG cut geometry within 0.04 mm² symmetric difference"
+    },
+    {
+      "name": "svg_hinge_count",
+      "status": "PASS",
+      "detail": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "cube_mesh_watertight",
+      "status": "PASS",
+      "detail": true
+    },
+    {
+      "name": "cube_mesh_volume",
+      "status": "PASS",
+      "detail": 27000000.0
+    }
+  ],
+  "physical_assembly": "NOT_TESTED"
+}

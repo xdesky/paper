@@ -1,0 +1,12 @@
+services:
+  studio:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - studio-data:/app/data
+    environment:
+      PPM_JOB_TIMEOUT: 180
+    init: true
+volumes:
+  studio-data:

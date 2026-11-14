@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.env
+.data/
+.test-data/
+.mpl-cache/
+frontend/node_modules/
+frontend/dist/
+test-results/
+.DS_Store
+
+frontend/*.tsbuildinfo

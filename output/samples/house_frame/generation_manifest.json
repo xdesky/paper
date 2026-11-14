@@ -1,0 +1,101 @@
+{
+  "model_id": "PPM-HOUSE-WALL-120x90x180",
+  "version": "1.2.0",
+  "project_id": "sample-house_frame",
+  "revision": 1,
+  "geometry_sha256": "2c38be0b63432f961589455ebdb0e52213b3821f29821ebf878ce15e00d1c6f1",
+  "source_spec_hash": "f48261b1e05476b0ca3e302d529a6ee817455b396eee33ef683a92fad2107545",
+  "input": {
+    "project_id": "sample-house_frame",
+    "revision": 1,
+    "preset": "house_frame",
+    "paper": "US Letter",
+    "scale": 1.0,
+    "engine_version": "1.2.0"
+  },
+  "algorithm": "papercraft-v1.2 paired fold-first + shelf packing (heuristic)",
+  "qa_status": "PASS",
+  "physical_assembly": "NOT_TESTED",
+  "artifacts": [
+    {
+      "path": "assembly_guide.pdf",
+      "sha256": "5c7a3366e3c67fe6900530666e96e0268d2d045ac48a709797085ef11fd0f6c7",
+      "model_id": "PPM-HOUSE-WALL-120x90x180",
+      "version": "1.2.0",
+      "project_id": "sample-house_frame",
+      "revision": 1,
+      "geometry_sha256": "2c38be0b63432f961589455ebdb0e52213b3821f29821ebf878ce15e00d1c6f1",
+      "source_spec_hash": "f48261b1e05476b0ca3e302d529a6ee817455b396eee33ef683a92fad2107545"
+    },
+    {
+      "path": "model_3d_preview.png",
+      "sha256": "a81e676c537dc7f7213fbf97e200bbcb4fcfc466eecf5a18365156db5f4eea06",
+      "model_id": "PPM-HOUSE-WALL-120x90x180",
+      "version": "1.2.0",
+      "project_id": "sample-house_frame",
+      "revision": 1,
+      "geometry_sha256": "2c38be0b63432f961589455ebdb0e52213b3821f29821ebf878ce15e00d1c6f1",
+      "source_spec_hash": "f48261b1e05476b0ca3e302d529a6ee817455b396eee33ef683a92fad2107545"
+    },
+    {
+      "path": "model_spec.json",
+      "sha256": "6f69898ba5ac66dce833375ee3c1b6fae2084bb94ea0f970cf2ae69a4d2a6785",
+      "model_id": "PPM-HOUSE-WALL-120x90x180",
+      "version": "1.2.0",
+      "project_id": "sample-house_frame",
+      "revision": 1,
+      "geometry_sha256": "2c38be0b63432f961589455ebdb0e52213b3821f29821ebf878ce15e00d1c6f1",
+      "source_spec_hash": "f48261b1e05476b0ca3e302d529a6ee817455b396eee33ef683a92fad2107545"
+    },
+    {
+      "path": "printable_preview.png",
+      "sha256": "539cefd1239d8c70250cd68f38e06aad4799577285248225ffa0a864f4b1b977",
+      "model_id": "PPM-HOUSE-WALL-120x90x180",
+      "version": "1.2.0",
+      "project_id": "sample-house_frame",
+      "revision": 1,
+      "geometry_sha256": "2c38be0b63432f961589455ebdb0e52213b3821f29821ebf878ce15e00d1c6f1",
+      "source_spec_hash": "f48261b1e05476b0ca3e302d529a6ee817455b396eee33ef683a92fad2107545"
+    },
+    {
+      "path": "printable_us_letter.pdf",
+      "sha256": "53ae0f71072dcadc13fec56ee530ab475528c102ae03d0ae49800a38d804518f",
+      "model_id": "PPM-HOUSE-WALL-120x90x180",
+      "version": "1.2.0",
+      "project_id": "sample-house_frame",
+      "revision": 1,
+      "geometry_sha256": "2c38be0b63432f961589455ebdb0e52213b3821f29821ebf878ce15e00d1c6f1",
+      "source_spec_hash": "f48261b1e05476b0ca3e302d529a6ee817455b396eee33ef683a92fad2107545"
+    },
+    {
+      "path": "svg_pages/page_001.svg",
+      "sha256": "7247d40c736c24c65ec5a499d9fd888a91c25be126c36c20e64f1069a9a1fd9b",
+      "model_id": "PPM-HOUSE-WALL-120x90x180",
+      "version": "1.2.0",
+      "project_id": "sample-house_frame",
+      "revision": 1,
+      "geometry_sha256": "2c38be0b63432f961589455ebdb0e52213b3821f29821ebf878ce15e00d1c6f1",
+      "source_spec_hash": "f48261b1e05476b0ca3e302d529a6ee817455b396eee33ef683a92fad2107545"
+    },
+    {
+      "path": "svg_pages/page_002.svg",
+      "sha256": "9f4b79efbdee9023b340d2e4d13c5c82ae9a6aa78d3c157638eae2b8039d8cf3",
+      "model_id": "PPM-HOUSE-WALL-120x90x180",
+      "version": "1.2.0",
+      "project_id": "sample-house_frame",
+      "revision": 1,
+      "geometry_sha256": "2c38be0b63432f961589455ebdb0e52213b3821f29821ebf878ce15e00d1c6f1",
+      "source_spec_hash": "f48261b1e05476b0ca3e302d529a6ee817455b396eee33ef683a92fad2107545"
+    },
+    {
+      "path": "validation_report.json",
+      "sha256": "2590db80e9fecd6afb68d12707c43eeb0ad88d062537f18ecd6c794358e6c9a0",
+      "model_id": "PPM-HOUSE-WALL-120x90x180",
+      "version": "1.2.0",
+      "project_id": "sample-house_frame",
+      "revision": 1,
+      "geometry_sha256": "2c38be0b63432f961589455ebdb0e52213b3821f29821ebf878ce15e00d1c6f1",
+      "source_spec_hash": "f48261b1e05476b0ca3e302d529a6ee817455b396eee33ef683a92fad2107545"
+    }
+  ]
+}

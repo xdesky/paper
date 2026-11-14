@@ -1,0 +1,28 @@
+import {test,expect} from '@playwright/test';
+test('select A4, generate and print at actual paper size',async({page,context})=>{
+ await context.addInitScript(()=>{window.print=()=>{document.documentElement.dataset.printRequested='yes';};});
+ const name='Nhà bánh gừng A4 '+Date.now();
+ await page.goto('/');
+ await page.getByRole('button',{name:'＋ Dự án mới',exact:true}).click();
+ const form=page.locator('form');
+ await form.getByLabel('Tên dự án').fill(name);
+ await form.getByRole('combobox',{name:'Mẫu',exact:true}).selectOption('gb_classic');
+ await form.getByRole('button',{name:'Tạo dự án',exact:true}).click();
+ await expect(page.getByLabel('Khổ giấy',{exact:true})).toHaveValue('US Letter');
+ await page.getByLabel('Khổ giấy',{exact:true}).selectOption('A4');
+ await page.getByRole('button',{name:'✧ Generate',exact:true}).click();
+ await expect(page.locator('.svg-sheet svg')).toHaveAttribute('width','210.0mm',{timeout:45000});
+ await expect(page.locator('.svg-sheet svg')).toHaveAttribute('height','297.0mm');
+ await page.reload();
+ await page.locator('.project-list button').filter({hasText:name}).click();
+ await expect(page.getByLabel('Khổ giấy',{exact:true})).toHaveValue('A4');
+ const [printPage]=await Promise.all([page.waitForEvent('popup'),page.getByRole('link',{name:'⎙ Print',exact:true}).click()]);
+ await expect(printPage.locator('html')).toHaveAttribute('data-print-requested','yes');
+ expect(await printPage.locator('style').textContent()).toContain('size:210mm 297mm');
+ await printPage.pdf({path:'../test-results/browser-printed-a4.pdf',preferCSSPageSize:true,printBackground:true});
+ await printPage.close();
+ await page.screenshot({path:'../test-results/a4-workspace.png',fullPage:true});
+ await page.getByLabel('Khổ giấy',{exact:true}).selectOption('US Letter');
+ await expect(page.getByRole('link',{name:'⎙ Print',exact:true})).toHaveCount(0);
+ await page.getByLabel('Khổ giấy',{exact:true}).selectOption('A4');
+});
