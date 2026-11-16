@@ -1,0 +1,239 @@
+{
+  "model_id": "GB-US-CAPE-COD-HERITAGE",
+  "version": "gingerbread-2.0.0",
+  "project_id": "american-premium-samples",
+  "revision": 1,
+  "geometry_sha256": "9f2c658df8fa86f8eae21b032fc9d3948622e727b2bbbf41fba484d8a319325e",
+  "source_spec_hash": "466c9f545765697751543f86ebaeb9d1ae63cdea7c9d85345affc9eb0c2b7661",
+  "design_sha256": "a57b90a3bf96b82261cb5181bf65b75a8d8a2dc22da84b7133795f3a3015a8fe",
+  "template_version": "2.0.0",
+  "input": {
+    "preset": "gb_us_cape_cod_heritage",
+    "template": {
+      "id": "gb_us_cape_cod_heritage",
+      "name": "Cape Cod · Heritage Christmas",
+      "subtitle": "Cape Cod / Heritage Christmas",
+      "collection": "American Premium",
+      "model_family": "cape_cod",
+      "architecture": "Cape Cod",
+      "finish": "Heritage Christmas",
+      "profile": [
+        [
+          0,
+          0
+        ],
+        [
+          0.5,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "material": "shingle",
+      "premium": true,
+      "width": 90,
+      "depth": 65,
+      "wall_height": 70,
+      "roof_rise": 45,
+      "wall": "#efe4cf",
+      "roof": "#354b46",
+      "accent": "#8f3838",
+      "trim": "#fff7e5",
+      "background": "#ebe9df",
+      "motif": "american",
+      "difficulty": "Trung bình",
+      "description": "Nhà lấy cảm hứng từ Cape Cod: mặt đứng shingle, cửa chia ô, vòng lá Noel và mái lợp chi tiết. Phiên bản Heritage Christmas."
+    },
+    "paper": "A4",
+    "project_id": "american-premium-samples",
+    "revision": 1
+  },
+  "template": {
+    "id": "gb_us_cape_cod_heritage",
+    "name": "Cape Cod · Heritage Christmas",
+    "subtitle": "Cape Cod / Heritage Christmas",
+    "collection": "American Premium",
+    "model_family": "cape_cod",
+    "architecture": "Cape Cod",
+    "finish": "Heritage Christmas",
+    "profile": [
+      [
+        0,
+        0
+      ],
+      [
+        0.5,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "material": "shingle",
+    "premium": true,
+    "width": 90,
+    "depth": 65,
+    "wall_height": 70,
+    "roof_rise": 45,
+    "wall": "#efe4cf",
+    "roof": "#354b46",
+    "accent": "#8f3838",
+    "trim": "#fff7e5",
+    "background": "#ebe9df",
+    "motif": "american",
+    "difficulty": "Trung bình",
+    "description": "Nhà lấy cảm hứng từ Cape Cod: mặt đứng shingle, cửa chia ô, vòng lá Noel và mái lợp chi tiết. Phiên bản Heritage Christmas."
+  },
+  "qa_status": "PASS",
+  "algorithm": "gable-house-1.0; v1.2 rigid pairing + shelf packing",
+  "physical_assembly": "NOT_TESTED",
+  "artifacts": [
+    {
+      "path": "assembly_guide.pdf",
+      "sha256": "23edd6b389c78a8101ec23fec7a6ad5a93e8c2992a911ca1dd6a175e24d986f5",
+      "model_id": "GB-US-CAPE-COD-HERITAGE",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "9f2c658df8fa86f8eae21b032fc9d3948622e727b2bbbf41fba484d8a319325e",
+      "source_spec_hash": "466c9f545765697751543f86ebaeb9d1ae63cdea7c9d85345affc9eb0c2b7661",
+      "design_sha256": "a57b90a3bf96b82261cb5181bf65b75a8d8a2dc22da84b7133795f3a3015a8fe",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "generation_manifest.json",
+      "sha256": "cf7dc7dc4bc099d6e4f995a85a302d0f88193724bfe3e7f4b92d7a78c81020f0",
+      "model_id": "GB-US-CAPE-COD-HERITAGE",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "9f2c658df8fa86f8eae21b032fc9d3948622e727b2bbbf41fba484d8a319325e",
+      "source_spec_hash": "466c9f545765697751543f86ebaeb9d1ae63cdea7c9d85345affc9eb0c2b7661",
+      "design_sha256": "a57b90a3bf96b82261cb5181bf65b75a8d8a2dc22da84b7133795f3a3015a8fe",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "model.obj",
+      "sha256": "cb96647aa7e8784ef98a17ec1a88f04be85a56626f51793f12fec315a82f4d83",
+      "model_id": "GB-US-CAPE-COD-HERITAGE",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "9f2c658df8fa86f8eae21b032fc9d3948622e727b2bbbf41fba484d8a319325e",
+      "source_spec_hash": "466c9f545765697751543f86ebaeb9d1ae63cdea7c9d85345affc9eb0c2b7661",
+      "design_sha256": "a57b90a3bf96b82261cb5181bf65b75a8d8a2dc22da84b7133795f3a3015a8fe",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "model_3d_preview.png",
+      "sha256": "c55e20a0b6c27221c9f7317e56e9b5ac62cb63d3c79552911eee22f56770fd7d",
+      "model_id": "GB-US-CAPE-COD-HERITAGE",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "9f2c658df8fa86f8eae21b032fc9d3948622e727b2bbbf41fba484d8a319325e",
+      "source_spec_hash": "466c9f545765697751543f86ebaeb9d1ae63cdea7c9d85345affc9eb0c2b7661",
+      "design_sha256": "a57b90a3bf96b82261cb5181bf65b75a8d8a2dc22da84b7133795f3a3015a8fe",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "model_spec.json",
+      "sha256": "776d14edb89b889dea775fe3c37ccc7617b3a20d7ea9af03650bc93019a8f33a",
+      "model_id": "GB-US-CAPE-COD-HERITAGE",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "9f2c658df8fa86f8eae21b032fc9d3948622e727b2bbbf41fba484d8a319325e",
+      "source_spec_hash": "466c9f545765697751543f86ebaeb9d1ae63cdea7c9d85345affc9eb0c2b7661",
+      "design_sha256": "a57b90a3bf96b82261cb5181bf65b75a8d8a2dc22da84b7133795f3a3015a8fe",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "printable_a4.pdf",
+      "sha256": "fce07f8c559b17f5872b5fd6bc5b9d665a18543d4e5719092c4e84492ca83731",
+      "model_id": "GB-US-CAPE-COD-HERITAGE",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "9f2c658df8fa86f8eae21b032fc9d3948622e727b2bbbf41fba484d8a319325e",
+      "source_spec_hash": "466c9f545765697751543f86ebaeb9d1ae63cdea7c9d85345affc9eb0c2b7661",
+      "design_sha256": "a57b90a3bf96b82261cb5181bf65b75a8d8a2dc22da84b7133795f3a3015a8fe",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "printable_preview.png",
+      "sha256": "0da9ce0df97750a7e60e3ca1a9d92f5560af4d9c753f20ddb20ae200cbe390d5",
+      "model_id": "GB-US-CAPE-COD-HERITAGE",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "9f2c658df8fa86f8eae21b032fc9d3948622e727b2bbbf41fba484d8a319325e",
+      "source_spec_hash": "466c9f545765697751543f86ebaeb9d1ae63cdea7c9d85345affc9eb0c2b7661",
+      "design_sha256": "a57b90a3bf96b82261cb5181bf65b75a8d8a2dc22da84b7133795f3a3015a8fe",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "project.zip",
+      "sha256": "3d7fc0b47ab506ed5e96399eb3e5bfe80fb4d8588639add7babc3a8b8f728a6e",
+      "model_id": "GB-US-CAPE-COD-HERITAGE",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "9f2c658df8fa86f8eae21b032fc9d3948622e727b2bbbf41fba484d8a319325e",
+      "source_spec_hash": "466c9f545765697751543f86ebaeb9d1ae63cdea7c9d85345affc9eb0c2b7661",
+      "design_sha256": "a57b90a3bf96b82261cb5181bf65b75a8d8a2dc22da84b7133795f3a3015a8fe",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "svg_pages/page_001.svg",
+      "sha256": "75ebe1e21be9eee171c6e9e90a2e19c86b7fb7a79148fc898a875d2d7b37a1da",
+      "model_id": "GB-US-CAPE-COD-HERITAGE",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "9f2c658df8fa86f8eae21b032fc9d3948622e727b2bbbf41fba484d8a319325e",
+      "source_spec_hash": "466c9f545765697751543f86ebaeb9d1ae63cdea7c9d85345affc9eb0c2b7661",
+      "design_sha256": "a57b90a3bf96b82261cb5181bf65b75a8d8a2dc22da84b7133795f3a3015a8fe",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "svg_pages/page_002.svg",
+      "sha256": "142c9b37b22331ed54ae3217e8d980dd7d2766dfcfa49df6c2fc3762e3746480",
+      "model_id": "GB-US-CAPE-COD-HERITAGE",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "9f2c658df8fa86f8eae21b032fc9d3948622e727b2bbbf41fba484d8a319325e",
+      "source_spec_hash": "466c9f545765697751543f86ebaeb9d1ae63cdea7c9d85345affc9eb0c2b7661",
+      "design_sha256": "a57b90a3bf96b82261cb5181bf65b75a8d8a2dc22da84b7133795f3a3015a8fe",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "template_preview.svg",
+      "sha256": "3f58f039ed5435f1e6207e7d459215bef9ccd8b580c0e499128ae03fe41aaf02",
+      "model_id": "GB-US-CAPE-COD-HERITAGE",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "9f2c658df8fa86f8eae21b032fc9d3948622e727b2bbbf41fba484d8a319325e",
+      "source_spec_hash": "466c9f545765697751543f86ebaeb9d1ae63cdea7c9d85345affc9eb0c2b7661",
+      "design_sha256": "a57b90a3bf96b82261cb5181bf65b75a8d8a2dc22da84b7133795f3a3015a8fe",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "validation_report.json",
+      "sha256": "e827ba832f3930c42f5aa30c7facfd0c9d95df3037fc6cf2ce3a174afc9438e7",
+      "model_id": "GB-US-CAPE-COD-HERITAGE",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "9f2c658df8fa86f8eae21b032fc9d3948622e727b2bbbf41fba484d8a319325e",
+      "source_spec_hash": "466c9f545765697751543f86ebaeb9d1ae63cdea7c9d85345affc9eb0c2b7661",
+      "design_sha256": "a57b90a3bf96b82261cb5181bf65b75a8d8a2dc22da84b7133795f3a3015a8fe",
+      "template_version": "2.0.0"
+    }
+  ]
+}

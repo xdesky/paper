@@ -1,0 +1,39 @@
+# {"design_sha256":"eb638a0890e6302b656288e03a12f37bb0ce2580f1140c934f94dde679f0849d","geometry_sha256":"e821e5c16456bda60fcf55c563d9cbe3199d7e26513e1f5c7a44163e4efff942","model_id":"GB-US-COLONIAL-MIDNIGHT","project_id":"christmas-deluxe-samples","revision":1,"source_spec_hash":"970b744770ae94bb74dd62ba383682f4fad0d6b0fba968c53171a05d5fe81c3e","template_version":"3.0.0","version":"gingerbread-3.0.0"}
+g FRONT
+v -42.5 -32.5 0
+v 42.5 -32.5 0
+v 42.5 -32.5 105
+v 0.0 -32.5 135
+v -42.5 -32.5 105
+f 1 2 3 4 5
+g BACK
+v -42.5 32.5 105
+v 0.0 32.5 135
+v 42.5 32.5 105
+v 42.5 32.5 0
+v -42.5 32.5 0
+f 6 7 8 9 10
+g RIGHT
+v 42.5 -32.5 0
+v 42.5 32.5 0
+v 42.5 32.5 105
+v 42.5 -32.5 105
+f 11 12 13 14
+g LEFT
+v -42.5 32.5 0
+v -42.5 -32.5 0
+v -42.5 -32.5 105
+v -42.5 32.5 105
+f 15 16 17 18
+g ROOF_1
+v 0.0 -32.5 135.0
+v 0.0 32.5 135.0
+v -42.5 32.5 105.0
+v -42.5 -32.5 105.0
+f 19 20 21 22
+g ROOF_2
+v 42.5 -32.5 105.0
+v 42.5 32.5 105.0
+v 0.0 32.5 135.0
+v 0.0 -32.5 135.0
+f 23 24 25 26

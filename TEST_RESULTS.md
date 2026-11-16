@@ -59,3 +59,35 @@ Browser test: tạo dự án khung nhà → Generate → SVG và canvas 3D xuấ
 - Browser: 4 regression tests passed; test A4 riêng passed (6.1 s) sau khi sửa test chọn lại đúng dự án khi reload. Xác nhận lưu A4, Generate, SVG 210×297, popup Print và ẩn Print khi có thay đổi chưa xuất lại.
 - PDF tải xuống: A4 210×297 mm trong sai số 0.01 mm. Chrome Print PDF: 2 trang, 209.889×297.011 mm do làm tròn kích thước trang của trình duyệt; thước 39.9993 mm, không co mẫu hoặc thêm trang trắng.
 - Screenshot: test-results/a4-workspace.png. Browser PDF: test-results/browser-printed-a4.pdf.
+
+## American Premium — 2026-11-16
+
+- Backend: **63 passed** (56.86 s), gồm toàn bộ 26 template trên Letter và A4, 4 mẫu Phase A và regression API.
+- Browser: **6 passed** (34.2 s): thư viện, tìm kiếm/lọc 20 Premium, 10 model families, chi tiết 8 mặt/4 mảnh Dutch Colonial, 3D, Generate A4, Print và mobile overflow.
+- Production build PASS. 20 package A4 tạo sẵn đạt QA PASS; ZIP tổng chứa đủ 20 ZIP dự án.
+- Mái phẳng/mái một dốc có mảnh mái đơn; kiểm định PDF đọc cả line, rectangle và quadrilateral để đối chiếu đường cắt. Hinge count và seam map kiểm tra theo geometry thật.
+- Đã xem montage 10 dáng nhà và workspace Dutch Colonial. Họa tiết in vector, không phải khối hiên/cửa/ống khói rời. Physical assembly NOT_TESTED.
+
+## Christmas Deluxe v3 — trang trí và phụ kiện
+
+- Backend **90 passed**, 70.76 s. Kiểm tra 26 mẫu trên A4/Letter; họa tiết nằm trong mặt cắt, phụ kiện nằm trong đế, khe cây khớp nhau, hai khối quà có 12 cạnh chung kín.
+- Mỗi package có 47 mục QA: geometry nhà, kích thước trang, đường cắt PDF/SVG, thước 40 mm, vị trí mã trên tai dán; phụ kiện không chồng nhau, đường cắt PDF đối chiếu polygon, mã quà nằm kín trên tai, guide có hai đầu ghép.
+- Browser **6 passed**, 45.8 s: library, 3D, Generate A4, chọn trang phụ kiện, Print đầy đủ 4 trang cho nhà tiêu chuẩn, download và kiểm tra mobile.
+- Build TypeScript/Vite PASS. 26 package A4 phiên bản 3 đạt QA PASS và được đóng gói riêng, giữ bộ cũ.
+- Đã xem preview nhà + tiểu cảnh, ảnh workspace, render Poppler trang cây/quà và trang hướng dẫn mã ghép. Đế là tấm phẳng rời; không coi QA số học là thử lắp giấy thật.
+
+## Trang trí theo ảnh tham khảo — v3.1
+
+- Backend **91 passed** trong 111.48 s. Kiểm tra thêm chữ ký hình học trước/sau của cả 26 mẫu: panels, vertices, seams, bounds bố trí và toàn bộ đường viền phụ kiện không đổi.
+- 26 package A4 xuất thật, tất cả QA PASS. Họa tiết dùng cùng dữ liệu vector cho PDF, SVG và texture 3D; bài test kiểm tra artwork không tràn khỏi panel vẫn PASS.
+- Đã xem preview 3D và render Poppler bản in mặt nhà; mã vẫn chỉ trên tai, họa tiết không chèn lên mã. Hiệu ứng nổi là minh họa in trên giấy; không thêm chi tiết kết cấu theo ảnh tham khảo.
+
+## Mái đua v4
+
+- Backend **144 passed**, 136.73 s: 26 mẫu A4/Letter và 53 tests bổ sung cho lớp mái phủ, artwork, mặt đỡ, nếp gấp, legacy snapshot.
+- Kiểm định mái phủ: bao phủ mái khung; song song/offset 0.4 mm; mép trước/sau 6 mm; hai đầu seam khớp; nếp gấp không bị cắt; diện tích không chồng lấn; fits cả Letter và A4 ở 100%.
+- Chữ ký panel/seam/layout mái KHUNG, tường và hai trang phụ kiện cũ không đổi; riêng mái phủ là geometry bổ sung được người dùng yêu cầu.
+- PDF/SVG mái phủ được so sánh đường cắt với polygon và đo thước 40 mm; kiểm tra mã R trên tai, sơ đồ hướng dẫn có đủ hai đầu. Đã render Poppler trang mái Dutch Colonial và xem preview 3D.
+- Build TypeScript/Vite PASS. Chưa thử lắp giấy thật; không coi kiểm thử phần mềm là chứng nhận độ cứng giấy/keo.
+
+- Browser v4: **6 passed** (1.6 phút). Chrome Print tạo đúng 5 trang cho mẫu tiêu chuẩn ở A4/Letter; thước 40 mm trên cả trang mái mới giữ đúng tỷ lệ. Bộ ZIP tổng đủ 26 ZIP con, kiểm tra CRC PASS.

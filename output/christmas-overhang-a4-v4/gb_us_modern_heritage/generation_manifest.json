@@ -1,0 +1,283 @@
+{
+  "model_id": "GB-US-MODERN-HERITAGE",
+  "version": "gingerbread-4.0.0",
+  "project_id": "overhang-samples",
+  "revision": 1,
+  "geometry_sha256": "676d2e7d4bcd876e74ea89bb3834779e21379b0bfec075671cf15f981cd7b7ae",
+  "source_spec_hash": "37a7a37def82184aa16437b5074d5de9a87467daea84992100a5f10ac85a1a3a",
+  "design_sha256": "d5923d8957afdd30dde1cf022ea9846c32e22912417dcbaf2e17e557c2481775",
+  "template_version": "4.0.0",
+  "input": {
+    "preset": "gb_us_modern_heritage",
+    "template": {
+      "id": "gb_us_modern_heritage",
+      "name": "Modern Shed House · Heritage Christmas",
+      "subtitle": "Modern Shed House / Heritage Christmas",
+      "collection": "American Premium",
+      "model_family": "modern",
+      "architecture": "Modern Shed House",
+      "finish": "Heritage Christmas",
+      "profile": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "material": "board",
+      "premium": true,
+      "width": 95,
+      "depth": 65,
+      "wall_height": 68,
+      "roof_rise": 38,
+      "wall": "#b97946",
+      "roof": "#943f4a",
+      "accent": "#bf394a",
+      "trim": "#fff7e5",
+      "background": "#ebe9df",
+      "motif": "american",
+      "difficulty": "Trung bình",
+      "description": "Nhà lấy cảm hứng từ Modern Shed House: mặt đứng board, cửa chia ô, vòng lá Noel và mái lợp chi tiết. Phiên bản Heritage Christmas.",
+      "roof_overhang_mm": 4,
+      "roof_rake_mm": 6
+    },
+    "paper": "A4",
+    "project_id": "overhang-samples",
+    "revision": 1
+  },
+  "template": {
+    "id": "gb_us_modern_heritage",
+    "name": "Modern Shed House · Heritage Christmas",
+    "subtitle": "Modern Shed House / Heritage Christmas",
+    "collection": "American Premium",
+    "model_family": "modern",
+    "architecture": "Modern Shed House",
+    "finish": "Heritage Christmas",
+    "profile": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "material": "board",
+    "premium": true,
+    "width": 95,
+    "depth": 65,
+    "wall_height": 68,
+    "roof_rise": 38,
+    "wall": "#b97946",
+    "roof": "#943f4a",
+    "accent": "#bf394a",
+    "trim": "#fff7e5",
+    "background": "#ebe9df",
+    "motif": "american",
+    "difficulty": "Trung bình",
+    "description": "Nhà lấy cảm hứng từ Modern Shed House: mặt đứng board, cửa chia ô, vòng lá Noel và mái lợp chi tiết. Phiên bản Heritage Christmas.",
+    "roof_overhang_mm": 4,
+    "roof_rake_mm": 6
+  },
+  "qa_status": "PASS",
+  "algorithm": "gable-house-1.0; v1.2 rigid pairing + shelf packing",
+  "physical_assembly": "NOT_TESTED",
+  "artifacts": [
+    {
+      "path": "accessories.pdf",
+      "sha256": "e739627eee6ecff9cf7ecdc793cbd5120c3dd9ca5ebebe0e36051d2c7d552633",
+      "model_id": "GB-US-MODERN-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "676d2e7d4bcd876e74ea89bb3834779e21379b0bfec075671cf15f981cd7b7ae",
+      "source_spec_hash": "37a7a37def82184aa16437b5074d5de9a87467daea84992100a5f10ac85a1a3a",
+      "design_sha256": "d5923d8957afdd30dde1cf022ea9846c32e22912417dcbaf2e17e557c2481775",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "accessories_guide.pdf",
+      "sha256": "a7655a483390d7d581376f4ea6b6c2af40e722b5faefecf3a43895e7f47a6ff0",
+      "model_id": "GB-US-MODERN-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "676d2e7d4bcd876e74ea89bb3834779e21379b0bfec075671cf15f981cd7b7ae",
+      "source_spec_hash": "37a7a37def82184aa16437b5074d5de9a87467daea84992100a5f10ac85a1a3a",
+      "design_sha256": "d5923d8957afdd30dde1cf022ea9846c32e22912417dcbaf2e17e557c2481775",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "assembly_guide.pdf",
+      "sha256": "88bb8551a569690fa8ea58a206de8de77cafde095db34bc7ecf4e25aa765de3a",
+      "model_id": "GB-US-MODERN-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "676d2e7d4bcd876e74ea89bb3834779e21379b0bfec075671cf15f981cd7b7ae",
+      "source_spec_hash": "37a7a37def82184aa16437b5074d5de9a87467daea84992100a5f10ac85a1a3a",
+      "design_sha256": "d5923d8957afdd30dde1cf022ea9846c32e22912417dcbaf2e17e557c2481775",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "display_scene.obj",
+      "sha256": "66bada4870f5b55502407bb9b26d835810222a31006c51b52270cba425b39c0f",
+      "model_id": "GB-US-MODERN-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "676d2e7d4bcd876e74ea89bb3834779e21379b0bfec075671cf15f981cd7b7ae",
+      "source_spec_hash": "37a7a37def82184aa16437b5074d5de9a87467daea84992100a5f10ac85a1a3a",
+      "design_sha256": "d5923d8957afdd30dde1cf022ea9846c32e22912417dcbaf2e17e557c2481775",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "model.obj",
+      "sha256": "7bc8d7219e4e75596157e1e787fdd41319984c9bb289fecc9cfee40463e9387e",
+      "model_id": "GB-US-MODERN-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "676d2e7d4bcd876e74ea89bb3834779e21379b0bfec075671cf15f981cd7b7ae",
+      "source_spec_hash": "37a7a37def82184aa16437b5074d5de9a87467daea84992100a5f10ac85a1a3a",
+      "design_sha256": "d5923d8957afdd30dde1cf022ea9846c32e22912417dcbaf2e17e557c2481775",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "model_3d_preview.png",
+      "sha256": "695b3a093d317f9231359dda2a20c649435f2d85575eaec3d3da3019121ceec1",
+      "model_id": "GB-US-MODERN-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "676d2e7d4bcd876e74ea89bb3834779e21379b0bfec075671cf15f981cd7b7ae",
+      "source_spec_hash": "37a7a37def82184aa16437b5074d5de9a87467daea84992100a5f10ac85a1a3a",
+      "design_sha256": "d5923d8957afdd30dde1cf022ea9846c32e22912417dcbaf2e17e557c2481775",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "model_spec.json",
+      "sha256": "14e6e930b0cac0bb5d9c5a959eefbf5f5da4a6fe1f07083710ab8c4b528c1d4e",
+      "model_id": "GB-US-MODERN-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "676d2e7d4bcd876e74ea89bb3834779e21379b0bfec075671cf15f981cd7b7ae",
+      "source_spec_hash": "37a7a37def82184aa16437b5074d5de9a87467daea84992100a5f10ac85a1a3a",
+      "design_sha256": "d5923d8957afdd30dde1cf022ea9846c32e22912417dcbaf2e17e557c2481775",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "printable_a4.pdf",
+      "sha256": "01adf99485b51c2fb0803e0b3c6d5180746748fb5229bf3212f53a152edafce9",
+      "model_id": "GB-US-MODERN-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "676d2e7d4bcd876e74ea89bb3834779e21379b0bfec075671cf15f981cd7b7ae",
+      "source_spec_hash": "37a7a37def82184aa16437b5074d5de9a87467daea84992100a5f10ac85a1a3a",
+      "design_sha256": "d5923d8957afdd30dde1cf022ea9846c32e22912417dcbaf2e17e557c2481775",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "printable_preview.png",
+      "sha256": "c653101b23308c5733dff2a8e14ce158b65da91aa06f6d1340016dcadbeb5007",
+      "model_id": "GB-US-MODERN-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "676d2e7d4bcd876e74ea89bb3834779e21379b0bfec075671cf15f981cd7b7ae",
+      "source_spec_hash": "37a7a37def82184aa16437b5074d5de9a87467daea84992100a5f10ac85a1a3a",
+      "design_sha256": "d5923d8957afdd30dde1cf022ea9846c32e22912417dcbaf2e17e557c2481775",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "svg_pages/page_001.svg",
+      "sha256": "2e578e11315d887845b0cf28b21c439eaf8f5b3e01699e0b2a0cd103258c1bd5",
+      "model_id": "GB-US-MODERN-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "676d2e7d4bcd876e74ea89bb3834779e21379b0bfec075671cf15f981cd7b7ae",
+      "source_spec_hash": "37a7a37def82184aa16437b5074d5de9a87467daea84992100a5f10ac85a1a3a",
+      "design_sha256": "d5923d8957afdd30dde1cf022ea9846c32e22912417dcbaf2e17e557c2481775",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "svg_pages/page_002.svg",
+      "sha256": "1381a07b66aaef6a4cdb2d55e7aecabe4d8f2c1046d689bfb475c878e5a8a565",
+      "model_id": "GB-US-MODERN-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "676d2e7d4bcd876e74ea89bb3834779e21379b0bfec075671cf15f981cd7b7ae",
+      "source_spec_hash": "37a7a37def82184aa16437b5074d5de9a87467daea84992100a5f10ac85a1a3a",
+      "design_sha256": "d5923d8957afdd30dde1cf022ea9846c32e22912417dcbaf2e17e557c2481775",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "svg_pages/page_003.svg",
+      "sha256": "de07326e0f85512871175df53636c14b07aa96922cebf25d22df77e27ca063df",
+      "model_id": "GB-US-MODERN-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "676d2e7d4bcd876e74ea89bb3834779e21379b0bfec075671cf15f981cd7b7ae",
+      "source_spec_hash": "37a7a37def82184aa16437b5074d5de9a87467daea84992100a5f10ac85a1a3a",
+      "design_sha256": "d5923d8957afdd30dde1cf022ea9846c32e22912417dcbaf2e17e557c2481775",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "svg_pages/page_004.svg",
+      "sha256": "f1be514cc652202cc0388fa74d1bfde8cd3460dbc5beaf9024a47099ca64c2e4",
+      "model_id": "GB-US-MODERN-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "676d2e7d4bcd876e74ea89bb3834779e21379b0bfec075671cf15f981cd7b7ae",
+      "source_spec_hash": "37a7a37def82184aa16437b5074d5de9a87467daea84992100a5f10ac85a1a3a",
+      "design_sha256": "d5923d8957afdd30dde1cf022ea9846c32e22912417dcbaf2e17e557c2481775",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "svg_pages/page_005.svg",
+      "sha256": "e8c338a612ca63bb3297440ea73e6e8e20bfda467dcc47718f908d72e248930e",
+      "model_id": "GB-US-MODERN-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "676d2e7d4bcd876e74ea89bb3834779e21379b0bfec075671cf15f981cd7b7ae",
+      "source_spec_hash": "37a7a37def82184aa16437b5074d5de9a87467daea84992100a5f10ac85a1a3a",
+      "design_sha256": "d5923d8957afdd30dde1cf022ea9846c32e22912417dcbaf2e17e557c2481775",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "template_preview.svg",
+      "sha256": "20c690cd18ea8aead4a254a4af5a1165707643246690504d40c0af156a593c37",
+      "model_id": "GB-US-MODERN-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "676d2e7d4bcd876e74ea89bb3834779e21379b0bfec075671cf15f981cd7b7ae",
+      "source_spec_hash": "37a7a37def82184aa16437b5074d5de9a87467daea84992100a5f10ac85a1a3a",
+      "design_sha256": "d5923d8957afdd30dde1cf022ea9846c32e22912417dcbaf2e17e557c2481775",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "validation_report.json",
+      "sha256": "fc1ae323f192e379eb5794d173b656548bc578dd068b4b3228bc3c0e41f09318",
+      "model_id": "GB-US-MODERN-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "676d2e7d4bcd876e74ea89bb3834779e21379b0bfec075671cf15f981cd7b7ae",
+      "source_spec_hash": "37a7a37def82184aa16437b5074d5de9a87467daea84992100a5f10ac85a1a3a",
+      "design_sha256": "d5923d8957afdd30dde1cf022ea9846c32e22912417dcbaf2e17e557c2481775",
+      "template_version": "4.0.0"
+    }
+  ]
+}

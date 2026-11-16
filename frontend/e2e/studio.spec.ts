@@ -8,11 +8,11 @@ test('create, generate, inspect SVG and 3D, download real ZIP, invalidate stale 
  await form.getByRole('button',{name:'Tạo dự án',exact:true}).click();
  await expect(page.getByRole('heading',{name:'Browser smoke',exact:true})).toBeVisible();
  await page.getByRole('button',{name:'✧ Generate',exact:true}).click();
- await expect(page.locator('.svg-sheet svg')).toBeVisible({timeout:45000});
+ await expect(page.locator('.svg-sheet svg').first()).toBeVisible({timeout:45000});
  await expect(page.locator('.model-view canvas')).toBeVisible();
  await expect(page.locator('.metrics')).toContainText('2');
- await page.getByRole('combobox',{name:'Chọn trang in'}).selectOption('1');
- await expect(page.locator('.svg-sheet svg')).toContainText('Page 2/2');
+ await page.getByRole('button',{name:'Trang sau',exact:true}).click();
+ await expect(page.locator('.svg-sheet svg').nth(1)).toContainText('Page 2/2');
  await page.locator('.seam-code').first().click();
  await expect(page.locator('.page-footer')).toContainText('Đang chọn:');
  const [download]=await Promise.all([page.waitForEvent('download'),page.getByRole('link',{name:'↓ Export All'}).click()]);
@@ -22,7 +22,7 @@ test('create, generate, inspect SVG and 3D, download real ZIP, invalidate stale 
  await page.getByRole('button',{name:'▧ Workspace',exact:true}).click();
  await page.screenshot({path:'../test-results/studio-desktop.png',fullPage:true});
  await page.setViewportSize({width:390,height:844});
- await expect(page.locator('.svg-sheet svg')).toBeVisible();
+ await expect(page.locator('.svg-sheet svg').first()).toBeVisible();
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBeTruthy();
  await page.screenshot({path:'../test-results/studio-mobile.png',fullPage:true});
  await page.getByLabel('Mẫu hình học').selectOption('cube_100');
@@ -31,7 +31,7 @@ test('create, generate, inspect SVG and 3D, download real ZIP, invalidate stale 
  await expect(page.locator('.header-actions')).toContainText('Cần tạo lại');
  await page.getByRole('combobox',{name:'Mẫu hình học',exact:true}).selectOption('cube_200');
  await page.getByRole('button',{name:'✧ Generate',exact:true}).click();
- await expect(page.getByRole('combobox',{name:'Chọn trang in'}).locator('option')).toHaveCount(12,{timeout:45000});
+ await expect(page.locator('.preview-page')).toHaveCount(12,{timeout:45000});
  expect(errors).toEqual([]);
  const all=await (await request.get('/api/projects')).json();
  const p=all.find((x:{name:string})=>x.name==='Browser smoke');

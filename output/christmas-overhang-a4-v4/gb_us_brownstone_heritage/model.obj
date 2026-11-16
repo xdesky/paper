@@ -1,0 +1,31 @@
+# {"design_sha256":"b51009b71d34a08ac5a9a3847e0169ceeaa232ec27a3b9bb980dfe5005d0e55e","geometry_sha256":"3a36566a9886a7a76eeafabced3c8588a538e9bece277708c751f540de103cd9","model_id":"GB-US-BROWNSTONE-HERITAGE","project_id":"overhang-samples","revision":1,"source_spec_hash":"90f0719c9a8a7d5ac91498ea167b61a65272394a92dc844852b050e5d6dfd782","template_version":"4.0.0","version":"gingerbread-4.0.0"}
+g FRONT
+v -32.5 -32.5 0
+v 32.5 -32.5 0
+v 32.5 -32.5 143
+v -32.5 -32.5 143
+f 1 2 3 4
+g BACK
+v -32.5 32.5 143
+v 32.5 32.5 143
+v 32.5 32.5 0
+v -32.5 32.5 0
+f 5 6 7 8
+g RIGHT
+v 32.5 -32.5 0
+v 32.5 32.5 0
+v 32.5 32.5 143
+v 32.5 -32.5 143
+f 9 10 11 12
+g LEFT
+v -32.5 32.5 0
+v -32.5 -32.5 0
+v -32.5 -32.5 143
+v -32.5 32.5 143
+f 13 14 15 16
+g ROOF_1
+v 32.5 -32.5 143.0
+v 32.5 32.5 143.0
+v -32.5 32.5 143.0
+v -32.5 -32.5 143.0
+f 17 18 19 20

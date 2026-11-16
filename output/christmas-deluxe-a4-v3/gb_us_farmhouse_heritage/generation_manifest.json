@@ -1,0 +1,275 @@
+{
+  "model_id": "GB-US-FARMHOUSE-HERITAGE",
+  "version": "gingerbread-3.0.0",
+  "project_id": "christmas-deluxe-samples",
+  "revision": 1,
+  "geometry_sha256": "53e73d55ca4ab1acd18f06d0d7f263b09a6091b700027909be1093df45b379cd",
+  "source_spec_hash": "c3c3e2236b847d36f68c2c3b435886c8071103c75b35eabe3726630e9ea803b1",
+  "design_sha256": "e0df0ddb04ad6000ada8c94429852251f4ba1aaa8054658dee42e63465b111c5",
+  "template_version": "3.0.0",
+  "input": {
+    "preset": "gb_us_farmhouse_heritage",
+    "template": {
+      "id": "gb_us_farmhouse_heritage",
+      "name": "American Farmhouse · Heritage Christmas",
+      "subtitle": "American Farmhouse / Heritage Christmas",
+      "collection": "American Premium",
+      "model_family": "farmhouse",
+      "architecture": "American Farmhouse",
+      "finish": "Heritage Christmas",
+      "profile": [
+        [
+          0,
+          0
+        ],
+        [
+          0.5,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "material": "board",
+      "premium": true,
+      "width": 78,
+      "depth": 72,
+      "wall_height": 105,
+      "roof_rise": 48,
+      "wall": "#b97946",
+      "roof": "#943f4a",
+      "accent": "#bf394a",
+      "trim": "#fff7e5",
+      "background": "#ebe9df",
+      "motif": "american",
+      "difficulty": "Trung bình",
+      "description": "Nhà lấy cảm hứng từ American Farmhouse: mặt đứng board, cửa chia ô, vòng lá Noel và mái lợp chi tiết. Phiên bản Heritage Christmas."
+    },
+    "paper": "A4",
+    "project_id": "christmas-deluxe-samples",
+    "revision": 1
+  },
+  "template": {
+    "id": "gb_us_farmhouse_heritage",
+    "name": "American Farmhouse · Heritage Christmas",
+    "subtitle": "American Farmhouse / Heritage Christmas",
+    "collection": "American Premium",
+    "model_family": "farmhouse",
+    "architecture": "American Farmhouse",
+    "finish": "Heritage Christmas",
+    "profile": [
+      [
+        0,
+        0
+      ],
+      [
+        0.5,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "material": "board",
+    "premium": true,
+    "width": 78,
+    "depth": 72,
+    "wall_height": 105,
+    "roof_rise": 48,
+    "wall": "#b97946",
+    "roof": "#943f4a",
+    "accent": "#bf394a",
+    "trim": "#fff7e5",
+    "background": "#ebe9df",
+    "motif": "american",
+    "difficulty": "Trung bình",
+    "description": "Nhà lấy cảm hứng từ American Farmhouse: mặt đứng board, cửa chia ô, vòng lá Noel và mái lợp chi tiết. Phiên bản Heritage Christmas."
+  },
+  "qa_status": "PASS",
+  "algorithm": "gable-house-1.0; v1.2 rigid pairing + shelf packing",
+  "physical_assembly": "NOT_TESTED",
+  "artifacts": [
+    {
+      "path": "accessories.pdf",
+      "sha256": "5468a2bb83357386cac3bcba42cf4628cf34f44d3d7ef375cda58330185f6527",
+      "model_id": "GB-US-FARMHOUSE-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "53e73d55ca4ab1acd18f06d0d7f263b09a6091b700027909be1093df45b379cd",
+      "source_spec_hash": "c3c3e2236b847d36f68c2c3b435886c8071103c75b35eabe3726630e9ea803b1",
+      "design_sha256": "e0df0ddb04ad6000ada8c94429852251f4ba1aaa8054658dee42e63465b111c5",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "accessories_guide.pdf",
+      "sha256": "03ef35ecc6931401d00938d3f1d059a017975db7eaf02275914c1fbc895ad54d",
+      "model_id": "GB-US-FARMHOUSE-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "53e73d55ca4ab1acd18f06d0d7f263b09a6091b700027909be1093df45b379cd",
+      "source_spec_hash": "c3c3e2236b847d36f68c2c3b435886c8071103c75b35eabe3726630e9ea803b1",
+      "design_sha256": "e0df0ddb04ad6000ada8c94429852251f4ba1aaa8054658dee42e63465b111c5",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "assembly_guide.pdf",
+      "sha256": "fa5c1946c1e682afd3a4fda163c5821c80b006a637ff9950f0928d8ef3719b1d",
+      "model_id": "GB-US-FARMHOUSE-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "53e73d55ca4ab1acd18f06d0d7f263b09a6091b700027909be1093df45b379cd",
+      "source_spec_hash": "c3c3e2236b847d36f68c2c3b435886c8071103c75b35eabe3726630e9ea803b1",
+      "design_sha256": "e0df0ddb04ad6000ada8c94429852251f4ba1aaa8054658dee42e63465b111c5",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "display_scene.obj",
+      "sha256": "fffe1dacf0e9d1e6f9a1e79e8abaff16354c8b0193a24ab47dc9d55dc03c4c4e",
+      "model_id": "GB-US-FARMHOUSE-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "53e73d55ca4ab1acd18f06d0d7f263b09a6091b700027909be1093df45b379cd",
+      "source_spec_hash": "c3c3e2236b847d36f68c2c3b435886c8071103c75b35eabe3726630e9ea803b1",
+      "design_sha256": "e0df0ddb04ad6000ada8c94429852251f4ba1aaa8054658dee42e63465b111c5",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "model.obj",
+      "sha256": "c551d315b33d75fd7cbdb3e78c0b465fcbd19203abeb21327ee675c20de29ca5",
+      "model_id": "GB-US-FARMHOUSE-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "53e73d55ca4ab1acd18f06d0d7f263b09a6091b700027909be1093df45b379cd",
+      "source_spec_hash": "c3c3e2236b847d36f68c2c3b435886c8071103c75b35eabe3726630e9ea803b1",
+      "design_sha256": "e0df0ddb04ad6000ada8c94429852251f4ba1aaa8054658dee42e63465b111c5",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "model_3d_preview.png",
+      "sha256": "37347680c55305cf0734acfaec49aa7cc46800031e14b993e35188a8f00305d7",
+      "model_id": "GB-US-FARMHOUSE-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "53e73d55ca4ab1acd18f06d0d7f263b09a6091b700027909be1093df45b379cd",
+      "source_spec_hash": "c3c3e2236b847d36f68c2c3b435886c8071103c75b35eabe3726630e9ea803b1",
+      "design_sha256": "e0df0ddb04ad6000ada8c94429852251f4ba1aaa8054658dee42e63465b111c5",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "model_spec.json",
+      "sha256": "1864a1bf4a35734badef5dc91e1d088fa403ea18c255ca272c3d3af3c44025a8",
+      "model_id": "GB-US-FARMHOUSE-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "53e73d55ca4ab1acd18f06d0d7f263b09a6091b700027909be1093df45b379cd",
+      "source_spec_hash": "c3c3e2236b847d36f68c2c3b435886c8071103c75b35eabe3726630e9ea803b1",
+      "design_sha256": "e0df0ddb04ad6000ada8c94429852251f4ba1aaa8054658dee42e63465b111c5",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "printable_a4.pdf",
+      "sha256": "e7d38b0c1060eaa9710e1493eb4c85941c090c2b47603a26189dfde8c54a490e",
+      "model_id": "GB-US-FARMHOUSE-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "53e73d55ca4ab1acd18f06d0d7f263b09a6091b700027909be1093df45b379cd",
+      "source_spec_hash": "c3c3e2236b847d36f68c2c3b435886c8071103c75b35eabe3726630e9ea803b1",
+      "design_sha256": "e0df0ddb04ad6000ada8c94429852251f4ba1aaa8054658dee42e63465b111c5",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "printable_preview.png",
+      "sha256": "3e25af689aeeaa371f429c3c7e8d5ff71009d293948f842137ceb35276524d77",
+      "model_id": "GB-US-FARMHOUSE-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "53e73d55ca4ab1acd18f06d0d7f263b09a6091b700027909be1093df45b379cd",
+      "source_spec_hash": "c3c3e2236b847d36f68c2c3b435886c8071103c75b35eabe3726630e9ea803b1",
+      "design_sha256": "e0df0ddb04ad6000ada8c94429852251f4ba1aaa8054658dee42e63465b111c5",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "svg_pages/page_001.svg",
+      "sha256": "1d2dd4a1bb55517c4fd0dcc3a59a3b74efbdadd4f1ba8810efb5268ee4a205f8",
+      "model_id": "GB-US-FARMHOUSE-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "53e73d55ca4ab1acd18f06d0d7f263b09a6091b700027909be1093df45b379cd",
+      "source_spec_hash": "c3c3e2236b847d36f68c2c3b435886c8071103c75b35eabe3726630e9ea803b1",
+      "design_sha256": "e0df0ddb04ad6000ada8c94429852251f4ba1aaa8054658dee42e63465b111c5",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "svg_pages/page_002.svg",
+      "sha256": "d71b647087c3dd97bc524849f5b1feb1f235b9adb5530618f837155be9c75654",
+      "model_id": "GB-US-FARMHOUSE-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "53e73d55ca4ab1acd18f06d0d7f263b09a6091b700027909be1093df45b379cd",
+      "source_spec_hash": "c3c3e2236b847d36f68c2c3b435886c8071103c75b35eabe3726630e9ea803b1",
+      "design_sha256": "e0df0ddb04ad6000ada8c94429852251f4ba1aaa8054658dee42e63465b111c5",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "svg_pages/page_003.svg",
+      "sha256": "8a9a23c73b9d6b38c4382a8b247f81d3d28262b0d348c43d005b332006e3e075",
+      "model_id": "GB-US-FARMHOUSE-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "53e73d55ca4ab1acd18f06d0d7f263b09a6091b700027909be1093df45b379cd",
+      "source_spec_hash": "c3c3e2236b847d36f68c2c3b435886c8071103c75b35eabe3726630e9ea803b1",
+      "design_sha256": "e0df0ddb04ad6000ada8c94429852251f4ba1aaa8054658dee42e63465b111c5",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "svg_pages/page_004.svg",
+      "sha256": "9c41077169dd3194473810c733d4de8a9928a2466ab893f6ad7fa1890d592df2",
+      "model_id": "GB-US-FARMHOUSE-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "53e73d55ca4ab1acd18f06d0d7f263b09a6091b700027909be1093df45b379cd",
+      "source_spec_hash": "c3c3e2236b847d36f68c2c3b435886c8071103c75b35eabe3726630e9ea803b1",
+      "design_sha256": "e0df0ddb04ad6000ada8c94429852251f4ba1aaa8054658dee42e63465b111c5",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "template_preview.svg",
+      "sha256": "15c2c84d100eb1f90018354e0edc592e8c0aec5f1e452c085ea5b8554abf7857",
+      "model_id": "GB-US-FARMHOUSE-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "53e73d55ca4ab1acd18f06d0d7f263b09a6091b700027909be1093df45b379cd",
+      "source_spec_hash": "c3c3e2236b847d36f68c2c3b435886c8071103c75b35eabe3726630e9ea803b1",
+      "design_sha256": "e0df0ddb04ad6000ada8c94429852251f4ba1aaa8054658dee42e63465b111c5",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "validation_report.json",
+      "sha256": "da312d4f4b623796f907b5c7b889853e61a8f4f259e950936af1cef188b93d25",
+      "model_id": "GB-US-FARMHOUSE-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "53e73d55ca4ab1acd18f06d0d7f263b09a6091b700027909be1093df45b379cd",
+      "source_spec_hash": "c3c3e2236b847d36f68c2c3b435886c8071103c75b35eabe3726630e9ea803b1",
+      "design_sha256": "e0df0ddb04ad6000ada8c94429852251f4ba1aaa8054658dee42e63465b111c5",
+      "template_version": "3.0.0"
+    }
+  ]
+}

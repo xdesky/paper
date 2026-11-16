@@ -1,0 +1,39 @@
+# {"design_sha256":"e0df0ddb04ad6000ada8c94429852251f4ba1aaa8054658dee42e63465b111c5","geometry_sha256":"53e73d55ca4ab1acd18f06d0d7f263b09a6091b700027909be1093df45b379cd","model_id":"GB-US-FARMHOUSE-HERITAGE","project_id":"reference-art-samples","revision":1,"source_spec_hash":"adfedcfa891fe3f864bf1ea7dddeaf2889723be6dba24ac52edaaaed1f40cd5b","template_version":"3.1.0","version":"gingerbread-3.1.0"}
+g FRONT
+v -39.0 -36.0 0
+v 39.0 -36.0 0
+v 39.0 -36.0 105
+v 0.0 -36.0 153
+v -39.0 -36.0 105
+f 1 2 3 4 5
+g BACK
+v -39.0 36.0 105
+v 0.0 36.0 153
+v 39.0 36.0 105
+v 39.0 36.0 0
+v -39.0 36.0 0
+f 6 7 8 9 10
+g RIGHT
+v 39.0 -36.0 0
+v 39.0 36.0 0
+v 39.0 36.0 105
+v 39.0 -36.0 105
+f 11 12 13 14
+g LEFT
+v -39.0 36.0 0
+v -39.0 -36.0 0
+v -39.0 -36.0 105
+v -39.0 36.0 105
+f 15 16 17 18
+g ROOF_1
+v 0.0 -36.0 153.0
+v 0.0 36.0 153.0
+v -39.0 36.0 105.0
+v -39.0 -36.0 105.0
+f 19 20 21 22
+g ROOF_2
+v 39.0 -36.0 105.0
+v 39.0 36.0 105.0
+v 0.0 36.0 153.0
+v 0.0 -36.0 153.0
+f 23 24 25 26

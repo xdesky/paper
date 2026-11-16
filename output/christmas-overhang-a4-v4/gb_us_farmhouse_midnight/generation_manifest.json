@@ -1,0 +1,291 @@
+{
+  "model_id": "GB-US-FARMHOUSE-MIDNIGHT",
+  "version": "gingerbread-4.0.0",
+  "project_id": "overhang-samples",
+  "revision": 1,
+  "geometry_sha256": "c40e9ddf39c69ed7be3542912df6b52465608d6b4f96c06433ea95044e7dc477",
+  "source_spec_hash": "bf345bc6bfec9abf3792ddffa9b6c36bea6528f9a562e4765664dcefd8b93e9c",
+  "design_sha256": "64bc27c5cf2b59c393631794bdfc55885179c0e876b1eedec3a2f4bb28d46d92",
+  "template_version": "4.0.0",
+  "input": {
+    "preset": "gb_us_farmhouse_midnight",
+    "template": {
+      "id": "gb_us_farmhouse_midnight",
+      "name": "American Farmhouse · Midnight & Gold",
+      "subtitle": "American Farmhouse / Midnight & Gold",
+      "collection": "American Premium",
+      "model_family": "farmhouse",
+      "architecture": "American Farmhouse",
+      "finish": "Midnight & Gold",
+      "profile": [
+        [
+          0,
+          0
+        ],
+        [
+          0.5,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "material": "board",
+      "premium": true,
+      "width": 78,
+      "depth": 72,
+      "wall_height": 105,
+      "roof_rise": 48,
+      "wall": "#344c60",
+      "roof": "#29313f",
+      "accent": "#bb8648",
+      "trim": "#f5e8c6",
+      "background": "#e5e9ee",
+      "motif": "american",
+      "difficulty": "Trung bình",
+      "description": "Nhà lấy cảm hứng từ American Farmhouse: mặt đứng board, cửa chia ô, vòng lá Noel và mái lợp chi tiết. Phiên bản Midnight & Gold.",
+      "roof_overhang_mm": 4,
+      "roof_rake_mm": 6
+    },
+    "paper": "A4",
+    "project_id": "overhang-samples",
+    "revision": 1
+  },
+  "template": {
+    "id": "gb_us_farmhouse_midnight",
+    "name": "American Farmhouse · Midnight & Gold",
+    "subtitle": "American Farmhouse / Midnight & Gold",
+    "collection": "American Premium",
+    "model_family": "farmhouse",
+    "architecture": "American Farmhouse",
+    "finish": "Midnight & Gold",
+    "profile": [
+      [
+        0,
+        0
+      ],
+      [
+        0.5,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "material": "board",
+    "premium": true,
+    "width": 78,
+    "depth": 72,
+    "wall_height": 105,
+    "roof_rise": 48,
+    "wall": "#344c60",
+    "roof": "#29313f",
+    "accent": "#bb8648",
+    "trim": "#f5e8c6",
+    "background": "#e5e9ee",
+    "motif": "american",
+    "difficulty": "Trung bình",
+    "description": "Nhà lấy cảm hứng từ American Farmhouse: mặt đứng board, cửa chia ô, vòng lá Noel và mái lợp chi tiết. Phiên bản Midnight & Gold.",
+    "roof_overhang_mm": 4,
+    "roof_rake_mm": 6
+  },
+  "qa_status": "PASS",
+  "algorithm": "gable-house-1.0; v1.2 rigid pairing + shelf packing",
+  "physical_assembly": "NOT_TESTED",
+  "artifacts": [
+    {
+      "path": "accessories.pdf",
+      "sha256": "26b9b4344522b49d301afe699a90bd79529a24afd346ff574e855ae77840bda0",
+      "model_id": "GB-US-FARMHOUSE-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "c40e9ddf39c69ed7be3542912df6b52465608d6b4f96c06433ea95044e7dc477",
+      "source_spec_hash": "bf345bc6bfec9abf3792ddffa9b6c36bea6528f9a562e4765664dcefd8b93e9c",
+      "design_sha256": "64bc27c5cf2b59c393631794bdfc55885179c0e876b1eedec3a2f4bb28d46d92",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "accessories_guide.pdf",
+      "sha256": "39428337769374f25d565d8008d5476eae547eaae60793a5a140e40768ddf8fd",
+      "model_id": "GB-US-FARMHOUSE-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "c40e9ddf39c69ed7be3542912df6b52465608d6b4f96c06433ea95044e7dc477",
+      "source_spec_hash": "bf345bc6bfec9abf3792ddffa9b6c36bea6528f9a562e4765664dcefd8b93e9c",
+      "design_sha256": "64bc27c5cf2b59c393631794bdfc55885179c0e876b1eedec3a2f4bb28d46d92",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "assembly_guide.pdf",
+      "sha256": "c3d5fd002c6ff121186a7a38f5e2c38b971c9c158d65ca5ab3706867c114d7c5",
+      "model_id": "GB-US-FARMHOUSE-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "c40e9ddf39c69ed7be3542912df6b52465608d6b4f96c06433ea95044e7dc477",
+      "source_spec_hash": "bf345bc6bfec9abf3792ddffa9b6c36bea6528f9a562e4765664dcefd8b93e9c",
+      "design_sha256": "64bc27c5cf2b59c393631794bdfc55885179c0e876b1eedec3a2f4bb28d46d92",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "display_scene.obj",
+      "sha256": "e05201e27b19c066d8924c3d42694cc83f8c9023d97fe259ae0db320d72a646e",
+      "model_id": "GB-US-FARMHOUSE-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "c40e9ddf39c69ed7be3542912df6b52465608d6b4f96c06433ea95044e7dc477",
+      "source_spec_hash": "bf345bc6bfec9abf3792ddffa9b6c36bea6528f9a562e4765664dcefd8b93e9c",
+      "design_sha256": "64bc27c5cf2b59c393631794bdfc55885179c0e876b1eedec3a2f4bb28d46d92",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "model.obj",
+      "sha256": "f7be84fcefbc59aad2ea6fc3dca28a589c2b6af12929520660eb6a3b5ca09a51",
+      "model_id": "GB-US-FARMHOUSE-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "c40e9ddf39c69ed7be3542912df6b52465608d6b4f96c06433ea95044e7dc477",
+      "source_spec_hash": "bf345bc6bfec9abf3792ddffa9b6c36bea6528f9a562e4765664dcefd8b93e9c",
+      "design_sha256": "64bc27c5cf2b59c393631794bdfc55885179c0e876b1eedec3a2f4bb28d46d92",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "model_3d_preview.png",
+      "sha256": "1156e0b9c268b1cd369c549d2a20e2fb08b6db1ad0ee7279d5ed31d7f812607f",
+      "model_id": "GB-US-FARMHOUSE-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "c40e9ddf39c69ed7be3542912df6b52465608d6b4f96c06433ea95044e7dc477",
+      "source_spec_hash": "bf345bc6bfec9abf3792ddffa9b6c36bea6528f9a562e4765664dcefd8b93e9c",
+      "design_sha256": "64bc27c5cf2b59c393631794bdfc55885179c0e876b1eedec3a2f4bb28d46d92",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "model_spec.json",
+      "sha256": "e8a2b41275833da581fec748a628c8632c3b3e71cbe485c1905a439cf969a986",
+      "model_id": "GB-US-FARMHOUSE-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "c40e9ddf39c69ed7be3542912df6b52465608d6b4f96c06433ea95044e7dc477",
+      "source_spec_hash": "bf345bc6bfec9abf3792ddffa9b6c36bea6528f9a562e4765664dcefd8b93e9c",
+      "design_sha256": "64bc27c5cf2b59c393631794bdfc55885179c0e876b1eedec3a2f4bb28d46d92",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "printable_a4.pdf",
+      "sha256": "0c2efc2c6e29d4d8cba620130359d01567a8bbe4fa892c522430ddbe0b127ae0",
+      "model_id": "GB-US-FARMHOUSE-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "c40e9ddf39c69ed7be3542912df6b52465608d6b4f96c06433ea95044e7dc477",
+      "source_spec_hash": "bf345bc6bfec9abf3792ddffa9b6c36bea6528f9a562e4765664dcefd8b93e9c",
+      "design_sha256": "64bc27c5cf2b59c393631794bdfc55885179c0e876b1eedec3a2f4bb28d46d92",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "printable_preview.png",
+      "sha256": "9dec688ebc12638eef209f7cb09eb873dfc133d1e9f54d368781626e327fa85a",
+      "model_id": "GB-US-FARMHOUSE-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "c40e9ddf39c69ed7be3542912df6b52465608d6b4f96c06433ea95044e7dc477",
+      "source_spec_hash": "bf345bc6bfec9abf3792ddffa9b6c36bea6528f9a562e4765664dcefd8b93e9c",
+      "design_sha256": "64bc27c5cf2b59c393631794bdfc55885179c0e876b1eedec3a2f4bb28d46d92",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "svg_pages/page_001.svg",
+      "sha256": "5882ff04c84307cc313381ef8842d1ac2343d4f2e268a79334ecff9a2bd8ff1f",
+      "model_id": "GB-US-FARMHOUSE-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "c40e9ddf39c69ed7be3542912df6b52465608d6b4f96c06433ea95044e7dc477",
+      "source_spec_hash": "bf345bc6bfec9abf3792ddffa9b6c36bea6528f9a562e4765664dcefd8b93e9c",
+      "design_sha256": "64bc27c5cf2b59c393631794bdfc55885179c0e876b1eedec3a2f4bb28d46d92",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "svg_pages/page_002.svg",
+      "sha256": "750975e48dad947874c99c51b6a7ba7c213aedcb42b23f935737f90a9968516e",
+      "model_id": "GB-US-FARMHOUSE-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "c40e9ddf39c69ed7be3542912df6b52465608d6b4f96c06433ea95044e7dc477",
+      "source_spec_hash": "bf345bc6bfec9abf3792ddffa9b6c36bea6528f9a562e4765664dcefd8b93e9c",
+      "design_sha256": "64bc27c5cf2b59c393631794bdfc55885179c0e876b1eedec3a2f4bb28d46d92",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "svg_pages/page_003.svg",
+      "sha256": "4935bb96df32119c446396c060730d6860972c3883f659d9f132a4ed1b2f9c20",
+      "model_id": "GB-US-FARMHOUSE-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "c40e9ddf39c69ed7be3542912df6b52465608d6b4f96c06433ea95044e7dc477",
+      "source_spec_hash": "bf345bc6bfec9abf3792ddffa9b6c36bea6528f9a562e4765664dcefd8b93e9c",
+      "design_sha256": "64bc27c5cf2b59c393631794bdfc55885179c0e876b1eedec3a2f4bb28d46d92",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "svg_pages/page_004.svg",
+      "sha256": "faf318ef5e0c54488ea82bed57e62ded0d11e23f9190df18a03fe9cd119c158f",
+      "model_id": "GB-US-FARMHOUSE-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "c40e9ddf39c69ed7be3542912df6b52465608d6b4f96c06433ea95044e7dc477",
+      "source_spec_hash": "bf345bc6bfec9abf3792ddffa9b6c36bea6528f9a562e4765664dcefd8b93e9c",
+      "design_sha256": "64bc27c5cf2b59c393631794bdfc55885179c0e876b1eedec3a2f4bb28d46d92",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "svg_pages/page_005.svg",
+      "sha256": "4a01430b70d357981b1944ad81676e01e530956cf7c9b70fbb317090636cfa8f",
+      "model_id": "GB-US-FARMHOUSE-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "c40e9ddf39c69ed7be3542912df6b52465608d6b4f96c06433ea95044e7dc477",
+      "source_spec_hash": "bf345bc6bfec9abf3792ddffa9b6c36bea6528f9a562e4765664dcefd8b93e9c",
+      "design_sha256": "64bc27c5cf2b59c393631794bdfc55885179c0e876b1eedec3a2f4bb28d46d92",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "template_preview.svg",
+      "sha256": "d6f2c63ec337bf2bb1ff86bdf4cf659ff5499f8122b5c8bed89da00e7335f5b9",
+      "model_id": "GB-US-FARMHOUSE-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "c40e9ddf39c69ed7be3542912df6b52465608d6b4f96c06433ea95044e7dc477",
+      "source_spec_hash": "bf345bc6bfec9abf3792ddffa9b6c36bea6528f9a562e4765664dcefd8b93e9c",
+      "design_sha256": "64bc27c5cf2b59c393631794bdfc55885179c0e876b1eedec3a2f4bb28d46d92",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "validation_report.json",
+      "sha256": "bca29c83ccc88d09d6db2d9a46f564e7fcda7d55294b16dffa30dc1b96d45081",
+      "model_id": "GB-US-FARMHOUSE-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "c40e9ddf39c69ed7be3542912df6b52465608d6b4f96c06433ea95044e7dc477",
+      "source_spec_hash": "bf345bc6bfec9abf3792ddffa9b6c36bea6528f9a562e4765664dcefd8b93e9c",
+      "design_sha256": "64bc27c5cf2b59c393631794bdfc55885179c0e876b1eedec3a2f4bb28d46d92",
+      "template_version": "4.0.0"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+# {"design_sha256":"ba3862805b369ed7f2188c86e07fee15d6417a86727a3de181489155ce88c63c","geometry_sha256":"fe8211da73e18a3f3eaa014613af9549167a4bd049c458a41ae8fc8cc70e0813","model_id":"GB-US-CRAFTSMAN-HERITAGE","project_id":"overhang-samples","revision":1,"source_spec_hash":"3feb88d1d32ce66f6995ff596bac22748e1d7abb5edbacbb649890a1971bccf8","template_version":"4.0.0","version":"gingerbread-4.0.0"}
+g FRONT
+v -52.5 -32.5 0
+v 52.5 -32.5 0
+v 52.5 -32.5 64
+v 0.0 -32.5 92
+v -52.5 -32.5 64
+f 1 2 3 4 5
+g BACK
+v -52.5 32.5 64
+v 0.0 32.5 92
+v 52.5 32.5 64
+v 52.5 32.5 0
+v -52.5 32.5 0
+f 6 7 8 9 10
+g RIGHT
+v 52.5 -32.5 0
+v 52.5 32.5 0
+v 52.5 32.5 64
+v 52.5 -32.5 64
+f 11 12 13 14
+g LEFT
+v -52.5 32.5 0
+v -52.5 -32.5 0
+v -52.5 -32.5 64
+v -52.5 32.5 64
+f 15 16 17 18
+g ROOF_1
+v 0.0 -32.5 92.0
+v 0.0 32.5 92.0
+v -52.5 32.5 64.0
+v -52.5 -32.5 64.0
+f 19 20 21 22
+g ROOF_2
+v 52.5 -32.5 64.0
+v 52.5 32.5 64.0
+v 0.0 32.5 92.0
+v 0.0 -32.5 92.0
+f 23 24 25 26

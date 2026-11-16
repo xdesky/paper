@@ -1,0 +1,275 @@
+{
+  "model_id": "GB-US-CAPE-COD-MIDNIGHT",
+  "version": "gingerbread-3.0.0",
+  "project_id": "christmas-deluxe-samples",
+  "revision": 1,
+  "geometry_sha256": "51d407a5f0d3454b0e087cf3638b4304f02b812c8bd992d61244855da2355b17",
+  "source_spec_hash": "a6688215b389fab87b49119914dffe27a3842b2bbbcff762d64abd0708e792c3",
+  "design_sha256": "73307f8b29393974861864be456ee23198d1599313c92ff14b70d11207cb83fd",
+  "template_version": "3.0.0",
+  "input": {
+    "preset": "gb_us_cape_cod_midnight",
+    "template": {
+      "id": "gb_us_cape_cod_midnight",
+      "name": "Cape Cod · Midnight & Gold",
+      "subtitle": "Cape Cod / Midnight & Gold",
+      "collection": "American Premium",
+      "model_family": "cape_cod",
+      "architecture": "Cape Cod",
+      "finish": "Midnight & Gold",
+      "profile": [
+        [
+          0,
+          0
+        ],
+        [
+          0.5,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "material": "shingle",
+      "premium": true,
+      "width": 90,
+      "depth": 65,
+      "wall_height": 70,
+      "roof_rise": 45,
+      "wall": "#344c60",
+      "roof": "#29313f",
+      "accent": "#bb8648",
+      "trim": "#f5e8c6",
+      "background": "#e5e9ee",
+      "motif": "american",
+      "difficulty": "Trung bình",
+      "description": "Nhà lấy cảm hứng từ Cape Cod: mặt đứng shingle, cửa chia ô, vòng lá Noel và mái lợp chi tiết. Phiên bản Midnight & Gold."
+    },
+    "paper": "A4",
+    "project_id": "christmas-deluxe-samples",
+    "revision": 1
+  },
+  "template": {
+    "id": "gb_us_cape_cod_midnight",
+    "name": "Cape Cod · Midnight & Gold",
+    "subtitle": "Cape Cod / Midnight & Gold",
+    "collection": "American Premium",
+    "model_family": "cape_cod",
+    "architecture": "Cape Cod",
+    "finish": "Midnight & Gold",
+    "profile": [
+      [
+        0,
+        0
+      ],
+      [
+        0.5,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "material": "shingle",
+    "premium": true,
+    "width": 90,
+    "depth": 65,
+    "wall_height": 70,
+    "roof_rise": 45,
+    "wall": "#344c60",
+    "roof": "#29313f",
+    "accent": "#bb8648",
+    "trim": "#f5e8c6",
+    "background": "#e5e9ee",
+    "motif": "american",
+    "difficulty": "Trung bình",
+    "description": "Nhà lấy cảm hứng từ Cape Cod: mặt đứng shingle, cửa chia ô, vòng lá Noel và mái lợp chi tiết. Phiên bản Midnight & Gold."
+  },
+  "qa_status": "PASS",
+  "algorithm": "gable-house-1.0; v1.2 rigid pairing + shelf packing",
+  "physical_assembly": "NOT_TESTED",
+  "artifacts": [
+    {
+      "path": "accessories.pdf",
+      "sha256": "88dcd1c586fbd8da0ed9a13670dfdb57269aa7c32524200b9256901d0c08d0d7",
+      "model_id": "GB-US-CAPE-COD-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "51d407a5f0d3454b0e087cf3638b4304f02b812c8bd992d61244855da2355b17",
+      "source_spec_hash": "a6688215b389fab87b49119914dffe27a3842b2bbbcff762d64abd0708e792c3",
+      "design_sha256": "73307f8b29393974861864be456ee23198d1599313c92ff14b70d11207cb83fd",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "accessories_guide.pdf",
+      "sha256": "03ef35ecc6931401d00938d3f1d059a017975db7eaf02275914c1fbc895ad54d",
+      "model_id": "GB-US-CAPE-COD-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "51d407a5f0d3454b0e087cf3638b4304f02b812c8bd992d61244855da2355b17",
+      "source_spec_hash": "a6688215b389fab87b49119914dffe27a3842b2bbbcff762d64abd0708e792c3",
+      "design_sha256": "73307f8b29393974861864be456ee23198d1599313c92ff14b70d11207cb83fd",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "assembly_guide.pdf",
+      "sha256": "e90cd87963062aa96aef9316fc536f243723279c52dd1fdef2e06bafb5680976",
+      "model_id": "GB-US-CAPE-COD-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "51d407a5f0d3454b0e087cf3638b4304f02b812c8bd992d61244855da2355b17",
+      "source_spec_hash": "a6688215b389fab87b49119914dffe27a3842b2bbbcff762d64abd0708e792c3",
+      "design_sha256": "73307f8b29393974861864be456ee23198d1599313c92ff14b70d11207cb83fd",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "display_scene.obj",
+      "sha256": "21896b7e25073b27b296c56fdf620c9c609dee471a8300142b185b7e12753922",
+      "model_id": "GB-US-CAPE-COD-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "51d407a5f0d3454b0e087cf3638b4304f02b812c8bd992d61244855da2355b17",
+      "source_spec_hash": "a6688215b389fab87b49119914dffe27a3842b2bbbcff762d64abd0708e792c3",
+      "design_sha256": "73307f8b29393974861864be456ee23198d1599313c92ff14b70d11207cb83fd",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "model.obj",
+      "sha256": "cb82776a77fdd6db9659c851ab3695dd36e196a9388adedf8c800481b4368fb2",
+      "model_id": "GB-US-CAPE-COD-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "51d407a5f0d3454b0e087cf3638b4304f02b812c8bd992d61244855da2355b17",
+      "source_spec_hash": "a6688215b389fab87b49119914dffe27a3842b2bbbcff762d64abd0708e792c3",
+      "design_sha256": "73307f8b29393974861864be456ee23198d1599313c92ff14b70d11207cb83fd",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "model_3d_preview.png",
+      "sha256": "9c70497c0efce54b4db5b8621ef41b80da6f5605736026dd9548121d3062d935",
+      "model_id": "GB-US-CAPE-COD-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "51d407a5f0d3454b0e087cf3638b4304f02b812c8bd992d61244855da2355b17",
+      "source_spec_hash": "a6688215b389fab87b49119914dffe27a3842b2bbbcff762d64abd0708e792c3",
+      "design_sha256": "73307f8b29393974861864be456ee23198d1599313c92ff14b70d11207cb83fd",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "model_spec.json",
+      "sha256": "aa59a412434ee41f048d60aff39ef6c09eb37eb134e0bbfd0ecf3de6cd6af6fa",
+      "model_id": "GB-US-CAPE-COD-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "51d407a5f0d3454b0e087cf3638b4304f02b812c8bd992d61244855da2355b17",
+      "source_spec_hash": "a6688215b389fab87b49119914dffe27a3842b2bbbcff762d64abd0708e792c3",
+      "design_sha256": "73307f8b29393974861864be456ee23198d1599313c92ff14b70d11207cb83fd",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "printable_a4.pdf",
+      "sha256": "1de237e42491aaca26ca58ce4494d505055f8a23e4a09995d2c172d9855cc8b5",
+      "model_id": "GB-US-CAPE-COD-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "51d407a5f0d3454b0e087cf3638b4304f02b812c8bd992d61244855da2355b17",
+      "source_spec_hash": "a6688215b389fab87b49119914dffe27a3842b2bbbcff762d64abd0708e792c3",
+      "design_sha256": "73307f8b29393974861864be456ee23198d1599313c92ff14b70d11207cb83fd",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "printable_preview.png",
+      "sha256": "ea92463b676f9f3567a4d8ae131b8cd8c0b4b863831ae549fadf607c19f1daea",
+      "model_id": "GB-US-CAPE-COD-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "51d407a5f0d3454b0e087cf3638b4304f02b812c8bd992d61244855da2355b17",
+      "source_spec_hash": "a6688215b389fab87b49119914dffe27a3842b2bbbcff762d64abd0708e792c3",
+      "design_sha256": "73307f8b29393974861864be456ee23198d1599313c92ff14b70d11207cb83fd",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "svg_pages/page_001.svg",
+      "sha256": "df2a1a80e865e8cecc83418a59ed96bf55fdaab1e022ca7118f34f42e9062292",
+      "model_id": "GB-US-CAPE-COD-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "51d407a5f0d3454b0e087cf3638b4304f02b812c8bd992d61244855da2355b17",
+      "source_spec_hash": "a6688215b389fab87b49119914dffe27a3842b2bbbcff762d64abd0708e792c3",
+      "design_sha256": "73307f8b29393974861864be456ee23198d1599313c92ff14b70d11207cb83fd",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "svg_pages/page_002.svg",
+      "sha256": "b2db81ca89b8a1a3e9f7ffd6aa1505bb943470f485b60e0535941531e26c4fa2",
+      "model_id": "GB-US-CAPE-COD-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "51d407a5f0d3454b0e087cf3638b4304f02b812c8bd992d61244855da2355b17",
+      "source_spec_hash": "a6688215b389fab87b49119914dffe27a3842b2bbbcff762d64abd0708e792c3",
+      "design_sha256": "73307f8b29393974861864be456ee23198d1599313c92ff14b70d11207cb83fd",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "svg_pages/page_003.svg",
+      "sha256": "bd81c31614989afe61d1966ab8ae05bb8d175594f8e81aa9efbe0fa7854e6f74",
+      "model_id": "GB-US-CAPE-COD-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "51d407a5f0d3454b0e087cf3638b4304f02b812c8bd992d61244855da2355b17",
+      "source_spec_hash": "a6688215b389fab87b49119914dffe27a3842b2bbbcff762d64abd0708e792c3",
+      "design_sha256": "73307f8b29393974861864be456ee23198d1599313c92ff14b70d11207cb83fd",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "svg_pages/page_004.svg",
+      "sha256": "404c75b277b9dab2a28280cb1a5437a8b3613e23d898fba3ab6e59c7e006dcf3",
+      "model_id": "GB-US-CAPE-COD-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "51d407a5f0d3454b0e087cf3638b4304f02b812c8bd992d61244855da2355b17",
+      "source_spec_hash": "a6688215b389fab87b49119914dffe27a3842b2bbbcff762d64abd0708e792c3",
+      "design_sha256": "73307f8b29393974861864be456ee23198d1599313c92ff14b70d11207cb83fd",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "template_preview.svg",
+      "sha256": "f19624cf1869d94b162c180bb7df96dfafb250e287e913086bef529bb64de4de",
+      "model_id": "GB-US-CAPE-COD-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "51d407a5f0d3454b0e087cf3638b4304f02b812c8bd992d61244855da2355b17",
+      "source_spec_hash": "a6688215b389fab87b49119914dffe27a3842b2bbbcff762d64abd0708e792c3",
+      "design_sha256": "73307f8b29393974861864be456ee23198d1599313c92ff14b70d11207cb83fd",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "validation_report.json",
+      "sha256": "3bd0e4b66ffdc2e1d81345dfef0fec2071f2cb0a104334c4e8607b3c935c9272",
+      "model_id": "GB-US-CAPE-COD-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "51d407a5f0d3454b0e087cf3638b4304f02b812c8bd992d61244855da2355b17",
+      "source_spec_hash": "a6688215b389fab87b49119914dffe27a3842b2bbbcff762d64abd0708e792c3",
+      "design_sha256": "73307f8b29393974861864be456ee23198d1599313c92ff14b70d11207cb83fd",
+      "template_version": "3.0.0"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+# {"design_sha256":"f2b83bd79f895e647b7cebe772625ab2d2661173a37eb5e1d0b74da73121c6ec","geometry_sha256":"b87a33e8f7308c004215ddcaad4caf200752d278e456822d968138e94b54f599","model_id":"GB-CHALET","project_id":"overhang-samples","revision":1,"source_spec_hash":"e40d062ccb481192d4ead2d4feb83dd4faf653064833bd2b54acf58b4afb957e","template_version":"4.0.0","version":"gingerbread-4.0.0"}
+g FRONT
+v -55.0 -35.0 0
+v 55.0 -35.0 0
+v 55.0 -35.0 70
+v 0.0 -35.0 110
+v -55.0 -35.0 70
+f 1 2 3 4 5
+g RIGHT
+v 55.0 -35.0 0
+v 55.0 35.0 0
+v 55.0 35.0 70
+v 55.0 -35.0 70
+f 6 7 8 9
+g BACK
+v 55.0 35.0 0
+v -55.0 35.0 0
+v -55.0 35.0 70
+v 0.0 35.0 110
+v 55.0 35.0 70
+f 10 11 12 13 14
+g LEFT
+v -55.0 35.0 0
+v -55.0 -35.0 0
+v -55.0 -35.0 70
+v -55.0 35.0 70
+f 15 16 17 18
+g ROOF_RIGHT
+v 55.0 -35.0 70.0
+v 55.0 35.0 70.0
+v 0.0 35.0 110.0
+v 0.0 -35.0 110.0
+f 19 20 21 22
+g ROOF_LEFT
+v -55.0 35.0 70.0
+v -55.0 -35.0 70.0
+v 0.0 -35.0 110.0
+v 0.0 35.0 110.0
+f 23 24 25 26

@@ -1,0 +1,275 @@
+{
+  "model_id": "GB-US-COLONIAL-MIDNIGHT",
+  "version": "gingerbread-3.0.0",
+  "project_id": "christmas-deluxe-samples",
+  "revision": 1,
+  "geometry_sha256": "e821e5c16456bda60fcf55c563d9cbe3199d7e26513e1f5c7a44163e4efff942",
+  "source_spec_hash": "970b744770ae94bb74dd62ba383682f4fad0d6b0fba968c53171a05d5fe81c3e",
+  "design_sha256": "eb638a0890e6302b656288e03a12f37bb0ce2580f1140c934f94dde679f0849d",
+  "template_version": "3.0.0",
+  "input": {
+    "preset": "gb_us_colonial_midnight",
+    "template": {
+      "id": "gb_us_colonial_midnight",
+      "name": "Colonial · Midnight & Gold",
+      "subtitle": "Colonial / Midnight & Gold",
+      "collection": "American Premium",
+      "model_family": "colonial",
+      "architecture": "Colonial",
+      "finish": "Midnight & Gold",
+      "profile": [
+        [
+          0,
+          0
+        ],
+        [
+          0.5,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "material": "brick",
+      "premium": true,
+      "width": 85,
+      "depth": 65,
+      "wall_height": 105,
+      "roof_rise": 30,
+      "wall": "#344c60",
+      "roof": "#29313f",
+      "accent": "#bb8648",
+      "trim": "#f5e8c6",
+      "background": "#e5e9ee",
+      "motif": "american",
+      "difficulty": "Trung bình",
+      "description": "Nhà lấy cảm hứng từ Colonial: mặt đứng brick, cửa chia ô, vòng lá Noel và mái lợp chi tiết. Phiên bản Midnight & Gold."
+    },
+    "paper": "A4",
+    "project_id": "christmas-deluxe-samples",
+    "revision": 1
+  },
+  "template": {
+    "id": "gb_us_colonial_midnight",
+    "name": "Colonial · Midnight & Gold",
+    "subtitle": "Colonial / Midnight & Gold",
+    "collection": "American Premium",
+    "model_family": "colonial",
+    "architecture": "Colonial",
+    "finish": "Midnight & Gold",
+    "profile": [
+      [
+        0,
+        0
+      ],
+      [
+        0.5,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "material": "brick",
+    "premium": true,
+    "width": 85,
+    "depth": 65,
+    "wall_height": 105,
+    "roof_rise": 30,
+    "wall": "#344c60",
+    "roof": "#29313f",
+    "accent": "#bb8648",
+    "trim": "#f5e8c6",
+    "background": "#e5e9ee",
+    "motif": "american",
+    "difficulty": "Trung bình",
+    "description": "Nhà lấy cảm hứng từ Colonial: mặt đứng brick, cửa chia ô, vòng lá Noel và mái lợp chi tiết. Phiên bản Midnight & Gold."
+  },
+  "qa_status": "PASS",
+  "algorithm": "gable-house-1.0; v1.2 rigid pairing + shelf packing",
+  "physical_assembly": "NOT_TESTED",
+  "artifacts": [
+    {
+      "path": "accessories.pdf",
+      "sha256": "a60330aa09806cb711fb6bbad7cdda847e2819c0405f92e7839c2d480e51ff2c",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "e821e5c16456bda60fcf55c563d9cbe3199d7e26513e1f5c7a44163e4efff942",
+      "source_spec_hash": "970b744770ae94bb74dd62ba383682f4fad0d6b0fba968c53171a05d5fe81c3e",
+      "design_sha256": "eb638a0890e6302b656288e03a12f37bb0ce2580f1140c934f94dde679f0849d",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "accessories_guide.pdf",
+      "sha256": "03ef35ecc6931401d00938d3f1d059a017975db7eaf02275914c1fbc895ad54d",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "e821e5c16456bda60fcf55c563d9cbe3199d7e26513e1f5c7a44163e4efff942",
+      "source_spec_hash": "970b744770ae94bb74dd62ba383682f4fad0d6b0fba968c53171a05d5fe81c3e",
+      "design_sha256": "eb638a0890e6302b656288e03a12f37bb0ce2580f1140c934f94dde679f0849d",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "assembly_guide.pdf",
+      "sha256": "1a64960452741889f833b93eb394c0c5b2eb668a9ec40d5fd212537ec7364cfd",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "e821e5c16456bda60fcf55c563d9cbe3199d7e26513e1f5c7a44163e4efff942",
+      "source_spec_hash": "970b744770ae94bb74dd62ba383682f4fad0d6b0fba968c53171a05d5fe81c3e",
+      "design_sha256": "eb638a0890e6302b656288e03a12f37bb0ce2580f1140c934f94dde679f0849d",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "display_scene.obj",
+      "sha256": "afe7a2dfff399f83ec881af722ea3898bf07e676d167cc535209b190b8ece494",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "e821e5c16456bda60fcf55c563d9cbe3199d7e26513e1f5c7a44163e4efff942",
+      "source_spec_hash": "970b744770ae94bb74dd62ba383682f4fad0d6b0fba968c53171a05d5fe81c3e",
+      "design_sha256": "eb638a0890e6302b656288e03a12f37bb0ce2580f1140c934f94dde679f0849d",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "model.obj",
+      "sha256": "6aedf3f5ceb00c548a34ad6afb6c55c411c70deb646fde3fd29c5e4a969a47f0",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "e821e5c16456bda60fcf55c563d9cbe3199d7e26513e1f5c7a44163e4efff942",
+      "source_spec_hash": "970b744770ae94bb74dd62ba383682f4fad0d6b0fba968c53171a05d5fe81c3e",
+      "design_sha256": "eb638a0890e6302b656288e03a12f37bb0ce2580f1140c934f94dde679f0849d",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "model_3d_preview.png",
+      "sha256": "ed7043f3c54f3cafbf4b75b126e7260886ef418c27ae8a6b84f81a6f52501830",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "e821e5c16456bda60fcf55c563d9cbe3199d7e26513e1f5c7a44163e4efff942",
+      "source_spec_hash": "970b744770ae94bb74dd62ba383682f4fad0d6b0fba968c53171a05d5fe81c3e",
+      "design_sha256": "eb638a0890e6302b656288e03a12f37bb0ce2580f1140c934f94dde679f0849d",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "model_spec.json",
+      "sha256": "854a7bfdfc5542bbe54e096677e9c64230bcb71348f380a4ba9e269c64b21605",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "e821e5c16456bda60fcf55c563d9cbe3199d7e26513e1f5c7a44163e4efff942",
+      "source_spec_hash": "970b744770ae94bb74dd62ba383682f4fad0d6b0fba968c53171a05d5fe81c3e",
+      "design_sha256": "eb638a0890e6302b656288e03a12f37bb0ce2580f1140c934f94dde679f0849d",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "printable_a4.pdf",
+      "sha256": "f99e9e049ea0a493765cf7039aa564d0c5e63ac329176cc1dcdcf2b1bc6e9e70",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "e821e5c16456bda60fcf55c563d9cbe3199d7e26513e1f5c7a44163e4efff942",
+      "source_spec_hash": "970b744770ae94bb74dd62ba383682f4fad0d6b0fba968c53171a05d5fe81c3e",
+      "design_sha256": "eb638a0890e6302b656288e03a12f37bb0ce2580f1140c934f94dde679f0849d",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "printable_preview.png",
+      "sha256": "4f7301f692ab71e00aacdfc4012c15b2d8aae47d6ea220d20942c1ab2441a011",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "e821e5c16456bda60fcf55c563d9cbe3199d7e26513e1f5c7a44163e4efff942",
+      "source_spec_hash": "970b744770ae94bb74dd62ba383682f4fad0d6b0fba968c53171a05d5fe81c3e",
+      "design_sha256": "eb638a0890e6302b656288e03a12f37bb0ce2580f1140c934f94dde679f0849d",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "svg_pages/page_001.svg",
+      "sha256": "35e41b0ad3eb204a75125914d134a0d2f9ec9199e7ebcfc7c7cfe5572d45e88c",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "e821e5c16456bda60fcf55c563d9cbe3199d7e26513e1f5c7a44163e4efff942",
+      "source_spec_hash": "970b744770ae94bb74dd62ba383682f4fad0d6b0fba968c53171a05d5fe81c3e",
+      "design_sha256": "eb638a0890e6302b656288e03a12f37bb0ce2580f1140c934f94dde679f0849d",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "svg_pages/page_002.svg",
+      "sha256": "5461c1130d0040a320bc573c38b64d74e8f1bf5190b96631db1032aa0dbbe48e",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "e821e5c16456bda60fcf55c563d9cbe3199d7e26513e1f5c7a44163e4efff942",
+      "source_spec_hash": "970b744770ae94bb74dd62ba383682f4fad0d6b0fba968c53171a05d5fe81c3e",
+      "design_sha256": "eb638a0890e6302b656288e03a12f37bb0ce2580f1140c934f94dde679f0849d",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "svg_pages/page_003.svg",
+      "sha256": "8712014a856543148918c6d45555045c209c2875809492eed2cf2cadc6039c4c",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "e821e5c16456bda60fcf55c563d9cbe3199d7e26513e1f5c7a44163e4efff942",
+      "source_spec_hash": "970b744770ae94bb74dd62ba383682f4fad0d6b0fba968c53171a05d5fe81c3e",
+      "design_sha256": "eb638a0890e6302b656288e03a12f37bb0ce2580f1140c934f94dde679f0849d",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "svg_pages/page_004.svg",
+      "sha256": "8a159502b58db666e333839ff18ce23a470584ed492e79ee50e649eed99f7e92",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "e821e5c16456bda60fcf55c563d9cbe3199d7e26513e1f5c7a44163e4efff942",
+      "source_spec_hash": "970b744770ae94bb74dd62ba383682f4fad0d6b0fba968c53171a05d5fe81c3e",
+      "design_sha256": "eb638a0890e6302b656288e03a12f37bb0ce2580f1140c934f94dde679f0849d",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "template_preview.svg",
+      "sha256": "813399edec1f805933e54f4089acbdb2d091563c6c5f6547904e85a0fc8360a5",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "e821e5c16456bda60fcf55c563d9cbe3199d7e26513e1f5c7a44163e4efff942",
+      "source_spec_hash": "970b744770ae94bb74dd62ba383682f4fad0d6b0fba968c53171a05d5fe81c3e",
+      "design_sha256": "eb638a0890e6302b656288e03a12f37bb0ce2580f1140c934f94dde679f0849d",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "validation_report.json",
+      "sha256": "0296c5702176f4104b7b5677dab95f949cf43a9c9a74d932bee5933f33eaf1ee",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "e821e5c16456bda60fcf55c563d9cbe3199d7e26513e1f5c7a44163e4efff942",
+      "source_spec_hash": "970b744770ae94bb74dd62ba383682f4fad0d6b0fba968c53171a05d5fe81c3e",
+      "design_sha256": "eb638a0890e6302b656288e03a12f37bb0ce2580f1140c934f94dde679f0849d",
+      "template_version": "3.0.0"
+    }
+  ]
+}

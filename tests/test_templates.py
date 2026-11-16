@@ -26,18 +26,22 @@ def test_template_end_to_end(client,template):
     assert job['status']=='SUCCEEDED',job.get('error')
     spec=client.get(f'/api/projects/{pid}/geometry').json()
     report=client.get(f'/api/projects/{pid}/validation').json()
+    assert spec['sheet_count']==spec['house_sheet_count']+2+spec['roof_cap']['sheet_count']
+    assert len(spec['scene_accessories']['panels'])==15+len(spec['geometry']['panels'])-4
+    assert spec['scene_accessories']['gift_sizes_mm']==[20,16]
+    assert report['summary']['accessory_cut_pieces']==5+spec['roof_cap']['cut_pieces']
     assert report['overall_status']=='PASS'
     print_view=client.get(f'/api/projects/{pid}/print')
     assert print_view.status_code==200 and 'window.print()' in print_view.text
     assert print_view.text.count('<section class="sheet">')==spec['sheet_count']
     assert 'size:215.9mm 279.4mm;margin:0' in print_view.text
     assert all(t['status']=='PASS' for t in report['tests'])
-    assert len(spec['geometry']['panels'])==6
-    assert len(spec['geometry']['seams'])==11
-    assert report['summary']['fold_hinges']==3
-    assert report['summary']['glue_seams']==8
+    assert len(spec['geometry']['panels'])==4+len(template.get('profile',[(0,0),(.5,1),(1,0)]))-1
+    assert len(spec['geometry']['seams'])==3*len(spec['geometry']['panels'])-7
+    assert report['summary']['fold_hinges']==sum(bool(u['fold_code']) for u in spec['print_units'])
+    assert report['summary']['glue_seams']==len(spec['geometry']['seams'])-report['summary']['fold_hinges']
     assert spec['geometry']['model']['height_mm']==template['wall_height']+template['roof_rise']
-    assert len(spec['appearance']['panels'])==6
+    assert len(spec['appearance']['panels'])==4+len(template.get('profile',[(0,0),(.5,1),(1,0)]))-1
     archive=client.get(f'/api/projects/{pid}/artifacts/project.zip?download=true')
     assert archive.status_code==200 and archive.headers['content-type']=='application/zip'
     with zipfile.ZipFile(io.BytesIO(archive.content)) as z:
@@ -47,7 +51,7 @@ def test_template_end_to_end(client,template):
         for artifact in manifest['artifacts']:
             assert hashlib.sha256(z.read(artifact['path'])).hexdigest()==artifact['sha256']
         assert z.read('printable_us_letter.pdf').startswith(b'%PDF')
-        assert b'ROOF_RIGHT' in z.read('model.obj')
+        assert b'ROOF' in z.read('model.obj')
     if template['id']=='gb_classic':
         from backend.gingerbread import model,digest
         first=model(template);second=model(template)
@@ -60,7 +64,7 @@ def test_template_end_to_end(client,template):
 
 def test_catalog_and_previews(client):
     catalog=client.get('/api/templates').json()
-    assert len(catalog)==6
+    assert len(catalog)==26
     for t in catalog:
         assert t['sheet_count']>0 and t['physical_assembly']=='NOT_TESTED'
         r=client.get(t['preview_url'])

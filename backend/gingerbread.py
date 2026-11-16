@@ -69,6 +69,21 @@ def model(t):
         'ROOF_LEFT': (roof, lambda u,v: (-w/2+v*w/(2*slope), d/2-u, h+v*r/slope)),
     }
     panels = {pid: Panel(pid, pts, [fn(*p) for p in pts]) for pid,(pts,fn) in mappings.items()}
+    if t.get('profile'):
+        ridge=[(x*w,h+z*r) for x,z in t['profile']]
+        front=[(0,0),(w,0)]+list(reversed(ridge))
+        # Keep local polygons counter-clockwise, with outward 3D winding.
+        panels={
+            'FRONT':Panel('FRONT',front,[(x-w/2,-d/2,z) for x,z in front]),
+            'BACK':Panel('BACK',[(w-x,z) for x,z in reversed(front)],[(x-w/2,d/2,z) for x,z in reversed(front)]),
+        }
+        for pid,height,fn in [('RIGHT',ridge[-1][1],lambda u,v:(w/2,u-d/2,v)),('LEFT',ridge[0][1],lambda u,v:(-w/2,d/2-u,v))]:
+            pts=[(0,0),(d,0),(d,height),(0,height)]
+            panels[pid]=Panel(pid,pts,[fn(*q) for q in pts])
+        for i,(a,b) in enumerate(zip(ridge,ridge[1:])):
+            length=math.dist(a,b);pts=[(0,0),(d,0),(d,length),(0,length)]
+            pid=f'ROOF_{i+1}'
+            panels[pid]=Panel(pid,pts,[(b[0]-w/2+v*(a[0]-b[0])/length,u-d/2,b[1]+v*(a[1]-b[1])/length) for u,v in pts])
     occurrences = defaultdict(list)
     for p in panels.values():
         for i,a in enumerate(p.vertices):
@@ -93,6 +108,9 @@ def model(t):
         for m in mates: panels[m['panel']].edges[m['edge']]=sid
     # Three real connected units: two wall pairs and one roof ridge pair.
     pair_sets=[{'FRONT','RIGHT'},{'BACK','LEFT'},{'ROOF_RIGHT','ROOF_LEFT'}]
+    if t.get('profile'):
+        roofs=[pid for pid in panels if pid.startswith('ROOF')]
+        pair_sets=[{'FRONT','RIGHT'},{'BACK','LEFT'}]+[set(roofs[i:i+2]) for i in range(0,len(roofs)-1,2)]
     for seam in seams:
         seam['hinge']={m['panel'] for m in seam['occurrences']} in pair_sets
         if not seam['hinge']:
@@ -101,13 +119,15 @@ def model(t):
             p.tabs[owner['edge']]=base.base.flap_for_edge(*p.seg(owner['edge']),depth=5)
     lookup={s['id']:s for s in seams}
     units=[base.construct_unit(tuple(m['panel'] for m in s['occurrences']),s['id'],panels,lookup) for s in seams if s['hinge']]
+    placed={pid for u in units for pid in u.ids}
+    units += [base.construct_unit((pid,),None,panels,lookup) for pid in panels if pid not in placed]
     if not all(base.fits(u) for u in units):
         raise ValueError('Catalog model exceeds printable bounds; scaling is forbidden')
     pages=base.pack_units(units)
     return panels,seams,units,pages,boundary
 
 
-def decorations(t,p):
+def base_decorations(t,p):
     """Shared vector drawing primitives, used by printable and 3D textures."""
     x0,y0,w,h=p.square.bounds
     w-=x0;h-=y0
@@ -118,6 +138,8 @@ def decorations(t,p):
     def rect(x,y,rw,rh,fill,stroke=None,width=0):poly([(x,y),(x+rw,y),(x+rw,y+rh),(x,y+rh)],fill,stroke,width)
     roof=p.id.startswith('ROOF')
     poly(p.points,t['roof'] if roof else t['wall'])
+    if t.get('premium'):
+        return premium_decorations(t,p)
     # Icing follows an inset perimeter, safely inside the panel.
     inset=p.square.buffer(-3,join_style=2)
     if not inset.is_empty:line(list(inset.exterior.coords),cream,1.7)
@@ -167,6 +189,75 @@ def decorations(t,p):
     return shapes
 
 
+def decorations(t,p):
+    from .confectionery import house_art
+    return house_art(t,p)
+
+
+def premium_decorations(t,p):
+    """Architectural vector finishes shared by preview, texture, PDF and SVG."""
+    w=p.square.bounds[2];h=p.square.bounds[3];shapes=[]
+    trim=t['trim'];accent=t['accent'];roof=p.id.startswith('ROOF')
+    def line(points,color=trim,width=.45):shapes.append(dict(type='line',points=points,stroke=color,width=width))
+    def rect(x,y,a,b,color):shapes.append(dict(type='polygon',points=[(x,y),(x+a,y),(x+a,y+b),(x,y+b)],fill=color))
+    def circle(x,y,r,color):shapes.append(dict(type='circle',center=[x,y],radius=r,fill=color))
+    shapes.append(dict(type='polygon',points=p.points,fill=t['roof'] if roof else t['wall']))
+    if roof:
+        return shapes
+    wh=min(t['wall_height'],h);material=t['material']
+    if material=='board':
+        for x in np.arange(4,w-2,6):line([(float(x),2),(float(x),wh-2)],trim,.35)
+    else:
+        for row,y in enumerate(np.arange(4,wh-2,4)):
+            line([(2,float(y)),(w-2,float(y))],trim,.25)
+            if material in ('brick','shingle'):
+                for x in np.arange(3+(row%2)*4,w-3,8):line([(float(x),float(y)),(float(x),float(min(y+4,wh-2)))],trim,.22)
+    rect(2,2,w-4,3,trim)
+    for x in (2,w-4):rect(x,3,2,wh-5,trim)
+    front=p.id=='FRONT';back=p.id=='BACK'
+    def window(x,y,ww=13,hh=17):
+        rect(x-ww/2-1,y-1,ww+2,hh+2,trim)
+        rect(x-ww/2,y,ww,hh,'#f3cf83')
+        rect(x-ww/2+1,y+hh*.55,ww-2,hh*.4,'#f9e9b7')
+        for dx in (-ww/2-3,ww/2+1):
+            rect(x+dx,y,2,hh,accent)
+            for yy in np.arange(y+2,y+hh,3):line([(x+dx,yy),(x+dx+2,yy)],trim,.2)
+        line([(x,y),(x,y+hh)],trim,.7)
+        for yy in (y+hh/3,y+2*hh/3):line([(x-ww/2,yy),(x+ww/2,yy)],trim,.6)
+        rect(x-ww/2-2,y-2,ww+4,1.4,trim)
+        line([(x-ww/2-1,y+hh+3),(x,y+hh+5),(x+ww/2+1,y+hh+3)],trim,.8)
+    floors=3 if wh>125 else 2 if wh>90 else 1
+    for level in range(floors):
+        y=wh*(.40 if floors==1 else .16+level*.29)
+        for x in (w*.24,w*.76):window(x,y,min(13,w*.18),min(17,wh*.30))
+    if front:
+        dw=min(17,w*.23);dh=min(29,wh*.72)
+        rect(w/2-dw/2-1,3,dw+2,dh+2,trim);rect(w/2-dw/2,3,dw,dh,accent)
+        for yy in (6,dh*.55):
+            for xx in (w/2-dw*.36,w/2+dw*.05):
+                rect(xx,yy,dw*.30,dh*.30,t['wall'])
+        circle(w/2+dw*.33,dh*.5, .7,'#e8bc68')
+        rect(w/2-dw/2-3,2,dw+6,1.5,trim)
+        cy=min(wh-8,dh+11)
+        circle(w/2,cy,4.3,'#294b3b');circle(w/2,cy,2.4,t['wall'])
+        for a in range(0,360,45):circle(w/2+3.3*math.cos(math.radians(a)),cy+3.3*math.sin(math.radians(a)),.55,'#d2a45c')
+        line([(w/2-2,cy-4),(w/2,cy-3),(w/2+2,cy-4)],accent,1.5)
+    # Garland and tiny bulbs are kept in the rectangular wall area.
+    for x in np.linspace(5,w-5,24):
+        y=wh-4-1.8*math.sin((x-5)/(w-10)*math.pi*3)**2
+        circle(float(x),float(y),.9,'#365743')
+    for x in np.linspace(7,w-7,10):circle(float(x),wh-7,.55,'#e4af53')
+    if (front or back) and t['roof_rise']>=28:
+        from shapely.geometry import box
+        ay=wh+t['roof_rise']*.24
+        if p.square.buffer(-2).covers(box(w/2-11,ay-3,w/2+11,ay+20)):
+            window(w/2,ay,12,14)
+    if (front or back) and len(p.points)>4:
+        inset=p.square.buffer(-2,join_style=2)
+        if not inset.is_empty:line(list(inset.exterior.coords),trim,1)
+    return shapes
+
+
 def svg_art(shapes, width, height):
     root=ET.Element('{'+NS+'}svg',{'width':f'{width}mm','height':f'{height}mm','viewBox':f'0 0 {width} {height}'})
     def transform(p):return p[0],height-p[1]
@@ -206,7 +297,10 @@ def preview_svg(t):
     def project(v):
         x,y,z=v
         return (x*.82+y*.55, x*.25-y*.38-z)
-    all_pts=[project(v) for p in panels.values() for v in p.vertices]
+    from .accessories import scene
+    accessory_scene=scene(t)
+    accessory_panels={p['id']:Panel(p['id'],p['polygon_mm'],p['vertices_3d_mm']) for p in accessory_scene['panels']}
+    all_pts=[project(v) for p in [*panels.values(),*accessory_panels.values()] for v in p.vertices]
     lo=np.min(all_pts,axis=0);hi=np.max(all_pts,axis=0)
     scale=min(285/(hi[0]-lo[0]),235/(hi[1]-lo[1]))
     shift=(180-(hi[0]+lo[0])*scale/2,145-(hi[1]+lo[1])*scale/2)
@@ -215,8 +309,20 @@ def preview_svg(t):
     ET.SubElement(root,'{'+NS+'}rect',width='360',height='300',fill=t['background'])
     ET.SubElement(root,'{'+NS+'}ellipse',cx='180',cy='265',rx='110',ry='14',fill='#253d30',opacity='.08')
     # Camera looks at front (+ negative y), right (+ x) and top.
-    for pid in ('FRONT','RIGHT','ROOF_RIGHT'):
-        p=panels[pid]
+    visible=['FRONT','RIGHT']
+    for pid,p in panels.items():
+        if pid.startswith('ROOF'):
+            n=np.cross(np.subtract(p.vertices[1],p.vertices[0]),np.subtract(p.vertices[2],p.vertices[0]))
+            if np.dot(n,[.55,-.82,.4491])>0:visible.append(pid)
+    visible_caps=[];hidden_caps=[]
+    for pid,p in accessory_panels.items():
+        if pid.startswith('CAP_'):
+            normal=np.cross(np.subtract(p.vertices[1],p.vertices[0]),np.subtract(p.vertices[2],p.vertices[0]))
+            if np.dot(normal,[.55,-.82,.4491])>0:visible_caps.append(pid)
+            else:hidden_caps.append(pid)
+    visible=['DISPLAY_BASE']+hidden_caps+visible+visible_caps+['TREE_1','TREE_2']+[pid for pid in accessory_panels if pid.startswith('GIFT') and pid.endswith(('FRONT','RIGHT','TOP'))]
+    for pid in visible:
+        p=panels.get(pid) or accessory_panels[pid]
         local=np.array(p.points); xyz=np.array(p.vertices)
         basis=np.linalg.lstsq(np.column_stack([local,np.ones(len(local))]),xyz,rcond=None)[0]
         def trans(q):
@@ -226,7 +332,9 @@ def preview_svg(t):
         # Apply an affine group so circles remain correctly projected ellipses.
         o=trans((0,0));u=trans((1,0));v=trans((0,1))
         group.set('transform',f'matrix({u[0]-o[0]} {u[1]-o[1]} {v[0]-o[0]} {v[1]-o[1]} {o[0]} {o[1]})')
-        draw_shapes(None,group,decorations(t,p),lambda q:q,1)
+        shapes=decorations(t,p) if pid in panels else accessory_scene['artwork'][pid]
+        if pid in hidden_caps:shapes=[dict(type='polygon',points=p.points,fill='#e8d9c1',stroke='#b99b76',width=.2)]
+        draw_shapes(None,group,shapes,lambda q:q,1)
     return ET.tostring(root,encoding='unicode')
 
 
@@ -248,10 +356,10 @@ def generate(request,out,progress=lambda stage:None):
     progress('Build Geometry')
     panels,seams,units,pages,boundary=model(t)
     progress('Choose Hinges / Unfold / Add Tabs')
-    geometry={'model':{'type':'gable_house_open_bottom','name':t['name'],'width_mm':t['width'],'depth_mm':t['depth'],'wall_height_mm':t['wall_height'],'roof_rise_mm':t['roof_rise'],'height_mm':t['wall_height']+t['roof_rise'],'open_bottom':True},
+    geometry={'model':{'type':t.get('model_family','gable_house_open_bottom'),'name':t['name'],'width_mm':t['width'],'depth_mm':t['depth'],'wall_height_mm':t['wall_height'],'roof_rise_mm':t['roof_rise'],'height_mm':t['wall_height']+t['roof_rise'],'open_bottom':True},
               'panels':[{'id':p.id,'face':p.id,'width_mm':p.square.bounds[2],'height_mm':p.square.bounds[3], 'polygon_mm':p.points,'vertices_3d_mm':p.vertices,'edge_codes':p.edges} for p in panels.values()],
               'seams':[{'id':s['id'],'kind':s['kind'],'length_mm':s['length_mm'],'fold_degrees':s['fold_degrees'],'mates':s['occurrences'],'hinged_uncut':s['hinge'],'fold_direction':'MOUNTAIN_FROM_PRINTED_OUTSIDE'} for s in seams], 'open_boundary':boundary}
-    identity={'model_id':t['id'].upper().replace('_','-'),'version':'gingerbread-1.0.1','project_id':request['project_id'],'revision':request['revision'],'geometry_sha256':digest(geometry),'source_spec_hash':digest(request),'design_sha256':digest(t),'template_version':CATALOG_VERSION}
+    identity={'model_id':t['id'].upper().replace('_','-'),'version':'gingerbread-4.0.0','project_id':request['project_id'],'revision':request['revision'],'geometry_sha256':digest(geometry),'source_spec_hash':digest(request),'design_sha256':digest(t),'template_version':CATALOG_VERSION}
     spec={**identity,'schema_version':'gingerbread-1.0.0','locked':True,'units':'mm','paper':{'name':paper_name,'page_mm':[base.PAGE_W,base.PAGE_H],'scale':1.0,'printable_body_mm':base.BODY,'tab_depth_mm':5},'geometry':geometry,'sheet_count':len(pages),'physical_assembly':'NOT_TESTED',
           'print_units':[{'panel_ids':list(u.ids),'sheet_number':u.sheet+1,'fold_code':u.hinge_id,'bounds_mm':list(u.cut_bounds()),'orientation_degrees':u.orientation} for u in units],
           'appearance':{'template_id':t['id'],'motif':t['motif'],'panels':{p.id:svg_art(decorations(t,p),p.square.bounds[2],p.square.bounds[3]) for p in panels.values()}},
@@ -288,6 +396,7 @@ def generate(request,out,progress=lambda stage:None):
                     label(root,x,y-.5,p.edges[edge],1.6,'#6a7167')
             base.pdf_shape(c,unit.shape(),stroke=CUT,stroke_width=.65)
             base.svg_polygon(root,unit.shape(),'none',CUT,.23)
+            if not unit.hinge_id:continue
             seam=next(s for s in seams if s['id']==unit.hinge_id)
             mate=seam['occurrences'][0];a,b=panels[mate['panel']].seg(mate['edge'])
             a,b=unit.transform(mate['panel'],a),unit.transform(mate['panel'],b)
@@ -324,9 +433,9 @@ def generate(request,out,progress=lambda stage:None):
     steps=[f"Kích thước: {t['width']} × {t['depth']} × {t['wall_height']+t['roof_rise']:g} mm. Đáy mở.",
            f'1. In {paper_name} ở Actual Size / 100%. Đo vạch chuẩn 40 mm.',
            '2. Cắt theo viền ĐEN. Giữ lại tai dán màu vàng nhạt.',
-           '3. Gấp hai cụm tường vào trong để mặt in hướng ra ngoài.',
+           '3. Gấp các cụm tường, mặt in hướng ra ngoài.',
            '4. Dán các cạnh đứng có cùng mã để khép bốn tường.',
-           '5. Gấp cụm mái tại sống mái, mặt in hướng ra ngoài.',
+           '5. Gấp các cụm mái theo nét tím; ghép các mã còn lại.',
            '6. Đối chiếu mã trên tai dán với sơ đồ ghép ở cuối hướng dẫn.',
            '7. Giữ nhẹ và đợi keo khô. Nhà không có đáy.',
            'Cửa, cửa sổ và kẹo là họa tiết IN; không cắt khoét.',
@@ -339,7 +448,7 @@ def generate(request,out,progress=lambda stage:None):
     for s in seams:
         mates=' + '.join(m['panel'] for m in s['occurrences'])
         text=f"{s['id']}: {mates} | "+(f"GẤP LIỀN {s['fold_degrees']:.1f}°" if s['hinge'] else 'DÁN')
-        gt(12,y,text,8);y-=12
+        gt(12,y,text,7);y-=9
     gt(12,y-5,'Góc ghi ở trên là góc quay từ tờ giấy phẳng, nhìn mặt in bên ngoài.',7.5)
     gt(12,y-17,'Nét tím: gấp liền. Nét xanh đứt: chân tai dán. Nét đen: cắt.',8)
     gt(12,10,identity['model_id']+' | '+identity['geometry_sha256'][:16],6)
@@ -362,13 +471,32 @@ def generate(request,out,progress=lambda stage:None):
             base.pdf_shape(guide,unit.shape(),stroke=CUT,stroke_width=.65)
         gt(12,10,identity['model_id']+' | Sơ đồ tham khảo, mã đầy đủ hai đầu ghép.',7)
     guide.save()
+    progress('QA')
+    tests=validate(t,panels,seams,units,pages,boundary,out)
+    from .accessories import export as export_accessories, scene
+    tests.extend(export_accessories(t,out,identity,len(pages)))
+    from .roof_cap import metadata as cap_metadata
+    cap_info=cap_metadata(t)
+    spec['roof_cap']=cap_info
+    spec['house_sheet_count']=len(pages)
+    spec['sheet_count']=len(pages)+2+cap_info['sheet_count']
+    spec['scene_accessories']=scene(t)
+    spec['accessory_cut_pieces']=5+cap_info['cut_pieces']
+    (out/'model_spec.json').write_text(json.dumps(spec,ensure_ascii=False,indent=2))
+    # Export the complete display as a separate OBJ; house OBJ stays reusable.
+    scene_obj=list(obj)
+    for panel in spec['scene_accessories']['panels']:
+        scene_obj.append('g '+panel['id'])
+        scene_obj.extend('v '+' '.join(str(v) for v in xyz) for xyz in panel['vertices_3d_mm'])
+        scene_obj.append('f '+' '.join(str(vertex_offset+i+1) for i in range(len(panel['vertices_3d_mm']))))
+        vertex_offset+=len(panel['vertices_3d_mm'])
+    (out/'display_scene.obj').write_text('\n'.join(scene_obj)+'\n')
+    base.contact_sheet(pdf,out/'printable_preview.png',identity['model_id'])
     for path in out.glob('*.png'):
         with Image.open(path) as image:
             info=PngImagePlugin.PngInfo();info.add_text('provenance',canonical(identity));image.save(path,pnginfo=info)
-    progress('QA')
-    tests=validate(t,panels,seams,units,pages,boundary,out)
     report={**identity,'overall_status':'PASS' if all(x['status']=='PASS' for x in tests) else 'FAIL','physical_assembly':'NOT_TESTED','tests':tests,
-            'summary':{'sheets':len(pages),'cut_pieces':len(units),'fold_hinges':3,'glue_seams':sum(not s['hinge'] for s in seams),'flat_continuous_joins':0,'faces_or_tiles':len(panels)}}
+            'summary':{'sheets':spec['sheet_count'],'accessory_cut_pieces':spec['accessory_cut_pieces'],'cut_pieces':len(units)+spec['accessory_cut_pieces'],'fold_hinges':sum(bool(u.hinge_id) for u in units),'glue_seams':sum(not s['hinge'] for s in seams),'accessory_fold_hinges':10+cap_info['fold_hinges'],'accessory_glue_seams':14+cap_info['glue_seams'],'flat_continuous_joins':0,'faces_or_tiles':len(panels)}}
     (out/'validation_report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
     if report['overall_status']!='PASS':raise RuntimeError(canonical([t for t in tests if t['status']=='FAIL']))
     manifest={**identity,'input':request,'template':t,'qa_status':'PASS','algorithm':'gable-house-1.0; v1.2 rigid pairing + shelf packing','physical_assembly':'NOT_TESTED','artifacts':[]}
@@ -386,7 +514,7 @@ def validate(t,panels,seams,units,pages,boundary,out):
     import fitz
     tests=[]
     def check(name,ok,detail):tests.append({'name':name,'status':'PASS' if bool(ok) else 'FAIL','detail':detail})
-    check('all_six_faces_placed_once',Counter(pid for u in units for pid in u.ids)==Counter(panels.keys()),'4 walls + 2 roof panels')
+    check('all_faces_placed_once',Counter(pid for u in units for pid in u.ids)==Counter(panels.keys()),f'{len(panels)} panels')
     check('open_bottom_boundary_only',len(boundary)==4 and all(abs(v[2])<1e-6 for b in boundary for v in b['endpoints']),'Intentional open-bottom shell')
     check('seam_pairs_unique',len({s['id'] for s in seams})==len(seams) and all(len(s['occurrences'])==2 for s in seams),len(seams))
     lengths=[];endpoints=[]
@@ -405,6 +533,7 @@ def validate(t,panels,seams,units,pages,boundary,out):
     from shapely.geometry import LineString
     hinges=[]
     for u in units:
+        if not u.hinge_id:continue
         s=next(s for s in seams if s['id']==u.hinge_id)
         segments=[[u.transform(m['panel'],p) for p in panels[m['panel']].seg(m['edge'])] for m in s['occurrences']]
         hinges.append(math.dist(segments[0][0],segments[1][1])<1e-5 and math.dist(segments[0][1],segments[1][0])<1e-5 and u.shape().boundary.intersection(LineString(segments[0])).length<1e-5)
@@ -423,14 +552,22 @@ def validate(t,panels,seams,units,pages,boundary,out):
             for drawing in p.get_drawings():
                 color=drawing.get('color');width=drawing.get('width',0)
                 if color and math.dist(color,(22/255,37/255,46/255))<.02 and abs(width-.65)<.03:
-                    pts=[(item[1].x/base.PT,base.PAGE_H-item[1].y/base.PT) for item in drawing['items'] if item[0]=='l']
+                    pts=[]
+                    for item in drawing['items']:
+                        if item[0]=='l':pts.append((item[1].x/base.PT,base.PAGE_H-item[1].y/base.PT))
+                        elif item[0]=='qu':
+                            quad=item[1]
+                            pts.extend((q.x/base.PT,base.PAGE_H-q.y/base.PT) for q in [quad.ul,quad.ur,quad.lr,quad.ll])
+                        elif item[0]=='re':
+                            rect=item[1]
+                            pts.extend((q.x/base.PT,base.PAGE_H-q.y/base.PT) for q in [rect.tl,rect.tr,rect.br,rect.bl])
                     if pts:cuts.append(Polygon(pts))
                 if color and math.dist(color,(154/255,57/255,113/255))<.02 and abs(width-.9)<.03:hinges+=1
                 for item in drawing['items']:
                     if item[0]=='l' and abs(abs(item[2].x-item[1].x)/base.PT-40)<.005 and abs(item[1].y-item[2].y)<.01:cal+=1
             targets=[u.shape() for u in pages[index]['units']]
             pdf_cuts.append(len(cuts)==len(targets) and all(g.is_valid and min(g.symmetric_difference(q).area for q in targets)<.05 for g in cuts))
-            pdf_cal.append(cal>0);pdf_hinges.append(hinges==len(targets))
+            pdf_cal.append(cal>0);pdf_hinges.append(hinges==sum(bool(u.hinge_id) for u in pages[index]['units']))
             for word in p.get_text('words'):
                 words[word[4]]+=1
                 if word[4] in {s['id'] for s in seams}:

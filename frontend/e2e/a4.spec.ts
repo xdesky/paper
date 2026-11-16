@@ -11,8 +11,8 @@ test('select A4, generate and print at actual paper size',async({page,context})=
  await expect(page.getByLabel('Khổ giấy',{exact:true})).toHaveValue('US Letter');
  await page.getByLabel('Khổ giấy',{exact:true}).selectOption('A4');
  await page.getByRole('button',{name:'✧ Generate',exact:true}).click();
- await expect(page.locator('.svg-sheet svg')).toHaveAttribute('width','210.0mm',{timeout:45000});
- await expect(page.locator('.svg-sheet svg')).toHaveAttribute('height','297.0mm');
+ await expect(page.locator('.svg-sheet svg').first()).toHaveAttribute('width','210.0mm',{timeout:45000});
+ await expect(page.locator('.svg-sheet svg').first()).toHaveAttribute('height','297.0mm');
  await page.reload();
  await page.locator('.project-list button').filter({hasText:name}).click();
  await expect(page.getByLabel('Khổ giấy',{exact:true})).toHaveValue('A4');

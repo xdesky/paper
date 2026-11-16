@@ -22,7 +22,7 @@ from pydantic import BaseModel, Field, ConfigDict
 from .template_catalog import BY_ID, TEMPLATES, CATALOG_VERSION, public_template
 
 ROOT = Path(__file__).resolve().parents[1]
-Preset = Literal['cube_100', 'cube_200', 'cube_300', 'house_frame', 'gb_classic', 'gb_candy', 'gb_forest', 'gb_chalet', 'gb_frost', 'gb_mini']
+Preset = Literal[tuple(['cube_100', 'cube_200', 'cube_300', 'house_frame', *BY_ID])]
 PRESETS = {'cube_100': 'Cube 100 mm', 'cube_200': 'Cube 200 mm', 'cube_300': 'Cube 300 mm', 'house_frame': 'Khung nhà 120 × 90 × 180 mm'}
 
 
@@ -130,7 +130,7 @@ def create_app(data_dir=None, seed=True):
                 rev += 1
             snapshot = {'project_id': pid, 'revision': rev, 'preset': row['preset'], 'paper': row['paper'], 'scale': 1.0, 'engine_version': '1.2.0'}
             if row['preset'] in BY_ID:
-                snapshot.update(engine_version='gingerbread-1.0.1', template=BY_ID[row['preset']], template_version=CATALOG_VERSION)
+                snapshot.update(engine_version='gingerbread-4.0.0', template=BY_ID[row['preset']], template_version=CATALOG_VERSION)
             jid = uuid.uuid4().hex
             db.execute('INSERT INTO revisions VALUES(?,?,?,?)', (pid, rev, json.dumps(snapshot), now()))
             db.execute('INSERT INTO jobs VALUES(?,?,?,?,?,?,?,?)', (jid, pid, rev, 'QUEUED', 'Queued', None, now(), now()))
@@ -165,7 +165,13 @@ def create_app(data_dir=None, seed=True):
     @app.get('/api/templates')
     def templates():
         from .gingerbread import model
-        return [{**public_template(t), 'sheet_count': len(model(t)[3]), 'cut_pieces': 3} for t in TEMPLATES]
+        result=[]
+        for t in TEMPLATES:
+            panels,seams,units,pages,_=model(t)
+            from .roof_cap import metadata
+            cap=metadata(t)
+            result.append({**public_template(t),'sheet_count':len(pages)+2+cap['sheet_count'],'roof_cap':cap,'house_sheet_count':len(pages),'house_cut_pieces':len(units),'accessory_cut_pieces':5+cap['cut_pieces'],'cut_pieces':len(units)+5+cap['cut_pieces'],'face_count':len(panels),'fold_hinges':sum(s['hinge'] for s in seams),'glue_seams':sum(not s['hinge'] for s in seams)})
+        return result
 
     @app.get('/api/templates/{template_id}/preview.svg')
     def template_preview(template_id: str):

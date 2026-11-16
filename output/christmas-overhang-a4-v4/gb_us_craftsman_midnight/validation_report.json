@@ -1,0 +1,336 @@
+{
+  "model_id": "GB-US-CRAFTSMAN-MIDNIGHT",
+  "version": "gingerbread-4.0.0",
+  "project_id": "overhang-samples",
+  "revision": 1,
+  "geometry_sha256": "3b6d5b41e06e144d56340ad3d890d239536bb247ffbb8d6333be0c6f3e56bd64",
+  "source_spec_hash": "699e1508160a02fb556a5457c54cc3bbc743f61a342122ff381767290fef328a",
+  "design_sha256": "8a009efc8713a391c97470c5c3b44058017518ded90c5de17708fc6c930d2d51",
+  "template_version": "4.0.0",
+  "overall_status": "PASS",
+  "physical_assembly": "NOT_TESTED",
+  "tests": [
+    {
+      "name": "all_faces_placed_once",
+      "status": "PASS",
+      "detail": "6 panels"
+    },
+    {
+      "name": "open_bottom_boundary_only",
+      "status": "PASS",
+      "detail": "Intentional open-bottom shell"
+    },
+    {
+      "name": "seam_pairs_unique",
+      "status": "PASS",
+      "detail": 11
+    },
+    {
+      "name": "seam_2d_lengths",
+      "status": "PASS",
+      "detail": "Exact matching seam lengths"
+    },
+    {
+      "name": "seam_3d_endpoints",
+      "status": "PASS",
+      "detail": "Reverse-winding shared 3D endpoints"
+    },
+    {
+      "name": "rigid_unfold_area",
+      "status": "PASS",
+      "detail": "No scaling or reflection"
+    },
+    {
+      "name": "tabs_only_on_glue_seams",
+      "status": "PASS",
+      "detail": "No hinge tabs; one tab per glue seam"
+    },
+    {
+      "name": "valid_connected_outlines",
+      "status": "PASS",
+      "detail": "Connected cut polygons"
+    },
+    {
+      "name": "hinges_coincident_and_not_cut",
+      "status": "PASS",
+      "detail": "Three interior uncut creases"
+    },
+    {
+      "name": "face_plus_tab_area_conserved",
+      "status": "PASS",
+      "detail": "No overlaps within connected units"
+    },
+    {
+      "name": "no_inter_piece_overlap",
+      "status": "PASS",
+      "detail": "No page collisions"
+    },
+    {
+      "name": "printable_bounds",
+      "status": "PASS",
+      "detail": [
+        8.0,
+        20.0,
+        202.0,
+        272.6
+      ]
+    },
+    {
+      "name": "finished_dimensions_mm",
+      "status": "PASS",
+      "detail": [
+        105.0,
+        65.0,
+        92.0
+      ]
+    },
+    {
+      "name": "pdf_page_count",
+      "status": "PASS",
+      "detail": 2
+    },
+    {
+      "name": "pdf_paper_dimensions",
+      "status": "PASS",
+      "detail": "210.0 × 297.0 mm"
+    },
+    {
+      "name": "pdf_cut_vectors_match_geometry",
+      "status": "PASS",
+      "detail": [
+        true,
+        true
+      ]
+    },
+    {
+      "name": "pdf_fold_count",
+      "status": "PASS",
+      "detail": [
+        true,
+        true
+      ]
+    },
+    {
+      "name": "pdf_40mm_calibration",
+      "status": "PASS",
+      "detail": [
+        true,
+        true
+      ]
+    },
+    {
+      "name": "pdf_codes_on_glue_tabs_only",
+      "status": "PASS",
+      "detail": "One concealed code per glue tab; none on decorated faces"
+    },
+    {
+      "name": "pdf_no_face_names_on_artwork",
+      "status": "PASS",
+      "detail": "Panel names moved to assembly map"
+    },
+    {
+      "name": "pdf_text_margins",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "name": "svg_size_vectors_calibration",
+      "status": "PASS",
+      "detail": [
+        true,
+        true
+      ]
+    },
+    {
+      "name": "guide_seam_map_has_both_mates",
+      "status": "PASS",
+      "detail": "All seam pairs labeled on reference diagrams"
+    },
+    {
+      "name": "guide_complete_within_page",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "name": "BASE_valid_cut",
+      "status": "PASS",
+      "detail": "Accessories: actual-size cut/fold parts"
+    },
+    {
+      "name": "BASE_bounds",
+      "status": "PASS",
+      "detail": "Accessories: actual-size cut/fold parts"
+    },
+    {
+      "name": "accessory_page_1_no_overlap",
+      "status": "PASS",
+      "detail": "Accessories: actual-size cut/fold parts"
+    },
+    {
+      "name": "TREE_1_valid_cut",
+      "status": "PASS",
+      "detail": "Accessories: actual-size cut/fold parts"
+    },
+    {
+      "name": "TREE_1_bounds",
+      "status": "PASS",
+      "detail": "Accessories: actual-size cut/fold parts"
+    },
+    {
+      "name": "TREE_2_valid_cut",
+      "status": "PASS",
+      "detail": "Accessories: actual-size cut/fold parts"
+    },
+    {
+      "name": "TREE_2_bounds",
+      "status": "PASS",
+      "detail": "Accessories: actual-size cut/fold parts"
+    },
+    {
+      "name": "A_valid_cut",
+      "status": "PASS",
+      "detail": "Accessories: actual-size cut/fold parts"
+    },
+    {
+      "name": "A_bounds",
+      "status": "PASS",
+      "detail": "Accessories: actual-size cut/fold parts"
+    },
+    {
+      "name": "B_valid_cut",
+      "status": "PASS",
+      "detail": "Accessories: actual-size cut/fold parts"
+    },
+    {
+      "name": "B_bounds",
+      "status": "PASS",
+      "detail": "Accessories: actual-size cut/fold parts"
+    },
+    {
+      "name": "accessory_page_2_no_overlap",
+      "status": "PASS",
+      "detail": "Accessories: actual-size cut/fold parts"
+    },
+    {
+      "name": "CAP_0_valid_cut",
+      "status": "PASS",
+      "detail": "Accessories: actual-size cut/fold parts"
+    },
+    {
+      "name": "CAP_0_bounds",
+      "status": "PASS",
+      "detail": "Accessories: actual-size cut/fold parts"
+    },
+    {
+      "name": "accessory_page_3_no_overlap",
+      "status": "PASS",
+      "detail": "Accessories: actual-size cut/fold parts"
+    },
+    {
+      "name": "accessory_pdf_dimensions",
+      "status": "PASS",
+      "detail": "Accessories: actual-size cut/fold parts"
+    },
+    {
+      "name": "accessory_pdf_text_bounds",
+      "status": "PASS",
+      "detail": "Accessories: actual-size cut/fold parts"
+    },
+    {
+      "name": "accessory_pdf_rulers",
+      "status": "PASS",
+      "detail": "Accessories: actual-size cut/fold parts"
+    },
+    {
+      "name": "accessory_pdf_1_cuts_match",
+      "status": "PASS",
+      "detail": "Accessories: actual-size cut/fold parts"
+    },
+    {
+      "name": "accessory_pdf_1_hidden_codes",
+      "status": "PASS",
+      "detail": "Accessories: actual-size cut/fold parts"
+    },
+    {
+      "name": "accessory_pdf_2_cuts_match",
+      "status": "PASS",
+      "detail": "Accessories: actual-size cut/fold parts"
+    },
+    {
+      "name": "accessory_pdf_2_hidden_codes",
+      "status": "PASS",
+      "detail": "Accessories: actual-size cut/fold parts"
+    },
+    {
+      "name": "accessory_pdf_3_cuts_match",
+      "status": "PASS",
+      "detail": "Accessories: actual-size cut/fold parts"
+    },
+    {
+      "name": "accessory_pdf_3_hidden_codes",
+      "status": "PASS",
+      "detail": "Accessories: actual-size cut/fold parts"
+    },
+    {
+      "name": "A_cube_topology",
+      "status": "PASS",
+      "detail": "Accessories: actual-size cut/fold parts"
+    },
+    {
+      "name": "B_cube_topology",
+      "status": "PASS",
+      "detail": "Accessories: actual-size cut/fold parts"
+    },
+    {
+      "name": "roof_cap_guide_both_mates",
+      "status": "PASS",
+      "detail": "Accessories: actual-size cut/fold parts"
+    },
+    {
+      "name": "gift_guide_both_mates",
+      "status": "PASS",
+      "detail": "Accessories: actual-size cut/fold parts"
+    },
+    {
+      "name": "accessory_guide_text_bounds",
+      "status": "PASS",
+      "detail": "Accessories: actual-size cut/fold parts"
+    },
+    {
+      "name": "roof_cap_covers_support",
+      "status": "PASS",
+      "detail": "6 mm front/back; 4 mm along outer slope; support retained"
+    },
+    {
+      "name": "roof_cap_parallel_to_support",
+      "status": "PASS",
+      "detail": "6 mm front/back; 4 mm along outer slope; support retained"
+    },
+    {
+      "name": "roof_cap_3d_seams",
+      "status": "PASS",
+      "detail": "6 mm front/back; 4 mm along outer slope; support retained"
+    },
+    {
+      "name": "roof_cap_uncut_hinges",
+      "status": "PASS",
+      "detail": "6 mm front/back; 4 mm along outer slope; support retained"
+    },
+    {
+      "name": "roof_cap_area_no_overlap",
+      "status": "PASS",
+      "detail": "6 mm front/back; 4 mm along outer slope; support retained"
+    }
+  ],
+  "summary": {
+    "sheets": 5,
+    "accessory_cut_pieces": 6,
+    "cut_pieces": 9,
+    "fold_hinges": 3,
+    "glue_seams": 8,
+    "accessory_fold_hinges": 11,
+    "accessory_glue_seams": 14,
+    "flat_continuous_joins": 0,
+    "faces_or_tiles": 6
+  }
+}

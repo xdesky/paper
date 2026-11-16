@@ -1,0 +1,39 @@
+# {"design_sha256":"a49c8964e09b6b05e99b6d30653b8b388aaf38f7ce53b7813dbe9799351d25ca","geometry_sha256":"d0b3d6554285a98d8fba35c1e10f286ff4aad96af1299d1ac53ed46de7a02880","model_id":"GB-FOREST","project_id":"overhang-samples","revision":1,"source_spec_hash":"a65f347356794c03eae6bd5985f84e9dc07cabfbff6762d13146f5bcb43eb0ad","template_version":"4.0.0","version":"gingerbread-4.0.0"}
+g FRONT
+v -42.5 -32.5 0
+v 42.5 -32.5 0
+v 42.5 -32.5 95
+v 0.0 -32.5 145
+v -42.5 -32.5 95
+f 1 2 3 4 5
+g RIGHT
+v 42.5 -32.5 0
+v 42.5 32.5 0
+v 42.5 32.5 95
+v 42.5 -32.5 95
+f 6 7 8 9
+g BACK
+v 42.5 32.5 0
+v -42.5 32.5 0
+v -42.5 32.5 95
+v 0.0 32.5 145
+v 42.5 32.5 95
+f 10 11 12 13 14
+g LEFT
+v -42.5 32.5 0
+v -42.5 -32.5 0
+v -42.5 -32.5 95
+v -42.5 32.5 95
+f 15 16 17 18
+g ROOF_RIGHT
+v 42.5 -32.5 95.0
+v 42.5 32.5 95.0
+v 0.0 32.5 145.0
+v 0.0 -32.5 145.0
+f 19 20 21 22
+g ROOF_LEFT
+v -42.5 32.5 95.0
+v -42.5 -32.5 95.0
+v 0.0 -32.5 145.0
+v 0.0 32.5 145.0
+f 23 24 25 26

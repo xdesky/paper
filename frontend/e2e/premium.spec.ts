@@ -1,0 +1,36 @@
+import {test,expect} from '@playwright/test';
+test('premium catalog and real gambrel house on A4',async({page,request})=>{
+ const catalog=await(await request.get('/api/templates')).json();
+ const premium=catalog.filter((t:any)=>t.collection==='American Premium');
+ expect(premium).toHaveLength(20);
+ expect(new Set(premium.map((t:any)=>t.model_family)).size).toBe(10);
+ await page.goto('/#templates');
+ await page.getByRole('button',{name:'American Premium',exact:true}).click();
+ await expect(page.locator('.template-card')).toHaveCount(20);
+ await page.getByRole('searchbox',{name:'Tìm template'}).fill('Dutch Colonial');
+ await expect(page.locator('.template-card')).toHaveCount(2);
+ await page.getByRole('button',{name:'Xem Dutch Colonial · Heritage Christmas',exact:true}).click();
+ await expect(page.getByRole('dialog')).toContainText('8 mặt · 4 mảnh nhà + 7 mảnh phụ kiện');
+ await page.getByRole('button',{name:'Tạo dự án từ mẫu này →',exact:true}).click();
+ await expect(page.locator('.svg-sheet svg').first()).toBeVisible({timeout:45000});
+ await expect(page.locator('.dimension-card')).toContainText('8 mặt');
+ await page.getByLabel('Khổ giấy',{exact:true}).selectOption('A4');
+ await page.getByRole('button',{name:'✧ Generate',exact:true}).click();
+ await expect(page.locator('.svg-sheet svg').first()).toHaveAttribute('height','297.0mm',{timeout:45000});
+ await expect(page.locator('.preview-page')).toHaveCount(5);
+ await page.getByRole('region',{name:'Các trang in'}).evaluate(e=>{e.scrollTop=e.scrollHeight;});
+ await expect(page.locator('.svg-sheet svg').nth(3)).toContainText('CÂY THÔNG & HỘP QUÀ');
+ await expect(page.locator('.metrics strong').filter({hasText:/^16$/})).toBeVisible();
+ await expect(page.locator('.metrics strong').filter({hasText:/^28$/})).toBeVisible();
+ await page.getByLabel('Mã cạnh',{exact:true}).uncheck();
+ await expect(page.locator('.svg-sheet text').filter({hasText:/^A1$/})).toHaveCSS('opacity','0');
+ await page.getByLabel('Mã cạnh',{exact:true}).check();
+
+ await expect(page.locator('.svg-sheet svg').nth(4)).toContainText('MÁI ĐUA PHỦ TUYẾT');
+ await page.screenshot({path:'../test-results/premium-workspace.png',fullPage:true});
+ await page.getByRole('button',{name:'⌂ Kho template Noel',exact:true}).click();
+ await page.getByRole('searchbox',{name:'Tìm template'}).fill('');
+ await page.screenshot({path:'../test-results/premium-library.png',fullPage:true});
+ await page.setViewportSize({width:390,height:844});
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
+});

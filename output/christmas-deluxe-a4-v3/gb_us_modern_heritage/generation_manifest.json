@@ -1,0 +1,267 @@
+{
+  "model_id": "GB-US-MODERN-HERITAGE",
+  "version": "gingerbread-3.0.0",
+  "project_id": "christmas-deluxe-samples",
+  "revision": 1,
+  "geometry_sha256": "676d2e7d4bcd876e74ea89bb3834779e21379b0bfec075671cf15f981cd7b7ae",
+  "source_spec_hash": "3a883fb17896069d6a96faead5d6eefb824d26f4c790cb1c2d354f45bd8e0eb8",
+  "design_sha256": "7fd78e9f5b4ef7d00f9f46c98db87294a099b27e15b3b9d40600ee4cfff7541e",
+  "template_version": "3.0.0",
+  "input": {
+    "preset": "gb_us_modern_heritage",
+    "template": {
+      "id": "gb_us_modern_heritage",
+      "name": "Modern Shed House · Heritage Christmas",
+      "subtitle": "Modern Shed House / Heritage Christmas",
+      "collection": "American Premium",
+      "model_family": "modern",
+      "architecture": "Modern Shed House",
+      "finish": "Heritage Christmas",
+      "profile": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "material": "board",
+      "premium": true,
+      "width": 95,
+      "depth": 65,
+      "wall_height": 68,
+      "roof_rise": 38,
+      "wall": "#b97946",
+      "roof": "#943f4a",
+      "accent": "#bf394a",
+      "trim": "#fff7e5",
+      "background": "#ebe9df",
+      "motif": "american",
+      "difficulty": "Trung bình",
+      "description": "Nhà lấy cảm hứng từ Modern Shed House: mặt đứng board, cửa chia ô, vòng lá Noel và mái lợp chi tiết. Phiên bản Heritage Christmas."
+    },
+    "paper": "A4",
+    "project_id": "christmas-deluxe-samples",
+    "revision": 1
+  },
+  "template": {
+    "id": "gb_us_modern_heritage",
+    "name": "Modern Shed House · Heritage Christmas",
+    "subtitle": "Modern Shed House / Heritage Christmas",
+    "collection": "American Premium",
+    "model_family": "modern",
+    "architecture": "Modern Shed House",
+    "finish": "Heritage Christmas",
+    "profile": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "material": "board",
+    "premium": true,
+    "width": 95,
+    "depth": 65,
+    "wall_height": 68,
+    "roof_rise": 38,
+    "wall": "#b97946",
+    "roof": "#943f4a",
+    "accent": "#bf394a",
+    "trim": "#fff7e5",
+    "background": "#ebe9df",
+    "motif": "american",
+    "difficulty": "Trung bình",
+    "description": "Nhà lấy cảm hứng từ Modern Shed House: mặt đứng board, cửa chia ô, vòng lá Noel và mái lợp chi tiết. Phiên bản Heritage Christmas."
+  },
+  "qa_status": "PASS",
+  "algorithm": "gable-house-1.0; v1.2 rigid pairing + shelf packing",
+  "physical_assembly": "NOT_TESTED",
+  "artifacts": [
+    {
+      "path": "accessories.pdf",
+      "sha256": "c1e67ba079b42b01b531480d7b5cdc7a08fa0494127dc363ff513e446892708c",
+      "model_id": "GB-US-MODERN-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "676d2e7d4bcd876e74ea89bb3834779e21379b0bfec075671cf15f981cd7b7ae",
+      "source_spec_hash": "3a883fb17896069d6a96faead5d6eefb824d26f4c790cb1c2d354f45bd8e0eb8",
+      "design_sha256": "7fd78e9f5b4ef7d00f9f46c98db87294a099b27e15b3b9d40600ee4cfff7541e",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "accessories_guide.pdf",
+      "sha256": "03ef35ecc6931401d00938d3f1d059a017975db7eaf02275914c1fbc895ad54d",
+      "model_id": "GB-US-MODERN-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "676d2e7d4bcd876e74ea89bb3834779e21379b0bfec075671cf15f981cd7b7ae",
+      "source_spec_hash": "3a883fb17896069d6a96faead5d6eefb824d26f4c790cb1c2d354f45bd8e0eb8",
+      "design_sha256": "7fd78e9f5b4ef7d00f9f46c98db87294a099b27e15b3b9d40600ee4cfff7541e",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "assembly_guide.pdf",
+      "sha256": "9dc2cd422fcab71a0a4f7baf7de4c33fc88716801557f45f506f8666b86a688a",
+      "model_id": "GB-US-MODERN-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "676d2e7d4bcd876e74ea89bb3834779e21379b0bfec075671cf15f981cd7b7ae",
+      "source_spec_hash": "3a883fb17896069d6a96faead5d6eefb824d26f4c790cb1c2d354f45bd8e0eb8",
+      "design_sha256": "7fd78e9f5b4ef7d00f9f46c98db87294a099b27e15b3b9d40600ee4cfff7541e",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "display_scene.obj",
+      "sha256": "45f7db39748e10c3403e7740093201682256cf512c71e41e428f6a6f86af32c3",
+      "model_id": "GB-US-MODERN-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "676d2e7d4bcd876e74ea89bb3834779e21379b0bfec075671cf15f981cd7b7ae",
+      "source_spec_hash": "3a883fb17896069d6a96faead5d6eefb824d26f4c790cb1c2d354f45bd8e0eb8",
+      "design_sha256": "7fd78e9f5b4ef7d00f9f46c98db87294a099b27e15b3b9d40600ee4cfff7541e",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "model.obj",
+      "sha256": "1f5f59fc114210b98552ba128c3407488c037e7dd0a398908bb99a045cf7cc71",
+      "model_id": "GB-US-MODERN-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "676d2e7d4bcd876e74ea89bb3834779e21379b0bfec075671cf15f981cd7b7ae",
+      "source_spec_hash": "3a883fb17896069d6a96faead5d6eefb824d26f4c790cb1c2d354f45bd8e0eb8",
+      "design_sha256": "7fd78e9f5b4ef7d00f9f46c98db87294a099b27e15b3b9d40600ee4cfff7541e",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "model_3d_preview.png",
+      "sha256": "111e2d5b6c6308bd0ed076ac619e2e1ab4c31e140ce40c2a9bac1ed8caa5bd31",
+      "model_id": "GB-US-MODERN-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "676d2e7d4bcd876e74ea89bb3834779e21379b0bfec075671cf15f981cd7b7ae",
+      "source_spec_hash": "3a883fb17896069d6a96faead5d6eefb824d26f4c790cb1c2d354f45bd8e0eb8",
+      "design_sha256": "7fd78e9f5b4ef7d00f9f46c98db87294a099b27e15b3b9d40600ee4cfff7541e",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "model_spec.json",
+      "sha256": "db5c82faf61893858e6d6e8d2fa8d3cc513a4adf699977ee9729ff645f480a74",
+      "model_id": "GB-US-MODERN-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "676d2e7d4bcd876e74ea89bb3834779e21379b0bfec075671cf15f981cd7b7ae",
+      "source_spec_hash": "3a883fb17896069d6a96faead5d6eefb824d26f4c790cb1c2d354f45bd8e0eb8",
+      "design_sha256": "7fd78e9f5b4ef7d00f9f46c98db87294a099b27e15b3b9d40600ee4cfff7541e",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "printable_a4.pdf",
+      "sha256": "f788d04941169f6ba15517dc5ba60090db2731ebb74f028fa4de47da689b228f",
+      "model_id": "GB-US-MODERN-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "676d2e7d4bcd876e74ea89bb3834779e21379b0bfec075671cf15f981cd7b7ae",
+      "source_spec_hash": "3a883fb17896069d6a96faead5d6eefb824d26f4c790cb1c2d354f45bd8e0eb8",
+      "design_sha256": "7fd78e9f5b4ef7d00f9f46c98db87294a099b27e15b3b9d40600ee4cfff7541e",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "printable_preview.png",
+      "sha256": "a3dbf396d165909484805b2d5a49aa1567feffdd8f6cfda65a4329ed323856b7",
+      "model_id": "GB-US-MODERN-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "676d2e7d4bcd876e74ea89bb3834779e21379b0bfec075671cf15f981cd7b7ae",
+      "source_spec_hash": "3a883fb17896069d6a96faead5d6eefb824d26f4c790cb1c2d354f45bd8e0eb8",
+      "design_sha256": "7fd78e9f5b4ef7d00f9f46c98db87294a099b27e15b3b9d40600ee4cfff7541e",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "svg_pages/page_001.svg",
+      "sha256": "9c2d51744948b94dbe865cbae302d2d0c3bd509a5bed4d646bbd0aa68f90a586",
+      "model_id": "GB-US-MODERN-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "676d2e7d4bcd876e74ea89bb3834779e21379b0bfec075671cf15f981cd7b7ae",
+      "source_spec_hash": "3a883fb17896069d6a96faead5d6eefb824d26f4c790cb1c2d354f45bd8e0eb8",
+      "design_sha256": "7fd78e9f5b4ef7d00f9f46c98db87294a099b27e15b3b9d40600ee4cfff7541e",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "svg_pages/page_002.svg",
+      "sha256": "dbb3bd76d39e0bda3d9f7be5e92b12a9887602b86216ef251a0c344ddc1667be",
+      "model_id": "GB-US-MODERN-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "676d2e7d4bcd876e74ea89bb3834779e21379b0bfec075671cf15f981cd7b7ae",
+      "source_spec_hash": "3a883fb17896069d6a96faead5d6eefb824d26f4c790cb1c2d354f45bd8e0eb8",
+      "design_sha256": "7fd78e9f5b4ef7d00f9f46c98db87294a099b27e15b3b9d40600ee4cfff7541e",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "svg_pages/page_003.svg",
+      "sha256": "9ea1e74a60c4c5dace7a9b95139e6b19fdafc4aaa93fa5d4dd81413888729653",
+      "model_id": "GB-US-MODERN-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "676d2e7d4bcd876e74ea89bb3834779e21379b0bfec075671cf15f981cd7b7ae",
+      "source_spec_hash": "3a883fb17896069d6a96faead5d6eefb824d26f4c790cb1c2d354f45bd8e0eb8",
+      "design_sha256": "7fd78e9f5b4ef7d00f9f46c98db87294a099b27e15b3b9d40600ee4cfff7541e",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "svg_pages/page_004.svg",
+      "sha256": "9bb74f118fe67872fac34e45742c7a24027544035f74dcaea087b16b617ca6c1",
+      "model_id": "GB-US-MODERN-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "676d2e7d4bcd876e74ea89bb3834779e21379b0bfec075671cf15f981cd7b7ae",
+      "source_spec_hash": "3a883fb17896069d6a96faead5d6eefb824d26f4c790cb1c2d354f45bd8e0eb8",
+      "design_sha256": "7fd78e9f5b4ef7d00f9f46c98db87294a099b27e15b3b9d40600ee4cfff7541e",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "template_preview.svg",
+      "sha256": "90dd86991d316f69c745ea718b9cdf0ad70041932a1a8dfba16dcf7c32aad92a",
+      "model_id": "GB-US-MODERN-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "676d2e7d4bcd876e74ea89bb3834779e21379b0bfec075671cf15f981cd7b7ae",
+      "source_spec_hash": "3a883fb17896069d6a96faead5d6eefb824d26f4c790cb1c2d354f45bd8e0eb8",
+      "design_sha256": "7fd78e9f5b4ef7d00f9f46c98db87294a099b27e15b3b9d40600ee4cfff7541e",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "validation_report.json",
+      "sha256": "173d6b8930b522c10b76231c8ca3f204fd8ae80edb69bdb5fff51a3d1b3e795a",
+      "model_id": "GB-US-MODERN-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "676d2e7d4bcd876e74ea89bb3834779e21379b0bfec075671cf15f981cd7b7ae",
+      "source_spec_hash": "3a883fb17896069d6a96faead5d6eefb824d26f4c790cb1c2d354f45bd8e0eb8",
+      "design_sha256": "7fd78e9f5b4ef7d00f9f46c98db87294a099b27e15b3b9d40600ee4cfff7541e",
+      "template_version": "3.0.0"
+    }
+  ]
+}

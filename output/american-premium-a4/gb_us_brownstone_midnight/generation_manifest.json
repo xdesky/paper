@@ -1,0 +1,231 @@
+{
+  "model_id": "GB-US-BROWNSTONE-MIDNIGHT",
+  "version": "gingerbread-2.0.0",
+  "project_id": "american-premium-samples",
+  "revision": 1,
+  "geometry_sha256": "7e3683d65d02595aff4b2bb7a7db55165d82641988569d205add639d8aeab74d",
+  "source_spec_hash": "780e66ec670da6119af2f9f8e91bbcb51246dd40f444ac3f22ce8958058a2f8d",
+  "design_sha256": "30cb5742cf7fcc0f59b95890c336a26adc0bf521255a26815e9afdb6058aa736",
+  "template_version": "2.0.0",
+  "input": {
+    "preset": "gb_us_brownstone_midnight",
+    "template": {
+      "id": "gb_us_brownstone_midnight",
+      "name": "Brooklyn Brownstone · Midnight & Gold",
+      "subtitle": "Brooklyn Brownstone / Midnight & Gold",
+      "collection": "American Premium",
+      "model_family": "brownstone",
+      "architecture": "Brooklyn Brownstone",
+      "finish": "Midnight & Gold",
+      "profile": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "material": "brick",
+      "premium": true,
+      "width": 65,
+      "depth": 65,
+      "wall_height": 135,
+      "roof_rise": 8,
+      "wall": "#344c60",
+      "roof": "#29313f",
+      "accent": "#bb8648",
+      "trim": "#f5e8c6",
+      "background": "#e5e9ee",
+      "motif": "american",
+      "difficulty": "Trung bình",
+      "description": "Nhà lấy cảm hứng từ Brooklyn Brownstone: mặt đứng brick, cửa chia ô, vòng lá Noel và mái lợp chi tiết. Phiên bản Midnight & Gold."
+    },
+    "paper": "A4",
+    "project_id": "american-premium-samples",
+    "revision": 1
+  },
+  "template": {
+    "id": "gb_us_brownstone_midnight",
+    "name": "Brooklyn Brownstone · Midnight & Gold",
+    "subtitle": "Brooklyn Brownstone / Midnight & Gold",
+    "collection": "American Premium",
+    "model_family": "brownstone",
+    "architecture": "Brooklyn Brownstone",
+    "finish": "Midnight & Gold",
+    "profile": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "material": "brick",
+    "premium": true,
+    "width": 65,
+    "depth": 65,
+    "wall_height": 135,
+    "roof_rise": 8,
+    "wall": "#344c60",
+    "roof": "#29313f",
+    "accent": "#bb8648",
+    "trim": "#f5e8c6",
+    "background": "#e5e9ee",
+    "motif": "american",
+    "difficulty": "Trung bình",
+    "description": "Nhà lấy cảm hứng từ Brooklyn Brownstone: mặt đứng brick, cửa chia ô, vòng lá Noel và mái lợp chi tiết. Phiên bản Midnight & Gold."
+  },
+  "qa_status": "PASS",
+  "algorithm": "gable-house-1.0; v1.2 rigid pairing + shelf packing",
+  "physical_assembly": "NOT_TESTED",
+  "artifacts": [
+    {
+      "path": "assembly_guide.pdf",
+      "sha256": "ceed3e3fa2e92b825f25364cff635f52278aa0fa0b73fa5feff776e286c66c65",
+      "model_id": "GB-US-BROWNSTONE-MIDNIGHT",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "7e3683d65d02595aff4b2bb7a7db55165d82641988569d205add639d8aeab74d",
+      "source_spec_hash": "780e66ec670da6119af2f9f8e91bbcb51246dd40f444ac3f22ce8958058a2f8d",
+      "design_sha256": "30cb5742cf7fcc0f59b95890c336a26adc0bf521255a26815e9afdb6058aa736",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "generation_manifest.json",
+      "sha256": "eec8aaf8d3c749cdbf84351b456d250c9a85c65ae5297941ce939b3818786777",
+      "model_id": "GB-US-BROWNSTONE-MIDNIGHT",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "7e3683d65d02595aff4b2bb7a7db55165d82641988569d205add639d8aeab74d",
+      "source_spec_hash": "780e66ec670da6119af2f9f8e91bbcb51246dd40f444ac3f22ce8958058a2f8d",
+      "design_sha256": "30cb5742cf7fcc0f59b95890c336a26adc0bf521255a26815e9afdb6058aa736",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "model.obj",
+      "sha256": "d48a20b1b1e5521498d7e6c3aa4e41bff1a1729a328f67a020c6dda3549a4c8c",
+      "model_id": "GB-US-BROWNSTONE-MIDNIGHT",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "7e3683d65d02595aff4b2bb7a7db55165d82641988569d205add639d8aeab74d",
+      "source_spec_hash": "780e66ec670da6119af2f9f8e91bbcb51246dd40f444ac3f22ce8958058a2f8d",
+      "design_sha256": "30cb5742cf7fcc0f59b95890c336a26adc0bf521255a26815e9afdb6058aa736",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "model_3d_preview.png",
+      "sha256": "370ee8eb530ad136e55671a0a258f6ba2825fc7dfcb9745dc412adbd78e5d04c",
+      "model_id": "GB-US-BROWNSTONE-MIDNIGHT",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "7e3683d65d02595aff4b2bb7a7db55165d82641988569d205add639d8aeab74d",
+      "source_spec_hash": "780e66ec670da6119af2f9f8e91bbcb51246dd40f444ac3f22ce8958058a2f8d",
+      "design_sha256": "30cb5742cf7fcc0f59b95890c336a26adc0bf521255a26815e9afdb6058aa736",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "model_spec.json",
+      "sha256": "cb9cd60fdab087b949539285c90af00094af950d5055f78b5160576b2b4cc57c",
+      "model_id": "GB-US-BROWNSTONE-MIDNIGHT",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "7e3683d65d02595aff4b2bb7a7db55165d82641988569d205add639d8aeab74d",
+      "source_spec_hash": "780e66ec670da6119af2f9f8e91bbcb51246dd40f444ac3f22ce8958058a2f8d",
+      "design_sha256": "30cb5742cf7fcc0f59b95890c336a26adc0bf521255a26815e9afdb6058aa736",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "printable_a4.pdf",
+      "sha256": "1d86bce8bdc505602dde912d7695aead48d0125a94573d1d912df0643ad4cdd8",
+      "model_id": "GB-US-BROWNSTONE-MIDNIGHT",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "7e3683d65d02595aff4b2bb7a7db55165d82641988569d205add639d8aeab74d",
+      "source_spec_hash": "780e66ec670da6119af2f9f8e91bbcb51246dd40f444ac3f22ce8958058a2f8d",
+      "design_sha256": "30cb5742cf7fcc0f59b95890c336a26adc0bf521255a26815e9afdb6058aa736",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "printable_preview.png",
+      "sha256": "98b1bb8b80f7925aa3fb8d437b06aaee9310642216d85257513dcfa3d5986117",
+      "model_id": "GB-US-BROWNSTONE-MIDNIGHT",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "7e3683d65d02595aff4b2bb7a7db55165d82641988569d205add639d8aeab74d",
+      "source_spec_hash": "780e66ec670da6119af2f9f8e91bbcb51246dd40f444ac3f22ce8958058a2f8d",
+      "design_sha256": "30cb5742cf7fcc0f59b95890c336a26adc0bf521255a26815e9afdb6058aa736",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "project.zip",
+      "sha256": "938d5822177cd990ad1e3fc81da8e193e1f50ab1934a4b7166059c4e8b8d721b",
+      "model_id": "GB-US-BROWNSTONE-MIDNIGHT",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "7e3683d65d02595aff4b2bb7a7db55165d82641988569d205add639d8aeab74d",
+      "source_spec_hash": "780e66ec670da6119af2f9f8e91bbcb51246dd40f444ac3f22ce8958058a2f8d",
+      "design_sha256": "30cb5742cf7fcc0f59b95890c336a26adc0bf521255a26815e9afdb6058aa736",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "svg_pages/page_001.svg",
+      "sha256": "6cdd571f9d66f9fa88a921bc0eeb7449e32b68c56f950fb3d6773f1023dff996",
+      "model_id": "GB-US-BROWNSTONE-MIDNIGHT",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "7e3683d65d02595aff4b2bb7a7db55165d82641988569d205add639d8aeab74d",
+      "source_spec_hash": "780e66ec670da6119af2f9f8e91bbcb51246dd40f444ac3f22ce8958058a2f8d",
+      "design_sha256": "30cb5742cf7fcc0f59b95890c336a26adc0bf521255a26815e9afdb6058aa736",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "svg_pages/page_002.svg",
+      "sha256": "687fbc477e22f68c6cea7daa0236b9497e8d60ed149930319fd64a9b6cca0955",
+      "model_id": "GB-US-BROWNSTONE-MIDNIGHT",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "7e3683d65d02595aff4b2bb7a7db55165d82641988569d205add639d8aeab74d",
+      "source_spec_hash": "780e66ec670da6119af2f9f8e91bbcb51246dd40f444ac3f22ce8958058a2f8d",
+      "design_sha256": "30cb5742cf7fcc0f59b95890c336a26adc0bf521255a26815e9afdb6058aa736",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "template_preview.svg",
+      "sha256": "6aafea381716ae5cb3b06f435476353c564f8493a057c5873980bb44c5b53478",
+      "model_id": "GB-US-BROWNSTONE-MIDNIGHT",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "7e3683d65d02595aff4b2bb7a7db55165d82641988569d205add639d8aeab74d",
+      "source_spec_hash": "780e66ec670da6119af2f9f8e91bbcb51246dd40f444ac3f22ce8958058a2f8d",
+      "design_sha256": "30cb5742cf7fcc0f59b95890c336a26adc0bf521255a26815e9afdb6058aa736",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "validation_report.json",
+      "sha256": "b426343611a683bc44adb2a4860a7fde23e126a31b412f43edc4ed2e331ea0a2",
+      "model_id": "GB-US-BROWNSTONE-MIDNIGHT",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "7e3683d65d02595aff4b2bb7a7db55165d82641988569d205add639d8aeab74d",
+      "source_spec_hash": "780e66ec670da6119af2f9f8e91bbcb51246dd40f444ac3f22ce8958058a2f8d",
+      "design_sha256": "30cb5742cf7fcc0f59b95890c336a26adc0bf521255a26815e9afdb6058aa736",
+      "template_version": "2.0.0"
+    }
+  ]
+}

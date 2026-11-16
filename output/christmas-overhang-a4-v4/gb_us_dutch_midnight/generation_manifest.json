@@ -1,0 +1,307 @@
+{
+  "model_id": "GB-US-DUTCH-MIDNIGHT",
+  "version": "gingerbread-4.0.0",
+  "project_id": "overhang-samples",
+  "revision": 1,
+  "geometry_sha256": "ef7d9f8b1edc1d758fa4c4185a84730821b76798b2b219effbd61a7e8196ccdc",
+  "source_spec_hash": "03e4ef61a5ecdd66517975705ff132ed2925c72909520d5cf362d8ef48f4fe1c",
+  "design_sha256": "4343c1359fb62ba8cfc96c3ab6ac724ab57aa2c62b67ec521ddb28b1f09777af",
+  "template_version": "4.0.0",
+  "input": {
+    "preset": "gb_us_dutch_midnight",
+    "template": {
+      "id": "gb_us_dutch_midnight",
+      "name": "Dutch Colonial · Midnight & Gold",
+      "subtitle": "Dutch Colonial / Midnight & Gold",
+      "collection": "American Premium",
+      "model_family": "dutch",
+      "architecture": "Dutch Colonial",
+      "finish": "Midnight & Gold",
+      "profile": [
+        [
+          0,
+          0
+        ],
+        [
+          0.18,
+          0.72
+        ],
+        [
+          0.5,
+          1
+        ],
+        [
+          0.82,
+          0.72
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "material": "shingle",
+      "premium": true,
+      "width": 90,
+      "depth": 65,
+      "wall_height": 80,
+      "roof_rise": 48,
+      "wall": "#344c60",
+      "roof": "#29313f",
+      "accent": "#bb8648",
+      "trim": "#f5e8c6",
+      "background": "#e5e9ee",
+      "motif": "american",
+      "difficulty": "Trung bình",
+      "description": "Nhà lấy cảm hứng từ Dutch Colonial: mặt đứng shingle, cửa chia ô, vòng lá Noel và mái lợp chi tiết. Phiên bản Midnight & Gold.",
+      "roof_overhang_mm": 4,
+      "roof_rake_mm": 6
+    },
+    "paper": "A4",
+    "project_id": "overhang-samples",
+    "revision": 1
+  },
+  "template": {
+    "id": "gb_us_dutch_midnight",
+    "name": "Dutch Colonial · Midnight & Gold",
+    "subtitle": "Dutch Colonial / Midnight & Gold",
+    "collection": "American Premium",
+    "model_family": "dutch",
+    "architecture": "Dutch Colonial",
+    "finish": "Midnight & Gold",
+    "profile": [
+      [
+        0,
+        0
+      ],
+      [
+        0.18,
+        0.72
+      ],
+      [
+        0.5,
+        1
+      ],
+      [
+        0.82,
+        0.72
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "material": "shingle",
+    "premium": true,
+    "width": 90,
+    "depth": 65,
+    "wall_height": 80,
+    "roof_rise": 48,
+    "wall": "#344c60",
+    "roof": "#29313f",
+    "accent": "#bb8648",
+    "trim": "#f5e8c6",
+    "background": "#e5e9ee",
+    "motif": "american",
+    "difficulty": "Trung bình",
+    "description": "Nhà lấy cảm hứng từ Dutch Colonial: mặt đứng shingle, cửa chia ô, vòng lá Noel và mái lợp chi tiết. Phiên bản Midnight & Gold.",
+    "roof_overhang_mm": 4,
+    "roof_rake_mm": 6
+  },
+  "qa_status": "PASS",
+  "algorithm": "gable-house-1.0; v1.2 rigid pairing + shelf packing",
+  "physical_assembly": "NOT_TESTED",
+  "artifacts": [
+    {
+      "path": "accessories.pdf",
+      "sha256": "f505f114ce7bc0e7441e76cb45899d44c1232f28260c3ded8a9174e30ed42ee7",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "ef7d9f8b1edc1d758fa4c4185a84730821b76798b2b219effbd61a7e8196ccdc",
+      "source_spec_hash": "03e4ef61a5ecdd66517975705ff132ed2925c72909520d5cf362d8ef48f4fe1c",
+      "design_sha256": "4343c1359fb62ba8cfc96c3ab6ac724ab57aa2c62b67ec521ddb28b1f09777af",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "accessories_guide.pdf",
+      "sha256": "534f58d4edd6717526c903f91a2c89bb8b933a2dcd5535e9666006721ee47dc6",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "ef7d9f8b1edc1d758fa4c4185a84730821b76798b2b219effbd61a7e8196ccdc",
+      "source_spec_hash": "03e4ef61a5ecdd66517975705ff132ed2925c72909520d5cf362d8ef48f4fe1c",
+      "design_sha256": "4343c1359fb62ba8cfc96c3ab6ac724ab57aa2c62b67ec521ddb28b1f09777af",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "assembly_guide.pdf",
+      "sha256": "a43ff33913230c7543943ed7d8c4b936d38a9bfc6f61ffc4e4ef4980a1b2562d",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "ef7d9f8b1edc1d758fa4c4185a84730821b76798b2b219effbd61a7e8196ccdc",
+      "source_spec_hash": "03e4ef61a5ecdd66517975705ff132ed2925c72909520d5cf362d8ef48f4fe1c",
+      "design_sha256": "4343c1359fb62ba8cfc96c3ab6ac724ab57aa2c62b67ec521ddb28b1f09777af",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "display_scene.obj",
+      "sha256": "b6498669ed986ef3afe3e42691c461c29b65328b7c3c89a8480e479910042ad1",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "ef7d9f8b1edc1d758fa4c4185a84730821b76798b2b219effbd61a7e8196ccdc",
+      "source_spec_hash": "03e4ef61a5ecdd66517975705ff132ed2925c72909520d5cf362d8ef48f4fe1c",
+      "design_sha256": "4343c1359fb62ba8cfc96c3ab6ac724ab57aa2c62b67ec521ddb28b1f09777af",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "model.obj",
+      "sha256": "ca16630b93e34029215ab07d0d409a0c393a6eae7df9a59d2fc708079a54155d",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "ef7d9f8b1edc1d758fa4c4185a84730821b76798b2b219effbd61a7e8196ccdc",
+      "source_spec_hash": "03e4ef61a5ecdd66517975705ff132ed2925c72909520d5cf362d8ef48f4fe1c",
+      "design_sha256": "4343c1359fb62ba8cfc96c3ab6ac724ab57aa2c62b67ec521ddb28b1f09777af",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "model_3d_preview.png",
+      "sha256": "0b63c17b0c502254209129c8aaa2664baacea8cb2a7b88ad26517e8d5db5e1a5",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "ef7d9f8b1edc1d758fa4c4185a84730821b76798b2b219effbd61a7e8196ccdc",
+      "source_spec_hash": "03e4ef61a5ecdd66517975705ff132ed2925c72909520d5cf362d8ef48f4fe1c",
+      "design_sha256": "4343c1359fb62ba8cfc96c3ab6ac724ab57aa2c62b67ec521ddb28b1f09777af",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "model_spec.json",
+      "sha256": "16987936dd6c26e1e8a162e73ad0f07d6adac7b3a67469fa2ac071c0407e44fc",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "ef7d9f8b1edc1d758fa4c4185a84730821b76798b2b219effbd61a7e8196ccdc",
+      "source_spec_hash": "03e4ef61a5ecdd66517975705ff132ed2925c72909520d5cf362d8ef48f4fe1c",
+      "design_sha256": "4343c1359fb62ba8cfc96c3ab6ac724ab57aa2c62b67ec521ddb28b1f09777af",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "printable_a4.pdf",
+      "sha256": "7f54dbed28328c8f245979b64a5a85b7631ee76a03242a9439b492a500902290",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "ef7d9f8b1edc1d758fa4c4185a84730821b76798b2b219effbd61a7e8196ccdc",
+      "source_spec_hash": "03e4ef61a5ecdd66517975705ff132ed2925c72909520d5cf362d8ef48f4fe1c",
+      "design_sha256": "4343c1359fb62ba8cfc96c3ab6ac724ab57aa2c62b67ec521ddb28b1f09777af",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "printable_preview.png",
+      "sha256": "c5d7193ba1f305a5f1abff59f2c2500f3491b0f7c9618a2077e96551a2b58c7b",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "ef7d9f8b1edc1d758fa4c4185a84730821b76798b2b219effbd61a7e8196ccdc",
+      "source_spec_hash": "03e4ef61a5ecdd66517975705ff132ed2925c72909520d5cf362d8ef48f4fe1c",
+      "design_sha256": "4343c1359fb62ba8cfc96c3ab6ac724ab57aa2c62b67ec521ddb28b1f09777af",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "svg_pages/page_001.svg",
+      "sha256": "9e6e6cbd35d59a273075f3718d0de23ba175e85236aa9c6ae89c3ad60e044b68",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "ef7d9f8b1edc1d758fa4c4185a84730821b76798b2b219effbd61a7e8196ccdc",
+      "source_spec_hash": "03e4ef61a5ecdd66517975705ff132ed2925c72909520d5cf362d8ef48f4fe1c",
+      "design_sha256": "4343c1359fb62ba8cfc96c3ab6ac724ab57aa2c62b67ec521ddb28b1f09777af",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "svg_pages/page_002.svg",
+      "sha256": "26de5f10c30949aa7c9093c1eaf79dbc92164e8ee29c8861edc4f3b9a0eb04c4",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "ef7d9f8b1edc1d758fa4c4185a84730821b76798b2b219effbd61a7e8196ccdc",
+      "source_spec_hash": "03e4ef61a5ecdd66517975705ff132ed2925c72909520d5cf362d8ef48f4fe1c",
+      "design_sha256": "4343c1359fb62ba8cfc96c3ab6ac724ab57aa2c62b67ec521ddb28b1f09777af",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "svg_pages/page_003.svg",
+      "sha256": "3ca3f023c064d6c7d35410f993a9388574ddc046a2cc4b6a864734f2a3e4df42",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "ef7d9f8b1edc1d758fa4c4185a84730821b76798b2b219effbd61a7e8196ccdc",
+      "source_spec_hash": "03e4ef61a5ecdd66517975705ff132ed2925c72909520d5cf362d8ef48f4fe1c",
+      "design_sha256": "4343c1359fb62ba8cfc96c3ab6ac724ab57aa2c62b67ec521ddb28b1f09777af",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "svg_pages/page_004.svg",
+      "sha256": "d287c6514d00c7d6e9e46ece140918dee997f46af040fd6e5075cd75a239cc84",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "ef7d9f8b1edc1d758fa4c4185a84730821b76798b2b219effbd61a7e8196ccdc",
+      "source_spec_hash": "03e4ef61a5ecdd66517975705ff132ed2925c72909520d5cf362d8ef48f4fe1c",
+      "design_sha256": "4343c1359fb62ba8cfc96c3ab6ac724ab57aa2c62b67ec521ddb28b1f09777af",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "svg_pages/page_005.svg",
+      "sha256": "f8ac9343c1b966ed4ee6b53a915d5c00c1102921beb81a9aa4d1430f6f12d641",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "ef7d9f8b1edc1d758fa4c4185a84730821b76798b2b219effbd61a7e8196ccdc",
+      "source_spec_hash": "03e4ef61a5ecdd66517975705ff132ed2925c72909520d5cf362d8ef48f4fe1c",
+      "design_sha256": "4343c1359fb62ba8cfc96c3ab6ac724ab57aa2c62b67ec521ddb28b1f09777af",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "template_preview.svg",
+      "sha256": "b08faa4c4844945f7379f59f4a22266e2abc4ab358b9abc091e5969f4e8490cd",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "ef7d9f8b1edc1d758fa4c4185a84730821b76798b2b219effbd61a7e8196ccdc",
+      "source_spec_hash": "03e4ef61a5ecdd66517975705ff132ed2925c72909520d5cf362d8ef48f4fe1c",
+      "design_sha256": "4343c1359fb62ba8cfc96c3ab6ac724ab57aa2c62b67ec521ddb28b1f09777af",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "validation_report.json",
+      "sha256": "3f71cc9c0c8bacedd91975d497396af846403e0013a55c43dc04ade39957d9be",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "ef7d9f8b1edc1d758fa4c4185a84730821b76798b2b219effbd61a7e8196ccdc",
+      "source_spec_hash": "03e4ef61a5ecdd66517975705ff132ed2925c72909520d5cf362d8ef48f4fe1c",
+      "design_sha256": "4343c1359fb62ba8cfc96c3ab6ac724ab57aa2c62b67ec521ddb28b1f09777af",
+      "template_version": "4.0.0"
+    }
+  ]
+}

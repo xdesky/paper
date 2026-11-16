@@ -1,0 +1,275 @@
+{
+  "model_id": "GB-US-SALTBOX-MIDNIGHT",
+  "version": "gingerbread-3.0.0",
+  "project_id": "christmas-deluxe-samples",
+  "revision": 1,
+  "geometry_sha256": "61d301145069a02a0a77e14c7f9536f3274749efd832fd8ff8c43783a3d920ce",
+  "source_spec_hash": "642e64911f8769d3f4742140f350e599e5545118682441d43afba30d5502e4e0",
+  "design_sha256": "518ee34f92babf2fea77a8a1e81e895d2dc01d1939942015958d3b17eb15d3cb",
+  "template_version": "3.0.0",
+  "input": {
+    "preset": "gb_us_saltbox_midnight",
+    "template": {
+      "id": "gb_us_saltbox_midnight",
+      "name": "New England Saltbox · Midnight & Gold",
+      "subtitle": "New England Saltbox / Midnight & Gold",
+      "collection": "American Premium",
+      "model_family": "saltbox",
+      "architecture": "New England Saltbox",
+      "finish": "Midnight & Gold",
+      "profile": [
+        [
+          0,
+          0
+        ],
+        [
+          0.72,
+          1
+        ],
+        [
+          1,
+          0.42
+        ]
+      ],
+      "material": "siding",
+      "premium": true,
+      "width": 95,
+      "depth": 65,
+      "wall_height": 65,
+      "roof_rise": 55,
+      "wall": "#344c60",
+      "roof": "#29313f",
+      "accent": "#bb8648",
+      "trim": "#f5e8c6",
+      "background": "#e5e9ee",
+      "motif": "american",
+      "difficulty": "Trung bình",
+      "description": "Nhà lấy cảm hứng từ New England Saltbox: mặt đứng siding, cửa chia ô, vòng lá Noel và mái lợp chi tiết. Phiên bản Midnight & Gold."
+    },
+    "paper": "A4",
+    "project_id": "christmas-deluxe-samples",
+    "revision": 1
+  },
+  "template": {
+    "id": "gb_us_saltbox_midnight",
+    "name": "New England Saltbox · Midnight & Gold",
+    "subtitle": "New England Saltbox / Midnight & Gold",
+    "collection": "American Premium",
+    "model_family": "saltbox",
+    "architecture": "New England Saltbox",
+    "finish": "Midnight & Gold",
+    "profile": [
+      [
+        0,
+        0
+      ],
+      [
+        0.72,
+        1
+      ],
+      [
+        1,
+        0.42
+      ]
+    ],
+    "material": "siding",
+    "premium": true,
+    "width": 95,
+    "depth": 65,
+    "wall_height": 65,
+    "roof_rise": 55,
+    "wall": "#344c60",
+    "roof": "#29313f",
+    "accent": "#bb8648",
+    "trim": "#f5e8c6",
+    "background": "#e5e9ee",
+    "motif": "american",
+    "difficulty": "Trung bình",
+    "description": "Nhà lấy cảm hứng từ New England Saltbox: mặt đứng siding, cửa chia ô, vòng lá Noel và mái lợp chi tiết. Phiên bản Midnight & Gold."
+  },
+  "qa_status": "PASS",
+  "algorithm": "gable-house-1.0; v1.2 rigid pairing + shelf packing",
+  "physical_assembly": "NOT_TESTED",
+  "artifacts": [
+    {
+      "path": "accessories.pdf",
+      "sha256": "62ac5e1b6ca0765c47b67fe342761b0bdcb8e0899858170658a88db27ead980a",
+      "model_id": "GB-US-SALTBOX-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "61d301145069a02a0a77e14c7f9536f3274749efd832fd8ff8c43783a3d920ce",
+      "source_spec_hash": "642e64911f8769d3f4742140f350e599e5545118682441d43afba30d5502e4e0",
+      "design_sha256": "518ee34f92babf2fea77a8a1e81e895d2dc01d1939942015958d3b17eb15d3cb",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "accessories_guide.pdf",
+      "sha256": "03ef35ecc6931401d00938d3f1d059a017975db7eaf02275914c1fbc895ad54d",
+      "model_id": "GB-US-SALTBOX-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "61d301145069a02a0a77e14c7f9536f3274749efd832fd8ff8c43783a3d920ce",
+      "source_spec_hash": "642e64911f8769d3f4742140f350e599e5545118682441d43afba30d5502e4e0",
+      "design_sha256": "518ee34f92babf2fea77a8a1e81e895d2dc01d1939942015958d3b17eb15d3cb",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "assembly_guide.pdf",
+      "sha256": "00fba6b4edc0c1e88523982fb4681dd76a79a35e46dddee761eafd3cf818ac4b",
+      "model_id": "GB-US-SALTBOX-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "61d301145069a02a0a77e14c7f9536f3274749efd832fd8ff8c43783a3d920ce",
+      "source_spec_hash": "642e64911f8769d3f4742140f350e599e5545118682441d43afba30d5502e4e0",
+      "design_sha256": "518ee34f92babf2fea77a8a1e81e895d2dc01d1939942015958d3b17eb15d3cb",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "display_scene.obj",
+      "sha256": "0ebf51aaf773e132caa0985c89752b9295084113f05054d786f31f8a83aebdad",
+      "model_id": "GB-US-SALTBOX-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "61d301145069a02a0a77e14c7f9536f3274749efd832fd8ff8c43783a3d920ce",
+      "source_spec_hash": "642e64911f8769d3f4742140f350e599e5545118682441d43afba30d5502e4e0",
+      "design_sha256": "518ee34f92babf2fea77a8a1e81e895d2dc01d1939942015958d3b17eb15d3cb",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "model.obj",
+      "sha256": "634cf7702f53efffb6b6412807fd86f2f1227c3360a397d5c9899fa3d41c4bc8",
+      "model_id": "GB-US-SALTBOX-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "61d301145069a02a0a77e14c7f9536f3274749efd832fd8ff8c43783a3d920ce",
+      "source_spec_hash": "642e64911f8769d3f4742140f350e599e5545118682441d43afba30d5502e4e0",
+      "design_sha256": "518ee34f92babf2fea77a8a1e81e895d2dc01d1939942015958d3b17eb15d3cb",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "model_3d_preview.png",
+      "sha256": "3de410c83cd96786ca53dee2eed3d6367af2f61f7d6ce0cede017e1041d6b904",
+      "model_id": "GB-US-SALTBOX-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "61d301145069a02a0a77e14c7f9536f3274749efd832fd8ff8c43783a3d920ce",
+      "source_spec_hash": "642e64911f8769d3f4742140f350e599e5545118682441d43afba30d5502e4e0",
+      "design_sha256": "518ee34f92babf2fea77a8a1e81e895d2dc01d1939942015958d3b17eb15d3cb",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "model_spec.json",
+      "sha256": "4240cb4833c026c26bdc073c902d215940878291fbce21299485f590a29b8960",
+      "model_id": "GB-US-SALTBOX-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "61d301145069a02a0a77e14c7f9536f3274749efd832fd8ff8c43783a3d920ce",
+      "source_spec_hash": "642e64911f8769d3f4742140f350e599e5545118682441d43afba30d5502e4e0",
+      "design_sha256": "518ee34f92babf2fea77a8a1e81e895d2dc01d1939942015958d3b17eb15d3cb",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "printable_a4.pdf",
+      "sha256": "15bf211577c3454d72be26ae0baa909835102c92eafa8c652f4249d401c40bc7",
+      "model_id": "GB-US-SALTBOX-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "61d301145069a02a0a77e14c7f9536f3274749efd832fd8ff8c43783a3d920ce",
+      "source_spec_hash": "642e64911f8769d3f4742140f350e599e5545118682441d43afba30d5502e4e0",
+      "design_sha256": "518ee34f92babf2fea77a8a1e81e895d2dc01d1939942015958d3b17eb15d3cb",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "printable_preview.png",
+      "sha256": "f437fd189a5f6b28dd171f6e74517983649a7b95de243c8c967701764b6a3742",
+      "model_id": "GB-US-SALTBOX-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "61d301145069a02a0a77e14c7f9536f3274749efd832fd8ff8c43783a3d920ce",
+      "source_spec_hash": "642e64911f8769d3f4742140f350e599e5545118682441d43afba30d5502e4e0",
+      "design_sha256": "518ee34f92babf2fea77a8a1e81e895d2dc01d1939942015958d3b17eb15d3cb",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "svg_pages/page_001.svg",
+      "sha256": "6df7059b4a6d4d57b4a3cd4578794371d908dab759188d23543952d211f0febb",
+      "model_id": "GB-US-SALTBOX-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "61d301145069a02a0a77e14c7f9536f3274749efd832fd8ff8c43783a3d920ce",
+      "source_spec_hash": "642e64911f8769d3f4742140f350e599e5545118682441d43afba30d5502e4e0",
+      "design_sha256": "518ee34f92babf2fea77a8a1e81e895d2dc01d1939942015958d3b17eb15d3cb",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "svg_pages/page_002.svg",
+      "sha256": "aa48bf9f8e3cdab47bec1d8455dc4c40c55c66c9dad7667cedc1fd1e54fe2021",
+      "model_id": "GB-US-SALTBOX-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "61d301145069a02a0a77e14c7f9536f3274749efd832fd8ff8c43783a3d920ce",
+      "source_spec_hash": "642e64911f8769d3f4742140f350e599e5545118682441d43afba30d5502e4e0",
+      "design_sha256": "518ee34f92babf2fea77a8a1e81e895d2dc01d1939942015958d3b17eb15d3cb",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "svg_pages/page_003.svg",
+      "sha256": "5b0c704aee13b983a8b5d8db183dcd44de4eaec22d9b3f7ce3fea241eecb0505",
+      "model_id": "GB-US-SALTBOX-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "61d301145069a02a0a77e14c7f9536f3274749efd832fd8ff8c43783a3d920ce",
+      "source_spec_hash": "642e64911f8769d3f4742140f350e599e5545118682441d43afba30d5502e4e0",
+      "design_sha256": "518ee34f92babf2fea77a8a1e81e895d2dc01d1939942015958d3b17eb15d3cb",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "svg_pages/page_004.svg",
+      "sha256": "eb6b769b33ed5bda071a9d25b2d6612f6823c86ee029c80268e8e823b502449d",
+      "model_id": "GB-US-SALTBOX-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "61d301145069a02a0a77e14c7f9536f3274749efd832fd8ff8c43783a3d920ce",
+      "source_spec_hash": "642e64911f8769d3f4742140f350e599e5545118682441d43afba30d5502e4e0",
+      "design_sha256": "518ee34f92babf2fea77a8a1e81e895d2dc01d1939942015958d3b17eb15d3cb",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "template_preview.svg",
+      "sha256": "b613c7f70e3864bc552cd7a433af7cf36cd2b428cbb7e91e3d6619457eeeddcd",
+      "model_id": "GB-US-SALTBOX-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "61d301145069a02a0a77e14c7f9536f3274749efd832fd8ff8c43783a3d920ce",
+      "source_spec_hash": "642e64911f8769d3f4742140f350e599e5545118682441d43afba30d5502e4e0",
+      "design_sha256": "518ee34f92babf2fea77a8a1e81e895d2dc01d1939942015958d3b17eb15d3cb",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "validation_report.json",
+      "sha256": "0e08dc0244befa5eaf97d7e3833c52273d3e4be286aa1184764a307ddce055ff",
+      "model_id": "GB-US-SALTBOX-MIDNIGHT",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "61d301145069a02a0a77e14c7f9536f3274749efd832fd8ff8c43783a3d920ce",
+      "source_spec_hash": "642e64911f8769d3f4742140f350e599e5545118682441d43afba30d5502e4e0",
+      "design_sha256": "518ee34f92babf2fea77a8a1e81e895d2dc01d1939942015958d3b17eb15d3cb",
+      "template_version": "3.0.0"
+    }
+  ]
+}

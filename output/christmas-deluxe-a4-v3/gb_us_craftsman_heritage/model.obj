@@ -1,0 +1,39 @@
+# {"design_sha256":"13d23d02d1bb23eb427627424167f8966e349b5663e1b043d9ac8674188f52d0","geometry_sha256":"fe8211da73e18a3f3eaa014613af9549167a4bd049c458a41ae8fc8cc70e0813","model_id":"GB-US-CRAFTSMAN-HERITAGE","project_id":"christmas-deluxe-samples","revision":1,"source_spec_hash":"90be6e4b97e89276afa26359371cfe9d5464faf6021cd61b4d6b2fd253ebeb96","template_version":"3.0.0","version":"gingerbread-3.0.0"}
+g FRONT
+v -52.5 -32.5 0
+v 52.5 -32.5 0
+v 52.5 -32.5 64
+v 0.0 -32.5 92
+v -52.5 -32.5 64
+f 1 2 3 4 5
+g BACK
+v -52.5 32.5 64
+v 0.0 32.5 92
+v 52.5 32.5 64
+v 52.5 32.5 0
+v -52.5 32.5 0
+f 6 7 8 9 10
+g RIGHT
+v 52.5 -32.5 0
+v 52.5 32.5 0
+v 52.5 32.5 64
+v 52.5 -32.5 64
+f 11 12 13 14
+g LEFT
+v -52.5 32.5 0
+v -52.5 -32.5 0
+v -52.5 -32.5 64
+v -52.5 32.5 64
+f 15 16 17 18
+g ROOF_1
+v 0.0 -32.5 92.0
+v 0.0 32.5 92.0
+v -52.5 32.5 64.0
+v -52.5 -32.5 64.0
+f 19 20 21 22
+g ROOF_2
+v 52.5 -32.5 64.0
+v 52.5 32.5 64.0
+v 0.0 32.5 92.0
+v 0.0 -32.5 92.0
+f 23 24 25 26

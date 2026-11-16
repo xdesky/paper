@@ -1,0 +1,251 @@
+{
+  "model_id": "GB-US-A-FRAME-HERITAGE",
+  "version": "gingerbread-2.0.0",
+  "project_id": "american-premium-samples",
+  "revision": 1,
+  "geometry_sha256": "360ee498b0746d6c18761ebe8de1b15b1c818155ce832b09b1974b09d4151e5e",
+  "source_spec_hash": "26d588dc2142bf2b3f7c03fc34ed09ae65e226c48c5948be3dbd198786c6d145",
+  "design_sha256": "dc16c556bb7f93be7cb6d24b59d50021124a6e222e00e7db89ab71f0afc484a8",
+  "template_version": "2.0.0",
+  "input": {
+    "preset": "gb_us_a_frame_heritage",
+    "template": {
+      "id": "gb_us_a_frame_heritage",
+      "name": "Mountain A-frame · Heritage Christmas",
+      "subtitle": "Mountain A-frame / Heritage Christmas",
+      "collection": "American Premium",
+      "model_family": "a_frame",
+      "architecture": "Mountain A-frame",
+      "finish": "Heritage Christmas",
+      "profile": [
+        [
+          0,
+          0
+        ],
+        [
+          0.5,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "material": "timber",
+      "premium": true,
+      "width": 90,
+      "depth": 65,
+      "wall_height": 28,
+      "roof_rise": 100,
+      "wall": "#efe4cf",
+      "roof": "#354b46",
+      "accent": "#8f3838",
+      "trim": "#fff7e5",
+      "background": "#ebe9df",
+      "motif": "american",
+      "difficulty": "Trung bình",
+      "description": "Nhà lấy cảm hứng từ Mountain A-frame: mặt đứng timber, cửa chia ô, vòng lá Noel và mái lợp chi tiết. Phiên bản Heritage Christmas."
+    },
+    "paper": "A4",
+    "project_id": "american-premium-samples",
+    "revision": 1
+  },
+  "template": {
+    "id": "gb_us_a_frame_heritage",
+    "name": "Mountain A-frame · Heritage Christmas",
+    "subtitle": "Mountain A-frame / Heritage Christmas",
+    "collection": "American Premium",
+    "model_family": "a_frame",
+    "architecture": "Mountain A-frame",
+    "finish": "Heritage Christmas",
+    "profile": [
+      [
+        0,
+        0
+      ],
+      [
+        0.5,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "material": "timber",
+    "premium": true,
+    "width": 90,
+    "depth": 65,
+    "wall_height": 28,
+    "roof_rise": 100,
+    "wall": "#efe4cf",
+    "roof": "#354b46",
+    "accent": "#8f3838",
+    "trim": "#fff7e5",
+    "background": "#ebe9df",
+    "motif": "american",
+    "difficulty": "Trung bình",
+    "description": "Nhà lấy cảm hứng từ Mountain A-frame: mặt đứng timber, cửa chia ô, vòng lá Noel và mái lợp chi tiết. Phiên bản Heritage Christmas."
+  },
+  "qa_status": "PASS",
+  "algorithm": "gable-house-1.0; v1.2 rigid pairing + shelf packing",
+  "physical_assembly": "NOT_TESTED",
+  "artifacts": [
+    {
+      "path": "assembly_guide.pdf",
+      "sha256": "cf802b175cef5a709d28e41c3edd9d59cc541b5b55623b601737eff2df3a71ca",
+      "model_id": "GB-US-A-FRAME-HERITAGE",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "360ee498b0746d6c18761ebe8de1b15b1c818155ce832b09b1974b09d4151e5e",
+      "source_spec_hash": "26d588dc2142bf2b3f7c03fc34ed09ae65e226c48c5948be3dbd198786c6d145",
+      "design_sha256": "dc16c556bb7f93be7cb6d24b59d50021124a6e222e00e7db89ab71f0afc484a8",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "generation_manifest.json",
+      "sha256": "a2fe72697ccdcaa2f6d0564752e64d23292a248fa4ca7a0a0495c2284bb6f13c",
+      "model_id": "GB-US-A-FRAME-HERITAGE",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "360ee498b0746d6c18761ebe8de1b15b1c818155ce832b09b1974b09d4151e5e",
+      "source_spec_hash": "26d588dc2142bf2b3f7c03fc34ed09ae65e226c48c5948be3dbd198786c6d145",
+      "design_sha256": "dc16c556bb7f93be7cb6d24b59d50021124a6e222e00e7db89ab71f0afc484a8",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "model.obj",
+      "sha256": "3307b6c939a54bafe8dd2cd9947f502aba0c1f306dcc443e879f1bb8f02a77c9",
+      "model_id": "GB-US-A-FRAME-HERITAGE",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "360ee498b0746d6c18761ebe8de1b15b1c818155ce832b09b1974b09d4151e5e",
+      "source_spec_hash": "26d588dc2142bf2b3f7c03fc34ed09ae65e226c48c5948be3dbd198786c6d145",
+      "design_sha256": "dc16c556bb7f93be7cb6d24b59d50021124a6e222e00e7db89ab71f0afc484a8",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "model_3d_preview.png",
+      "sha256": "98aa517f79a8022fba06f94723e8770165343197a8e597028ad986ca258da05c",
+      "model_id": "GB-US-A-FRAME-HERITAGE",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "360ee498b0746d6c18761ebe8de1b15b1c818155ce832b09b1974b09d4151e5e",
+      "source_spec_hash": "26d588dc2142bf2b3f7c03fc34ed09ae65e226c48c5948be3dbd198786c6d145",
+      "design_sha256": "dc16c556bb7f93be7cb6d24b59d50021124a6e222e00e7db89ab71f0afc484a8",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "model_spec.json",
+      "sha256": "5f65018e94f506c1a3db05933f8df20deca035db055560c89d3d55a3769deebc",
+      "model_id": "GB-US-A-FRAME-HERITAGE",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "360ee498b0746d6c18761ebe8de1b15b1c818155ce832b09b1974b09d4151e5e",
+      "source_spec_hash": "26d588dc2142bf2b3f7c03fc34ed09ae65e226c48c5948be3dbd198786c6d145",
+      "design_sha256": "dc16c556bb7f93be7cb6d24b59d50021124a6e222e00e7db89ab71f0afc484a8",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "printable_a4.pdf",
+      "sha256": "c2c7ed9ae62606fc67a86aad409250fb673eb21f43fb713ce76f9265c103c75d",
+      "model_id": "GB-US-A-FRAME-HERITAGE",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "360ee498b0746d6c18761ebe8de1b15b1c818155ce832b09b1974b09d4151e5e",
+      "source_spec_hash": "26d588dc2142bf2b3f7c03fc34ed09ae65e226c48c5948be3dbd198786c6d145",
+      "design_sha256": "dc16c556bb7f93be7cb6d24b59d50021124a6e222e00e7db89ab71f0afc484a8",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "printable_preview.png",
+      "sha256": "3fd3d95e6958bab7ea8f3aac9670e2682225df2b3d93985df624cd15b1158b41",
+      "model_id": "GB-US-A-FRAME-HERITAGE",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "360ee498b0746d6c18761ebe8de1b15b1c818155ce832b09b1974b09d4151e5e",
+      "source_spec_hash": "26d588dc2142bf2b3f7c03fc34ed09ae65e226c48c5948be3dbd198786c6d145",
+      "design_sha256": "dc16c556bb7f93be7cb6d24b59d50021124a6e222e00e7db89ab71f0afc484a8",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "project.zip",
+      "sha256": "7f06f80f7b596e10c0f4c433824e7be9ebd50a3ce2be04297aee49c72d70f0cb",
+      "model_id": "GB-US-A-FRAME-HERITAGE",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "360ee498b0746d6c18761ebe8de1b15b1c818155ce832b09b1974b09d4151e5e",
+      "source_spec_hash": "26d588dc2142bf2b3f7c03fc34ed09ae65e226c48c5948be3dbd198786c6d145",
+      "design_sha256": "dc16c556bb7f93be7cb6d24b59d50021124a6e222e00e7db89ab71f0afc484a8",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "svg_pages/page_001.svg",
+      "sha256": "b1cc5c4ff88714a857bd3548335bf7c155a4605220d3e609de861e1be92c370f",
+      "model_id": "GB-US-A-FRAME-HERITAGE",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "360ee498b0746d6c18761ebe8de1b15b1c818155ce832b09b1974b09d4151e5e",
+      "source_spec_hash": "26d588dc2142bf2b3f7c03fc34ed09ae65e226c48c5948be3dbd198786c6d145",
+      "design_sha256": "dc16c556bb7f93be7cb6d24b59d50021124a6e222e00e7db89ab71f0afc484a8",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "svg_pages/page_002.svg",
+      "sha256": "0eadcabc75a7e4e400bbffbc6b7b859d3135853d120c947ac1e8776fe2f91949",
+      "model_id": "GB-US-A-FRAME-HERITAGE",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "360ee498b0746d6c18761ebe8de1b15b1c818155ce832b09b1974b09d4151e5e",
+      "source_spec_hash": "26d588dc2142bf2b3f7c03fc34ed09ae65e226c48c5948be3dbd198786c6d145",
+      "design_sha256": "dc16c556bb7f93be7cb6d24b59d50021124a6e222e00e7db89ab71f0afc484a8",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "svg_pages/page_003.svg",
+      "sha256": "b150081c7f8e392a7ed18b90380efafbea8faffc2e350ccdf27996ca9283712f",
+      "model_id": "GB-US-A-FRAME-HERITAGE",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "360ee498b0746d6c18761ebe8de1b15b1c818155ce832b09b1974b09d4151e5e",
+      "source_spec_hash": "26d588dc2142bf2b3f7c03fc34ed09ae65e226c48c5948be3dbd198786c6d145",
+      "design_sha256": "dc16c556bb7f93be7cb6d24b59d50021124a6e222e00e7db89ab71f0afc484a8",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "template_preview.svg",
+      "sha256": "c1cfb3bb201bfb0e974d70479104870fd9d571daf9bef0de92f0b314ddf9eeaa",
+      "model_id": "GB-US-A-FRAME-HERITAGE",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "360ee498b0746d6c18761ebe8de1b15b1c818155ce832b09b1974b09d4151e5e",
+      "source_spec_hash": "26d588dc2142bf2b3f7c03fc34ed09ae65e226c48c5948be3dbd198786c6d145",
+      "design_sha256": "dc16c556bb7f93be7cb6d24b59d50021124a6e222e00e7db89ab71f0afc484a8",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "validation_report.json",
+      "sha256": "3dbfa9122a232e569fd97623d6e8ba17d3cce627de665b996b79d02f4c8b5246",
+      "model_id": "GB-US-A-FRAME-HERITAGE",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "360ee498b0746d6c18761ebe8de1b15b1c818155ce832b09b1974b09d4151e5e",
+      "source_spec_hash": "26d588dc2142bf2b3f7c03fc34ed09ae65e226c48c5948be3dbd198786c6d145",
+      "design_sha256": "dc16c556bb7f93be7cb6d24b59d50021124a6e222e00e7db89ab71f0afc484a8",
+      "template_version": "2.0.0"
+    }
+  ]
+}

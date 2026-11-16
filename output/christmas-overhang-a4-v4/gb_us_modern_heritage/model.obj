@@ -1,0 +1,31 @@
+# {"design_sha256":"d5923d8957afdd30dde1cf022ea9846c32e22912417dcbaf2e17e557c2481775","geometry_sha256":"676d2e7d4bcd876e74ea89bb3834779e21379b0bfec075671cf15f981cd7b7ae","model_id":"GB-US-MODERN-HERITAGE","project_id":"overhang-samples","revision":1,"source_spec_hash":"37a7a37def82184aa16437b5074d5de9a87467daea84992100a5f10ac85a1a3a","template_version":"4.0.0","version":"gingerbread-4.0.0"}
+g FRONT
+v -47.5 -32.5 0
+v 47.5 -32.5 0
+v 47.5 -32.5 106
+v -47.5 -32.5 68
+f 1 2 3 4
+g BACK
+v -47.5 32.5 68
+v 47.5 32.5 106
+v 47.5 32.5 0
+v -47.5 32.5 0
+f 5 6 7 8
+g RIGHT
+v 47.5 -32.5 0
+v 47.5 32.5 0
+v 47.5 32.5 106
+v 47.5 -32.5 106
+f 9 10 11 12
+g LEFT
+v -47.5 32.5 0
+v -47.5 -32.5 0
+v -47.5 -32.5 68
+v -47.5 32.5 68
+f 13 14 15 16
+g ROOF_1
+v 47.5 -32.5 106.0
+v 47.5 32.5 106.0
+v -47.5 32.5 68.0
+v -47.5 -32.5 68.0
+f 17 18 19 20

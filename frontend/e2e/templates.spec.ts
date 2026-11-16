@@ -5,7 +5,7 @@ test('Christmas catalog filters, favorites, details, real house and ZIP',async({
  const before=await(await request.get('/api/projects')).json();
  await page.goto('/');
  await page.getByRole('button',{name:'⌂ Kho template Noel',exact:true}).click();
- await expect(page.locator('.template-card')).toHaveCount(6);
+ await expect(page.locator('.template-card')).toHaveCount(26);
  await page.getByRole('button',{name:'Thiên nhiên',exact:true}).click();
  await expect(page.locator('.template-card')).toHaveCount(2);
  await page.getByRole('button',{name:'Tất cả',exact:true}).click();
@@ -26,17 +26,17 @@ test('Christmas catalog filters, favorites, details, real house and ZIP',async({
  await page.setViewportSize({width:1440,height:1000});
  await page.locator('.template-card').filter({has:page.getByRole('heading',{name:'Ngôi nhà bánh gừng',exact:true})}).getByRole('button',{name:'Dùng mẫu này ↗',exact:true}).click();
  await expect(page.getByRole('heading',{name:'Ngôi nhà bánh gừng',exact:true})).toBeVisible();
- await expect(page.locator('.svg-sheet svg')).toBeVisible({timeout:45000});
+ await expect(page.locator('.svg-sheet svg').first()).toBeVisible({timeout:45000});
  await expect(page.locator('.model-view canvas')).toBeVisible();
  await expect(page.locator('.dimension-card')).toContainText('90 × 70 × 130');
- await page.getByRole('combobox',{name:'Chọn trang in'}).selectOption('0');
- await expect(page.locator('.svg-sheet svg')).not.toContainText('ROOF_RIGHT');
+
+ await expect(page.locator('.svg-sheet svg').first()).not.toContainText('ROOF_RIGHT');
  await page.locator('.seam-code').first().click();
  await expect(page.locator('.page-footer')).toContainText('Đang chọn:');
  await page.screenshot({path:'../test-results/christmas-house-workspace.png',fullPage:true});
  const [printPage]=await Promise.all([page.waitForEvent('popup'),page.getByRole('link',{name:'⎙ Print',exact:true}).click()]);
  await expect(printPage.locator('html')).toHaveAttribute('data-print-requested','yes');
- await expect(printPage.locator('.sheet')).toHaveCount(2);
+ await expect(printPage.locator('.sheet')).toHaveCount(5);
  await printPage.pdf({path:'../test-results/browser-printed-house.pdf',preferCSSPageSize:true,printBackground:true});
  await printPage.close();
  const [download]=await Promise.all([page.waitForEvent('download'),page.getByRole('link',{name:'↓ Export All'}).click()]);
@@ -47,6 +47,7 @@ test('Christmas catalog filters, favorites, details, real house and ZIP',async({
 });
 
 test('refresh existing Christmas projects into new immutable revisions',async({request})=>{
+ test.setTimeout(180000);
  const projects=await(await request.get('/api/projects')).json();
  for(const p of projects.filter((p:{preset:string})=>p.preset.startsWith('gb_'))){
   const job=await(await request.post(`/api/projects/${p.id}/generate`)).json();

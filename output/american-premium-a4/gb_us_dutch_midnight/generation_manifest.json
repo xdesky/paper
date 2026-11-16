@@ -1,0 +1,255 @@
+{
+  "model_id": "GB-US-DUTCH-MIDNIGHT",
+  "version": "gingerbread-2.0.0",
+  "project_id": "american-premium-samples",
+  "revision": 1,
+  "geometry_sha256": "ef7d9f8b1edc1d758fa4c4185a84730821b76798b2b219effbd61a7e8196ccdc",
+  "source_spec_hash": "65ed3db8a743a545cf294fe050fb67c341342e3b9157a4ca1ac51815d7978887",
+  "design_sha256": "49cd948ab7420d5eeb40b72be03ccbf4f2a9ca4f0c987d1e18fbc132d34f7c80",
+  "template_version": "2.0.0",
+  "input": {
+    "preset": "gb_us_dutch_midnight",
+    "template": {
+      "id": "gb_us_dutch_midnight",
+      "name": "Dutch Colonial · Midnight & Gold",
+      "subtitle": "Dutch Colonial / Midnight & Gold",
+      "collection": "American Premium",
+      "model_family": "dutch",
+      "architecture": "Dutch Colonial",
+      "finish": "Midnight & Gold",
+      "profile": [
+        [
+          0,
+          0
+        ],
+        [
+          0.18,
+          0.72
+        ],
+        [
+          0.5,
+          1
+        ],
+        [
+          0.82,
+          0.72
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "material": "shingle",
+      "premium": true,
+      "width": 90,
+      "depth": 65,
+      "wall_height": 80,
+      "roof_rise": 48,
+      "wall": "#344c60",
+      "roof": "#29313f",
+      "accent": "#bb8648",
+      "trim": "#f5e8c6",
+      "background": "#e5e9ee",
+      "motif": "american",
+      "difficulty": "Trung bình",
+      "description": "Nhà lấy cảm hứng từ Dutch Colonial: mặt đứng shingle, cửa chia ô, vòng lá Noel và mái lợp chi tiết. Phiên bản Midnight & Gold."
+    },
+    "paper": "A4",
+    "project_id": "american-premium-samples",
+    "revision": 1
+  },
+  "template": {
+    "id": "gb_us_dutch_midnight",
+    "name": "Dutch Colonial · Midnight & Gold",
+    "subtitle": "Dutch Colonial / Midnight & Gold",
+    "collection": "American Premium",
+    "model_family": "dutch",
+    "architecture": "Dutch Colonial",
+    "finish": "Midnight & Gold",
+    "profile": [
+      [
+        0,
+        0
+      ],
+      [
+        0.18,
+        0.72
+      ],
+      [
+        0.5,
+        1
+      ],
+      [
+        0.82,
+        0.72
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "material": "shingle",
+    "premium": true,
+    "width": 90,
+    "depth": 65,
+    "wall_height": 80,
+    "roof_rise": 48,
+    "wall": "#344c60",
+    "roof": "#29313f",
+    "accent": "#bb8648",
+    "trim": "#f5e8c6",
+    "background": "#e5e9ee",
+    "motif": "american",
+    "difficulty": "Trung bình",
+    "description": "Nhà lấy cảm hứng từ Dutch Colonial: mặt đứng shingle, cửa chia ô, vòng lá Noel và mái lợp chi tiết. Phiên bản Midnight & Gold."
+  },
+  "qa_status": "PASS",
+  "algorithm": "gable-house-1.0; v1.2 rigid pairing + shelf packing",
+  "physical_assembly": "NOT_TESTED",
+  "artifacts": [
+    {
+      "path": "assembly_guide.pdf",
+      "sha256": "5cdd928ba33ff74d5d4a64bc60398f632deee4deeaa87594de2b70919dadee49",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "ef7d9f8b1edc1d758fa4c4185a84730821b76798b2b219effbd61a7e8196ccdc",
+      "source_spec_hash": "65ed3db8a743a545cf294fe050fb67c341342e3b9157a4ca1ac51815d7978887",
+      "design_sha256": "49cd948ab7420d5eeb40b72be03ccbf4f2a9ca4f0c987d1e18fbc132d34f7c80",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "generation_manifest.json",
+      "sha256": "1735b6154faca6da13ceab26294b6c0bae96ce0c56ae41177acc7527c9fb55f3",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "ef7d9f8b1edc1d758fa4c4185a84730821b76798b2b219effbd61a7e8196ccdc",
+      "source_spec_hash": "65ed3db8a743a545cf294fe050fb67c341342e3b9157a4ca1ac51815d7978887",
+      "design_sha256": "49cd948ab7420d5eeb40b72be03ccbf4f2a9ca4f0c987d1e18fbc132d34f7c80",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "model.obj",
+      "sha256": "ef73f3fb226d09c3268f68742fc4990709400a5f0d1b3f1dcf8b7fcd2862b680",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "ef7d9f8b1edc1d758fa4c4185a84730821b76798b2b219effbd61a7e8196ccdc",
+      "source_spec_hash": "65ed3db8a743a545cf294fe050fb67c341342e3b9157a4ca1ac51815d7978887",
+      "design_sha256": "49cd948ab7420d5eeb40b72be03ccbf4f2a9ca4f0c987d1e18fbc132d34f7c80",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "model_3d_preview.png",
+      "sha256": "fa64c47006e36026338504214629898d7c0787f06650556841c4abc4041cb770",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "ef7d9f8b1edc1d758fa4c4185a84730821b76798b2b219effbd61a7e8196ccdc",
+      "source_spec_hash": "65ed3db8a743a545cf294fe050fb67c341342e3b9157a4ca1ac51815d7978887",
+      "design_sha256": "49cd948ab7420d5eeb40b72be03ccbf4f2a9ca4f0c987d1e18fbc132d34f7c80",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "model_spec.json",
+      "sha256": "09336803e5ab8d4594a8b33160d5201544a1550e8cfed3859898f840e5fe3ad5",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "ef7d9f8b1edc1d758fa4c4185a84730821b76798b2b219effbd61a7e8196ccdc",
+      "source_spec_hash": "65ed3db8a743a545cf294fe050fb67c341342e3b9157a4ca1ac51815d7978887",
+      "design_sha256": "49cd948ab7420d5eeb40b72be03ccbf4f2a9ca4f0c987d1e18fbc132d34f7c80",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "printable_a4.pdf",
+      "sha256": "cdefe8bfd17f6cef7c8785f66141beb38324329fdf624434b035492d933a84c2",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "ef7d9f8b1edc1d758fa4c4185a84730821b76798b2b219effbd61a7e8196ccdc",
+      "source_spec_hash": "65ed3db8a743a545cf294fe050fb67c341342e3b9157a4ca1ac51815d7978887",
+      "design_sha256": "49cd948ab7420d5eeb40b72be03ccbf4f2a9ca4f0c987d1e18fbc132d34f7c80",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "printable_preview.png",
+      "sha256": "088470298d19813d6d27c8db271a9efc23cc98b5106fd577d820b8413f2183be",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "ef7d9f8b1edc1d758fa4c4185a84730821b76798b2b219effbd61a7e8196ccdc",
+      "source_spec_hash": "65ed3db8a743a545cf294fe050fb67c341342e3b9157a4ca1ac51815d7978887",
+      "design_sha256": "49cd948ab7420d5eeb40b72be03ccbf4f2a9ca4f0c987d1e18fbc132d34f7c80",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "project.zip",
+      "sha256": "e58f2e0a0076b3236b5bed4ac9aba48b14b5707f7ad6c02e59471c48837fa6f2",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "ef7d9f8b1edc1d758fa4c4185a84730821b76798b2b219effbd61a7e8196ccdc",
+      "source_spec_hash": "65ed3db8a743a545cf294fe050fb67c341342e3b9157a4ca1ac51815d7978887",
+      "design_sha256": "49cd948ab7420d5eeb40b72be03ccbf4f2a9ca4f0c987d1e18fbc132d34f7c80",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "svg_pages/page_001.svg",
+      "sha256": "fce8395f1ad38258b652547b721b4c524fa5f51560f0a8afe30be01943abe66c",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "ef7d9f8b1edc1d758fa4c4185a84730821b76798b2b219effbd61a7e8196ccdc",
+      "source_spec_hash": "65ed3db8a743a545cf294fe050fb67c341342e3b9157a4ca1ac51815d7978887",
+      "design_sha256": "49cd948ab7420d5eeb40b72be03ccbf4f2a9ca4f0c987d1e18fbc132d34f7c80",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "svg_pages/page_002.svg",
+      "sha256": "ff2737bc34c87faeb6be2c8eba8ee7a8eb6867012dbdacb3189e753fd11d73f4",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "ef7d9f8b1edc1d758fa4c4185a84730821b76798b2b219effbd61a7e8196ccdc",
+      "source_spec_hash": "65ed3db8a743a545cf294fe050fb67c341342e3b9157a4ca1ac51815d7978887",
+      "design_sha256": "49cd948ab7420d5eeb40b72be03ccbf4f2a9ca4f0c987d1e18fbc132d34f7c80",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "template_preview.svg",
+      "sha256": "2bfaebb5f5a1c92ff433993016770e9592bd431f94b5661f576c2995a21d00de",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "ef7d9f8b1edc1d758fa4c4185a84730821b76798b2b219effbd61a7e8196ccdc",
+      "source_spec_hash": "65ed3db8a743a545cf294fe050fb67c341342e3b9157a4ca1ac51815d7978887",
+      "design_sha256": "49cd948ab7420d5eeb40b72be03ccbf4f2a9ca4f0c987d1e18fbc132d34f7c80",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "validation_report.json",
+      "sha256": "5a3ab91299043a19db95172f4147605f67f3a5c6c858fb64c88473c18a64afb8",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "ef7d9f8b1edc1d758fa4c4185a84730821b76798b2b219effbd61a7e8196ccdc",
+      "source_spec_hash": "65ed3db8a743a545cf294fe050fb67c341342e3b9157a4ca1ac51815d7978887",
+      "design_sha256": "49cd948ab7420d5eeb40b72be03ccbf4f2a9ca4f0c987d1e18fbc132d34f7c80",
+      "template_version": "2.0.0"
+    }
+  ]
+}

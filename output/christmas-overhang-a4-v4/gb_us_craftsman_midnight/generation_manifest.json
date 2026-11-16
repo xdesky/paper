@@ -1,0 +1,291 @@
+{
+  "model_id": "GB-US-CRAFTSMAN-MIDNIGHT",
+  "version": "gingerbread-4.0.0",
+  "project_id": "overhang-samples",
+  "revision": 1,
+  "geometry_sha256": "3b6d5b41e06e144d56340ad3d890d239536bb247ffbb8d6333be0c6f3e56bd64",
+  "source_spec_hash": "699e1508160a02fb556a5457c54cc3bbc743f61a342122ff381767290fef328a",
+  "design_sha256": "8a009efc8713a391c97470c5c3b44058017518ded90c5de17708fc6c930d2d51",
+  "template_version": "4.0.0",
+  "input": {
+    "preset": "gb_us_craftsman_midnight",
+    "template": {
+      "id": "gb_us_craftsman_midnight",
+      "name": "Craftsman Bungalow · Midnight & Gold",
+      "subtitle": "Craftsman Bungalow / Midnight & Gold",
+      "collection": "American Premium",
+      "model_family": "craftsman",
+      "architecture": "Craftsman Bungalow",
+      "finish": "Midnight & Gold",
+      "profile": [
+        [
+          0,
+          0
+        ],
+        [
+          0.5,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "material": "timber",
+      "premium": true,
+      "width": 105,
+      "depth": 65,
+      "wall_height": 64,
+      "roof_rise": 28,
+      "wall": "#344c60",
+      "roof": "#29313f",
+      "accent": "#bb8648",
+      "trim": "#f5e8c6",
+      "background": "#e5e9ee",
+      "motif": "american",
+      "difficulty": "Trung bình",
+      "description": "Nhà lấy cảm hứng từ Craftsman Bungalow: mặt đứng timber, cửa chia ô, vòng lá Noel và mái lợp chi tiết. Phiên bản Midnight & Gold.",
+      "roof_overhang_mm": 4,
+      "roof_rake_mm": 6
+    },
+    "paper": "A4",
+    "project_id": "overhang-samples",
+    "revision": 1
+  },
+  "template": {
+    "id": "gb_us_craftsman_midnight",
+    "name": "Craftsman Bungalow · Midnight & Gold",
+    "subtitle": "Craftsman Bungalow / Midnight & Gold",
+    "collection": "American Premium",
+    "model_family": "craftsman",
+    "architecture": "Craftsman Bungalow",
+    "finish": "Midnight & Gold",
+    "profile": [
+      [
+        0,
+        0
+      ],
+      [
+        0.5,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "material": "timber",
+    "premium": true,
+    "width": 105,
+    "depth": 65,
+    "wall_height": 64,
+    "roof_rise": 28,
+    "wall": "#344c60",
+    "roof": "#29313f",
+    "accent": "#bb8648",
+    "trim": "#f5e8c6",
+    "background": "#e5e9ee",
+    "motif": "american",
+    "difficulty": "Trung bình",
+    "description": "Nhà lấy cảm hứng từ Craftsman Bungalow: mặt đứng timber, cửa chia ô, vòng lá Noel và mái lợp chi tiết. Phiên bản Midnight & Gold.",
+    "roof_overhang_mm": 4,
+    "roof_rake_mm": 6
+  },
+  "qa_status": "PASS",
+  "algorithm": "gable-house-1.0; v1.2 rigid pairing + shelf packing",
+  "physical_assembly": "NOT_TESTED",
+  "artifacts": [
+    {
+      "path": "accessories.pdf",
+      "sha256": "22ca48fd50414712a2f8a26a34de9e8274805cdce14a9154075e63fea762fb98",
+      "model_id": "GB-US-CRAFTSMAN-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "3b6d5b41e06e144d56340ad3d890d239536bb247ffbb8d6333be0c6f3e56bd64",
+      "source_spec_hash": "699e1508160a02fb556a5457c54cc3bbc743f61a342122ff381767290fef328a",
+      "design_sha256": "8a009efc8713a391c97470c5c3b44058017518ded90c5de17708fc6c930d2d51",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "accessories_guide.pdf",
+      "sha256": "9c0084cec35d4ad293d318cec2a62c005fe185e06bfa413d8179307f5deb8c0f",
+      "model_id": "GB-US-CRAFTSMAN-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "3b6d5b41e06e144d56340ad3d890d239536bb247ffbb8d6333be0c6f3e56bd64",
+      "source_spec_hash": "699e1508160a02fb556a5457c54cc3bbc743f61a342122ff381767290fef328a",
+      "design_sha256": "8a009efc8713a391c97470c5c3b44058017518ded90c5de17708fc6c930d2d51",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "assembly_guide.pdf",
+      "sha256": "2662949c9452a2dd7b7a0550c04cca70d445d5e84419ba06ff3985fea3731138",
+      "model_id": "GB-US-CRAFTSMAN-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "3b6d5b41e06e144d56340ad3d890d239536bb247ffbb8d6333be0c6f3e56bd64",
+      "source_spec_hash": "699e1508160a02fb556a5457c54cc3bbc743f61a342122ff381767290fef328a",
+      "design_sha256": "8a009efc8713a391c97470c5c3b44058017518ded90c5de17708fc6c930d2d51",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "display_scene.obj",
+      "sha256": "1f12941061fb5bd643e9286c5360da2dc25e4b2e01c8798559b58fdf3b5f0d28",
+      "model_id": "GB-US-CRAFTSMAN-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "3b6d5b41e06e144d56340ad3d890d239536bb247ffbb8d6333be0c6f3e56bd64",
+      "source_spec_hash": "699e1508160a02fb556a5457c54cc3bbc743f61a342122ff381767290fef328a",
+      "design_sha256": "8a009efc8713a391c97470c5c3b44058017518ded90c5de17708fc6c930d2d51",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "model.obj",
+      "sha256": "9217f899aca4723067ee9b3b72a03d059782422b6248cd32fab28fd840fa186f",
+      "model_id": "GB-US-CRAFTSMAN-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "3b6d5b41e06e144d56340ad3d890d239536bb247ffbb8d6333be0c6f3e56bd64",
+      "source_spec_hash": "699e1508160a02fb556a5457c54cc3bbc743f61a342122ff381767290fef328a",
+      "design_sha256": "8a009efc8713a391c97470c5c3b44058017518ded90c5de17708fc6c930d2d51",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "model_3d_preview.png",
+      "sha256": "223c287bc92092eff4649755ba02693c278007400f70fe79a932a46f59ecaa84",
+      "model_id": "GB-US-CRAFTSMAN-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "3b6d5b41e06e144d56340ad3d890d239536bb247ffbb8d6333be0c6f3e56bd64",
+      "source_spec_hash": "699e1508160a02fb556a5457c54cc3bbc743f61a342122ff381767290fef328a",
+      "design_sha256": "8a009efc8713a391c97470c5c3b44058017518ded90c5de17708fc6c930d2d51",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "model_spec.json",
+      "sha256": "712c8752f933b68d9cf3e29e8024cc1cf318438b999814d22f126ad55b54b7ac",
+      "model_id": "GB-US-CRAFTSMAN-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "3b6d5b41e06e144d56340ad3d890d239536bb247ffbb8d6333be0c6f3e56bd64",
+      "source_spec_hash": "699e1508160a02fb556a5457c54cc3bbc743f61a342122ff381767290fef328a",
+      "design_sha256": "8a009efc8713a391c97470c5c3b44058017518ded90c5de17708fc6c930d2d51",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "printable_a4.pdf",
+      "sha256": "035322c4231b50eae32385c6f7cce9c42a670bcc0078519e7b8d124b216baf6b",
+      "model_id": "GB-US-CRAFTSMAN-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "3b6d5b41e06e144d56340ad3d890d239536bb247ffbb8d6333be0c6f3e56bd64",
+      "source_spec_hash": "699e1508160a02fb556a5457c54cc3bbc743f61a342122ff381767290fef328a",
+      "design_sha256": "8a009efc8713a391c97470c5c3b44058017518ded90c5de17708fc6c930d2d51",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "printable_preview.png",
+      "sha256": "336bad7ba57a033f70efb2955471fa1b2deb785529e6a0954805d66d25c37a1d",
+      "model_id": "GB-US-CRAFTSMAN-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "3b6d5b41e06e144d56340ad3d890d239536bb247ffbb8d6333be0c6f3e56bd64",
+      "source_spec_hash": "699e1508160a02fb556a5457c54cc3bbc743f61a342122ff381767290fef328a",
+      "design_sha256": "8a009efc8713a391c97470c5c3b44058017518ded90c5de17708fc6c930d2d51",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "svg_pages/page_001.svg",
+      "sha256": "b2139281f63cd8542aa38cde1529cfdfc8ed5533ecbf727bd96ef76f23b716e0",
+      "model_id": "GB-US-CRAFTSMAN-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "3b6d5b41e06e144d56340ad3d890d239536bb247ffbb8d6333be0c6f3e56bd64",
+      "source_spec_hash": "699e1508160a02fb556a5457c54cc3bbc743f61a342122ff381767290fef328a",
+      "design_sha256": "8a009efc8713a391c97470c5c3b44058017518ded90c5de17708fc6c930d2d51",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "svg_pages/page_002.svg",
+      "sha256": "ffd38656bfc9a78fc35a6c2e144eebbbdd042d20c983ade6d2705ec1d8c19563",
+      "model_id": "GB-US-CRAFTSMAN-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "3b6d5b41e06e144d56340ad3d890d239536bb247ffbb8d6333be0c6f3e56bd64",
+      "source_spec_hash": "699e1508160a02fb556a5457c54cc3bbc743f61a342122ff381767290fef328a",
+      "design_sha256": "8a009efc8713a391c97470c5c3b44058017518ded90c5de17708fc6c930d2d51",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "svg_pages/page_003.svg",
+      "sha256": "b437c2064d936c4c7a134ae2aac54bed58b67425b2f29d793bb42a3d801c45a8",
+      "model_id": "GB-US-CRAFTSMAN-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "3b6d5b41e06e144d56340ad3d890d239536bb247ffbb8d6333be0c6f3e56bd64",
+      "source_spec_hash": "699e1508160a02fb556a5457c54cc3bbc743f61a342122ff381767290fef328a",
+      "design_sha256": "8a009efc8713a391c97470c5c3b44058017518ded90c5de17708fc6c930d2d51",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "svg_pages/page_004.svg",
+      "sha256": "d9b5de5c5a405a485627efeb9274217ab77cddd62cb22e5aa3c556672df6a545",
+      "model_id": "GB-US-CRAFTSMAN-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "3b6d5b41e06e144d56340ad3d890d239536bb247ffbb8d6333be0c6f3e56bd64",
+      "source_spec_hash": "699e1508160a02fb556a5457c54cc3bbc743f61a342122ff381767290fef328a",
+      "design_sha256": "8a009efc8713a391c97470c5c3b44058017518ded90c5de17708fc6c930d2d51",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "svg_pages/page_005.svg",
+      "sha256": "6799f4ffdb2b8871e57207bce851a73ed3ea36786ac027fe015eb433355186f8",
+      "model_id": "GB-US-CRAFTSMAN-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "3b6d5b41e06e144d56340ad3d890d239536bb247ffbb8d6333be0c6f3e56bd64",
+      "source_spec_hash": "699e1508160a02fb556a5457c54cc3bbc743f61a342122ff381767290fef328a",
+      "design_sha256": "8a009efc8713a391c97470c5c3b44058017518ded90c5de17708fc6c930d2d51",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "template_preview.svg",
+      "sha256": "f42b604e15532d59b736204b5a340d02c208d7469e1cddaf1a43d56bde84348f",
+      "model_id": "GB-US-CRAFTSMAN-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "3b6d5b41e06e144d56340ad3d890d239536bb247ffbb8d6333be0c6f3e56bd64",
+      "source_spec_hash": "699e1508160a02fb556a5457c54cc3bbc743f61a342122ff381767290fef328a",
+      "design_sha256": "8a009efc8713a391c97470c5c3b44058017518ded90c5de17708fc6c930d2d51",
+      "template_version": "4.0.0"
+    },
+    {
+      "path": "validation_report.json",
+      "sha256": "8de08cde839badcb7d7bccee92a0b4ded5856da21d742a00a1a243fe7fa696ab",
+      "model_id": "GB-US-CRAFTSMAN-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "overhang-samples",
+      "revision": 1,
+      "geometry_sha256": "3b6d5b41e06e144d56340ad3d890d239536bb247ffbb8d6333be0c6f3e56bd64",
+      "source_spec_hash": "699e1508160a02fb556a5457c54cc3bbc743f61a342122ff381767290fef328a",
+      "design_sha256": "8a009efc8713a391c97470c5c3b44058017518ded90c5de17708fc6c930d2d51",
+      "template_version": "4.0.0"
+    }
+  ]
+}

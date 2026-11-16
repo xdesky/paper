@@ -143,3 +143,39 @@ Nút **Print** trong workspace mở một tab in riêng và gọi hộp thoại 
 ### Khổ A4
 
 Trong Workspace → **Giấy & bản in → Khổ giấy**, chọn **A4** rồi bấm **Generate**. Khổ giấy được lưu theo dự án và snapshot revision; đổi khổ giấy cần tạo lại bộ xuất. PDF (`printable_a4.pdf`), SVG, hướng dẫn và Print dùng cùng khổ A4 210 × 297 mm; hình học không bị co giãn. Dự án cũ vẫn mặc định US Letter. Kiểm thử: `tests/test_a4.py` (10 mẫu) và `frontend/e2e/a4.spec.ts`.
+
+### American Premium — 20 template / 10 kiến trúc
+
+Kho template → **American Premium** gồm Cape Cod, Colonial, Saltbox, Dutch Colonial, Craftsman, Farmhouse, Ranch, Brownstone, A-frame và Modern Shed. Mỗi kiến trúc có Heritage Christmas và Midnight & Gold; giữ 6 mẫu Noel cũ (tổng 26).
+
+Hình học là vỏ nhà đơn giản hóa lấy cảm hứng từ kiến trúc Mỹ, với mái hai dốc, mái lệch, mái gãy gambrel, mái phẳng và mái một dốc. Mặt đứng có họa tiết vector gạch/ván, cửa chớp, cửa chia ô và vòng lá. Cửa, phào và họa tiết là chi tiết in; chưa có hiên, cửa sổ mái hoặc ống khói khối rời. Tất cả đáy mở, chưa lắp giấy thật.
+
+Mỗi mẫu hỗ trợ A4/US Letter 100%, PDF, SVG, OBJ, texture 3D, hướng dẫn ghép và ZIP. Mã ghép nằm trên tai dán; sơ đồ hướng dẫn ghi cả hai đầu. Metadata số mặt, mảnh, nếp gấp và mối dán tính theo geometry, không cố định 6 mặt.
+
+Bộ A4 tạo sẵn: `output/american-premium-a4/american-premium-20-templates-a4.zip` (20 ZIP dự án). Catalog 2.0.0, generator gingerbread-2.0.0; snapshot dự án cũ vẫn được giữ.
+
+### Christmas Deluxe v3 — nhà và tiểu cảnh
+
+Cả 26 mẫu có trang trí kem tuyết, hạt đường, đèn màu, viền kẹo và sao. Phối Heritage chuyển sang nâu bánh gừng/mái đỏ; Midnight giữ tông xanh và vàng. Họa tiết vector dùng chung cho 3D, preview, PDF và SVG.
+
+Mỗi bộ thêm 2 trang phụ kiện: đế tuyết phẳng rộng hơn nhà 60 mm và sâu hơn 70 mm (dán lên bìa cứng), 1 cây thông 65 mm gồm 2 mảnh ghép chéo khe 0.6 mm, 2 hộp quà kín 20 mm và 16 mm. Nhà vẫn đáy mở đặt lên đế rời. Cây in một mặt, có thể tô xanh mặt sau; khe có thể cần keo tùy giấy. Hộp quà có 7 mối dán/mẫu, mã chỉ nằm trên tai và sơ đồ hướng dẫn có cả 2 đầu.
+
+PDF chính, SVG/Print đã gồm phụ kiện; có thêm `accessories.pdf`, `accessories_guide.pdf` và `display_scene.obj`. Preview 3D thể hiện đầy đủ tiểu cảnh. Hướng dẫn chính cũng có trang lắp phụ kiện. Đối với dự án cũ, bấm Generate để tạo revision mới; các file revision cũ được giữ nguyên.
+
+Bộ A4 mới: `output/christmas-deluxe-a4-v3/christmas-deluxe-26-templates-a4.zip`. Đã kiểm định bằng phần mềm, chưa thử cắt/gấp/dán giấy thật.
+
+### Confectionery v3.1 — họa tiết theo ảnh tham khảo
+
+Lớp trang trí mới dùng nền bánh gừng, kem trắng dày có bóng đổ, kẹo đỏ/xanh bóng, peppermint xoáy, lá holly, cửa vòm vàng và cửa đỏ có vòng lá. Cây thông có tuyết và quả châu; hộp quà có nơ in; đế có tuyết đùn và đường đá. Tất cả là họa tiết vector in phẳng, hiệu ứng nổi được tạo bằng bóng/điểm sáng. Không thêm ống khói hoặc bộ phận hình học theo ảnh.
+
+Module `backend/confectionery.py` chỉ tạo artwork; khung nhà, đế, cây/quà, seam và layout giữ nguyên. `tests/test_structure_preserved.py` đối chiếu chữ ký 26 bộ phận với dữ liệu lưu trước khi sửa họa tiết. Bộ A4 mới: `output/christmas-reference-a4-v3.1/christmas-reference-26-templates-a4.zip`. Generate tạo revision mới cho dự án cũ.
+
+### Mái đua phủ tuyết v4
+
+26 mẫu có thêm lớp mái phủ thật, đua 6 mm ở trước/sau và 4 mm đo dọc dốc ở hai mép ngoài. Mái khung cũ, tường, đế và phụ kiện giữ nguyên để làm bề mặt đỡ/dán. Lắp mái khung trước, gấp và ghép mái phủ, căn sống mái rồi dán lên trên; không ép phần đua xuống tường. Bản 3D dùng khoảng cách 0.4 mm để thể hiện giấy/keo.
+
+Mái phủ có 1 trang in riêng trên A4/Letter, 1 mảnh cho mái thường hoặc 2 mảnh cho mái gãy Dutch Colonial; mã R chỉ in trên tai dán. Guide bổ sung hướng dẫn và sơ đồ đầy đủ hai đầu ghép. Số trang/mảnh trong thư viện và Print đã bao gồm mái phủ. Không thu nhỏ mô hình để vừa giấy. Snapshot cũ không có tham số mái đua vẫn tạo kết cấu khít tường như trước.
+
+Trang trí thêm bông tuyết, holly, điểm sáng, viền kem và diềm tuyết. Viewer 3D có bóng đổ và mặt dưới mái màu giấy. Bộ mẫu: `output/christmas-overhang-a4-v4/christmas-overhang-26-templates-a4.zip`. Chưa thử lắp giấy thật.
+
+Tham khảo hình thức phần đua đầu hồi/mép mái: HUD Residential Structural Design Guide, hình 5.9, https://www.huduser.gov/Publications/pdf/res2000_3.pdf . Đây là tham khảo hình thức; kết cấu mô hình giấy do ứng dụng tạo và kiểm định riêng.

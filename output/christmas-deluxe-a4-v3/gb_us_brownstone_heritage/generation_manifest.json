@@ -1,0 +1,267 @@
+{
+  "model_id": "GB-US-BROWNSTONE-HERITAGE",
+  "version": "gingerbread-3.0.0",
+  "project_id": "christmas-deluxe-samples",
+  "revision": 1,
+  "geometry_sha256": "3a36566a9886a7a76eeafabced3c8588a538e9bece277708c751f540de103cd9",
+  "source_spec_hash": "2a9537f9074e42077e0992b4fae054cb4ac63c2d811a262630d638973a2fa4fe",
+  "design_sha256": "542e821db966176d9ec4c60bfffa208a64ccbb96afce84dab452e592bf827202",
+  "template_version": "3.0.0",
+  "input": {
+    "preset": "gb_us_brownstone_heritage",
+    "template": {
+      "id": "gb_us_brownstone_heritage",
+      "name": "Brooklyn Brownstone · Heritage Christmas",
+      "subtitle": "Brooklyn Brownstone / Heritage Christmas",
+      "collection": "American Premium",
+      "model_family": "brownstone",
+      "architecture": "Brooklyn Brownstone",
+      "finish": "Heritage Christmas",
+      "profile": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "material": "brick",
+      "premium": true,
+      "width": 65,
+      "depth": 65,
+      "wall_height": 135,
+      "roof_rise": 8,
+      "wall": "#b97946",
+      "roof": "#943f4a",
+      "accent": "#bf394a",
+      "trim": "#fff7e5",
+      "background": "#ebe9df",
+      "motif": "american",
+      "difficulty": "Trung bình",
+      "description": "Nhà lấy cảm hứng từ Brooklyn Brownstone: mặt đứng brick, cửa chia ô, vòng lá Noel và mái lợp chi tiết. Phiên bản Heritage Christmas."
+    },
+    "paper": "A4",
+    "project_id": "christmas-deluxe-samples",
+    "revision": 1
+  },
+  "template": {
+    "id": "gb_us_brownstone_heritage",
+    "name": "Brooklyn Brownstone · Heritage Christmas",
+    "subtitle": "Brooklyn Brownstone / Heritage Christmas",
+    "collection": "American Premium",
+    "model_family": "brownstone",
+    "architecture": "Brooklyn Brownstone",
+    "finish": "Heritage Christmas",
+    "profile": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "material": "brick",
+    "premium": true,
+    "width": 65,
+    "depth": 65,
+    "wall_height": 135,
+    "roof_rise": 8,
+    "wall": "#b97946",
+    "roof": "#943f4a",
+    "accent": "#bf394a",
+    "trim": "#fff7e5",
+    "background": "#ebe9df",
+    "motif": "american",
+    "difficulty": "Trung bình",
+    "description": "Nhà lấy cảm hứng từ Brooklyn Brownstone: mặt đứng brick, cửa chia ô, vòng lá Noel và mái lợp chi tiết. Phiên bản Heritage Christmas."
+  },
+  "qa_status": "PASS",
+  "algorithm": "gable-house-1.0; v1.2 rigid pairing + shelf packing",
+  "physical_assembly": "NOT_TESTED",
+  "artifacts": [
+    {
+      "path": "accessories.pdf",
+      "sha256": "20e6a17370194d5eac9dbf3d6f829d30399a3a74bc0f13d2a98b0e15f51f555a",
+      "model_id": "GB-US-BROWNSTONE-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "3a36566a9886a7a76eeafabced3c8588a538e9bece277708c751f540de103cd9",
+      "source_spec_hash": "2a9537f9074e42077e0992b4fae054cb4ac63c2d811a262630d638973a2fa4fe",
+      "design_sha256": "542e821db966176d9ec4c60bfffa208a64ccbb96afce84dab452e592bf827202",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "accessories_guide.pdf",
+      "sha256": "03ef35ecc6931401d00938d3f1d059a017975db7eaf02275914c1fbc895ad54d",
+      "model_id": "GB-US-BROWNSTONE-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "3a36566a9886a7a76eeafabced3c8588a538e9bece277708c751f540de103cd9",
+      "source_spec_hash": "2a9537f9074e42077e0992b4fae054cb4ac63c2d811a262630d638973a2fa4fe",
+      "design_sha256": "542e821db966176d9ec4c60bfffa208a64ccbb96afce84dab452e592bf827202",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "assembly_guide.pdf",
+      "sha256": "45abfaee3e30198d97e6313294fa72332e0d16fc0e046b592695f2b110797d94",
+      "model_id": "GB-US-BROWNSTONE-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "3a36566a9886a7a76eeafabced3c8588a538e9bece277708c751f540de103cd9",
+      "source_spec_hash": "2a9537f9074e42077e0992b4fae054cb4ac63c2d811a262630d638973a2fa4fe",
+      "design_sha256": "542e821db966176d9ec4c60bfffa208a64ccbb96afce84dab452e592bf827202",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "display_scene.obj",
+      "sha256": "6783e67e647ce159e558b4d16dbf680c8b2c129314fc8cb29468f2721536923f",
+      "model_id": "GB-US-BROWNSTONE-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "3a36566a9886a7a76eeafabced3c8588a538e9bece277708c751f540de103cd9",
+      "source_spec_hash": "2a9537f9074e42077e0992b4fae054cb4ac63c2d811a262630d638973a2fa4fe",
+      "design_sha256": "542e821db966176d9ec4c60bfffa208a64ccbb96afce84dab452e592bf827202",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "model.obj",
+      "sha256": "c703611479c22d47560d0f0cc0dc8293dc30d5ec1252d25e310b7a91c4fadd4e",
+      "model_id": "GB-US-BROWNSTONE-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "3a36566a9886a7a76eeafabced3c8588a538e9bece277708c751f540de103cd9",
+      "source_spec_hash": "2a9537f9074e42077e0992b4fae054cb4ac63c2d811a262630d638973a2fa4fe",
+      "design_sha256": "542e821db966176d9ec4c60bfffa208a64ccbb96afce84dab452e592bf827202",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "model_3d_preview.png",
+      "sha256": "10f1bc64d3f8ba8dd436fec01e61e91eed4f051e2e4f45347651c6486b43a57c",
+      "model_id": "GB-US-BROWNSTONE-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "3a36566a9886a7a76eeafabced3c8588a538e9bece277708c751f540de103cd9",
+      "source_spec_hash": "2a9537f9074e42077e0992b4fae054cb4ac63c2d811a262630d638973a2fa4fe",
+      "design_sha256": "542e821db966176d9ec4c60bfffa208a64ccbb96afce84dab452e592bf827202",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "model_spec.json",
+      "sha256": "57a7d3ecc56d4370ec4f7833c3db3ad45cc1699a9681881bc6a1435ac9114bd6",
+      "model_id": "GB-US-BROWNSTONE-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "3a36566a9886a7a76eeafabced3c8588a538e9bece277708c751f540de103cd9",
+      "source_spec_hash": "2a9537f9074e42077e0992b4fae054cb4ac63c2d811a262630d638973a2fa4fe",
+      "design_sha256": "542e821db966176d9ec4c60bfffa208a64ccbb96afce84dab452e592bf827202",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "printable_a4.pdf",
+      "sha256": "449cace1b600b7134c38483216507417aa4f6827df8e8779d44ddf4e7d1e0525",
+      "model_id": "GB-US-BROWNSTONE-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "3a36566a9886a7a76eeafabced3c8588a538e9bece277708c751f540de103cd9",
+      "source_spec_hash": "2a9537f9074e42077e0992b4fae054cb4ac63c2d811a262630d638973a2fa4fe",
+      "design_sha256": "542e821db966176d9ec4c60bfffa208a64ccbb96afce84dab452e592bf827202",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "printable_preview.png",
+      "sha256": "8e3b8bd34ac9ee15d7923269fb6617e04294c6b264e9a96f4c8ee4809963e3b9",
+      "model_id": "GB-US-BROWNSTONE-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "3a36566a9886a7a76eeafabced3c8588a538e9bece277708c751f540de103cd9",
+      "source_spec_hash": "2a9537f9074e42077e0992b4fae054cb4ac63c2d811a262630d638973a2fa4fe",
+      "design_sha256": "542e821db966176d9ec4c60bfffa208a64ccbb96afce84dab452e592bf827202",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "svg_pages/page_001.svg",
+      "sha256": "d65e2f2d55dad69eb0b4f74b78b959ae787393bc4c6253b86450aa8a9f4ef760",
+      "model_id": "GB-US-BROWNSTONE-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "3a36566a9886a7a76eeafabced3c8588a538e9bece277708c751f540de103cd9",
+      "source_spec_hash": "2a9537f9074e42077e0992b4fae054cb4ac63c2d811a262630d638973a2fa4fe",
+      "design_sha256": "542e821db966176d9ec4c60bfffa208a64ccbb96afce84dab452e592bf827202",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "svg_pages/page_002.svg",
+      "sha256": "f4b409c10377b02c180a19a37ce7c1467ec9f2ac66c55513f4ddb16fa63ffe05",
+      "model_id": "GB-US-BROWNSTONE-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "3a36566a9886a7a76eeafabced3c8588a538e9bece277708c751f540de103cd9",
+      "source_spec_hash": "2a9537f9074e42077e0992b4fae054cb4ac63c2d811a262630d638973a2fa4fe",
+      "design_sha256": "542e821db966176d9ec4c60bfffa208a64ccbb96afce84dab452e592bf827202",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "svg_pages/page_003.svg",
+      "sha256": "5306cfbf6499abf054bb30ae3ffe89990f4a3638b096e67f6c0a522ee2fae6f7",
+      "model_id": "GB-US-BROWNSTONE-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "3a36566a9886a7a76eeafabced3c8588a538e9bece277708c751f540de103cd9",
+      "source_spec_hash": "2a9537f9074e42077e0992b4fae054cb4ac63c2d811a262630d638973a2fa4fe",
+      "design_sha256": "542e821db966176d9ec4c60bfffa208a64ccbb96afce84dab452e592bf827202",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "svg_pages/page_004.svg",
+      "sha256": "aaaf523bc1fad68c96d08e464d9c244bfc13ca3608c34f1265973364343d8f2a",
+      "model_id": "GB-US-BROWNSTONE-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "3a36566a9886a7a76eeafabced3c8588a538e9bece277708c751f540de103cd9",
+      "source_spec_hash": "2a9537f9074e42077e0992b4fae054cb4ac63c2d811a262630d638973a2fa4fe",
+      "design_sha256": "542e821db966176d9ec4c60bfffa208a64ccbb96afce84dab452e592bf827202",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "template_preview.svg",
+      "sha256": "396164236acefdb7db27e9f2feef314ea71050295e5af2ee8443d563ea4f7edb",
+      "model_id": "GB-US-BROWNSTONE-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "3a36566a9886a7a76eeafabced3c8588a538e9bece277708c751f540de103cd9",
+      "source_spec_hash": "2a9537f9074e42077e0992b4fae054cb4ac63c2d811a262630d638973a2fa4fe",
+      "design_sha256": "542e821db966176d9ec4c60bfffa208a64ccbb96afce84dab452e592bf827202",
+      "template_version": "3.0.0"
+    },
+    {
+      "path": "validation_report.json",
+      "sha256": "c3f3e7f6ccb3a76a8c9dd84c00d3e163eadc420bc28282b98c9110642f2f782c",
+      "model_id": "GB-US-BROWNSTONE-HERITAGE",
+      "version": "gingerbread-3.0.0",
+      "project_id": "christmas-deluxe-samples",
+      "revision": 1,
+      "geometry_sha256": "3a36566a9886a7a76eeafabced3c8588a538e9bece277708c751f540de103cd9",
+      "source_spec_hash": "2a9537f9074e42077e0992b4fae054cb4ac63c2d811a262630d638973a2fa4fe",
+      "design_sha256": "542e821db966176d9ec4c60bfffa208a64ccbb96afce84dab452e592bf827202",
+      "template_version": "3.0.0"
+    }
+  ]
+}

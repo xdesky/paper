@@ -1,0 +1,31 @@
+# {"design_sha256":"30cb5742cf7fcc0f59b95890c336a26adc0bf521255a26815e9afdb6058aa736","geometry_sha256":"7e3683d65d02595aff4b2bb7a7db55165d82641988569d205add639d8aeab74d","model_id":"GB-US-BROWNSTONE-MIDNIGHT","project_id":"reference-art-samples","revision":1,"source_spec_hash":"bb46689f9ee47505feceae96d2a1b4dce5b43022fadaac558cf1e3d6906b98cb","template_version":"3.1.0","version":"gingerbread-3.1.0"}
+g FRONT
+v -32.5 -32.5 0
+v 32.5 -32.5 0
+v 32.5 -32.5 143
+v -32.5 -32.5 143
+f 1 2 3 4
+g BACK
+v -32.5 32.5 143
+v 32.5 32.5 143
+v 32.5 32.5 0
+v -32.5 32.5 0
+f 5 6 7 8
+g RIGHT
+v 32.5 -32.5 0
+v 32.5 32.5 0
+v 32.5 32.5 143
+v 32.5 -32.5 143
+f 9 10 11 12
+g LEFT
+v -32.5 32.5 0
+v -32.5 -32.5 0
+v -32.5 -32.5 143
+v -32.5 32.5 143
+f 13 14 15 16
+g ROOF_1
+v 32.5 -32.5 143.0
+v 32.5 32.5 143.0
+v -32.5 32.5 143.0
+v -32.5 -32.5 143.0
+f 17 18 19 20

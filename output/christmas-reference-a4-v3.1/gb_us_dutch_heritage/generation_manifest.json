@@ -1,0 +1,291 @@
+{
+  "model_id": "GB-US-DUTCH-HERITAGE",
+  "version": "gingerbread-3.1.0",
+  "project_id": "reference-art-samples",
+  "revision": 1,
+  "geometry_sha256": "2597ed6a2814301dcb1f305569538b0317fa3e854e922b4bf4517d13a4bbff11",
+  "source_spec_hash": "58f5f5b21bac2e62fbb65aa7aa99493c47e96b090c6ee3f3784ea1753215c7ec",
+  "design_sha256": "59de443db076a5d0665752236eb589a812e30bf5095fc1fe517cc9de0c731bcb",
+  "template_version": "3.1.0",
+  "input": {
+    "preset": "gb_us_dutch_heritage",
+    "template": {
+      "id": "gb_us_dutch_heritage",
+      "name": "Dutch Colonial · Heritage Christmas",
+      "subtitle": "Dutch Colonial / Heritage Christmas",
+      "collection": "American Premium",
+      "model_family": "dutch",
+      "architecture": "Dutch Colonial",
+      "finish": "Heritage Christmas",
+      "profile": [
+        [
+          0,
+          0
+        ],
+        [
+          0.18,
+          0.72
+        ],
+        [
+          0.5,
+          1
+        ],
+        [
+          0.82,
+          0.72
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "material": "shingle",
+      "premium": true,
+      "width": 90,
+      "depth": 65,
+      "wall_height": 80,
+      "roof_rise": 48,
+      "wall": "#b97946",
+      "roof": "#943f4a",
+      "accent": "#bf394a",
+      "trim": "#fff7e5",
+      "background": "#ebe9df",
+      "motif": "american",
+      "difficulty": "Trung bình",
+      "description": "Nhà lấy cảm hứng từ Dutch Colonial: mặt đứng shingle, cửa chia ô, vòng lá Noel và mái lợp chi tiết. Phiên bản Heritage Christmas."
+    },
+    "paper": "A4",
+    "project_id": "reference-art-samples",
+    "revision": 1
+  },
+  "template": {
+    "id": "gb_us_dutch_heritage",
+    "name": "Dutch Colonial · Heritage Christmas",
+    "subtitle": "Dutch Colonial / Heritage Christmas",
+    "collection": "American Premium",
+    "model_family": "dutch",
+    "architecture": "Dutch Colonial",
+    "finish": "Heritage Christmas",
+    "profile": [
+      [
+        0,
+        0
+      ],
+      [
+        0.18,
+        0.72
+      ],
+      [
+        0.5,
+        1
+      ],
+      [
+        0.82,
+        0.72
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "material": "shingle",
+    "premium": true,
+    "width": 90,
+    "depth": 65,
+    "wall_height": 80,
+    "roof_rise": 48,
+    "wall": "#b97946",
+    "roof": "#943f4a",
+    "accent": "#bf394a",
+    "trim": "#fff7e5",
+    "background": "#ebe9df",
+    "motif": "american",
+    "difficulty": "Trung bình",
+    "description": "Nhà lấy cảm hứng từ Dutch Colonial: mặt đứng shingle, cửa chia ô, vòng lá Noel và mái lợp chi tiết. Phiên bản Heritage Christmas."
+  },
+  "qa_status": "PASS",
+  "algorithm": "gable-house-1.0; v1.2 rigid pairing + shelf packing",
+  "physical_assembly": "NOT_TESTED",
+  "artifacts": [
+    {
+      "path": "accessories.pdf",
+      "sha256": "22bfd96504066a58f5633587ff38f074f81228c453ae071e9e210703189f0fa8",
+      "model_id": "GB-US-DUTCH-HERITAGE",
+      "version": "gingerbread-3.1.0",
+      "project_id": "reference-art-samples",
+      "revision": 1,
+      "geometry_sha256": "2597ed6a2814301dcb1f305569538b0317fa3e854e922b4bf4517d13a4bbff11",
+      "source_spec_hash": "58f5f5b21bac2e62fbb65aa7aa99493c47e96b090c6ee3f3784ea1753215c7ec",
+      "design_sha256": "59de443db076a5d0665752236eb589a812e30bf5095fc1fe517cc9de0c731bcb",
+      "template_version": "3.1.0"
+    },
+    {
+      "path": "accessories_guide.pdf",
+      "sha256": "03ef35ecc6931401d00938d3f1d059a017975db7eaf02275914c1fbc895ad54d",
+      "model_id": "GB-US-DUTCH-HERITAGE",
+      "version": "gingerbread-3.1.0",
+      "project_id": "reference-art-samples",
+      "revision": 1,
+      "geometry_sha256": "2597ed6a2814301dcb1f305569538b0317fa3e854e922b4bf4517d13a4bbff11",
+      "source_spec_hash": "58f5f5b21bac2e62fbb65aa7aa99493c47e96b090c6ee3f3784ea1753215c7ec",
+      "design_sha256": "59de443db076a5d0665752236eb589a812e30bf5095fc1fe517cc9de0c731bcb",
+      "template_version": "3.1.0"
+    },
+    {
+      "path": "assembly_guide.pdf",
+      "sha256": "19f56963fd6a10d107845468a36b825ea2190974f157e93c0749f8383b9b2ac1",
+      "model_id": "GB-US-DUTCH-HERITAGE",
+      "version": "gingerbread-3.1.0",
+      "project_id": "reference-art-samples",
+      "revision": 1,
+      "geometry_sha256": "2597ed6a2814301dcb1f305569538b0317fa3e854e922b4bf4517d13a4bbff11",
+      "source_spec_hash": "58f5f5b21bac2e62fbb65aa7aa99493c47e96b090c6ee3f3784ea1753215c7ec",
+      "design_sha256": "59de443db076a5d0665752236eb589a812e30bf5095fc1fe517cc9de0c731bcb",
+      "template_version": "3.1.0"
+    },
+    {
+      "path": "display_scene.obj",
+      "sha256": "eddfff31cb84716da5376340dbf85a0886c926aebbcf30f73a57f0c8cc6042c2",
+      "model_id": "GB-US-DUTCH-HERITAGE",
+      "version": "gingerbread-3.1.0",
+      "project_id": "reference-art-samples",
+      "revision": 1,
+      "geometry_sha256": "2597ed6a2814301dcb1f305569538b0317fa3e854e922b4bf4517d13a4bbff11",
+      "source_spec_hash": "58f5f5b21bac2e62fbb65aa7aa99493c47e96b090c6ee3f3784ea1753215c7ec",
+      "design_sha256": "59de443db076a5d0665752236eb589a812e30bf5095fc1fe517cc9de0c731bcb",
+      "template_version": "3.1.0"
+    },
+    {
+      "path": "model.obj",
+      "sha256": "a2c864511ae87f7e4bc93dcc12e31ffa3523a20b7f5f302f3bd0cf0ee6a30515",
+      "model_id": "GB-US-DUTCH-HERITAGE",
+      "version": "gingerbread-3.1.0",
+      "project_id": "reference-art-samples",
+      "revision": 1,
+      "geometry_sha256": "2597ed6a2814301dcb1f305569538b0317fa3e854e922b4bf4517d13a4bbff11",
+      "source_spec_hash": "58f5f5b21bac2e62fbb65aa7aa99493c47e96b090c6ee3f3784ea1753215c7ec",
+      "design_sha256": "59de443db076a5d0665752236eb589a812e30bf5095fc1fe517cc9de0c731bcb",
+      "template_version": "3.1.0"
+    },
+    {
+      "path": "model_3d_preview.png",
+      "sha256": "43c71d6b240fe199c9e71d3213097cd9090cfef7b04ed2a55136e216cebf2783",
+      "model_id": "GB-US-DUTCH-HERITAGE",
+      "version": "gingerbread-3.1.0",
+      "project_id": "reference-art-samples",
+      "revision": 1,
+      "geometry_sha256": "2597ed6a2814301dcb1f305569538b0317fa3e854e922b4bf4517d13a4bbff11",
+      "source_spec_hash": "58f5f5b21bac2e62fbb65aa7aa99493c47e96b090c6ee3f3784ea1753215c7ec",
+      "design_sha256": "59de443db076a5d0665752236eb589a812e30bf5095fc1fe517cc9de0c731bcb",
+      "template_version": "3.1.0"
+    },
+    {
+      "path": "model_spec.json",
+      "sha256": "e014e94e90b057f7f609712d2fa5917e3b8501a1fc59c98bb13af7e97a06b47a",
+      "model_id": "GB-US-DUTCH-HERITAGE",
+      "version": "gingerbread-3.1.0",
+      "project_id": "reference-art-samples",
+      "revision": 1,
+      "geometry_sha256": "2597ed6a2814301dcb1f305569538b0317fa3e854e922b4bf4517d13a4bbff11",
+      "source_spec_hash": "58f5f5b21bac2e62fbb65aa7aa99493c47e96b090c6ee3f3784ea1753215c7ec",
+      "design_sha256": "59de443db076a5d0665752236eb589a812e30bf5095fc1fe517cc9de0c731bcb",
+      "template_version": "3.1.0"
+    },
+    {
+      "path": "printable_a4.pdf",
+      "sha256": "ae6b303d6074995621a4856cea11f705a2c832bf41d61e104415c73fee569d68",
+      "model_id": "GB-US-DUTCH-HERITAGE",
+      "version": "gingerbread-3.1.0",
+      "project_id": "reference-art-samples",
+      "revision": 1,
+      "geometry_sha256": "2597ed6a2814301dcb1f305569538b0317fa3e854e922b4bf4517d13a4bbff11",
+      "source_spec_hash": "58f5f5b21bac2e62fbb65aa7aa99493c47e96b090c6ee3f3784ea1753215c7ec",
+      "design_sha256": "59de443db076a5d0665752236eb589a812e30bf5095fc1fe517cc9de0c731bcb",
+      "template_version": "3.1.0"
+    },
+    {
+      "path": "printable_preview.png",
+      "sha256": "ae10f253cf74354a366402e5e7b387fee45b0d90dafda87c94fa9dd852c58ad9",
+      "model_id": "GB-US-DUTCH-HERITAGE",
+      "version": "gingerbread-3.1.0",
+      "project_id": "reference-art-samples",
+      "revision": 1,
+      "geometry_sha256": "2597ed6a2814301dcb1f305569538b0317fa3e854e922b4bf4517d13a4bbff11",
+      "source_spec_hash": "58f5f5b21bac2e62fbb65aa7aa99493c47e96b090c6ee3f3784ea1753215c7ec",
+      "design_sha256": "59de443db076a5d0665752236eb589a812e30bf5095fc1fe517cc9de0c731bcb",
+      "template_version": "3.1.0"
+    },
+    {
+      "path": "svg_pages/page_001.svg",
+      "sha256": "1686a09edb11d9370a3e7257fd7956140c42514aa0cfac3f97ff6f294b302cd5",
+      "model_id": "GB-US-DUTCH-HERITAGE",
+      "version": "gingerbread-3.1.0",
+      "project_id": "reference-art-samples",
+      "revision": 1,
+      "geometry_sha256": "2597ed6a2814301dcb1f305569538b0317fa3e854e922b4bf4517d13a4bbff11",
+      "source_spec_hash": "58f5f5b21bac2e62fbb65aa7aa99493c47e96b090c6ee3f3784ea1753215c7ec",
+      "design_sha256": "59de443db076a5d0665752236eb589a812e30bf5095fc1fe517cc9de0c731bcb",
+      "template_version": "3.1.0"
+    },
+    {
+      "path": "svg_pages/page_002.svg",
+      "sha256": "b3e1784bb25117a88f47599faedc6692f8bab7e3e82162c0e364b1cdeaae44c2",
+      "model_id": "GB-US-DUTCH-HERITAGE",
+      "version": "gingerbread-3.1.0",
+      "project_id": "reference-art-samples",
+      "revision": 1,
+      "geometry_sha256": "2597ed6a2814301dcb1f305569538b0317fa3e854e922b4bf4517d13a4bbff11",
+      "source_spec_hash": "58f5f5b21bac2e62fbb65aa7aa99493c47e96b090c6ee3f3784ea1753215c7ec",
+      "design_sha256": "59de443db076a5d0665752236eb589a812e30bf5095fc1fe517cc9de0c731bcb",
+      "template_version": "3.1.0"
+    },
+    {
+      "path": "svg_pages/page_003.svg",
+      "sha256": "0180324de8acd68273e0c7ae520b801e91905d5999fb46a18584871995a26cce",
+      "model_id": "GB-US-DUTCH-HERITAGE",
+      "version": "gingerbread-3.1.0",
+      "project_id": "reference-art-samples",
+      "revision": 1,
+      "geometry_sha256": "2597ed6a2814301dcb1f305569538b0317fa3e854e922b4bf4517d13a4bbff11",
+      "source_spec_hash": "58f5f5b21bac2e62fbb65aa7aa99493c47e96b090c6ee3f3784ea1753215c7ec",
+      "design_sha256": "59de443db076a5d0665752236eb589a812e30bf5095fc1fe517cc9de0c731bcb",
+      "template_version": "3.1.0"
+    },
+    {
+      "path": "svg_pages/page_004.svg",
+      "sha256": "4b596f94cfb1c9a3a0fd155e8a8fa335103b40525a38994e13159dee085fae3f",
+      "model_id": "GB-US-DUTCH-HERITAGE",
+      "version": "gingerbread-3.1.0",
+      "project_id": "reference-art-samples",
+      "revision": 1,
+      "geometry_sha256": "2597ed6a2814301dcb1f305569538b0317fa3e854e922b4bf4517d13a4bbff11",
+      "source_spec_hash": "58f5f5b21bac2e62fbb65aa7aa99493c47e96b090c6ee3f3784ea1753215c7ec",
+      "design_sha256": "59de443db076a5d0665752236eb589a812e30bf5095fc1fe517cc9de0c731bcb",
+      "template_version": "3.1.0"
+    },
+    {
+      "path": "template_preview.svg",
+      "sha256": "a242b271d926fcd82dd63ff9de7fba089617b1fc3baa0a1fe3cb7217e2f9ed06",
+      "model_id": "GB-US-DUTCH-HERITAGE",
+      "version": "gingerbread-3.1.0",
+      "project_id": "reference-art-samples",
+      "revision": 1,
+      "geometry_sha256": "2597ed6a2814301dcb1f305569538b0317fa3e854e922b4bf4517d13a4bbff11",
+      "source_spec_hash": "58f5f5b21bac2e62fbb65aa7aa99493c47e96b090c6ee3f3784ea1753215c7ec",
+      "design_sha256": "59de443db076a5d0665752236eb589a812e30bf5095fc1fe517cc9de0c731bcb",
+      "template_version": "3.1.0"
+    },
+    {
+      "path": "validation_report.json",
+      "sha256": "ac740fa33d50f6336b93272de052e7bcce68629c9f42995d45ecc11879810ea5",
+      "model_id": "GB-US-DUTCH-HERITAGE",
+      "version": "gingerbread-3.1.0",
+      "project_id": "reference-art-samples",
+      "revision": 1,
+      "geometry_sha256": "2597ed6a2814301dcb1f305569538b0317fa3e854e922b4bf4517d13a4bbff11",
+      "source_spec_hash": "58f5f5b21bac2e62fbb65aa7aa99493c47e96b090c6ee3f3784ea1753215c7ec",
+      "design_sha256": "59de443db076a5d0665752236eb589a812e30bf5095fc1fe517cc9de0c731bcb",
+      "template_version": "3.1.0"
+    }
+  ]
+}

@@ -1,0 +1,709 @@
+{
+  "model_id": "GB-US-SALTBOX-HERITAGE",
+  "version": "gingerbread-2.0.0",
+  "project_id": "american-premium-samples",
+  "revision": 1,
+  "geometry_sha256": "8361f50191262535eeed161f247905472bf23e74491ac33cc0f227870d86360f",
+  "source_spec_hash": "fcb0b0f4c19398c6724e579d388f990a89450722316daaf1887c218f28bc4421",
+  "design_sha256": "bddd77533737c13eff7430a4cf9ac33b612d903280533327b9d4d071a0ef7176",
+  "template_version": "2.0.0",
+  "schema_version": "gingerbread-1.0.0",
+  "locked": true,
+  "units": "mm",
+  "paper": {
+    "name": "A4",
+    "page_mm": [
+      210.0,
+      297.0
+    ],
+    "scale": 1.0,
+    "printable_body_mm": [
+      8.0,
+      20.0,
+      202.0,
+      272.6
+    ],
+    "tab_depth_mm": 5
+  },
+  "geometry": {
+    "model": {
+      "type": "saltbox",
+      "name": "New England Saltbox · Heritage Christmas",
+      "width_mm": 95,
+      "depth_mm": 65,
+      "wall_height_mm": 65,
+      "roof_rise_mm": 55,
+      "height_mm": 120,
+      "open_bottom": true
+    },
+    "panels": [
+      {
+        "id": "FRONT",
+        "face": "FRONT",
+        "width_mm": 95.0,
+        "height_mm": 120.0,
+        "polygon_mm": [
+          [
+            0,
+            0
+          ],
+          [
+            95,
+            0
+          ],
+          [
+            95,
+            88.1
+          ],
+          [
+            68.39999999999999,
+            120
+          ],
+          [
+            0,
+            65
+          ]
+        ],
+        "vertices_3d_mm": [
+          [
+            -47.5,
+            -32.5,
+            0
+          ],
+          [
+            47.5,
+            -32.5,
+            0
+          ],
+          [
+            47.5,
+            -32.5,
+            88.1
+          ],
+          [
+            20.89999999999999,
+            -32.5,
+            120
+          ],
+          [
+            -47.5,
+            -32.5,
+            65
+          ]
+        ],
+        "edge_codes": {
+          "4": "G01",
+          "3": "G03",
+          "2": "G07",
+          "1": "G09"
+        }
+      },
+      {
+        "id": "BACK",
+        "face": "BACK",
+        "width_mm": 95.0,
+        "height_mm": 120.0,
+        "polygon_mm": [
+          [
+            95,
+            65
+          ],
+          [
+            26.60000000000001,
+            120
+          ],
+          [
+            0,
+            88.1
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            95,
+            0
+          ]
+        ],
+        "vertices_3d_mm": [
+          [
+            -47.5,
+            32.5,
+            65
+          ],
+          [
+            20.89999999999999,
+            32.5,
+            120
+          ],
+          [
+            47.5,
+            32.5,
+            88.1
+          ],
+          [
+            47.5,
+            32.5,
+            0
+          ],
+          [
+            -47.5,
+            32.5,
+            0
+          ]
+        ],
+        "edge_codes": {
+          "4": "G04",
+          "0": "G05",
+          "1": "G08",
+          "2": "G11"
+        }
+      },
+      {
+        "id": "RIGHT",
+        "face": "RIGHT",
+        "width_mm": 65.0,
+        "height_mm": 88.1,
+        "polygon_mm": [
+          [
+            0,
+            0
+          ],
+          [
+            65,
+            0
+          ],
+          [
+            65,
+            88.1
+          ],
+          [
+            0,
+            88.1
+          ]
+        ],
+        "vertices_3d_mm": [
+          [
+            47.5,
+            -32.5,
+            0
+          ],
+          [
+            47.5,
+            32.5,
+            0
+          ],
+          [
+            47.5,
+            32.5,
+            88.1
+          ],
+          [
+            47.5,
+            -32.5,
+            88.1
+          ]
+        ],
+        "edge_codes": {
+          "3": "G09",
+          "2": "G10",
+          "1": "G11"
+        }
+      },
+      {
+        "id": "LEFT",
+        "face": "LEFT",
+        "width_mm": 65.0,
+        "height_mm": 65.0,
+        "polygon_mm": [
+          [
+            0,
+            0
+          ],
+          [
+            65,
+            0
+          ],
+          [
+            65,
+            65
+          ],
+          [
+            0,
+            65
+          ]
+        ],
+        "vertices_3d_mm": [
+          [
+            -47.5,
+            32.5,
+            0
+          ],
+          [
+            -47.5,
+            -32.5,
+            0
+          ],
+          [
+            -47.5,
+            -32.5,
+            65
+          ],
+          [
+            -47.5,
+            32.5,
+            65
+          ]
+        ],
+        "edge_codes": {
+          "1": "G01",
+          "2": "G02",
+          "3": "G04"
+        }
+      },
+      {
+        "id": "ROOF_1",
+        "face": "ROOF_1",
+        "width_mm": 65.0,
+        "height_mm": 87.76992651244501,
+        "polygon_mm": [
+          [
+            0,
+            0
+          ],
+          [
+            65,
+            0
+          ],
+          [
+            65,
+            87.76992651244501
+          ],
+          [
+            0,
+            87.76992651244501
+          ]
+        ],
+        "vertices_3d_mm": [
+          [
+            20.89999999999999,
+            -32.5,
+            120.0
+          ],
+          [
+            20.89999999999999,
+            32.5,
+            120.0
+          ],
+          [
+            -47.5,
+            32.5,
+            65.0
+          ],
+          [
+            -47.5,
+            -32.5,
+            65.0
+          ]
+        ],
+        "edge_codes": {
+          "2": "G02",
+          "3": "G03",
+          "1": "G05",
+          "0": "G06"
+        }
+      },
+      {
+        "id": "ROOF_2",
+        "face": "ROOF_2",
+        "width_mm": 65.0,
+        "height_mm": 41.53516582367285,
+        "polygon_mm": [
+          [
+            0,
+            0
+          ],
+          [
+            65,
+            0
+          ],
+          [
+            65,
+            41.53516582367285
+          ],
+          [
+            0,
+            41.53516582367285
+          ]
+        ],
+        "vertices_3d_mm": [
+          [
+            47.5,
+            -32.5,
+            88.1
+          ],
+          [
+            47.5,
+            32.5,
+            88.1
+          ],
+          [
+            20.89999999999999,
+            32.5,
+            120.0
+          ],
+          [
+            20.89999999999999,
+            -32.5,
+            120.0
+          ]
+        ],
+        "edge_codes": {
+          "2": "G06",
+          "3": "G07",
+          "1": "G08",
+          "0": "G10"
+        }
+      }
+    ],
+    "seams": [
+      {
+        "id": "G01",
+        "kind": "house_edge",
+        "length_mm": 65.0,
+        "fold_degrees": 90.0,
+        "mates": [
+          {
+            "panel": "FRONT",
+            "edge": "4"
+          },
+          {
+            "panel": "LEFT",
+            "edge": "1"
+          }
+        ],
+        "hinged_uncut": false,
+        "fold_direction": "MOUNTAIN_FROM_PRINTED_OUTSIDE"
+      },
+      {
+        "id": "G02",
+        "kind": "house_edge",
+        "length_mm": 65.0,
+        "fold_degrees": 51.197462341295065,
+        "mates": [
+          {
+            "panel": "LEFT",
+            "edge": "2"
+          },
+          {
+            "panel": "ROOF_1",
+            "edge": "2"
+          }
+        ],
+        "hinged_uncut": false,
+        "fold_direction": "MOUNTAIN_FROM_PRINTED_OUTSIDE"
+      },
+      {
+        "id": "G03",
+        "kind": "house_edge",
+        "length_mm": 87.76992651244502,
+        "fold_degrees": 90.0,
+        "mates": [
+          {
+            "panel": "FRONT",
+            "edge": "3"
+          },
+          {
+            "panel": "ROOF_1",
+            "edge": "3"
+          }
+        ],
+        "hinged_uncut": false,
+        "fold_direction": "MOUNTAIN_FROM_PRINTED_OUTSIDE"
+      },
+      {
+        "id": "G04",
+        "kind": "house_edge",
+        "length_mm": 65.0,
+        "fold_degrees": 90.0,
+        "mates": [
+          {
+            "panel": "BACK",
+            "edge": "4"
+          },
+          {
+            "panel": "LEFT",
+            "edge": "3"
+          }
+        ],
+        "hinged_uncut": true,
+        "fold_direction": "MOUNTAIN_FROM_PRINTED_OUTSIDE"
+      },
+      {
+        "id": "G05",
+        "kind": "house_edge",
+        "length_mm": 87.76992651244502,
+        "fold_degrees": 90.0,
+        "mates": [
+          {
+            "panel": "BACK",
+            "edge": "0"
+          },
+          {
+            "panel": "ROOF_1",
+            "edge": "1"
+          }
+        ],
+        "hinged_uncut": false,
+        "fold_direction": "MOUNTAIN_FROM_PRINTED_OUTSIDE"
+      },
+      {
+        "id": "G06",
+        "kind": "house_edge",
+        "length_mm": 65.0,
+        "fold_degrees": 88.97930448946741,
+        "mates": [
+          {
+            "panel": "ROOF_1",
+            "edge": "0"
+          },
+          {
+            "panel": "ROOF_2",
+            "edge": "2"
+          }
+        ],
+        "hinged_uncut": true,
+        "fold_direction": "MOUNTAIN_FROM_PRINTED_OUTSIDE"
+      },
+      {
+        "id": "G07",
+        "kind": "house_edge",
+        "length_mm": 41.53516582367284,
+        "fold_degrees": 90.0,
+        "mates": [
+          {
+            "panel": "FRONT",
+            "edge": "2"
+          },
+          {
+            "panel": "ROOF_2",
+            "edge": "3"
+          }
+        ],
+        "hinged_uncut": false,
+        "fold_direction": "MOUNTAIN_FROM_PRINTED_OUTSIDE"
+      },
+      {
+        "id": "G08",
+        "kind": "house_edge",
+        "length_mm": 41.53516582367284,
+        "fold_degrees": 90.0,
+        "mates": [
+          {
+            "panel": "BACK",
+            "edge": "1"
+          },
+          {
+            "panel": "ROOF_2",
+            "edge": "1"
+          }
+        ],
+        "hinged_uncut": false,
+        "fold_direction": "MOUNTAIN_FROM_PRINTED_OUTSIDE"
+      },
+      {
+        "id": "G09",
+        "kind": "house_edge",
+        "length_mm": 88.1,
+        "fold_degrees": 90.0,
+        "mates": [
+          {
+            "panel": "FRONT",
+            "edge": "1"
+          },
+          {
+            "panel": "RIGHT",
+            "edge": "3"
+          }
+        ],
+        "hinged_uncut": true,
+        "fold_direction": "MOUNTAIN_FROM_PRINTED_OUTSIDE"
+      },
+      {
+        "id": "G10",
+        "kind": "house_edge",
+        "length_mm": 65.0,
+        "fold_degrees": 39.823233169237525,
+        "mates": [
+          {
+            "panel": "RIGHT",
+            "edge": "2"
+          },
+          {
+            "panel": "ROOF_2",
+            "edge": "0"
+          }
+        ],
+        "hinged_uncut": false,
+        "fold_direction": "MOUNTAIN_FROM_PRINTED_OUTSIDE"
+      },
+      {
+        "id": "G11",
+        "kind": "house_edge",
+        "length_mm": 88.1,
+        "fold_degrees": 90.0,
+        "mates": [
+          {
+            "panel": "BACK",
+            "edge": "2"
+          },
+          {
+            "panel": "RIGHT",
+            "edge": "1"
+          }
+        ],
+        "hinged_uncut": false,
+        "fold_direction": "MOUNTAIN_FROM_PRINTED_OUTSIDE"
+      }
+    ],
+    "open_boundary": [
+      {
+        "endpoints": [
+          [
+            -47.5,
+            -32.5,
+            0.0
+          ],
+          [
+            -47.5,
+            32.5,
+            0.0
+          ]
+        ],
+        "mate": {
+          "panel": "LEFT",
+          "edge": "0"
+        }
+      },
+      {
+        "endpoints": [
+          [
+            -47.5,
+            -32.5,
+            0.0
+          ],
+          [
+            47.5,
+            -32.5,
+            0.0
+          ]
+        ],
+        "mate": {
+          "panel": "FRONT",
+          "edge": "0"
+        }
+      },
+      {
+        "endpoints": [
+          [
+            -47.5,
+            32.5,
+            0.0
+          ],
+          [
+            47.5,
+            32.5,
+            0.0
+          ]
+        ],
+        "mate": {
+          "panel": "BACK",
+          "edge": "3"
+        }
+      },
+      {
+        "endpoints": [
+          [
+            47.5,
+            -32.5,
+            0.0
+          ],
+          [
+            47.5,
+            32.5,
+            0.0
+          ]
+        ],
+        "mate": {
+          "panel": "RIGHT",
+          "edge": "0"
+        }
+      }
+    ]
+  },
+  "sheet_count": 2,
+  "physical_assembly": "NOT_TESTED",
+  "print_units": [
+    {
+      "panel_ids": [
+        "BACK",
+        "LEFT"
+      ],
+      "sheet_number": 1,
+      "fold_code": "G04",
+      "bounds_mm": [
+        8.0,
+        144.0,
+        173.0,
+        264.0
+      ],
+      "orientation_degrees": 0
+    },
+    {
+      "panel_ids": [
+        "ROOF_1",
+        "ROOF_2"
+      ],
+      "sheet_number": 2,
+      "fold_code": "G06",
+      "bounds_mm": [
+        8.0,
+        20.0,
+        73.0,
+        149.30509233611787
+      ],
+      "orientation_degrees": 0
+    },
+    {
+      "panel_ids": [
+        "FRONT",
+        "RIGHT"
+      ],
+      "sheet_number": 1,
+      "fold_code": "G09",
+      "bounds_mm": [
+        8.0,
+        20.0,
+        173.0,
+        140.0
+      ],
+      "orientation_degrees": 0
+    }
+  ],
+  "appearance": {
+    "template_id": "gb_us_saltbox_heritage",
+    "motif": "american",
+    "panels": {
+      "FRONT": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"95.0mm\" height=\"120.0mm\" viewBox=\"0 0 95.0 120.0\"><polygon points=\"0.000000,120.000000 95.000000,120.000000 95.000000,31.900000 68.400000,0.000000 0.000000,55.000000\" fill=\"#efe4cf\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,116.000000 93.000000,116.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,112.000000 93.000000,112.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,108.000000 93.000000,108.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,104.000000 93.000000,104.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,100.000000 93.000000,100.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,96.000000 93.000000,96.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,92.000000 93.000000,92.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,88.000000 93.000000,88.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,84.000000 93.000000,84.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,80.000000 93.000000,80.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,76.000000 93.000000,76.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,72.000000 93.000000,72.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,68.000000 93.000000,68.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,64.000000 93.000000,64.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,60.000000 93.000000,60.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"2.000000,118.000000 93.000000,118.000000 93.000000,115.000000 2.000000,115.000000\" fill=\"#fff7e5\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"2.000000,117.000000 4.000000,117.000000 4.000000,57.000000 2.000000,57.000000\" fill=\"#fff7e5\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"91.000000,117.000000 93.000000,117.000000 93.000000,57.000000 91.000000,57.000000\" fill=\"#fff7e5\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"15.300000,95.000000 30.300000,95.000000 30.300000,76.000000 15.300000,76.000000\" fill=\"#fff7e5\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"16.300000,94.000000 29.300000,94.000000 29.300000,77.000000 16.300000,77.000000\" fill=\"#f3cf83\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"17.300000,84.650000 28.300000,84.650000 28.300000,77.850000 17.300000,77.850000\" fill=\"#f9e9b7\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"13.300000,94.000000 15.300000,94.000000 15.300000,77.000000 13.300000,77.000000\" fill=\"#8f3838\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"13.300000,92.000000 15.300000,92.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"13.300000,89.000000 15.300000,89.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"13.300000,86.000000 15.300000,86.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"13.300000,83.000000 15.300000,83.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"13.300000,80.000000 15.300000,80.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"30.300000,94.000000 32.300000,94.000000 32.300000,77.000000 30.300000,77.000000\" fill=\"#8f3838\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"30.300000,92.000000 32.300000,92.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"30.300000,89.000000 32.300000,89.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"30.300000,86.000000 32.300000,86.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"30.300000,83.000000 32.300000,83.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"30.300000,80.000000 32.300000,80.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"22.800000,94.000000 22.800000,77.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.7\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"16.300000,88.333333 29.300000,88.333333\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.6\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"16.300000,82.666667 29.300000,82.666667\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.6\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"14.300000,96.000000 31.300000,96.000000 31.300000,94.600000 14.300000,94.600000\" fill=\"#fff7e5\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"15.300000,74.000000 22.800000,72.000000 30.300000,74.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"64.700000,95.000000 79.700000,95.000000 79.700000,76.000000 64.700000,76.000000\" fill=\"#fff7e5\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"65.700000,94.000000 78.700000,94.000000 78.700000,77.000000 65.700000,77.000000\" fill=\"#f3cf83\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"66.700000,84.650000 77.700000,84.650000 77.700000,77.850000 66.700000,77.850000\" fill=\"#f9e9b7\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"62.700000,94.000000 64.700000,94.000000 64.700000,77.000000 62.700000,77.000000\" fill=\"#8f3838\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"62.700000,92.000000 64.700000,92.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"62.700000,89.000000 64.700000,89.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"62.700000,86.000000 64.700000,86.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"62.700000,83.000000 64.700000,83.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"62.700000,80.000000 64.700000,80.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"79.700000,94.000000 81.700000,94.000000 81.700000,77.000000 79.700000,77.000000\" fill=\"#8f3838\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"79.700000,92.000000 81.700000,92.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"79.700000,89.000000 81.700000,89.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"79.700000,86.000000 81.700000,86.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"79.700000,83.000000 81.700000,83.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"79.700000,80.000000 81.700000,80.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"72.200000,94.000000 72.200000,77.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.7\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"65.700000,88.333333 78.700000,88.333333\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.6\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"65.700000,82.666667 78.700000,82.666667\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.6\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"63.700000,96.000000 80.700000,96.000000 80.700000,94.600000 63.700000,94.600000\" fill=\"#fff7e5\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"64.700000,74.000000 72.200000,72.000000 79.700000,74.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"38.000000,117.000000 57.000000,117.000000 57.000000,86.000000 38.000000,86.000000\" fill=\"#fff7e5\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"39.000000,117.000000 56.000000,117.000000 56.000000,88.000000 39.000000,88.000000\" fill=\"#8f3838\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"41.380000,114.000000 46.480000,114.000000 46.480000,105.300000 41.380000,105.300000\" fill=\"#efe4cf\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"48.350000,114.000000 53.450000,114.000000 53.450000,105.300000 48.350000,105.300000\" fill=\"#efe4cf\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"41.380000,104.050000 46.480000,104.050000 46.480000,95.350000 41.380000,95.350000\" fill=\"#efe4cf\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"48.350000,104.050000 53.450000,104.050000 53.450000,95.350000 48.350000,95.350000\" fill=\"#efe4cf\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"53.11\" cy=\"105.5\" r=\"0.7\" fill=\"#e8bc68\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"36.000000,118.000000 59.000000,118.000000 59.000000,116.500000 36.000000,116.500000\" fill=\"#fff7e5\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"47.5\" cy=\"80.0\" r=\"4.3\" fill=\"#294b3b\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"47.5\" cy=\"80.0\" r=\"2.4\" fill=\"#efe4cf\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"50.8\" cy=\"80.0\" r=\"0.55\" fill=\"#d2a45c\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"49.833452377915606\" cy=\"77.6665476220844\" r=\"0.55\" fill=\"#d2a45c\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"47.5\" cy=\"76.7\" r=\"0.55\" fill=\"#d2a45c\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"45.166547622084394\" cy=\"77.6665476220844\" r=\"0.55\" fill=\"#d2a45c\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"44.2\" cy=\"80.0\" r=\"0.55\" fill=\"#d2a45c\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"45.166547622084394\" cy=\"82.3334523779156\" r=\"0.55\" fill=\"#d2a45c\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"47.5\" cy=\"83.3\" r=\"0.55\" fill=\"#d2a45c\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"49.833452377915606\" cy=\"82.3334523779156\" r=\"0.55\" fill=\"#d2a45c\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"45.500000,84.000000 47.500000,83.000000 49.500000,84.000000\" fill=\"none\" stroke=\"#8f3838\" stroke-width=\"1.5\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"5.0\" cy=\"59.0\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"8.695652173913043\" cy=\"59.28570217110321\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"12.391304347826086\" cy=\"59.9614181720282\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"16.086956521739133\" cy=\"60.59814016163398\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"19.782608695652172\" cy=\"60.7916173514327\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"23.47826086956522\" cy=\"60.41901228990338\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"27.17391304347826\" cy=\"59.71688958825263\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"30.869565217391305\" cy=\"59.13102253590816\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"34.565217391304344\" cy=\"59.03337444138698\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"38.26086956521739\" cy=\"59.485941466041965\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"41.95652173913044\" cy=\"60.20139165095389\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"45.65217391304348\" cy=\"60.725490171354906\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"49.34782608695652\" cy=\"60.725490171354906\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"53.04347826086956\" cy=\"60.20139165095389\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"56.73913043478261\" cy=\"59.485941466041965\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"60.43478260869565\" cy=\"59.03337444138698\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"64.13043478260869\" cy=\"59.13102253590816\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"67.82608695652175\" cy=\"59.716889588252634\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"71.52173913043478\" cy=\"60.419012289903385\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"75.21739130434783\" cy=\"60.7916173514327\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"78.91304347826087\" cy=\"60.59814016163398\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"82.6086956521739\" cy=\"59.9614181720282\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"86.30434782608695\" cy=\"59.28570217110321\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"90.0\" cy=\"59.0\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"7.0\" cy=\"62.0\" r=\"0.55\" fill=\"#e4af53\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"16.0\" cy=\"62.0\" r=\"0.55\" fill=\"#e4af53\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"25.0\" cy=\"62.0\" r=\"0.55\" fill=\"#e4af53\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"34.0\" cy=\"62.0\" r=\"0.55\" fill=\"#e4af53\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"43.0\" cy=\"62.0\" r=\"0.55\" fill=\"#e4af53\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"52.0\" cy=\"62.0\" r=\"0.55\" fill=\"#e4af53\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"61.0\" cy=\"62.0\" r=\"0.55\" fill=\"#e4af53\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"70.0\" cy=\"62.0\" r=\"0.55\" fill=\"#e4af53\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"79.0\" cy=\"62.0\" r=\"0.55\" fill=\"#e4af53\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"88.0\" cy=\"62.0\" r=\"0.55\" fill=\"#e4af53\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,118.000000 2.000000,55.958185 68.122178,2.789767 93.000000,32.624449 93.000000,118.000000 2.000000,118.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /></svg>",
+      "BACK": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"95.0mm\" height=\"120.0mm\" viewBox=\"0 0 95.0 120.0\"><polygon points=\"95.000000,55.000000 26.600000,0.000000 0.000000,31.900000 0.000000,120.000000 95.000000,120.000000\" fill=\"#efe4cf\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,116.000000 93.000000,116.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,112.000000 93.000000,112.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,108.000000 93.000000,108.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,104.000000 93.000000,104.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,100.000000 93.000000,100.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,96.000000 93.000000,96.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,92.000000 93.000000,92.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,88.000000 93.000000,88.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,84.000000 93.000000,84.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,80.000000 93.000000,80.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,76.000000 93.000000,76.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,72.000000 93.000000,72.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,68.000000 93.000000,68.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,64.000000 93.000000,64.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,60.000000 93.000000,60.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"2.000000,118.000000 93.000000,118.000000 93.000000,115.000000 2.000000,115.000000\" fill=\"#fff7e5\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"2.000000,117.000000 4.000000,117.000000 4.000000,57.000000 2.000000,57.000000\" fill=\"#fff7e5\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"91.000000,117.000000 93.000000,117.000000 93.000000,57.000000 91.000000,57.000000\" fill=\"#fff7e5\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"15.300000,95.000000 30.300000,95.000000 30.300000,76.000000 15.300000,76.000000\" fill=\"#fff7e5\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"16.300000,94.000000 29.300000,94.000000 29.300000,77.000000 16.300000,77.000000\" fill=\"#f3cf83\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"17.300000,84.650000 28.300000,84.650000 28.300000,77.850000 17.300000,77.850000\" fill=\"#f9e9b7\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"13.300000,94.000000 15.300000,94.000000 15.300000,77.000000 13.300000,77.000000\" fill=\"#8f3838\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"13.300000,92.000000 15.300000,92.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"13.300000,89.000000 15.300000,89.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"13.300000,86.000000 15.300000,86.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"13.300000,83.000000 15.300000,83.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"13.300000,80.000000 15.300000,80.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"30.300000,94.000000 32.300000,94.000000 32.300000,77.000000 30.300000,77.000000\" fill=\"#8f3838\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"30.300000,92.000000 32.300000,92.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"30.300000,89.000000 32.300000,89.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"30.300000,86.000000 32.300000,86.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"30.300000,83.000000 32.300000,83.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"30.300000,80.000000 32.300000,80.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"22.800000,94.000000 22.800000,77.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.7\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"16.300000,88.333333 29.300000,88.333333\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.6\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"16.300000,82.666667 29.300000,82.666667\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.6\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"14.300000,96.000000 31.300000,96.000000 31.300000,94.600000 14.300000,94.600000\" fill=\"#fff7e5\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"15.300000,74.000000 22.800000,72.000000 30.300000,74.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"64.700000,95.000000 79.700000,95.000000 79.700000,76.000000 64.700000,76.000000\" fill=\"#fff7e5\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"65.700000,94.000000 78.700000,94.000000 78.700000,77.000000 65.700000,77.000000\" fill=\"#f3cf83\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"66.700000,84.650000 77.700000,84.650000 77.700000,77.850000 66.700000,77.850000\" fill=\"#f9e9b7\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"62.700000,94.000000 64.700000,94.000000 64.700000,77.000000 62.700000,77.000000\" fill=\"#8f3838\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"62.700000,92.000000 64.700000,92.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"62.700000,89.000000 64.700000,89.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"62.700000,86.000000 64.700000,86.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"62.700000,83.000000 64.700000,83.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"62.700000,80.000000 64.700000,80.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"79.700000,94.000000 81.700000,94.000000 81.700000,77.000000 79.700000,77.000000\" fill=\"#8f3838\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"79.700000,92.000000 81.700000,92.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"79.700000,89.000000 81.700000,89.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"79.700000,86.000000 81.700000,86.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"79.700000,83.000000 81.700000,83.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"79.700000,80.000000 81.700000,80.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"72.200000,94.000000 72.200000,77.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.7\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"65.700000,88.333333 78.700000,88.333333\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.6\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"65.700000,82.666667 78.700000,82.666667\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.6\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"63.700000,96.000000 80.700000,96.000000 80.700000,94.600000 63.700000,94.600000\" fill=\"#fff7e5\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"64.700000,74.000000 72.200000,72.000000 79.700000,74.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"5.0\" cy=\"59.0\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"8.695652173913043\" cy=\"59.28570217110321\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"12.391304347826086\" cy=\"59.9614181720282\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"16.086956521739133\" cy=\"60.59814016163398\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"19.782608695652172\" cy=\"60.7916173514327\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"23.47826086956522\" cy=\"60.41901228990338\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"27.17391304347826\" cy=\"59.71688958825263\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"30.869565217391305\" cy=\"59.13102253590816\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"34.565217391304344\" cy=\"59.03337444138698\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"38.26086956521739\" cy=\"59.485941466041965\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"41.95652173913044\" cy=\"60.20139165095389\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"45.65217391304348\" cy=\"60.725490171354906\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"49.34782608695652\" cy=\"60.725490171354906\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"53.04347826086956\" cy=\"60.20139165095389\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"56.73913043478261\" cy=\"59.485941466041965\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"60.43478260869565\" cy=\"59.03337444138698\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"64.13043478260869\" cy=\"59.13102253590816\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"67.82608695652175\" cy=\"59.716889588252634\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"71.52173913043478\" cy=\"60.419012289903385\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"75.21739130434783\" cy=\"60.7916173514327\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"78.91304347826087\" cy=\"60.59814016163398\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"82.6086956521739\" cy=\"59.9614181720282\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"86.30434782608695\" cy=\"59.28570217110321\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"90.0\" cy=\"59.0\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"7.0\" cy=\"62.0\" r=\"0.55\" fill=\"#e4af53\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"16.0\" cy=\"62.0\" r=\"0.55\" fill=\"#e4af53\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"25.0\" cy=\"62.0\" r=\"0.55\" fill=\"#e4af53\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"34.0\" cy=\"62.0\" r=\"0.55\" fill=\"#e4af53\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"43.0\" cy=\"62.0\" r=\"0.55\" fill=\"#e4af53\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"52.0\" cy=\"62.0\" r=\"0.55\" fill=\"#e4af53\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"61.0\" cy=\"62.0\" r=\"0.55\" fill=\"#e4af53\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"70.0\" cy=\"62.0\" r=\"0.55\" fill=\"#e4af53\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"79.0\" cy=\"62.0\" r=\"0.55\" fill=\"#e4af53\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"88.0\" cy=\"62.0\" r=\"0.55\" fill=\"#e4af53\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"93.000000,55.958185 93.000000,118.000000 2.000000,118.000000 2.000000,32.624449 26.877822,2.789767 93.000000,55.958185\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /></svg>",
+      "RIGHT": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"65.0mm\" height=\"88.1mm\" viewBox=\"0 0 65.0 88.1\"><polygon points=\"0.000000,88.100000 65.000000,88.100000 65.000000,0.000000 0.000000,0.000000\" fill=\"#efe4cf\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,84.100000 63.000000,84.100000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,80.100000 63.000000,80.100000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,76.100000 63.000000,76.100000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,72.100000 63.000000,72.100000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,68.100000 63.000000,68.100000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,64.100000 63.000000,64.100000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,60.100000 63.000000,60.100000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,56.100000 63.000000,56.100000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,52.100000 63.000000,52.100000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,48.100000 63.000000,48.100000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,44.100000 63.000000,44.100000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,40.100000 63.000000,40.100000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,36.100000 63.000000,36.100000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,32.100000 63.000000,32.100000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,28.100000 63.000000,28.100000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"2.000000,86.100000 63.000000,86.100000 63.000000,83.100000 2.000000,83.100000\" fill=\"#fff7e5\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"2.000000,85.100000 4.000000,85.100000 4.000000,25.100000 2.000000,25.100000\" fill=\"#fff7e5\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"61.000000,85.100000 63.000000,85.100000 63.000000,25.100000 61.000000,25.100000\" fill=\"#fff7e5\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"8.750000,63.100000 22.450000,63.100000 22.450000,44.100000 8.750000,44.100000\" fill=\"#fff7e5\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"9.750000,62.100000 21.450000,62.100000 21.450000,45.100000 9.750000,45.100000\" fill=\"#f3cf83\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"10.750000,52.750000 20.450000,52.750000 20.450000,45.950000 10.750000,45.950000\" fill=\"#f9e9b7\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"6.750000,62.100000 8.750000,62.100000 8.750000,45.100000 6.750000,45.100000\" fill=\"#8f3838\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"6.750000,60.100000 8.750000,60.100000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"6.750000,57.100000 8.750000,57.100000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"6.750000,54.100000 8.750000,54.100000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"6.750000,51.100000 8.750000,51.100000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"6.750000,48.100000 8.750000,48.100000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"22.450000,62.100000 24.450000,62.100000 24.450000,45.100000 22.450000,45.100000\" fill=\"#8f3838\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"22.450000,60.100000 24.450000,60.100000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"22.450000,57.100000 24.450000,57.100000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"22.450000,54.100000 24.450000,54.100000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"22.450000,51.100000 24.450000,51.100000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"22.450000,48.100000 24.450000,48.100000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"15.600000,62.100000 15.600000,45.100000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.7\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"9.750000,56.433333 21.450000,56.433333\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.6\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"9.750000,50.766667 21.450000,50.766667\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.6\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"7.750000,64.100000 23.450000,64.100000 23.450000,62.700000 7.750000,62.700000\" fill=\"#fff7e5\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"8.750000,42.100000 15.600000,40.100000 22.450000,42.100000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"42.550000,63.100000 56.250000,63.100000 56.250000,44.100000 42.550000,44.100000\" fill=\"#fff7e5\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"43.550000,62.100000 55.250000,62.100000 55.250000,45.100000 43.550000,45.100000\" fill=\"#f3cf83\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"44.550000,52.750000 54.250000,52.750000 54.250000,45.950000 44.550000,45.950000\" fill=\"#f9e9b7\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"40.550000,62.100000 42.550000,62.100000 42.550000,45.100000 40.550000,45.100000\" fill=\"#8f3838\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"40.550000,60.100000 42.550000,60.100000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"40.550000,57.100000 42.550000,57.100000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"40.550000,54.100000 42.550000,54.100000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"40.550000,51.100000 42.550000,51.100000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"40.550000,48.100000 42.550000,48.100000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"56.250000,62.100000 58.250000,62.100000 58.250000,45.100000 56.250000,45.100000\" fill=\"#8f3838\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"56.250000,60.100000 58.250000,60.100000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"56.250000,57.100000 58.250000,57.100000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"56.250000,54.100000 58.250000,54.100000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"56.250000,51.100000 58.250000,51.100000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"56.250000,48.100000 58.250000,48.100000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"49.400000,62.100000 49.400000,45.100000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.7\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"43.550000,56.433333 55.250000,56.433333\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.6\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"43.550000,50.766667 55.250000,50.766667\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.6\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"41.550000,64.100000 57.250000,64.100000 57.250000,62.700000 41.550000,62.700000\" fill=\"#fff7e5\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"42.550000,42.100000 49.400000,40.100000 56.250000,42.100000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"5.0\" cy=\"27.099999999999994\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"7.391304347826087\" cy=\"27.385702171103205\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"9.782608695652174\" cy=\"28.061418172028198\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"12.173913043478262\" cy=\"28.698140161633972\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"14.565217391304348\" cy=\"28.891617351432693\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"16.956521739130434\" cy=\"28.519012289903372\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"19.347826086956523\" cy=\"27.81688958825262\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"21.73913043478261\" cy=\"27.231022535908153\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"24.130434782608695\" cy=\"27.133374441386977\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"26.52173913043478\" cy=\"27.58594146604196\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"28.913043478260867\" cy=\"28.30139165095388\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"31.304347826086957\" cy=\"28.8254901713549\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"33.69565217391305\" cy=\"28.8254901713549\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"36.086956521739125\" cy=\"28.30139165095388\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"38.47826086956522\" cy=\"27.58594146604196\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"40.869565217391305\" cy=\"27.133374441386977\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"43.26086956521739\" cy=\"27.231022535908153\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"45.65217391304348\" cy=\"27.81688958825262\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"48.04347826086956\" cy=\"28.519012289903372\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"50.43478260869565\" cy=\"28.891617351432693\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"52.826086956521735\" cy=\"28.698140161633972\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"55.21739130434783\" cy=\"28.061418172028198\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"57.608695652173914\" cy=\"27.385702171103205\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"60.0\" cy=\"27.099999999999994\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"7.0\" cy=\"30.099999999999994\" r=\"0.55\" fill=\"#e4af53\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"12.666666666666668\" cy=\"30.099999999999994\" r=\"0.55\" fill=\"#e4af53\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"18.333333333333336\" cy=\"30.099999999999994\" r=\"0.55\" fill=\"#e4af53\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"24.0\" cy=\"30.099999999999994\" r=\"0.55\" fill=\"#e4af53\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"29.666666666666668\" cy=\"30.099999999999994\" r=\"0.55\" fill=\"#e4af53\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"35.333333333333336\" cy=\"30.099999999999994\" r=\"0.55\" fill=\"#e4af53\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"41.0\" cy=\"30.099999999999994\" r=\"0.55\" fill=\"#e4af53\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"46.66666666666667\" cy=\"30.099999999999994\" r=\"0.55\" fill=\"#e4af53\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"52.333333333333336\" cy=\"30.099999999999994\" r=\"0.55\" fill=\"#e4af53\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"58.0\" cy=\"30.099999999999994\" r=\"0.55\" fill=\"#e4af53\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /></svg>",
+      "LEFT": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"65.0mm\" height=\"65.0mm\" viewBox=\"0 0 65.0 65.0\"><polygon points=\"0.000000,65.000000 65.000000,65.000000 65.000000,0.000000 0.000000,0.000000\" fill=\"#efe4cf\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,61.000000 63.000000,61.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,57.000000 63.000000,57.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,53.000000 63.000000,53.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,49.000000 63.000000,49.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,45.000000 63.000000,45.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,41.000000 63.000000,41.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,37.000000 63.000000,37.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,33.000000 63.000000,33.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,29.000000 63.000000,29.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,25.000000 63.000000,25.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,21.000000 63.000000,21.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,17.000000 63.000000,17.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,13.000000 63.000000,13.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,9.000000 63.000000,9.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,5.000000 63.000000,5.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.25\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"2.000000,63.000000 63.000000,63.000000 63.000000,60.000000 2.000000,60.000000\" fill=\"#fff7e5\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"2.000000,62.000000 4.000000,62.000000 4.000000,2.000000 2.000000,2.000000\" fill=\"#fff7e5\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"61.000000,62.000000 63.000000,62.000000 63.000000,2.000000 61.000000,2.000000\" fill=\"#fff7e5\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"8.750000,40.000000 22.450000,40.000000 22.450000,21.000000 8.750000,21.000000\" fill=\"#fff7e5\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"9.750000,39.000000 21.450000,39.000000 21.450000,22.000000 9.750000,22.000000\" fill=\"#f3cf83\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"10.750000,29.650000 20.450000,29.650000 20.450000,22.850000 10.750000,22.850000\" fill=\"#f9e9b7\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"6.750000,39.000000 8.750000,39.000000 8.750000,22.000000 6.750000,22.000000\" fill=\"#8f3838\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"6.750000,37.000000 8.750000,37.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"6.750000,34.000000 8.750000,34.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"6.750000,31.000000 8.750000,31.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"6.750000,28.000000 8.750000,28.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"6.750000,25.000000 8.750000,25.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"22.450000,39.000000 24.450000,39.000000 24.450000,22.000000 22.450000,22.000000\" fill=\"#8f3838\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"22.450000,37.000000 24.450000,37.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"22.450000,34.000000 24.450000,34.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"22.450000,31.000000 24.450000,31.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"22.450000,28.000000 24.450000,28.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"22.450000,25.000000 24.450000,25.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"15.600000,39.000000 15.600000,22.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.7\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"9.750000,33.333333 21.450000,33.333333\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.6\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"9.750000,27.666667 21.450000,27.666667\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.6\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"7.750000,41.000000 23.450000,41.000000 23.450000,39.600000 7.750000,39.600000\" fill=\"#fff7e5\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"8.750000,19.000000 15.600000,17.000000 22.450000,19.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"42.550000,40.000000 56.250000,40.000000 56.250000,21.000000 42.550000,21.000000\" fill=\"#fff7e5\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"43.550000,39.000000 55.250000,39.000000 55.250000,22.000000 43.550000,22.000000\" fill=\"#f3cf83\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"44.550000,29.650000 54.250000,29.650000 54.250000,22.850000 44.550000,22.850000\" fill=\"#f9e9b7\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"40.550000,39.000000 42.550000,39.000000 42.550000,22.000000 40.550000,22.000000\" fill=\"#8f3838\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"40.550000,37.000000 42.550000,37.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"40.550000,34.000000 42.550000,34.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"40.550000,31.000000 42.550000,31.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"40.550000,28.000000 42.550000,28.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"40.550000,25.000000 42.550000,25.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"56.250000,39.000000 58.250000,39.000000 58.250000,22.000000 56.250000,22.000000\" fill=\"#8f3838\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"56.250000,37.000000 58.250000,37.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"56.250000,34.000000 58.250000,34.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"56.250000,31.000000 58.250000,31.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"56.250000,28.000000 58.250000,28.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"56.250000,25.000000 58.250000,25.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"49.400000,39.000000 49.400000,22.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.7\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"43.550000,33.333333 55.250000,33.333333\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.6\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"43.550000,27.666667 55.250000,27.666667\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.6\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polygon points=\"41.550000,41.000000 57.250000,41.000000 57.250000,39.600000 41.550000,39.600000\" fill=\"#fff7e5\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"42.550000,19.000000 49.400000,17.000000 56.250000,19.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"5.0\" cy=\"4.0\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"7.391304347826087\" cy=\"4.28570217110321\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"9.782608695652174\" cy=\"4.961418172028203\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"12.173913043478262\" cy=\"5.598140161633978\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"14.565217391304348\" cy=\"5.7916173514326985\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"16.956521739130434\" cy=\"5.419012289903378\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"19.347826086956523\" cy=\"4.716889588252627\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"21.73913043478261\" cy=\"4.1310225359081585\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"24.130434782608695\" cy=\"4.033374441386982\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"26.52173913043478\" cy=\"4.4859414660419645\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"28.913043478260867\" cy=\"5.201391650953887\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"31.304347826086957\" cy=\"5.725490171354906\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"33.69565217391305\" cy=\"5.725490171354906\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"36.086956521739125\" cy=\"5.201391650953887\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"38.47826086956522\" cy=\"4.4859414660419645\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"40.869565217391305\" cy=\"4.033374441386982\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"43.26086956521739\" cy=\"4.1310225359081585\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"45.65217391304348\" cy=\"4.716889588252627\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"48.04347826086956\" cy=\"5.419012289903378\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"50.43478260869565\" cy=\"5.7916173514326985\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"52.826086956521735\" cy=\"5.598140161633978\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"55.21739130434783\" cy=\"4.961418172028203\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"57.608695652173914\" cy=\"4.28570217110321\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"60.0\" cy=\"4.0\" r=\"0.9\" fill=\"#365743\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"7.0\" cy=\"7.0\" r=\"0.55\" fill=\"#e4af53\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"12.666666666666668\" cy=\"7.0\" r=\"0.55\" fill=\"#e4af53\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"18.333333333333336\" cy=\"7.0\" r=\"0.55\" fill=\"#e4af53\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"24.0\" cy=\"7.0\" r=\"0.55\" fill=\"#e4af53\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"29.666666666666668\" cy=\"7.0\" r=\"0.55\" fill=\"#e4af53\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"35.333333333333336\" cy=\"7.0\" r=\"0.55\" fill=\"#e4af53\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"41.0\" cy=\"7.0\" r=\"0.55\" fill=\"#e4af53\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"46.66666666666667\" cy=\"7.0\" r=\"0.55\" fill=\"#e4af53\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"52.333333333333336\" cy=\"7.0\" r=\"0.55\" fill=\"#e4af53\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><circle cx=\"58.0\" cy=\"7.0\" r=\"0.55\" fill=\"#e4af53\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /></svg>",
+      "ROOF_1": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"65.0mm\" height=\"87.76992651244501mm\" viewBox=\"0 0 65.0 87.76992651244501\"><polygon points=\"0.000000,87.769927 65.000000,87.769927 65.000000,0.000000 0.000000,0.000000\" fill=\"#354b46\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,83.769927 63.000000,83.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.22\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"3.000000,83.769927 3.000000,78.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"11.000000,83.769927 11.000000,78.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"19.000000,83.769927 19.000000,78.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"27.000000,83.769927 27.000000,78.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"35.000000,83.769927 35.000000,78.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"43.000000,83.769927 43.000000,78.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"51.000000,83.769927 51.000000,78.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"59.000000,83.769927 59.000000,78.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,78.769927 63.000000,78.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.22\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"7.000000,78.769927 7.000000,73.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"15.000000,78.769927 15.000000,73.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"23.000000,78.769927 23.000000,73.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"31.000000,78.769927 31.000000,73.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"39.000000,78.769927 39.000000,73.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"47.000000,78.769927 47.000000,73.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"55.000000,78.769927 55.000000,73.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,73.769927 63.000000,73.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.22\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"3.000000,73.769927 3.000000,68.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"11.000000,73.769927 11.000000,68.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"19.000000,73.769927 19.000000,68.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"27.000000,73.769927 27.000000,68.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"35.000000,73.769927 35.000000,68.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"43.000000,73.769927 43.000000,68.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"51.000000,73.769927 51.000000,68.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"59.000000,73.769927 59.000000,68.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,68.769927 63.000000,68.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.22\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"7.000000,68.769927 7.000000,63.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"15.000000,68.769927 15.000000,63.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"23.000000,68.769927 23.000000,63.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"31.000000,68.769927 31.000000,63.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"39.000000,68.769927 39.000000,63.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"47.000000,68.769927 47.000000,63.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"55.000000,68.769927 55.000000,63.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,63.769927 63.000000,63.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.22\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"3.000000,63.769927 3.000000,58.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"11.000000,63.769927 11.000000,58.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"19.000000,63.769927 19.000000,58.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"27.000000,63.769927 27.000000,58.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"35.000000,63.769927 35.000000,58.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"43.000000,63.769927 43.000000,58.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"51.000000,63.769927 51.000000,58.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"59.000000,63.769927 59.000000,58.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,58.769927 63.000000,58.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.22\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"7.000000,58.769927 7.000000,53.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"15.000000,58.769927 15.000000,53.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"23.000000,58.769927 23.000000,53.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"31.000000,58.769927 31.000000,53.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"39.000000,58.769927 39.000000,53.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"47.000000,58.769927 47.000000,53.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"55.000000,58.769927 55.000000,53.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,53.769927 63.000000,53.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.22\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"3.000000,53.769927 3.000000,48.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"11.000000,53.769927 11.000000,48.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"19.000000,53.769927 19.000000,48.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"27.000000,53.769927 27.000000,48.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"35.000000,53.769927 35.000000,48.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"43.000000,53.769927 43.000000,48.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"51.000000,53.769927 51.000000,48.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"59.000000,53.769927 59.000000,48.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,48.769927 63.000000,48.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.22\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"7.000000,48.769927 7.000000,43.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"15.000000,48.769927 15.000000,43.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"23.000000,48.769927 23.000000,43.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"31.000000,48.769927 31.000000,43.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"39.000000,48.769927 39.000000,43.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"47.000000,48.769927 47.000000,43.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"55.000000,48.769927 55.000000,43.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,43.769927 63.000000,43.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.22\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"3.000000,43.769927 3.000000,38.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"11.000000,43.769927 11.000000,38.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"19.000000,43.769927 19.000000,38.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"27.000000,43.769927 27.000000,38.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"35.000000,43.769927 35.000000,38.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"43.000000,43.769927 43.000000,38.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"51.000000,43.769927 51.000000,38.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"59.000000,43.769927 59.000000,38.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,38.769927 63.000000,38.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.22\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"7.000000,38.769927 7.000000,33.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"15.000000,38.769927 15.000000,33.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"23.000000,38.769927 23.000000,33.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"31.000000,38.769927 31.000000,33.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"39.000000,38.769927 39.000000,33.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"47.000000,38.769927 47.000000,33.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"55.000000,38.769927 55.000000,33.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,33.769927 63.000000,33.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.22\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"3.000000,33.769927 3.000000,28.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"11.000000,33.769927 11.000000,28.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"19.000000,33.769927 19.000000,28.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"27.000000,33.769927 27.000000,28.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"35.000000,33.769927 35.000000,28.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"43.000000,33.769927 43.000000,28.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"51.000000,33.769927 51.000000,28.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"59.000000,33.769927 59.000000,28.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,28.769927 63.000000,28.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.22\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"7.000000,28.769927 7.000000,23.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"15.000000,28.769927 15.000000,23.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"23.000000,28.769927 23.000000,23.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"31.000000,28.769927 31.000000,23.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"39.000000,28.769927 39.000000,23.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"47.000000,28.769927 47.000000,23.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"55.000000,28.769927 55.000000,23.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,23.769927 63.000000,23.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.22\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"3.000000,23.769927 3.000000,18.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"11.000000,23.769927 11.000000,18.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"19.000000,23.769927 19.000000,18.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"27.000000,23.769927 27.000000,18.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"35.000000,23.769927 35.000000,18.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"43.000000,23.769927 43.000000,18.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"51.000000,23.769927 51.000000,18.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"59.000000,23.769927 59.000000,18.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,18.769927 63.000000,18.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.22\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"7.000000,18.769927 7.000000,13.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"15.000000,18.769927 15.000000,13.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"23.000000,18.769927 23.000000,13.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"31.000000,18.769927 31.000000,13.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"39.000000,18.769927 39.000000,13.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"47.000000,18.769927 47.000000,13.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"55.000000,18.769927 55.000000,13.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,13.769927 63.000000,13.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.22\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"3.000000,13.769927 3.000000,8.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"11.000000,13.769927 11.000000,8.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"19.000000,13.769927 19.000000,8.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"27.000000,13.769927 27.000000,8.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"35.000000,13.769927 35.000000,8.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"43.000000,13.769927 43.000000,8.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"51.000000,13.769927 51.000000,8.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"59.000000,13.769927 59.000000,8.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,8.769927 63.000000,8.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.22\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"7.000000,8.769927 7.000000,3.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"15.000000,8.769927 15.000000,3.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"23.000000,8.769927 23.000000,3.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"31.000000,8.769927 31.000000,3.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"39.000000,8.769927 39.000000,3.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"47.000000,8.769927 47.000000,3.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"55.000000,8.769927 55.000000,3.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,3.769927 63.000000,3.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.22\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"3.000000,3.769927 3.000000,2.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"11.000000,3.769927 11.000000,2.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"19.000000,3.769927 19.000000,2.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"27.000000,3.769927 27.000000,2.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"35.000000,3.769927 35.000000,2.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"43.000000,3.769927 43.000000,2.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"51.000000,3.769927 51.000000,2.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"59.000000,3.769927 59.000000,2.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,85.769927 63.000000,85.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"1.6\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"5.000000,85.769927 5.000000,81.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.7\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"13.000000,85.769927 13.000000,82.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.7\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"21.000000,85.769927 21.000000,83.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.7\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"29.000000,85.769927 29.000000,81.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.7\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"37.000000,85.769927 37.000000,82.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.7\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"45.000000,85.769927 45.000000,83.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.7\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"53.000000,85.769927 53.000000,81.769927\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.7\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /></svg>",
+      "ROOF_2": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"65.0mm\" height=\"41.53516582367285mm\" viewBox=\"0 0 65.0 41.53516582367285\"><polygon points=\"0.000000,41.535166 65.000000,41.535166 65.000000,0.000000 0.000000,0.000000\" fill=\"#354b46\" stroke=\"none\" stroke-width=\"0\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,37.535166 63.000000,37.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.22\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"3.000000,37.535166 3.000000,32.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"11.000000,37.535166 11.000000,32.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"19.000000,37.535166 19.000000,32.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"27.000000,37.535166 27.000000,32.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"35.000000,37.535166 35.000000,32.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"43.000000,37.535166 43.000000,32.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"51.000000,37.535166 51.000000,32.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"59.000000,37.535166 59.000000,32.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,32.535166 63.000000,32.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.22\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"7.000000,32.535166 7.000000,27.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"15.000000,32.535166 15.000000,27.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"23.000000,32.535166 23.000000,27.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"31.000000,32.535166 31.000000,27.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"39.000000,32.535166 39.000000,27.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"47.000000,32.535166 47.000000,27.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"55.000000,32.535166 55.000000,27.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,27.535166 63.000000,27.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.22\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"3.000000,27.535166 3.000000,22.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"11.000000,27.535166 11.000000,22.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"19.000000,27.535166 19.000000,22.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"27.000000,27.535166 27.000000,22.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"35.000000,27.535166 35.000000,22.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"43.000000,27.535166 43.000000,22.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"51.000000,27.535166 51.000000,22.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"59.000000,27.535166 59.000000,22.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,22.535166 63.000000,22.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.22\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"7.000000,22.535166 7.000000,17.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"15.000000,22.535166 15.000000,17.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"23.000000,22.535166 23.000000,17.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"31.000000,22.535166 31.000000,17.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"39.000000,22.535166 39.000000,17.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"47.000000,22.535166 47.000000,17.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"55.000000,22.535166 55.000000,17.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,17.535166 63.000000,17.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.22\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"3.000000,17.535166 3.000000,12.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"11.000000,17.535166 11.000000,12.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"19.000000,17.535166 19.000000,12.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"27.000000,17.535166 27.000000,12.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"35.000000,17.535166 35.000000,12.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"43.000000,17.535166 43.000000,12.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"51.000000,17.535166 51.000000,12.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"59.000000,17.535166 59.000000,12.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,12.535166 63.000000,12.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.22\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"7.000000,12.535166 7.000000,7.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"15.000000,12.535166 15.000000,7.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"23.000000,12.535166 23.000000,7.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"31.000000,12.535166 31.000000,7.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"39.000000,12.535166 39.000000,7.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"47.000000,12.535166 47.000000,7.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"55.000000,12.535166 55.000000,7.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,7.535166 63.000000,7.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.22\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"3.000000,7.535166 3.000000,2.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"11.000000,7.535166 11.000000,2.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"19.000000,7.535166 19.000000,2.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"27.000000,7.535166 27.000000,2.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"35.000000,7.535166 35.000000,2.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"43.000000,7.535166 43.000000,2.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"51.000000,7.535166 51.000000,2.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"59.000000,7.535166 59.000000,2.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,2.535166 63.000000,2.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.22\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"7.000000,2.535166 7.000000,2.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"15.000000,2.535166 15.000000,2.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"23.000000,2.535166 23.000000,2.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"31.000000,2.535166 31.000000,2.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"39.000000,2.535166 39.000000,2.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"47.000000,2.535166 47.000000,2.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"55.000000,2.535166 55.000000,2.000000\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.18\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"2.000000,39.535166 63.000000,39.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"1.6\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"5.000000,39.535166 5.000000,35.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.7\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"13.000000,39.535166 13.000000,36.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.7\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"21.000000,39.535166 21.000000,37.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.7\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"29.000000,39.535166 29.000000,35.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.7\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"37.000000,39.535166 37.000000,36.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.7\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"45.000000,39.535166 45.000000,37.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.7\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /><polyline points=\"53.000000,39.535166 53.000000,35.535166\" fill=\"none\" stroke=\"#fff7e5\" stroke-width=\"0.7\" stroke-linejoin=\"round\" stroke-linecap=\"round\" /></svg>"
+    }
+  },
+  "limitations": [
+    "Open bottom; no floor or chimney. Doors and windows are printed decorations, not cut-outs.",
+    "Fixed preset dimensions. Physical assembly NOT_TESTED."
+  ]
+}

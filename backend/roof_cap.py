@@ -1,0 +1,130 @@
+"""A real, printable over-roof: retain structural shell, glue a larger cap above it."""
+import math
+import numpy as np
+from shapely.geometry import Polygon
+
+
+def build(t):
+    from .gingerbread import model,Panel,base,decorations
+    e=float(t.get('roof_overhang_mm',0))
+    if not e:return {},[],[],[]
+    rake=float(t.get('roof_rake_mm',6));lift=.4
+    shell,seams,_,_,_=model(t)
+    caps={}
+    for pid,p in shell.items():
+        if not pid.startswith('ROOF'):continue
+        side_edges={int(m['edge']) for seam in seams for m in seam['occurrences'] if m['panel']==pid and any(o['panel'] in ('LEFT','RIGHT') for o in seam['occurrences'])}
+        width,height=p.square.bounds[2:]
+        low=-e if 0 in side_edges else 0
+        high=height+e if 2 in side_edges else height
+        pts=[(0,0),(width+2*rake,0),(width+2*rake,high-low),(0,high-low)]
+        basis=np.linalg.lstsq(np.column_stack([p.points,np.ones(len(p.points))]),np.array(p.vertices),rcond=None)[0]
+        xyz=[(np.array([x-rake,y+low,1])@basis+np.array([0,0,lift])).tolist() for x,y in pts]
+        capid='CAP_'+pid;caps[capid]=Panel(capid,pts,xyz)
+    capseams=[]
+    for s in seams:
+        if not all('CAP_'+m['panel'] in caps for m in s['occurrences']):continue
+        mates=[dict(panel='CAP_'+m['panel'],edge=m['edge']) for m in s['occurrences']]
+        capseams.append(dict(id='R'+str(len(capseams)+1),occurrences=mates,length_mm=t['depth']+2*rake,fold_degrees=s['fold_degrees'],hinge=False))
+    used=set()
+    for s in capseams:
+        ids={m['panel'] for m in s['occurrences']}
+        s['hinge']=not (ids&used)
+        if s['hinge']:used.update(ids)
+        for m in s['occurrences']:caps[m['panel']].edges[m['edge']]=s['id']
+        if not s['hinge']:
+            owner=s['occurrences'][0];p=caps[owner['panel']]
+            p.tabs[owner['edge']]=base.base.flap_for_edge(*p.seg(owner['edge']),depth=3)
+    lookup={s['id']:s for s in capseams}
+    units=[base.construct_unit(tuple(m['panel'] for m in s['occurrences']),s['id'],caps,lookup) for s in capseams if s['hinge']]
+    placed={pid for u in units for pid in u.ids}
+    units.extend(base.construct_unit((pid,),None,caps,lookup) for pid in caps if pid not in placed)
+    if not all(base.fits(u) for u in units):raise ValueError('Over-roof exceeds paper: no scaling allowed')
+    pages=base.pack_units(units)
+    return caps,capseams,units,pages
+
+
+def artwork(t,p):
+    from .gingerbread import Panel
+    from .confectionery import house_art, Painter, CREAM, RED, GREEN
+    # Use roof artwork rather than the wall motifs selected by CAP_ IDs.
+    result=house_art(t,Panel('ROOF_CAP',p.points,p.vertices))
+    brush=Painter(p.square);w,h=p.square.bounds[2:]
+    # Thick sculpted icing and suspended icicles along the true outside perimeter.
+    for x in np.arange(3,w-2,4.8):
+        brush.pipe([(float(x),2),(float(x),4.2+1.2*math.sin(x))],2)
+    brush.pipe([(2,2),(w-2,2)],3.1)
+    for side in (2.4,w-2.4):
+        brush.pipe([(side,2),(side,h-2)],2.6)
+        for i,y in enumerate(np.arange(6,h-3,8)):
+            brush.jewel(side,float(y),1.1,RED if i%2 else GREEN)
+    return result+brush.shapes
+
+
+def layout(t):
+    from .gingerbread import base
+    caps,seams,units,pages=build(t)
+    result=[]
+    for page in pages:
+        pieces=[]
+        for i,u in enumerate(page['units']):
+            art=[];folds=[];labels=[];tabs=[];guide=[]
+            for pid in u.ids:
+                p=caps[pid]
+                for original in artwork(t,p):
+                    shape=dict(original)
+                    if shape['type']=='circle':shape['center']=u.transform(pid,shape['center'])
+                    else:shape['points']=[u.transform(pid,q) for q in shape['points']]
+                    art.append(shape)
+                for edge,tab in p.tabs.items():
+                    transformed=Polygon([u.transform(pid,q) for q in tab.exterior.coords])
+                    art.append(dict(type='polygon',points=list(transformed.exterior.coords),fill='#fff1d3'))
+                    tabs.append(transformed);labels.append((p.edges[edge],transformed.centroid.x,transformed.centroid.y))
+                    folds.append([u.transform(pid,q) for q in p.seg(edge)])
+                for edge,code in p.edges.items():
+                    a,b=p.seg(edge);mid=((a[0]+b[0])/2,(a[1]+b[1])/2)
+                    center=p.square.centroid;dx,dy=center.x-mid[0],center.y-mid[1];length=math.hypot(dx,dy)
+                    guide.append((code,*u.transform(pid,(mid[0]+dx/length*4,mid[1]+dy/length*4))))
+            if u.hinge_id:
+                s=next(s for s in seams if s['id']==u.hinge_id);m=s['occurrences'][0]
+                folds.append([u.transform(m['panel'],q) for q in caps[m['panel']].seg(m['edge'])])
+            pieces.append((dict(id='CAP_'+str(i),shape=u.shape(),art=art,folds=folds,labels=labels,tabs=tabs,guide=guide),0,0))
+        result.append(pieces)
+    return result
+
+
+def metadata(t):
+    caps,seams,units,pages=build(t)
+    return dict(sheet_count=len(pages),cut_pieces=len(units),fold_hinges=sum(s['hinge'] for s in seams),glue_seams=sum(not s['hinge'] for s in seams),
+                rake_mm=t.get('roof_rake_mm',6),slope_extension_mm=t.get('roof_overhang_mm',0),layer_offset_mm=.4)
+
+
+def validate(t):
+    from .gingerbread import model
+    from shapely.geometry import Point,LineString
+    caps,seams,units,pages=build(t)
+    if not caps:return []
+    shell=model(t)[0];coverage=True;parallel=True;matching=True;hinges=True
+    for pid,p in caps.items():
+        source=shell[pid.removeprefix('CAP_')]
+        origin=np.array(source.vertices[0]);normal=np.cross(np.subtract(source.vertices[1],origin),np.subtract(source.vertices[2],origin));normal/=np.linalg.norm(normal)
+        parallel &= all(abs(np.dot(np.array(v)-origin-np.array([0,0,.4]),normal))<1e-5 for v in p.vertices)
+        basis=np.linalg.lstsq(np.column_stack([p.points,np.ones(len(p.points))]),p.vertices,rcond=None)[0]
+        for v in source.vertices:
+            local=np.linalg.lstsq(basis.T,np.array(v)+[0,0,.4],rcond=None)[0]
+            coverage &= p.square.buffer(1e-5).covers(Point(local[0],local[1]))
+        coverage &= abs(min(v[1] for v in p.vertices)+t['depth']/2+t.get('roof_rake_mm',6))<1e-5
+        coverage &= abs(max(v[1] for v in p.vertices)-t['depth']/2-t.get('roof_rake_mm',6))<1e-5
+    for s in seams:
+        points=[]
+        for m in s['occurrences']:
+            p=caps[m['panel']];i=int(m['edge']);points.append((p.vertices[i],p.vertices[(i+1)%4]))
+        matching &= math.dist(points[0][0],points[1][1])<1e-5 and math.dist(points[0][1],points[1][0])<1e-5
+    for u in units:
+        if not u.hinge_id:continue
+        s=next(s for s in seams if s['id']==u.hinge_id)
+        segments=[[u.transform(m['panel'],q) for q in caps[m['panel']].seg(m['edge'])] for m in s['occurrences']]
+        hinges &= math.dist(segments[0][0],segments[1][1])<1e-5 and math.dist(segments[0][1],segments[1][0])<1e-5 and u.shape().boundary.intersection(LineString(segments[0])).length<1e-5
+    area=abs(sum(p.square.area+sum(tab.area for tab in p.tabs.values()) for p in caps.values())-sum(u.shape().area for u in units))<1e-5
+    tests=[('roof_cap_covers_support',coverage),('roof_cap_parallel_to_support',parallel),('roof_cap_3d_seams',matching),('roof_cap_uncut_hinges',hinges),('roof_cap_area_no_overlap',area)]
+    return [dict(name=name,status='PASS' if ok else 'FAIL',detail='6 mm front/back; 4 mm along outer slope; support retained') for name,ok in tests]

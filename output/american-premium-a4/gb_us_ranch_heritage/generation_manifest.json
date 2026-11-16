@@ -1,0 +1,227 @@
+{
+  "model_id": "GB-US-RANCH-HERITAGE",
+  "version": "gingerbread-2.0.0",
+  "project_id": "american-premium-samples",
+  "revision": 1,
+  "geometry_sha256": "fd50c969416aa7bc14aada14aa41a1d1c04ef79f733fcc2358d5de202084e501",
+  "source_spec_hash": "bf9a9f19bc3f7ffef3e7493b8d1799b5428230aa5c7289bda8e0ba06882c8e0e",
+  "design_sha256": "9f6443550041f08a08ba548ff3e1d014516eb65bd6c1c1a89baebd7edd40b975",
+  "template_version": "2.0.0",
+  "input": {
+    "preset": "gb_us_ranch_heritage",
+    "template": {
+      "id": "gb_us_ranch_heritage",
+      "name": "Mid-century Ranch · Heritage Christmas",
+      "subtitle": "Mid-century Ranch / Heritage Christmas",
+      "collection": "American Premium",
+      "model_family": "ranch",
+      "architecture": "Mid-century Ranch",
+      "finish": "Heritage Christmas",
+      "profile": [
+        [
+          0,
+          0
+        ],
+        [
+          0.5,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "material": "brick",
+      "premium": true,
+      "width": 115,
+      "depth": 60,
+      "wall_height": 58,
+      "roof_rise": 20,
+      "wall": "#efe4cf",
+      "roof": "#354b46",
+      "accent": "#8f3838",
+      "trim": "#fff7e5",
+      "background": "#ebe9df",
+      "motif": "american",
+      "difficulty": "Trung bình",
+      "description": "Nhà lấy cảm hứng từ Mid-century Ranch: mặt đứng brick, cửa chia ô, vòng lá Noel và mái lợp chi tiết. Phiên bản Heritage Christmas."
+    },
+    "paper": "A4",
+    "project_id": "american-premium-samples",
+    "revision": 1
+  },
+  "template": {
+    "id": "gb_us_ranch_heritage",
+    "name": "Mid-century Ranch · Heritage Christmas",
+    "subtitle": "Mid-century Ranch / Heritage Christmas",
+    "collection": "American Premium",
+    "model_family": "ranch",
+    "architecture": "Mid-century Ranch",
+    "finish": "Heritage Christmas",
+    "profile": [
+      [
+        0,
+        0
+      ],
+      [
+        0.5,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "material": "brick",
+    "premium": true,
+    "width": 115,
+    "depth": 60,
+    "wall_height": 58,
+    "roof_rise": 20,
+    "wall": "#efe4cf",
+    "roof": "#354b46",
+    "accent": "#8f3838",
+    "trim": "#fff7e5",
+    "background": "#ebe9df",
+    "motif": "american",
+    "difficulty": "Trung bình",
+    "description": "Nhà lấy cảm hứng từ Mid-century Ranch: mặt đứng brick, cửa chia ô, vòng lá Noel và mái lợp chi tiết. Phiên bản Heritage Christmas."
+  },
+  "qa_status": "PASS",
+  "algorithm": "gable-house-1.0; v1.2 rigid pairing + shelf packing",
+  "physical_assembly": "NOT_TESTED",
+  "artifacts": [
+    {
+      "path": "assembly_guide.pdf",
+      "sha256": "a1de9c2792595fb2956beb7706fa84b5bd688902eb3e3b3024068fc7c60aef4c",
+      "model_id": "GB-US-RANCH-HERITAGE",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "fd50c969416aa7bc14aada14aa41a1d1c04ef79f733fcc2358d5de202084e501",
+      "source_spec_hash": "bf9a9f19bc3f7ffef3e7493b8d1799b5428230aa5c7289bda8e0ba06882c8e0e",
+      "design_sha256": "9f6443550041f08a08ba548ff3e1d014516eb65bd6c1c1a89baebd7edd40b975",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "generation_manifest.json",
+      "sha256": "0608a9237f0709bdf617bee7b537d109dfa28857331ef10eb1a0de595d8f4e85",
+      "model_id": "GB-US-RANCH-HERITAGE",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "fd50c969416aa7bc14aada14aa41a1d1c04ef79f733fcc2358d5de202084e501",
+      "source_spec_hash": "bf9a9f19bc3f7ffef3e7493b8d1799b5428230aa5c7289bda8e0ba06882c8e0e",
+      "design_sha256": "9f6443550041f08a08ba548ff3e1d014516eb65bd6c1c1a89baebd7edd40b975",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "model.obj",
+      "sha256": "ed10ac981ba3996f33011b56c0d0c22119ece36480bae2939d23bdc1fdbb6932",
+      "model_id": "GB-US-RANCH-HERITAGE",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "fd50c969416aa7bc14aada14aa41a1d1c04ef79f733fcc2358d5de202084e501",
+      "source_spec_hash": "bf9a9f19bc3f7ffef3e7493b8d1799b5428230aa5c7289bda8e0ba06882c8e0e",
+      "design_sha256": "9f6443550041f08a08ba548ff3e1d014516eb65bd6c1c1a89baebd7edd40b975",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "model_3d_preview.png",
+      "sha256": "b6a529ce845552b45e3be5ae50102dd115ee1624f398d37e79c5a90b80619aaa",
+      "model_id": "GB-US-RANCH-HERITAGE",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "fd50c969416aa7bc14aada14aa41a1d1c04ef79f733fcc2358d5de202084e501",
+      "source_spec_hash": "bf9a9f19bc3f7ffef3e7493b8d1799b5428230aa5c7289bda8e0ba06882c8e0e",
+      "design_sha256": "9f6443550041f08a08ba548ff3e1d014516eb65bd6c1c1a89baebd7edd40b975",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "model_spec.json",
+      "sha256": "209062d73ad17d67828020325c72e1c2dbb5944614104f2d30a77cb58c46d9b8",
+      "model_id": "GB-US-RANCH-HERITAGE",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "fd50c969416aa7bc14aada14aa41a1d1c04ef79f733fcc2358d5de202084e501",
+      "source_spec_hash": "bf9a9f19bc3f7ffef3e7493b8d1799b5428230aa5c7289bda8e0ba06882c8e0e",
+      "design_sha256": "9f6443550041f08a08ba548ff3e1d014516eb65bd6c1c1a89baebd7edd40b975",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "printable_a4.pdf",
+      "sha256": "3c29739837080904d7a0729532387d84456046a7b911dbf353655610eba6ca9d",
+      "model_id": "GB-US-RANCH-HERITAGE",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "fd50c969416aa7bc14aada14aa41a1d1c04ef79f733fcc2358d5de202084e501",
+      "source_spec_hash": "bf9a9f19bc3f7ffef3e7493b8d1799b5428230aa5c7289bda8e0ba06882c8e0e",
+      "design_sha256": "9f6443550041f08a08ba548ff3e1d014516eb65bd6c1c1a89baebd7edd40b975",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "printable_preview.png",
+      "sha256": "8f969472aad3bba093358fc6fe5d3e973645daa655dfdef1b9357d99deaefa9c",
+      "model_id": "GB-US-RANCH-HERITAGE",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "fd50c969416aa7bc14aada14aa41a1d1c04ef79f733fcc2358d5de202084e501",
+      "source_spec_hash": "bf9a9f19bc3f7ffef3e7493b8d1799b5428230aa5c7289bda8e0ba06882c8e0e",
+      "design_sha256": "9f6443550041f08a08ba548ff3e1d014516eb65bd6c1c1a89baebd7edd40b975",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "project.zip",
+      "sha256": "90e17be3eb9563b87d10b192d0dff74df3235e9dc5b004814c50b56b70508eb3",
+      "model_id": "GB-US-RANCH-HERITAGE",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "fd50c969416aa7bc14aada14aa41a1d1c04ef79f733fcc2358d5de202084e501",
+      "source_spec_hash": "bf9a9f19bc3f7ffef3e7493b8d1799b5428230aa5c7289bda8e0ba06882c8e0e",
+      "design_sha256": "9f6443550041f08a08ba548ff3e1d014516eb65bd6c1c1a89baebd7edd40b975",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "svg_pages/page_001.svg",
+      "sha256": "803e8971d64a632dde1f5907742d97d07b3024bffea8f52cc506c45d8bd8ba4b",
+      "model_id": "GB-US-RANCH-HERITAGE",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "fd50c969416aa7bc14aada14aa41a1d1c04ef79f733fcc2358d5de202084e501",
+      "source_spec_hash": "bf9a9f19bc3f7ffef3e7493b8d1799b5428230aa5c7289bda8e0ba06882c8e0e",
+      "design_sha256": "9f6443550041f08a08ba548ff3e1d014516eb65bd6c1c1a89baebd7edd40b975",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "template_preview.svg",
+      "sha256": "0fcd0b1f5e2237d3d851f64d81931375887bc565b8e6dab9a5a5b18bef1d85c7",
+      "model_id": "GB-US-RANCH-HERITAGE",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "fd50c969416aa7bc14aada14aa41a1d1c04ef79f733fcc2358d5de202084e501",
+      "source_spec_hash": "bf9a9f19bc3f7ffef3e7493b8d1799b5428230aa5c7289bda8e0ba06882c8e0e",
+      "design_sha256": "9f6443550041f08a08ba548ff3e1d014516eb65bd6c1c1a89baebd7edd40b975",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "validation_report.json",
+      "sha256": "b10b885bedbe405acf0adc18ff9931be604cd286d727bc0ae63bd261797c92e7",
+      "model_id": "GB-US-RANCH-HERITAGE",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "fd50c969416aa7bc14aada14aa41a1d1c04ef79f733fcc2358d5de202084e501",
+      "source_spec_hash": "bf9a9f19bc3f7ffef3e7493b8d1799b5428230aa5c7289bda8e0ba06882c8e0e",
+      "design_sha256": "9f6443550041f08a08ba548ff3e1d014516eb65bd6c1c1a89baebd7edd40b975",
+      "template_version": "2.0.0"
+    }
+  ]
+}

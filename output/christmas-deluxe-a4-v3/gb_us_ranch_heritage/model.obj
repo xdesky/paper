@@ -1,0 +1,39 @@
+# {"design_sha256":"6e4e811f72861f1a5bec38675dc6b65780e61c67af0c6c6ac0ee8246a05f50eb","geometry_sha256":"fd50c969416aa7bc14aada14aa41a1d1c04ef79f733fcc2358d5de202084e501","model_id":"GB-US-RANCH-HERITAGE","project_id":"christmas-deluxe-samples","revision":1,"source_spec_hash":"2c7b2390c0b5a3847d22c85d0c775cec1276ef926ce348c68f4a5fbb1c099f66","template_version":"3.0.0","version":"gingerbread-3.0.0"}
+g FRONT
+v -57.5 -30.0 0
+v 57.5 -30.0 0
+v 57.5 -30.0 58
+v 0.0 -30.0 78
+v -57.5 -30.0 58
+f 1 2 3 4 5
+g BACK
+v -57.5 30.0 58
+v 0.0 30.0 78
+v 57.5 30.0 58
+v 57.5 30.0 0
+v -57.5 30.0 0
+f 6 7 8 9 10
+g RIGHT
+v 57.5 -30.0 0
+v 57.5 30.0 0
+v 57.5 30.0 58
+v 57.5 -30.0 58
+f 11 12 13 14
+g LEFT
+v -57.5 30.0 0
+v -57.5 -30.0 0
+v -57.5 -30.0 58
+v -57.5 30.0 58
+f 15 16 17 18
+g ROOF_1
+v 0.0 -30.0 78.0
+v 0.0 30.0 78.0
+v -57.5 30.0 58.0
+v -57.5 -30.0 58.0
+f 19 20 21 22
+g ROOF_2
+v 57.5 -30.0 58.0
+v 57.5 30.0 58.0
+v 0.0 30.0 78.0
+v 0.0 -30.0 78.0
+f 23 24 25 26

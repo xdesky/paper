@@ -1,0 +1,39 @@
+# {"design_sha256":"fdcb506110c99800255d100a49240254d857a7c509b09d08fec70145bd159306","geometry_sha256":"f8cba8524916b9dd0fa1b054abf6df9dd10820f9e748f366a64986faef344166","model_id":"GB-US-A-FRAME-MIDNIGHT","project_id":"overhang-samples","revision":1,"source_spec_hash":"1e20c2620e3045ea893ccb0b76786faab3c7768c0cd3642fd8773e5bcb6ec72e","template_version":"4.0.0","version":"gingerbread-4.0.0"}
+g FRONT
+v -45.0 -32.5 0
+v 45.0 -32.5 0
+v 45.0 -32.5 28
+v 0.0 -32.5 128
+v -45.0 -32.5 28
+f 1 2 3 4 5
+g BACK
+v -45.0 32.5 28
+v 0.0 32.5 128
+v 45.0 32.5 28
+v 45.0 32.5 0
+v -45.0 32.5 0
+f 6 7 8 9 10
+g RIGHT
+v 45.0 -32.5 0
+v 45.0 32.5 0
+v 45.0 32.5 28
+v 45.0 -32.5 28
+f 11 12 13 14
+g LEFT
+v -45.0 32.5 0
+v -45.0 -32.5 0
+v -45.0 -32.5 28
+v -45.0 32.5 28
+f 15 16 17 18
+g ROOF_1
+v 0.0 -32.5 128.0
+v 0.0 32.5 128.0
+v -45.0 32.5 28.0
+v -45.0 -32.5 28.0
+f 19 20 21 22
+g ROOF_2
+v 45.0 -32.5 28.0
+v 45.0 32.5 28.0
+v 0.0 32.5 128.0
+v 0.0 -32.5 128.0
+f 23 24 25 26

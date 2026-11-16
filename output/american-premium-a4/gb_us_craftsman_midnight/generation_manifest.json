@@ -1,0 +1,239 @@
+{
+  "model_id": "GB-US-CRAFTSMAN-MIDNIGHT",
+  "version": "gingerbread-2.0.0",
+  "project_id": "american-premium-samples",
+  "revision": 1,
+  "geometry_sha256": "3b6d5b41e06e144d56340ad3d890d239536bb247ffbb8d6333be0c6f3e56bd64",
+  "source_spec_hash": "6159bad2ae15c5b185bedc57e3f4b16f1515a6372235de29672c7abb379bc46b",
+  "design_sha256": "c083640e9a8e93ae69c5c9013baf71d998846480ff78bd6e0d7a212bb2f4567a",
+  "template_version": "2.0.0",
+  "input": {
+    "preset": "gb_us_craftsman_midnight",
+    "template": {
+      "id": "gb_us_craftsman_midnight",
+      "name": "Craftsman Bungalow · Midnight & Gold",
+      "subtitle": "Craftsman Bungalow / Midnight & Gold",
+      "collection": "American Premium",
+      "model_family": "craftsman",
+      "architecture": "Craftsman Bungalow",
+      "finish": "Midnight & Gold",
+      "profile": [
+        [
+          0,
+          0
+        ],
+        [
+          0.5,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "material": "timber",
+      "premium": true,
+      "width": 105,
+      "depth": 65,
+      "wall_height": 64,
+      "roof_rise": 28,
+      "wall": "#344c60",
+      "roof": "#29313f",
+      "accent": "#bb8648",
+      "trim": "#f5e8c6",
+      "background": "#e5e9ee",
+      "motif": "american",
+      "difficulty": "Trung bình",
+      "description": "Nhà lấy cảm hứng từ Craftsman Bungalow: mặt đứng timber, cửa chia ô, vòng lá Noel và mái lợp chi tiết. Phiên bản Midnight & Gold."
+    },
+    "paper": "A4",
+    "project_id": "american-premium-samples",
+    "revision": 1
+  },
+  "template": {
+    "id": "gb_us_craftsman_midnight",
+    "name": "Craftsman Bungalow · Midnight & Gold",
+    "subtitle": "Craftsman Bungalow / Midnight & Gold",
+    "collection": "American Premium",
+    "model_family": "craftsman",
+    "architecture": "Craftsman Bungalow",
+    "finish": "Midnight & Gold",
+    "profile": [
+      [
+        0,
+        0
+      ],
+      [
+        0.5,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "material": "timber",
+    "premium": true,
+    "width": 105,
+    "depth": 65,
+    "wall_height": 64,
+    "roof_rise": 28,
+    "wall": "#344c60",
+    "roof": "#29313f",
+    "accent": "#bb8648",
+    "trim": "#f5e8c6",
+    "background": "#e5e9ee",
+    "motif": "american",
+    "difficulty": "Trung bình",
+    "description": "Nhà lấy cảm hứng từ Craftsman Bungalow: mặt đứng timber, cửa chia ô, vòng lá Noel và mái lợp chi tiết. Phiên bản Midnight & Gold."
+  },
+  "qa_status": "PASS",
+  "algorithm": "gable-house-1.0; v1.2 rigid pairing + shelf packing",
+  "physical_assembly": "NOT_TESTED",
+  "artifacts": [
+    {
+      "path": "assembly_guide.pdf",
+      "sha256": "987e3ebd37437eb30ed543257b0430192968de96d038cd2419321941af339bed",
+      "model_id": "GB-US-CRAFTSMAN-MIDNIGHT",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "3b6d5b41e06e144d56340ad3d890d239536bb247ffbb8d6333be0c6f3e56bd64",
+      "source_spec_hash": "6159bad2ae15c5b185bedc57e3f4b16f1515a6372235de29672c7abb379bc46b",
+      "design_sha256": "c083640e9a8e93ae69c5c9013baf71d998846480ff78bd6e0d7a212bb2f4567a",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "generation_manifest.json",
+      "sha256": "3b373068be77bc057d836f81b623c993acb7a0a6c3d209f67278437193352e2c",
+      "model_id": "GB-US-CRAFTSMAN-MIDNIGHT",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "3b6d5b41e06e144d56340ad3d890d239536bb247ffbb8d6333be0c6f3e56bd64",
+      "source_spec_hash": "6159bad2ae15c5b185bedc57e3f4b16f1515a6372235de29672c7abb379bc46b",
+      "design_sha256": "c083640e9a8e93ae69c5c9013baf71d998846480ff78bd6e0d7a212bb2f4567a",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "model.obj",
+      "sha256": "924074e074e9af18c0a3048c1b91efecdc2ccc2e284dcbab34d78370870d2ea4",
+      "model_id": "GB-US-CRAFTSMAN-MIDNIGHT",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "3b6d5b41e06e144d56340ad3d890d239536bb247ffbb8d6333be0c6f3e56bd64",
+      "source_spec_hash": "6159bad2ae15c5b185bedc57e3f4b16f1515a6372235de29672c7abb379bc46b",
+      "design_sha256": "c083640e9a8e93ae69c5c9013baf71d998846480ff78bd6e0d7a212bb2f4567a",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "model_3d_preview.png",
+      "sha256": "7273364bbab200a4587f23c7a73a0ff077c0ab6a77c6ff2f476bc306028ab0cf",
+      "model_id": "GB-US-CRAFTSMAN-MIDNIGHT",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "3b6d5b41e06e144d56340ad3d890d239536bb247ffbb8d6333be0c6f3e56bd64",
+      "source_spec_hash": "6159bad2ae15c5b185bedc57e3f4b16f1515a6372235de29672c7abb379bc46b",
+      "design_sha256": "c083640e9a8e93ae69c5c9013baf71d998846480ff78bd6e0d7a212bb2f4567a",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "model_spec.json",
+      "sha256": "0fc0e4249952a2323fc1ba8e5adcf0a35469e7cd245552bcc462b066e12b48e4",
+      "model_id": "GB-US-CRAFTSMAN-MIDNIGHT",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "3b6d5b41e06e144d56340ad3d890d239536bb247ffbb8d6333be0c6f3e56bd64",
+      "source_spec_hash": "6159bad2ae15c5b185bedc57e3f4b16f1515a6372235de29672c7abb379bc46b",
+      "design_sha256": "c083640e9a8e93ae69c5c9013baf71d998846480ff78bd6e0d7a212bb2f4567a",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "printable_a4.pdf",
+      "sha256": "69c44c936268212ee4c0eecd431d38e8d1b0dd76d02d6b7e17561930656fc253",
+      "model_id": "GB-US-CRAFTSMAN-MIDNIGHT",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "3b6d5b41e06e144d56340ad3d890d239536bb247ffbb8d6333be0c6f3e56bd64",
+      "source_spec_hash": "6159bad2ae15c5b185bedc57e3f4b16f1515a6372235de29672c7abb379bc46b",
+      "design_sha256": "c083640e9a8e93ae69c5c9013baf71d998846480ff78bd6e0d7a212bb2f4567a",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "printable_preview.png",
+      "sha256": "dd5c08a7c555e37554370708a286e3ad6201251121ac0db4257bc2297bc124f2",
+      "model_id": "GB-US-CRAFTSMAN-MIDNIGHT",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "3b6d5b41e06e144d56340ad3d890d239536bb247ffbb8d6333be0c6f3e56bd64",
+      "source_spec_hash": "6159bad2ae15c5b185bedc57e3f4b16f1515a6372235de29672c7abb379bc46b",
+      "design_sha256": "c083640e9a8e93ae69c5c9013baf71d998846480ff78bd6e0d7a212bb2f4567a",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "project.zip",
+      "sha256": "bab1b20d90d74e0a9825184fb9ecfa703b2644c1ced69f68cc19efe559a14620",
+      "model_id": "GB-US-CRAFTSMAN-MIDNIGHT",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "3b6d5b41e06e144d56340ad3d890d239536bb247ffbb8d6333be0c6f3e56bd64",
+      "source_spec_hash": "6159bad2ae15c5b185bedc57e3f4b16f1515a6372235de29672c7abb379bc46b",
+      "design_sha256": "c083640e9a8e93ae69c5c9013baf71d998846480ff78bd6e0d7a212bb2f4567a",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "svg_pages/page_001.svg",
+      "sha256": "331dafc837fd6e8583c41c47f9f582cdb75b899b7760f02a60a35bc80347acc2",
+      "model_id": "GB-US-CRAFTSMAN-MIDNIGHT",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "3b6d5b41e06e144d56340ad3d890d239536bb247ffbb8d6333be0c6f3e56bd64",
+      "source_spec_hash": "6159bad2ae15c5b185bedc57e3f4b16f1515a6372235de29672c7abb379bc46b",
+      "design_sha256": "c083640e9a8e93ae69c5c9013baf71d998846480ff78bd6e0d7a212bb2f4567a",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "svg_pages/page_002.svg",
+      "sha256": "a625090e3a48e983c75074f5414feddcf28fa239bbbee2ad7b1c7372080a95da",
+      "model_id": "GB-US-CRAFTSMAN-MIDNIGHT",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "3b6d5b41e06e144d56340ad3d890d239536bb247ffbb8d6333be0c6f3e56bd64",
+      "source_spec_hash": "6159bad2ae15c5b185bedc57e3f4b16f1515a6372235de29672c7abb379bc46b",
+      "design_sha256": "c083640e9a8e93ae69c5c9013baf71d998846480ff78bd6e0d7a212bb2f4567a",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "template_preview.svg",
+      "sha256": "8298b5c9a7ac8f09e2625724dc916b6ee908df950fa333c1024734285e20fcb5",
+      "model_id": "GB-US-CRAFTSMAN-MIDNIGHT",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "3b6d5b41e06e144d56340ad3d890d239536bb247ffbb8d6333be0c6f3e56bd64",
+      "source_spec_hash": "6159bad2ae15c5b185bedc57e3f4b16f1515a6372235de29672c7abb379bc46b",
+      "design_sha256": "c083640e9a8e93ae69c5c9013baf71d998846480ff78bd6e0d7a212bb2f4567a",
+      "template_version": "2.0.0"
+    },
+    {
+      "path": "validation_report.json",
+      "sha256": "ee14efa0ef913717bbba54f6193a3ccd254c0f80143611e6e8e3beb588c9abff",
+      "model_id": "GB-US-CRAFTSMAN-MIDNIGHT",
+      "version": "gingerbread-2.0.0",
+      "project_id": "american-premium-samples",
+      "revision": 1,
+      "geometry_sha256": "3b6d5b41e06e144d56340ad3d890d239536bb247ffbb8d6333be0c6f3e56bd64",
+      "source_spec_hash": "6159bad2ae15c5b185bedc57e3f4b16f1515a6372235de29672c7abb379bc46b",
+      "design_sha256": "c083640e9a8e93ae69c5c9013baf71d998846480ff78bd6e0d7a212bb2f4567a",
+      "template_version": "2.0.0"
+    }
+  ]
+}
