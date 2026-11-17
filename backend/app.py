@@ -20,6 +20,7 @@ from fastapi.responses import FileResponse, Response
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field, ConfigDict, field_validator
 from .personalization import normalize_name
+from .design_options import DesignOptions,OPTIONS,apply_design
 from .template_catalog import BY_ID, TEMPLATES, CATALOG_VERSION, public_template
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -32,6 +33,7 @@ class CreateProject(BaseModel):
     name: str = Field(min_length=1, max_length=100)
     preset: Preset = 'cube_100'
     paper: Literal['US Letter', 'A4'] = 'US Letter'
+    design: DesignOptions = Field(default_factory=DesignOptions)
     personal_name: str = Field(default='', max_length=24)
     _name = field_validator('personal_name',mode='before')(normalize_name)
 
@@ -41,11 +43,13 @@ class EditProject(BaseModel):
     name: str | None = Field(default=None, min_length=1, max_length=100)
     preset: Preset | None = None
     paper: Literal['US Letter', 'A4'] | None = None
+    design: DesignOptions | None = None
     personal_name: str | None = Field(default=None,max_length=24)
     _name = field_validator('personal_name',mode='before')(normalize_name)
 
 
 class NamePreview(BaseModel):
+    design: DesignOptions = Field(default_factory=DesignOptions)
     model_config = ConfigDict(extra='forbid')
     personal_name: str = Field(default='',max_length=24)
     _name = field_validator('personal_name',mode='before')(normalize_name)
@@ -55,7 +59,7 @@ def now():
     return datetime.now(timezone.utc).isoformat()
 
 
-def create_app(data_dir=None, seed=True):
+def create_app(data_dir=None, seed=False):
     data = Path(data_dir or os.getenv('PPM_DATA_DIR', str(ROOT / '.data'))).resolve()
     data.mkdir(parents=True, exist_ok=True)
     db_path = data / 'studio.sqlite3'
@@ -83,17 +87,23 @@ def create_app(data_dir=None, seed=True):
         if 'personal_name' not in {row['name'] for row in db.execute('PRAGMA table_info(projects)')}:
             db.execute("ALTER TABLE projects ADD COLUMN personal_name TEXT NOT NULL DEFAULT ''")
 
+        if 'design' not in {row['name'] for row in db.execute('PRAGMA table_info(projects)')}:
+            db.execute("ALTER TABLE projects ADD COLUMN design TEXT NOT NULL DEFAULT '{}'")
+
+    def serialize_project(row):
+        p=dict(row);p['design']=DesignOptions(**json.loads(p['design'])).model_dump();return p
+
     def project(pid):
         with connection() as db:
             row = db.execute('SELECT * FROM projects WHERE id=?', (pid,)).fetchone()
         if not row:
             raise HTTPException(404, 'Project not found')
-        return dict(row)
+        return serialize_project(row)
 
     def create(body):
         pid = uuid.uuid4().hex
         with connection() as db:
-            db.execute('INSERT INTO projects (id,name,preset,revision,result_revision,status,created_at,updated_at,paper,personal_name) VALUES(?,?,?,?,?,?,?,?,?,?)', (pid, body.name, body.preset, 1, None, 'DRAFT', now(), now(), body.paper,body.personal_name))
+            db.execute('INSERT INTO projects (id,name,preset,revision,result_revision,status,created_at,updated_at,paper,personal_name,design) VALUES(?,?,?,?,?,?,?,?,?,?,?)', (pid, body.name, body.preset, 1, None, 'DRAFT', now(), now(), body.paper,body.personal_name,body.design.model_dump_json()))
         return project(pid)
 
     def update_job(jid, status, stage, error=None):
@@ -141,9 +151,9 @@ def create_app(data_dir=None, seed=True):
             rev = row['revision']
             if db.execute('SELECT 1 FROM revisions WHERE project_id=? AND revision=?', (pid, rev)).fetchone():
                 rev += 1
-            snapshot = {'project_id': pid, 'revision': rev, 'preset': row['preset'], 'paper': row['paper'], 'personal_name':row['personal_name'], 'scale': 1.0, 'engine_version': '1.2.0'}
+            snapshot = {'project_id': pid, 'revision': rev, 'preset': row['preset'], 'paper': row['paper'], 'personal_name':row['personal_name'], 'design':json.loads(row['design']), 'scale': 1.0, 'engine_version': '1.2.0'}
             if row['preset'] in BY_ID:
-                snapshot.update(engine_version='gingerbread-4.0.0', template={**BY_ID[row['preset']],**({'personal_name':row['personal_name']} if row['personal_name'] else {})}, template_version=CATALOG_VERSION)
+                snapshot.update(engine_version='gingerbread-4.0.0', template={**apply_design(BY_ID[row['preset']],json.loads(row['design'])),**({'personal_name':row['personal_name']} if row['personal_name'] else {})}, template_version=CATALOG_VERSION)
             jid = uuid.uuid4().hex
             db.execute('INSERT INTO revisions VALUES(?,?,?,?)', (pid, rev, json.dumps(snapshot), now()))
             db.execute('INSERT INTO jobs VALUES(?,?,?,?,?,?,?,?)', (jid, pid, rev, 'QUEUED', 'Queued', None, now(), now()))
@@ -175,6 +185,10 @@ def create_app(data_dir=None, seed=True):
     def presets():
         return {**PRESETS, **{t['id']: t['name'] for t in TEMPLATES}}
 
+    @app.get('/api/design-options')
+    def design_options():
+        return {key:[dict(id=id,label=label) for id,label in values] for key,values in OPTIONS.items()}
+
     @app.get('/api/templates')
     def templates():
         from .gingerbread import model
@@ -183,7 +197,7 @@ def create_app(data_dir=None, seed=True):
             panels,seams,units,pages,_=model(t)
             from .roof_cap import metadata
             cap=metadata(t)
-            result.append({**public_template(t),'sheet_count':len(pages)+2+cap['sheet_count'],'roof_cap':cap,'house_sheet_count':len(pages),'house_cut_pieces':len(units),'accessory_cut_pieces':5+cap['cut_pieces'],'cut_pieces':len(units)+5+cap['cut_pieces'],'face_count':len(panels),'fold_hinges':sum(s['hinge'] for s in seams),'glue_seams':sum(not s['hinge'] for s in seams)})
+            result.append({**public_template(t),'sheet_count':len(pages)+2+cap['sheet_count']+int(bool(t.get('chimney'))),'roof_cap':cap,'house_sheet_count':len(pages),'house_cut_pieces':len(units),'accessory_cut_pieces':5+cap['cut_pieces']+int(bool(t.get('chimney'))),'cut_pieces':len(units)+5+cap['cut_pieces']+int(bool(t.get('chimney'))),'face_count':len(panels),'fold_hinges':sum(s['hinge'] for s in seams),'glue_seams':sum(not s['hinge'] for s in seams)})
         return result
 
     @app.get('/api/templates/{template_id}/preview.svg')
@@ -197,12 +211,12 @@ def create_app(data_dir=None, seed=True):
     def personalized_preview(template_id: str, body: NamePreview):
         if template_id not in BY_ID:raise HTTPException(404,'Template not found')
         from .gingerbread import preview_svg
-        return Response(preview_svg({**BY_ID[template_id],'personal_name':body.personal_name}),media_type='image/svg+xml',headers={'Cache-Control':'no-store'})
+        return Response(preview_svg({**apply_design(BY_ID[template_id],body.design.model_dump()),'personal_name':body.personal_name}),media_type='image/svg+xml',headers={'Cache-Control':'no-store'})
 
     @app.get('/api/projects')
     def projects():
         with connection() as db:
-            return [dict(r) for r in db.execute('SELECT * FROM projects ORDER BY created_at')]
+            return [serialize_project(r) for r in db.execute('SELECT * FROM projects ORDER BY created_at')]
 
     @app.post('/api/projects', status_code=201)
     def new_project(body: CreateProject):
@@ -225,14 +239,16 @@ def create_app(data_dir=None, seed=True):
                 raise HTTPException(404, 'Project not found')
             if row['status'] == 'GENERATING':
                 raise HTTPException(409, 'Wait for current generation')
-            changed = (body.preset is not None and body.preset != row['preset']) or (body.paper is not None and body.paper != row['paper']) or (body.personal_name is not None and body.personal_name != row['personal_name'])
-            db.execute('UPDATE projects SET name=?,preset=?,paper=?,personal_name=?,revision=?,status=?,updated_at=? WHERE id=?', (body.name or row['name'], body.preset or row['preset'], body.paper or row['paper'], body.personal_name if body.personal_name is not None else row['personal_name'], row['revision'] + int(changed), 'STALE' if changed else row['status'], now(), pid))
+            design=body.design.model_dump_json() if body.design is not None else row['design']
+            design_changed=DesignOptions(**json.loads(design))!=DesignOptions(**json.loads(row['design']))
+            changed = design_changed or (body.preset is not None and body.preset != row['preset']) or (body.paper is not None and body.paper != row['paper']) or (body.personal_name is not None and body.personal_name != row['personal_name'])
+            db.execute('UPDATE projects SET name=?,preset=?,paper=?,personal_name=?,design=?,revision=?,status=?,updated_at=? WHERE id=?', (body.name or row['name'], body.preset or row['preset'], body.paper or row['paper'], body.personal_name if body.personal_name is not None else row['personal_name'], design, row['revision'] + int(changed), 'STALE' if changed else row['status'], now(), pid))
         return project(pid)
 
     @app.post('/api/projects/{pid}/duplicate', status_code=201)
     def duplicate(pid: str):
         p = project(pid)
-        return create(CreateProject(name=(p['name'][:90] + ' (bản sao)'), preset=p['preset'], paper=p['paper'],personal_name=p['personal_name']))
+        return create(CreateProject(name=(p['name'][:90] + ' (bản sao)'), preset=p['preset'], paper=p['paper'],personal_name=p['personal_name'],design=p['design']))
 
     @app.delete('/api/projects/{pid}', status_code=204)
     def delete(pid: str):
@@ -284,9 +300,11 @@ def create_app(data_dir=None, seed=True):
         return read_artifact(pid, 'validation_report.json')
 
     @app.get('/api/projects/{pid}/pages')
-    def pages(pid: str):
+    def pages(pid: str, style: Literal['color','coloring'] = 'color'):
         root = artifact_root(pid)
-        return [{'number': i+1, 'url': f'/api/projects/{pid}/artifacts/svg_pages/{p.name}'} for i, p in enumerate(sorted((root / 'svg_pages').glob('*.svg')))]
+        folder='coloring_svg_pages' if style=='coloring' else 'svg_pages'
+        if not (root/folder).exists():raise HTTPException(409,'Bấm Generate để tạo bản tự tô cho dự án này.')
+        return [{'number': i+1, 'url': f'/api/projects/{pid}/artifacts/{folder}/{p.name}'} for i, p in enumerate(sorted((root / folder).glob('*.svg')))]
 
     @app.get('/api/projects/{pid}/artifacts')
     def artifacts(pid: str):
@@ -294,10 +312,12 @@ def create_app(data_dir=None, seed=True):
         return [{'name': p.relative_to(root).as_posix(), 'url': f'/api/projects/{pid}/artifacts/{p.relative_to(root).as_posix()}'} for p in sorted(root.rglob('*')) if p.is_file()]
 
     @app.get('/api/projects/{pid}/print')
-    def print_project(pid: str):
+    def print_project(pid: str, style: Literal['color','coloring'] = 'color'):
         root = artifact_root(pid)
-        title = html.escape(project(pid)['name'])
-        sheets = ''.join('<section class="sheet">'+re.sub(r'<\?xml[^>]*\?>', '', p.read_text())+'</section>' for p in sorted((root/'svg_pages').glob('*.svg')))
+        folder='coloring_svg_pages' if style=='coloring' else 'svg_pages'
+        if not (root/folder).exists():raise HTTPException(409,'Bấm Generate để tạo bản tự tô cho dự án này.')
+        title = html.escape(project(pid)['name']) + (' — Bản tự tô' if style=='coloring' else ' — Bản màu')
+        sheets = ''.join('<section class="sheet">'+re.sub(r'<\?xml[^>]*\?>', '', p.read_text())+'</section>' for p in sorted((root/folder).glob('*.svg')))
         document = '''<!doctype html><html lang="vi"><meta charset="utf-8"><title>Print — '''+title+'''</title>
 <style>@page{size:215.9mm 279.4mm;margin:0}*{box-sizing:border-box}body{margin:0;background:#e8ece7;font:14px system-ui}header{padding:16px;text-align:center;background:white}button{padding:10px 20px;cursor:pointer}.sheet{width:215.9mm;height:279.4mm;margin:12px auto;background:white;break-after:page;overflow:hidden}.sheet:last-child{break-after:auto}.sheet svg{display:block;width:215.9mm;height:279.4mm}@media print{header{display:none}body{background:white}.sheet{margin:0}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style>
 <header><strong>'''+title+'''</strong><p>US Letter · Scale 100% · Không Fit to Page · Tắt headers/footers của trình duyệt. Đo vạch 40 mm trước khi cắt.</p><button onclick="window.print()">Print / In ngay</button></header>'''+sheets+'''<script>window.addEventListener('load',()=>{document.fonts.ready.then(()=>window.print())});</script></html>'''

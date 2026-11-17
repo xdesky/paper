@@ -6,7 +6,7 @@ from backend.gingerbread import model, generate, base
 from backend.paper import configure_engine
 from backend.roof_cap import validate
 
-HOUSES=[t for t in TEMPLATES if t.get('bay_count')==2]
+HOUSES=[t for t in TEMPLATES if t['collection']=='Nhà 2 gian']
 
 @pytest.mark.parametrize('template',HOUSES,ids=lambda t:t['id'])
 def test_two_bay_roof_and_a4_export(template,tmp_path):

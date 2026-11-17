@@ -16,12 +16,12 @@ function Sheet({page,spec,seam,onSelectSeam,layers}:{page:PrintPage}&Pick<Props,
   if(!host.current)return;
   const codes=new Set(spec?.geometry.seams.map(s=>s.id));
   host.current.querySelectorAll('polygon,line,text').forEach(node=>{
-   const stroke=node.getAttribute('stroke'),fill=node.getAttribute('fill');let visible=true;
+   const stroke=node.getAttribute('data-original-stroke')||node.getAttribute('stroke'),fill=node.getAttribute('data-original-fill')||node.getAttribute('fill');let visible=true;
    if(stroke==='#16252e')visible=layers.CUT;
    if(stroke==='#9a3971'||stroke==='#216c94'||stroke==='#b27d19')visible=layers.FOLD;
    if(fill==='#fff1d3')visible=layers.TABS;
    const isCode=codes.has(node.textContent||'');
-   if(spec?.scene_accessories&&/^[ABR][1-7]$/.test(node.textContent||''))visible=layers.CODES;
+   if(spec?.scene_accessories&&/^[ABRC][1-7]$/.test(node.textContent||''))visible=layers.CODES;
    if(isCode){visible=layers.CODES;node.classList.add('seam-code');node.setAttribute('tabindex',visible?'0':'-1');node.setAttribute('role','button');node.setAttribute('aria-label','Mối nối '+node.textContent);node.classList.toggle('chosen',node.textContent===seam);}
    (node as SVGElement).style.opacity=visible?'1':'0';(node as SVGElement).style.pointerEvents=visible?'auto':'none';
   });

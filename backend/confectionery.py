@@ -25,7 +25,10 @@ class Painter:
             if width>1:
                 outline=LineString(points).buffer(width/2).intersection(self.shape.buffer(-.15))
                 for shape in [outline] if outline.geom_type=='Polygon' else getattr(outline,'geoms',[]):
-                    if shape.geom_type=='Polygon':self.polygon(shape.exterior.coords,'#ffffff')
+                    if shape.geom_type=='Polygon':
+                        from shapely.geometry.polygon import orient
+                        shape=orient(shape)
+                        self.shapes.append(dict(type='compound',points=list(shape.exterior.coords),rings=[list(shape.exterior.coords)]+[list(r.coords) for r in shape.interiors],fill='#ffffff',stroke='#222222',width=.25))
                 return
             color='#222222';width=.25
         g=LineString(points).intersection(self.shape.buffer(-width/2-.015))
@@ -133,6 +136,7 @@ def house_art(t,panel):
                 shape=dict(original)
                 if shape['type']=='circle':shape['center']=[shape['center'][0]+left,shape['center'][1]]
                 else:shape['points']=[(x+left,y) for x,y in shape['points']]
+                if 'rings' in shape:shape['rings']=[[(x+left,y) for x,y in ring] for ring in shape['rings']]
                 shapes.append(shape)
         return shapes
     p=Painter(panel.square);w,h=panel.square.bounds[2:];roof=panel.id.startswith('ROOF')
@@ -144,6 +148,10 @@ def house_art(t,panel):
         x=2+(i*17.39)%(w-4);y=2+(i*11.71)%(h-4)
         p.circle(x,y,.18+(i%3)*.06,mix(color,'#653418',.15))
     if roof:
+        style=t.get('design',{}).get('roof','classic')
+        if style!='classic':
+            from .design_art import roof as paint_roof
+            paint_roof(p,w,h,style);return p.shapes
         for row,y in enumerate(range(6,int(h)-1,12)):
             pts=[(2+(w-4)*i/100,y+1.2*math.cos(i*(w-4)*math.pi/800)) for i in range(101)]
             p.pipe(pts,4.4)
@@ -154,6 +162,8 @@ def house_art(t,panel):
             for x in range(17,int(w)-8,32):p.peppermint(x,y,3.2)
         return p.shapes
     wh=min(t['wall_height'],h)
+    from .design_art import wall as paint_wall
+    paint_wall(p,w,wh,t.get('design',{}).get('wall','classic'))
     # Candy cane corner posts, with shaded red diagonal stripes.
     for x in (3.5,w-3.5):
         p.line([(x,3),(x,wh-3)],'#9d4e2d',3.8)
@@ -214,8 +224,12 @@ def house_art(t,panel):
     return p.shapes
 
 
-def tree_art(shape):
-    p=Painter(shape);p.polygon(shape.exterior.coords,'#155936')
+def tree_art(shape,style='classic'):
+    p=Painter(shape)
+    if style!='classic':
+        from .design_art import tree as paint_tree
+        paint_tree(p,style);return p.shapes
+    p.polygon(shape.exterior.coords,'#155936')
     for y,half in [(9,12),(23,9),(38,6),(52,3)]:
         pts=[(16-half+2*half*i/40,y+1.6*math.cos(i*math.pi/10)) for i in range(41)]
         p.pipe(pts,2)
@@ -224,8 +238,11 @@ def tree_art(shape):
     return p.shapes
 
 
-def gift_art(size,color,top=False):
+def gift_art(size,color,top=False,style='classic'):
     p=Painter(box(0,0,size,size))
+    if style!='classic':
+        from .design_art import gift as paint_gift
+        paint_gift(p,size,style,top);return p.shapes
     if COLORING.get():p.rect(0,0,size,size,'#ffffff')
     for i in range(0 if COLORING.get() else 20):p.rect(i*size/20,0,size/20+.25,size,mix(color,'#ffffff',.18*math.sin(i*math.pi/20)))
     for x in (.15,.32,.68,.85):

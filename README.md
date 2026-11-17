@@ -197,3 +197,21 @@ API thêm `personal_name` vào create/edit project và `POST /api/templates/{id}
 Kho template → **Nhà 2 gian** thêm 6 mẫu: Song đôi, Cổ tích (gian chính–gian phụ), Nông trại Noel; mỗi kiểu có Heritage Christmas và Midnight & Gold. Tổng thư viện hiện có 32 mẫu. Hai gian chung thân nhà đáy mở, có hai chóp mái thật và thung mái lõm nối giữa, không có vách ngăn nội thất. Mỗi gian có cửa, cửa sổ, hoạ tiết và lối đi riêng trên đế tuyết. Giữ mái đua, cây thông, hộp quà và bảng tên cá nhân hoá; bảng tên nằm dưới vùng thung mái để không đè vào đường cắt.
 
 Hỗ trợ A4/US Letter ở tỷ lệ 100%, hướng dẫn phân biệt đỉnh mái lồi và thung mái lõm. Bộ 6 file mẫu A4: `output/two-bay-a4-v4.1/nha-banh-gung-2-gian-6-mau-a4.zip`. Đã kiểm định hình học và bản in; chưa lắp giấy thật.
+
+### Noel nâng cao & bản tự tô — catalog 4.2.0
+
+Thêm 6 mẫu trong **Noel nâng cao**: Tháp kẹo mái gãy (5 mặt mái), Biệt thự mái kép (8 mặt mái), Nhà 3 gian Giáng sinh (6 mặt mái); mỗi kiểu có Rose Candy và Peppermint Mint. Thư viện hiện có 38 mẫu. Đây là kết cấu giấy từ hệ thống, lấy cảm hứng màu sắc từ ảnh tham khảo; chưa có ống khói hoặc mái chóp đa giác rời.
+
+Sau Generate, chọn **Bản in → Bản màu / Bản tự tô (nét đen)** ở thanh công cụ. Preview 2D và Print đổi theo lựa chọn; trong **Xuất file**, nút **Tải PDF** tải đúng phiên bản đã chọn. Cả hai phiên bản có sẵn trong ZIP, áp dụng cho mọi mẫu bánh gừng và cả A4/US Letter. Dự án cũ cần Generate một lần để bổ sung file tự tô; đổi kiểu bản in không tạo revision mới. Mô hình 3D vẫn hiển thị phối màu gốc.
+
+Bản tự tô dùng nét vector đen trên nền trắng, bỏ texture và bóng đổ, giữ cửa/cửa sổ/kem/kẹo/bảng tên, đường cắt, nét đứt gấp, mã ghép, kích thước và vạch 40 mm. Các SVG đặt tại `coloring_svg_pages/`, PDF có hậu tố `_coloring.pdf`. API `/pages` và `/print` nhận `?style=coloring` (mặc định `color`). Bộ mẫu: `output/advanced-coloring-a4-v4.2/noel-nang-cao-6-mau-mau-va-tu-to.zip`.
+
+### Ống khói nhà cổ điển — catalog 4.3.0
+
+Bổ sung ống khói cho 6 mẫu Noel ban đầu và các dòng Cape Cod, Colonial, Saltbox, Dutch Colonial, Craftsman, Farmhouse, Ranch (20 mẫu). Ống khói là phần giấy 3D rỗng miệng, thân gạch viền tuyết, một mảnh liền với 3 nếp gấp đứng, tai đóng mép C1 và 4 tai chân vát theo mặt mái. Thêm một trang in, giữ nguyên kết cấu thân nhà, mái và các phụ kiện trước đó. Khung định vị được in trên mặt mái phủ; hướng dẫn chỉ rõ cách gấp chân vào trong và dán lên mái, không khoét mái.
+
+Có trong preview thư viện, 3D, OBJ toàn cảnh, PDF/SVG màu và tự tô. Dự án cũ bấm Generate để lấy mẫu mới; snapshot lịch sử không có trường `chimney` vẫn giữ thiết kế cũ. Chưa cắt/dán thử bằng giấy thật.
+
+### Bố trí ống khói theo dáng nhà — catalog 4.4.0
+
+Chỉ 14 mẫu dáng thấp phù hợp còn ống khói. Loại các dáng cao (tường từ 95 mm hoặc tổng chiều cao trên 140 mm), gồm Forest, Frost, Colonial và Farmhouse. Với mẫu mới, chọn mặt mái có chiều dài dốc thực tế lớn nhất; nếu bằng nhau chọn bên phải. Khung định vị và chân vát được tính lại theo mặt mái được chọn. Snapshot v4.3 vẫn giữ vị trí cũ; Generate dự án để cập nhật quy tắc mới.

@@ -1,7 +1,7 @@
 """A real, printable over-roof: retain structural shell, glue a larger cap above it."""
 import math
 import numpy as np
-from shapely.geometry import Polygon
+from shapely.geometry import Polygon, Point
 
 
 def build(t):
@@ -58,6 +58,13 @@ def artwork(t,p):
         brush.pipe([(side,2),(side,h-2)],2.6)
         for i,y in enumerate(np.arange(6,h-3,8)):
             brush.jewel(side,float(y),1.1,RED if i%2 else GREEN)
+    from .chimney import geometry as chimney_geometry
+    chimney=chimney_geometry(t)
+    if chimney:
+        basis=np.linalg.lstsq(np.column_stack([p.points,np.ones(len(p.points))]),np.array(p.vertices),rcond=None)[0]
+        local=[np.linalg.lstsq(basis.T,np.array(v),rcond=None)[0] for v in chimney['footprint']]
+        if all(abs(q[2]-1)<1e-6 and p.square.buffer(1e-6).covers(Point(q[0],q[1])) for q in local):
+            brush.line([(q[0],q[1]) for q in local]+[(local[0][0],local[0][1])],'#666666',.25)
     return result+brush.shapes
 
 
@@ -75,6 +82,7 @@ def layout(t):
                     shape=dict(original)
                     if shape['type']=='circle':shape['center']=u.transform(pid,shape['center'])
                     else:shape['points']=[u.transform(pid,q) for q in shape['points']]
+                    if 'rings' in shape:shape['rings']=[[u.transform(pid,q) for q in ring] for ring in shape['rings']]
                     art.append(shape)
                 for edge,tab in p.tabs.items():
                     transformed=Polygon([u.transform(pid,q) for q in tab.exterior.coords])

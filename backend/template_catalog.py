@@ -1,5 +1,5 @@
 """Versioned, local catalog of printable Christmas houses."""
-CATALOG_VERSION = '4.2.0'
+CATALOG_VERSION = '4.4.0'
 TEMPLATES = [
     dict(id='gb_classic', name='Ngôi nhà bánh gừng', subtitle='Noel cổ điển', collection='Truyền thống', width=90, depth=70, wall_height=85, roof_rise=45, wall='#b97946', roof='#8b4139', accent='#bf443d', trim='#fff5dc', background='#f4e8d7', motif='classic', difficulty='Dễ', description='Bánh gừng nâu ấm, mái đỏ và những đường kem trắng. Mẫu mở đầu cho một ngôi làng Noel trên bàn.'),
     dict(id='gb_candy', name='Tiệm kẹo Giáng sinh', subtitle='Candy Cane Lane', collection='Kẹo ngọt', width=100, depth=70, wall_height=85, roof_rise=42, wall='#d99478', roof='#d25762', accent='#bc3046', trim='#fff7e7', background='#f9e7e8', motif='candy', difficulty='Dễ', description='Mái hồng dâu, cửa viền kẹo gậy và ô cửa sáng vàng. Những viên kẹo được in trực tiếp trên mặt giấy.'),
@@ -72,11 +72,15 @@ for model_id,title,w,d,h,r,profile,splits,architecture in COMPLEX_MODELS:
             description=f'{title}: {len(profile)-1} mặt mái thật, nhiều nếp gấp và mối ghép hơn. {label} với kem tuyết, kẹo và cửa vòm. Có bản màu và bản nét để tự tô; không có ống khói rời.'))
 for template in TEMPLATES:
     template.update(roof_overhang_mm=4,roof_rake_mm=6)
+    if template['id'] in ('gb_classic','gb_candy','gb_forest','gb_chalet','gb_frost','gb_mini') or template.get('model_family') in ('cape_cod','colonial','saltbox','dutch','craftsman','farmhouse','ranch'):
+        # Tall/slender houses keep their silhouette free of a chimney.
+        if template['wall_height'] < 95 and template['wall_height']+template['roof_rise'] <= 140:
+            template.update(chimney=True,chimney_placement='longest_slope')
 BY_ID = {t['id']: t for t in TEMPLATES}
 
 
 def public_template(t):
     return {**t, 'version': CATALOG_VERSION, 'dimensions_mm': [t['width'], t['depth'], t['wall_height'] + t['roof_rise']],
-            'paper': 'US Letter', 'accessories': ['Mái đua phủ tuyết', 'Đế tuyết', 'Cây thông ghép chéo', '2 hộp quà 3D'], 'physical_assembly': 'NOT_TESTED',
-            'construction': ('Hai gian chung thân, không có vách ngăn nội thất; hai chóp mái nối bằng thung mái lõm. ' if t.get('bay_count') == 2 else '') + 'Nhà đáy mở, mái phủ hai lớp đua 6 mm trước/sau và 4 mm theo dốc bên ngoài. Cửa, cửa sổ, phào và vật liệu là họa tiết in. Không có hiên, ống khói hoặc nội thất rời.',
+            'paper': 'US Letter', 'accessories': ['Mái đua phủ tuyết', 'Đế tuyết', 'Cây thông ghép chéo', '2 hộp quà 3D']+(['Ống khói 3D'] if t.get('chimney') else []), 'physical_assembly': 'NOT_TESTED',
+            'construction': ('Hai gian chung thân, không có vách ngăn nội thất; hai chóp mái nối bằng thung mái lõm. ' if t.get('bay_count') == 2 else '') + 'Nhà đáy mở, mái phủ hai lớp đua 6 mm trước/sau và 4 mm theo dốc bên ngoài. Cửa, cửa sổ, phào và vật liệu là họa tiết in. Không có hiên hoặc nội thất rời.' + (' Có ống khói rỗng 3D, chân vát theo mái, 1 trang cắt/gấp/dán riêng.' if t.get('chimney') else ' Không có ống khói rời.'),
             'preview_url': f"/api/templates/{t['id']}/preview.svg"}

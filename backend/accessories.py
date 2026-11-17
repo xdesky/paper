@@ -37,19 +37,31 @@ def base_art(t):
     return p.shapes
 
 
-def tree_piece(slot_top):
+def tree_piece(slot_top,style='classic'):
     outline=[(12,0),(20,0),(20,6),(32,6),(24,21),(29,21),(21,36),(25,36),(18,51),(22,51),(16,65),(10,51),(14,51),(7,36),(11,36),(3,21),(8,21),(0,6),(12,6)]
     shape=Polygon(outline)
+    if style=='slim':
+        outline=[(12,0),(20,0),(20,6),(27,6),(21,24),(24,24),(19,43),(21,43),(16,65),(11,43),(13,43),(8,24),(11,24),(5,6),(12,6)]
+        shape=Polygon(outline)
+    elif style=='rounded':
+        from shapely.geometry import Point
+        shape=unary_union([box(12,0,20,9),Point(16,20).buffer(14,resolution=12),Point(16,36).buffer(11,resolution=12),Point(16,51).buffer(8,resolution=12),Polygon([(11,54),(21,54),(16,65)])])
+    elif style=='tiered':
+        shape=Polygon([(12,0),(20,0),(20,6),(32,6),(23,17),(29,17),(22,29),(26,29),(20,42),(23,42),(16,65),(9,42),(12,42),(6,29),(10,29),(3,17),(9,17),(0,6),(12,6)])
+    elif style=='star':
+        shape=unary_union([box(12,0,20,9),Polygon([(1,6),(31,6),(16,58)]),Polygon([(16,65),(18,59),(24,59),(19,55),(21,49),(16,53),(11,49),(13,55),(8,59),(14,59)])])
+    elif style=='candy':
+        shape=Polygon([(12,0),(20,0),(20,6),(31,6),(26,15),(29,18),(22,29),(25,32),(19,46),(21,49),(16,65),(11,49),(13,46),(7,32),(10,29),(3,18),(6,15),(1,6),(12,6)])
     # 0.6 mm slot suits two layers of typical cardstock; glue if loose.
     return shape.difference(box(15.7,32.5 if slot_top else -1,16.3,66 if slot_top else 32.5))
 
 
-def tree_art(shape):
+def tree_art(shape,style='classic'):
     from .confectionery import tree_art as paint_tree
-    return paint_tree(shape)
+    return paint_tree(shape,style)
 
 
-def gift_net(size,prefix,color):
+def gift_net(size,prefix,color,style='classic'):
     from .gingerbread import base
     s=size
     positions={'FRONT':(s,s),'RIGHT':(2*s,s),'BACK':(3*s,s),'LEFT':(0,s),'TOP':(s,2*s),'BOTTOM':(s,0)}
@@ -78,9 +90,10 @@ def gift_net(size,prefix,color):
     for pid,shape in faces.items():
         x,y=positions[pid]
         from .confectionery import gift_art
-        for art_shape in gift_art(s,color,pid=='TOP'):
+        for art_shape in gift_art(s,color,pid=='TOP',style):
             if art_shape['type']=='circle':art_shape['center']=[art_shape['center'][0]+x,art_shape['center'][1]+y]
             else:art_shape['points']=[(a+x,b+y) for a,b in art_shape['points']]
+            if 'rings' in art_shape:art_shape['rings']=[[(a+x,b+y) for a,b in ring] for ring in art_shape['rings']]
             art.append(art_shape)
     art.extend(poly(tab.exterior.coords,'#fff1d3') for tab in tabs)
     return dict(id=prefix,shape=net,art=art,folds=folds,labels=labels,tabs=tabs,seams=seams,faces=faces,size=s,color=color,maps=maps)
@@ -89,10 +102,11 @@ def gift_net(size,prefix,color):
 def layout(t):
     bw,bd=t['width']+60,t['depth']+70
     base_piece=dict(id='BASE',shape=box(0,0,bw,bd),art=base_art(t),folds=[],labels=[])
-    trees=[dict(id=f'TREE_{i+1}',shape=tree_piece(i==0),art=tree_art(tree_piece(i==0)),folds=[],labels=[]) for i in range(2)]
-    gifts=[gift_net(20,'A','#bb3f58'),gift_net(16,'B','#397f76')]
+    trees=[dict(id=f'TREE_{i+1}',shape=tree_piece(i==0,t.get('design',{}).get('tree','classic')),art=tree_art(tree_piece(i==0,t.get('design',{}).get('tree','classic')),t.get('design',{}).get('tree','classic')),folds=[],labels=[]) for i in range(2)]
+    gifts=[gift_net(20,'A','#bb3f58',t.get('design',{}).get('gift','classic')),gift_net(16,'B','#397f76',t.get('design',{}).get('gift','classic'))]
+    from .chimney import layout as chimney_layout
     from .roof_cap import layout as cap_layout
-    return [[(base_piece,18,35)],[(trees[0],22,158),(trees[1],72,158),(gifts[0],18,55),(gifts[1],116,55)]]+cap_layout(t)
+    return [[(base_piece,18,35)],[(trees[0],22,158),(trees[1],72,158),(gifts[0],18,55),(gifts[1],116,55)]]+cap_layout(t)+chimney_layout(t)
 
 
 def scene(t):
@@ -108,20 +122,24 @@ def scene(t):
     add('DISPLAY_BASE',pts,[(x-bw/2,y-bd/2,-.4) for x,y in pts],base_art(t))
     tx,ty=-t['width']/2-12,-t['depth']/2-16
     for i in range(2):
-        shape=tree_piece(i==0);pts=list(shape.exterior.coords)[:-1]
+        shape=tree_piece(i==0,t.get('design',{}).get('tree','classic'));pts=list(shape.exterior.coords)[:-1]
         xyz=[(tx+x-16,ty,z) if i==0 else (tx,ty+x-16,z) for x,z in pts]
-        add(f'TREE_{i+1}',pts,xyz,tree_art(shape))
+        add(f'TREE_{i+1}',pts,xyz,tree_art(shape,t.get('design',{}).get('tree','classic')))
     for k,(size,color,cy) in enumerate([(20,'#bb3f58',-t['depth']/2-14),(16,'#397f76',-t['depth']/2+8)]):
         net=gift_net(size,chr(65+k),color);cx=t['width']/2+13
         pts=[(0,0),(size,0),(size,size),(0,size)]
         for face,fn in net['maps'].items():
             verts=[(fn(x,y)[0]+cx,fn(x,y)[1]+cy,fn(x,y)[2]) for x,y in pts]
             from .confectionery import gift_art
-            shapes=gift_art(size,color,face=='TOP')
+            shapes=gift_art(size,color,face=='TOP',t.get('design',{}).get('gift','classic'))
             add(f'GIFT_{k+1}_{face}',pts,verts,shapes)
     from .roof_cap import build,artwork as cap_art
     caps,_,_,_=build(t)
     for pid,p in caps.items():add(pid,p.points,p.vertices,cap_art(t,p))
+    from .chimney import geometry as chimney_geometry,artwork as chimney_art
+    chimney=chimney_geometry(t)
+    if chimney:
+        for p in chimney['panels']:add(p['id'],p['points'],p['vertices'],chimney_art(p))
     return dict(panels=panels,appearance=art,artwork=artwork,base_mm=[bw,bd],tree_height_mm=65,gift_sizes_mm=[20,16])
 
 
@@ -140,7 +158,7 @@ def export(t,out,identity,first_page):
     for index,pieces in enumerate(pages):
         root=ET.Element('{'+NS+'}svg',width=f'{base.PAGE_W}mm',height=f'{base.PAGE_H}mm',viewBox=f'0 0 {base.PAGE_W} {base.PAGE_H}')
         ET.SubElement(root,'{'+NS+'}metadata').text=canonical(identity)
-        txt(root,base.PAGE_W/2,base.PAGE_H-13,'ĐẾ TUYẾT' if index==0 else 'CÂY THÔNG & HỘP QUÀ' if index==1 else 'MÁI ĐUA PHỦ TUYẾT',11)
+        txt(root,base.PAGE_W/2,base.PAGE_H-13,'ĐẾ TUYẾT' if index==0 else 'CÂY THÔNG & HỘP QUÀ' if index==1 else 'ỐNG KHÓI 3D' if pieces[0][0]['id']=='CHIMNEY' else 'MÁI ĐUA PHỦ TUYẾT',11)
         txt(root,base.PAGE_W/2,base.PAGE_H-20,'Cắt nét đen · Gấp nét tím · In 100% · Phụ kiện '+str(index+1)+'/'+str(len(pages)))
         translated=[]
         for piece,x,y in pieces:
@@ -238,16 +256,22 @@ def export(t,out,identity,first_page):
             notes[3]='4. Các đỉnh mái LỒI, mối nối giữa các gian LÕM; ướm theo mái khung.'
         for i,text in enumerate(notes):gt(12,base.PAGE_H-32-i*12,text,8)
         for page in pages[2:]:
-            g.showPage();gt(12,base.PAGE_H-14,'SƠ ĐỒ MÁI PHỦ — KHÔNG DÙNG LÀM MẪU CẮT',10)
+            chimney_page=page[0][0]['id']=='CHIMNEY'
+            g.showPage();gt(12,base.PAGE_H-14,'LẮP ỐNG KHÓI — SƠ ĐỒ THAM KHẢO' if chimney_page else 'SƠ ĐỒ MÁI PHỦ — KHÔNG DÙNG LÀM MẪU CẮT',10)
+            if chimney_page:
+                for i,line in enumerate(['Gấp 3 cạnh đứng; dán mép cùng mã để khép ống, miệng trên để mở.', 'Gấp 4 tai chân vào trong. Chân vát phải khớp độ dốc mái.', 'Đặt lên khung định vị in trên mặt mái đã chọn, gần phía sau nhà.', 'Ướm thử, bôi keo vào tai chân rồi dán lên mái phủ. Không khoét mái.']):
+                    gt(12,base.PAGE_H-30-i*10,line,8)
             for piece,x,y in page:
-                base.pdf_shape(g,piece['shape'],stroke=CUT,stroke_width=.5)
-                for a,b in piece['folds']:base.pdf_line(g,a,b,FOLD,.6,[3,2])
-                for code,cx,cy in piece['guide']:gt(cx-1.5,cy,code,6)
+                from shapely.affinity import translate
+                base.pdf_shape(g,translate(piece['shape'],xoff=x,yoff=y),stroke=CUT,stroke_width=.5)
+                for a,b in piece['folds']:base.pdf_line(g,(a[0]+x,a[1]+y),(b[0]+x,b[1]+y),FOLD,.6,[3,2])
+                for code,cx,cy in piece['guide']:gt(cx+x-1.5,cy+y,code,6)
     g.save()
     with fitz.open(gp) as guide:
         text=' '.join(p.get_text() for p in guide)
         from .roof_cap import build as build_cap
         checks.append(('roof_cap_guide_both_mates',all(text.split().count(s['id'])==2 for s in build_cap(t)[1])))
+        if t.get('chimney'):checks.append(('chimney_guide_both_mates',text.split().count('C1')==2))
         checks.append(('gift_guide_both_mates',all(text.split().count(chr(65+k)+str(i))==2 for k in range(2) for i in range(1,8))))
         checks.append(('accessory_guide_text_bounds',all(w[0]>=0 and w[1]>=0 and w[2]<=p.rect.width and w[3]<=p.rect.height for p in guide for w in p.get_text('words'))))
     def append(target,extra):
@@ -257,4 +281,5 @@ def export(t,out,identity,first_page):
     append(out/printable_filename(base.PAPER_NAME),pdf)
     append(out/'assembly_guide.pdf',gp)
     from .roof_cap import validate as validate_cap
-    return [dict(name=name,status='PASS' if ok else 'FAIL',detail='Accessories: actual-size cut/fold parts') for name,ok in checks]+validate_cap(t)
+    from .chimney import validate as validate_chimney
+    return [dict(name=name,status='PASS' if ok else 'FAIL',detail='Accessories: actual-size cut/fold parts') for name,ok in checks]+validate_cap(t)+validate_chimney(t)

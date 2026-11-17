@@ -1,0 +1,353 @@
+{
+  "model_id": "GB-COMPLEX-MANOR-ROSE",
+  "version": "gingerbread-4.0.0",
+  "project_id": "sample-gb_complex_manor_rose",
+  "revision": 1,
+  "geometry_sha256": "1228a9ea416d3c7f61719e361c2435b0373861bf63315a0d1734848cdd7b3031",
+  "source_spec_hash": "b8d680fd1c75e461963158349e139ca7578c6fef765862cdfea83443a4288aef",
+  "design_sha256": "fad346dfeb2ba6603934b1b831a9d0c9843035ed3590ab676a663d152d957a00",
+  "template_version": "4.2.0",
+  "input": {
+    "preset": "gb_complex_manor_rose",
+    "project_id": "sample-gb_complex_manor_rose",
+    "revision": 1,
+    "paper": "A4"
+  },
+  "template": {
+    "id": "gb_complex_manor_rose",
+    "name": "Biệt thự mái kép · Rose Candy",
+    "subtitle": "Double Gambrel Manor / Rose Candy",
+    "collection": "Noel nâng cao",
+    "model_family": "complex_manor",
+    "architecture": "Double Gambrel Manor",
+    "finish": "Rose Candy",
+    "profile": [
+      [
+        0,
+        0
+      ],
+      [
+        0.09,
+        0.72
+      ],
+      [
+        0.25,
+        1
+      ],
+      [
+        0.41,
+        0.72
+      ],
+      [
+        0.5,
+        0
+      ],
+      [
+        0.59,
+        0.72
+      ],
+      [
+        0.75,
+        1
+      ],
+      [
+        0.91,
+        0.72
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "bay_count": 2,
+    "bay_splits": [
+      0.5
+    ],
+    "bay_split": 0.5,
+    "material": "board",
+    "premium": true,
+    "width": 118,
+    "depth": 54,
+    "wall_height": 65,
+    "roof_rise": 40,
+    "wall": "#e5a7ae",
+    "roof": "#d36e88",
+    "accent": "#b92c52",
+    "trim": "#fff9ef",
+    "background": "#f8e9ed",
+    "motif": "american",
+    "difficulty": "Nâng cao",
+    "description": "Biệt thự mái kép: 8 mặt mái thật, nhiều nếp gấp và mối ghép hơn. Rose Candy với kem tuyết, kẹo và cửa vòm. Có bản màu và bản nét để tự tô; không có ống khói rời.",
+    "roof_overhang_mm": 4,
+    "roof_rake_mm": 6
+  },
+  "qa_status": "PASS",
+  "algorithm": "gable-house-1.0; v1.2 rigid pairing + shelf packing",
+  "physical_assembly": "NOT_TESTED",
+  "artifacts": [
+    {
+      "path": "accessories.pdf",
+      "sha256": "2c090482d58f160a84fd06f9cf92f5d7debf0fdbdf25c3070581fcc930225810",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "sample-gb_complex_manor_rose",
+      "revision": 1,
+      "geometry_sha256": "1228a9ea416d3c7f61719e361c2435b0373861bf63315a0d1734848cdd7b3031",
+      "source_spec_hash": "b8d680fd1c75e461963158349e139ca7578c6fef765862cdfea83443a4288aef",
+      "design_sha256": "fad346dfeb2ba6603934b1b831a9d0c9843035ed3590ab676a663d152d957a00",
+      "template_version": "4.2.0"
+    },
+    {
+      "path": "accessories_guide.pdf",
+      "sha256": "9195ff35a0e5088519f7d946df9001e0683ddd2c6331cc55c10b2481251503a2",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "sample-gb_complex_manor_rose",
+      "revision": 1,
+      "geometry_sha256": "1228a9ea416d3c7f61719e361c2435b0373861bf63315a0d1734848cdd7b3031",
+      "source_spec_hash": "b8d680fd1c75e461963158349e139ca7578c6fef765862cdfea83443a4288aef",
+      "design_sha256": "fad346dfeb2ba6603934b1b831a9d0c9843035ed3590ab676a663d152d957a00",
+      "template_version": "4.2.0"
+    },
+    {
+      "path": "assembly_guide.pdf",
+      "sha256": "9b9fdd004a5ef7318879042c038da5776c53411965e431b76b9a3732990f975c",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "sample-gb_complex_manor_rose",
+      "revision": 1,
+      "geometry_sha256": "1228a9ea416d3c7f61719e361c2435b0373861bf63315a0d1734848cdd7b3031",
+      "source_spec_hash": "b8d680fd1c75e461963158349e139ca7578c6fef765862cdfea83443a4288aef",
+      "design_sha256": "fad346dfeb2ba6603934b1b831a9d0c9843035ed3590ab676a663d152d957a00",
+      "template_version": "4.2.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_001.svg",
+      "sha256": "ec6fdc603c11a475422fe4cf6ad5760be0f49b5d50abde467a5f041ce0cd58d5",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "sample-gb_complex_manor_rose",
+      "revision": 1,
+      "geometry_sha256": "1228a9ea416d3c7f61719e361c2435b0373861bf63315a0d1734848cdd7b3031",
+      "source_spec_hash": "b8d680fd1c75e461963158349e139ca7578c6fef765862cdfea83443a4288aef",
+      "design_sha256": "fad346dfeb2ba6603934b1b831a9d0c9843035ed3590ab676a663d152d957a00",
+      "template_version": "4.2.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_002.svg",
+      "sha256": "e50a5b7fb7ea08744fe72b959d3d52dfc74780fbbb921961caac596ec3d03a2e",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "sample-gb_complex_manor_rose",
+      "revision": 1,
+      "geometry_sha256": "1228a9ea416d3c7f61719e361c2435b0373861bf63315a0d1734848cdd7b3031",
+      "source_spec_hash": "b8d680fd1c75e461963158349e139ca7578c6fef765862cdfea83443a4288aef",
+      "design_sha256": "fad346dfeb2ba6603934b1b831a9d0c9843035ed3590ab676a663d152d957a00",
+      "template_version": "4.2.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_003.svg",
+      "sha256": "5d0d917ffdf2bd847cc342d4fff5978b3ab3b4339933985a6a2f18c5e66da94c",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "sample-gb_complex_manor_rose",
+      "revision": 1,
+      "geometry_sha256": "1228a9ea416d3c7f61719e361c2435b0373861bf63315a0d1734848cdd7b3031",
+      "source_spec_hash": "b8d680fd1c75e461963158349e139ca7578c6fef765862cdfea83443a4288aef",
+      "design_sha256": "fad346dfeb2ba6603934b1b831a9d0c9843035ed3590ab676a663d152d957a00",
+      "template_version": "4.2.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_004.svg",
+      "sha256": "6114d6726b1e9157cfa36a757ef04a066b4fead6b4d5a1b59d3cd389531e991a",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "sample-gb_complex_manor_rose",
+      "revision": 1,
+      "geometry_sha256": "1228a9ea416d3c7f61719e361c2435b0373861bf63315a0d1734848cdd7b3031",
+      "source_spec_hash": "b8d680fd1c75e461963158349e139ca7578c6fef765862cdfea83443a4288aef",
+      "design_sha256": "fad346dfeb2ba6603934b1b831a9d0c9843035ed3590ab676a663d152d957a00",
+      "template_version": "4.2.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_005.svg",
+      "sha256": "834dfe26ac8c08871004f3a750424f1f752e52ccac690dac4480a64137481707",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "sample-gb_complex_manor_rose",
+      "revision": 1,
+      "geometry_sha256": "1228a9ea416d3c7f61719e361c2435b0373861bf63315a0d1734848cdd7b3031",
+      "source_spec_hash": "b8d680fd1c75e461963158349e139ca7578c6fef765862cdfea83443a4288aef",
+      "design_sha256": "fad346dfeb2ba6603934b1b831a9d0c9843035ed3590ab676a663d152d957a00",
+      "template_version": "4.2.0"
+    },
+    {
+      "path": "display_scene.obj",
+      "sha256": "3babe29a61c2d978fb4f79622b688a00ec707f54912bff956100f4dd4368bd00",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "sample-gb_complex_manor_rose",
+      "revision": 1,
+      "geometry_sha256": "1228a9ea416d3c7f61719e361c2435b0373861bf63315a0d1734848cdd7b3031",
+      "source_spec_hash": "b8d680fd1c75e461963158349e139ca7578c6fef765862cdfea83443a4288aef",
+      "design_sha256": "fad346dfeb2ba6603934b1b831a9d0c9843035ed3590ab676a663d152d957a00",
+      "template_version": "4.2.0"
+    },
+    {
+      "path": "model.obj",
+      "sha256": "105f9c102e9b659a2983b2e8f0ca8cfac9207788c4e2457581afd80419950a0b",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "sample-gb_complex_manor_rose",
+      "revision": 1,
+      "geometry_sha256": "1228a9ea416d3c7f61719e361c2435b0373861bf63315a0d1734848cdd7b3031",
+      "source_spec_hash": "b8d680fd1c75e461963158349e139ca7578c6fef765862cdfea83443a4288aef",
+      "design_sha256": "fad346dfeb2ba6603934b1b831a9d0c9843035ed3590ab676a663d152d957a00",
+      "template_version": "4.2.0"
+    },
+    {
+      "path": "model_3d_preview.png",
+      "sha256": "ba2b02e3c3fa4b1a512753f4100512a767684a54b9a27e6aaa178a72e524825e",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "sample-gb_complex_manor_rose",
+      "revision": 1,
+      "geometry_sha256": "1228a9ea416d3c7f61719e361c2435b0373861bf63315a0d1734848cdd7b3031",
+      "source_spec_hash": "b8d680fd1c75e461963158349e139ca7578c6fef765862cdfea83443a4288aef",
+      "design_sha256": "fad346dfeb2ba6603934b1b831a9d0c9843035ed3590ab676a663d152d957a00",
+      "template_version": "4.2.0"
+    },
+    {
+      "path": "model_spec.json",
+      "sha256": "4487e2684a80ee68491873711cc1fe4bb961ac070281cad94622b4061994f1c7",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "sample-gb_complex_manor_rose",
+      "revision": 1,
+      "geometry_sha256": "1228a9ea416d3c7f61719e361c2435b0373861bf63315a0d1734848cdd7b3031",
+      "source_spec_hash": "b8d680fd1c75e461963158349e139ca7578c6fef765862cdfea83443a4288aef",
+      "design_sha256": "fad346dfeb2ba6603934b1b831a9d0c9843035ed3590ab676a663d152d957a00",
+      "template_version": "4.2.0"
+    },
+    {
+      "path": "printable_a4.pdf",
+      "sha256": "534608df13f91673c56148e0288558feafc18bb793583759294aa8b9a4cea284",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "sample-gb_complex_manor_rose",
+      "revision": 1,
+      "geometry_sha256": "1228a9ea416d3c7f61719e361c2435b0373861bf63315a0d1734848cdd7b3031",
+      "source_spec_hash": "b8d680fd1c75e461963158349e139ca7578c6fef765862cdfea83443a4288aef",
+      "design_sha256": "fad346dfeb2ba6603934b1b831a9d0c9843035ed3590ab676a663d152d957a00",
+      "template_version": "4.2.0"
+    },
+    {
+      "path": "printable_a4_coloring.pdf",
+      "sha256": "025693ed9b3b9167297ad3fa8b1d764cccf8bb9085cbfd39750b7133c355fc97",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "sample-gb_complex_manor_rose",
+      "revision": 1,
+      "geometry_sha256": "1228a9ea416d3c7f61719e361c2435b0373861bf63315a0d1734848cdd7b3031",
+      "source_spec_hash": "b8d680fd1c75e461963158349e139ca7578c6fef765862cdfea83443a4288aef",
+      "design_sha256": "fad346dfeb2ba6603934b1b831a9d0c9843035ed3590ab676a663d152d957a00",
+      "template_version": "4.2.0"
+    },
+    {
+      "path": "printable_preview.png",
+      "sha256": "e4d09844c8a06959ae0b68902b44025eaf5dbb3ec64183763d92eb03ab6a72df",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "sample-gb_complex_manor_rose",
+      "revision": 1,
+      "geometry_sha256": "1228a9ea416d3c7f61719e361c2435b0373861bf63315a0d1734848cdd7b3031",
+      "source_spec_hash": "b8d680fd1c75e461963158349e139ca7578c6fef765862cdfea83443a4288aef",
+      "design_sha256": "fad346dfeb2ba6603934b1b831a9d0c9843035ed3590ab676a663d152d957a00",
+      "template_version": "4.2.0"
+    },
+    {
+      "path": "svg_pages/page_001.svg",
+      "sha256": "a0a806f006e53030527eaf6a13747325bd3606e28f8d8a68e350b92609fff43c",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "sample-gb_complex_manor_rose",
+      "revision": 1,
+      "geometry_sha256": "1228a9ea416d3c7f61719e361c2435b0373861bf63315a0d1734848cdd7b3031",
+      "source_spec_hash": "b8d680fd1c75e461963158349e139ca7578c6fef765862cdfea83443a4288aef",
+      "design_sha256": "fad346dfeb2ba6603934b1b831a9d0c9843035ed3590ab676a663d152d957a00",
+      "template_version": "4.2.0"
+    },
+    {
+      "path": "svg_pages/page_002.svg",
+      "sha256": "eab8bff0b7fc8e583e602c8f7f5d0faabb94cf70bd08121856d688d9dde109b6",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "sample-gb_complex_manor_rose",
+      "revision": 1,
+      "geometry_sha256": "1228a9ea416d3c7f61719e361c2435b0373861bf63315a0d1734848cdd7b3031",
+      "source_spec_hash": "b8d680fd1c75e461963158349e139ca7578c6fef765862cdfea83443a4288aef",
+      "design_sha256": "fad346dfeb2ba6603934b1b831a9d0c9843035ed3590ab676a663d152d957a00",
+      "template_version": "4.2.0"
+    },
+    {
+      "path": "svg_pages/page_003.svg",
+      "sha256": "6928c2a5412f9671beedd692aa0875ef66c3f774d3846f45f94aa76a728522c1",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "sample-gb_complex_manor_rose",
+      "revision": 1,
+      "geometry_sha256": "1228a9ea416d3c7f61719e361c2435b0373861bf63315a0d1734848cdd7b3031",
+      "source_spec_hash": "b8d680fd1c75e461963158349e139ca7578c6fef765862cdfea83443a4288aef",
+      "design_sha256": "fad346dfeb2ba6603934b1b831a9d0c9843035ed3590ab676a663d152d957a00",
+      "template_version": "4.2.0"
+    },
+    {
+      "path": "svg_pages/page_004.svg",
+      "sha256": "a8b51442d2f98874138758adada60e316d77db7e3dc9d5939f273577c6c907e7",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "sample-gb_complex_manor_rose",
+      "revision": 1,
+      "geometry_sha256": "1228a9ea416d3c7f61719e361c2435b0373861bf63315a0d1734848cdd7b3031",
+      "source_spec_hash": "b8d680fd1c75e461963158349e139ca7578c6fef765862cdfea83443a4288aef",
+      "design_sha256": "fad346dfeb2ba6603934b1b831a9d0c9843035ed3590ab676a663d152d957a00",
+      "template_version": "4.2.0"
+    },
+    {
+      "path": "svg_pages/page_005.svg",
+      "sha256": "78b1721014f079b9fb617ce4c51dbb3fb40909026314e7c3420bed6c719769ad",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "sample-gb_complex_manor_rose",
+      "revision": 1,
+      "geometry_sha256": "1228a9ea416d3c7f61719e361c2435b0373861bf63315a0d1734848cdd7b3031",
+      "source_spec_hash": "b8d680fd1c75e461963158349e139ca7578c6fef765862cdfea83443a4288aef",
+      "design_sha256": "fad346dfeb2ba6603934b1b831a9d0c9843035ed3590ab676a663d152d957a00",
+      "template_version": "4.2.0"
+    },
+    {
+      "path": "template_preview.svg",
+      "sha256": "9e41c2951f1b24af32e629d2f1330bc93055dab4e28905ede4f6e3bf8604ff8d",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "sample-gb_complex_manor_rose",
+      "revision": 1,
+      "geometry_sha256": "1228a9ea416d3c7f61719e361c2435b0373861bf63315a0d1734848cdd7b3031",
+      "source_spec_hash": "b8d680fd1c75e461963158349e139ca7578c6fef765862cdfea83443a4288aef",
+      "design_sha256": "fad346dfeb2ba6603934b1b831a9d0c9843035ed3590ab676a663d152d957a00",
+      "template_version": "4.2.0"
+    },
+    {
+      "path": "validation_report.json",
+      "sha256": "62baf0d90015b653bf97ec2ae099fc190db2395b182656e0b07d2372a650bdd3",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "sample-gb_complex_manor_rose",
+      "revision": 1,
+      "geometry_sha256": "1228a9ea416d3c7f61719e361c2435b0373861bf63315a0d1734848cdd7b3031",
+      "source_spec_hash": "b8d680fd1c75e461963158349e139ca7578c6fef765862cdfea83443a4288aef",
+      "design_sha256": "fad346dfeb2ba6603934b1b831a9d0c9843035ed3590ab676a663d152d957a00",
+      "template_version": "4.2.0"
+    }
+  ]
+}

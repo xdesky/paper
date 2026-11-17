@@ -34,7 +34,7 @@ def nameplate(t,panel):
     w=panel.square.bounds[2];wh=t['wall_height']
     center_top=LineString([(w/2,0),(w/2,1000)]).intersection(panel.square).bounds[3]
     cy=wh+(center_top-wh)*.22 if center_top-wh>16 else wh-7
-    if t.get('bay_count') == 2:cy=wh-8.5
+    if t.get('bay_count',1) > 1:cy=wh-8.5
     bh=9;bw=min(64,w*.65)
     safe=panel.square.buffer(-2.6)
     while bw>16 and not safe.covers(box(w/2-bw/2,cy-bh/2,w/2+bw/2,cy+bh/2)):bw-=1

@@ -117,6 +117,8 @@ def model(t):
         seam['hinge']={m['panel'] for m in seam['occurrences']} in pair_sets
         if not seam['hinge']:
             owner=seam['occurrences'][0]
+            if t.get('collection')=='Noel nâng cao':
+                owner=next((m for m in seam['occurrences'] if m['panel'].startswith('ROOF')),owner)
             p=panels[owner['panel']]
             p.tabs[owner['edge']]=base.base.flap_for_edge(*p.seg(owner['edge']),depth=5)
     lookup={s['id']:s for s in seams}
@@ -279,7 +281,7 @@ def draw_shapes(c, root, shapes, transform, scale=base.PT):
             c.saveState()
             if fill:c.setFillColor(HexColor(fill))
             if stroke:c.setStrokeColor(HexColor(stroke));c.setLineWidth(width*scale)
-        if tag=='path':
+        if tag in ('path','compound'):
             if c:path=c.beginPath()
             commands=[]
             for ring in shape['rings']:
@@ -290,8 +292,8 @@ def draw_shapes(c, root, shapes, transform, scale=base.PT):
                     for x,y in points[1:]:path.lineTo(x*scale,y*scale)
                     path.close()
                 commands.append('M '+' L '.join(f'{x:.6f},{y:.6f}' for x,y in points)+' Z')
-            if c:c.drawPath(path,fill=1,stroke=0,fillMode=1)
-            if root is not None:ET.SubElement(root,'{'+NS+'}path',d=' '.join(commands),**attrs,**{'fill-rule':'nonzero','data-personal-name':shape.get('label','')})
+            if c:c.drawPath(path,fill=bool(fill),stroke=bool(stroke),fillMode=1)
+            if root is not None:ET.SubElement(root,'{'+NS+'}path',d=' '.join(commands),**attrs,**{'fill-rule':'nonzero'},**({'data-personal-name':shape['label']} if 'label' in shape else {}))
         elif tag=='circle':
             x,y=transform(shape['center']);r=shape['radius']
             if c:c.circle(x*scale,y*scale,r*scale,fill=bool(fill),stroke=bool(stroke))
@@ -338,6 +340,7 @@ def preview_svg(t):
             if np.dot(normal,[.55,-.82,.4491])>0:visible_caps.append(pid)
             else:hidden_caps.append(pid)
     visible=['DISPLAY_BASE']+hidden_caps+visible+visible_caps+['TREE_1','TREE_2']+[pid for pid in accessory_panels if pid.startswith('GIFT') and pid.endswith(('FRONT','RIGHT','TOP'))]
+    visible += sorted([pid for pid in accessory_panels if pid.startswith('CHIMNEY_')],key=lambda pid:np.mean([v[0]*.55-v[1]*.82 for v in accessory_panels[pid].vertices]))
     for pid in visible:
         p=panels.get(pid) or accessory_panels[pid]
         local=np.array(p.points); xyz=np.array(p.vertices)
@@ -366,6 +369,9 @@ def generate(request,out,progress=lambda stage:None):
     paper_name=request.get('paper','US Letter')
     configure_engine(base,paper_name)
     t=request.get('template') or BY_ID[request['preset']]
+    if request.get('design'):
+        from .design_options import apply_design
+        t=apply_design(t,request['design'])
     if request.get('personal_name'):t={**t,'personal_name':request['personal_name']}
     out.mkdir(parents=True,exist_ok=True)
     fontdir=Path(matplotlib.get_data_path())/'fonts/ttf'
@@ -382,7 +388,7 @@ def generate(request,out,progress=lambda stage:None):
           'print_units':[{'panel_ids':list(u.ids),'sheet_number':u.sheet+1,'fold_code':u.hinge_id,'bounds_mm':list(u.cut_bounds()),'orientation_degrees':u.orientation} for u in units],
           'personalization':{'name':t.get('personal_name',''),'placement':'FRONT_NAMEPLATE'},
           'appearance':{'template_id':t['id'],'motif':t['motif'],'panels':{p.id:svg_art(decorations(t,p),p.square.bounds[2],p.square.bounds[3]) for p in panels.values()}},
-          'limitations':['Open bottom; no floor or chimney. Doors and windows are printed decorations, not cut-outs.','Fixed preset dimensions. Physical assembly NOT_TESTED.']}
+          'limitations':['Open bottom; no floor. Doors and windows are printed decorations, not cut-outs.','Fixed preset dimensions. Physical assembly NOT_TESTED.']}
     progress('Pack Pages')
     progress('Export')
     pdf=out/printable_filename(base.PAPER_NAME); c=canvas.Canvas(str(pdf),pagesize=(base.PAGE_W*base.PT,base.PAGE_H*base.PT),invariant=1)
@@ -503,9 +509,9 @@ def generate(request,out,progress=lambda stage:None):
     cap_info=cap_metadata(t)
     spec['roof_cap']=cap_info
     spec['house_sheet_count']=len(pages)
-    spec['sheet_count']=len(pages)+2+cap_info['sheet_count']
+    spec['sheet_count']=len(pages)+2+cap_info['sheet_count']+int(bool(t.get('chimney')))
     spec['scene_accessories']=scene(t)
-    spec['accessory_cut_pieces']=5+cap_info['cut_pieces']
+    spec['accessory_cut_pieces']=5+cap_info['cut_pieces']+int(bool(t.get('chimney')))
     (out/'model_spec.json').write_text(json.dumps(spec,ensure_ascii=False,indent=2))
     # Export the complete display as a separate OBJ; house OBJ stays reusable.
     scene_obj=list(obj)
@@ -522,7 +528,7 @@ def generate(request,out,progress=lambda stage:None):
     from .coloring import export as export_coloring
     tests.extend(export_coloring(t,out,identity,panels,units,pages))
     report={**identity,'overall_status':'PASS' if all(x['status']=='PASS' for x in tests) else 'FAIL','physical_assembly':'NOT_TESTED','tests':tests,
-            'summary':{'sheets':spec['sheet_count'],'accessory_cut_pieces':spec['accessory_cut_pieces'],'cut_pieces':len(units)+spec['accessory_cut_pieces'],'fold_hinges':sum(bool(u.hinge_id) for u in units),'glue_seams':sum(not s['hinge'] for s in seams),'accessory_fold_hinges':10+cap_info['fold_hinges'],'accessory_glue_seams':14+cap_info['glue_seams'],'flat_continuous_joins':0,'faces_or_tiles':len(panels)}}
+            'summary':{'sheets':spec['sheet_count'],'accessory_cut_pieces':spec['accessory_cut_pieces'],'cut_pieces':len(units)+spec['accessory_cut_pieces'],'fold_hinges':sum(bool(u.hinge_id) for u in units),'glue_seams':sum(not s['hinge'] for s in seams),'accessory_fold_hinges':10+cap_info['fold_hinges']+8*int(bool(t.get('chimney'))),'accessory_glue_seams':14+cap_info['glue_seams']+5*int(bool(t.get('chimney'))),'flat_continuous_joins':0,'faces_or_tiles':len(panels)}}
     (out/'validation_report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
     if report['overall_status']!='PASS':raise RuntimeError(canonical([t for t in tests if t['status']=='FAIL']))
     manifest={**identity,'input':request,'template':t,'qa_status':'PASS','algorithm':'gable-house-1.0; v1.2 rigid pairing + shelf packing','physical_assembly':'NOT_TESTED','artifacts':[]}
@@ -619,5 +625,5 @@ def validate(t,panels,seams,units,pages,boundary,out):
         clipped_guide=[word[4] for p in guide for word in p.get_text('words') if word[0]<0 or word[1]<0 or word[2]>p.rect.width or word[3]>p.rect.height]
         map_words=Counter(w[4] for p in list(guide)[2:] for w in p.get_text('words'))
         check('guide_seam_map_has_both_mates',all(map_words[s['id']]==2 for s in seams),'All seam pairs labeled on reference diagrams')
-        check('guide_complete_within_page',len(guide)==2+len(pages) and not clipped_guide,clipped_guide)
+        check('guide_complete_within_page',len(guide)==1+math.ceil(len(seams)/23)+len(pages) and not clipped_guide,clipped_guide)
     return tests

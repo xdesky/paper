@@ -26,10 +26,10 @@ def test_template_end_to_end(client,template):
     assert job['status']=='SUCCEEDED',job.get('error')
     spec=client.get(f'/api/projects/{pid}/geometry').json()
     report=client.get(f'/api/projects/{pid}/validation').json()
-    assert spec['sheet_count']==spec['house_sheet_count']+2+spec['roof_cap']['sheet_count']
-    assert len(spec['scene_accessories']['panels'])==15+len(spec['geometry']['panels'])-4
+    assert spec['sheet_count']==spec['house_sheet_count']+2+spec['roof_cap']['sheet_count']+int(bool(template.get('chimney')))
+    assert len(spec['scene_accessories']['panels'])==15+len(spec['geometry']['panels'])-4+4*int(bool(template.get('chimney')))
     assert spec['scene_accessories']['gift_sizes_mm']==[20,16]
-    assert report['summary']['accessory_cut_pieces']==5+spec['roof_cap']['cut_pieces']
+    assert report['summary']['accessory_cut_pieces']==5+spec['roof_cap']['cut_pieces']+int(bool(template.get('chimney')))
     assert report['overall_status']=='PASS'
     print_view=client.get(f'/api/projects/{pid}/print')
     assert print_view.status_code==200 and 'window.print()' in print_view.text

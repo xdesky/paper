@@ -22,7 +22,7 @@ def export(t,out,identity,panels,units,pages):
                     transform=lambda q,pid=pid,u=unit:(u.transform(pid,q)[0],base.PAGE_H-u.transform(pid,q)[1])
                     draw_shapes(None,groups,decorations(t,panels[pid]),transform,1)
                     for tab in panels[pid].tabs.values():
-                        draw_shapes(None,groups,[dict(type='polygon',points=list(tab.exterior.coords),fill='#ffffff')],transform,1)
+                        draw_shapes(None,groups,[dict(type='polygon',points=list(tab.exterior.coords),fill='#fff1d3')],transform,1)
             replacements.append(list(groups))
         for pieces in layout(t):
             groups=ET.Element('art')
@@ -43,13 +43,17 @@ def export(t,out,identity,panels,units,pages):
         # Geometry, dash patterns, label positions and ruler are retained verbatim.
         for node in root.iter():
             fill=node.get('fill');stroke=node.get('stroke')
+            if fill:node.set('data-original-fill',fill)
+            if stroke:node.set('data-original-stroke',stroke)
             if fill and fill!='none':
                 node.set('fill','#ffffff' if fill.lower() in ('#ffffff','#fff1d3') else '#222222')
             if stroke and stroke!='none':node.set('stroke','#222222')
         original=ET.parse(source).getroot()
         def construction(tree):
-            return [(n.tag,tuple(sorted((k,v) for k,v in n.attrib.items() if k not in ('fill','stroke'))),n.text) for n in tree if n.get('data-artwork')!='true']
+            return [(n.tag,tuple(sorted((k,v) for k,v in n.attrib.items() if k not in ('fill','stroke','data-original-fill','data-original-stroke'))),n.text) for n in tree if n.get('data-artwork')!='true']
         checks.append(dict(name='coloring_layout_'+source.stem,status='PASS' if construction(root)==construction(original) else 'FAIL',detail='Identical cut/fold paths, codes, page size and 40 mm ruler'))
+        for node in root.iter():
+            if node.text:node.text=node.text.replace('FOLD purple','FOLD dashed').replace('Gấp nét tím','Gấp nét đứt')
         root.set('data-print-style','coloring')
         data=ET.tostring(root,encoding='utf-8',xml_declaration=True)
         (folder/source.name).write_bytes(data)

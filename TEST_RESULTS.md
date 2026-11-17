@@ -113,3 +113,23 @@ Browser test: tạo dự án khung nhà → Generate → SVG và canvas 3D xuấ
 - Sửa sai số kiểm tra biên phụ kiện ở mức 1e-6 mm (tọa độ 19.999999999999993 thay vì 20); không dịch chuyển hoặc thu nhỏ mảnh in.
 - TypeScript/Vite build PASS. 6 bộ mẫu A4 QA PASS; ZIP tổng đủ 6 ZIP con và kiểm tra CRC PASS.
 - Chrome E2E PASS (17.6 s): lọc đúng 6 mẫu 2 gian, mở Viết tên, tạo nhà, xem 3D, kiểm tra mối nối mái lõm, Print đủ trang và tải ZIP. Ảnh: `test-results/two-bay-personalize.png`; PDF: `test-results/two-bay-browser-print.pdf`.
+
+## Noel nâng cao & bản tự tô — 2026-11-17
+
+- Thêm 6 mẫu nâng cao; dời tai dán các cạnh tường–mái lên mặt mái cho bộ mới để tránh chồng tại thung mái hẹp. Hướng dẫn mã ghép tự sang trang khi vượt 23 mối nối.
+- Bản tự tô tái sử dụng đúng vị trí và đường cắt/gấp từ SVG màu; QA đối chiếu từng trang và kích thước PDF. Nét kem dạng compound path giữ lỗ trong, không che ô cửa và họa tiết bên dưới.
+- Kiểm thử riêng 6 mẫu × A4/Letter, bảng tên và API: 90 passed (40.06 s).
+- Sáu bộ mẫu A4 xuất thành công, mỗi ZIP có PDF/SVG màu và tự tô. Đã xem ảnh tháp mái gãy và trang PDF tự tô biệt thự mái kép.
+- Hồi quy toàn bộ: 300 passed; 2 trường hợp kiểm thử cũ bị chọn nhầm mẫu biệt thự mái kép vào nhóm 2 gian mái thường (giả định 8 mặt). Đã giới hạn bài cũ đúng bộ sưu tập Nhà 2 gian và chạy lại: 6 passed. Mẫu biệt thự mới được bao phủ bởi kiểm thử nâng cao A4/Letter.
+- Chrome: 2 passed (26.8 s), gồm chuyển bản màu/tự tô, preview, Print, tải PDF đúng loại, giữ revision và hồi quy cuộn/lớp hiển thị. TypeScript/Vite build PASS; ZIP tổng 6 mẫu kiểm tra CRC PASS.
+
+## Ống khói — 2026-11-17
+
+- 61 tests PASS (100.62 s): xuất toàn bộ 38 mẫu, hình học 20 loại ống khói, khe khép 4 tường, diện tích net/tai không chồng, chân đúng mặt mái, miệng trên phẳng và rỗng, vừa A4/Letter, bảo toàn 26 kết cấu cũ và snapshot không có ống khói.
+- TypeScript/Vite build PASS. Đã xem preview mẫu cổ điển và trang PDF ống khói tự tô.
+- Chrome: 2 passed (15.8 s), gồm 4 mặt ống khói trong 3D, trang in riêng màu/tự tô, Print đủ trang và hồi quy preview cuộn liên tục.
+
+## Bố trí ống khói — 2026-11-17
+
+- 20 tests PASS: bỏ ống khói trên dáng cao, chọn mái dài theo chiều dài dốc, Saltbox và ảnh đối xứng của hình học, quy tắc mái bằng nhau, giữ snapshot cũ và kết cấu thân nhà.
+- Xuất Saltbox A4, Dutch Colonial Letter và Forest không ống khói: QA PASS, gồm PDF màu/tự tô. Đã xem preview Saltbox với ống khói chuyển sang mái dài bên trái.
