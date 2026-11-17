@@ -104,6 +104,8 @@ def model(t):
         angle=math.degrees(math.acos(float(np.clip(np.dot(normal(a),normal(b)),-1,1))))
         sid=f'G{len(seams)+1:02d}'
         seam={'id':sid,'kind':'house_edge','occurrences':mates,'length_mm':math.dist(*key), 'fold_degrees':angle,'hinge':False}
+        if all(p.id.startswith('ROOF') for p in (a,b)) and all(key[0][2] < np.mean([v[2] for v in p.vertices])-1e-6 for p in (a,b)):
+            seam['fold_direction']='VALLEY_FROM_PRINTED_OUTSIDE'
         seams.append(seam)
         for m in mates: panels[m['panel']].edges[m['edge']]=sid
     # Three real connected units: two wall pairs and one roof ridge pair.
@@ -191,7 +193,8 @@ def base_decorations(t,p):
 
 def decorations(t,p):
     from .confectionery import house_art
-    return house_art(t,p)
+    from .personalization import nameplate
+    return house_art(t,p)+nameplate(t,p)
 
 
 def premium_decorations(t,p):
@@ -268,6 +271,7 @@ def svg_art(shapes, width, height):
 def draw_shapes(c, root, shapes, transform, scale=base.PT):
     """Emit the same vector geometry to PDF (mm->pt) and SVG (mm)."""
     from reportlab.lib.colors import HexColor
+    if root is not None:root=ET.SubElement(root,'{'+NS+'}g',{'data-artwork':'true'})
     for shape in shapes:
         tag=shape['type']; fill=shape.get('fill'); stroke=shape.get('stroke'); width=shape.get('width',0)
         attrs={'fill':fill or 'none','stroke':stroke or 'none','stroke-width':str(width),'stroke-linejoin':'round','stroke-linecap':'round'}
@@ -275,7 +279,20 @@ def draw_shapes(c, root, shapes, transform, scale=base.PT):
             c.saveState()
             if fill:c.setFillColor(HexColor(fill))
             if stroke:c.setStrokeColor(HexColor(stroke));c.setLineWidth(width*scale)
-        if tag=='circle':
+        if tag=='path':
+            if c:path=c.beginPath()
+            commands=[]
+            for ring in shape['rings']:
+                points=[transform(q) for q in ring]
+                if not points:continue
+                if c:
+                    path.moveTo(points[0][0]*scale,points[0][1]*scale)
+                    for x,y in points[1:]:path.lineTo(x*scale,y*scale)
+                    path.close()
+                commands.append('M '+' L '.join(f'{x:.6f},{y:.6f}' for x,y in points)+' Z')
+            if c:c.drawPath(path,fill=1,stroke=0,fillMode=1)
+            if root is not None:ET.SubElement(root,'{'+NS+'}path',d=' '.join(commands),**attrs,**{'fill-rule':'nonzero','data-personal-name':shape.get('label','')})
+        elif tag=='circle':
             x,y=transform(shape['center']);r=shape['radius']
             if c:c.circle(x*scale,y*scale,r*scale,fill=bool(fill),stroke=bool(stroke))
             if root is not None:ET.SubElement(root,'{'+NS+'}circle',cx=str(x),cy=str(y),r=str(r),**attrs)
@@ -349,6 +366,7 @@ def generate(request,out,progress=lambda stage:None):
     paper_name=request.get('paper','US Letter')
     configure_engine(base,paper_name)
     t=request.get('template') or BY_ID[request['preset']]
+    if request.get('personal_name'):t={**t,'personal_name':request['personal_name']}
     out.mkdir(parents=True,exist_ok=True)
     fontdir=Path(matplotlib.get_data_path())/'fonts/ttf'
     for name,file in [(base.base.FONT,'DejaVuSans.ttf'),(base.base.FONT_BOLD,'DejaVuSans-Bold.ttf')]:
@@ -358,10 +376,11 @@ def generate(request,out,progress=lambda stage:None):
     progress('Choose Hinges / Unfold / Add Tabs')
     geometry={'model':{'type':t.get('model_family','gable_house_open_bottom'),'name':t['name'],'width_mm':t['width'],'depth_mm':t['depth'],'wall_height_mm':t['wall_height'],'roof_rise_mm':t['roof_rise'],'height_mm':t['wall_height']+t['roof_rise'],'open_bottom':True},
               'panels':[{'id':p.id,'face':p.id,'width_mm':p.square.bounds[2],'height_mm':p.square.bounds[3], 'polygon_mm':p.points,'vertices_3d_mm':p.vertices,'edge_codes':p.edges} for p in panels.values()],
-              'seams':[{'id':s['id'],'kind':s['kind'],'length_mm':s['length_mm'],'fold_degrees':s['fold_degrees'],'mates':s['occurrences'],'hinged_uncut':s['hinge'],'fold_direction':'MOUNTAIN_FROM_PRINTED_OUTSIDE'} for s in seams], 'open_boundary':boundary}
+              'seams':[{'id':s['id'],'kind':s['kind'],'length_mm':s['length_mm'],'fold_degrees':s['fold_degrees'],'mates':s['occurrences'],'hinged_uncut':s['hinge'],'fold_direction':s.get('fold_direction','MOUNTAIN_FROM_PRINTED_OUTSIDE')} for s in seams], 'open_boundary':boundary}
     identity={'model_id':t['id'].upper().replace('_','-'),'version':'gingerbread-4.0.0','project_id':request['project_id'],'revision':request['revision'],'geometry_sha256':digest(geometry),'source_spec_hash':digest(request),'design_sha256':digest(t),'template_version':CATALOG_VERSION}
     spec={**identity,'schema_version':'gingerbread-1.0.0','locked':True,'units':'mm','paper':{'name':paper_name,'page_mm':[base.PAGE_W,base.PAGE_H],'scale':1.0,'printable_body_mm':base.BODY,'tab_depth_mm':5},'geometry':geometry,'sheet_count':len(pages),'physical_assembly':'NOT_TESTED',
           'print_units':[{'panel_ids':list(u.ids),'sheet_number':u.sheet+1,'fold_code':u.hinge_id,'bounds_mm':list(u.cut_bounds()),'orientation_degrees':u.orientation} for u in units],
+          'personalization':{'name':t.get('personal_name',''),'placement':'FRONT_NAMEPLATE'},
           'appearance':{'template_id':t['id'],'motif':t['motif'],'panels':{p.id:svg_art(decorations(t,p),p.square.bounds[2],p.square.bounds[3]) for p in panels.values()}},
           'limitations':['Open bottom; no floor or chimney. Doors and windows are printed decorations, not cut-outs.','Fixed preset dimensions. Physical assembly NOT_TESTED.']}
     progress('Pack Pages')
@@ -440,14 +459,19 @@ def generate(request,out,progress=lambda stage:None):
            '7. Giữ nhẹ và đợi keo khô. Nhà không có đáy.',
            'Cửa, cửa sổ và kẹo là họa tiết IN; không cắt khoét.',
            'Chưa thử lắp bằng giấy thật: physical_assembly = NOT_TESTED.']
+    if t.get('bay_count',1) > 1:
+        steps[6]='6. Ghép cụm mái: đỉnh mỗi gian LỒI, thung mái giữa các gian LÕM.'
     for i,text in enumerate(steps):gt(12,139-i*10,text,8)
     gt(12,19,'Giấy gợi ý: cardstock 160–220 gsm. Ướm thử trước khi dán.',8)
     gt(12,10,identity['model_id']+' | '+identity['geometry_sha256'][:16],6)
     guide.showPage();gt(12,264,'MÃ GHÉP & NẾP GẤP',14,True)
     y=246
     for s in seams:
+        if y<48:
+            guide.showPage();gt(12,264,'MÃ GHÉP & NẾP GẤP (tiếp)',14,True);y=246
         mates=' + '.join(m['panel'] for m in s['occurrences'])
         text=f"{s['id']}: {mates} | "+(f"GẤP LIỀN {s['fold_degrees']:.1f}°" if s['hinge'] else 'DÁN')
+        if s.get('fold_direction')=='VALLEY_FROM_PRINTED_OUTSIDE':text+=' — THUNG MÁI LÕM'
         gt(12,y,text,7);y-=9
     gt(12,y-5,'Góc ghi ở trên là góc quay từ tờ giấy phẳng, nhìn mặt in bên ngoài.',7.5)
     gt(12,y-17,'Nét tím: gấp liền. Nét xanh đứt: chân tai dán. Nét đen: cắt.',8)
@@ -495,6 +519,8 @@ def generate(request,out,progress=lambda stage:None):
     for path in out.glob('*.png'):
         with Image.open(path) as image:
             info=PngImagePlugin.PngInfo();info.add_text('provenance',canonical(identity));image.save(path,pnginfo=info)
+    from .coloring import export as export_coloring
+    tests.extend(export_coloring(t,out,identity,panels,units,pages))
     report={**identity,'overall_status':'PASS' if all(x['status']=='PASS' for x in tests) else 'FAIL','physical_assembly':'NOT_TESTED','tests':tests,
             'summary':{'sheets':spec['sheet_count'],'accessory_cut_pieces':spec['accessory_cut_pieces'],'cut_pieces':len(units)+spec['accessory_cut_pieces'],'fold_hinges':sum(bool(u.hinge_id) for u in units),'glue_seams':sum(not s['hinge'] for s in seams),'accessory_fold_hinges':10+cap_info['fold_hinges'],'accessory_glue_seams':14+cap_info['glue_seams'],'flat_continuous_joins':0,'faces_or_tiles':len(panels)}}
     (out/'validation_report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))

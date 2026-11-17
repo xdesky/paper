@@ -64,7 +64,7 @@ def test_template_end_to_end(client,template):
 
 def test_catalog_and_previews(client):
     catalog=client.get('/api/templates').json()
-    assert len(catalog)==26
+    assert len(catalog)==len(TEMPLATES)
     for t in catalog:
         assert t['sheet_count']>0 and t['physical_assembly']=='NOT_TESTED'
         r=client.get(t['preview_url'])

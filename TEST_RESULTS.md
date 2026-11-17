@@ -91,3 +91,25 @@ Browser test: tạo dự án khung nhà → Generate → SVG và canvas 3D xuấ
 - Build TypeScript/Vite PASS. Chưa thử lắp giấy thật; không coi kiểm thử phần mềm là chứng nhận độ cứng giấy/keo.
 
 - Browser v4: **6 passed** (1.6 phút). Chrome Print tạo đúng 5 trang cho mẫu tiêu chuẩn ở A4/Letter; thước 40 mm trên cả trang mái mới giữ đúng tỷ lệ. Bộ ZIP tổng đủ 26 ZIP con, kiểm tra CRC PASS.
+
+## Preview cuộn liên tục — 2026-11-17
+
+- Build TypeScript/Vite PASS (34 modules).
+- 3 regression browser flows passed: A4/Print, Premium/mái đua và Phase A/SVG/download.
+- Bài kiểm thử riêng continuous-preview passed (10.3 s): bỏ dropdown, render đủ 5 trang, cuộn bằng nút và bằng thanh cuộn, trạng thái nút đầu/cuối, zoom 200%, lớp mã áp dụng toàn bộ trang, chọn seam, lỗi tải một trang + retry, mobile không tràn ngang, trở lại Workspace.
+- Lần chạy đầu thất bại ở bước kiểm thử mobile do chưa đưa vùng preview vào viewport ngoài; đã sửa thao tác test và xác minh lại PASS.
+
+## Cá nhân hoá bảng tên — 2026-11-17
+
+- Backend **197 passed**, 159.16 s. 53 tests mới bao gồm tên tiếng Việt và tên dài 24 ký tự trên 26 mẫu, vùng chữ nằm trong mặt trước, kích thước chữ tối thiểu, chuẩn hoá Unicode, preview, export, snapshot, duplicate, sửa/xoá tên và từ chối ký tự không hỗ trợ.
+- Browser: A4/Print và continuous preview PASS; luồng cá nhân hoá riêng PASS (16.2 s), gồm chọn mẫu mini, preview tên Việt, mobile không tràn ngang, tạo dự án, tải lại, Print, sửa và xoá tên.
+- TypeScript/Vite build PASS (35 modules). Đã xem ảnh công cụ và render Poppler PDF in từ Chrome.
+- Kết cấu và đường cắt giữ nguyên; bảng tên là lớp artwork riêng trên mặt FRONT.
+
+## Nhà 2 gian — 2026-11-17
+
+- Thêm 6 template, 3 hình khối × 2 phối màu. Toàn bộ backend: **245 passed**, 184.89 s.
+- Kiểm tra mỗi mẫu có hai đỉnh mái, bốn mặt mái và đúng một mối nối lõm; A4 có tên tiếng Việt, Letter, PDF/SVG/ZIP, mái phủ và kết cấu 26 mẫu cũ đều PASS.
+- Sửa sai số kiểm tra biên phụ kiện ở mức 1e-6 mm (tọa độ 19.999999999999993 thay vì 20); không dịch chuyển hoặc thu nhỏ mảnh in.
+- TypeScript/Vite build PASS. 6 bộ mẫu A4 QA PASS; ZIP tổng đủ 6 ZIP con và kiểm tra CRC PASS.
+- Chrome E2E PASS (17.6 s): lọc đúng 6 mẫu 2 gian, mở Viết tên, tạo nhà, xem 3D, kiểm tra mối nối mái lõm, Print đủ trang và tải ZIP. Ảnh: `test-results/two-bay-personalize.png`; PDF: `test-results/two-bay-browser-print.pdf`.

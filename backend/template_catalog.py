@@ -1,5 +1,5 @@
 """Versioned, local catalog of printable Christmas houses."""
-CATALOG_VERSION = '4.0.0'
+CATALOG_VERSION = '4.2.0'
 TEMPLATES = [
     dict(id='gb_classic', name='Ngôi nhà bánh gừng', subtitle='Noel cổ điển', collection='Truyền thống', width=90, depth=70, wall_height=85, roof_rise=45, wall='#b97946', roof='#8b4139', accent='#bf443d', trim='#fff5dc', background='#f4e8d7', motif='classic', difficulty='Dễ', description='Bánh gừng nâu ấm, mái đỏ và những đường kem trắng. Mẫu mở đầu cho một ngôi làng Noel trên bàn.'),
     dict(id='gb_candy', name='Tiệm kẹo Giáng sinh', subtitle='Candy Cane Lane', collection='Kẹo ngọt', width=100, depth=70, wall_height=85, roof_rise=42, wall='#d99478', roof='#d25762', accent='#bc3046', trim='#fff7e7', background='#f9e7e8', motif='candy', difficulty='Dễ', description='Mái hồng dâu, cửa viền kẹo gậy và ô cửa sáng vàng. Những viên kẹo được in trực tiếp trên mặt giấy.'),
@@ -33,6 +33,43 @@ for model_id,title,w,d,h,r,profile,material in AMERICAN_MODELS:
             width=w,depth=d,wall_height=h,roof_rise=r,wall=wall,roof=roof,accent=accent,
             trim=trim,background=bg,motif='american',difficulty='Trung bình',
             description=f'Nhà lấy cảm hứng từ {title}: mặt đứng {material}, cửa chia ô, vòng lá Noel và mái lợp chi tiết. Phiên bản {label}.'))
+# Two connected bays: one continuous shell, two genuine roof peaks and a valley.
+TWO_BAY_MODELS = [
+    ('twins', 'Nhà 2 gian song đôi', 112, 52, 60, 36,
+     [(0,0),(.25,1),(.5,0),(.75,1),(1,0)], .5, 'Twin Gable'),
+    ('cottage', 'Nhà 2 gian cổ tích', 118, 54, 64, 40,
+     [(0,0),(.29,1),(.58,0),(.79,.72),(1,0)], .58, 'Main & Side Cottage'),
+    ('farmstead', 'Nông trại Noel 2 gian', 120, 56, 68, 38,
+     [(0,0),(.24,1),(.48,0),(.74,.86),(1,0)], .48, 'Double Gable Farmhouse'),
+]
+for model_id,title,w,d,h,r,profile,split,architecture in TWO_BAY_MODELS:
+    for finish,label,wall,roof,accent,trim,bg in FINISHES:
+        TEMPLATES.append(dict(id=f'gb_two_{model_id}_{finish}',name=f'{title} · {label}',
+            subtitle=f'{architecture} / {label}',collection='Nhà 2 gian',model_family=f'two_bay_{model_id}',
+            architecture=architecture,finish=label,profile=[list(point) for point in profile],
+            bay_split=split,bay_count=2,material='board',premium=True,
+            width=w,depth=d,wall_height=h,roof_rise=r,wall=wall,roof=roof,accent=accent,
+            trim=trim,background=bg,motif='american',difficulty='Trung bình',
+            description=f'Hai gian liền nhau với hai chóp mái thật, cửa riêng và thung mái ở giữa. {label}: kem tuyết, kẹo Noel và cửa sổ sáng ấm. Chung thân nhà, không có vách ngăn bên trong.'))
+COMPLEX_MODELS = [
+    ('tower','Tháp kẹo mái gãy',80,60,108,42,
+     [(0,0),(.14,.72),(.3,1),(.7,1),(.86,.72),(1,0)],[], 'Mansard Candy Tower'),
+    ('manor','Biệt thự mái kép',118,54,65,40,
+     [(0,0),(.09,.72),(.25,1),(.41,.72),(.5,0),(.59,.72),(.75,1),(.91,.72),(1,0)],[.5], 'Double Gambrel Manor'),
+    ('village','Nhà 3 gian Giáng sinh',120,52,62,36,
+     [(0,0),(1/6,.8),(1/3,0),(.5,1),(2/3,0),(5/6,.8),(1,0)],[1/3,2/3], 'Triple Gable Village'),
+]
+for model_id,title,w,d,h,r,profile,splits,architecture in COMPLEX_MODELS:
+    for finish,label,wall,roof,accent,trim,bg in [
+        ('rose','Rose Candy','#e5a7ae','#d36e88','#b92c52','#fff9ef','#f8e9ed'),
+        ('mint','Peppermint Mint','#99c8b5','#579d87','#ce3045','#fff9ef','#e5f3ec')]:
+        TEMPLATES.append(dict(id=f'gb_complex_{model_id}_{finish}',name=f'{title} · {label}',
+            subtitle=f'{architecture} / {label}',collection='Noel nâng cao',model_family=f'complex_{model_id}',
+            architecture=architecture,finish=label,profile=[list(point) for point in profile],
+            bay_count=len(splits)+1,bay_splits=splits,**({'bay_split':splits[0]} if splits else {}),
+            material='board',premium=True,width=w,depth=d,wall_height=h,roof_rise=r,
+            wall=wall,roof=roof,accent=accent,trim=trim,background=bg,motif='american',difficulty='Nâng cao',
+            description=f'{title}: {len(profile)-1} mặt mái thật, nhiều nếp gấp và mối ghép hơn. {label} với kem tuyết, kẹo và cửa vòm. Có bản màu và bản nét để tự tô; không có ống khói rời.'))
 for template in TEMPLATES:
     template.update(roof_overhang_mm=4,roof_rake_mm=6)
 BY_ID = {t['id']: t for t in TEMPLATES}
@@ -41,5 +78,5 @@ BY_ID = {t['id']: t for t in TEMPLATES}
 def public_template(t):
     return {**t, 'version': CATALOG_VERSION, 'dimensions_mm': [t['width'], t['depth'], t['wall_height'] + t['roof_rise']],
             'paper': 'US Letter', 'accessories': ['Mái đua phủ tuyết', 'Đế tuyết', 'Cây thông ghép chéo', '2 hộp quà 3D'], 'physical_assembly': 'NOT_TESTED',
-            'construction': 'Nhà đáy mở, mái phủ hai lớp đua 6 mm trước/sau và 4 mm theo dốc bên ngoài. Cửa, cửa sổ, phào và vật liệu là họa tiết in. Không có hiên, ống khói hoặc nội thất rời.',
+            'construction': ('Hai gian chung thân, không có vách ngăn nội thất; hai chóp mái nối bằng thung mái lõm. ' if t.get('bay_count') == 2 else '') + 'Nhà đáy mở, mái phủ hai lớp đua 6 mm trước/sau và 4 mm theo dốc bên ngoài. Cửa, cửa sổ, phào và vật liệu là họa tiết in. Không có hiên, ống khói hoặc nội thất rời.',
             'preview_url': f"/api/templates/{t['id']}/preview.svg"}

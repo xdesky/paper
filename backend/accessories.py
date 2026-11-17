@@ -19,9 +19,14 @@ def base_art(t):
     p=Painter(box(0,0,w,d));p.rect(0,0,w,d,'#dbe7ef');p.rect(1.5,1.5,w-3,d-3,'#fffaf2')
     # Printed snow drifts and stepping stones; the base cut rectangle is unchanged.
     for y in range(5,35,6):
-        pts=[(w/2+7*math.cos(i*math.tau/32),y+2.4*math.sin(i*math.tau/32)) for i in range(33)]
-        p.polygon([(x+.4,yy-.5) for x,yy in pts],'#ccb4a6');p.polygon(pts,'#be8964')
-        for dx,dy in [(-3,.5),(1,-.5),(3,.8)]:p.circle(w/2+dx,y+dy,.35,'#99623e')
+        centers=[w/2]
+        if t.get('bay_count',1) > 1:
+            edges=[0]+(t.get('bay_splits') or [t['bay_split']])+[1]
+            centers=[30+t['width']*(a+b)/2 for a,b in zip(edges,edges[1:])]
+        for cx in centers:
+            pts=[(cx+7*math.cos(i*math.tau/32),y+2.4*math.sin(i*math.tau/32)) for i in range(33)]
+            p.polygon([(x+.4,yy-.5) for x,yy in pts],'#ccb4a6');p.polygon(pts,'#be8964')
+            for dx,dy in [(-3,.5),(1,-.5),(3,.8)]:p.circle(cx+dx,y+dy,.35,'#99623e')
     for x in range(7,int(w)-5,9):
         for y in (3,d-3):
             p.circle(x+.3,y-.3,3.6,'#dce6ef');p.circle(x,y+.3,3.4,'#ffffff')
@@ -148,7 +153,7 @@ def export(t,out,identity,first_page):
                 base.pdf_line(c,transform(a),transform(b),FOLD,.9,[4,2]);base.svg_segment(root,transform(a),transform(b),FOLD,[1.5,.8],.35)
             for label,lx,ly in piece['labels']:txt(root,lx+x,ly+y-.4,label,4)
             checks.append((piece['id']+'_valid_cut',shape.is_valid and shape.geom_type=='Polygon' and not shape.interiors))
-            checks.append((piece['id']+'_bounds',box(8,20,base.PAGE_W-8,base.PAGE_H-24.4).covers(shape)))
+            checks.append((piece['id']+'_bounds',box(8,20,base.PAGE_W-8,base.PAGE_H-24.4).buffer(1e-6).covers(shape)))
         checks.append((f'accessory_page_{index+1}_no_overlap',all(a.intersection(b).area<1e-7 for i,a in enumerate(translated) for b in translated[i+1:])))
         if index==0:
             txt(root,base.PAGE_W/2,25,'Cắt đế, dán lên bìa cứng. Đặt nhà trên khung mờ ở giữa.')
@@ -229,6 +234,8 @@ def export(t,out,identity,first_page):
                'Lớp mái phủ là một bộ phận thật, không thay đổi khung tường hoặc đế.',
                'Khe 0.4 mm trong 3D minh họa độ dày giấy/keo; ướm thử trước khi dán.',
                'Chưa thử lắp giấy thật; dùng cardstock để mép mái không bị võng.']
+        if t.get('bay_count',1) > 1:
+            notes[3]='4. Các đỉnh mái LỒI, mối nối giữa các gian LÕM; ướm theo mái khung.'
         for i,text in enumerate(notes):gt(12,base.PAGE_H-32-i*12,text,8)
         for page in pages[2:]:
             g.showPage();gt(12,base.PAGE_H-14,'SƠ ĐỒ MÁI PHỦ — KHÔNG DÙNG LÀM MẪU CẮT',10)

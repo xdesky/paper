@@ -1,0 +1,42 @@
+import {test,expect} from '@playwright/test';
+test('choose house, preview Vietnamese name, create, edit and remove personalized print',async({page,request,context})=>{
+ await context.addInitScript(()=>{window.print=()=>{document.documentElement.dataset.printRequested='yes';};});
+ const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
+ const name='Nguyễn An '+String(Date.now()).slice(-4);let pid='';
+ try{
+  await page.goto('/');
+  await page.getByRole('button',{name:'✦ Tạo nhà riêng',exact:true}).click();
+  const dialog=page.getByRole('dialog',{name:'Tạo nhà bánh gừng cá nhân hoá'});
+  await dialog.getByRole('combobox',{name:'Chọn mẫu nhà',exact:true}).selectOption('gb_mini');
+  await dialog.getByLabel('Tên trên ngôi nhà',{exact:true}).fill(name);
+  await expect(dialog.getByRole('status')).toHaveText('Bảng tên nằm trên mặt trước ngôi nhà',{timeout:15000});
+  await expect(dialog.locator('img')).toHaveAttribute('src',/^blob:/);
+  await dialog.screenshot({path:'../test-results/personalize-tool.png'});
+  await page.setViewportSize({width:390,height:844});
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
+  await page.setViewportSize({width:1440,height:1000});
+  await dialog.getByRole('button',{name:'Tạo nhà & bản in',exact:true}).click();
+  await expect(dialog).toHaveCount(0);
+  await expect(page.locator('.svg-sheet [data-personal-name]').first()).toBeVisible({timeout:45000});
+  const all=await(await request.get('/api/projects')).json();pid=all.find((p:any)=>p.personal_name===name).id;
+  expect((await(await request.get(`/api/projects/${pid}`)).json()).personal_name).toBe(name);
+  const [printPage]=await Promise.all([page.waitForEvent('popup'),page.getByRole('link',{name:'⎙ Print',exact:true}).click()]);
+  await expect(printPage.locator('html')).toHaveAttribute('data-print-requested','yes');
+  await expect(printPage.locator('[data-personal-name]').first()).toBeVisible();
+  await printPage.pdf({path:'../test-results/personalized-browser-print.pdf',preferCSSPageSize:true,printBackground:true});
+  await printPage.close();
+  await page.reload();
+  await page.locator('.project-list button').filter({hasText:'Nhà của '+name}).click();
+  await expect(page.getByLabel('Tên trên ngôi nhà',{exact:true})).toHaveValue(name);
+  await page.getByLabel('Tên trên ngôi nhà',{exact:true}).fill('Bé Minh');
+  await expect(page.getByRole('link',{name:'⎙ Print',exact:true})).toHaveCount(0);
+  await page.getByRole('button',{name:'✧ Generate',exact:true}).click();
+  await expect(page.locator('.svg-sheet [data-personal-name]').first()).toHaveAttribute('data-personal-name','Bé Minh',{timeout:45000});
+  await page.getByLabel('Tên trên ngôi nhà',{exact:true}).fill('');
+  await page.getByRole('button',{name:'✧ Generate',exact:true}).click();
+  await expect.poll(async()=>{const p=await(await request.get(`/api/projects/${pid}`)).json();return p.status==='READY'&&p.personal_name==='';},{timeout:45000}).toBeTruthy();
+  await expect(page.locator('.svg-sheet svg').first()).toBeVisible({timeout:45000});
+  await expect(page.locator('.svg-sheet [data-personal-name]')).toHaveCount(0);
+  expect(errors).toEqual([]);
+ }finally{if(pid)await request.delete(`/api/projects/${pid}`);}
+});

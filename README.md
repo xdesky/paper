@@ -179,3 +179,21 @@ Mái phủ có 1 trang in riêng trên A4/Letter, 1 mảnh cho mái thường ho
 Trang trí thêm bông tuyết, holly, điểm sáng, viền kem và diềm tuyết. Viewer 3D có bóng đổ và mặt dưới mái màu giấy. Bộ mẫu: `output/christmas-overhang-a4-v4/christmas-overhang-26-templates-a4.zip`. Chưa thử lắp giấy thật.
 
 Tham khảo hình thức phần đua đầu hồi/mép mái: HUD Residential Structural Design Guide, hình 5.9, https://www.huduser.gov/Publications/pdf/res2000_3.pdf . Đây là tham khảo hình thức; kết cấu mô hình giấy do ứng dụng tạo và kiểm định riêng.
+
+### Preview cuộn liên tục
+
+Trang in 2D hiển thị tất cả SVG theo chiều dọc trong cùng vùng cuộn. Nút ‹ / › cuộn tới trang trước/sau; bộ đếm cập nhật theo vị trí xem, không thay trang đang render. Zoom và lớp Cắt/Gấp/Tai dán/Mã cạnh áp dụng trên mọi trang. Trang tải lỗi có nút thử lại riêng; đổi dự án/revision hủy yêu cầu cũ và đưa preview về đầu.
+
+### Công cụ tạo nhà cá nhân hoá
+
+Chọn **✦ Tạo nhà riêng** ở thanh bên, hoặc **✦ Viết tên** trên mẫu trong thư viện. Chọn một trong 26 mẫu, nhập tên (tối đa 24 ký tự, hỗ trợ tiếng Việt có dấu), chọn A4/US Letter và bấm **Tạo nhà & bản in**. Preview cập nhật khi nhập. Bảng tên đặt ở vùng an toàn trên mặt trước; tên dài tự xuống hai dòng và co vừa bảng. Để trống để bỏ bảng tên.
+
+Tên được lưu riêng với tên dự án, đi theo bản sao và snapshot revision. Trong Workspace có ô **Tên trên ngôi nhà** để sửa/xoá, sau đó Generate. Đổi tên in sẽ vô hiệu bản xuất cũ. Chữ dùng outline vector từ DejaVu Sans Bold để SVG, PDF, preview và texture 3D hiển thị thống nhất, không phụ thuộc font của máy in.
+
+API thêm `personal_name` vào create/edit project và `POST /api/templates/{id}/personalize-preview`. SQLite migration giữ dữ liệu cũ với tên in mặc định rỗng. Preview không tạo dự án hoặc revision.
+
+### Nhà bánh gừng 2 gian — catalog 4.1.0
+
+Kho template → **Nhà 2 gian** thêm 6 mẫu: Song đôi, Cổ tích (gian chính–gian phụ), Nông trại Noel; mỗi kiểu có Heritage Christmas và Midnight & Gold. Tổng thư viện hiện có 32 mẫu. Hai gian chung thân nhà đáy mở, có hai chóp mái thật và thung mái lõm nối giữa, không có vách ngăn nội thất. Mỗi gian có cửa, cửa sổ, hoạ tiết và lối đi riêng trên đế tuyết. Giữ mái đua, cây thông, hộp quà và bảng tên cá nhân hoá; bảng tên nằm dưới vùng thung mái để không đè vào đường cắt.
+
+Hỗ trợ A4/US Letter ở tỷ lệ 100%, hướng dẫn phân biệt đỉnh mái lồi và thung mái lõm. Bộ 6 file mẫu A4: `output/two-bay-a4-v4.1/nha-banh-gung-2-gian-6-mau-a4.zip`. Đã kiểm định hình học và bản in; chưa lắp giấy thật.

@@ -1,5 +1,6 @@
 """Reference-inspired confectionery illustration. Changes ink only, never geometry."""
 import math
+from .coloring import COLORING
 from shapely.geometry import Polygon,Point,LineString,box
 
 CREAM='#fff9ed';SHADOW='#9a4826';RED='#d51932';GREEN='#167448'
@@ -13,23 +14,35 @@ def mix(a,b,f):
 class Painter:
     def __init__(self,shape):self.shape=shape;self.shapes=[]
     def polygon(self,points,color):
+        if COLORING.get() and color in (SHADOW,'#b46640','#a35a39','#bd772d','#874223','#ccb4a6','#dce6ef'):return
         g=Polygon(points).intersection(self.shape)
         for p in [g] if g.geom_type=='Polygon' else getattr(g,'geoms',[]):
-            if p.geom_type=='Polygon' and p.area>1e-6:self.shapes.append(dict(type='polygon',points=list(p.exterior.coords),fill=color))
+            if p.geom_type=='Polygon' and p.area>1e-6:self.shapes.append(dict(type='polygon',points=list(p.exterior.coords),fill='#ffffff' if COLORING.get() else color,**({'stroke':'#222222','width':.25} if COLORING.get() else {})))
     def rect(self,x,y,w,h,color):self.polygon([(x,y),(x+w,y),(x+w,y+h),(x,y+h)],color)
     def line(self,points,color,width):
+        if COLORING.get():
+            if color in ('#9d4e2d','#81272a'):return
+            if width>1:
+                outline=LineString(points).buffer(width/2).intersection(self.shape.buffer(-.15))
+                for shape in [outline] if outline.geom_type=='Polygon' else getattr(outline,'geoms',[]):
+                    if shape.geom_type=='Polygon':self.polygon(shape.exterior.coords,'#ffffff')
+                return
+            color='#222222';width=.25
         g=LineString(points).intersection(self.shape.buffer(-width/2-.015))
         for p in [g] if g.geom_type=='LineString' else getattr(g,'geoms',[]):
             if p.geom_type=='LineString' and p.length>.01:self.shapes.append(dict(type='line',points=list(p.coords),stroke=color,width=width))
     def circle(self,x,y,r,color):
+        if COLORING.get() and color in (SHADOW,'#a35a39','#dce6ef'):return
         if self.shape.buffer(.00001).covers(Point(x,y).buffer(r)):
-            self.shapes.append(dict(type='circle',center=[x,y],radius=r,fill=color))
+            self.shapes.append(dict(type='circle',center=[x,y],radius=r,fill='#ffffff' if COLORING.get() else color,**({'stroke':'#222222','width':.25} if COLORING.get() else {})))
     def pipe(self,pts,width=1.8):
+        if COLORING.get():self.line(pts,'#222222',width);return
         self.line([(x+.35,y-.5) for x,y in pts],'#b46640',width+.65)
         self.line(pts,'#edd5bf',width+.25)
         self.line([(x-.12,y+.15) for x,y in pts],CREAM,width)
         self.line([(x-.22,y+.36) for x,y in pts],'#ffffff',max(.25,width*.22))
     def jewel(self,x,y,r,color=RED):
+        if COLORING.get():self.circle(x,y,r,'#ffffff');return
         self.circle(x+.25,y-.35,r+.17,'#a35a39')
         for i in range(6):
             self.circle(x-i*r*.035,y+i*r*.045,r*(1-i*.095),mix(color,'#ffffff',i*.055))
@@ -45,7 +58,7 @@ class Painter:
         self.circle(x+.35,y-.45,r+.2,SHADOW);self.circle(x,y,r,CREAM)
         for k in range(6):
             pts=[(x,y)]
-            for i in range(16):
+            for i in range(0 if COLORING.get() else 16):
                 rr=r*i/15;angle=k*math.tau/6+rr/r*.8
                 pts.append((x+rr*math.cos(angle),y+rr*math.sin(angle)))
             for i in range(15,-1,-1):
@@ -93,7 +106,7 @@ def arch(x,y,w,h):
 def window(p,x,y,w,h):
     shape=arch(x,y,w,h);p.polygon(shape,'#e58c1d')
     glass=Painter(Polygon(shape).intersection(p.shape))
-    for i in range(16):
+    for i in range(0 if COLORING.get() else 16):
         glass.rect(x-w/2+i*w/16,y,w/16+.25,h,mix('#ffb52d','#fff4a3',1-abs(i-7.5)/8))
     p.shapes.extend(glass.shapes)
     p.line([(x,y),(x,y+h-.7)],'#c77c24',.8)
@@ -104,11 +117,30 @@ def window(p,x,y,w,h):
 
 
 def house_art(t,panel):
+    if t.get('bay_count',1) > 1 and panel.id in ('FRONT','BACK'):
+        from shapely.affinity import translate
+        from .gingerbread import Panel
+        w,h=panel.square.bounds[2:]
+        fractions=t.get('bay_splits') or [t['bay_split']]
+        if panel.id=='BACK':fractions=sorted(1-x for x in fractions)
+        boundaries=[0]+[w*x for x in fractions]+[w]
+        shapes=[]
+        for left,right in zip(boundaries,boundaries[1:]):
+            section=translate(panel.square.intersection(box(left,0,right,h+1)),xoff=-left)
+            local=Panel(panel.id,list(section.exterior.coords)[:-1],[])
+            bay={**t,'bay_count':1,'personal_name':'','width':right-left,'roof_rise':section.bounds[3]-t['wall_height']}
+            for original in house_art(bay,local):
+                shape=dict(original)
+                if shape['type']=='circle':shape['center']=[shape['center'][0]+left,shape['center'][1]]
+                else:shape['points']=[(x+left,y) for x,y in shape['points']]
+                shapes.append(shape)
+        return shapes
     p=Painter(panel.square);w,h=panel.square.bounds[2:];roof=panel.id.startswith('ROOF')
     color=t['wall']
     # Soft baked colour bands and tiny sugar pores, all clipped to existing face.
-    for i in range(28):p.rect(0,i*h/28,w,h/28+.5,mix(color,'#edb85e',.08+.18*math.sin(i*math.pi/28)))
-    for i in range(int(w*h/95)):
+    if COLORING.get():p.polygon(panel.points,'#ffffff')
+    for i in range(0 if COLORING.get() else 28):p.rect(0,i*h/28,w,h/28+.5,mix(color,'#edb85e',.08+.18*math.sin(i*math.pi/28)))
+    for i in range(0 if COLORING.get() else int(w*h/95)):
         x=2+(i*17.39)%(w-4);y=2+(i*11.71)%(h-4)
         p.circle(x,y,.18+(i%3)*.06,mix(color,'#653418',.15))
     if roof:
@@ -141,7 +173,7 @@ def house_art(t,panel):
         dw=min(23,w*.27);dh=min(42,wh*.63);door=arch(w/2,3,dw,dh)
         p.polygon(door,'#b60f27')
         inset=Painter(Polygon(door).intersection(panel.square))
-        for i in range(14):inset.rect(w/2-dw/2+i*dw/14,3,dw/14+.25,dh,mix('#a81025','#ee3940',math.sin(i*math.pi/14)*.8))
+        for i in range(0 if COLORING.get() else 14):inset.rect(w/2-dw/2+i*dw/14,3,dw/14+.25,dh,mix('#a81025','#ee3940',math.sin(i*math.pi/14)*.8))
         for dx in (-.25,0,.25):inset.line([(w/2+dw*dx,3),(w/2+dw*dx,dh+3)],'#901023',.35)
         p.shapes.extend(inset.shapes);p.pipe(door,2.4);p.jewel(w/2+dw*.30,dh*.40,1.2,'#e7ad21')
         cy=dh*.72;r=min(4.2,dw*.23)
@@ -167,7 +199,7 @@ def house_art(t,panel):
             p.pipe(pts,2.5)
             for i in range(1,n,2):
                 f=i/n;p.jewel(a[0]+f*(b[0]-a[0]),a[1]+f*(b[1]-a[1]),1.25,RED if i%4==1 else GREEN)
-    if gable:
+    if gable and not (front and t.get('personal_name')):
         center=(w/2,wh+(h-wh)*.43);r=min(6,(h-wh)*.16,w*.09)
         if panel.square.buffer(-2).covers(Point(*center).buffer(r+2)):
             if panel.id=='BACK':p.snowflake(*center,r)
@@ -194,7 +226,8 @@ def tree_art(shape):
 
 def gift_art(size,color,top=False):
     p=Painter(box(0,0,size,size))
-    for i in range(20):p.rect(i*size/20,0,size/20+.25,size,mix(color,'#ffffff',.18*math.sin(i*math.pi/20)))
+    if COLORING.get():p.rect(0,0,size,size,'#ffffff')
+    for i in range(0 if COLORING.get() else 20):p.rect(i*size/20,0,size/20+.25,size,mix(color,'#ffffff',.18*math.sin(i*math.pi/20)))
     for x in (.15,.32,.68,.85):
         for y in (.18,.4,.65,.85):p.circle(size*x,size*y,.55,CREAM)
     ribbon=GREEN if color.startswith('#bb') else RED

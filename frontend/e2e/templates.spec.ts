@@ -5,7 +5,7 @@ test('Christmas catalog filters, favorites, details, real house and ZIP',async({
  const before=await(await request.get('/api/projects')).json();
  await page.goto('/');
  await page.getByRole('button',{name:'⌂ Kho template Noel',exact:true}).click();
- await expect(page.locator('.template-card')).toHaveCount(26);
+ await expect(page.locator('.template-card')).toHaveCount(38);
  await page.getByRole('button',{name:'Thiên nhiên',exact:true}).click();
  await expect(page.locator('.template-card')).toHaveCount(2);
  await page.getByRole('button',{name:'Tất cả',exact:true}).click();

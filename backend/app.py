@@ -18,7 +18,8 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, Response
 from fastapi.staticfiles import StaticFiles
-from pydantic import BaseModel, Field, ConfigDict
+from pydantic import BaseModel, Field, ConfigDict, field_validator
+from .personalization import normalize_name
 from .template_catalog import BY_ID, TEMPLATES, CATALOG_VERSION, public_template
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -31,6 +32,8 @@ class CreateProject(BaseModel):
     name: str = Field(min_length=1, max_length=100)
     preset: Preset = 'cube_100'
     paper: Literal['US Letter', 'A4'] = 'US Letter'
+    personal_name: str = Field(default='', max_length=24)
+    _name = field_validator('personal_name',mode='before')(normalize_name)
 
 
 class EditProject(BaseModel):
@@ -38,6 +41,14 @@ class EditProject(BaseModel):
     name: str | None = Field(default=None, min_length=1, max_length=100)
     preset: Preset | None = None
     paper: Literal['US Letter', 'A4'] | None = None
+    personal_name: str | None = Field(default=None,max_length=24)
+    _name = field_validator('personal_name',mode='before')(normalize_name)
+
+
+class NamePreview(BaseModel):
+    model_config = ConfigDict(extra='forbid')
+    personal_name: str = Field(default='',max_length=24)
+    _name = field_validator('personal_name',mode='before')(normalize_name)
 
 
 def now():
@@ -69,6 +80,8 @@ def create_app(data_dir=None, seed=True):
         ''')
         if 'paper' not in {row['name'] for row in db.execute('PRAGMA table_info(projects)')}:
             db.execute("ALTER TABLE projects ADD COLUMN paper TEXT NOT NULL DEFAULT 'US Letter'")
+        if 'personal_name' not in {row['name'] for row in db.execute('PRAGMA table_info(projects)')}:
+            db.execute("ALTER TABLE projects ADD COLUMN personal_name TEXT NOT NULL DEFAULT ''")
 
     def project(pid):
         with connection() as db:
@@ -80,7 +93,7 @@ def create_app(data_dir=None, seed=True):
     def create(body):
         pid = uuid.uuid4().hex
         with connection() as db:
-            db.execute('INSERT INTO projects (id,name,preset,revision,result_revision,status,created_at,updated_at,paper) VALUES(?,?,?,?,?,?,?,?,?)', (pid, body.name, body.preset, 1, None, 'DRAFT', now(), now(), body.paper))
+            db.execute('INSERT INTO projects (id,name,preset,revision,result_revision,status,created_at,updated_at,paper,personal_name) VALUES(?,?,?,?,?,?,?,?,?,?)', (pid, body.name, body.preset, 1, None, 'DRAFT', now(), now(), body.paper,body.personal_name))
         return project(pid)
 
     def update_job(jid, status, stage, error=None):
@@ -128,9 +141,9 @@ def create_app(data_dir=None, seed=True):
             rev = row['revision']
             if db.execute('SELECT 1 FROM revisions WHERE project_id=? AND revision=?', (pid, rev)).fetchone():
                 rev += 1
-            snapshot = {'project_id': pid, 'revision': rev, 'preset': row['preset'], 'paper': row['paper'], 'scale': 1.0, 'engine_version': '1.2.0'}
+            snapshot = {'project_id': pid, 'revision': rev, 'preset': row['preset'], 'paper': row['paper'], 'personal_name':row['personal_name'], 'scale': 1.0, 'engine_version': '1.2.0'}
             if row['preset'] in BY_ID:
-                snapshot.update(engine_version='gingerbread-4.0.0', template=BY_ID[row['preset']], template_version=CATALOG_VERSION)
+                snapshot.update(engine_version='gingerbread-4.0.0', template={**BY_ID[row['preset']],**({'personal_name':row['personal_name']} if row['personal_name'] else {})}, template_version=CATALOG_VERSION)
             jid = uuid.uuid4().hex
             db.execute('INSERT INTO revisions VALUES(?,?,?,?)', (pid, rev, json.dumps(snapshot), now()))
             db.execute('INSERT INTO jobs VALUES(?,?,?,?,?,?,?,?)', (jid, pid, rev, 'QUEUED', 'Queued', None, now(), now()))
@@ -180,6 +193,12 @@ def create_app(data_dir=None, seed=True):
         from .gingerbread import preview_svg
         return Response(preview_svg(BY_ID[template_id]), media_type='image/svg+xml', headers={'Cache-Control': 'no-cache', 'X-Content-Type-Options': 'nosniff'})
 
+    @app.post('/api/templates/{template_id}/personalize-preview')
+    def personalized_preview(template_id: str, body: NamePreview):
+        if template_id not in BY_ID:raise HTTPException(404,'Template not found')
+        from .gingerbread import preview_svg
+        return Response(preview_svg({**BY_ID[template_id],'personal_name':body.personal_name}),media_type='image/svg+xml',headers={'Cache-Control':'no-store'})
+
     @app.get('/api/projects')
     def projects():
         with connection() as db:
@@ -206,14 +225,14 @@ def create_app(data_dir=None, seed=True):
                 raise HTTPException(404, 'Project not found')
             if row['status'] == 'GENERATING':
                 raise HTTPException(409, 'Wait for current generation')
-            changed = (body.preset is not None and body.preset != row['preset']) or (body.paper is not None and body.paper != row['paper'])
-            db.execute('UPDATE projects SET name=?,preset=?,paper=?,revision=?,status=?,updated_at=? WHERE id=?', (body.name or row['name'], body.preset or row['preset'], body.paper or row['paper'], row['revision'] + int(changed), 'STALE' if changed else row['status'], now(), pid))
+            changed = (body.preset is not None and body.preset != row['preset']) or (body.paper is not None and body.paper != row['paper']) or (body.personal_name is not None and body.personal_name != row['personal_name'])
+            db.execute('UPDATE projects SET name=?,preset=?,paper=?,personal_name=?,revision=?,status=?,updated_at=? WHERE id=?', (body.name or row['name'], body.preset or row['preset'], body.paper or row['paper'], body.personal_name if body.personal_name is not None else row['personal_name'], row['revision'] + int(changed), 'STALE' if changed else row['status'], now(), pid))
         return project(pid)
 
     @app.post('/api/projects/{pid}/duplicate', status_code=201)
     def duplicate(pid: str):
         p = project(pid)
-        return create(CreateProject(name=(p['name'][:90] + ' (bản sao)'), preset=p['preset'], paper=p['paper']))
+        return create(CreateProject(name=(p['name'][:90] + ' (bản sao)'), preset=p['preset'], paper=p['paper'],personal_name=p['personal_name']))
 
     @app.delete('/api/projects/{pid}', status_code=204)
     def delete(pid: str):
