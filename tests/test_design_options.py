@@ -1,9 +1,9 @@
 import json,time
 from pathlib import Path
 import pytest
-from fastapi.testclient import TestClient
+from tests.support import TestClient
 from shapely.geometry import box
-from backend.app import create_app
+from tests.support import create_app
 from backend.design_options import DesignOptions,OPTIONS
 from backend.gingerbread import generate
 from backend.accessories import tree_piece
@@ -52,3 +52,15 @@ def test_empty_start_and_design_lifecycle(tmp_path):
         assert manifest['input']['design']==manifest['template']['design']==design
     with TestClient(create_app(tmp_path)) as c:
         assert c.get(f'/api/projects/{pid}').json()['design']==design
+
+
+def test_thumbnails_match_supported_design_choices(tmp_path):
+    with TestClient(create_app(tmp_path)) as c:
+        for kind,choices in OPTIONS.items():
+            for style,label in choices:
+                r=c.get(f'/api/design-options/{kind}/{style}/preview.svg')
+                assert r.status_code==200 and '<svg' in r.text
+                assert 'image/svg+xml' in r.headers['content-type']
+        assert c.get('/api/design-options/tree/missing/preview.svg').status_code==404
+        assert c.get('/api/design-options/nope/classic/preview.svg').status_code==422
+        assert c.get('/api/projects').json()==[]

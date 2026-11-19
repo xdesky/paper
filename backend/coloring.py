@@ -53,14 +53,14 @@ def export(t,out,identity,panels,units,pages):
             return [(n.tag,tuple(sorted((k,v) for k,v in n.attrib.items() if k not in ('fill','stroke','data-original-fill','data-original-stroke'))),n.text) for n in tree if n.get('data-artwork')!='true']
         checks.append(dict(name='coloring_layout_'+source.stem,status='PASS' if construction(root)==construction(original) else 'FAIL',detail='Identical cut/fold paths, codes, page size and 40 mm ruler'))
         for node in root.iter():
-            if node.text:node.text=node.text.replace('FOLD purple','FOLD dashed').replace('Gấp nét tím','Gấp nét đứt')
+            if node.text:node.text=node.text.replace('FOLD purple','FOLD dashed').replace('Fold dashed lines','Fold dashed lines')
         root.set('data-print-style','coloring')
         data=ET.tostring(root,encoding='utf-8',xml_declaration=True)
         (folder/source.name).write_bytes(data)
         with fitz.open(stream=data,filetype='svg') as svg:
             with fitz.open(stream=svg.convert_to_pdf(),filetype='pdf') as page:doc.insert_pdf(page)
     filename=printable_filename(base.PAPER_NAME).replace('.pdf','_coloring.pdf')
-    doc.set_metadata({'title':t['name']+' — Bản tự tô','subject':'Same physical layout; black outlines on white paper'})
+    doc.set_metadata({'title':t['name']+' — Coloring pages','subject':'Same physical layout; black outlines on white paper'})
     doc.save(out/filename,garbage=4,deflate=True)
     expected=(base.PAGE_W*base.PT,base.PAGE_H*base.PT)
     ok=len(doc)==len(originals) and all(abs(p.rect.width-expected[0])<.02 and abs(p.rect.height-expected[1])<.02 for p in doc)

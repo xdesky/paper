@@ -158,8 +158,8 @@ def export(t,out,identity,first_page):
     for index,pieces in enumerate(pages):
         root=ET.Element('{'+NS+'}svg',width=f'{base.PAGE_W}mm',height=f'{base.PAGE_H}mm',viewBox=f'0 0 {base.PAGE_W} {base.PAGE_H}')
         ET.SubElement(root,'{'+NS+'}metadata').text=canonical(identity)
-        txt(root,base.PAGE_W/2,base.PAGE_H-13,'ĐẾ TUYẾT' if index==0 else 'CÂY THÔNG & HỘP QUÀ' if index==1 else 'ỐNG KHÓI 3D' if pieces[0][0]['id']=='CHIMNEY' else 'MÁI ĐUA PHỦ TUYẾT',11)
-        txt(root,base.PAGE_W/2,base.PAGE_H-20,'Cắt nét đen · Gấp nét tím · In 100% · Phụ kiện '+str(index+1)+'/'+str(len(pages)))
+        txt(root,base.PAGE_W/2,base.PAGE_H-13,'SNOWY BASE' if index==0 else 'TREE & GIFT BOXES' if index==1 else '3D CHIMNEY' if pieces[0][0]['id']=='CHIMNEY' else 'SNOWY ROOF CAP',11)
+        txt(root,base.PAGE_W/2,base.PAGE_H-20,'Cut solid lines · Fold dashed lines · Print 100% · Accessory '+str(index+1)+'/'+str(len(pages)))
         translated=[]
         for piece,x,y in pieces:
             transform=lambda q:(q[0]+x,q[1]+y)
@@ -174,10 +174,10 @@ def export(t,out,identity,first_page):
             checks.append((piece['id']+'_bounds',box(8,20,base.PAGE_W-8,base.PAGE_H-24.4).buffer(1e-6).covers(shape)))
         checks.append((f'accessory_page_{index+1}_no_overlap',all(a.intersection(b).area<1e-7 for i,a in enumerate(translated) for b in translated[i+1:])))
         if index==0:
-            txt(root,base.PAGE_W/2,25,'Cắt đế, dán lên bìa cứng. Đặt nhà trên khung mờ ở giữa.')
+            txt(root,base.PAGE_W/2,25,'Cut out the base and mount it on cardstock. Center the house on the outline.')
         elif index==1:
-            txt(root,base.PAGE_W/2,140,'Ghép 2 cây theo khe giữa; mở vuông góc để cây tự đứng.')
-            txt(root,base.PAGE_W/2,35,'Quà A: 20 mm · Quà B: 16 mm · Tra mã ghép trong hướng dẫn.')
+            txt(root,base.PAGE_W/2,140,'Slide the two tree pieces together at the slots; spread them at right angles.')
+            txt(root,base.PAGE_W/2,35,'Gift A: 20 mm · Gift B: 16 mm · Match labels using the assembly guide.')
         base.pdf_line(c,(15,10.5),(55,10.5),CUT,.8);base.svg_segment(root,(15,10.5),(55,10.5),CUT,width=.25)
         txt(root,126,10,'40 mm | Actual Size / 100% - NO Fit to Page')
         ET.ElementTree(root).write(out/f'svg_pages/page_{first_page+index+1:03d}.svg',encoding='utf-8',xml_declaration=True)
@@ -216,20 +216,20 @@ def export(t,out,identity,first_page):
     # The assembly reference labels both mates; visible surfaces stay code-free.
     gp=out/'accessories_guide.pdf';g=canvas.Canvas(str(gp),pagesize=(base.PAGE_W*base.PT,base.PAGE_H*base.PT),invariant=1)
     def gt(x,y,text,size=9):base.pdf_text(g,x,y,text,size)
-    gt(12,base.PAGE_H-15,'LẮP ĐẾ, CÂY THÔNG VÀ HỘP QUÀ',13)
-    instructions=['1. In đúng khổ giấy, tỷ lệ 100%; đo vạch 40 mm.',
-      '2. Cắt đế tuyết; dán lên bìa cứng phẳng để đế không cong.',
-      '3. Đặt nhà trên khung mờ; cố định từ mặt trong bằng băng dính.',
-      '4. Cắt 2 cây theo viền đen, gồm khe giữa rộng 0.6 mm.',
-      '5. Luồn khe trên vào khe dưới, xoay hai mảnh vuông góc.',
-      '   Khe dành cho giấy 160–220 gsm; chấm keo nếu khe bị lỏng.',
-      '6. Cắt hai lưới hộp quà, giữ tai dán; miết tất cả nét tím.',
-      '7. Dán mã A với A, B với B theo sơ đồ; đóng nắp sau cùng.',
-      '8. Đặt cây bên trái, quà bên phải; cố định vào đế nếu cần.',
-      'Cây in một mặt; có thể tô xanh mặt sau trước khi lắp.',
-      'Phụ kiện chưa được thử lắp giấy thật.']
+    gt(12,base.PAGE_H-15,'ASSEMBLE THE BASE, TREE & GIFTS',13)
+    instructions=['1. Print at 100% on the correct paper size. Check the 40 mm ruler.',
+      '2. Cut out the snowy base and glue it to flat cardstock.',
+      '3. Position the house on the outline. Tape it down from the inside.',
+      '4. Cut out both tree pieces, including their 0.6 mm center slots.',
+      '5. Slide the slots together and position the two pieces at right angles.',
+      '   Slots fit 160–220 gsm cardstock. Add a dab of glue if needed.',
+      '6. Cut out the gift box nets, keeping the tabs. Score the fold lines.',
+      '7. Match A labels to A and B labels to B. Close the lids last.',
+      '8. Place the tree on the left and gifts on the right. Glue them to the base.',
+      'The tree is printed on one side. Color the back before assembly if desired.',
+      'Physical assembly of the accessories has not been tested.']
     for i,text in enumerate(instructions):gt(12,base.PAGE_H-30-i*10,text,8)
-    gt(12,130,'SƠ ĐỒ MÃ HỘP QUÀ — KHÔNG DÙNG LÀM MẪU CẮT',9)
+    gt(12,130,'GIFT JOINT MAP — NOT A CUTTING TEMPLATE',9)
     for piece,x,y in pages[1][2:]:
         x,y=x,40
         from shapely.affinity import translate
@@ -241,25 +241,25 @@ def export(t,out,identity,first_page):
                 gt(x+midpoint[0]+dx/length*3-1.5,y+midpoint[1]+dy/length*3,seam['code'],5)
     if len(pages)>2:
         g.showPage()
-        gt(12,base.PAGE_H-15,'LẮP MÁI ĐUA PHỦ TUYẾT',13)
-        notes=['1. Lắp tường và mái khung như hướng dẫn nhà trước đó.',
-               '2. Cắt lớp mái phủ; gấp nét tím, mặt trang trí hướng ra ngoài.',
-               '3. Nếu mái nhiều mảnh: ghép mã R theo sơ đồ ở trang sau.',
-               '4. Đặt thử lên mái khung, căn trùng sống mái và các nếp gãy.',
-               '5. Căn mép trước/sau đua đều 6 mm; mép ngoài dài thêm 4 mm theo dốc.',
-               '6. Bôi keo mỏng lên mái KHUNG rồi đặt mái phủ; không bôi lên mép đua.',
-               '7. Giữ nhẹ đến khi keo khô. Không kéo mép đua dính vào tường.',
-               'Lớp mái phủ là một bộ phận thật, không thay đổi khung tường hoặc đế.',
-               'Khe 0.4 mm trong 3D minh họa độ dày giấy/keo; ướm thử trước khi dán.',
-               'Chưa thử lắp giấy thật; dùng cardstock để mép mái không bị võng.']
+        gt(12,base.PAGE_H-15,'ASSEMBLE THE OVERHANGING ROOF',13)
+        notes=['1. Assemble the walls and structural roof using the house guide.',
+               '2. Cut and fold the roof cap, with the printed side facing out.',
+               '3. For multi-piece roofs, match the R labels on the following diagram.',
+               '4. Test-fit the cap on the structural roof. Align the ridges and folds.',
+               '5. Keep 6 mm overhangs at the front/back and 4 mm along outer slopes.',
+               '6. Apply a thin layer of glue to the structural roof, avoiding the overhangs.',
+               '7. Hold gently until dry. Keep the overhanging edges clear of the walls.',
+               'The roof cap is a separate part. It does not alter the wall frame or base.',
+               'The 0.4 mm model offset represents paper and glue. Test-fit before gluing.',
+               'Physical assembly has not been tested. Use cardstock for firm roof edges.']
         if t.get('bay_count',1) > 1:
-            notes[3]='4. Các đỉnh mái LỒI, mối nối giữa các gian LÕM; ướm theo mái khung.'
+            notes[3]='4. Ridges fold outward; valleys fold inward. Match the structural roof.'
         for i,text in enumerate(notes):gt(12,base.PAGE_H-32-i*12,text,8)
         for page in pages[2:]:
             chimney_page=page[0][0]['id']=='CHIMNEY'
-            g.showPage();gt(12,base.PAGE_H-14,'LẮP ỐNG KHÓI — SƠ ĐỒ THAM KHẢO' if chimney_page else 'SƠ ĐỒ MÁI PHỦ — KHÔNG DÙNG LÀM MẪU CẮT',10)
+            g.showPage();gt(12,base.PAGE_H-14,'CHIMNEY ASSEMBLY — REFERENCE DIAGRAM' if chimney_page else 'ROOF CAP JOINT MAP — NOT A CUTTING TEMPLATE',10)
             if chimney_page:
-                for i,line in enumerate(['Gấp 3 cạnh đứng; dán mép cùng mã để khép ống, miệng trên để mở.', 'Gấp 4 tai chân vào trong. Chân vát phải khớp độ dốc mái.', 'Đặt lên khung định vị in trên mặt mái đã chọn, gần phía sau nhà.', 'Ướm thử, bôi keo vào tai chân rồi dán lên mái phủ. Không khoét mái.']):
+                for i,line in enumerate(['Fold the three vertical corners. Glue matching edges; leave the top open.', 'Fold the four bottom tabs inward. Fit the sloped base to the roof.', 'Place the chimney on the roof outline near the back of the house.', 'Test-fit, glue the bottom tabs, and attach to the roof cap. Do not cut the roof.']):
                     gt(12,base.PAGE_H-30-i*10,line,8)
             for piece,x,y in page:
                 from shapely.affinity import translate

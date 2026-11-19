@@ -5,8 +5,8 @@ from pathlib import Path
 import time
 import zipfile
 import pytest
-from fastapi.testclient import TestClient
-from backend.app import create_app
+from tests.support import TestClient
+from tests.support import create_app
 
 ROOT = Path(__file__).resolve().parents[1]
 

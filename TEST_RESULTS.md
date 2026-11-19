@@ -133,3 +133,33 @@ Browser test: tạo dự án khung nhà → Generate → SVG và canvas 3D xuấ
 
 - 20 tests PASS: bỏ ống khói trên dáng cao, chọn mái dài theo chiều dài dốc, Saltbox và ảnh đối xứng của hình học, quy tắc mái bằng nhau, giữ snapshot cũ và kết cấu thân nhà.
 - Xuất Saltbox A4, Dutch Colonial Letter và Forest không ống khói: QA PASS, gồm PDF màu/tự tô. Đã xem preview Saltbox với ống khói chuyển sang mái dài bên trái.
+
+## Workspace phối mẫu & thumbnail — 2026-11-19
+
+- 84 kiểm thử cấu hình, cá nhân hoá và bảo toàn kết cấu PASS (30.87 s).
+- 7 kiểm thử mới PASS (19.67 s): 5 bộ cây/quà và hoạ tiết xuất A4 màu/tự tô, lưu/sửa/sao chép/khởi động lại cấu hình, dữ liệu mới không có dự án mẫu, toàn bộ thumbnail hợp lệ.
+- TypeScript/Vite build PASS (36 modules).
+- Chrome: luồng dữ liệu trống và phối mẫu bằng thumbnail PASS; chọn thân nhà/hoạ tiết/cây/quà tự tạo bản 3D/2D, không bấm Generate, lưu đúng manifest và giữ lựa chọn khi tải lại. Khung thiết lập có cuộn riêng để không kéo dài các vùng preview.
+- Kiểm tra ảnh cuối sau tải lại: 3D, SVG 2D và thumbnail tải đầy đủ; Chrome PASS (25.3 s). Thumbnail dùng lazy loading, bài kiểm tra cuộn vào vùng ảnh trước khi xác minh tải. Mobile không tràn ngang.
+
+## Production UI / US English — 2026-11-19
+
+- 47 backend tests PASS (117.34 s): English catalog generation, PDF/SVG layout checks, custom designs, snapshots, and structural preservation.
+- TypeScript/Vite build PASS (37 modules). Source scan found no Vietnamese interface strings in frontend TSX files.
+- Chrome production flows: 2 passed (29.7 s). Verified English library/creator, empty state, keyboard switch operation, paper/print-style switches, automatic rebuild, English Print pages, 20 px computed layout gaps, and no mobile horizontal overflow. Reviewed desktop workspace and mobile screenshots.
+
+## Accounts, private project library, and Lifetime checkout — 2026-11-19
+
+- TypeScript/Vite production build PASS (39 modules).
+- Full backend suite: **329 passed** in 283.61 s. Existing API pipeline tests now authenticate with test-only accounts. New tests cover per-account ownership on project mutations/files/jobs, session revocation, restart persistence, Starter limits, preservation of unassigned legacy projects, and disabled unconfigured checkout.
+- Payment tests use mocked Stripe responses and signed local events: forged/expired signatures, wrong amount/account/currency/mode, unpaid events, replay, and duplicate checkout prevention. No external checkout or real payment was performed.
+- Chrome account flow PASS (6.3 s): registration, private saved projects, duplicate, sign-out/sign-in, reload persistence, project count, disabled purchases, and desktop/mobile layout. Account screenshots reviewed.
+- Chrome production regressions: **2 passed** (29.5 s): library, keyboard switches, automatic 3D/2D rebuild, print/coloring selection, A4, PDF print page, and mobile overflow. The preview visibility assertion allows 20 s for asynchronous artwork loading; the first run hit the earlier 5 s limit.
+- Quality checks navigation/panel removed; internal generation checks remain. Legacy projects were preserved without automatic reassignment. Payment activation and public deployment remain unconfigured; operational limitations are documented in ACCOUNTS.md.
+
+## Simplified navigation and project downloads — 2026-11-19
+
+- Removed Downloads and Create a house from sidebar. Initial My projects screen presents Create a house beside Browse templates.
+- Ready projects expose PDF full-color/coloring selection, ZIP, Print, and individual files inside My projects; unfinished projects disable Downloads.
+- Removed requested Studio/physical-assembly footer text. TypeScript/Vite build passed.
+- Chrome: 3 tests passed (35.7 s), covering account persistence, initial actions, sidebar removal, actual authenticated coloring PDF download from the correct project, ZIP link, 3D/2D updates and mobile overflow. Project download screenshot reviewed. Footer text removal was verified in source and final build.

@@ -1,4 +1,5 @@
 import {useEffect,useState} from 'react';
+import {BinarySwitch} from './BinarySwitch';
 import type {HouseTemplate} from './TemplateLibrary';
 
 type Props={templates:HouseTemplate[];initialTemplate?:string;onClose:()=>void;onCreate:(preset:string,personal_name:string,paper:string)=>Promise<void>};
@@ -12,7 +13,7 @@ export function PersonalizeHouse({templates,initialTemplate,onClose,onCreate}:Pr
   const timer=setTimeout(async()=>{
    try{
     const response=await fetch(`/api/templates/${preset}/personalize-preview`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({personal_name:name}),signal:controller.signal});
-    if(!response.ok){const result=await response.json();throw Error(typeof result.detail==='string'?result.detail:result.detail?.[0]?.msg||'Không thể xem thử tên này.');}
+    if(!response.ok){const result=await response.json();throw Error(typeof result.detail==='string'?result.detail:result.detail?.[0]?.msg||'Unable to preview this name.');}
     const blob=await response.blob();if(controller.signal.aborted)return;
     objectUrl=URL.createObjectURL(blob);setPreview(objectUrl);setPreviewValid(true);
    }catch(e){if(!controller.signal.aborted)setError((e as Error).message);}
@@ -21,19 +22,19 @@ export function PersonalizeHouse({templates,initialTemplate,onClose,onCreate}:Pr
   return()=>{clearTimeout(timer);controller.abort();if(objectUrl)URL.revokeObjectURL(objectUrl);};
  },[preset,name]);
  return <div className="modal-backdrop" onClick={()=>{if(!creating)onClose();}}>
-  <form className="personalize-tool" role="dialog" aria-modal="true" aria-label="Tạo nhà bánh gừng cá nhân hoá" onClick={e=>e.stopPropagation()} onKeyDown={e=>{if(e.key==='Escape'&&!creating)onClose();}} onSubmit={async e=>{e.preventDefault();setCreating(true);setError('');try{await onCreate(preset,name.trim(),paper);}catch(e){setError((e as Error).message);}finally{setCreating(false);}}}>
-   <div className="personalize-heading"><div><span>NGÔI NHÀ CỦA RIÊNG BẠN</span><h2>Tạo nhà bánh gừng</h2></div><button type="button" aria-label="Đóng công cụ cá nhân hoá" disabled={creating} onClick={onClose}>×</button></div>
+  <form className="personalize-tool" role="dialog" aria-modal="true" aria-label="Create a personalized 3D model" onClick={e=>e.stopPropagation()} onKeyDown={e=>{if(e.key==='Escape'&&!creating)onClose();}} onSubmit={async e=>{e.preventDefault();setCreating(true);setError('');try{await onCreate(preset,name.trim(),paper);}catch(e){setError((e as Error).message);}finally{setCreating(false);}}}>
+   <div className="personalize-heading"><div><span>MAKE IT YOURS</span><h2>Create your 3D model</h2></div><button type="button" aria-label="Close model creator" disabled={creating} onClick={onClose}>×</button></div>
    <div className="personalize-body"><div className="personalize-preview" style={{background:template?.background}}>
-    {template&&<img src={preview||template.preview_url} alt={name?`Bảng tên ${name} trên ${template.name}`:template.name}/>}
-    <p role="status">{previewing?'Đang cập nhật bảng tên…':'Bảng tên nằm trên mặt trước ngôi nhà'}</p>
+    {template&&<img src={preview||template.preview_url} alt={name?`Nameplate ${name} on ${template.name}`:template.name}/>}
+    <p role="status">{previewing?'Updating nameplate…':'Your nameplate appears on the front of the house'}</p>
    </div><div className="personalize-options">
-    <label>Chọn mẫu nhà<select autoFocus value={preset} disabled={creating} onChange={e=>setPreset(e.target.value)}>{templates.map(t=><option key={t.id} value={t.id}>{t.name}</option>)}</select></label>
-    <label>Tên trên ngôi nhà<input value={name} maxLength={24} disabled={creating} onChange={e=>setName(e.target.value)} placeholder="Ví dụ: Gia đình An" aria-describedby="personal-name-help"/></label>
-    <p className="hint" id="personal-name-help">{name.length}/24 ký tự · Hỗ trợ tiếng Việt có dấu. Chữ tự xuống dòng và vừa bảng tên. Để trống nếu không cần tên.</p>
-    <label>Khổ giấy bản in<select value={paper} disabled={creating} onChange={e=>setPaper(e.target.value)}><option>A4</option><option>US Letter</option></select></label>
-    <div className="note">Tên được in trên nhà và hiển thị trong 3D.<br/><span>Bộ file gồm nhà, mái đua, đế tuyết, cây thông, hộp quà và hướng dẫn lắp.</span></div>
+    <label>Choose a template<select autoFocus value={preset} disabled={creating} onChange={e=>setPreset(e.target.value)}>{templates.map(t=><option key={t.id} value={t.id}>{t.name}</option>)}</select></label>
+    <label>Name on your house<input value={name} maxLength={24} disabled={creating} onChange={e=>setName(e.target.value)} placeholder="Example: The Smith Family" aria-describedby="personal-name-help"/></label>
+    <p className="hint" id="personal-name-help">{name.length}/24 characters · Accented Latin characters are supported. Text fits the nameplate automatically. Leave blank for no nameplate.</p>
+    <BinarySwitch label="Paper format" off="US Letter" on="A4" checked={paper==='A4'} disabled={creating} onChange={checked=>setPaper(checked?'A4':'US Letter')}/>
+    <div className="note">Your name appears in the model and on the printed house.<br/><span>Includes the house, overhanging roof, snowy base, tree, gifts, and assembly guide.</span></div>
     {error&&<p role="alert" className="error">{error}</p>}
-    <button className="primary" disabled={creating||previewing||!previewValid||!template}>{creating?'Đang tạo dự án…':'Tạo nhà & bản in'}</button>
+    <button className="primary" disabled={creating||previewing||!previewValid||!template}>{creating?'Creating your project…':'Create model & print files'}</button>
    </div></div>
   </form>
  </div>;

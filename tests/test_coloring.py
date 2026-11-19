@@ -2,8 +2,8 @@ import json
 import xml.etree.ElementTree as ET
 import pymupdf as fitz
 import pytest
-from fastapi.testclient import TestClient
-from backend.app import create_app
+from tests.support import TestClient
+from tests.support import create_app
 from backend.gingerbread import generate
 from backend.template_catalog import TEMPLATES
 

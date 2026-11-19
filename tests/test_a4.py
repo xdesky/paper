@@ -1,8 +1,8 @@
 import io,json,time
 import pytest
 import fitz
-from fastapi.testclient import TestClient
-from backend.app import create_app
+from tests.support import TestClient
+from tests.support import create_app
 from backend.template_catalog import TEMPLATES
 
 @pytest.fixture(scope='module')

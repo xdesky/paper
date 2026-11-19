@@ -215,3 +215,19 @@ Có trong preview thư viện, 3D, OBJ toàn cảnh, PDF/SVG màu và tự tô. 
 ### Bố trí ống khói theo dáng nhà — catalog 4.4.0
 
 Chỉ 14 mẫu dáng thấp phù hợp còn ống khói. Loại các dáng cao (tường từ 95 mm hoặc tổng chiều cao trên 140 mm), gồm Forest, Frost, Colonial và Farmhouse. Với mẫu mới, chọn mặt mái có chiều dài dốc thực tế lớn nhất; nếu bằng nhau chọn bên phải. Khung định vị và chân vát được tính lại theo mặt mái được chọn. Snapshot v4.3 vẫn giữ vị trí cũ; Generate dự án để cập nhật quy tắc mới.
+
+### Workspace phối mẫu và cập nhật tự động
+
+Dữ liệu mới khởi động không tự tạo dự án mẫu; Workspace hiển thị “Chưa có dự án”, dẫn sang Kho template. Dự án đã tạo vẫn được giữ lại. Trong Workspace, chọn thân nhà, hoạ tiết mái/tường, cây thông và hộp quà bằng thumbnail. Các lựa chọn tự lưu và tạo lại 3D/2D sau 650 ms không đổi lựa chọn; không cần bấm Generate. Trong khi xuất, giao diện báo tiến trình và tạm khóa lựa chọn để tránh bản in không khớp mô hình. Lỗi xuất có thể thử lại bằng Generate.
+
+Thêm 5 dáng cây thông (thanh mảnh, tán tròn, nhiều tầng, ngôi sao, kẹo ngọt) và 5 mẫu trang trí hộp quà (sọc kẹo, chấm bi, bông tuyết, lá Noel, sao vàng), ngoài mẫu cổ điển. Hộp quà vẫn là hai khối 20/16 mm; cây thông có hình cắt mới và khe ghép chéo. Hoạ tiết mái/tường chọn độc lập, có cả bản màu và bản tự tô. Cấu hình lưu trong trường `design`, đi theo bản sao, revision và manifest; SQLite tự nâng cấp dữ liệu cũ.
+
+### Production interface — US English
+
+The interface, template catalog, design options, validation messages, and newly generated print/assembly text use US English. Existing project names and previously exported revisions are preserved. Select Rebuild to refresh older print files in English.
+
+Two-option paper and print-style selectors use keyboard-accessible switches with explicit labels and visible states. Multi-option selectors remain unchanged. Major layout blocks share a 20 px spacing token, including the workspace, template cards, creator, downloads, and metrics. The desktop sidebar has a scrollable project list; design settings scroll independently. Mobile layouts keep the same 20 px section spacing.
+
+### Accounts and saved projects
+
+Account registration/sign-in is now required to create and access projects. The public Template library remains available without signing in. My projects saves each account's designs separately. See [ACCOUNTS.md](ACCOUNTS.md) for persistent storage, optional one-time Lifetime checkout, deployment settings, and deliberate migration of existing local projects. Purchases are disabled until payment configuration is supplied.

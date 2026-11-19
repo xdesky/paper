@@ -1,9 +1,9 @@
 import json,time,unicodedata
 from pathlib import Path
 import pytest
-from fastapi.testclient import TestClient
+from tests.support import TestClient
 from shapely.geometry import Polygon,box
-from backend.app import create_app
+from tests.support import create_app
 from backend.template_catalog import TEMPLATES
 from backend.gingerbread import model,decorations,digest
 from backend.personalization import normalize_name,nameplate

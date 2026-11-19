@@ -10,9 +10,9 @@ MAX_NAME_LENGTH=24
 def normalize_name(value):
     if value is None or not isinstance(value,str):return value
     value=' '.join(unicodedata.normalize('NFC',value).split())
-    if len(value)>MAX_NAME_LENGTH:raise ValueError('Tên tối đa 24 ký tự.')
+    if len(value)>MAX_NAME_LENGTH:raise ValueError('Use no more than 24 characters.')
     if any(not (c in " -.'&!,0123456789" or 'LATIN' in unicodedata.name(c,'')) for c in value):
-        raise ValueError('Dùng chữ Latin/tiếng Việt, số, khoảng trắng hoặc dấu - . & ! , và dấu nháy.')
+        raise ValueError('Use Latin letters (including accented letters), numbers, spaces, or - . & ! , and apostrophes.')
     return value
 
 @lru_cache(maxsize=128)
@@ -38,7 +38,7 @@ def nameplate(t,panel):
     bh=9;bw=min(64,w*.65)
     safe=panel.square.buffer(-2.6)
     while bw>16 and not safe.covers(box(w/2-bw/2,cy-bh/2,w/2+bw/2,cy+bh/2)):bw-=1
-    if bw<=16:raise ValueError('Không đủ vùng an toàn để đặt bảng tên.')
+    if bw<=16:raise ValueError('There is not enough space for the nameplate.')
     paint=Painter(panel.square)
     plaque=[(w/2-bw/2,cy-bh/2),(w/2+bw/2,cy-bh/2),(w/2+bw/2,cy+bh/2),(w/2-bw/2,cy+bh/2)]
     paint.polygon([(x+.3,y-.35) for x,y in plaque],'#874223')

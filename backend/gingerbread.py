@@ -117,7 +117,7 @@ def model(t):
         seam['hinge']={m['panel'] for m in seam['occurrences']} in pair_sets
         if not seam['hinge']:
             owner=seam['occurrences'][0]
-            if t.get('collection')=='Noel nâng cao':
+            if t.get('collection')=='Advanced Christmas':
                 owner=next((m for m in seam['occurrences'] if m['panel'].startswith('ROOF')),owner)
             p=panels[owner['panel']]
             p.tabs[owner['edge']]=base.base.flap_for_edge(*p.seg(owner['edge']),depth=5)
@@ -451,41 +451,41 @@ def generate(request,out,progress=lambda stage:None):
         preview[0].get_pixmap(matrix=fitz.Matrix(2,2)).save(out/'model_3d_preview.png')
     base.contact_sheet(pdf,out/'printable_preview.png',identity['model_id'])
     guide=canvas.Canvas(str(out/'assembly_guide.pdf'),pagesize=(base.PAGE_W*base.PT,base.PAGE_H*base.PT),invariant=1)
-    guide.setTitle('Hướng dẫn - '+t['name']);guide.setSubject(canonical(identity))
+    guide.setTitle('Assembly guide - '+t['name']);guide.setSubject(canonical(identity))
     def gt(x,y,text,size=9,bold=False):base.pdf_text(guide,x,y,text,size,bold)
-    gt(12,264,'HƯỚNG DẪN LẮP NHÀ BÁNH GỪNG',14,True);gt(12,253,t['name'],11)
+    gt(12,264,'GINGERBREAD HOUSE ASSEMBLY GUIDE',14,True);gt(12,253,t['name'],11)
     guide.drawImage(str(out/'model_3d_preview.png'),45*base.PT,151*base.PT,width=125*base.PT,height=95*base.PT,preserveAspectRatio=True,mask='auto')
-    steps=[f"Kích thước: {t['width']} × {t['depth']} × {t['wall_height']+t['roof_rise']:g} mm. Đáy mở.",
-           f'1. In {paper_name} ở Actual Size / 100%. Đo vạch chuẩn 40 mm.',
-           '2. Cắt theo viền ĐEN. Giữ lại tai dán màu vàng nhạt.',
-           '3. Gấp các cụm tường, mặt in hướng ra ngoài.',
-           '4. Dán các cạnh đứng có cùng mã để khép bốn tường.',
-           '5. Gấp các cụm mái theo nét tím; ghép các mã còn lại.',
-           '6. Đối chiếu mã trên tai dán với sơ đồ ghép ở cuối hướng dẫn.',
-           '7. Giữ nhẹ và đợi keo khô. Nhà không có đáy.',
-           'Cửa, cửa sổ và kẹo là họa tiết IN; không cắt khoét.',
-           'Chưa thử lắp bằng giấy thật: physical_assembly = NOT_TESTED.']
+    steps=[f"Dimensions: {t['width']} × {t['depth']} × {t['wall_height']+t['roof_rise']:g} mm. Open bottom.",
+           f'1. Print on {paper_name} at Actual Size / 100%. Check the 40 mm ruler.',
+           '2. Cut along the BLACK outline. Keep all glue tabs.',
+           '3. Fold the wall units with the printed side facing out.',
+           '4. Glue matching vertical edges to close the four walls.',
+           '5. Fold the roof units along the dashed lines. Match the remaining labels.',
+           '6. Match the tab labels using the joint diagrams at the end of this guide.',
+           '7. Hold gently until the glue dries. The house has an open bottom.',
+           'Doors, windows, and candy are PRINTED details. Do not cut them out.',
+           'Physical assembly has not been tested.']
     if t.get('bay_count',1) > 1:
-        steps[6]='6. Ghép cụm mái: đỉnh mỗi gian LỒI, thung mái giữa các gian LÕM.'
+        steps[6]='6. Join roof units: fold ridges outward and valleys inward.'
     for i,text in enumerate(steps):gt(12,139-i*10,text,8)
-    gt(12,19,'Giấy gợi ý: cardstock 160–220 gsm. Ướm thử trước khi dán.',8)
+    gt(12,19,'Recommended: 160–220 gsm cardstock. Test-fit before gluing.',8)
     gt(12,10,identity['model_id']+' | '+identity['geometry_sha256'][:16],6)
-    guide.showPage();gt(12,264,'MÃ GHÉP & NẾP GẤP',14,True)
+    guide.showPage();gt(12,264,'JOINTS & FOLDS',14,True)
     y=246
     for s in seams:
         if y<48:
-            guide.showPage();gt(12,264,'MÃ GHÉP & NẾP GẤP (tiếp)',14,True);y=246
+            guide.showPage();gt(12,264,'JOINTS & FOLDS (continued)',14,True);y=246
         mates=' + '.join(m['panel'] for m in s['occurrences'])
-        text=f"{s['id']}: {mates} | "+(f"GẤP LIỀN {s['fold_degrees']:.1f}°" if s['hinge'] else 'DÁN')
-        if s.get('fold_direction')=='VALLEY_FROM_PRINTED_OUTSIDE':text+=' — THUNG MÁI LÕM'
+        text=f"{s['id']}: {mates} | "+(f"FOLD {s['fold_degrees']:.1f}°" if s['hinge'] else 'GLUE')
+        if s.get('fold_direction')=='VALLEY_FROM_PRINTED_OUTSIDE':text+=' — INWARD VALLEY'
         gt(12,y,text,7);y-=9
-    gt(12,y-5,'Góc ghi ở trên là góc quay từ tờ giấy phẳng, nhìn mặt in bên ngoài.',7.5)
-    gt(12,y-17,'Nét tím: gấp liền. Nét xanh đứt: chân tai dán. Nét đen: cắt.',8)
+    gt(12,y-5,'Angles indicate rotation from flat paper, viewed from the printed side.',7.5)
+    gt(12,y-17,'Purple: folds. Blue dashes: glue-tab folds. Black: cuts.',8)
     gt(12,10,identity['model_id']+' | '+identity['geometry_sha256'][:16],6)
     for index,page in enumerate(pages):
         guide.showPage()
-        gt(12,base.PAGE_H-13.4,f'SƠ ĐỒ GHÉP — TRANG IN {index+1}/{len(pages)}',12,True)
-        gt(12,base.PAGE_H-21.4,'Chỉ để tra mã cạnh. KHÔNG dùng trang này làm mẫu cắt.',8)
+        gt(12,base.PAGE_H-13.4,f'JOINT MAP — PRINT PAGE {index+1}/{len(pages)}',12,True)
+        gt(12,base.PAGE_H-21.4,'Use this page to locate joint labels. Do NOT use it as a cutting template.',8)
         for unit in page['units']:
             for pid in unit.ids:
                 p=panels[pid]
@@ -499,7 +499,7 @@ def generate(request,out,progress=lambda stage:None):
                     x,y=unit.transform(pid,point)
                     base.pdf_text(guide,x,y,sid,6,True,center=True)
             base.pdf_shape(guide,unit.shape(),stroke=CUT,stroke_width=.65)
-        gt(12,10,identity['model_id']+' | Sơ đồ tham khảo, mã đầy đủ hai đầu ghép.',7)
+        gt(12,10,identity['model_id']+' | Reference diagram with labels on both matching edges.',7)
     guide.save()
     progress('QA')
     tests=validate(t,panels,seams,units,pages,boundary,out)

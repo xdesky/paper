@@ -1,5 +1,5 @@
 """Versioned, local catalog of printable Christmas houses."""
-CATALOG_VERSION = '4.4.0'
+CATALOG_VERSION = '5.0.0'
 TEMPLATES = [
     dict(id='gb_classic', name='Ngôi nhà bánh gừng', subtitle='Noel cổ điển', collection='Truyền thống', width=90, depth=70, wall_height=85, roof_rise=45, wall='#b97946', roof='#8b4139', accent='#bf443d', trim='#fff5dc', background='#f4e8d7', motif='classic', difficulty='Dễ', description='Bánh gừng nâu ấm, mái đỏ và những đường kem trắng. Mẫu mở đầu cho một ngôi làng Noel trên bàn.'),
     dict(id='gb_candy', name='Tiệm kẹo Giáng sinh', subtitle='Candy Cane Lane', collection='Kẹo ngọt', width=100, depth=70, wall_height=85, roof_rise=42, wall='#d99478', roof='#d25762', accent='#bc3046', trim='#fff7e7', background='#f9e7e8', motif='candy', difficulty='Dễ', description='Mái hồng dâu, cửa viền kẹo gậy và ô cửa sáng vàng. Những viên kẹo được in trực tiếp trên mặt giấy.'),
@@ -76,11 +76,27 @@ for template in TEMPLATES:
         # Tall/slender houses keep their silhouette free of a chimney.
         if template['wall_height'] < 95 and template['wall_height']+template['roof_rise'] <= 140:
             template.update(chimney=True,chimney_placement='longest_slope')
+# US English catalog presentation; dimensions and IDs remain stable.
+ENGLISH_NAMES = {
+ 'gb_classic':'Classic Gingerbread House','gb_candy':'Christmas Candy Shop',
+ 'gb_forest':'Evergreen Cottage','gb_chalet':'Snowy Alpine Chalet',
+ 'gb_frost':'Sugar & Snow House','gb_mini':'Mini Gingerbread Cottage',
+}
+FAMILY_NAMES={'twins':'Twin Gable Cottage','cottage':'Storybook Duo','farmstead':'Christmas Farmstead',
+              'tower':'Candy Mansard Tower','manor':'Double Gambrel Manor','village':'Triple Gable Village'}
+for t in TEMPLATES:
+    t['name']=ENGLISH_NAMES.get(t['id'],t.get('architecture',t['name'])+' · '+t.get('finish',''))
+    for prefix in ('gb_two_','gb_complex_'):
+        if t['id'].startswith(prefix):t['name']=FAMILY_NAMES[t['id'][len(prefix):].rsplit('_',1)[0]]+' · '+t['finish']
+    t['collection']={'Truyền thống':'Classics','Kẹo ngọt':'Candy Lane','Thiên nhiên':'Woodland','Nhà 2 gian':'Two-Bay Houses','Noel nâng cao':'Advanced Christmas'}.get(t['collection'],t['collection'])
+    t['difficulty']={'Dễ':'Easy','Trung bình':'Intermediate','Nâng cao':'Advanced'}[t['difficulty']]
+    if t['id']=='gb_classic':t['subtitle']='A Christmas Classic'
+    t['description']=f"{t.get('architecture',t['name'])} with festive icing, candy details, and glowing windows. Includes a snowy base, a slotted tree, and two gift boxes. Customize the patterns and add your own name."
 BY_ID = {t['id']: t for t in TEMPLATES}
 
 
 def public_template(t):
     return {**t, 'version': CATALOG_VERSION, 'dimensions_mm': [t['width'], t['depth'], t['wall_height'] + t['roof_rise']],
-            'paper': 'US Letter', 'accessories': ['Mái đua phủ tuyết', 'Đế tuyết', 'Cây thông ghép chéo', '2 hộp quà 3D']+(['Ống khói 3D'] if t.get('chimney') else []), 'physical_assembly': 'NOT_TESTED',
-            'construction': ('Hai gian chung thân, không có vách ngăn nội thất; hai chóp mái nối bằng thung mái lõm. ' if t.get('bay_count') == 2 else '') + 'Nhà đáy mở, mái phủ hai lớp đua 6 mm trước/sau và 4 mm theo dốc bên ngoài. Cửa, cửa sổ, phào và vật liệu là họa tiết in. Không có hiên hoặc nội thất rời.' + (' Có ống khói rỗng 3D, chân vát theo mái, 1 trang cắt/gấp/dán riêng.' if t.get('chimney') else ' Không có ống khói rời.'),
+            'paper': 'US Letter', 'accessories': ['Overhanging snowy roof', 'Snowy base', 'Slotted tree', 'Two 3D gift boxes']+(['3D chimney'] if t.get('chimney') else []), 'physical_assembly': 'NOT_TESTED',
+            'construction': 'Open-bottom paper house with a separate snowy base. The two-layer roof extends 6 mm at the front and back and 4 mm along the outer slopes. Doors and windows are printed details. No interior rooms or separate porch.' + (' Includes an open-top 3D chimney with sloped glue tabs and its own print page.' if t.get('chimney') else ''),
             'preview_url': f"/api/templates/{t['id']}/preview.svg"}

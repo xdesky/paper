@@ -21,6 +21,8 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field, ConfigDict, field_validator
 from .personalization import normalize_name
 from .design_options import DesignOptions,OPTIONS,apply_design
+from .accounts import Accounts,CURRENT_USER
+from .billing import Billing
 from .template_catalog import BY_ID, TEMPLATES, CATALOG_VERSION, public_template
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -90,6 +92,9 @@ def create_app(data_dir=None, seed=False):
         if 'design' not in {row['name'] for row in db.execute('PRAGMA table_info(projects)')}:
             db.execute("ALTER TABLE projects ADD COLUMN design TEXT NOT NULL DEFAULT '{}'")
 
+    accounts=Accounts(connection)
+    billing=Billing(accounts)
+
     def serialize_project(row):
         p=dict(row);p['design']=DesignOptions(**json.loads(p['design'])).model_dump();return p
 
@@ -103,7 +108,9 @@ def create_app(data_dir=None, seed=False):
     def create(body):
         pid = uuid.uuid4().hex
         with connection() as db:
-            db.execute('INSERT INTO projects (id,name,preset,revision,result_revision,status,created_at,updated_at,paper,personal_name,design) VALUES(?,?,?,?,?,?,?,?,?,?,?)', (pid, body.name, body.preset, 1, None, 'DRAFT', now(), now(), body.paper,body.personal_name,body.design.model_dump_json()))
+            db.execute('BEGIN IMMEDIATE')
+            owner=accounts.check_create(db)
+            db.execute('INSERT INTO projects (id,name,preset,revision,result_revision,status,created_at,updated_at,paper,personal_name,design,owner_id) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)', (pid, body.name, body.preset, 1, None, 'DRAFT', now(), now(), body.paper,body.personal_name,body.design.model_dump_json(),owner))
         return project(pid)
 
     def update_job(jid, status, stage, error=None):
@@ -168,14 +175,14 @@ def create_app(data_dir=None, seed=False):
             db.execute("UPDATE jobs SET status='FAILED',stage='Interrupted',error='Server restarted before completion' WHERE status IN ('QUEUED','RUNNING')")
             db.execute("UPDATE projects SET status='FAILED' WHERE status='GENERATING'")
             count = db.execute('SELECT COUNT(*) FROM projects').fetchone()[0]
-        if seed and count == 0:
-            samples = [create(CreateProject(name=name, preset=preset)) for preset, name in PRESETS.items()]
-            enqueue(samples[0]['id'])
         yield
         pool.shutdown(wait=True)
 
     app = FastAPI(title='Print Play Magic Studio', version='0.1.0', lifespan=lifespan)
     app.add_middleware(CORSMiddleware, allow_origins=os.getenv('PPM_CORS_ORIGINS', 'http://localhost:5173,http://127.0.0.1:5173').split(','), allow_methods=['GET', 'POST', 'PATCH', 'DELETE'], allow_headers=['Content-Type'])
+
+    accounts.install(app)
+    billing.install(app)
 
     @app.get('/api/health')
     def health():
@@ -188,6 +195,12 @@ def create_app(data_dir=None, seed=False):
     @app.get('/api/design-options')
     def design_options():
         return {key:[dict(id=id,label=label) for id,label in values] for key,values in OPTIONS.items()}
+
+    @app.get('/api/design-options/{kind}/{style}/preview.svg')
+    def design_thumbnail(kind: Literal['roof','wall','tree','gift'],style: str):
+        if style not in {id for id,label in OPTIONS[kind]}:raise HTTPException(404,'Unknown design option')
+        from .design_options import thumbnail
+        return Response(thumbnail(kind,style),media_type='image/svg+xml',headers={'Cache-Control':'public, max-age=3600','X-Content-Type-Options':'nosniff'})
 
     @app.get('/api/templates')
     def templates():
@@ -216,7 +229,7 @@ def create_app(data_dir=None, seed=False):
     @app.get('/api/projects')
     def projects():
         with connection() as db:
-            return [serialize_project(r) for r in db.execute('SELECT * FROM projects ORDER BY created_at')]
+            return [serialize_project(r) for r in db.execute('SELECT * FROM projects WHERE owner_id=? ORDER BY updated_at DESC',(CURRENT_USER.get(),))]
 
     @app.post('/api/projects', status_code=201)
     def new_project(body: CreateProject):
@@ -248,7 +261,7 @@ def create_app(data_dir=None, seed=False):
     @app.post('/api/projects/{pid}/duplicate', status_code=201)
     def duplicate(pid: str):
         p = project(pid)
-        return create(CreateProject(name=(p['name'][:90] + ' (bản sao)'), preset=p['preset'], paper=p['paper'],personal_name=p['personal_name'],design=p['design']))
+        return create(CreateProject(name=(p['name'][:90] + ' (copy)'), preset=p['preset'], paper=p['paper'],personal_name=p['personal_name'],design=p['design']))
 
     @app.delete('/api/projects/{pid}', status_code=204)
     def delete(pid: str):
@@ -303,7 +316,7 @@ def create_app(data_dir=None, seed=False):
     def pages(pid: str, style: Literal['color','coloring'] = 'color'):
         root = artifact_root(pid)
         folder='coloring_svg_pages' if style=='coloring' else 'svg_pages'
-        if not (root/folder).exists():raise HTTPException(409,'Bấm Generate để tạo bản tự tô cho dự án này.')
+        if not (root/folder).exists():raise HTTPException(409,'Rebuild this project to add coloring pages.')
         return [{'number': i+1, 'url': f'/api/projects/{pid}/artifacts/{folder}/{p.name}'} for i, p in enumerate(sorted((root / folder).glob('*.svg')))]
 
     @app.get('/api/projects/{pid}/artifacts')
@@ -315,12 +328,12 @@ def create_app(data_dir=None, seed=False):
     def print_project(pid: str, style: Literal['color','coloring'] = 'color'):
         root = artifact_root(pid)
         folder='coloring_svg_pages' if style=='coloring' else 'svg_pages'
-        if not (root/folder).exists():raise HTTPException(409,'Bấm Generate để tạo bản tự tô cho dự án này.')
-        title = html.escape(project(pid)['name']) + (' — Bản tự tô' if style=='coloring' else ' — Bản màu')
+        if not (root/folder).exists():raise HTTPException(409,'Rebuild this project to add coloring pages.')
+        title = html.escape(project(pid)['name']) + (' — Coloring pages' if style=='coloring' else ' — Full color')
         sheets = ''.join('<section class="sheet">'+re.sub(r'<\?xml[^>]*\?>', '', p.read_text())+'</section>' for p in sorted((root/folder).glob('*.svg')))
-        document = '''<!doctype html><html lang="vi"><meta charset="utf-8"><title>Print — '''+title+'''</title>
+        document = '''<!doctype html><html lang="en-US"><meta charset="utf-8"><title>Print — '''+title+'''</title>
 <style>@page{size:215.9mm 279.4mm;margin:0}*{box-sizing:border-box}body{margin:0;background:#e8ece7;font:14px system-ui}header{padding:16px;text-align:center;background:white}button{padding:10px 20px;cursor:pointer}.sheet{width:215.9mm;height:279.4mm;margin:12px auto;background:white;break-after:page;overflow:hidden}.sheet:last-child{break-after:auto}.sheet svg{display:block;width:215.9mm;height:279.4mm}@media print{header{display:none}body{background:white}.sheet{margin:0}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style>
-<header><strong>'''+title+'''</strong><p>US Letter · Scale 100% · Không Fit to Page · Tắt headers/footers của trình duyệt. Đo vạch 40 mm trước khi cắt.</p><button onclick="window.print()">Print / In ngay</button></header>'''+sheets+'''<script>window.addEventListener('load',()=>{document.fonts.ready.then(()=>window.print())});</script></html>'''
+<header><strong>'''+title+'''</strong><p>US Letter · Scale 100% · Fit to Page off · Disable browser headers and footers. Check the 40 mm ruler before cutting.</p><button onclick="window.print()">Print now</button></header>'''+sheets+'''<script>window.addEventListener('load',()=>{document.fonts.ready.then(()=>window.print())});</script></html>'''
         if project(pid)['paper'] == 'A4':
             document = document.replace('215.9mm','210mm').replace('279.4mm','297mm').replace('US Letter ·','A4 ·')
         return Response(document,media_type='text/html',headers={'Cache-Control':'no-store','X-Content-Type-Options':'nosniff'})

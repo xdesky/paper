@@ -8,7 +8,7 @@ export function ModelViewer({spec,seam,wire}:{spec:Spec;seam:string;wire:boolean
   const [error,setError] = useState('');
   useEffect(()=>{
     const target=host.current!; let renderer:THREE.WebGLRenderer;
-    try { renderer=new THREE.WebGLRenderer({antialias:true,alpha:true}); } catch {setError('WebGL không khả dụng. Xem ảnh 3D trong mục Xuất file.');return;}
+    try { renderer=new THREE.WebGLRenderer({antialias:true,alpha:true}); } catch {setError('WebGL is unavailable. View the model image in Downloads.');return;}
     setError(''); renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;renderer.setPixelRatio(Math.min(devicePixelRatio,2)); target.appendChild(renderer.domElement);
     const scene=new THREE.Scene(); const group=new THREE.Group(); scene.add(group);
     const camera=new THREE.PerspectiveCamera(35,1,0.1,10000);
@@ -43,5 +43,5 @@ export function ModelViewer({spec,seam,wire}:{spec:Spec;seam:string;wire:boolean
     let raf=0;const frame=()=>{controls.update();renderer.render(scene,camera);raf=requestAnimationFrame(frame);};frame();
     return()=>{cancelAnimationFrame(raf);resize.disconnect();controls.dispose();textures.forEach(t=>t.dispose());scene.traverse(o=>{if(o instanceof THREE.Mesh||o instanceof THREE.Line){o.geometry.dispose();(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>m.dispose());}});renderer.dispose();target.replaceChildren();};
   },[spec,seam,wire]);
-  return <div className="model-view" ref={host} aria-label="Mô hình 3D xoay, zoom và pan">{error&&<p role="alert">{error}</p>}</div>;
+  return <div className="model-view" ref={host} aria-label="Interactive 3D preview: rotate, zoom, and pan">{error&&<p role="alert">{error}</p>}</div>;
 }
