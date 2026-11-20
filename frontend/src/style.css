@@ -44,3 +44,12 @@ main{padding:20px;max-width:2100px;margin:0 auto}header{margin-bottom:20px;gap:2
 .project-downloads{border-top:1px solid var(--border);padding-top:20px;margin-top:8px;width:100%;display:flex;flex-direction:column;gap:20px}.project-download-heading{display:flex;align-items:center;justify-content:space-between;gap:20px}.project-download-heading button{padding:2px 9px}.project-downloads .project-card-actions{margin:0}.project-file-list{display:flex;flex-direction:column;gap:12px;margin-top:12px}.project-file-list a{overflow-wrap:anywhere;font-size:12px}.project-downloads summary{cursor:pointer;font-size:13px}
 
 .home-create{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:28px;margin-bottom:20px;background:linear-gradient(120deg,#eef5ed,#fff8e9)}.home-create h2{margin:12px 0;font-size:26px}.home-create p{margin:0;color:var(--muted);line-height:1.6}.home-create-actions{display:flex;flex-wrap:wrap;gap:20px;flex-shrink:0}@media(max-width:1000px){.home-create{align-items:flex-start;flex-direction:column;padding:20px}.home-create-actions{width:100%}.home-create-actions button{flex:1}}
+
+/* 16px default type, consistent controls, and a wider work area. */
+:root{font-size:16px}
+button,.button{min-height:44px;padding:10px 16px;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+button.favorite,button.close-detail,button.cover-button,.projects-title button,.project-download-heading button,.nav,.project,.binary-switch,.thumbnail-choice{min-height:0}
+.sidebar{width:200px;padding-left:14px;padding-right:14px}
+@media(min-width:1101px){.sidebar{width:200px}}
+.share-icon{width:44px;min-width:44px;padding:10px!important;flex:0 0 44px}
+.share-icon svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}

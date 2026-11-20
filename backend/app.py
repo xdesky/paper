@@ -23,7 +23,7 @@ from .personalization import normalize_name
 from .design_options import DesignOptions,OPTIONS,apply_design
 from .accounts import Accounts,CURRENT_USER
 from .billing import Billing
-from .template_catalog import BY_ID, TEMPLATES, CATALOG_VERSION, public_template
+from .template_catalog import BY_ID, TEMPLATES, CATEGORY_CATALOG, CATALOG_VERSION, public_template
 
 ROOT = Path(__file__).resolve().parents[1]
 Preset = Literal[tuple(['cube_100', 'cube_200', 'cube_300', 'house_frame', *BY_ID])]
@@ -160,7 +160,11 @@ def create_app(data_dir=None, seed=False):
                 rev += 1
             snapshot = {'project_id': pid, 'revision': rev, 'preset': row['preset'], 'paper': row['paper'], 'personal_name':row['personal_name'], 'design':json.loads(row['design']), 'scale': 1.0, 'engine_version': '1.2.0'}
             if row['preset'] in BY_ID:
-                snapshot.update(engine_version='gingerbread-4.0.0', template={**apply_design(BY_ID[row['preset']],json.loads(row['design'])),**({'personal_name':row['personal_name']} if row['personal_name'] else {})}, template_version=CATALOG_VERSION)
+                template=BY_ID[row['preset']]
+                if template.get('category')=='blocky-characters':
+                    snapshot.update(engine_version='blocky-1.0',template=template,template_version=CATALOG_VERSION)
+                else:
+                    snapshot.update(engine_version='gingerbread-4.0.0', template={**apply_design(template,json.loads(row['design'])),**({'personal_name':row['personal_name']} if row['personal_name'] else {})}, template_version=CATALOG_VERSION)
             jid = uuid.uuid4().hex
             db.execute('INSERT INTO revisions VALUES(?,?,?,?)', (pid, rev, json.dumps(snapshot), now()))
             db.execute('INSERT INTO jobs VALUES(?,?,?,?,?,?,?,?)', (jid, pid, rev, 'QUEUED', 'Queued', None, now(), now()))
@@ -205,24 +209,40 @@ def create_app(data_dir=None, seed=False):
     @app.get('/api/templates')
     def templates():
         from .gingerbread import model
+        from .blocky import spec_for
         result=[]
         for t in TEMPLATES:
+            if t.get('category')=='blocky-characters':
+                spec=spec_for(t,'US Letter','catalog',1)
+                result.append({**public_template(t),'sheet_count':1,'house_sheet_count':1,'house_cut_pieces':len(spec['geometry']['model']['parts']),'accessory_cut_pieces':0,'cut_pieces':len(spec['geometry']['model']['parts']),'face_count':len(spec['geometry']['panels']),'fold_hinges':0,'glue_seams':len(spec['geometry']['model']['parts'])*4})
+                continue
             panels,seams,units,pages,_=model(t)
             from .roof_cap import metadata
             cap=metadata(t)
             result.append({**public_template(t),'sheet_count':len(pages)+2+cap['sheet_count']+int(bool(t.get('chimney'))),'roof_cap':cap,'house_sheet_count':len(pages),'house_cut_pieces':len(units),'accessory_cut_pieces':5+cap['cut_pieces']+int(bool(t.get('chimney'))),'cut_pieces':len(units)+5+cap['cut_pieces']+int(bool(t.get('chimney'))),'face_count':len(panels),'fold_hinges':sum(s['hinge'] for s in seams),'glue_seams':sum(not s['hinge'] for s in seams)})
         return result
 
+    @app.get('/api/template-categories')
+    def template_categories():
+        counts={category['id']:sum(category['id'] in t.get('categories',[]) for t in TEMPLATES) for category in CATEGORY_CATALOG}
+        return [{**category,'status':'available' if counts[category['id']] else 'planned','template_count':counts[category['id']]} for category in CATEGORY_CATALOG]
+
     @app.get('/api/templates/{template_id}/preview.svg')
     def template_preview(template_id: str):
         if template_id not in BY_ID:
             raise HTTPException(404, 'Template not found')
+        if BY_ID[template_id].get('category')=='blocky-characters':
+            from .blocky import preview
+            return Response(preview(BY_ID[template_id]),media_type='image/svg+xml',headers={'Cache-Control':'no-cache','X-Content-Type-Options':'nosniff'})
         from .gingerbread import preview_svg
         return Response(preview_svg(BY_ID[template_id]), media_type='image/svg+xml', headers={'Cache-Control': 'no-cache', 'X-Content-Type-Options': 'nosniff'})
 
     @app.post('/api/templates/{template_id}/personalize-preview')
     def personalized_preview(template_id: str, body: NamePreview):
         if template_id not in BY_ID:raise HTTPException(404,'Template not found')
+        if BY_ID[template_id].get('category')=='blocky-characters':
+            from .blocky import preview
+            return Response(preview(BY_ID[template_id]),media_type='image/svg+xml',headers={'Cache-Control':'no-store'})
         from .gingerbread import preview_svg
         return Response(preview_svg({**apply_design(BY_ID[template_id],body.design.model_dump()),'personal_name':body.personal_name}),media_type='image/svg+xml',headers={'Cache-Control':'no-store'})
 
@@ -344,11 +364,54 @@ def create_app(data_dir=None, seed=False):
         target = (root / filename).resolve()
         if not target.is_relative_to(root) or not target.is_file() or target.is_symlink():
             raise HTTPException(404, 'Artifact not found')
+        if filename == 'project.zip':
+            from .project_archive import create_download_archive
+            create_download_archive(root)
         media = {'.svg': 'image/svg+xml', '.obj': 'text/plain'}.get(target.suffix) or mimetypes.guess_type(target.name)[0] or 'application/octet-stream'
         return FileResponse(target, media_type=media, filename=target.name if download else None, headers={'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff'})
 
     dist = ROOT / 'frontend/dist'
     if dist.exists():
+        @app.get('/studio', include_in_schema=False)
+        def studio_page():
+            return FileResponse(dist / 'index.html', media_type='text/html', headers={'Cache-Control':'no-cache'})
+
+        @app.get('/', include_in_schema=False)
+        def homepage():
+            origin=accounts.base_url
+            document=(dist/'index.html').read_text(encoding='utf-8')
+            website={"@context":"https://schema.org","@type":"WebSite","name":"Print Play Magic","url":origin+"/","description":"Create printable 3D paper models. Explore templates, customize designs, preview in 3D, and download print-ready files.","inLanguage":"en-US"}
+            head=f'<link rel="canonical" href="{html.escape(origin+"/",quote=True)}"><meta property="og:type" content="website"><meta property="og:site_name" content="Print Play Magic"><meta property="og:url" content="{html.escape(origin+"/",quote=True)}"><meta property="og:title" content="Printable 3D Papercraft Models | Print Play Magic"><meta property="og:description" content="Create printable 3D paper models. Explore templates, customize designs, preview in 3D, and download print-ready files."><script type="application/ld+json">{json.dumps(website).replace("<","\\u003c")}</script>'
+            return Response(document.replace('</head>',head+'</head>'),media_type='text/html',headers={'Cache-Control':'public, max-age=300','X-Content-Type-Options':'nosniff'})
+
+        @app.get('/robots.txt' , include_in_schema=False)
+        def robots():
+            origin=accounts.base_url
+            return Response(f"User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /account\nSitemap: {origin}/sitemap.xml\n",media_type='text/plain',headers={'Cache-Control':'public, max-age=3600'})
+
+        @app.get('/sitemap.xml', include_in_schema=False)
+        def sitemap():
+            origin=accounts.base_url
+            urls=[f'<url><loc>{html.escape(origin,quote=True)}/</loc></url>']+[f'<url><loc>{html.escape(origin,quote=True)}/{html.escape(t["id"],quote=True)}</loc></url>' for t in TEMPLATES]
+            return Response('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join(urls)+'</urlset>',media_type='application/xml',headers={'Cache-Control':'public, max-age=3600'})
+
+        @app.get('/{template_id}', include_in_schema=False)
+        def template_page(template_id: str):
+            if template_id not in BY_ID:
+                raise HTTPException(404, 'Template not found')
+            template=public_template(BY_ID[template_id])
+            origin=accounts.base_url
+            canonical=f'{origin}/{template_id}'
+            title=f'{template["name"]} Printable 3D Paper Model | Print Play Magic'
+            description=template['description'][:300]
+            image_url=origin+template['preview_url']
+            structured={"@context":"https://schema.org","@type":"CreativeWork","name":template['name'],"description":description,"url":canonical,"image":image_url,"inLanguage":"en-US","creator":{"@type":"Organization","name":"Print Play Magic"},"genre":"Printable 3D papercraft template","keywords":f"{template['name']}, printable 3D model, papercraft template, PDF, SVG"}
+            document=(dist/'index.html').read_text(encoding='utf-8')
+            document=document.replace('<title>Print Play Magic Studio</title>',f'<title>{html.escape(title)}</title>')
+            head=f'<meta name="description" content="{html.escape(description,quote=True)}"><link rel="canonical" href="{html.escape(canonical,quote=True)}"><meta property="og:type" content="website"><meta property="og:site_name" content="Print Play Magic"><meta property="og:title" content="{html.escape(title,quote=True)}"><meta property="og:description" content="{html.escape(description,quote=True)}"><meta property="og:url" content="{html.escape(canonical,quote=True)}"><meta property="og:image" content="{html.escape(image_url,quote=True)}"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{html.escape(title,quote=True)}"><meta name="twitter:description" content="{html.escape(description,quote=True)}"><script type="application/ld+json">{json.dumps(structured,ensure_ascii=False).replace("<","\\u003c")}</script>'
+            document=document.replace('</head>',head+'</head>')
+            return Response(document,media_type='text/html',headers={'Cache-Control':'public, max-age=300','X-Content-Type-Options':'nosniff'})
+
         app.mount('/', StaticFiles(directory=dist, html=True), name='frontend')
     return app
 

@@ -14,10 +14,10 @@ export function ProjectDownloads({project,onClose}:{project:Project;onClose:()=>
    {hasColoring&&<BinarySwitch label="Print style" off="Full color" on="Coloring pages" checked={coloring} onChange={setColoring}/>}
    <div className="project-card-actions">
     {files.some(f=>f.name===pdf)&&<a className="button primary" href={url(pdf)}>Download PDF</a>}
-    {files.some(f=>f.name==='project.zip')&&<a className="button" href={url('project.zip')}>Download all (ZIP)</a>}
+    {files.some(f=>f.name==='project.zip')&&<a className="button" href={url('project.zip')}>Download print pack (ZIP)</a>}
     <a className="button" href={`/api/projects/${project.id}/print?style=${coloring?'coloring':'color'}`} target="_blank" rel="noopener noreferrer">Print</a>
    </div>
-   <p className="hint">{project.paper} · Print at actual size (100%).</p>
+   <p className="hint">The print pack includes the PDF, preview images, and a license file. {project.paper} · Print at actual size (100%).</p>
    <details><summary>More files</summary><div className="project-file-list">{files.filter(f=>!f.name.startsWith(coloring?'svg_pages/':'coloring_svg_pages/')&&(!/^printable_.*\.pdf$/.test(f.name)||f.name===pdf)).map(f=><a key={f.name} href={f.url+'?download=true'}>{f.name}</a>)}</div></details>
   </>}
  </div>;

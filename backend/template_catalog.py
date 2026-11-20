@@ -92,11 +92,63 @@ for t in TEMPLATES:
     t['difficulty']={'Dễ':'Easy','Trung bình':'Intermediate','Nâng cao':'Advanced'}[t['difficulty']]
     if t['id']=='gb_classic':t['subtitle']='A Christmas Classic'
     t['description']=f"{t.get('architecture',t['name'])} with festive icing, candy details, and glowing windows. Includes a snowy base, a slotted tree, and two gift boxes. Customize the patterns and add your own name."
+# Stable top-level taxonomy. Finish, style, and difficulty stay separate.
+CATEGORY_CATALOG = [
+    {'id':'gingerbread-houses','name':'Gingerbread Houses','status':'available'},
+    {'id':'miniature-worlds','name':'Miniature Worlds','status':'available'},
+    {'id':'blocky-characters','name':'Characters & Creatures','status':'available'},
+    {'id':'pets-wildlife','name':'Pets & Wildlife','status':'planned'},
+    {'id':'american-places','name':'American Places','status':'planned'},
+    {'id':'seasonal-holiday','name':'Seasonal & Holiday','status':'planned'},
+    {'id':'fantasy-storybook','name':'Fantasy & Storybook','status':'planned'},
+]
+
+# First Miniature Worlds release: printable storefronts share the validated
+# gable geometry while the system is generalized beyond gingerbread houses.
+import copy
+MINIATURE_STARTERS = [
+    ('mini_bookshop','Little Bookshop','Cozy Book Nook','#9a694c','#627858','#d5aa62','#f8edda','#eee4d4','classic',75,58,68,32),
+    ('mini_corner_cafe','Corner Café','Main Street Miniatures','#d6a07d','#80604f','#b75a4f','#fff0d5','#f1e2d8','candy',82,58,64,30),
+    ('mini_flower_shop','Flower Shop','Tiny Town Collection','#a6a77b','#546f56','#c27a70','#f8f0d8','#e3ebdc','forest',78,60,70,34),
+]
+for mid,title,subtitle,wall,roof,accent,trim,bg,motif,w,d,h,r in MINIATURE_STARTERS:
+    item=copy.deepcopy(TEMPLATES[0])
+    item.update(id=mid,name=title,subtitle=subtitle,collection='Miniature Storefronts',category='miniature-worlds',architecture=title,model_family='gable_house_open_bottom',
+        width=w,depth=d,wall_height=h,roof_rise=r,wall=wall,roof=roof,accent=accent,trim=trim,background=bg,motif=motif,difficulty='Easy',premium=False,chimney=False)
+    item['description']=f'A tiny printable {title.lower()} for building a paper Main Street. Includes a 3D gabled shell, overhanging roof, display base, slotted tree, and two gift props. Personalize the storefront and print at home.'
+    TEMPLATES.append(item)
+
+# Original low-poly / voxel-inspired characters. Silhouette, palette and faces
+# are independently designed; no franchise characters, textures, or logos.
+CHARACTER_STARTERS = [
+    ('pc_fox','Copper Fox','Forest Friends','#d47b43','#f2d3a2','#273c3a','#6b493c','fox'),
+    ('pc_cat','Moonlight Cat','Cozy Companions','#777d9e','#d6cfea','#252c3c','#b49bc4','cat'),
+    ('pc_pup','Meadow Pup','Good Neighbors','#c79a62','#f1dfba','#38443b','#b8664e','dog'),
+]
+for mid,title,subtitle,coat,light,dark,accent,species in CHARACTER_STARTERS:
+    TEMPLATES.append(dict(id=mid,name=title,subtitle=subtitle,collection='Blocky Friends',category='blocky-characters',categories=['blocky-characters','pets-wildlife'],model_family='voxel_paper_character',species=species,
+        width=56,depth=42,wall_height=76,roof_rise=0,difficulty='Easy',material='cardstock',coat=coat,light=light,dark=dark,accent=accent,
+        background={'fox':'#f1e4d4','cat':'#e9e7f0','dog':'#eee8dc'}[species],personalizable=False,
+        description=f'An original blocky {species} figure built from printable paper cuboids. Clean pixel-like color blocks create a playful low-poly look without using game characters or textures.'))
+
+for t in TEMPLATES:
+    if not t.get('category'):t['category']='gingerbread-houses'
+    memberships=list(t.get('categories', ['gingerbread-houses'] if t['category']=='gingerbread-houses' else []))
+    if t['id'].startswith('gb_us_') or t.get('model_family','').startswith('two_bay_'):
+        memberships.append('american-places')
+    if t['category']=='gingerbread-houses':
+        memberships.append('seasonal-holiday')
+    if t.get('model_family') in ('twins','cottage','complex_tower','complex_manor','complex_village'):
+        memberships.append('fantasy-storybook')
+    t['categories']=memberships
 BY_ID = {t['id']: t for t in TEMPLATES}
 
 
 def public_template(t):
+    miniature=t.get('category')=='miniature-worlds'
+    character=t.get('category')=='blocky-characters'
+    accessories=(['Foldable cuboid body','Printed character details'] if character else ['Display base','Slotted tree','Two 3D gift props'] if miniature else ['Overhanging snowy roof','Snowy base','Slotted tree','Two 3D gift boxes'])
     return {**t, 'version': CATALOG_VERSION, 'dimensions_mm': [t['width'], t['depth'], t['wall_height'] + t['roof_rise']],
-            'paper': 'US Letter', 'accessories': ['Overhanging snowy roof', 'Snowy base', 'Slotted tree', 'Two 3D gift boxes']+(['3D chimney'] if t.get('chimney') else []), 'physical_assembly': 'NOT_TESTED',
-            'construction': 'Open-bottom paper house with a separate snowy base. The two-layer roof extends 6 mm at the front and back and 4 mm along the outer slopes. Doors and windows are printed details. No interior rooms or separate porch.' + (' Includes an open-top 3D chimney with sloped glue tabs and its own print page.' if t.get('chimney') else ''),
+            'paper': 'US Letter', 'accessories': accessories+(['3D chimney'] if t.get('chimney') else []), 'physical_assembly': 'NOT_TESTED',
+            'construction': ('Original blocky paper character made from foldable cuboid nets. Facial details are printed; small parts assemble with glue tabs.' if character else 'Open-bottom miniature storefront with a separate display base, printable signboard, and striped awning. Doors and windows are printed details.' if miniature else 'Open-bottom paper house with a separate snowy base. The two-layer roof extends 6 mm at the front and back and 4 mm along the outer slopes. Doors and windows are printed details. No interior rooms or separate porch.') + (' Includes an open-top 3D chimney with sloped glue tabs and its own print page.' if t.get('chimney') else ''),
             'preview_url': f"/api/templates/{t['id']}/preview.svg"}

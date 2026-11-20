@@ -190,6 +190,15 @@ def base_decorations(t,p):
         for x in [w*.14,w*.86]:
             line([(x,7),(x,22),(x+3,24),(x+5,22)],cream,3)
             for y in (10,15,20):line([(x-1,y),(x+1,y+1.5)],accent,1.2)
+    if t.get('category')=='miniature-worlds' and front:
+        # Give Main Street models a distinct storefront sign and striped awning.
+        sign_w=w*.52;sign_h=7;sign_x=(w-sign_w)/2;sign_y=wall_h*.81
+        rect(sign_x,sign_y,sign_w,sign_h,trim,accent,1)
+        line([(sign_x+2,sign_y+sign_h/2),(sign_x+sign_w-2,sign_y+sign_h/2)],accent,.7)
+        awning_y=wall_h*.69;awning_w=w*.72;awning_x=(w-awning_w)/2
+        rect(awning_x,awning_y,awning_w,4,trim,accent,.7)
+        for stripe_x in np.arange(awning_x+2,awning_x+awning_w-1,7):
+            rect(float(stripe_x),awning_y,3,4,accent)
     return shapes
 
 
@@ -535,9 +544,8 @@ def generate(request,out,progress=lambda stage:None):
     for path in sorted(out.rglob('*')):
         if path.is_file():manifest['artifacts'].append({'path':path.relative_to(out).as_posix(),'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),**identity})
     (out/'generation_manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2))
-    with zipfile.ZipFile(out/'project.zip','w',zipfile.ZIP_DEFLATED) as archive:
-        for path in sorted(out.rglob('*')):
-            if path.is_file() and path.name!='project.zip':archive.write(path,path.relative_to(out))
+    from .project_archive import create_download_archive
+    create_download_archive(out)
     progress('Complete')
     return report
 

@@ -18,6 +18,9 @@ def sha(value):
 
 
 def generate(request, out, progress=lambda stage: None):
+    if request['preset'].startswith('pc_'):
+        from .blocky import generate as generate_blocky
+        return generate_blocky(request,out,progress)
     if request['preset'].startswith('gb_'):
         from .gingerbread import generate as generate_house
         return generate_house(request, out, progress)
@@ -184,11 +187,8 @@ def generate(request, out, progress=lambda stage: None):
         if path.is_file():
             manifest['artifacts'].append({'path': path.relative_to(out).as_posix(), 'sha256': hashlib.sha256(path.read_bytes()).hexdigest(), **identity})
     (out / 'generation_manifest.json').write_text(json.dumps(manifest, indent=2))
-    import zipfile
-    with zipfile.ZipFile(out / 'project.zip', 'w', zipfile.ZIP_DEFLATED) as z:
-        for path in sorted(out.rglob('*')):
-            if path.is_file() and path.name != 'project.zip':
-                z.write(path, path.relative_to(out))
+    from .project_archive import create_download_archive
+    create_download_archive(out)
     progress('Complete')
     return report
 

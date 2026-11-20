@@ -1,0 +1,26 @@
+import {test,expect} from '@playwright/test';
+test('public template links survive reload and browser navigation',async({page,context})=>{
+ await context.grantPermissions(['clipboard-read','clipboard-write']);
+ const templates=await(await page.request.get('/api/templates')).json();
+ const first=templates[0],second=templates[1];
+ await page.goto('/'+first.id);
+ let dialog=page.getByRole('dialog',{name:first.name,exact:true});
+ await expect(dialog).toBeVisible();
+ await dialog.getByRole('button',{name:'Copy link',exact:true}).click();
+ await expect(dialog.getByRole('status')).toContainText('Link copied');
+ expect(await page.evaluate(()=>navigator.clipboard.readText())).toBe('http://127.0.0.1:8000/'+first.id);
+ await page.reload();await expect(dialog).toBeVisible();
+ await dialog.getByRole('button',{name:'Close template details'}).click();
+ await expect(page).toHaveURL(/#templates$/);
+ await page.goBack();await expect(dialog).toBeVisible();
+ await page.goForward();await expect(page.getByRole('dialog')).toHaveCount(0);
+ const card=page.locator('.template-card').filter({has:page.getByRole('heading',{name:second.name,exact:true})});
+ await card.getByRole('link',{name:'View details',exact:true}).click();
+ await expect(page).toHaveURL(new RegExp('/'+second.id+'$'));
+ dialog=page.getByRole('dialog',{name:second.name,exact:true});await expect(dialog).toBeVisible();
+ await dialog.getByRole('button',{name:'Start with this template →'}).click();
+ await expect(page.getByRole('heading',{name:'Welcome back'})).toBeVisible();
+ await page.goto('/#templates/missing-template');await expect(page.getByRole('alert')).toContainText('Template not found');
+ await page.getByRole('alert').getByRole('button',{name:'Browse templates'}).click();
+ await expect(page.locator('.template-card')).toHaveCount(templates.length);
+});
