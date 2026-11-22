@@ -8,8 +8,8 @@ import xml.etree.ElementTree as ET
 def sha_json(x):return hashlib.sha256(json.dumps(x,sort_keys=True,ensure_ascii=False,separators=(',',':')).encode()).hexdigest()
 
 def verify(folder):
-    root=Path(folder);spec=json.loads((root/'model_spec.json').read_text())
-    report=json.loads((root/'validation_report.json').read_text())
+    root=Path(folder);spec=json.loads((root/'model_spec.json').read_text(encoding="utf-8"))
+    report=json.loads((root/'validation_report.json').read_text(encoding="utf-8"))
     expected={'US Letter':(215.9,279.4),'A4':(210.0,297.0)}[spec['paper']['name']]
     pdf=root/('printable_a4.pdf' if spec['paper']['name']=='A4' and (root/'printable_a4.pdf').exists() else 'printable_us_letter.pdf')
     svgs=sorted((root/'svg_pages').glob('page_*.svg'))

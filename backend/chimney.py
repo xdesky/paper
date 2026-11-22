@@ -46,6 +46,7 @@ def piece(t):
     g=geometry(t)
     if not g:return None
     from .gingerbread import base
+    from .wide_tabs import flap
     size=g['size'];faces=[];art=[];folds=[];tabs=[];labels=[]
     for i,p in enumerate(g['panels']):
         dx=i*size
@@ -58,13 +59,17 @@ def piece(t):
             art.append(s)
         if i:folds.append([(dx,p['points'][0][1]),(dx,p['points'][3][1])])
     net=unary_union(faces)
-    for face in faces:
+    # Make the outer feet before the final inner foot to retain their full depth.
+    for index in (0,1,3,2):
+        face=faces[index]
         a,b=list(face.exterior.coords)[:2]
-        tab=base.base.flap_for_edge(a,b,depth=2.5).difference(net)
+        tab=flap(a,b,depth=7.5).difference(net)
+        if tab.geom_type=='MultiPolygon':
+            tab=max(tab.geoms,key=lambda part:part.intersection(LineString([a,b])).length)
         if tab.geom_type!='Polygon' or tab.area<1:raise ValueError('Invalid chimney foot tab')
         tabs.append(tab);net=net.union(tab);folds.append([a,b])
     p=g['panels'][-1];x=4*size;low=p['points'][1][1];high=p['points'][2][1]
-    tab=Polygon([(x,low+2),(x+3,low+4),(x+3,high-2),(x,high)])
+    tab=Polygon([(x,low+2),(x+8,low+4),(x+8,high-2),(x,high)])
     tabs.append(tab);net=net.union(tab);folds.append([(x,low+2),(x,high)])
     labels.append(('C1',tab.centroid.x,tab.centroid.y))
     art.extend(dict(type='polygon',points=list(tab.exterior.coords),fill='#fff1d3') for tab in tabs)
@@ -76,6 +81,34 @@ def layout(t):
     p=piece(t)
     return [[(p,25,100)]] if p else []
 
+
+
+def merge_with_roof_pages(pages, t):
+    """Place the chimney on an existing roof page when it fits without scaling."""
+    from .gingerbread import base
+    from shapely.affinity import translate
+    p=piece(t)
+    if not p:return pages
+    pages=[list(page) for page in pages]
+    xmin,ymin,xmax,ymax=p['shape'].bounds
+    width,height=xmax-xmin,ymax-ymin
+    left,bottom,right,top=8.0,20.0,base.PAGE_W-8.0,base.PAGE_H-24.4
+    for page in pages:
+        occupied=[translate(item['shape'],xoff=x,yoff=y).buffer(1.5,join_style=2) for item,x,y in page]
+        # Try candidate grid points with a 3 mm gap between cut outlines.
+        y=bottom
+        while y+height<=top+1e-6:
+            x=left
+            while x+width<=right+1e-6:
+                tx,ty=x-xmin,y-ymin
+                shape=translate(p['shape'],xoff=tx,yoff=ty)
+                if all(shape.buffer(1.5,join_style=2).disjoint(other) for other in occupied):
+                    page.append((p,tx,ty))
+                    return pages
+                x+=2
+            y+=2
+    pages.extend(layout(t))
+    return pages
 
 def validate(t):
     g=geometry(t)

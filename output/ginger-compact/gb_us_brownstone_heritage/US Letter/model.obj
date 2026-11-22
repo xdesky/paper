@@ -1,0 +1,31 @@
+# {"design_sha256":"4582222b41d0843d69957b13c35497dfbb711a28a6f1374b149b35b59ec4cbed","geometry_sha256":"e441b155734f29bac35162029c0077c950c377bf7929ef9e2d0fb97da56691e3","model_id":"GB-US-BROWNSTONE-HERITAGE","project_id":"gb_us_brownstone_heritage-compact","revision":1,"source_spec_hash":"5a5736ce073060ea4a1d33f8c4ad5f379dab4468ceaf90dff7a25f24e794a5b9","template_version":"5.1.0","version":"gingerbread-4.0.0"}
+g FRONT
+v -32.5 -32.5 0
+v 32.5 -32.5 0
+v 32.5 -32.5 143
+v -32.5 -32.5 143
+f 1 2 3 4
+g BACK
+v -32.5 32.5 143
+v 32.5 32.5 143
+v 32.5 32.5 0
+v -32.5 32.5 0
+f 5 6 7 8
+g RIGHT
+v 32.5 -32.5 0
+v 32.5 32.5 0
+v 32.5 32.5 143
+v 32.5 -32.5 143
+f 9 10 11 12
+g LEFT
+v -32.5 32.5 0
+v -32.5 -32.5 0
+v -32.5 -32.5 143
+v -32.5 32.5 143
+f 13 14 15 16
+g ROOF_1
+v 32.5 -32.5 143.0
+v 32.5 32.5 143.0
+v -32.5 32.5 143.0
+v -32.5 -32.5 143.0
+f 17 18 19 20

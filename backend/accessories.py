@@ -3,6 +3,7 @@ import math
 import json
 import xml.etree.ElementTree as ET
 from collections import defaultdict
+from itertools import permutations
 from pathlib import Path
 from shapely.geometry import Polygon, box, LineString
 from shapely.ops import unary_union
@@ -61,8 +62,21 @@ def tree_art(shape,style='classic'):
     return paint_tree(shape,style)
 
 
+def tree_print_piece(slot_top, style='classic'):
+    """Tree net with two fold-out feet; the assembled silhouette stays unchanged."""
+    tree=tree_piece(slot_top,style)
+    feet=[box(12,-4,15.4,0),box(16.6,-4,20,0)]
+    outline=unary_union([tree,*feet])
+    if outline.geom_type!='Polygon' or not outline.is_valid:
+        raise ValueError('Invalid tree foot tabs')
+    return dict(id='TREE_1' if slot_top else 'TREE_2', shape=outline,
+                art=tree_art(tree,style)+[poly(tab.exterior.coords,'#fff1d3') for tab in feet],
+                folds=[[(12,0),(15.4,0)],[(16.6,0),(20,0)]], labels=[], tabs=feet)
+
+
 def gift_net(size,prefix,color,style='classic'):
     from .gingerbread import base
+    from .wide_tabs import flap
     s=size
     positions={'FRONT':(s,s),'RIGHT':(2*s,s),'BACK':(3*s,s),'LEFT':(0,s),'TOP':(s,2*s),'BOTTOM':(s,0)}
     maps={'FRONT':lambda u,v:(u-s/2,-s/2,v),'RIGHT':lambda u,v:(s/2,u-s/2,v),'BACK':lambda u,v:(s/2-u,s/2,v),'LEFT':lambda u,v:(-s/2,s/2-u,v),'TOP':lambda u,v:(u-s/2,v-s/2,s),'BOTTOM':lambda u,v:(u-s/2,s/2-v,0)}
@@ -82,7 +96,7 @@ def gift_net(size,prefix,color,style='classic'):
             folds.append(a[1]);continue
         code=prefix+str(len(seams)+1);seams.append(dict(code=code,mates=mates))
         for pid,segment in mates:
-            tab=base.base.flap_for_edge(*segment,depth=3)
+            tab=flap(*segment,depth=8)
             if tab.intersection(net).area<1e-6:
                 tabs.append(tab);net=net.union(tab);folds.append(segment)
                 labels.append((code,tab.centroid.x,tab.centroid.y));break
@@ -99,14 +113,46 @@ def gift_net(size,prefix,color,style='classic'):
     return dict(id=prefix,shape=net,art=art,folds=folds,labels=labels,tabs=tabs,seams=seams,faces=faces,size=s,color=color,maps=maps)
 
 
-def layout(t):
+def display_pieces(t):
     bw,bd=t['width']+60,t['depth']+70
     base_piece=dict(id='BASE',shape=box(0,0,bw,bd),art=base_art(t),folds=[],labels=[])
-    trees=[dict(id=f'TREE_{i+1}',shape=tree_piece(i==0,t.get('design',{}).get('tree','classic')),art=tree_art(tree_piece(i==0,t.get('design',{}).get('tree','classic')),t.get('design',{}).get('tree','classic')),folds=[],labels=[]) for i in range(2)]
+    trees=[tree_print_piece(i==0,t.get('design',{}).get('tree','classic')) for i in range(2)]
     gifts=[gift_net(20,'A','#bb3f58',t.get('design',{}).get('gift','classic')),gift_net(16,'B','#397f76',t.get('design',{}).get('gift','classic'))]
-    from .chimney import layout as chimney_layout
+    return base_piece,trees,gifts
+
+
+def layout(t):
+    base_piece,trees,gifts=display_pieces(t)
+    from .chimney import merge_with_roof_pages
     from .roof_cap import layout as cap_layout
-    return [[(base_piece,18,35)],[(trees[0],22,158),(trees[1],72,158),(gifts[0],18,55),(gifts[1],116,55)]]+cap_layout(t)+chimney_layout(t)
+    roof_pages=merge_with_roof_pages(cap_layout(t),t)
+    fixed=[[(base_piece,18,35)]]+roof_pages
+    # Pack accessories into remaining rectangular gaps without moving roof/base.
+    # Bounding boxes are conservative and maintain 3 mm between cut contours.
+    from .gingerbread import base
+    for order in permutations([*trees,*gifts]):
+        packed=[list(page) for page in fixed]
+        success=True
+        for piece in order:
+            bounds=piece['shape'].bounds
+            width,height=bounds[2]-bounds[0],bounds[3]-bounds[1]
+            found=False
+            for page in packed:
+                occupied=[(p['shape'].bounds[0]+x,p['shape'].bounds[1]+y,p['shape'].bounds[2]+x,p['shape'].bounds[3]+y) for p,x,y in page]
+                xs={8.0};ys={20.0}
+                for left,bottom,right,top in occupied:
+                    xs.add(right+3.0);ys.add(top+3.0)
+                for y in sorted(ys):
+                    for x in sorted(xs):
+                        if x+width>base.PAGE_W-8+1e-7 or y+height>base.PAGE_H-24.4+1e-7:continue
+                        if all(x+width+3<=left+1e-7 or right+3<=x+1e-7 or y+height+3<=bottom+1e-7 or top+3<=y+1e-7 for left,bottom,right,top in occupied):
+                            page.append((piece,x-bounds[0],y-bounds[1]));found=True;break
+                    if found:break
+                if found:break
+            if not found:
+                success=False;break
+        if success:return packed
+    return [[(base_piece,18,35)],[(trees[0],22,158),(trees[1],72,158),(gifts[0],18,55),(gifts[1],116,55)]]+roof_pages
 
 
 def scene(t):
@@ -143,13 +189,14 @@ def scene(t):
     return dict(panels=panels,appearance=art,artwork=artwork,base_mm=[bw,bd],tree_height_mm=65,gift_sizes_mm=[20,16])
 
 
-def export(t,out,identity,first_page):
+def export(t,out,identity,first_page,*,append_print=True):
     """Return accessory QA; append two pages to the main PDF/SVG and guide."""
     import pymupdf as fitz
     from reportlab.pdfgen import canvas
     from .gingerbread import base,draw_shapes,NS,canonical,CUT,FOLD
     from .paper import printable_filename
     pages=layout(t);checks=[]
+    vivid=t.get('category')=='gingerbread-houses'
     pdf=out/'accessories.pdf';c=canvas.Canvas(str(pdf),pagesize=(base.PAGE_W*base.PT,base.PAGE_H*base.PT),invariant=1)
     c.setSubject(canonical(identity))
     def txt(root,x,y,text,size=7):
@@ -158,14 +205,16 @@ def export(t,out,identity,first_page):
     for index,pieces in enumerate(pages):
         root=ET.Element('{'+NS+'}svg',width=f'{base.PAGE_W}mm',height=f'{base.PAGE_H}mm',viewBox=f'0 0 {base.PAGE_W} {base.PAGE_H}')
         ET.SubElement(root,'{'+NS+'}metadata').text=canonical(identity)
-        txt(root,base.PAGE_W/2,base.PAGE_H-13,'SNOWY BASE' if index==0 else 'TREE & GIFT BOXES' if index==1 else '3D CHIMNEY' if pieces[0][0]['id']=='CHIMNEY' else 'SNOWY ROOF CAP',11)
-        txt(root,base.PAGE_W/2,base.PAGE_H-20,'Cut solid lines · Fold dashed lines · Print 100% · Accessory '+str(index+1)+'/'+str(len(pages)))
+        ids={piece['id'] for piece,_,_ in pieces}
+        title='PAPER MODEL PARTS' if len(pages)<3 else ('SNOWY BASE' if index==0 else 'TREE AND GIFT BOXES' if index==1 else 'ROOF AND CHIMNEY' if 'CHIMNEY' in ids else 'ROOF PARTS')
+        txt(root,base.PAGE_W/2,base.PAGE_H-13,title,11)
+        txt(root,base.PAGE_W/2,base.PAGE_H-20,f'Page {first_page+index+1}/{first_page+len(pages)} | Cut solid lines | Fold dashed lines | Print at 100%',7)
         translated=[]
         for piece,x,y in pieces:
             transform=lambda q:(q[0]+x,q[1]+y)
             shape=Polygon([transform(q) for q in piece['shape'].exterior.coords]);translated.append(shape)
-            draw_shapes(c,None,piece['art'],transform)
-            draw_shapes(None,root,piece['art'],lambda q:(q[0]+x,base.PAGE_H-q[1]-y),1)
+            draw_shapes(c,None,piece['art'],transform,vivid=vivid)
+            draw_shapes(None,root,piece['art'],lambda q:(q[0]+x,base.PAGE_H-q[1]-y),1,vivid=vivid)
             base.pdf_shape(c,shape,stroke=CUT,stroke_width=.65);base.svg_polygon(root,shape,'none',CUT,.23)
             for a,b in piece['folds']:
                 base.pdf_line(c,transform(a),transform(b),FOLD,.9,[4,2]);base.svg_segment(root,transform(a),transform(b),FOLD,[1.5,.8],.35)
@@ -173,14 +222,10 @@ def export(t,out,identity,first_page):
             checks.append((piece['id']+'_valid_cut',shape.is_valid and shape.geom_type=='Polygon' and not shape.interiors))
             checks.append((piece['id']+'_bounds',box(8,20,base.PAGE_W-8,base.PAGE_H-24.4).buffer(1e-6).covers(shape)))
         checks.append((f'accessory_page_{index+1}_no_overlap',all(a.intersection(b).area<1e-7 for i,a in enumerate(translated) for b in translated[i+1:])))
-        if index==0:
-            txt(root,base.PAGE_W/2,25,'Cut out the base and mount it on cardstock. Center the house on the outline.')
-        elif index==1:
-            txt(root,base.PAGE_W/2,140,'Slide the two tree pieces together at the slots; spread them at right angles.')
-            txt(root,base.PAGE_W/2,35,'Gift A: 20 mm · Gift B: 16 mm · Match labels using the assembly guide.')
         base.pdf_line(c,(15,10.5),(55,10.5),CUT,.8);base.svg_segment(root,(15,10.5),(55,10.5),CUT,width=.25)
-        txt(root,126,10,'40 mm | Actual Size / 100% - NO Fit to Page')
-        ET.ElementTree(root).write(out/f'svg_pages/page_{first_page+index+1:03d}.svg',encoding='utf-8',xml_declaration=True)
+        txt(root,126,10,'40 mm | Print at 100% | Do not fit to page')
+        if append_print:
+            ET.ElementTree(root).write(out/f'svg_pages/page_{first_page+index+1:03d}.svg',encoding='utf-8',xml_declaration=True)
         c.showPage()
     c.save()
     # Independent exported-page dimensions, ruler and text boundary checks.
@@ -210,7 +255,7 @@ def export(t,out,identity,first_page):
                     codes_inside &= code_tabs[word[4]].buffer(.02).covers(bounds)
             checks.append((f'accessory_pdf_{index+1}_hidden_codes',codes_inside and all(n==1 for n in counts.values())))
 
-    for piece,_,_ in pages[1]:
+    for piece,_,_ in (entry for page in pages for entry in page):
         if 'seams' in piece:
             checks.append((piece['id']+'_cube_topology',len(piece['seams'])==7 and len(piece['faces'])==6 and len(piece['folds'])==12))
     # The assembly reference labels both mates; visible surfaces stay code-free.
@@ -219,9 +264,9 @@ def export(t,out,identity,first_page):
     gt(12,base.PAGE_H-15,'ASSEMBLE THE BASE, TREE & GIFTS',13)
     instructions=['1. Print at 100% on the correct paper size. Check the 40 mm ruler.',
       '2. Cut out the snowy base and glue it to flat cardstock.',
-      '3. Position the house on the outline. Tape it down from the inside.',
+      '3. Fold the house tabs and glue them to the base outline.',
       '4. Cut out both tree pieces, including their 0.6 mm center slots.',
-      '5. Slide the slots together and position the two pieces at right angles.',
+      '5. Slide the slots together at right angles; fold the feet and glue to the base.',
       '   Slots fit 160–220 gsm cardstock. Add a dab of glue if needed.',
       '6. Cut out the gift box nets, keeping the tabs. Score the fold lines.',
       '7. Match A labels to A and B labels to B. Close the lids last.',
@@ -230,8 +275,9 @@ def export(t,out,identity,first_page):
       'Physical assembly of the accessories has not been tested.']
     for i,text in enumerate(instructions):gt(12,base.PAGE_H-30-i*10,text,8)
     gt(12,130,'GIFT JOINT MAP — NOT A CUTTING TEMPLATE',9)
-    for piece,x,y in pages[1][2:]:
-        x,y=x,40
+    guide_gifts=[entry for page in pages for entry in page if entry[0]['id'] in ('A','B')]
+    for index,(piece,x,y) in enumerate(guide_gifts):
+        x,y=(18 if index==0 else 116),40
         from shapely.affinity import translate
         base.pdf_shape(g,translate(piece['shape'],xoff=x,yoff=y),stroke=CUT,stroke_width=.5)
         for seam in piece['seams']:
@@ -239,14 +285,16 @@ def export(t,out,identity,first_page):
                 midpoint=((a[0]+b[0])/2,(a[1]+b[1])/2)
                 center=piece['faces'][pid].centroid;dx,dy=center.x-midpoint[0],center.y-midpoint[1];length=math.hypot(dx,dy)
                 gt(x+midpoint[0]+dx/length*3-1.5,y+midpoint[1]+dy/length*3,seam['code'],5)
-    if len(pages)>2:
+    roof_pages=[[(piece,x,y) for piece,x,y in page if piece['id'].startswith('CAP_') or piece['id']=='CHIMNEY'] for page in pages]
+    roof_pages=[page for page in roof_pages if page]
+    if roof_pages:
         g.showPage()
         gt(12,base.PAGE_H-15,'ASSEMBLE THE OVERHANGING ROOF',13)
         notes=['1. Assemble the walls and structural roof using the house guide.',
                '2. Cut and fold the roof cap, with the printed side facing out.',
                '3. For multi-piece roofs, match the R labels on the following diagram.',
                '4. Test-fit the cap on the structural roof. Align the ridges and folds.',
-               '5. Keep 6 mm overhangs at the front/back and 4 mm along outer slopes.',
+               f"5. Keep {t.get('roof_rake_mm',6):g} mm at the front/back and {t.get('roof_overhang_mm',0):g} mm along outer slopes.",
                '6. Apply a thin layer of glue to the structural roof, avoiding the overhangs.',
                '7. Hold gently until dry. Keep the overhanging edges clear of the walls.',
                'The roof cap is a separate part. It does not alter the wall frame or base.',
@@ -255,7 +303,9 @@ def export(t,out,identity,first_page):
         if t.get('bay_count',1) > 1:
             notes[3]='4. Ridges fold outward; valleys fold inward. Match the structural roof.'
         for i,text in enumerate(notes):gt(12,base.PAGE_H-32-i*12,text,8)
-        for page in pages[2:]:
+        guide_pages=[[entry for entry in page if entry[0]['id']!='CHIMNEY'] for page in roof_pages]
+        guide_pages += [[entry for entry in page if entry[0]['id']=='CHIMNEY'] for page in roof_pages]
+        for page in (p for p in guide_pages if p):
             chimney_page=page[0][0]['id']=='CHIMNEY'
             g.showPage();gt(12,base.PAGE_H-14,'CHIMNEY ASSEMBLY — REFERENCE DIAGRAM' if chimney_page else 'ROOF CAP JOINT MAP — NOT A CUTTING TEMPLATE',10)
             if chimney_page:
@@ -278,7 +328,8 @@ def export(t,out,identity,first_page):
         with fitz.open(target) as dest,fitz.open(extra) as src:
             dest.insert_pdf(src);temp=target.with_suffix('.merged.pdf');dest.save(temp)
         temp.replace(target)
-    append(out/printable_filename(base.PAPER_NAME),pdf)
+    if append_print:
+        append(out/printable_filename(base.PAPER_NAME),pdf)
     append(out/'assembly_guide.pdf',gp)
     from .roof_cap import validate as validate_cap
     from .chimney import validate as validate_chimney

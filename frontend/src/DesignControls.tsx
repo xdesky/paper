@@ -8,7 +8,7 @@ export function ThumbnailPicker({label,value,choices,onChange,disabled,scroll=fa
  return <fieldset className="thumbnail-picker"><legend>{label}</legend><div className={'thumbnail-grid'+(scroll?' thumbnail-scroll':'')} role="group" aria-label={label}>{choices.map(o=><button type="button" key={o.id} className={'thumbnail-choice'+(value===o.id?' selected':'')} aria-pressed={value===o.id} aria-label={'Choose '+o.label} title={o.label} disabled={disabled} onClick={()=>{if(o.id!==value)onChange(o.id);}}><img src={o.image} alt="" loading="lazy"/><span>{o.label}</span>{value===o.id&&<b aria-hidden="true">✓</b>}</button>)}</div></fieldset>;
 }
 export function DesignControls({design,options,onChange,disabled}:{design:Design;options:DesignOptions|null;onChange:(value:Design)=>void;disabled?:boolean}){
- return <div className="design-controls">{options&&(Object.keys(labels) as (keyof Design)[]).map(key=><ThumbnailPicker key={key} label={labels[key]} value={design[key]} disabled={disabled} onChange={value=>onChange({...design,[key]:value})} choices={options[key].map(o=>({...o,image:`/api/design-options/${key}/${o.id}/preview.svg`}))}/>)}</div>;
+ return <div className="design-controls">{options&&(Object.keys(labels) as (keyof Design)[]).map(key=><ThumbnailPicker key={key} label={labels[key]} value={design[key]} disabled={disabled} onChange={value=>onChange({...design,[key]:value})} choices={options[key].map(o=>({...o,image:`/api/design-options/${key}/${o.id}/thumbnail.jpg`}))}/>)}</div>;
 }
 export function DesignPreview({preset,name,design}:{preset:string;name:string;design:Design}){
  const [src,setSrc]=useState(''),[error,setError]=useState('');
@@ -23,5 +23,5 @@ export function DesignPreview({preset,name,design}:{preset:string;name:string;de
   }catch(e){if(!controller.signal.aborted)setError((e as Error).message);}},350);
   return()=>{clearTimeout(timer);controller.abort();if(url)URL.revokeObjectURL(url);};
  },[preset,name,value]);
- return <div className="design-preview"><strong>Design preview</strong>{src?<img src={src} alt="Selected house, patterns, and accessories"/>:<p role="status">{error||'Updating design…'}</p>}<p>Selections automatically update both previews.</p></div>;
+ return <div className="design-preview"><strong>Design preview</strong>{src?<img src={src} alt="Selected house, patterns, and accessories"/>:<p role="status">{error||'Updating design…'}</p>}<p>Changes update the 3D preview and print files automatically.</p></div>;
 }

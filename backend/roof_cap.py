@@ -96,15 +96,22 @@ def layout(t):
             if u.hinge_id:
                 s=next(s for s in seams if s['id']==u.hinge_id);m=s['occurrences'][0]
                 folds.append([u.transform(m['panel'],q) for q in caps[m['panel']].seg(m['edge'])])
-            pieces.append((dict(id='CAP_'+str(i),shape=u.shape(),art=art,folds=folds,labels=labels,tabs=tabs,guide=guide),0,0))
+            outline=u.shape()
+            radius=t.get('roof_corner_radius_mm',0)
+            if radius:
+                outline=outline.buffer(-radius,join_style=2).buffer(radius,quad_segs=8)
+            pieces.append((dict(id='CAP_'+str(i),shape=outline,art=art,folds=folds,labels=labels,tabs=tabs,guide=guide),0,0))
         result.append(pieces)
     return result
 
 
 def metadata(t):
     caps,seams,units,pages=build(t)
-    return dict(sheet_count=len(pages),cut_pieces=len(units),fold_hinges=sum(s['hinge'] for s in seams),glue_seams=sum(not s['hinge'] for s in seams),
-                rake_mm=t.get('roof_rake_mm',6),slope_extension_mm=t.get('roof_overhang_mm',0),layer_offset_mm=.4)
+    from .chimney import merge_with_roof_pages
+    shape_pages=[[(dict(id='CAP',shape=u.shape()),0,0) for u in page['units']] for page in pages]
+    accessory_roof_pages=len(merge_with_roof_pages(shape_pages,t))
+    return dict(sheet_count=len(pages),accessory_sheet_count=accessory_roof_pages,cut_pieces=len(units),fold_hinges=sum(s['hinge'] for s in seams),glue_seams=sum(not s['hinge'] for s in seams),
+                rake_mm=t.get('roof_rake_mm',6),slope_extension_mm=t.get('roof_overhang_mm',0),layer_offset_mm=.4,corner_radius_mm=t.get('roof_corner_radius_mm',0))
 
 
 def validate(t):
@@ -135,4 +142,4 @@ def validate(t):
         hinges &= math.dist(segments[0][0],segments[1][1])<1e-5 and math.dist(segments[0][1],segments[1][0])<1e-5 and u.shape().boundary.intersection(LineString(segments[0])).length<1e-5
     area=abs(sum(p.square.area+sum(tab.area for tab in p.tabs.values()) for p in caps.values())-sum(u.shape().area for u in units))<1e-5
     tests=[('roof_cap_covers_support',coverage),('roof_cap_parallel_to_support',parallel),('roof_cap_3d_seams',matching),('roof_cap_uncut_hinges',hinges),('roof_cap_area_no_overlap',area)]
-    return [dict(name=name,status='PASS' if ok else 'FAIL',detail='6 mm front/back; 4 mm along outer slope; support retained') for name,ok in tests]
+    return [dict(name=name,status='PASS' if ok else 'FAIL',detail=f"{t.get('roof_rake_mm',6):g} mm front/back; {t.get('roof_overhang_mm',0):g} mm along outer slope") for name,ok in tests]

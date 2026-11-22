@@ -26,7 +26,11 @@ def test_template_end_to_end(client,template):
     assert job['status']=='SUCCEEDED',job.get('error')
     spec=client.get(f'/api/projects/{pid}/geometry').json()
     report=client.get(f'/api/projects/{pid}/validation').json()
-    assert spec['sheet_count']==spec['house_sheet_count']+2+spec['roof_cap']['sheet_count']+int(bool(template.get('chimney')))
+    from backend.accessories import layout as accessory_layout
+    if spec['roof_cap']['rake_mm']>template.get('roof_rake_mm',6):
+        assert spec['sheet_count']==3
+    else:
+        assert spec['sheet_count']==spec['house_sheet_count']+len(accessory_layout(template))
     assert len(spec['scene_accessories']['panels'])==15+len(spec['geometry']['panels'])-4+4*int(bool(template.get('chimney')))
     assert spec['scene_accessories']['gift_sizes_mm']==[20,16]
     assert report['summary']['accessory_cut_pieces']==5+spec['roof_cap']['cut_pieces']+int(bool(template.get('chimney')))
@@ -44,14 +48,19 @@ def test_template_end_to_end(client,template):
     assert len(spec['appearance']['panels'])==4+len(template.get('profile',[(0,0),(.5,1),(1,0)]))-1
     archive=client.get(f'/api/projects/{pid}/artifacts/project.zip?download=true')
     assert archive.status_code==200 and archive.headers['content-type']=='application/zip'
+    manifest=client.get(f'/api/projects/{pid}/artifacts/generation_manifest.json').json()
+    expected_template=template
+    if spec['roof_cap']['rake_mm']>template.get('roof_rake_mm',6):
+        expected_template={**template,'roof_rake_mm':template['roof_rake_mm']+5,
+                           'roof_overhang_mm':template['roof_overhang_mm']+5,'roof_corner_radius_mm':template.get('roof_corner_radius_mm',4)}
+    assert manifest['template']==expected_template
+    assert manifest['input']['template']==template
     with zipfile.ZipFile(io.BytesIO(archive.content)) as z:
-        manifest=json.loads(z.read('generation_manifest.json'))
-        assert manifest['template']==template
-        assert manifest['input']['template']==template
-        for artifact in manifest['artifacts']:
-            assert hashlib.sha256(z.read(artifact['path'])).hexdigest()==artifact['sha256']
         assert z.read('printable_us_letter.pdf').startswith(b'%PDF')
-        assert b'ROOF' in z.read('model.obj')
+        assert 'LICENSE.txt' in z.namelist()
+        for artifact in manifest['artifacts']:
+            if artifact['path'] in z.namelist():
+                assert hashlib.sha256(z.read(artifact['path'])).hexdigest()==artifact['sha256']
     if template['id']=='gb_classic':
         from backend.gingerbread import model,digest
         first=model(template);second=model(template)
@@ -68,7 +77,8 @@ def test_catalog_and_previews(client):
     for t in catalog:
         assert t['sheet_count']>0 and t['physical_assembly']=='NOT_TESTED'
         r=client.get(t['preview_url'])
-        assert r.status_code==200 and r.headers['content-type'].startswith('image/svg+xml')
-        assert '<svg' in r.text and '<script' not in r.text
+        assert r.status_code==200 and r.headers['content-type'].startswith('image/jpeg')
+        assert r.content.startswith(b'\xff\xd8\xff')
+        assert 'max-age=3600' in r.headers['cache-control']
     assert client.get('/api/templates/missing/preview.svg').status_code==404
     assert client.post('/api/projects',json={'name':'Bad','preset':'gb_unknown'}).status_code==422

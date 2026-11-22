@@ -3,6 +3,9 @@ from concurrent.futures import ThreadPoolExecutor
 from contextlib import asynccontextmanager, contextmanager
 from datetime import datetime, timezone
 import json
+import hashlib
+from functools import lru_cache
+from io import BytesIO
 import html
 import re
 import mimetypes
@@ -23,7 +26,7 @@ from .personalization import normalize_name
 from .design_options import DesignOptions,OPTIONS,apply_design
 from .accounts import Accounts,CURRENT_USER
 from .billing import Billing
-from .template_catalog import BY_ID, TEMPLATES, CATEGORY_CATALOG, CATALOG_VERSION, public_template
+from .template_catalog import BY_ID, TEMPLATES, CATEGORY_CATALOG, CATALOG_VERSION, public_template, thumbnail_name
 
 ROOT = Path(__file__).resolve().parents[1]
 Preset = Literal[tuple(['cube_100', 'cube_200', 'cube_300', 'house_frame', *BY_ID])]
@@ -57,6 +60,31 @@ class NamePreview(BaseModel):
     _name = field_validator('personal_name',mode='before')(normalize_name)
 
 
+@lru_cache(maxsize=512)
+def thumbnail_jpeg(svg: str) -> bytes:
+    """Rasterize catalog artwork once per process; printable SVGs remain untouched."""
+    import pymupdf
+    from PIL import Image
+    with pymupdf.open(stream=svg.encode("utf-8"), filetype="svg") as document:
+        pixmap = document[0].get_pixmap(alpha=False)
+        image = Image.frombytes("RGB", (pixmap.width, pixmap.height), pixmap.samples)
+        output = BytesIO()
+        image.save(output, format="JPEG", quality=82, optimize=True)
+        return output.getvalue()
+
+
+@lru_cache(maxsize=512)
+def model_thumbnail(template_id: str) -> bytes:
+    template = BY_ID[template_id]
+    if template.get("category") == "blocky-characters":
+        from .blocky import preview
+        svg = preview(template)
+    else:
+        from .gingerbread import preview_svg
+        svg = preview_svg(template)
+    return thumbnail_jpeg(svg)
+
+
 def now():
     return datetime.now(timezone.utc).isoformat()
 
@@ -64,6 +92,30 @@ def now():
 def create_app(data_dir=None, seed=False):
     data = Path(data_dir or os.getenv('PPM_DATA_DIR', str(ROOT / '.data'))).resolve()
     data.mkdir(parents=True, exist_ok=True)
+    # Version the on-disk cache whenever thumbnail-producing source changes.
+    digest = hashlib.sha256()
+    for source in sorted((ROOT / 'backend').glob('*.py')):
+        digest.update(source.name.encode('utf-8'))
+        digest.update(source.read_bytes())
+    for source in sorted((ROOT / 'papercraft-v1.2').glob('*.py')):
+        digest.update(source.name.encode('utf-8'))
+        digest.update(source.read_bytes())
+    thumbnail_dir = data / 'thumbnails' / digest.hexdigest()[:16]
+
+    def disk_thumbnail(group, name, make_image):
+        folder = thumbnail_dir / group
+        path = folder / (name + '.jpg')
+        if not path.is_file():
+            image = make_image()
+            folder.mkdir(parents=True, exist_ok=True)
+            temporary = folder / (name + '.' + uuid.uuid4().hex + '.tmp')
+            try:
+                temporary.write_bytes(image)
+                os.replace(temporary, path)
+            finally:
+                temporary.unlink(missing_ok=True)
+        return path.read_bytes()
+
     db_path = data / 'studio.sqlite3'
     pool = ThreadPoolExecutor(max_workers=1)
     timeout = int(os.getenv('PPM_JOB_TIMEOUT', '180'))
@@ -122,13 +174,13 @@ def create_app(data_dir=None, seed=False):
         folder = data / pid / str(rev)
         out = folder / 'artifacts'
         folder.mkdir(parents=True, exist_ok=True)
-        (folder / 'request.json').write_text(json.dumps(snapshot))
+        (folder / 'request.json').write_text(json.dumps(snapshot), encoding="utf-8")
         update_job(jid, 'RUNNING', 'Validate Input')
         try:
             env = {**os.environ, 'MPLCONFIGDIR': str(data / '.mpl-cache'), 'PYTHONHASHSEED': '0'}
             with (folder / 'worker.log').open('w') as log:
                 subprocess.run([sys.executable, '-m', 'backend.worker', str(folder / 'request.json'), str(out), str(folder / 'progress.json')], cwd=ROOT, env=env, stdout=log, stderr=subprocess.STDOUT, timeout=timeout, check=True)
-            report = json.loads((out / 'validation_report.json').read_text())
+            report = json.loads((out / 'validation_report.json').read_text(encoding="utf-8"))
             if report['overall_status'] != 'PASS':
                 raise RuntimeError('QA failed')
             with connection() as db:
@@ -138,7 +190,7 @@ def create_app(data_dir=None, seed=False):
             if isinstance(exc, subprocess.TimeoutExpired):
                 message = f'Generation exceeded {timeout}s timeout.'
             else:
-                lines = (folder / 'worker.log').read_text(errors='replace').splitlines()
+                lines = (folder / 'worker.log').read_text(errors='replace', encoding="utf-8").splitlines()
                 message = '\n'.join(lines[-8:])[-2500:] or str(exc)
             with connection() as db:
                 db.execute("UPDATE projects SET status='FAILED',updated_at=? WHERE id=? AND revision=?", (now(), pid, rev))
@@ -200,6 +252,13 @@ def create_app(data_dir=None, seed=False):
     def design_options():
         return {key:[dict(id=id,label=label) for id,label in values] for key,values in OPTIONS.items()}
 
+    @app.get('/api/design-options/{kind}/{style}/thumbnail.jpg')
+    def design_thumbnail_jpeg(kind: Literal['roof','wall','tree','gift'], style: str):
+        if style not in {option[0] for option in OPTIONS[kind]}:
+            raise HTTPException(404, 'Design option not found')
+        from .design_options import thumbnail
+        return Response(disk_thumbnail('design-' + kind, style, lambda: thumbnail_jpeg(thumbnail(kind, style))), media_type='image/jpeg', headers={'Cache-Control':'public, max-age=3600', 'X-Content-Type-Options':'nosniff'})
+
     @app.get('/api/design-options/{kind}/{style}/preview.svg')
     def design_thumbnail(kind: Literal['roof','wall','tree','gift'],style: str):
         if style not in {id for id,label in OPTIONS[kind]}:raise HTTPException(404,'Unknown design option')
@@ -207,6 +266,7 @@ def create_app(data_dir=None, seed=False):
         return Response(thumbnail(kind,style),media_type='image/svg+xml',headers={'Cache-Control':'public, max-age=3600','X-Content-Type-Options':'nosniff'})
 
     @app.get('/api/templates')
+    @lru_cache(maxsize=1)
     def templates():
         from .gingerbread import model
         from .blocky import spec_for
@@ -216,16 +276,27 @@ def create_app(data_dir=None, seed=False):
                 spec=spec_for(t,'US Letter','catalog',1)
                 result.append({**public_template(t),'sheet_count':1,'house_sheet_count':1,'house_cut_pieces':len(spec['geometry']['model']['parts']),'accessory_cut_pieces':0,'cut_pieces':len(spec['geometry']['model']['parts']),'face_count':len(spec['geometry']['panels']),'fold_hinges':0,'glue_seams':len(spec['geometry']['model']['parts'])*4})
                 continue
-            panels,seams,units,pages,_=model(t)
+            structure=model(t)
+            panels,seams,units,pages,_=structure
+            from .three_page import compact_layout
             from .roof_cap import metadata
-            cap=metadata(t)
-            result.append({**public_template(t),'sheet_count':len(pages)+2+cap['sheet_count']+int(bool(t.get('chimney'))),'roof_cap':cap,'house_sheet_count':len(pages),'house_cut_pieces':len(units),'accessory_cut_pieces':5+cap['cut_pieces']+int(bool(t.get('chimney'))),'cut_pieces':len(units)+5+cap['cut_pieces']+int(bool(t.get('chimney'))),'face_count':len(panels),'fold_hinges':sum(s['hinge'] for s in seams),'glue_seams':sum(not s['hinge'] for s in seams)})
+            print_template,compact_pages=compact_layout(t,structure)
+            cap=metadata(print_template)
+            from .accessories import layout as accessory_layout
+            result.append({**public_template(t),'sheet_count':len(compact_pages) if compact_pages else len(pages)+len(accessory_layout(t)),'roof_cap':cap,'house_sheet_count':len(compact_pages or pages),'house_cut_pieces':len(units),'accessory_cut_pieces':5+cap['cut_pieces']+int(bool(t.get('chimney'))),'cut_pieces':len(units)+5+cap['cut_pieces']+int(bool(t.get('chimney'))),'face_count':len(panels),'fold_hinges':sum(s['hinge'] for s in seams),'glue_seams':sum(not s['hinge'] for s in seams)})
         return result
 
     @app.get('/api/template-categories')
     def template_categories():
         counts={category['id']:sum(category['id'] in t.get('categories',[]) for t in TEMPLATES) for category in CATEGORY_CATALOG}
         return [{**category,'status':'available' if counts[category['id']] else 'planned','template_count':counts[category['id']]} for category in CATEGORY_CATALOG]
+
+    @app.get('/api/templates/{template_id}/{filename}.jpg')
+    @app.get('/api/templates/{template_id}/thumbnail.jpg')
+    def template_thumbnail(template_id: str, filename: str = 'thumbnail'):
+        if template_id not in BY_ID or filename not in ('thumbnail', thumbnail_name(BY_ID[template_id])):
+            raise HTTPException(404, 'Template not found')
+        return Response(disk_thumbnail('models', thumbnail_name(BY_ID[template_id]), lambda: model_thumbnail(template_id)), media_type='image/jpeg', headers={'Cache-Control':'public, max-age=3600', 'X-Content-Type-Options':'nosniff'})
 
     @app.get('/api/templates/{template_id}/preview.svg')
     def template_preview(template_id: str):
@@ -310,7 +381,7 @@ def create_app(data_dir=None, seed=False):
         if result['status'] == 'RUNNING':
             progress = data / result['project_id'] / str(result['revision']) / 'progress.json'
             if progress.exists():
-                result['stage'] = json.loads(progress.read_text())['stage']
+                result['stage'] = json.loads(progress.read_text(encoding="utf-8"))['stage']
                 with connection() as db:
                     db.execute("UPDATE jobs SET stage=? WHERE id=? AND status='RUNNING'", (result['stage'], jid))
         return result
@@ -322,7 +393,7 @@ def create_app(data_dir=None, seed=False):
         return data / pid / str(p['revision']) / 'artifacts'
 
     def read_artifact(pid, name):
-        return json.loads((artifact_root(pid) / name).read_text())
+        return json.loads((artifact_root(pid) / name).read_text(encoding="utf-8"))
 
     @app.get('/api/projects/{pid}/geometry')
     def geometry(pid: str):
@@ -350,7 +421,7 @@ def create_app(data_dir=None, seed=False):
         folder='coloring_svg_pages' if style=='coloring' else 'svg_pages'
         if not (root/folder).exists():raise HTTPException(409,'Rebuild this project to add coloring pages.')
         title = html.escape(project(pid)['name']) + (' — Coloring pages' if style=='coloring' else ' — Full color')
-        sheets = ''.join('<section class="sheet">'+re.sub(r'<\?xml[^>]*\?>', '', p.read_text())+'</section>' for p in sorted((root/folder).glob('*.svg')))
+        sheets = ''.join('<section class="sheet">'+re.sub(r'<\?xml[^>]*\?>', '', p.read_text(encoding="utf-8"))+'</section>' for p in sorted((root/folder).glob('*.svg')))
         document = '''<!doctype html><html lang="en-US"><meta charset="utf-8"><title>Print — '''+title+'''</title>
 <style>@page{size:215.9mm 279.4mm;margin:0}*{box-sizing:border-box}body{margin:0;background:#e8ece7;font:14px system-ui}header{padding:16px;text-align:center;background:white}button{padding:10px 20px;cursor:pointer}.sheet{width:215.9mm;height:279.4mm;margin:12px auto;background:white;break-after:page;overflow:hidden}.sheet:last-child{break-after:auto}.sheet svg{display:block;width:215.9mm;height:279.4mm}@media print{header{display:none}body{background:white}.sheet{margin:0}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style>
 <header><strong>'''+title+'''</strong><p>US Letter · Scale 100% · Fit to Page off · Disable browser headers and footers. Check the 40 mm ruler before cutting.</p><button onclick="window.print()">Print now</button></header>'''+sheets+'''<script>window.addEventListener('load',()=>{document.fonts.ready.then(()=>window.print())});</script></html>'''
@@ -367,7 +438,7 @@ def create_app(data_dir=None, seed=False):
         if filename == 'project.zip':
             from .project_archive import create_download_archive
             create_download_archive(root)
-        media = {'.svg': 'image/svg+xml', '.obj': 'text/plain'}.get(target.suffix) or mimetypes.guess_type(target.name)[0] or 'application/octet-stream'
+        media = {'.svg': 'image/svg+xml', '.obj': 'text/plain', '.zip': 'application/zip'}.get(target.suffix) or mimetypes.guess_type(target.name)[0] or 'application/octet-stream'
         return FileResponse(target, media_type=media, filename=target.name if download else None, headers={'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff'})
 
     dist = ROOT / 'frontend/dist'

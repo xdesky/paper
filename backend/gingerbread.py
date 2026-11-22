@@ -5,7 +5,9 @@ Does not modify or replace the original cube/frame algorithms.
 """
 from __future__ import annotations
 from collections import Counter, defaultdict
+from colorsys import hls_to_rgb, rgb_to_hls
 from dataclasses import dataclass, field
+from functools import lru_cache
 from pathlib import Path
 import hashlib
 import json
@@ -117,10 +119,17 @@ def model(t):
         seam['hinge']={m['panel'] for m in seam['occurrences']} in pair_sets
         if not seam['hinge']:
             owner=seam['occurrences'][0]
-            if t.get('collection')=='Advanced Christmas':
-                owner=next((m for m in seam['occurrences'] if m['panel'].startswith('ROOF')),owner)
+            roof_mates=[m for m in seam['occurrences'] if m['panel'].startswith('ROOF')]
+            if len(roof_mates)==1:
+                owner=next(m for m in seam['occurrences'] if m!=roof_mates[0])
             p=panels[owner['panel']]
             p.tabs[owner['edge']]=base.base.flap_for_edge(*p.seg(owner['edge']),depth=5)
+    # Open-bottom wall edges receive fold-out tabs for attachment to the base.
+    for index, edge in enumerate(boundary,1):
+        mate=edge['mate'];panel=panels[mate['panel']];edge_id=mate['edge']
+        if all(abs(point[2])<1e-6 for point in edge['endpoints']):
+            panel.edges[edge_id]=f'B{index}'
+            panel.tabs[edge_id]=base.base.flap_for_edge(*panel.seg(edge_id),depth=5)
     lookup={s['id']:s for s in seams}
     units=[base.construct_unit(tuple(m['panel'] for m in s['occurrences']),s['id'],panels,lookup) for s in seams if s['hinge']]
     placed={pid for u in units for pid in u.ids}
@@ -279,12 +288,30 @@ def svg_art(shapes, width, height):
     return ET.tostring(root,encoding='unicode')
 
 
-def draw_shapes(c, root, shapes, transform, scale=base.PT):
+@lru_cache(maxsize=512)
+def vivid_print_ink(color):
+    if not color or len(color)!=7 or not color.startswith('#') or color.lower()==TAB:
+        return color
+    rgb=[int(color[i:i+2],16)/255 for i in (1,3,5)]
+    hue,lightness,saturation=rgb_to_hls(*rgb)
+    chroma=max(rgb)-min(rgb)
+    if chroma<=.07 or lightness<=.12 or lightness>=.93:
+        return color
+    # Taper the change near neutral inks and the lightest highlights.
+    strength=min(1,(chroma-.07)/.18,(.93-lightness)/.17)
+    saturation+=.24*strength*(1-saturation)
+    lightness+=.045*strength
+    return '#'+''.join(f'{round(channel*255):02x}' for channel in hls_to_rgb(hue,lightness,saturation))
+
+
+def draw_shapes(c, root, shapes, transform, scale=base.PT, *, vivid=False):
     """Emit the same vector geometry to PDF (mm->pt) and SVG (mm)."""
     from reportlab.lib.colors import HexColor
     if root is not None:root=ET.SubElement(root,'{'+NS+'}g',{'data-artwork':'true'})
     for shape in shapes:
         tag=shape['type']; fill=shape.get('fill'); stroke=shape.get('stroke'); width=shape.get('width',0)
+        if vivid:
+            fill,stroke=vivid_print_ink(fill),vivid_print_ink(stroke)
         attrs={'fill':fill or 'none','stroke':stroke or 'none','stroke-width':str(width),'stroke-linejoin':'round','stroke-linecap':'round'}
         if c:
             c.saveState()
@@ -316,6 +343,36 @@ def draw_shapes(c, root, shapes, transform, scale=base.PT):
                 c.drawPath(path,fill=bool(fill),stroke=bool(stroke))
             if root is not None:ET.SubElement(root,'{'+NS+'}'+('polygon' if tag=='polygon' else 'polyline'),points=' '.join(f'{x:.6f},{y:.6f}' for x,y in points),**attrs)
         if c:c.restoreState()
+
+
+def draw_placed_art(c,root,piece,placement,*,clip=True,vivid=False):
+    """Draw artwork in the same rigid placement as the cut and fold paths."""
+    transform=placement.transform
+    def svg_transform(point):
+        x,y=transform(point)
+        return x,base.PAGE_H-y
+
+    rounded=placement.id=='ROOF'
+    if c is not None and rounded:
+        points=list(placement.shape.exterior.coords)
+        path=c.beginPath()
+        path.moveTo(*(v*base.PT for v in points[0]))
+        for point in points[1:]:
+            path.lineTo(*(v*base.PT for v in point))
+        path.close()
+        c.saveState()
+        c.clipPath(path,stroke=0,fill=0)
+    if c is not None:
+        draw_shapes(c,None,piece['art'],transform,vivid=vivid)
+        if rounded:
+            c.restoreState()
+    if root is not None:
+        if rounded and clip:
+            clip_path=ET.SubElement(root,'{'+NS+'}clipPath',id='roof-outline')
+            base.svg_polygon(clip_path,placement.shape,'white','none',0)
+        draw_shapes(None,root,piece['art'],svg_transform,1,vivid=vivid)
+        if rounded:
+            root[-1].set('clip-path','url(#roof-outline)')
 
 
 def preview_svg(t):
@@ -387,7 +444,16 @@ def generate(request,out,progress=lambda stage:None):
     for name,file in [(base.base.FONT,'DejaVuSans.ttf'),(base.base.FONT_BOLD,'DejaVuSans-Bold.ttf')]:
         if name not in pdfmetrics.getRegisteredFontNames():pdfmetrics.registerFont(TTFont(name,str(fontdir/file)))
     progress('Build Geometry')
-    panels,seams,units,pages,boundary=model(t)
+    structure=model(t)
+    panels,seams,units,pages,boundary=structure
+    from .three_page import compact_layout
+    from .accessories import layout as accessory_layout
+    t,compact_pages=compact_layout(t,structure)
+    if compact_pages:
+        pages=compact_pages
+        units=[unit for page in pages for unit in page['units']]
+    total_pages=len(pages) if compact_pages else len(pages)+len(accessory_layout(t))
+    vivid=t.get('category')=='gingerbread-houses'
     progress('Choose Hinges / Unfold / Add Tabs')
     geometry={'model':{'type':t.get('model_family','gable_house_open_bottom'),'name':t['name'],'width_mm':t['width'],'depth_mm':t['depth'],'wall_height_mm':t['wall_height'],'roof_rise_mm':t['roof_rise'],'height_mm':t['wall_height']+t['roof_rise'],'open_bottom':True},
               'panels':[{'id':p.id,'face':p.id,'width_mm':p.square.bounds[2],'height_mm':p.square.bounds[3], 'polygon_mm':p.points,'vertices_3d_mm':p.vertices,'edge_codes':p.edges} for p in panels.values()],
@@ -410,14 +476,14 @@ def generate(request,out,progress=lambda stage:None):
         root=ET.Element('{'+NS+'}svg',width=f'{base.PAGE_W}mm',height=f'{base.PAGE_H}mm',viewBox=f'0 0 {base.PAGE_W} {base.PAGE_H}')
         ET.SubElement(root,'{'+NS+'}metadata').text=canonical(identity)
         label(root,base.PAGE_W/2,base.PAGE_H-12.4,t['name']+' | '+identity['model_id'],3.2)
-        label(root,base.PAGE_W/2,base.PAGE_H-19.4,f'Page {index+1}/{len(pages)} | CUT black | FOLD purple | Print Actual Size 100%',2.1)
+        label(root,base.PAGE_W/2,base.PAGE_H-19.4,f'Page {index+1}/{total_pages} | Cut solid lines | Fold dashed lines | Print at 100%',2.1)
         for unit in page['units']:
-            def emit(shapes,transform):
-                draw_shapes(c,None,shapes,transform)
-                draw_shapes(None,root,shapes,lambda q:(transform(q)[0],base.PAGE_H-transform(q)[1]),1)
+            def emit(shapes,transform,*,vivid=False):
+                draw_shapes(c,None,shapes,transform,vivid=vivid)
+                draw_shapes(None,root,shapes,lambda q:(transform(q)[0],base.PAGE_H-transform(q)[1]),1,vivid=vivid)
             for pid in unit.ids:
                 p=panels[pid];transform=lambda q,pid=pid:unit.transform(pid,q)
-                emit(decorations(t,p),transform)
+                emit(decorations(t,p),transform,vivid=vivid)
                 for tab in p.tabs.values():emit([{'type':'polygon','points':list(tab.exterior.coords),'fill':TAB}],transform)
                 for edge in p.tabs:
                     a,b=p.seg(edge)
@@ -435,16 +501,37 @@ def generate(request,out,progress=lambda stage:None):
             mate=seam['occurrences'][0];a,b=panels[mate['panel']].seg(mate['edge'])
             a,b=unit.transform(mate['panel'],a),unit.transform(mate['panel'],b)
             base.pdf_line(c,a,b,FOLD,.9,[4,2]);base.svg_segment(root,a,b,FOLD,[1.5,.8],.35)
+        for piece,placement in page.get('accessories',[]):
+            draw_placed_art(c,root,piece,placement,vivid=vivid)
+            outline=placement.shape
+            base.pdf_shape(c,outline,stroke=CUT,stroke_width=.65)
+            base.svg_polygon(root,outline,'none',CUT,.23)
+            for a,b in piece['folds']:
+                a,b=placement.transform(a),placement.transform(b)
+                base.pdf_line(c,a,b,FOLD,.9,[4,2])
+                base.svg_segment(root,a,b,FOLD,[1.5,.8],.35)
+            for code,x,y in piece['labels']:
+                x,y=placement.transform((x,y-.4))
+                if placement.angle:
+                    c.saveState()
+                    c.translate(x*base.PT,y*base.PT)
+                    c.rotate(placement.angle)
+                    c.translate(-x*base.PT,-y*base.PT)
+                label(root,x,y,code,4/base.PT)
+                if placement.angle:
+                    c.restoreState()
+                    root[-1].set('transform',f'rotate({-placement.angle} {x} {base.PAGE_H-y})')
         base.pdf_line(c,(15,10.5),(55,10.5),CUT,.8)
         base.svg_segment(root,(15,10.5),(55,10.5),CUT,width=.25)
         for x in (15,55):base.pdf_line(c,(x,8.7),(x,12.3),CUT,.7);base.svg_segment(root,(x,8.7),(x,12.3),CUT,width=.25)
-        label(root,126,10,'40 mm | Actual Size / 100% - NO Fit to Page',2.2)
+        label(root,126,10,'40 mm | Print at 100% | Do not fit to page',2.2)
         label(root,108,15,f"{identity['model_id']} | r{request['revision']} | {identity['geometry_sha256'][:16]}",1.7)
         ET.ElementTree(root).write(out/f'svg_pages/page_{index+1:03d}.svg',encoding='utf-8',xml_declaration=True)
         c.showPage()
     c.save()
-    (out/'model_spec.json').write_text(json.dumps(spec,ensure_ascii=False,indent=2))
-    (out/'template_preview.svg').write_text(preview_svg(t))
+    (out/'model_spec.json').write_text(json.dumps(spec,ensure_ascii=False,indent=2), encoding="utf-8")
+    preview_art = preview_svg(t)
+    (out/'template_preview.svg').write_text(preview_art, encoding="utf-8")
     # OBJ contains the real six-panel shell, deliberately open at the bottom.
     obj=['# '+canonical(identity)];vertex_offset=0
     for p in panels.values():
@@ -452,13 +539,12 @@ def generate(request,out,progress=lambda stage:None):
         obj.extend('v '+' '.join(str(v) for v in xyz) for xyz in p.vertices)
         obj.append('f '+' '.join(str(vertex_offset+i+1) for i in range(len(p.vertices))))
         vertex_offset+=len(p.vertices)
-    (out/'model.obj').write_text('\n'.join(obj)+'\n')
+    (out/'model.obj').write_text('\n'.join(obj)+'\n', encoding="utf-8")
     # SVG-to-PDF conversion uses the exported vector preview, not an AI image.
-    with fitz.open(stream=preview_svg(t).encode(),filetype='svg') as svgdoc:
+    with fitz.open(stream=preview_art.encode('utf-8'),filetype='svg') as svgdoc:
         preview_bytes=svgdoc.convert_to_pdf()
     with fitz.open(stream=preview_bytes,filetype='pdf') as preview:
         preview[0].get_pixmap(matrix=fitz.Matrix(2,2)).save(out/'model_3d_preview.png')
-    base.contact_sheet(pdf,out/'printable_preview.png',identity['model_id'])
     guide=canvas.Canvas(str(out/'assembly_guide.pdf'),pagesize=(base.PAGE_W*base.PT,base.PAGE_H*base.PT),invariant=1)
     guide.setTitle('Assembly guide - '+t['name']);guide.setSubject(canonical(identity))
     def gt(x,y,text,size=9,bold=False):base.pdf_text(guide,x,y,text,size,bold)
@@ -470,12 +556,12 @@ def generate(request,out,progress=lambda stage:None):
            '3. Fold the wall units with the printed side facing out.',
            '4. Glue matching vertical edges to close the four walls.',
            '5. Fold the roof units along the dashed lines. Match the remaining labels.',
-           '6. Match the tab labels using the joint diagrams at the end of this guide.',
-           '7. Hold gently until the glue dries. The house has an open bottom.',
+           '6. Fold the upper wall tabs inward and glue them to the underside of the roof.',
+           '7. Fold the lower wall tabs outward and glue the house to the base.',
            'Doors, windows, and candy are PRINTED details. Do not cut them out.',
            'Physical assembly has not been tested.']
     if t.get('bay_count',1) > 1:
-        steps[6]='6. Join roof units: fold ridges outward and valleys inward.'
+        steps[5]='5. Join roof units: fold ridges outward and valleys inward.'
     for i,text in enumerate(steps):gt(12,139-i*10,text,8)
     gt(12,19,'Recommended: 160–220 gsm cardstock. Test-fit before gluing.',8)
     gt(12,10,identity['model_id']+' | '+identity['geometry_sha256'][:16],6)
@@ -512,16 +598,16 @@ def generate(request,out,progress=lambda stage:None):
     guide.save()
     progress('QA')
     tests=validate(t,panels,seams,units,pages,boundary,out)
-    from .accessories import export as export_accessories, scene
-    tests.extend(export_accessories(t,out,identity,len(pages)))
+    from .accessories import export as export_accessories, scene, layout as accessory_layout
+    tests.extend(export_accessories(t,out,identity,0 if compact_pages else len(pages),append_print=not compact_pages))
     from .roof_cap import metadata as cap_metadata
     cap_info=cap_metadata(t)
     spec['roof_cap']=cap_info
     spec['house_sheet_count']=len(pages)
-    spec['sheet_count']=len(pages)+2+cap_info['sheet_count']+int(bool(t.get('chimney')))
+    spec['sheet_count']=total_pages
     spec['scene_accessories']=scene(t)
     spec['accessory_cut_pieces']=5+cap_info['cut_pieces']+int(bool(t.get('chimney')))
-    (out/'model_spec.json').write_text(json.dumps(spec,ensure_ascii=False,indent=2))
+    (out/'model_spec.json').write_text(json.dumps(spec,ensure_ascii=False,indent=2), encoding="utf-8")
     # Export the complete display as a separate OBJ; house OBJ stays reusable.
     scene_obj=list(obj)
     for panel in spec['scene_accessories']['panels']:
@@ -529,7 +615,7 @@ def generate(request,out,progress=lambda stage:None):
         scene_obj.extend('v '+' '.join(str(v) for v in xyz) for xyz in panel['vertices_3d_mm'])
         scene_obj.append('f '+' '.join(str(vertex_offset+i+1) for i in range(len(panel['vertices_3d_mm']))))
         vertex_offset+=len(panel['vertices_3d_mm'])
-    (out/'display_scene.obj').write_text('\n'.join(scene_obj)+'\n')
+    (out/'display_scene.obj').write_text('\n'.join(scene_obj)+'\n', encoding="utf-8")
     base.contact_sheet(pdf,out/'printable_preview.png',identity['model_id'])
     for path in out.glob('*.png'):
         with Image.open(path) as image:
@@ -538,12 +624,13 @@ def generate(request,out,progress=lambda stage:None):
     tests.extend(export_coloring(t,out,identity,panels,units,pages))
     report={**identity,'overall_status':'PASS' if all(x['status']=='PASS' for x in tests) else 'FAIL','physical_assembly':'NOT_TESTED','tests':tests,
             'summary':{'sheets':spec['sheet_count'],'accessory_cut_pieces':spec['accessory_cut_pieces'],'cut_pieces':len(units)+spec['accessory_cut_pieces'],'fold_hinges':sum(bool(u.hinge_id) for u in units),'glue_seams':sum(not s['hinge'] for s in seams),'accessory_fold_hinges':10+cap_info['fold_hinges']+8*int(bool(t.get('chimney'))),'accessory_glue_seams':14+cap_info['glue_seams']+5*int(bool(t.get('chimney'))),'flat_continuous_joins':0,'faces_or_tiles':len(panels)}}
-    (out/'validation_report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
+    (out/'validation_report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2), encoding="utf-8")
     if report['overall_status']!='PASS':raise RuntimeError(canonical([t for t in tests if t['status']=='FAIL']))
-    manifest={**identity,'input':request,'template':t,'qa_status':'PASS','algorithm':'gable-house-1.0; v1.2 rigid pairing + shelf packing','physical_assembly':'NOT_TESTED','artifacts':[]}
+    packing='three-sheet rigid placement' if compact_pages else 'v1.2 rigid pairing + shelf packing'
+    manifest={**identity,'input':request,'template':t,'qa_status':'PASS','algorithm':'gable-house-1.0; '+packing,'physical_assembly':'NOT_TESTED','artifacts':[]}
     for path in sorted(out.rglob('*')):
         if path.is_file():manifest['artifacts'].append({'path':path.relative_to(out).as_posix(),'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),**identity})
-    (out/'generation_manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2))
+    (out/'generation_manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2), encoding="utf-8")
     from .project_archive import create_download_archive
     create_download_archive(out)
     progress('Complete')
@@ -583,6 +670,17 @@ def validate(t,panels,seams,units,pages,boundary,out):
     check('printable_bounds',all(base.BODY[0]-1e-5<=b[0] and base.BODY[1]-1e-5<=b[1] and b[2]<=base.BODY[2]+1e-5 and b[3]<=base.BODY[3]+1e-5 for b in [u.shape().bounds for u in units]),base.BODY)
     xyz=np.array([v for p in panels.values() for v in p.vertices]);dims=np.ptp(xyz,axis=0)
     check('finished_dimensions_mm',np.allclose(dims,[t['width'],t['depth'],t['wall_height']+t['roof_rise']]),dims.tolist())
+    mixed_pages=[
+        [unit.shape() for unit in page['units']]+[p.shape for _,p in page['accessories']]
+        for page in pages if page.get('accessories')
+    ]
+    if mixed_pages:
+        from shapely.geometry import box
+        printable=box(*base.BODY).buffer(1e-6)
+        check('mixed_page_printable_bounds',all(printable.covers(shape) for page in mixed_pages for shape in page),base.BODY)
+        check('mixed_page_clearance',all(
+            a.distance(b)>=3-1e-6 for page in mixed_pages for i,a in enumerate(page) for b in page[i+1:]
+        ),'At least 3 mm between pieces on shared pages')
     pdf_cuts=[];pdf_cal=[];words=Counter();clipped=[];pdf_hinges=[];label_errors=[]
     with fitz.open(out/printable_filename(base.PAPER_NAME)) as doc:
         check('pdf_page_count',len(doc)==len(pages),len(doc))
@@ -605,9 +703,9 @@ def validate(t,panels,seams,units,pages,boundary,out):
                 if color and math.dist(color,(154/255,57/255,113/255))<.02 and abs(width-.9)<.03:hinges+=1
                 for item in drawing['items']:
                     if item[0]=='l' and abs(abs(item[2].x-item[1].x)/base.PT-40)<.005 and abs(item[1].y-item[2].y)<.01:cal+=1
-            targets=[u.shape() for u in pages[index]['units']]
+            targets=[u.shape() for u in pages[index]['units']]+[p.shape for _,p in pages[index].get('accessories',[])]
             pdf_cuts.append(len(cuts)==len(targets) and all(g.is_valid and min(g.symmetric_difference(q).area for q in targets)<.05 for g in cuts))
-            pdf_cal.append(cal>0);pdf_hinges.append(hinges==sum(bool(u.hinge_id) for u in pages[index]['units']))
+            pdf_cal.append(cal>0);pdf_hinges.append(hinges==sum(bool(u.hinge_id) for u in pages[index]['units'])+sum(len(piece['folds']) for piece,_ in pages[index].get('accessories',[])))
             for word in p.get_text('words'):
                 words[word[4]]+=1
                 if word[4] in {s['id'] for s in seams}:
@@ -623,7 +721,7 @@ def validate(t,panels,seams,units,pages,boundary,out):
     check('pdf_text_margins',not clipped,clipped)
     svg_checks=[]
     for i,path in enumerate(sorted((out/'svg_pages').glob('*.svg'))):
-        root=ET.parse(path).getroot();targets=[u.shape() for u in pages[i]['units']]
+        root=ET.parse(path).getroot();targets=[u.shape() for u in pages[i]['units']]+[p.shape for _,p in pages[i].get('accessories',[])]
         cuts=[n for n in root if n.tag.endswith('polygon') and n.get('stroke')==CUT]
         polys=[Polygon([(float(x),base.PAGE_H-float(y)) for x,y in (p.split(',') for p in n.get('points').split())]) for n in cuts]
         cal=any(n.tag.endswith('line') and abs(abs(float(n.get('x2','0'))-float(n.get('x1','0')))-40)<.001 and n.get('y1')==n.get('y2') for n in root)

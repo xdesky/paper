@@ -1,7 +1,10 @@
 """Versioned, local catalog of printable Christmas houses."""
-CATALOG_VERSION = '5.0.0'
+import re
+import unicodedata
+
+CATALOG_VERSION = '5.2.1'
 TEMPLATES = [
-    dict(id='gb_classic', name='Ngôi nhà bánh gừng', subtitle='Noel cổ điển', collection='Truyền thống', width=90, depth=70, wall_height=85, roof_rise=45, wall='#b97946', roof='#8b4139', accent='#bf443d', trim='#fff5dc', background='#f4e8d7', motif='classic', difficulty='Dễ', description='Bánh gừng nâu ấm, mái đỏ và những đường kem trắng. Mẫu mở đầu cho một ngôi làng Noel trên bàn.'),
+    dict(id='gb_classic', roof_corner_radius_mm=0, name='Ngôi nhà bánh gừng', subtitle='Noel cổ điển', collection='Truyền thống', width=90, depth=70, wall_height=85, roof_rise=45, wall='#b97946', roof='#8b4139', accent='#bf443d', trim='#fff5dc', background='#f4e8d7', motif='classic', difficulty='Dễ', description='Bánh gừng nâu ấm, mái đỏ và những đường kem trắng. Mẫu mở đầu cho một ngôi làng Noel trên bàn.'),
     dict(id='gb_candy', name='Tiệm kẹo Giáng sinh', subtitle='Candy Cane Lane', collection='Kẹo ngọt', width=100, depth=70, wall_height=85, roof_rise=42, wall='#d99478', roof='#d25762', accent='#bc3046', trim='#fff7e7', background='#f9e7e8', motif='candy', difficulty='Dễ', description='Mái hồng dâu, cửa viền kẹo gậy và ô cửa sáng vàng. Những viên kẹo được in trực tiếp trên mặt giấy.'),
     dict(id='gb_forest', name='Căn nhà rừng thông', subtitle='Evergreen Cottage', collection='Thiên nhiên', width=85, depth=65, wall_height=95, roof_rise=50, wall='#a7774f', roof='#356657', accent='#2a6851', trim='#fff7e7', background='#e5ede2', motif='forest', difficulty='Dễ', description='Mái xanh thông, vòng nguyệt quế và họa tiết cây thông. Phù hợp phối thành một góc rừng mùa đông.'),
     dict(id='gb_chalet', name='Chalet phủ tuyết', subtitle='Alpine Christmas', collection='Thiên nhiên', width=110, depth=70, wall_height=70, roof_rise=40, wall='#a56d47', roof='#63554b', accent='#9c403c', trim='#fff9ec', background='#eee9df', motif='chalet', difficulty='Dễ', description='Dáng nhà rộng, mái thấp và họa tiết gỗ với kem tuyết. Một ngôi nhà nhỏ để đặt cạnh cây thông.'),
@@ -144,11 +147,19 @@ for t in TEMPLATES:
 BY_ID = {t['id']: t for t in TEMPLATES}
 
 
+def thumbnail_name(t):
+    name = t['name'].replace('?', 'd').replace('?', 'D')
+    name = unicodedata.normalize('NFKD', name).encode('ascii', 'ignore').decode('ascii').lower()
+    slug = re.sub(r'[^a-z0-9]+', '-', name).strip('-') or 'model'
+    identifier = re.sub(r'[^a-z0-9]+', '-', t['id'].lower()).strip('-')
+    return f'{slug}-{identifier}-papercraft-template'
+
+
 def public_template(t):
     miniature=t.get('category')=='miniature-worlds'
     character=t.get('category')=='blocky-characters'
     accessories=(['Foldable cuboid body','Printed character details'] if character else ['Display base','Slotted tree','Two 3D gift props'] if miniature else ['Overhanging snowy roof','Snowy base','Slotted tree','Two 3D gift boxes'])
     return {**t, 'version': CATALOG_VERSION, 'dimensions_mm': [t['width'], t['depth'], t['wall_height'] + t['roof_rise']],
             'paper': 'US Letter', 'accessories': accessories+(['3D chimney'] if t.get('chimney') else []), 'physical_assembly': 'NOT_TESTED',
-            'construction': ('Original blocky paper character made from foldable cuboid nets. Facial details are printed; small parts assemble with glue tabs.' if character else 'Open-bottom miniature storefront with a separate display base, printable signboard, and striped awning. Doors and windows are printed details.' if miniature else 'Open-bottom paper house with a separate snowy base. The two-layer roof extends 6 mm at the front and back and 4 mm along the outer slopes. Doors and windows are printed details. No interior rooms or separate porch.') + (' Includes an open-top 3D chimney with sloped glue tabs and its own print page.' if t.get('chimney') else ''),
-            'preview_url': f"/api/templates/{t['id']}/preview.svg"}
+            'construction': ('Original blocky paper character made from foldable cuboid nets. Facial details are printed; small parts assemble with glue tabs.' if character else 'Open-bottom miniature storefront with a separate display base, printable signboard, and striped awning. Doors and windows are printed details.' if miniature else 'Open-bottom paper house with a separate snowy base. The two-layer roof overhangs the front, back, and outer slopes. Doors and windows are printed details. No interior rooms or separate porch.') + (' Includes an open-top 3D chimney with sloped glue tabs.' if t.get('chimney') else ''),
+            'preview_url': f"/api/templates/{t['id']}/{thumbnail_name(t)}.jpg"}

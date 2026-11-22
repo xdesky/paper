@@ -9,6 +9,10 @@ def test_buildable_chimney_matches_roof(template):
     g=geometry(template);p=piece(template)
     assert len(g['panels'])==4 and len(p['folds'])==8
     assert len(p['tabs'])==5 and p['labels'][0][0]=='C1'
+    for tab,(a,b) in zip(p['tabs'][1:],p['folds'][3:7]):
+        dx,dy=b[0]-a[0],b[1]-a[1];length=math.hypot(dx,dy)
+        depth=max(abs(dx*(y-a[1])-dy*(x-a[0]))/length for x,y in tab.exterior.coords)
+        assert depth == pytest.approx(7.5,abs=.01)
     assert all(x['status']=='PASS' for x in validate(template))
     assert p['shape'].is_valid and not p['shape'].interiors
     assert all(Polygon(face['points']).is_valid for face in g['panels'])
@@ -52,3 +56,53 @@ def test_equal_slopes_use_right_side_and_old_snapshot_keeps_placement():
     assert sum(x for x,y,z in geometry(t)['footprint'])>0
     old={k:v for k,v in BY_ID['gb_us_saltbox_heritage'].items() if k!='chimney_placement'}
     assert sum(x for x,y,z in geometry(old)['footprint'])>0
+
+
+@pytest.mark.parametrize('paper', ['US Letter', 'A4'])
+@pytest.mark.parametrize('template', [t for t in TEMPLATES if t.get('chimney')], ids=lambda t:t['id'])
+def test_chimney_shares_roof_page_without_overlap(template, paper):
+    from shapely.affinity import translate
+    from shapely.geometry import box
+    from backend.gingerbread import base
+    from backend.paper import configure_engine
+    from backend.accessories import layout
+    from backend.roof_cap import metadata
+    configure_engine(base, paper)
+    pages=layout(template)
+    roof=metadata(template)
+    assert len(pages)<=2+roof['sheet_count']
+    page=next(page for page in pages if any(piece['id']=='CHIMNEY' for piece,_,_ in page))
+    chimney=next(translate(piece['shape'],xoff=x,yoff=y) for piece,x,y in page if piece['id']=='CHIMNEY')
+    assert box(8,20,base.PAGE_W-8,base.PAGE_H-24.4).covers(chimney)
+    for piece,x,y in page:
+        if piece['id']!='CHIMNEY':
+            assert chimney.distance(translate(piece['shape'],xoff=x,yoff=y))>=3-1e-6
+
+
+@pytest.mark.parametrize('paper', ['US Letter', 'A4'])
+def test_accessory_pages_are_compact_and_separated(paper):
+    from shapely.affinity import translate
+    from backend.gingerbread import base
+    from backend.paper import configure_engine
+    from backend.accessories import layout
+    configure_engine(base,paper)
+    for template in TEMPLATES:
+        if template.get('category')=='blocky-characters':continue
+        pages=layout(template)
+        assert len(pages)==2,template['id']
+        for page in pages:
+            shapes=[translate(piece['shape'],xoff=x,yoff=y) for piece,x,y in page]
+            assert all(box(8,20,base.PAGE_W-8,base.PAGE_H-24.4).buffer(1e-6).covers(shape) for shape in shapes)
+            assert all(a.distance(b)>=3-1e-6 for i,a in enumerate(shapes) for b in shapes[i+1:])
+
+
+@pytest.mark.parametrize('size',[16,20])
+def test_gift_glue_tabs_are_eight_mm(size):
+    from backend.accessories import gift_net
+    p=gift_net(size,'A','#bb3f58')
+    from shapely.geometry import LineString
+    for tab in p['tabs']:
+        segment=next(edge for edge in p['folds'] if LineString(edge).difference(tab.buffer(1e-6)).length < 1e-5)
+        a,b=segment;dx,dy=b[0]-a[0],b[1]-a[1];length=math.hypot(dx,dy)
+        depth=max(abs(dx*(y-a[1])-dy*(x-a[0]))/length for x,y in tab.exterior.coords)
+        assert depth == pytest.approx(8,abs=.01)

@@ -72,7 +72,7 @@ def generate(request, out, progress=lambda stage: None):
     finally:
         for name, original in originals.items():
             setattr(engine, name, original)
-    spec = json.loads((out / 'model_spec.json').read_text())
+    spec = json.loads((out / 'model_spec.json').read_text(encoding="utf-8"))
     identity = {'model_id': spec['model_id'], 'version': spec['version'], 'project_id': request['project_id'], 'revision': request['revision'], 'geometry_sha256': spec['geometry_sha256'], 'source_spec_hash': sha(request)}
     spec.update(identity)
     report.update(identity)
@@ -142,7 +142,7 @@ def generate(request, out, progress=lambda stage: None):
         tree.write(path, encoding='utf-8', xml_declaration=True)
     if (out / 'model.obj').exists():
         path = out / 'model.obj'
-        path.write_text('# ' + json.dumps(identity) + '\n' + path.read_text())
+        path.write_text('# ' + json.dumps(identity) + '\n' + path.read_text(encoding="utf-8"), encoding="utf-8")
     # Regenerate printable preview after final PDF stamping.
     engine.contact_sheet(out / 'printable_us_letter.pdf', out / 'printable_preview.png', spec['model_id'])
     for path in out.glob('*.png'):
@@ -173,11 +173,11 @@ def generate(request, out, progress=lambda stage: None):
         root = ET.parse(path).getroot()
         cal.append(any(n.tag.endswith('line') and abs(abs(float(n.get('x2','0'))-float(n.get('x1','0')))-40)<.001 and n.get('y1')==n.get('y2') for n in root))
     check('svg_40mm_calibration', all(cal), cal)
-    jsonschema.validate(spec, json.loads((ROOT / 'papercraft-v1.2/model_spec.schema.json').read_text()))
+    jsonschema.validate(spec, json.loads((ROOT / 'papercraft-v1.2/model_spec.schema.json').read_text(encoding="utf-8")))
     check('model_spec_schema', True, 'Upstream schema 1.2.0')
     report['overall_status'] = 'PASS' if all(t['status']=='PASS' for t in report['tests']) else 'FAIL'
     for filename, value in [('model_spec.json', spec), ('validation_report.json', report)]:
-        (out / filename).write_text(json.dumps(value, ensure_ascii=False, indent=2))
+        (out / filename).write_text(json.dumps(value, ensure_ascii=False, indent=2), encoding="utf-8")
     if report['overall_status'] != 'PASS' or not independent_verify(out):
         raise RuntimeError('Export QA failed; artifacts are not certified')
     if paper_name == 'A4':
@@ -186,7 +186,7 @@ def generate(request, out, progress=lambda stage: None):
     for path in sorted(out.rglob('*')):
         if path.is_file():
             manifest['artifacts'].append({'path': path.relative_to(out).as_posix(), 'sha256': hashlib.sha256(path.read_bytes()).hexdigest(), **identity})
-    (out / 'generation_manifest.json').write_text(json.dumps(manifest, indent=2))
+    (out / 'generation_manifest.json').write_text(json.dumps(manifest, indent=2), encoding="utf-8")
     from .project_archive import create_download_archive
     create_download_archive(out)
     progress('Complete')
@@ -197,6 +197,6 @@ if __name__ == '__main__':
     request_path, output_path, progress_path = map(Path, sys.argv[1:])
     def progress(stage):
         temp = progress_path.with_suffix('.tmp')
-        temp.write_text(json.dumps({'stage': stage}))
+        temp.write_text(json.dumps({'stage': stage}), encoding="utf-8")
         temp.replace(progress_path)
-    generate(json.loads(request_path.read_text()), output_path, progress)
+    generate(json.loads(request_path.read_text(encoding="utf-8")), output_path, progress)

@@ -645,7 +645,7 @@ def build(kind,out,size=None):
         'print_units':[{'panel_ids':list(u.ids),'sheet_number':u.sheet+1,'fold_code':u.hinge_id,
                  'orientation_degrees':u.orientation,'bounds_mm':[rnd(v) for v in u.cut_bounds()]} for u in units],
         'sheet_count':len(pages),'physical_assembly':'NOT_TESTED'}
-    (out/'model_spec.json').write_text(json.dumps(spec,ensure_ascii=False,indent=2)+'\n')
+    (out/'model_spec.json').write_text(json.dumps(spec,ensure_ascii=False,indent=2)+'\n', encoding="utf-8")
     summary={'model':model,'faces_or_tiles':len(panels),'cut_pieces':len(units),'sheets':len(pages),
         'fold_hinges':sum(s['hinge'] and s['fold_degrees']==90 for s in seams),
         'flat_continuous_joins':sum(s['hinge'] and s['fold_degrees']==0 for s in seams),'glue_seams':sum(not s['hinge'] for s in seams),'total_seams':len(seams),
@@ -654,7 +654,7 @@ def build(kind,out,size=None):
     report={'version':VERSION,'model_id':spec['model_id'],'model_geometry_sha256':spec['geometry_sha256'],
         'overall_status':'PASS' if all(x['status']=='PASS' for x in tests) else 'FAIL',
         'summary':summary,'tests':tests,'physical_assembly':'NOT_TESTED'}
-    (out/'validation_report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+    (out/'validation_report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n', encoding="utf-8")
     print(json.dumps({'model':spec['model_id'],'qa':report['overall_status'],'tests':len(tests),**{k:summary[k] for k in ('cut_pieces','sheets','fold_hinges','glue_seams')}}))
     if report['overall_status']!='PASS':
         raise AssertionError([t for t in tests if t['status']=='FAIL'])
@@ -669,6 +669,6 @@ def main():
     args=ap.parse_args();root=Path(args.out)
     reports=[build('cube',root/f'cube_{s}mm',s) for s in args.sizes]
     if not args.skip_house:reports.append(build('house',root/'house_frame_120x90x180mm'))
-    (root/'summary.json').write_text(json.dumps([r['summary'] for r in reports],ensure_ascii=False,indent=2)+'\n')
+    (root/'summary.json').write_text(json.dumps([r['summary'] for r in reports],ensure_ascii=False,indent=2)+'\n', encoding="utf-8")
 
 if __name__=='__main__':main()

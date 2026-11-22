@@ -1,0 +1,39 @@
+# {"design_sha256":"4f8fb0a4e8325ce019fc7b1cb6ab6f633d1ce7af47a7f528834599668c604e67","geometry_sha256":"a816b6284c29c8a2d897dac5eb000593f15d6ec9c732bbae5a3aa7b8e359837b","model_id":"GB-US-CRAFTSMAN-MIDNIGHT","project_id":"gb_us_craftsman_midnight-compact","revision":1,"source_spec_hash":"1becab5d3a10d920bde02ee7d278ce8cd45d2ab26145d787d2f584a539b7d948","template_version":"5.0.0","version":"gingerbread-4.0.0"}
+g FRONT
+v -52.5 -32.5 0
+v 52.5 -32.5 0
+v 52.5 -32.5 64
+v 0.0 -32.5 92
+v -52.5 -32.5 64
+f 1 2 3 4 5
+g BACK
+v -52.5 32.5 64
+v 0.0 32.5 92
+v 52.5 32.5 64
+v 52.5 32.5 0
+v -52.5 32.5 0
+f 6 7 8 9 10
+g RIGHT
+v 52.5 -32.5 0
+v 52.5 32.5 0
+v 52.5 32.5 64
+v 52.5 -32.5 64
+f 11 12 13 14
+g LEFT
+v -52.5 32.5 0
+v -52.5 -32.5 0
+v -52.5 -32.5 64
+v -52.5 32.5 64
+f 15 16 17 18
+g ROOF_1
+v 0.0 -32.5 92.0
+v 0.0 32.5 92.0
+v -52.5 32.5 64.0
+v -52.5 -32.5 64.0
+f 19 20 21 22
+g ROOF_2
+v 52.5 -32.5 64.0
+v 52.5 32.5 64.0
+v 0.0 32.5 92.0
+v 0.0 -32.5 92.0
+f 23 24 25 26

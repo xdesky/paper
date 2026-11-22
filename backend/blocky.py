@@ -67,18 +67,18 @@ def generate(request,out,progress=lambda s:None):
  from .paper import printable_filename
  from .project_archive import create_download_archive
  t=request.get('template') or BY_ID[request['preset']];paper=request.get('paper','US Letter');pw,ph=PAPER[paper];out=Path(out);out.mkdir(parents=True,exist_ok=True);progress('Build Geometry')
- spec=spec_for(t,paper,request['project_id'],request['revision']);(out/'model_spec.json').write_text(json.dumps(spec,indent=2));art=preview(t);(out/'template_preview.svg').write_text(art)
+ spec=spec_for(t,paper,request['project_id'],request['revision']);(out/'model_spec.json').write_text(json.dumps(spec,indent=2), encoding="utf-8");art=preview(t);(out/'template_preview.svg').write_text(art, encoding="utf-8")
  with fitz.open(stream=art.encode(),filetype='svg') as src:pdf=src.convert_to_pdf()
  with fitz.open(stream=pdf,filetype='pdf') as doc:doc[0].get_pixmap(matrix=fitz.Matrix(2,2)).save(out/'model_3d_preview.png')
  progress('Pack Pages');content=''.join(nets(t,paper));svg='<svg xmlns="http://www.w3.org/2000/svg" width="{}mm" height="{}mm" viewBox="0 0 {} {}"><rect width="100%" height="100%" fill="white"/><text x="{}" y="8" text-anchor="middle" font-size="3">{} · PRINT AT 100% · BLACK CUT · PURPLE FOLD</text>{}</svg>'.format(pw,ph,pw,ph,pw/2,t['name'],content)
- (out/'svg_pages').mkdir(exist_ok=True);(out/'coloring_svg_pages').mkdir(exist_ok=True);(out/'svg_pages/page_001.svg').write_text(svg);coloring=svg
+ (out/'svg_pages').mkdir(exist_ok=True);(out/'coloring_svg_pages').mkdir(exist_ok=True);(out/'svg_pages/page_001.svg').write_text(svg, encoding="utf-8");coloring=svg
  for p in parts_for(t):coloring=coloring.replace('fill="{}" stroke="#172b31"'.format(p['color']),'fill="white" stroke="#172b31"')
- (out/'coloring_svg_pages/page_001.svg').write_text(coloring)
+ (out/'coloring_svg_pages/page_001.svg').write_text(coloring, encoding="utf-8")
  with fitz.open(stream=svg.encode(),filetype='svg') as doc:pdf=doc.convert_to_pdf()
  (out/printable_filename(paper)).write_bytes(pdf)
  with fitz.open(stream=pdf,filetype='pdf') as doc:doc[0].get_pixmap(matrix=fitz.Matrix(1.1,1.1)).save(out/'printable_preview.png')
  report={'overall_status':'PASS','physical_assembly':'NOT_TESTED','tests':[{'name':'cuboid_model_spec','status':'PASS','detail':'{} printable panels'.format(len(spec['geometry']['panels']))},{'name':'printable_svg','status':'PASS','detail':'One sheet'}],'summary':{'sheets':1,'cut_pieces':len(parts_for(t)),'fold_hinges':0,'glue_seams':len(parts_for(t))*4,'flat_continuous_joins':0}}
- (out/'validation_report.json').write_text(json.dumps(report,indent=2));identity={k:spec[k] for k in ('model_id','version','project_id','revision','geometry_sha256','template_version')};manifest={**identity,'qa_status':'PASS','physical_assembly':'NOT_TESTED','artifacts':[]}
+ (out/'validation_report.json').write_text(json.dumps(report,indent=2), encoding="utf-8");identity={k:spec[k] for k in ('model_id','version','project_id','revision','geometry_sha256','template_version')};manifest={**identity,'qa_status':'PASS','physical_assembly':'NOT_TESTED','artifacts':[]}
  for f in sorted(out.rglob('*')):
   if f.is_file() and f.name not in ('generation_manifest.json','project.zip'):manifest['artifacts'].append({'path':f.relative_to(out).as_posix(),'sha256':hashlib.sha256(f.read_bytes()).hexdigest(),**identity})
- (out/'generation_manifest.json').write_text(json.dumps(manifest,indent=2));create_download_archive(out);progress('Complete');return report
+ (out/'generation_manifest.json').write_text(json.dumps(manifest,indent=2), encoding="utf-8");create_download_archive(out);progress('Complete');return report

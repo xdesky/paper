@@ -1,0 +1,39 @@
+# {"design_sha256":"f535e29d8d4e4e589dac1575813236a2b1f45abdd704cada5a61da4e23876e38","geometry_sha256":"7185a268b83bc66bd568c502b8176abc69d0688261e20aaeb567af9f71dba011","model_id":"GB-FROST","project_id":"gb_frost-compact","revision":1,"source_spec_hash":"e0e8d919826237713dd56d25e90c41bcada0ed81c2c8bf2d5d94d1547e360a1a","template_version":"5.0.0","version":"gingerbread-4.0.0"}
+g FRONT
+v -37.5 -32.5 0
+v 37.5 -32.5 0
+v 37.5 -32.5 115
+v 0.0 -32.5 152.5
+v -37.5 -32.5 115
+f 1 2 3 4 5
+g RIGHT
+v 37.5 -32.5 0
+v 37.5 32.5 0
+v 37.5 32.5 115
+v 37.5 -32.5 115
+f 6 7 8 9
+g BACK
+v 37.5 32.5 0
+v -37.5 32.5 0
+v -37.5 32.5 115
+v 0.0 32.5 152.5
+v 37.5 32.5 115
+f 10 11 12 13 14
+g LEFT
+v -37.5 32.5 0
+v -37.5 -32.5 0
+v -37.5 -32.5 115
+v -37.5 32.5 115
+f 15 16 17 18
+g ROOF_RIGHT
+v 37.5 -32.5 115.0
+v 37.5 32.5 115.0
+v 0.0 32.5 152.5
+v 0.0 -32.5 152.5
+f 19 20 21 22
+g ROOF_LEFT
+v -37.5 32.5 115.0
+v -37.5 -32.5 115.0
+v 0.0 -32.5 152.5
+v 0.0 32.5 152.5
+f 23 24 25 26

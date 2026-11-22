@@ -1,0 +1,39 @@
+# {"design_sha256":"56c5e903410823bc0bf553174078b87d45f145960d54be3d4a0c56811ca68fe8","geometry_sha256":"e578d65c50404f13e7cb374abf803b23a7eebfb0c7c8fd4b24fbdcf2a5477622","model_id":"GB-CLASSIC","project_id":"layout-check","revision":1,"source_spec_hash":"9aa16fdf86473c6c25647fb6dbd3b9e4d418d0625de104bf3483a75e9fb7d9f8","template_version":"5.0.0","version":"gingerbread-4.0.0"}
+g FRONT
+v -45.0 -35.0 0
+v 45.0 -35.0 0
+v 45.0 -35.0 85
+v 0.0 -35.0 130
+v -45.0 -35.0 85
+f 1 2 3 4 5
+g RIGHT
+v 45.0 -35.0 0
+v 45.0 35.0 0
+v 45.0 35.0 85
+v 45.0 -35.0 85
+f 6 7 8 9
+g BACK
+v 45.0 35.0 0
+v -45.0 35.0 0
+v -45.0 35.0 85
+v 0.0 35.0 130
+v 45.0 35.0 85
+f 10 11 12 13 14
+g LEFT
+v -45.0 35.0 0
+v -45.0 -35.0 0
+v -45.0 -35.0 85
+v -45.0 35.0 85
+f 15 16 17 18
+g ROOF_RIGHT
+v 45.0 -35.0 85.0
+v 45.0 35.0 85.0
+v 0.0 35.0 130.0
+v 0.0 -35.0 130.0
+f 19 20 21 22
+g ROOF_LEFT
+v -45.0 35.0 85.0
+v -45.0 -35.0 85.0
+v 0.0 -35.0 130.0
+v 0.0 35.0 130.0
+f 23 24 25 26

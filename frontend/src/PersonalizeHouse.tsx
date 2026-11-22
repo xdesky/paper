@@ -34,7 +34,7 @@ export function PersonalizeHouse({templates,initialTemplate,onClose,onCreate}:Pr
     <BinarySwitch label="Paper format" off="US Letter" on="A4" checked={paper==='A4'} disabled={creating} onChange={checked=>setPaper(checked?'A4':'US Letter')}/>
     <div className="note">Your name appears in the model and on the printed house.<br/><span>Includes the house, overhanging roof, snowy base, tree, gifts, and assembly guide.</span></div>
     {error&&<p role="alert" className="error">{error}</p>}
-    <button className="primary" disabled={creating||previewing||!previewValid||!template}>{creating?'Creating your project…':'Create model & print files'}</button>
+    <button className="primary" disabled={creating||previewing||!previewValid||!template}>{creating?'Creating your project…':'Create project'}</button>
    </div></div>
   </form>
  </div>;

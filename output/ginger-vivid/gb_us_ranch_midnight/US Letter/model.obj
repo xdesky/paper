@@ -1,0 +1,39 @@
+# {"design_sha256":"d32613fe887a444f4e9e953dc73648390bfb18ee55876328821876d4353698ee","geometry_sha256":"6ed9251a9e236392b028145fcec809f174443a594217d5a31ddfc59f9f2a19ef","model_id":"GB-US-RANCH-MIDNIGHT","project_id":"gb_us_ranch_midnight-vivid","revision":1,"source_spec_hash":"d2ff105768d46c6e1d64e8fc51975833aa141108d765ff61eaa67f16b6bb469d","template_version":"5.2.0","version":"gingerbread-4.0.0"}
+g FRONT
+v -57.5 -30.0 0
+v 57.5 -30.0 0
+v 57.5 -30.0 58
+v 0.0 -30.0 78
+v -57.5 -30.0 58
+f 1 2 3 4 5
+g BACK
+v -57.5 30.0 58
+v 0.0 30.0 78
+v 57.5 30.0 58
+v 57.5 30.0 0
+v -57.5 30.0 0
+f 6 7 8 9 10
+g RIGHT
+v 57.5 -30.0 0
+v 57.5 30.0 0
+v 57.5 30.0 58
+v 57.5 -30.0 58
+f 11 12 13 14
+g LEFT
+v -57.5 30.0 0
+v -57.5 -30.0 0
+v -57.5 -30.0 58
+v -57.5 30.0 58
+f 15 16 17 18
+g ROOF_1
+v 0.0 -30.0 78.0
+v 0.0 30.0 78.0
+v -57.5 30.0 58.0
+v -57.5 -30.0 58.0
+f 19 20 21 22
+g ROOF_2
+v 57.5 -30.0 58.0
+v 57.5 30.0 58.0
+v 0.0 30.0 78.0
+v 0.0 -30.0 78.0
+f 23 24 25 26

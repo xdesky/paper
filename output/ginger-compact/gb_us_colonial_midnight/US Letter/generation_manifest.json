@@ -1,0 +1,283 @@
+{
+  "model_id": "GB-US-COLONIAL-MIDNIGHT",
+  "version": "gingerbread-4.0.0",
+  "project_id": "gb_us_colonial_midnight-compact",
+  "revision": 1,
+  "geometry_sha256": "ec754a735fca8200bdb19c7194f8d1e0945433f75c41dcc6fc074423ad9348c6",
+  "source_spec_hash": "92357816ad77e4763248bc0a4c4c1c3f05ee149626018f1c154d72a435a5fdc4",
+  "design_sha256": "0e0fbf7e810692beca075d8ce53e122614c9c51c75e388fd131478d24f077d31",
+  "template_version": "5.0.0",
+  "input": {
+    "project_id": "gb_us_colonial_midnight-compact",
+    "revision": 1,
+    "preset": "gb_us_colonial_midnight",
+    "paper": "US Letter"
+  },
+  "template": {
+    "id": "gb_us_colonial_midnight",
+    "name": "Colonial · Midnight & Gold",
+    "subtitle": "Colonial / Midnight & Gold",
+    "collection": "American Premium",
+    "model_family": "colonial",
+    "architecture": "Colonial",
+    "finish": "Midnight & Gold",
+    "profile": [
+      [
+        0,
+        0
+      ],
+      [
+        0.5,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "material": "brick",
+    "premium": true,
+    "width": 85,
+    "depth": 65,
+    "wall_height": 105,
+    "roof_rise": 30,
+    "wall": "#344c60",
+    "roof": "#29313f",
+    "accent": "#bb8648",
+    "trim": "#f5e8c6",
+    "background": "#e5e9ee",
+    "motif": "american",
+    "difficulty": "Intermediate",
+    "description": "Colonial with festive icing, candy details, and glowing windows. Includes a snowy base, a slotted tree, and two gift boxes. Customize the patterns and add your own name.",
+    "roof_overhang_mm": 9,
+    "roof_rake_mm": 11,
+    "category": "gingerbread-houses",
+    "categories": [
+      "gingerbread-houses",
+      "american-places",
+      "seasonal-holiday"
+    ],
+    "roof_corner_radius_mm": 4
+  },
+  "qa_status": "PASS",
+  "algorithm": "gable-house-1.0; v1.2 rigid pairing + shelf packing",
+  "physical_assembly": "NOT_TESTED",
+  "artifacts": [
+    {
+      "path": "accessories.pdf",
+      "sha256": "d18fb023c40b26ac224a0a4b0e94c7c4e2f9f3fcca4e5e34d71697c6f4e2170d",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_midnight-compact",
+      "revision": 1,
+      "geometry_sha256": "ec754a735fca8200bdb19c7194f8d1e0945433f75c41dcc6fc074423ad9348c6",
+      "source_spec_hash": "92357816ad77e4763248bc0a4c4c1c3f05ee149626018f1c154d72a435a5fdc4",
+      "design_sha256": "0e0fbf7e810692beca075d8ce53e122614c9c51c75e388fd131478d24f077d31",
+      "template_version": "5.0.0"
+    },
+    {
+      "path": "accessories_guide.pdf",
+      "sha256": "1b4bc817ec469abf0bc63f41e2f232bffa38c32fc926946d41c4cf6ae30278c2",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_midnight-compact",
+      "revision": 1,
+      "geometry_sha256": "ec754a735fca8200bdb19c7194f8d1e0945433f75c41dcc6fc074423ad9348c6",
+      "source_spec_hash": "92357816ad77e4763248bc0a4c4c1c3f05ee149626018f1c154d72a435a5fdc4",
+      "design_sha256": "0e0fbf7e810692beca075d8ce53e122614c9c51c75e388fd131478d24f077d31",
+      "template_version": "5.0.0"
+    },
+    {
+      "path": "assembly_guide.pdf",
+      "sha256": "ef52479a12ae4a8c484f6cf26581602a4b6bd9f0c5db65dbcb1361b221341d31",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_midnight-compact",
+      "revision": 1,
+      "geometry_sha256": "ec754a735fca8200bdb19c7194f8d1e0945433f75c41dcc6fc074423ad9348c6",
+      "source_spec_hash": "92357816ad77e4763248bc0a4c4c1c3f05ee149626018f1c154d72a435a5fdc4",
+      "design_sha256": "0e0fbf7e810692beca075d8ce53e122614c9c51c75e388fd131478d24f077d31",
+      "template_version": "5.0.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_001.svg",
+      "sha256": "62e7f07aedf87cfe0afa2b3254bd09cd959c2d43831c33f240a9007a92f735c5",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_midnight-compact",
+      "revision": 1,
+      "geometry_sha256": "ec754a735fca8200bdb19c7194f8d1e0945433f75c41dcc6fc074423ad9348c6",
+      "source_spec_hash": "92357816ad77e4763248bc0a4c4c1c3f05ee149626018f1c154d72a435a5fdc4",
+      "design_sha256": "0e0fbf7e810692beca075d8ce53e122614c9c51c75e388fd131478d24f077d31",
+      "template_version": "5.0.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_002.svg",
+      "sha256": "53ff137b0b63dc02a44aa8de7b1a05a0308b653a4e6474f2fd927971024977ea",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_midnight-compact",
+      "revision": 1,
+      "geometry_sha256": "ec754a735fca8200bdb19c7194f8d1e0945433f75c41dcc6fc074423ad9348c6",
+      "source_spec_hash": "92357816ad77e4763248bc0a4c4c1c3f05ee149626018f1c154d72a435a5fdc4",
+      "design_sha256": "0e0fbf7e810692beca075d8ce53e122614c9c51c75e388fd131478d24f077d31",
+      "template_version": "5.0.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_003.svg",
+      "sha256": "837a4db9c3ed5dec93c392f2cb86c3b969af776069cd66e123c58e8a9e2b2814",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_midnight-compact",
+      "revision": 1,
+      "geometry_sha256": "ec754a735fca8200bdb19c7194f8d1e0945433f75c41dcc6fc074423ad9348c6",
+      "source_spec_hash": "92357816ad77e4763248bc0a4c4c1c3f05ee149626018f1c154d72a435a5fdc4",
+      "design_sha256": "0e0fbf7e810692beca075d8ce53e122614c9c51c75e388fd131478d24f077d31",
+      "template_version": "5.0.0"
+    },
+    {
+      "path": "display_scene.obj",
+      "sha256": "d49ea9d99b0809e1483022841d6dc975efbb3e3815022e87c20d4ebdb89ceab3",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_midnight-compact",
+      "revision": 1,
+      "geometry_sha256": "ec754a735fca8200bdb19c7194f8d1e0945433f75c41dcc6fc074423ad9348c6",
+      "source_spec_hash": "92357816ad77e4763248bc0a4c4c1c3f05ee149626018f1c154d72a435a5fdc4",
+      "design_sha256": "0e0fbf7e810692beca075d8ce53e122614c9c51c75e388fd131478d24f077d31",
+      "template_version": "5.0.0"
+    },
+    {
+      "path": "model.obj",
+      "sha256": "265d17d8109a7b3f32e6e0bc39fbf6172232742d37f8149ff3b1e2feb0987f4a",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_midnight-compact",
+      "revision": 1,
+      "geometry_sha256": "ec754a735fca8200bdb19c7194f8d1e0945433f75c41dcc6fc074423ad9348c6",
+      "source_spec_hash": "92357816ad77e4763248bc0a4c4c1c3f05ee149626018f1c154d72a435a5fdc4",
+      "design_sha256": "0e0fbf7e810692beca075d8ce53e122614c9c51c75e388fd131478d24f077d31",
+      "template_version": "5.0.0"
+    },
+    {
+      "path": "model_3d_preview.png",
+      "sha256": "7efd606877354dfa162902f5add2cfd9c6fac7e2ae1f1689e02788a4ad1c68a4",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_midnight-compact",
+      "revision": 1,
+      "geometry_sha256": "ec754a735fca8200bdb19c7194f8d1e0945433f75c41dcc6fc074423ad9348c6",
+      "source_spec_hash": "92357816ad77e4763248bc0a4c4c1c3f05ee149626018f1c154d72a435a5fdc4",
+      "design_sha256": "0e0fbf7e810692beca075d8ce53e122614c9c51c75e388fd131478d24f077d31",
+      "template_version": "5.0.0"
+    },
+    {
+      "path": "model_spec.json",
+      "sha256": "1a255b8892ec5b72ac376298f50f24d672ae5996e0ceb74a8a96b5c489e84431",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_midnight-compact",
+      "revision": 1,
+      "geometry_sha256": "ec754a735fca8200bdb19c7194f8d1e0945433f75c41dcc6fc074423ad9348c6",
+      "source_spec_hash": "92357816ad77e4763248bc0a4c4c1c3f05ee149626018f1c154d72a435a5fdc4",
+      "design_sha256": "0e0fbf7e810692beca075d8ce53e122614c9c51c75e388fd131478d24f077d31",
+      "template_version": "5.0.0"
+    },
+    {
+      "path": "printable_preview.png",
+      "sha256": "d348998b33b183b6855a3345a5a2134164dac9c3d857f55020df913a768bb38f",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_midnight-compact",
+      "revision": 1,
+      "geometry_sha256": "ec754a735fca8200bdb19c7194f8d1e0945433f75c41dcc6fc074423ad9348c6",
+      "source_spec_hash": "92357816ad77e4763248bc0a4c4c1c3f05ee149626018f1c154d72a435a5fdc4",
+      "design_sha256": "0e0fbf7e810692beca075d8ce53e122614c9c51c75e388fd131478d24f077d31",
+      "template_version": "5.0.0"
+    },
+    {
+      "path": "printable_us_letter.pdf",
+      "sha256": "3e6a3dcba01085458c9fe103abad9ece8690c5904dca3819eb01592767ea8e31",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_midnight-compact",
+      "revision": 1,
+      "geometry_sha256": "ec754a735fca8200bdb19c7194f8d1e0945433f75c41dcc6fc074423ad9348c6",
+      "source_spec_hash": "92357816ad77e4763248bc0a4c4c1c3f05ee149626018f1c154d72a435a5fdc4",
+      "design_sha256": "0e0fbf7e810692beca075d8ce53e122614c9c51c75e388fd131478d24f077d31",
+      "template_version": "5.0.0"
+    },
+    {
+      "path": "printable_us_letter_coloring.pdf",
+      "sha256": "12c90a2be8ea9abe72221466085f4ee922d0cc122d87dcc50836590fa3bae80c",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_midnight-compact",
+      "revision": 1,
+      "geometry_sha256": "ec754a735fca8200bdb19c7194f8d1e0945433f75c41dcc6fc074423ad9348c6",
+      "source_spec_hash": "92357816ad77e4763248bc0a4c4c1c3f05ee149626018f1c154d72a435a5fdc4",
+      "design_sha256": "0e0fbf7e810692beca075d8ce53e122614c9c51c75e388fd131478d24f077d31",
+      "template_version": "5.0.0"
+    },
+    {
+      "path": "svg_pages/page_001.svg",
+      "sha256": "a52a5c0ab7fc99a0859f2cecd33431a0633cceedbd27ce22a9893446b17de272",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_midnight-compact",
+      "revision": 1,
+      "geometry_sha256": "ec754a735fca8200bdb19c7194f8d1e0945433f75c41dcc6fc074423ad9348c6",
+      "source_spec_hash": "92357816ad77e4763248bc0a4c4c1c3f05ee149626018f1c154d72a435a5fdc4",
+      "design_sha256": "0e0fbf7e810692beca075d8ce53e122614c9c51c75e388fd131478d24f077d31",
+      "template_version": "5.0.0"
+    },
+    {
+      "path": "svg_pages/page_002.svg",
+      "sha256": "bed14f79743d803b495db91b6bb788d6a0dfffcea30f06212b050b99d7f9b579",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_midnight-compact",
+      "revision": 1,
+      "geometry_sha256": "ec754a735fca8200bdb19c7194f8d1e0945433f75c41dcc6fc074423ad9348c6",
+      "source_spec_hash": "92357816ad77e4763248bc0a4c4c1c3f05ee149626018f1c154d72a435a5fdc4",
+      "design_sha256": "0e0fbf7e810692beca075d8ce53e122614c9c51c75e388fd131478d24f077d31",
+      "template_version": "5.0.0"
+    },
+    {
+      "path": "svg_pages/page_003.svg",
+      "sha256": "e627a8bd72fbf9f317306b1c845644683e025186308fea67d494197911adf2af",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_midnight-compact",
+      "revision": 1,
+      "geometry_sha256": "ec754a735fca8200bdb19c7194f8d1e0945433f75c41dcc6fc074423ad9348c6",
+      "source_spec_hash": "92357816ad77e4763248bc0a4c4c1c3f05ee149626018f1c154d72a435a5fdc4",
+      "design_sha256": "0e0fbf7e810692beca075d8ce53e122614c9c51c75e388fd131478d24f077d31",
+      "template_version": "5.0.0"
+    },
+    {
+      "path": "template_preview.svg",
+      "sha256": "1ff361dcf221f5c5b46b8d67f3ba9c0504a62f066f2c9a63424ec70fae2037db",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_midnight-compact",
+      "revision": 1,
+      "geometry_sha256": "ec754a735fca8200bdb19c7194f8d1e0945433f75c41dcc6fc074423ad9348c6",
+      "source_spec_hash": "92357816ad77e4763248bc0a4c4c1c3f05ee149626018f1c154d72a435a5fdc4",
+      "design_sha256": "0e0fbf7e810692beca075d8ce53e122614c9c51c75e388fd131478d24f077d31",
+      "template_version": "5.0.0"
+    },
+    {
+      "path": "validation_report.json",
+      "sha256": "54826f21d37e9cf4fc4868fc4667792cfeca8b78a92262732ad10257d1eb5d13",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_midnight-compact",
+      "revision": 1,
+      "geometry_sha256": "ec754a735fca8200bdb19c7194f8d1e0945433f75c41dcc6fc074423ad9348c6",
+      "source_spec_hash": "92357816ad77e4763248bc0a4c4c1c3f05ee149626018f1c154d72a435a5fdc4",
+      "design_sha256": "0e0fbf7e810692beca075d8ce53e122614c9c51c75e388fd131478d24f077d31",
+      "template_version": "5.0.0"
+    }
+  ]
+}

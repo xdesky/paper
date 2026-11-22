@@ -13,6 +13,9 @@ from backend.personalization import normalize_name,nameplate
 def test_nameplate_fits_every_house(template,name):
     panels=model(template)[0];front=panels['FRONT']
     shaped=nameplate({**template,'personal_name':name},front)
+    plaque=next(s for s in shaped if s['type']=='polygon')
+    assert front.square.buffer(-6).covers(Polygon(plaque['points']))
+    assert Polygon(plaque['points']).bounds[2]-Polygon(plaque['points']).bounds[0] <= 42.01
     paths=[s for s in shaped if s['type']=='path']
     assert paths and ''.join(s['label'] for s in paths).replace(' ','')==name.replace(' ','')
     for p in paths:
@@ -20,6 +23,22 @@ def test_nameplate_fits_every_house(template,name):
         assert front.square.buffer(-1).covers(bounds)
         assert bounds.bounds[3]-bounds.bounds[1]>1
     assert nameplate({**template,'personal_name':name},panels['RIGHT'])==[]
+
+
+def test_plaque_resizes_for_short_names_and_keeps_padding():
+    template=next(t for t in TEMPLATES if t['id']=='gb_classic')
+    front=model(template)[0]['FRONT']
+    sizes=[]
+    for name in ('Lily', 'Isabella'):
+        shapes=nameplate({**template,'personal_name':name},front)
+        plaque=Polygon(next(s for s in shapes if s['type']=='polygon')['points'])
+        glyph=Polygon(next(s for s in shapes if s['type']=='path')['points'])
+        left,_,right,_=plaque.bounds
+        text_left,_,text_right,_=glyph.bounds
+        assert plaque.area>0 and text_left-left>=5.2 and right-text_right>=5.2
+        assert next(s for s in shapes if s['type']=='polygon')['fill']=='#ad2534'
+        sizes.append(right-left)
+    assert sizes[0]<sizes[1]<=42.01
 
 
 def test_name_lifecycle_and_export(tmp_path):

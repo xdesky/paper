@@ -1,0 +1,39 @@
+# {"design_sha256":"7bf557cc030cc2bbf019f9319371018b0b8551f4079068f1d0ca3b442749f19c","geometry_sha256":"045aa0cf2d88f953724aac7be1ddca8f1fcaa0dfbf2c8f19397c5f585a2eadee","model_id":"GB-US-CAPE-COD-MIDNIGHT","project_id":"gb_us_cape_cod_midnight-vivid","revision":1,"source_spec_hash":"6990348e8459c1434aebd20f433ad4d46fef52ff4336c0fd8a3f281b87f25882","template_version":"5.2.0","version":"gingerbread-4.0.0"}
+g FRONT
+v -45.0 -32.5 0
+v 45.0 -32.5 0
+v 45.0 -32.5 70
+v 0.0 -32.5 115
+v -45.0 -32.5 70
+f 1 2 3 4 5
+g BACK
+v -45.0 32.5 70
+v 0.0 32.5 115
+v 45.0 32.5 70
+v 45.0 32.5 0
+v -45.0 32.5 0
+f 6 7 8 9 10
+g RIGHT
+v 45.0 -32.5 0
+v 45.0 32.5 0
+v 45.0 32.5 70
+v 45.0 -32.5 70
+f 11 12 13 14
+g LEFT
+v -45.0 32.5 0
+v -45.0 -32.5 0
+v -45.0 -32.5 70
+v -45.0 32.5 70
+f 15 16 17 18
+g ROOF_1
+v 0.0 -32.5 115.0
+v 0.0 32.5 115.0
+v -45.0 32.5 70.0
+v -45.0 -32.5 70.0
+f 19 20 21 22
+g ROOF_2
+v 45.0 -32.5 70.0
+v 45.0 32.5 70.0
+v 0.0 32.5 115.0
+v 0.0 -32.5 115.0
+f 23 24 25 26

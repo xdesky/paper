@@ -8,13 +8,16 @@ COLORING = ContextVar('coloring_artwork', default=False)
 
 def export(t,out,identity,panels,units,pages):
     import pymupdf as fitz
-    from .gingerbread import decorations,draw_shapes,base,NS
+    from .gingerbread import decorations,draw_shapes,draw_placed_art,base,NS
     from .accessories import layout
     from .paper import printable_filename
     folder=out/'coloring_svg_pages';folder.mkdir(exist_ok=True)
     token=COLORING.set(True)
     try:
         replacements=[]
+        accessory_pages=layout(t)
+        mixed=any(page.get('accessories') for page in pages)
+        pieces_by_id={p['id']:p for page in accessory_pages for p,_,_ in page}
         for page in pages:
             groups=ET.Element('art')
             for unit in page['units']:
@@ -23,8 +26,10 @@ def export(t,out,identity,panels,units,pages):
                     draw_shapes(None,groups,decorations(t,panels[pid]),transform,1)
                     for tab in panels[pid].tabs.values():
                         draw_shapes(None,groups,[dict(type='polygon',points=list(tab.exterior.coords),fill='#fff1d3')],transform,1)
+            for piece,placement in page.get('accessories',[]):
+                draw_placed_art(None,groups,pieces_by_id[piece['id']],placement,clip=False)
             replacements.append(list(groups))
-        for pieces in layout(t):
+        for pieces in ([] if mixed else accessory_pages):
             groups=ET.Element('art')
             for piece,x,y in pieces:
                 draw_shapes(None,groups,piece['art'],lambda q,x=x,y=y:(q[0]+x,base.PAGE_H-q[1]-y),1)
