@@ -1,0 +1,293 @@
+{
+  "model_id": "GB-TWO-TWINS-HERITAGE",
+  "version": "gingerbread-4.0.0",
+  "project_id": "gb_two_twins_heritage-gift-pairs",
+  "revision": 1,
+  "geometry_sha256": "eeaf807ba3556e68af84d99621fb7849d85b547d80533d61656fbd21c1c383e5",
+  "source_spec_hash": "62e1b9b416ce7c6409f6fd064c484063917bf39994d98ed9ff11809553a3493a",
+  "design_sha256": "f8b812674958e5617d1f9e25d34d4a9ad761b523cc6e2185a5b301b4d896205e",
+  "template_version": "5.7.0",
+  "input": {
+    "preset": "gb_two_twins_heritage",
+    "project_id": "gb_two_twins_heritage-gift-pairs",
+    "revision": 1,
+    "paper": "A4"
+  },
+  "template": {
+    "id": "gb_two_twins_heritage",
+    "name": "Twin Gable Cottage · Heritage Christmas",
+    "subtitle": "Twin Gable / Heritage Christmas",
+    "collection": "Two-Bay Houses",
+    "model_family": "two_bay_twins",
+    "architecture": "Twin Gable",
+    "finish": "Heritage Christmas",
+    "profile": [
+      [
+        0,
+        0
+      ],
+      [
+        0.25,
+        1
+      ],
+      [
+        0.5,
+        0
+      ],
+      [
+        0.75,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "bay_split": 0.5,
+    "bay_count": 2,
+    "material": "board",
+    "premium": true,
+    "width": 112,
+    "depth": 52,
+    "wall_height": 60,
+    "roof_rise": 36,
+    "wall": "#b97946",
+    "roof": "#943f4a",
+    "accent": "#bf394a",
+    "trim": "#fff7e5",
+    "background": "#ebe9df",
+    "motif": "american",
+    "difficulty": "Intermediate",
+    "description": "Twin Gable with festive icing, candy details, and glowing windows. Includes a snowy base, a slotted tree, and two gift boxes. Customize the patterns and add your own name.",
+    "roof_overhang_mm": 10,
+    "roof_rake_mm": 10,
+    "single_layer_roof": true,
+    "category": "gingerbread-houses",
+    "categories": [
+      "gingerbread-houses",
+      "american-places",
+      "seasonal-holiday"
+    ]
+  },
+  "qa_status": "PASS",
+  "algorithm": "gable-house-1.0; v1.2 rigid pairing + shelf packing",
+  "physical_assembly": "NOT_TESTED",
+  "artifacts": [
+    {
+      "path": "accessories.pdf",
+      "sha256": "188855f15dd48f361aec5e2482e554cd567fc59bb31f7a8e5eda734eff369fe3",
+      "model_id": "GB-TWO-TWINS-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_twins_heritage-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "eeaf807ba3556e68af84d99621fb7849d85b547d80533d61656fbd21c1c383e5",
+      "source_spec_hash": "62e1b9b416ce7c6409f6fd064c484063917bf39994d98ed9ff11809553a3493a",
+      "design_sha256": "f8b812674958e5617d1f9e25d34d4a9ad761b523cc6e2185a5b301b4d896205e",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "accessories_guide.pdf",
+      "sha256": "34aa1c9fa84e9d6463e86ac08107ec8523591c383d126a4ff0daa6395f0a9a26",
+      "model_id": "GB-TWO-TWINS-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_twins_heritage-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "eeaf807ba3556e68af84d99621fb7849d85b547d80533d61656fbd21c1c383e5",
+      "source_spec_hash": "62e1b9b416ce7c6409f6fd064c484063917bf39994d98ed9ff11809553a3493a",
+      "design_sha256": "f8b812674958e5617d1f9e25d34d4a9ad761b523cc6e2185a5b301b4d896205e",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "assembly_guide.pdf",
+      "sha256": "5153cb67fe7a97dff047d785ed6b3473cf97e00eaebb45ebff1fee9b4f6497bf",
+      "model_id": "GB-TWO-TWINS-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_twins_heritage-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "eeaf807ba3556e68af84d99621fb7849d85b547d80533d61656fbd21c1c383e5",
+      "source_spec_hash": "62e1b9b416ce7c6409f6fd064c484063917bf39994d98ed9ff11809553a3493a",
+      "design_sha256": "f8b812674958e5617d1f9e25d34d4a9ad761b523cc6e2185a5b301b4d896205e",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_001.svg",
+      "sha256": "0da99c2576a69ed16cc2800e800670a3d78c6da0ad34e8c7507c42153a097d61",
+      "model_id": "GB-TWO-TWINS-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_twins_heritage-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "eeaf807ba3556e68af84d99621fb7849d85b547d80533d61656fbd21c1c383e5",
+      "source_spec_hash": "62e1b9b416ce7c6409f6fd064c484063917bf39994d98ed9ff11809553a3493a",
+      "design_sha256": "f8b812674958e5617d1f9e25d34d4a9ad761b523cc6e2185a5b301b4d896205e",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_002.svg",
+      "sha256": "394974499515600df389511b568509077749a987e5b3922cba8c0c2b7f3137d6",
+      "model_id": "GB-TWO-TWINS-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_twins_heritage-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "eeaf807ba3556e68af84d99621fb7849d85b547d80533d61656fbd21c1c383e5",
+      "source_spec_hash": "62e1b9b416ce7c6409f6fd064c484063917bf39994d98ed9ff11809553a3493a",
+      "design_sha256": "f8b812674958e5617d1f9e25d34d4a9ad761b523cc6e2185a5b301b4d896205e",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_003.svg",
+      "sha256": "8686afa3318ebc90e83946e5201c755d500173d067bd5865c1eab7ba96bf76ac",
+      "model_id": "GB-TWO-TWINS-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_twins_heritage-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "eeaf807ba3556e68af84d99621fb7849d85b547d80533d61656fbd21c1c383e5",
+      "source_spec_hash": "62e1b9b416ce7c6409f6fd064c484063917bf39994d98ed9ff11809553a3493a",
+      "design_sha256": "f8b812674958e5617d1f9e25d34d4a9ad761b523cc6e2185a5b301b4d896205e",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "display_scene.obj",
+      "sha256": "14a7651293131533ec480cee176be4f58ab9bc76ad8109d434f48eb56352014c",
+      "model_id": "GB-TWO-TWINS-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_twins_heritage-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "eeaf807ba3556e68af84d99621fb7849d85b547d80533d61656fbd21c1c383e5",
+      "source_spec_hash": "62e1b9b416ce7c6409f6fd064c484063917bf39994d98ed9ff11809553a3493a",
+      "design_sha256": "f8b812674958e5617d1f9e25d34d4a9ad761b523cc6e2185a5b301b4d896205e",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "model.obj",
+      "sha256": "28378d5a6ffae6d50eba2b887f3d71cdfa18bdb658abd9f072793028ced6ea38",
+      "model_id": "GB-TWO-TWINS-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_twins_heritage-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "eeaf807ba3556e68af84d99621fb7849d85b547d80533d61656fbd21c1c383e5",
+      "source_spec_hash": "62e1b9b416ce7c6409f6fd064c484063917bf39994d98ed9ff11809553a3493a",
+      "design_sha256": "f8b812674958e5617d1f9e25d34d4a9ad761b523cc6e2185a5b301b4d896205e",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "model_3d_preview.png",
+      "sha256": "e809ebf8071831818418d52c79be42853b52b9e2e420dc0d3a8ab804dc69b722",
+      "model_id": "GB-TWO-TWINS-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_twins_heritage-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "eeaf807ba3556e68af84d99621fb7849d85b547d80533d61656fbd21c1c383e5",
+      "source_spec_hash": "62e1b9b416ce7c6409f6fd064c484063917bf39994d98ed9ff11809553a3493a",
+      "design_sha256": "f8b812674958e5617d1f9e25d34d4a9ad761b523cc6e2185a5b301b4d896205e",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "model_spec.json",
+      "sha256": "9d12e659e9e9437843354ed54dcea0080f9109d26cbb8e44d30e41170d2545b6",
+      "model_id": "GB-TWO-TWINS-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_twins_heritage-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "eeaf807ba3556e68af84d99621fb7849d85b547d80533d61656fbd21c1c383e5",
+      "source_spec_hash": "62e1b9b416ce7c6409f6fd064c484063917bf39994d98ed9ff11809553a3493a",
+      "design_sha256": "f8b812674958e5617d1f9e25d34d4a9ad761b523cc6e2185a5b301b4d896205e",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "printable_a4.pdf",
+      "sha256": "762e99dee42535f54c35014d44c7d888b5a0efa4a4839da91aba9c19497bba65",
+      "model_id": "GB-TWO-TWINS-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_twins_heritage-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "eeaf807ba3556e68af84d99621fb7849d85b547d80533d61656fbd21c1c383e5",
+      "source_spec_hash": "62e1b9b416ce7c6409f6fd064c484063917bf39994d98ed9ff11809553a3493a",
+      "design_sha256": "f8b812674958e5617d1f9e25d34d4a9ad761b523cc6e2185a5b301b4d896205e",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "printable_a4_coloring.pdf",
+      "sha256": "b244b814ea1ab1a0c5f59c25536980728b7e059f0a5033ef1a002fc4e22f2132",
+      "model_id": "GB-TWO-TWINS-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_twins_heritage-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "eeaf807ba3556e68af84d99621fb7849d85b547d80533d61656fbd21c1c383e5",
+      "source_spec_hash": "62e1b9b416ce7c6409f6fd064c484063917bf39994d98ed9ff11809553a3493a",
+      "design_sha256": "f8b812674958e5617d1f9e25d34d4a9ad761b523cc6e2185a5b301b4d896205e",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "printable_preview.png",
+      "sha256": "a523d7d640013a9055648f892b8dfc84648061fdea2ba5656cf8af4f7529105e",
+      "model_id": "GB-TWO-TWINS-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_twins_heritage-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "eeaf807ba3556e68af84d99621fb7849d85b547d80533d61656fbd21c1c383e5",
+      "source_spec_hash": "62e1b9b416ce7c6409f6fd064c484063917bf39994d98ed9ff11809553a3493a",
+      "design_sha256": "f8b812674958e5617d1f9e25d34d4a9ad761b523cc6e2185a5b301b4d896205e",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "svg_pages/page_001.svg",
+      "sha256": "7e8b17e8e1c6dc29b107335a809e20041c71335601ff80c57cbb068a325390b2",
+      "model_id": "GB-TWO-TWINS-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_twins_heritage-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "eeaf807ba3556e68af84d99621fb7849d85b547d80533d61656fbd21c1c383e5",
+      "source_spec_hash": "62e1b9b416ce7c6409f6fd064c484063917bf39994d98ed9ff11809553a3493a",
+      "design_sha256": "f8b812674958e5617d1f9e25d34d4a9ad761b523cc6e2185a5b301b4d896205e",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "svg_pages/page_002.svg",
+      "sha256": "4695a7084eed5ca9761b30dd8fcfc4afa836950403c8ba6a3764cb5614845284",
+      "model_id": "GB-TWO-TWINS-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_twins_heritage-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "eeaf807ba3556e68af84d99621fb7849d85b547d80533d61656fbd21c1c383e5",
+      "source_spec_hash": "62e1b9b416ce7c6409f6fd064c484063917bf39994d98ed9ff11809553a3493a",
+      "design_sha256": "f8b812674958e5617d1f9e25d34d4a9ad761b523cc6e2185a5b301b4d896205e",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "svg_pages/page_003.svg",
+      "sha256": "0a605d5c7edff161398b96e1ecd4a683cd63e52351eec1173c454da51118e4d0",
+      "model_id": "GB-TWO-TWINS-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_twins_heritage-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "eeaf807ba3556e68af84d99621fb7849d85b547d80533d61656fbd21c1c383e5",
+      "source_spec_hash": "62e1b9b416ce7c6409f6fd064c484063917bf39994d98ed9ff11809553a3493a",
+      "design_sha256": "f8b812674958e5617d1f9e25d34d4a9ad761b523cc6e2185a5b301b4d896205e",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "template_preview.svg",
+      "sha256": "7fbe9e3b4bee47e23a6da3de145bf93960286cfa686f2bdd3a338f56b5f67cbe",
+      "model_id": "GB-TWO-TWINS-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_twins_heritage-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "eeaf807ba3556e68af84d99621fb7849d85b547d80533d61656fbd21c1c383e5",
+      "source_spec_hash": "62e1b9b416ce7c6409f6fd064c484063917bf39994d98ed9ff11809553a3493a",
+      "design_sha256": "f8b812674958e5617d1f9e25d34d4a9ad761b523cc6e2185a5b301b4d896205e",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "validation_report.json",
+      "sha256": "ceffada0324313966d8ec90bda3d45bee60dcac8b72e3924d9e902321cfdcfbf",
+      "model_id": "GB-TWO-TWINS-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_twins_heritage-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "eeaf807ba3556e68af84d99621fb7849d85b547d80533d61656fbd21c1c383e5",
+      "source_spec_hash": "62e1b9b416ce7c6409f6fd064c484063917bf39994d98ed9ff11809553a3493a",
+      "design_sha256": "f8b812674958e5617d1f9e25d34d4a9ad761b523cc6e2185a5b301b4d896205e",
+      "template_version": "5.7.0"
+    }
+  ]
+}

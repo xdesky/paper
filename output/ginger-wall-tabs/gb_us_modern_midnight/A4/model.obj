@@ -1,0 +1,31 @@
+# {"design_sha256":"bc0b6cc9c9fa3ca1b364481665e57bea94f3f9056162b06dfbced0f88f74348a","geometry_sha256":"60364dd4bbff76b93b10967ebc7f4c549adfc62301ccb72cf5184ccb23451c80","model_id":"GB-US-MODERN-MIDNIGHT","project_id":"gb_us_modern_midnight-wall-tabs","revision":1,"source_spec_hash":"82b6751595d7a19989d8c8d5426dd69fa49cad54fe1216136047614ad87da8b7","template_version":"5.3.0","version":"gingerbread-4.0.0"}
+g FRONT
+v -47.5 -32.5 0
+v 47.5 -32.5 0
+v 47.5 -32.5 106
+v -47.5 -32.5 68
+f 1 2 3 4
+g BACK
+v -47.5 32.5 68
+v 47.5 32.5 106
+v 47.5 32.5 0
+v -47.5 32.5 0
+f 5 6 7 8
+g RIGHT
+v 47.5 -32.5 0
+v 47.5 32.5 0
+v 47.5 32.5 106
+v 47.5 -32.5 106
+f 9 10 11 12
+g LEFT
+v -47.5 32.5 0
+v -47.5 -32.5 0
+v -47.5 -32.5 68
+v -47.5 32.5 68
+f 13 14 15 16
+g ROOF_1
+v 47.5 -32.5 106.0
+v 47.5 32.5 106.0
+v -47.5 32.5 68.0
+v -47.5 -32.5 68.0
+f 17 18 19 20

@@ -1,0 +1,335 @@
+{
+  "model_id": "GB-COMPLEX-MANOR-ROSE",
+  "version": "gingerbread-4.0.0",
+  "project_id": "gb_complex_manor_rose-wall-tabs",
+  "revision": 1,
+  "geometry_sha256": "f5b2b9a04fb031d01ba388a0e1d9cf6c9ec1da887c75aef230bc47b4f704d3d5",
+  "source_spec_hash": "b5fcc6f6cf4ca07983d5a49527dc975ca6979aec823643f18e0ff9223efd5e97",
+  "design_sha256": "de873a8c5f1c7ed9459667ec3b5c6315dae1a41475be9c02e90cf830857bd64e",
+  "template_version": "5.3.0",
+  "input": {
+    "preset": "gb_complex_manor_rose",
+    "project_id": "gb_complex_manor_rose-wall-tabs",
+    "revision": 1,
+    "paper": "US Letter"
+  },
+  "template": {
+    "id": "gb_complex_manor_rose",
+    "name": "Double Gambrel Manor · Rose Candy",
+    "subtitle": "Double Gambrel Manor / Rose Candy",
+    "collection": "Advanced Christmas",
+    "model_family": "complex_manor",
+    "architecture": "Double Gambrel Manor",
+    "finish": "Rose Candy",
+    "profile": [
+      [
+        0,
+        0
+      ],
+      [
+        0.09,
+        0.72
+      ],
+      [
+        0.25,
+        1
+      ],
+      [
+        0.41,
+        0.72
+      ],
+      [
+        0.5,
+        0
+      ],
+      [
+        0.59,
+        0.72
+      ],
+      [
+        0.75,
+        1
+      ],
+      [
+        0.91,
+        0.72
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "bay_count": 2,
+    "bay_splits": [
+      0.5
+    ],
+    "bay_split": 0.5,
+    "material": "board",
+    "premium": true,
+    "width": 118,
+    "depth": 54,
+    "wall_height": 65,
+    "roof_rise": 40,
+    "wall": "#e5a7ae",
+    "roof": "#d36e88",
+    "accent": "#b92c52",
+    "trim": "#fff9ef",
+    "background": "#f8e9ed",
+    "motif": "american",
+    "difficulty": "Advanced",
+    "description": "Double Gambrel Manor with festive icing, candy details, and glowing windows. Includes a snowy base, a slotted tree, and two gift boxes. Customize the patterns and add your own name.",
+    "roof_overhang_mm": 4,
+    "roof_rake_mm": 6,
+    "category": "gingerbread-houses",
+    "categories": [
+      "gingerbread-houses",
+      "seasonal-holiday",
+      "fantasy-storybook"
+    ]
+  },
+  "qa_status": "PASS",
+  "algorithm": "gable-house-1.0; v1.2 rigid pairing + shelf packing",
+  "physical_assembly": "NOT_TESTED",
+  "artifacts": [
+    {
+      "path": "accessories.pdf",
+      "sha256": "5112604bad90b7348ef82a26f6a7cc6b34ef3ea3ffd6de51c0c6fd0eafb0faff",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_rose-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "f5b2b9a04fb031d01ba388a0e1d9cf6c9ec1da887c75aef230bc47b4f704d3d5",
+      "source_spec_hash": "b5fcc6f6cf4ca07983d5a49527dc975ca6979aec823643f18e0ff9223efd5e97",
+      "design_sha256": "de873a8c5f1c7ed9459667ec3b5c6315dae1a41475be9c02e90cf830857bd64e",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "accessories_guide.pdf",
+      "sha256": "ae27d3c3684f3b7c3bfcf3d9feef26b88dbba132c8382d94b9659f8b8c3c7f54",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_rose-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "f5b2b9a04fb031d01ba388a0e1d9cf6c9ec1da887c75aef230bc47b4f704d3d5",
+      "source_spec_hash": "b5fcc6f6cf4ca07983d5a49527dc975ca6979aec823643f18e0ff9223efd5e97",
+      "design_sha256": "de873a8c5f1c7ed9459667ec3b5c6315dae1a41475be9c02e90cf830857bd64e",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "assembly_guide.pdf",
+      "sha256": "f159812a918c5a2306d1e4ab32d674088a07f7318f0b07aa2ac3d7e9be7e807a",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_rose-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "f5b2b9a04fb031d01ba388a0e1d9cf6c9ec1da887c75aef230bc47b4f704d3d5",
+      "source_spec_hash": "b5fcc6f6cf4ca07983d5a49527dc975ca6979aec823643f18e0ff9223efd5e97",
+      "design_sha256": "de873a8c5f1c7ed9459667ec3b5c6315dae1a41475be9c02e90cf830857bd64e",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_001.svg",
+      "sha256": "361083048d0e766bf9bb80706feb7225dc5a63798cc3ca8d141b16b6e27adf7e",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_rose-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "f5b2b9a04fb031d01ba388a0e1d9cf6c9ec1da887c75aef230bc47b4f704d3d5",
+      "source_spec_hash": "b5fcc6f6cf4ca07983d5a49527dc975ca6979aec823643f18e0ff9223efd5e97",
+      "design_sha256": "de873a8c5f1c7ed9459667ec3b5c6315dae1a41475be9c02e90cf830857bd64e",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_002.svg",
+      "sha256": "c5e7d76da4b1291d09f985ecc362adb2ecea623995bf2c33d7417b5463606416",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_rose-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "f5b2b9a04fb031d01ba388a0e1d9cf6c9ec1da887c75aef230bc47b4f704d3d5",
+      "source_spec_hash": "b5fcc6f6cf4ca07983d5a49527dc975ca6979aec823643f18e0ff9223efd5e97",
+      "design_sha256": "de873a8c5f1c7ed9459667ec3b5c6315dae1a41475be9c02e90cf830857bd64e",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_003.svg",
+      "sha256": "a335a2d8caa312aa992a50714645af98279d9bd046b7f1870699daa82f814611",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_rose-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "f5b2b9a04fb031d01ba388a0e1d9cf6c9ec1da887c75aef230bc47b4f704d3d5",
+      "source_spec_hash": "b5fcc6f6cf4ca07983d5a49527dc975ca6979aec823643f18e0ff9223efd5e97",
+      "design_sha256": "de873a8c5f1c7ed9459667ec3b5c6315dae1a41475be9c02e90cf830857bd64e",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_004.svg",
+      "sha256": "ee898f69ff88f992439dbbc8fa61f6c74f61bb61b070917f0960f9f94324d3f5",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_rose-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "f5b2b9a04fb031d01ba388a0e1d9cf6c9ec1da887c75aef230bc47b4f704d3d5",
+      "source_spec_hash": "b5fcc6f6cf4ca07983d5a49527dc975ca6979aec823643f18e0ff9223efd5e97",
+      "design_sha256": "de873a8c5f1c7ed9459667ec3b5c6315dae1a41475be9c02e90cf830857bd64e",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "display_scene.obj",
+      "sha256": "de86c6c7b499ee88321f0c5d97ca4397501e78624b49db037653cf894192bab6",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_rose-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "f5b2b9a04fb031d01ba388a0e1d9cf6c9ec1da887c75aef230bc47b4f704d3d5",
+      "source_spec_hash": "b5fcc6f6cf4ca07983d5a49527dc975ca6979aec823643f18e0ff9223efd5e97",
+      "design_sha256": "de873a8c5f1c7ed9459667ec3b5c6315dae1a41475be9c02e90cf830857bd64e",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "model.obj",
+      "sha256": "48f5b5d0413e65286af184c564661155cac9b08b305f44622e638bf4c0564e38",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_rose-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "f5b2b9a04fb031d01ba388a0e1d9cf6c9ec1da887c75aef230bc47b4f704d3d5",
+      "source_spec_hash": "b5fcc6f6cf4ca07983d5a49527dc975ca6979aec823643f18e0ff9223efd5e97",
+      "design_sha256": "de873a8c5f1c7ed9459667ec3b5c6315dae1a41475be9c02e90cf830857bd64e",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "model_3d_preview.png",
+      "sha256": "cd67e27f1f862d77a5c8f0b6b9843d62fed16da18f36db1135c66ee6d1cc02ea",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_rose-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "f5b2b9a04fb031d01ba388a0e1d9cf6c9ec1da887c75aef230bc47b4f704d3d5",
+      "source_spec_hash": "b5fcc6f6cf4ca07983d5a49527dc975ca6979aec823643f18e0ff9223efd5e97",
+      "design_sha256": "de873a8c5f1c7ed9459667ec3b5c6315dae1a41475be9c02e90cf830857bd64e",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "model_spec.json",
+      "sha256": "1b15f7ea901cafbc2145518f3ed95e7d0df145b3b770a63bbe11774616817816",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_rose-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "f5b2b9a04fb031d01ba388a0e1d9cf6c9ec1da887c75aef230bc47b4f704d3d5",
+      "source_spec_hash": "b5fcc6f6cf4ca07983d5a49527dc975ca6979aec823643f18e0ff9223efd5e97",
+      "design_sha256": "de873a8c5f1c7ed9459667ec3b5c6315dae1a41475be9c02e90cf830857bd64e",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "printable_preview.png",
+      "sha256": "f3d9fe4c83f1541c7834d5178f03ec33420efb2aa0a24629eb453bcf7f281177",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_rose-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "f5b2b9a04fb031d01ba388a0e1d9cf6c9ec1da887c75aef230bc47b4f704d3d5",
+      "source_spec_hash": "b5fcc6f6cf4ca07983d5a49527dc975ca6979aec823643f18e0ff9223efd5e97",
+      "design_sha256": "de873a8c5f1c7ed9459667ec3b5c6315dae1a41475be9c02e90cf830857bd64e",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "printable_us_letter.pdf",
+      "sha256": "17ff80d831ba531b03fdeb3693e0a8d4be689c41738c1745c981830fae4f5af4",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_rose-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "f5b2b9a04fb031d01ba388a0e1d9cf6c9ec1da887c75aef230bc47b4f704d3d5",
+      "source_spec_hash": "b5fcc6f6cf4ca07983d5a49527dc975ca6979aec823643f18e0ff9223efd5e97",
+      "design_sha256": "de873a8c5f1c7ed9459667ec3b5c6315dae1a41475be9c02e90cf830857bd64e",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "printable_us_letter_coloring.pdf",
+      "sha256": "979da9879113d786be165aca8503bdcb045ae790ead5fc78f4b516f83bbcb35f",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_rose-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "f5b2b9a04fb031d01ba388a0e1d9cf6c9ec1da887c75aef230bc47b4f704d3d5",
+      "source_spec_hash": "b5fcc6f6cf4ca07983d5a49527dc975ca6979aec823643f18e0ff9223efd5e97",
+      "design_sha256": "de873a8c5f1c7ed9459667ec3b5c6315dae1a41475be9c02e90cf830857bd64e",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "svg_pages/page_001.svg",
+      "sha256": "c2103dd3b62dcc684344ecea474a213fc8f7161ae97c542d0b8fd0237d28da77",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_rose-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "f5b2b9a04fb031d01ba388a0e1d9cf6c9ec1da887c75aef230bc47b4f704d3d5",
+      "source_spec_hash": "b5fcc6f6cf4ca07983d5a49527dc975ca6979aec823643f18e0ff9223efd5e97",
+      "design_sha256": "de873a8c5f1c7ed9459667ec3b5c6315dae1a41475be9c02e90cf830857bd64e",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "svg_pages/page_002.svg",
+      "sha256": "b2ecabde4aff98bbac04dcf1f38fe48bed9cba5b43d99ea32f8597dd31824f40",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_rose-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "f5b2b9a04fb031d01ba388a0e1d9cf6c9ec1da887c75aef230bc47b4f704d3d5",
+      "source_spec_hash": "b5fcc6f6cf4ca07983d5a49527dc975ca6979aec823643f18e0ff9223efd5e97",
+      "design_sha256": "de873a8c5f1c7ed9459667ec3b5c6315dae1a41475be9c02e90cf830857bd64e",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "svg_pages/page_003.svg",
+      "sha256": "99131f331feb9fd110d77deaf87f7d5e2f08069d3b10be385b94c07ea1b4a28b",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_rose-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "f5b2b9a04fb031d01ba388a0e1d9cf6c9ec1da887c75aef230bc47b4f704d3d5",
+      "source_spec_hash": "b5fcc6f6cf4ca07983d5a49527dc975ca6979aec823643f18e0ff9223efd5e97",
+      "design_sha256": "de873a8c5f1c7ed9459667ec3b5c6315dae1a41475be9c02e90cf830857bd64e",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "svg_pages/page_004.svg",
+      "sha256": "1dbd42fccc2aa365d62dad5cb89355a61c4cb051827fff69c644dc7a2661b155",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_rose-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "f5b2b9a04fb031d01ba388a0e1d9cf6c9ec1da887c75aef230bc47b4f704d3d5",
+      "source_spec_hash": "b5fcc6f6cf4ca07983d5a49527dc975ca6979aec823643f18e0ff9223efd5e97",
+      "design_sha256": "de873a8c5f1c7ed9459667ec3b5c6315dae1a41475be9c02e90cf830857bd64e",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "template_preview.svg",
+      "sha256": "024a3983156c21494cb0289ef4b4870ff60278e3c17bc5b1f21031fc5fa2025d",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_rose-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "f5b2b9a04fb031d01ba388a0e1d9cf6c9ec1da887c75aef230bc47b4f704d3d5",
+      "source_spec_hash": "b5fcc6f6cf4ca07983d5a49527dc975ca6979aec823643f18e0ff9223efd5e97",
+      "design_sha256": "de873a8c5f1c7ed9459667ec3b5c6315dae1a41475be9c02e90cf830857bd64e",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "validation_report.json",
+      "sha256": "6e2281068f73e2d2cbc7b85bd197f7365feabde2952e7e8f721d2e6750124d5d",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_rose-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "f5b2b9a04fb031d01ba388a0e1d9cf6c9ec1da887c75aef230bc47b4f704d3d5",
+      "source_spec_hash": "b5fcc6f6cf4ca07983d5a49527dc975ca6979aec823643f18e0ff9223efd5e97",
+      "design_sha256": "de873a8c5f1c7ed9459667ec3b5c6315dae1a41475be9c02e90cf830857bd64e",
+      "template_version": "5.3.0"
+    }
+  ]
+}

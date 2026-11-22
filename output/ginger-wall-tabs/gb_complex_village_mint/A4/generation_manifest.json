@@ -1,0 +1,328 @@
+{
+  "model_id": "GB-COMPLEX-VILLAGE-MINT",
+  "version": "gingerbread-4.0.0",
+  "project_id": "gb_complex_village_mint-wall-tabs",
+  "revision": 1,
+  "geometry_sha256": "d0a2f89bb29bafaa058f5554bc41436f9610d0ebdc076bfe47303e43fefe16ca",
+  "source_spec_hash": "117bca207dad16e5b379a5fbc02cdf75f5509b8a875347ce11d77a11e1fa4548",
+  "design_sha256": "65a1ab6b0a2258065738683995c919235b890328919f98778831371f7f992383",
+  "template_version": "5.3.0",
+  "input": {
+    "preset": "gb_complex_village_mint",
+    "project_id": "gb_complex_village_mint-wall-tabs",
+    "revision": 1,
+    "paper": "A4"
+  },
+  "template": {
+    "id": "gb_complex_village_mint",
+    "name": "Triple Gable Village · Peppermint Mint",
+    "subtitle": "Triple Gable Village / Peppermint Mint",
+    "collection": "Advanced Christmas",
+    "model_family": "complex_village",
+    "architecture": "Triple Gable Village",
+    "finish": "Peppermint Mint",
+    "profile": [
+      [
+        0,
+        0
+      ],
+      [
+        0.16666666666666666,
+        0.8
+      ],
+      [
+        0.3333333333333333,
+        0
+      ],
+      [
+        0.5,
+        1
+      ],
+      [
+        0.6666666666666666,
+        0
+      ],
+      [
+        0.8333333333333334,
+        0.8
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "bay_count": 3,
+    "bay_splits": [
+      0.3333333333333333,
+      0.6666666666666666
+    ],
+    "bay_split": 0.3333333333333333,
+    "material": "board",
+    "premium": true,
+    "width": 120,
+    "depth": 52,
+    "wall_height": 62,
+    "roof_rise": 36,
+    "wall": "#99c8b5",
+    "roof": "#579d87",
+    "accent": "#ce3045",
+    "trim": "#fff9ef",
+    "background": "#e5f3ec",
+    "motif": "american",
+    "difficulty": "Advanced",
+    "description": "Triple Gable Village with festive icing, candy details, and glowing windows. Includes a snowy base, a slotted tree, and two gift boxes. Customize the patterns and add your own name.",
+    "roof_overhang_mm": 4,
+    "roof_rake_mm": 6,
+    "category": "gingerbread-houses",
+    "categories": [
+      "gingerbread-houses",
+      "seasonal-holiday",
+      "fantasy-storybook"
+    ]
+  },
+  "qa_status": "PASS",
+  "algorithm": "gable-house-1.0; v1.2 rigid pairing + shelf packing",
+  "physical_assembly": "NOT_TESTED",
+  "artifacts": [
+    {
+      "path": "accessories.pdf",
+      "sha256": "4ce5694ec3ec7ca6d2ed3fa6692860288fd91c88c6b6a8b7f87ea3c38fe884cd",
+      "model_id": "GB-COMPLEX-VILLAGE-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_village_mint-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "d0a2f89bb29bafaa058f5554bc41436f9610d0ebdc076bfe47303e43fefe16ca",
+      "source_spec_hash": "117bca207dad16e5b379a5fbc02cdf75f5509b8a875347ce11d77a11e1fa4548",
+      "design_sha256": "65a1ab6b0a2258065738683995c919235b890328919f98778831371f7f992383",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "accessories_guide.pdf",
+      "sha256": "85d68826cdfaf19a231306a1104f2dbd6aac1c19b3a22a6f9fe60fe731c045d4",
+      "model_id": "GB-COMPLEX-VILLAGE-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_village_mint-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "d0a2f89bb29bafaa058f5554bc41436f9610d0ebdc076bfe47303e43fefe16ca",
+      "source_spec_hash": "117bca207dad16e5b379a5fbc02cdf75f5509b8a875347ce11d77a11e1fa4548",
+      "design_sha256": "65a1ab6b0a2258065738683995c919235b890328919f98778831371f7f992383",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "assembly_guide.pdf",
+      "sha256": "6d267c3c5c298ac632f853d3f698a523869b31821e1137cdfb4284555d4c04dc",
+      "model_id": "GB-COMPLEX-VILLAGE-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_village_mint-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "d0a2f89bb29bafaa058f5554bc41436f9610d0ebdc076bfe47303e43fefe16ca",
+      "source_spec_hash": "117bca207dad16e5b379a5fbc02cdf75f5509b8a875347ce11d77a11e1fa4548",
+      "design_sha256": "65a1ab6b0a2258065738683995c919235b890328919f98778831371f7f992383",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_001.svg",
+      "sha256": "c8d139992f6232453e18c9e4cbeb80aa9c169c0c8ec207b2bdb7f6e6df21c7df",
+      "model_id": "GB-COMPLEX-VILLAGE-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_village_mint-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "d0a2f89bb29bafaa058f5554bc41436f9610d0ebdc076bfe47303e43fefe16ca",
+      "source_spec_hash": "117bca207dad16e5b379a5fbc02cdf75f5509b8a875347ce11d77a11e1fa4548",
+      "design_sha256": "65a1ab6b0a2258065738683995c919235b890328919f98778831371f7f992383",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_002.svg",
+      "sha256": "700ed59c78d7d4ad63b0c1520bb43c047529e7a7269e4151fb29036e926205c3",
+      "model_id": "GB-COMPLEX-VILLAGE-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_village_mint-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "d0a2f89bb29bafaa058f5554bc41436f9610d0ebdc076bfe47303e43fefe16ca",
+      "source_spec_hash": "117bca207dad16e5b379a5fbc02cdf75f5509b8a875347ce11d77a11e1fa4548",
+      "design_sha256": "65a1ab6b0a2258065738683995c919235b890328919f98778831371f7f992383",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_003.svg",
+      "sha256": "ebcb47e76bba0812f180da33b00921ce38b8beed91ac1cdcae9e528289b5a9d2",
+      "model_id": "GB-COMPLEX-VILLAGE-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_village_mint-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "d0a2f89bb29bafaa058f5554bc41436f9610d0ebdc076bfe47303e43fefe16ca",
+      "source_spec_hash": "117bca207dad16e5b379a5fbc02cdf75f5509b8a875347ce11d77a11e1fa4548",
+      "design_sha256": "65a1ab6b0a2258065738683995c919235b890328919f98778831371f7f992383",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_004.svg",
+      "sha256": "ab9f90c7f7ee5b340011dbdfbd4b4286b9866b9226e822dec036eb1a5b7ce58d",
+      "model_id": "GB-COMPLEX-VILLAGE-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_village_mint-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "d0a2f89bb29bafaa058f5554bc41436f9610d0ebdc076bfe47303e43fefe16ca",
+      "source_spec_hash": "117bca207dad16e5b379a5fbc02cdf75f5509b8a875347ce11d77a11e1fa4548",
+      "design_sha256": "65a1ab6b0a2258065738683995c919235b890328919f98778831371f7f992383",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "display_scene.obj",
+      "sha256": "a61a149087a502b6b78a3cfecb1417c9c8674b54596772d937d03c8ae8faf14c",
+      "model_id": "GB-COMPLEX-VILLAGE-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_village_mint-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "d0a2f89bb29bafaa058f5554bc41436f9610d0ebdc076bfe47303e43fefe16ca",
+      "source_spec_hash": "117bca207dad16e5b379a5fbc02cdf75f5509b8a875347ce11d77a11e1fa4548",
+      "design_sha256": "65a1ab6b0a2258065738683995c919235b890328919f98778831371f7f992383",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "model.obj",
+      "sha256": "5b61695f3246995e09696811989e2220c65ef3d96e169c7f8cabe3148fc72c14",
+      "model_id": "GB-COMPLEX-VILLAGE-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_village_mint-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "d0a2f89bb29bafaa058f5554bc41436f9610d0ebdc076bfe47303e43fefe16ca",
+      "source_spec_hash": "117bca207dad16e5b379a5fbc02cdf75f5509b8a875347ce11d77a11e1fa4548",
+      "design_sha256": "65a1ab6b0a2258065738683995c919235b890328919f98778831371f7f992383",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "model_3d_preview.png",
+      "sha256": "df0cbf1c449120fb5c8da19a70b0e6f3e8f6d4b6ce27c08642ad4001a9f7a3bd",
+      "model_id": "GB-COMPLEX-VILLAGE-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_village_mint-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "d0a2f89bb29bafaa058f5554bc41436f9610d0ebdc076bfe47303e43fefe16ca",
+      "source_spec_hash": "117bca207dad16e5b379a5fbc02cdf75f5509b8a875347ce11d77a11e1fa4548",
+      "design_sha256": "65a1ab6b0a2258065738683995c919235b890328919f98778831371f7f992383",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "model_spec.json",
+      "sha256": "6ac91f3cc2ceddedd0b68da86ebcd26a7db1805acceabd49869764f6f5c15f9c",
+      "model_id": "GB-COMPLEX-VILLAGE-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_village_mint-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "d0a2f89bb29bafaa058f5554bc41436f9610d0ebdc076bfe47303e43fefe16ca",
+      "source_spec_hash": "117bca207dad16e5b379a5fbc02cdf75f5509b8a875347ce11d77a11e1fa4548",
+      "design_sha256": "65a1ab6b0a2258065738683995c919235b890328919f98778831371f7f992383",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "printable_a4.pdf",
+      "sha256": "3e9658979923c64fae5682877449ec9714a4151f6811fb3351f3e2c3de768f7f",
+      "model_id": "GB-COMPLEX-VILLAGE-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_village_mint-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "d0a2f89bb29bafaa058f5554bc41436f9610d0ebdc076bfe47303e43fefe16ca",
+      "source_spec_hash": "117bca207dad16e5b379a5fbc02cdf75f5509b8a875347ce11d77a11e1fa4548",
+      "design_sha256": "65a1ab6b0a2258065738683995c919235b890328919f98778831371f7f992383",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "printable_a4_coloring.pdf",
+      "sha256": "7962c7609d83040a7e57dfe4855e6f8a3be5907909c8c41d3f8969214d53e167",
+      "model_id": "GB-COMPLEX-VILLAGE-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_village_mint-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "d0a2f89bb29bafaa058f5554bc41436f9610d0ebdc076bfe47303e43fefe16ca",
+      "source_spec_hash": "117bca207dad16e5b379a5fbc02cdf75f5509b8a875347ce11d77a11e1fa4548",
+      "design_sha256": "65a1ab6b0a2258065738683995c919235b890328919f98778831371f7f992383",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "printable_preview.png",
+      "sha256": "cf9d060b505cd767979a63da80fdfb6997d441534cf78bdc2b3cd1869226ef36",
+      "model_id": "GB-COMPLEX-VILLAGE-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_village_mint-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "d0a2f89bb29bafaa058f5554bc41436f9610d0ebdc076bfe47303e43fefe16ca",
+      "source_spec_hash": "117bca207dad16e5b379a5fbc02cdf75f5509b8a875347ce11d77a11e1fa4548",
+      "design_sha256": "65a1ab6b0a2258065738683995c919235b890328919f98778831371f7f992383",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "svg_pages/page_001.svg",
+      "sha256": "17bd8922b5112a740b4c3d7acf836dc1da56cad5ed6b9bbc4e2b08038a87ae54",
+      "model_id": "GB-COMPLEX-VILLAGE-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_village_mint-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "d0a2f89bb29bafaa058f5554bc41436f9610d0ebdc076bfe47303e43fefe16ca",
+      "source_spec_hash": "117bca207dad16e5b379a5fbc02cdf75f5509b8a875347ce11d77a11e1fa4548",
+      "design_sha256": "65a1ab6b0a2258065738683995c919235b890328919f98778831371f7f992383",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "svg_pages/page_002.svg",
+      "sha256": "51c20443e5a7600ab77aef2e6f9a2ab4ad99ee9e94201ed8ee27371e44adebc6",
+      "model_id": "GB-COMPLEX-VILLAGE-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_village_mint-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "d0a2f89bb29bafaa058f5554bc41436f9610d0ebdc076bfe47303e43fefe16ca",
+      "source_spec_hash": "117bca207dad16e5b379a5fbc02cdf75f5509b8a875347ce11d77a11e1fa4548",
+      "design_sha256": "65a1ab6b0a2258065738683995c919235b890328919f98778831371f7f992383",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "svg_pages/page_003.svg",
+      "sha256": "42f22f3d1cce6b788f68aa7099f305030351f6c6bf2044765b627f1cbce081b4",
+      "model_id": "GB-COMPLEX-VILLAGE-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_village_mint-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "d0a2f89bb29bafaa058f5554bc41436f9610d0ebdc076bfe47303e43fefe16ca",
+      "source_spec_hash": "117bca207dad16e5b379a5fbc02cdf75f5509b8a875347ce11d77a11e1fa4548",
+      "design_sha256": "65a1ab6b0a2258065738683995c919235b890328919f98778831371f7f992383",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "svg_pages/page_004.svg",
+      "sha256": "9fb20ae7189012040a7f560132515d1d699deb5f5eedd2097cbeba40927e259f",
+      "model_id": "GB-COMPLEX-VILLAGE-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_village_mint-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "d0a2f89bb29bafaa058f5554bc41436f9610d0ebdc076bfe47303e43fefe16ca",
+      "source_spec_hash": "117bca207dad16e5b379a5fbc02cdf75f5509b8a875347ce11d77a11e1fa4548",
+      "design_sha256": "65a1ab6b0a2258065738683995c919235b890328919f98778831371f7f992383",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "template_preview.svg",
+      "sha256": "47e46ead1b460ab8aafe31ca89e7788058b3a9c82fb590b09e371c16f93167a2",
+      "model_id": "GB-COMPLEX-VILLAGE-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_village_mint-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "d0a2f89bb29bafaa058f5554bc41436f9610d0ebdc076bfe47303e43fefe16ca",
+      "source_spec_hash": "117bca207dad16e5b379a5fbc02cdf75f5509b8a875347ce11d77a11e1fa4548",
+      "design_sha256": "65a1ab6b0a2258065738683995c919235b890328919f98778831371f7f992383",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "validation_report.json",
+      "sha256": "4e6113fd68762129420558401d7e5814bea3316ee8da8f4372c59d14d9b14858",
+      "model_id": "GB-COMPLEX-VILLAGE-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_village_mint-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "d0a2f89bb29bafaa058f5554bc41436f9610d0ebdc076bfe47303e43fefe16ca",
+      "source_spec_hash": "117bca207dad16e5b379a5fbc02cdf75f5509b8a875347ce11d77a11e1fa4548",
+      "design_sha256": "65a1ab6b0a2258065738683995c919235b890328919f98778831371f7f992383",
+      "template_version": "5.3.0"
+    }
+  ]
+}

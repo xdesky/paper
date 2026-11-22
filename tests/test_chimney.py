@@ -1,13 +1,19 @@
 import math
 import pytest
 from shapely.geometry import Polygon,box
-from backend.template_catalog import TEMPLATES
+from backend.template_catalog import TEMPLATES,has_two_roof_faces
 from backend.chimney import geometry,piece,validate
 
 @pytest.mark.parametrize('template',[t for t in TEMPLATES if t.get('chimney')],ids=lambda t:t['id'])
 def test_buildable_chimney_matches_roof(template):
     g=geometry(template);p=piece(template)
+    original=geometry({**template,'chimney_growth_mm':0})
+    assert g['size']==pytest.approx(original['size']+10)
+    assert g['top_mm']-max(z for _,_,z in g['footprint'])==pytest.approx(34)
     assert len(g['panels'])==4 and len(p['folds'])==8
+    assert [s.get('fill') for s in p['art']].count(template['wall'])==4
+    top=max(y for face in g['panels'] for _,y in face['points'])
+    assert all(y>top-6 for s in p['art'] if s['type']=='line' for _,y in s['points'])
     assert len(p['tabs'])==5 and p['labels'][0][0]=='C1'
     for tab,(a,b) in zip(p['tabs'][1:],p['folds'][3:7]):
         dx,dy=b[0]-a[0],b[1]-a[1];length=math.hypot(dx,dy)
@@ -15,6 +21,7 @@ def test_buildable_chimney_matches_roof(template):
         assert depth == pytest.approx(7.5,abs=.01)
     assert all(x['status']=='PASS' for x in validate(template))
     assert p['shape'].is_valid and not p['shape'].interiors
+    assert Polygon([(round(x,5),round(y,5)) for x,y in p['shape'].exterior.coords]).is_valid
     assert all(Polygon(face['points']).is_valid for face in g['panels'])
     # Independently interpolate the original roof at each foot; cap offset is .4 mm.
     w=template['width'];h=template['wall_height'];r=template['roof_rise']
@@ -106,3 +113,12 @@ def test_gift_glue_tabs_are_eight_mm(size):
         a,b=segment;dx,dy=b[0]-a[0],b[1]-a[1];length=math.hypot(dx,dy)
         depth=max(abs(dx*(y-a[1])-dy*(x-a[0]))/length for x,y in tab.exterior.coords)
         assert depth == pytest.approx(8,abs=.01)
+
+def test_chimney_requires_exactly_two_roof_faces():
+    for template in TEMPLATES:
+        if template.get('chimney'):
+            assert has_two_roof_faces(template),template['id']
+        if template.get('profile') and not has_two_roof_faces(template):
+            legacy={**template,'chimney':True}
+            assert geometry(legacy) is None,template['id']
+            assert piece(legacy) is None,template['id']

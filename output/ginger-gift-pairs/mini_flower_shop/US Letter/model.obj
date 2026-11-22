@@ -1,0 +1,39 @@
+# {"design_sha256":"8d9ce93d1302f0c8785378ad7bede31a765f82f12a4ddace691f66df73966f2f","geometry_sha256":"655670ecd28da27c1aeacd62ebbefc6601b86dd7dff7382af5d948f86cd1f87c","model_id":"MINI-FLOWER-SHOP","project_id":"mini_flower_shop-gift-pairs","revision":1,"source_spec_hash":"6adaa1144d6e308515f94caaed68a7f7bd6b9b23844401402526b10d3a115e7e","template_version":"5.7.0","version":"gingerbread-4.0.0"}
+g FRONT
+v -39.0 -30.0 0
+v 39.0 -30.0 0
+v 39.0 -30.0 70
+v 0.0 -30.0 104
+v -39.0 -30.0 70
+f 1 2 3 4 5
+g RIGHT
+v 39.0 -30.0 0
+v 39.0 30.0 0
+v 39.0 30.0 70
+v 39.0 -30.0 70
+f 6 7 8 9
+g BACK
+v 39.0 30.0 0
+v -39.0 30.0 0
+v -39.0 30.0 70
+v 0.0 30.0 104
+v 39.0 30.0 70
+f 10 11 12 13 14
+g LEFT
+v -39.0 30.0 0
+v -39.0 -30.0 0
+v -39.0 -30.0 70
+v -39.0 30.0 70
+f 15 16 17 18
+g ROOF_RIGHT
+v 39.0 -30.0 70.0
+v 39.0 30.0 70.0
+v 0.0 30.0 104.0
+v 0.0 -30.0 104.0
+f 19 20 21 22
+g ROOF_LEFT
+v -39.0 30.0 70.0
+v -39.0 -30.0 70.0
+v 0.0 -30.0 104.0
+v 0.0 30.0 104.0
+f 23 24 25 26

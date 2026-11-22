@@ -1,11 +1,13 @@
-"""Open-top brick chimney: one strip net, sloping feet on the actual roof plane."""
+"""Open-top chimney: one strip net, sloping feet on the actual roof plane."""
 import math
 from shapely.geometry import Polygon, LineString
 from shapely.ops import unary_union
 
+from .template_catalog import has_two_roof_faces
+
 
 def geometry(t):
-    if not t.get('chimney'):return None
+    if not t.get('chimney') or not has_two_roof_faces(t):return None
     w,d,h,r=(t[k] for k in ('width','depth','wall_height','roof_rise'))
     ridge=[(x*w,h+z*r) for x,z in t.get('profile',[(0,0),(.5,1),(1,0)])]
     segments=list(zip(ridge,ridge[1:]))
@@ -15,12 +17,22 @@ def geometry(t):
     else:
         # Preserve already-generated v4.3 snapshots.
         a,b=max((ab for ab in segments if (ab[0][0]+ab[1][0])/2>=w/2),key=lambda ab:ab[1][0]-ab[0][0])
-    size=min(14,(b[0]-a[0])*.42,d*.22)
+    growth=t.get('chimney_growth_mm',0)
+    # Scale the complete chimney down by one third while preserving its
+    # square footprint and proportions. Growth remains part of the original
+    # design size so older templates retain the same relative treatment.
+    size=(min(14,(b[0]-a[0])*.42,d*.22)+growth)*2/3
+    if size>b[0]-a[0]:
+        # A square base must sit entirely on one roof face.
+        fitting=[segment for segment in segments if segment[1][0]-segment[0][0]>=size]
+        if not fitting:
+            raise ValueError('Square chimney base exceeds the available roof slopes')
+        a,b=max(fitting,key=lambda ab:(round(math.dist(*ab),9),(ab[0][0]+ab[1][0])/2))
     cx=(a[0]+b[0])/2-w/2;cy=d*.18
     slope=(b[1]-a[1])/(b[0]-a[0])
     def z(x):return a[1]+(x+w/2-a[0])*slope+(.4 if t.get('roof_overhang_mm') else 0)
     corners=[(cx-size/2,cy-size/2),(cx+size/2,cy-size/2),(cx+size/2,cy+size/2),(cx-size/2,cy+size/2)]
-    lows=[z(x) for x,y in corners];bottom=min(lows);top=max(lows)+24
+    lows=[z(x) for x,y in corners];bottom=min(lows);top=max(lows)+(24+growth)*2/3
     panels=[]
     for i,name in enumerate(('FRONT','RIGHT','BACK','LEFT')):
         j=(i+1)%4
@@ -30,16 +42,16 @@ def geometry(t):
     return dict(roof_segment=[a,b],size=size,panels=panels,footprint=[(*p,z(p[0])) for p in corners],top_mm=top)
 
 
-def artwork(panel):
-    from .confectionery import Painter,CREAM
-    p=Painter(Polygon(panel['points']));w,h=p.shape.bounds[2:]
-    p.polygon(panel['points'],'#ab593e')
-    for row,y in enumerate(range(0,math.ceil(h),4)):
-        p.line([(0,y),(w,y)],CREAM,.35)
-        for x in range(-4 if row%2 else 0,math.ceil(w),8):p.line([(x,y),(x,y+4)],CREAM,.35)
-    p.rect(0,h-3.5,w,3.5,CREAM)
-    p.snow(.7,h-3,w-1.4)
-    return p.shapes
+def artwork(template,panel):
+    from .coloring import COLORING
+    from .confectionery import Painter
+    painter=Painter(Polygon(panel['points']))
+    width,height=painter.shape.bounds[2:]
+    coloring=COLORING.get()
+    painter.polygon(panel['points'],'#ffffff' if coloring else template['wall'])
+    painter.rect(0,height-3.5,width,3.5,'#ffffff' if coloring else template['trim'])
+    painter.snow(.7,height-3,width-1.4)
+    return painter.shapes
 
 
 def piece(t):
@@ -51,7 +63,7 @@ def piece(t):
     for i,p in enumerate(g['panels']):
         dx=i*size
         faces.append(Polygon([(x+dx,y) for x,y in p['points']]))
-        for s in artwork(p):
+        for s in artwork(t,p):
             s=dict(s)
             if s['type']=='circle':s['center']=[s['center'][0]+dx,s['center'][1]]
             else:s['points']=[(x+dx,y) for x,y in s['points']]
@@ -59,11 +71,20 @@ def piece(t):
             art.append(s)
         if i:folds.append([(dx,p['points'][0][1]),(dx,p['points'][3][1])])
     net=unary_union(faces)
-    # Make the outer feet before the final inner foot to retain their full depth.
+    depth=7.5
+    feet=[list(face.exterior.coords)[:2] for face in faces]
+    corners=[foot[0] for foot in feet]+[feet[-1][1]]
+    chamfers=[0]
+    for a,b,c in zip(corners,corners[1:],corners[2:]):
+        ux,uy=b[0]-a[0],b[1]-a[1]
+        vx,vy=c[0]-b[0],c[1]-b[1]
+        turn=math.atan2(ux*vy-uy*vx,ux*vx+uy*vy)
+        # Separate neighboring feet at reentrant corners of the cutting net.
+        chamfers.append(depth*math.tan(-turn/2)+.5 if turn<0 else 0)
+    chamfers.append(0)
     for index in (0,1,3,2):
-        face=faces[index]
-        a,b=list(face.exterior.coords)[:2]
-        tab=flap(a,b,depth=7.5).difference(net)
+        a,b=feet[index]
+        tab=flap(a,b,depth,start_chamfer=chamfers[index],end_chamfer=chamfers[index+1]).difference(net)
         if tab.geom_type=='MultiPolygon':
             tab=max(tab.geoms,key=lambda part:part.intersection(LineString([a,b])).length)
         if tab.geom_type!='Polygon' or tab.area<1:raise ValueError('Invalid chimney foot tab')
@@ -114,7 +135,13 @@ def validate(t):
     g=geometry(t)
     if not g:return []
     p=piece(t);panels=g['panels']
+    top_corners=[panel['vertices'][3] for panel in panels]
     checks={
+        'chimney_square_cross_section':all(
+            math.isclose(math.dist(top_corners[i],top_corners[(i+1)%4]),g['size'],abs_tol=1e-6)
+            for i in range(4)
+        ) and all(math.isclose(math.dist(top_corners[i],top_corners[i+2]),math.sqrt(2)*g['size'],abs_tol=1e-6)
+                  for i in range(2)),
         'chimney_net_area':abs(sum(f.area for f in p['faces'])+sum(f.area for f in p['tabs'])-p['shape'].area)<1e-6,
         'chimney_closed_wall_seams':all(math.dist(panels[i]['vertices'][1],panels[(i+1)%4]['vertices'][0])<1e-6 and math.dist(panels[i]['vertices'][2],panels[(i+1)%4]['vertices'][3])<1e-6 for i in range(4)),
         'chimney_roof_contact':all(math.dist(panel['vertices'][0],g['footprint'][i])<1e-6 for i,panel in enumerate(panels)),

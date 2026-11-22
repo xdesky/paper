@@ -1,0 +1,316 @@
+{
+  "model_id": "GB-US-DUTCH-HERITAGE",
+  "version": "gingerbread-4.0.0",
+  "project_id": "gb_us_dutch_heritage-wall-tabs",
+  "revision": 1,
+  "geometry_sha256": "c63a83bdd6eadb37c0837e6990d9ad65936da56ecd0a1340cafe59031cf64368",
+  "source_spec_hash": "d8c851daad8e55be8df1d9e5679b11cf526fbd54e98896e4d017ee2d3d8a4a7d",
+  "design_sha256": "bf899d99c04d5fa4b22010c43d9702df548ad3f14357ffa3312f0a21e8c14fd8",
+  "template_version": "5.3.1",
+  "input": {
+    "preset": "gb_us_dutch_heritage",
+    "project_id": "gb_us_dutch_heritage-wall-tabs",
+    "revision": 1,
+    "paper": "A4"
+  },
+  "template": {
+    "id": "gb_us_dutch_heritage",
+    "name": "Dutch Colonial · Heritage Christmas",
+    "subtitle": "Dutch Colonial / Heritage Christmas",
+    "collection": "American Premium",
+    "model_family": "dutch",
+    "architecture": "Dutch Colonial",
+    "finish": "Heritage Christmas",
+    "profile": [
+      [
+        0,
+        0
+      ],
+      [
+        0.18,
+        0.72
+      ],
+      [
+        0.5,
+        1
+      ],
+      [
+        0.82,
+        0.72
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "material": "shingle",
+    "premium": true,
+    "width": 90,
+    "depth": 65,
+    "wall_height": 80,
+    "roof_rise": 48,
+    "wall": "#b97946",
+    "roof": "#943f4a",
+    "accent": "#bf394a",
+    "trim": "#fff7e5",
+    "background": "#ebe9df",
+    "motif": "american",
+    "difficulty": "Intermediate",
+    "description": "Dutch Colonial with festive icing, candy details, and glowing windows. Includes a snowy base, a slotted tree, and two gift boxes. Customize the patterns and add your own name.",
+    "roof_overhang_mm": 4,
+    "roof_rake_mm": 6,
+    "chimney": true,
+    "chimney_placement": "longest_slope",
+    "category": "gingerbread-houses",
+    "categories": [
+      "gingerbread-houses",
+      "american-places",
+      "seasonal-holiday"
+    ]
+  },
+  "qa_status": "PASS",
+  "algorithm": "gable-house-1.0; v1.2 rigid pairing + shelf packing",
+  "physical_assembly": "NOT_TESTED",
+  "artifacts": [
+    {
+      "path": "accessories.pdf",
+      "sha256": "694f40bfd798ef77e23c64b88bf702d993c8fc70a468256de5cca8476385c8a6",
+      "model_id": "GB-US-DUTCH-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_dutch_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "c63a83bdd6eadb37c0837e6990d9ad65936da56ecd0a1340cafe59031cf64368",
+      "source_spec_hash": "d8c851daad8e55be8df1d9e5679b11cf526fbd54e98896e4d017ee2d3d8a4a7d",
+      "design_sha256": "bf899d99c04d5fa4b22010c43d9702df548ad3f14357ffa3312f0a21e8c14fd8",
+      "template_version": "5.3.1"
+    },
+    {
+      "path": "accessories_guide.pdf",
+      "sha256": "112e86fcf850ce0f6542a5b09189bda843b97ea46940059b99a4b7a38b648172",
+      "model_id": "GB-US-DUTCH-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_dutch_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "c63a83bdd6eadb37c0837e6990d9ad65936da56ecd0a1340cafe59031cf64368",
+      "source_spec_hash": "d8c851daad8e55be8df1d9e5679b11cf526fbd54e98896e4d017ee2d3d8a4a7d",
+      "design_sha256": "bf899d99c04d5fa4b22010c43d9702df548ad3f14357ffa3312f0a21e8c14fd8",
+      "template_version": "5.3.1"
+    },
+    {
+      "path": "assembly_guide.pdf",
+      "sha256": "9fd6f72731be6ed80bee5b248eae601738ce929d05ee6ecfce8084e87e6206f8",
+      "model_id": "GB-US-DUTCH-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_dutch_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "c63a83bdd6eadb37c0837e6990d9ad65936da56ecd0a1340cafe59031cf64368",
+      "source_spec_hash": "d8c851daad8e55be8df1d9e5679b11cf526fbd54e98896e4d017ee2d3d8a4a7d",
+      "design_sha256": "bf899d99c04d5fa4b22010c43d9702df548ad3f14357ffa3312f0a21e8c14fd8",
+      "template_version": "5.3.1"
+    },
+    {
+      "path": "coloring_svg_pages/page_001.svg",
+      "sha256": "04085e65ae32df5b8504909f46577cdc436537659d1a01c617e8c0fe984ef2a4",
+      "model_id": "GB-US-DUTCH-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_dutch_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "c63a83bdd6eadb37c0837e6990d9ad65936da56ecd0a1340cafe59031cf64368",
+      "source_spec_hash": "d8c851daad8e55be8df1d9e5679b11cf526fbd54e98896e4d017ee2d3d8a4a7d",
+      "design_sha256": "bf899d99c04d5fa4b22010c43d9702df548ad3f14357ffa3312f0a21e8c14fd8",
+      "template_version": "5.3.1"
+    },
+    {
+      "path": "coloring_svg_pages/page_002.svg",
+      "sha256": "2e254791b5332c248bafaa987a4b10bac68bf5a9239f906b6ca6f4251745dcfb",
+      "model_id": "GB-US-DUTCH-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_dutch_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "c63a83bdd6eadb37c0837e6990d9ad65936da56ecd0a1340cafe59031cf64368",
+      "source_spec_hash": "d8c851daad8e55be8df1d9e5679b11cf526fbd54e98896e4d017ee2d3d8a4a7d",
+      "design_sha256": "bf899d99c04d5fa4b22010c43d9702df548ad3f14357ffa3312f0a21e8c14fd8",
+      "template_version": "5.3.1"
+    },
+    {
+      "path": "coloring_svg_pages/page_003.svg",
+      "sha256": "31b4bda01490622355dc638d39b326262b419aaa256144ebbae4035811e1ff03",
+      "model_id": "GB-US-DUTCH-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_dutch_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "c63a83bdd6eadb37c0837e6990d9ad65936da56ecd0a1340cafe59031cf64368",
+      "source_spec_hash": "d8c851daad8e55be8df1d9e5679b11cf526fbd54e98896e4d017ee2d3d8a4a7d",
+      "design_sha256": "bf899d99c04d5fa4b22010c43d9702df548ad3f14357ffa3312f0a21e8c14fd8",
+      "template_version": "5.3.1"
+    },
+    {
+      "path": "coloring_svg_pages/page_004.svg",
+      "sha256": "6194b23e0e70f6bbb4afe041ba044ec21a3db11b74ed1f878484bc8d2352bbb8",
+      "model_id": "GB-US-DUTCH-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_dutch_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "c63a83bdd6eadb37c0837e6990d9ad65936da56ecd0a1340cafe59031cf64368",
+      "source_spec_hash": "d8c851daad8e55be8df1d9e5679b11cf526fbd54e98896e4d017ee2d3d8a4a7d",
+      "design_sha256": "bf899d99c04d5fa4b22010c43d9702df548ad3f14357ffa3312f0a21e8c14fd8",
+      "template_version": "5.3.1"
+    },
+    {
+      "path": "display_scene.obj",
+      "sha256": "aae741143405d25f5627ee335c005ccd918c085e5375cf1f2150ffd4f09beb6e",
+      "model_id": "GB-US-DUTCH-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_dutch_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "c63a83bdd6eadb37c0837e6990d9ad65936da56ecd0a1340cafe59031cf64368",
+      "source_spec_hash": "d8c851daad8e55be8df1d9e5679b11cf526fbd54e98896e4d017ee2d3d8a4a7d",
+      "design_sha256": "bf899d99c04d5fa4b22010c43d9702df548ad3f14357ffa3312f0a21e8c14fd8",
+      "template_version": "5.3.1"
+    },
+    {
+      "path": "model.obj",
+      "sha256": "235f774f8bb5eba616adb70d2c25a58bbcd797232884f4a7ebe204558cb06a1d",
+      "model_id": "GB-US-DUTCH-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_dutch_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "c63a83bdd6eadb37c0837e6990d9ad65936da56ecd0a1340cafe59031cf64368",
+      "source_spec_hash": "d8c851daad8e55be8df1d9e5679b11cf526fbd54e98896e4d017ee2d3d8a4a7d",
+      "design_sha256": "bf899d99c04d5fa4b22010c43d9702df548ad3f14357ffa3312f0a21e8c14fd8",
+      "template_version": "5.3.1"
+    },
+    {
+      "path": "model_3d_preview.png",
+      "sha256": "0e39e0765ae1ef0b191d24ee2c554449f192071016aac3680b953ff9be903a9b",
+      "model_id": "GB-US-DUTCH-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_dutch_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "c63a83bdd6eadb37c0837e6990d9ad65936da56ecd0a1340cafe59031cf64368",
+      "source_spec_hash": "d8c851daad8e55be8df1d9e5679b11cf526fbd54e98896e4d017ee2d3d8a4a7d",
+      "design_sha256": "bf899d99c04d5fa4b22010c43d9702df548ad3f14357ffa3312f0a21e8c14fd8",
+      "template_version": "5.3.1"
+    },
+    {
+      "path": "model_spec.json",
+      "sha256": "fc87a1a1f921cc63e2b18631c15a4ce77d8b1db274e37210becd9446a812d74e",
+      "model_id": "GB-US-DUTCH-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_dutch_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "c63a83bdd6eadb37c0837e6990d9ad65936da56ecd0a1340cafe59031cf64368",
+      "source_spec_hash": "d8c851daad8e55be8df1d9e5679b11cf526fbd54e98896e4d017ee2d3d8a4a7d",
+      "design_sha256": "bf899d99c04d5fa4b22010c43d9702df548ad3f14357ffa3312f0a21e8c14fd8",
+      "template_version": "5.3.1"
+    },
+    {
+      "path": "printable_a4.pdf",
+      "sha256": "ab677d8f2bdb40a9aed7c161c618b81bf494802754c1b42b22002a0a7289dc99",
+      "model_id": "GB-US-DUTCH-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_dutch_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "c63a83bdd6eadb37c0837e6990d9ad65936da56ecd0a1340cafe59031cf64368",
+      "source_spec_hash": "d8c851daad8e55be8df1d9e5679b11cf526fbd54e98896e4d017ee2d3d8a4a7d",
+      "design_sha256": "bf899d99c04d5fa4b22010c43d9702df548ad3f14357ffa3312f0a21e8c14fd8",
+      "template_version": "5.3.1"
+    },
+    {
+      "path": "printable_a4_coloring.pdf",
+      "sha256": "50e453934cfc7bdcef15931b22320d450d35d5ef2b66604ef7f079de9172d455",
+      "model_id": "GB-US-DUTCH-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_dutch_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "c63a83bdd6eadb37c0837e6990d9ad65936da56ecd0a1340cafe59031cf64368",
+      "source_spec_hash": "d8c851daad8e55be8df1d9e5679b11cf526fbd54e98896e4d017ee2d3d8a4a7d",
+      "design_sha256": "bf899d99c04d5fa4b22010c43d9702df548ad3f14357ffa3312f0a21e8c14fd8",
+      "template_version": "5.3.1"
+    },
+    {
+      "path": "printable_preview.png",
+      "sha256": "cbca7f250ff56140f38976519262feb1069039baea4ab6da7f232380b9812965",
+      "model_id": "GB-US-DUTCH-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_dutch_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "c63a83bdd6eadb37c0837e6990d9ad65936da56ecd0a1340cafe59031cf64368",
+      "source_spec_hash": "d8c851daad8e55be8df1d9e5679b11cf526fbd54e98896e4d017ee2d3d8a4a7d",
+      "design_sha256": "bf899d99c04d5fa4b22010c43d9702df548ad3f14357ffa3312f0a21e8c14fd8",
+      "template_version": "5.3.1"
+    },
+    {
+      "path": "svg_pages/page_001.svg",
+      "sha256": "cb86d6cf9b449c828191c34194c5a5298bceaf3923a1791399c5a3e04f06377e",
+      "model_id": "GB-US-DUTCH-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_dutch_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "c63a83bdd6eadb37c0837e6990d9ad65936da56ecd0a1340cafe59031cf64368",
+      "source_spec_hash": "d8c851daad8e55be8df1d9e5679b11cf526fbd54e98896e4d017ee2d3d8a4a7d",
+      "design_sha256": "bf899d99c04d5fa4b22010c43d9702df548ad3f14357ffa3312f0a21e8c14fd8",
+      "template_version": "5.3.1"
+    },
+    {
+      "path": "svg_pages/page_002.svg",
+      "sha256": "99fbf0be95775ecc9c3552ea3e6b77cb7451ca86de078f9a38f70a3b0207ee5a",
+      "model_id": "GB-US-DUTCH-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_dutch_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "c63a83bdd6eadb37c0837e6990d9ad65936da56ecd0a1340cafe59031cf64368",
+      "source_spec_hash": "d8c851daad8e55be8df1d9e5679b11cf526fbd54e98896e4d017ee2d3d8a4a7d",
+      "design_sha256": "bf899d99c04d5fa4b22010c43d9702df548ad3f14357ffa3312f0a21e8c14fd8",
+      "template_version": "5.3.1"
+    },
+    {
+      "path": "svg_pages/page_003.svg",
+      "sha256": "82998a42e03e235118e6425fe20c3afa5a174065569506f7e9d5bd46dbd298cf",
+      "model_id": "GB-US-DUTCH-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_dutch_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "c63a83bdd6eadb37c0837e6990d9ad65936da56ecd0a1340cafe59031cf64368",
+      "source_spec_hash": "d8c851daad8e55be8df1d9e5679b11cf526fbd54e98896e4d017ee2d3d8a4a7d",
+      "design_sha256": "bf899d99c04d5fa4b22010c43d9702df548ad3f14357ffa3312f0a21e8c14fd8",
+      "template_version": "5.3.1"
+    },
+    {
+      "path": "svg_pages/page_004.svg",
+      "sha256": "4bf90d044b3f03a7a35cb7679c9ddb64f380099920688961965b52ab24098893",
+      "model_id": "GB-US-DUTCH-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_dutch_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "c63a83bdd6eadb37c0837e6990d9ad65936da56ecd0a1340cafe59031cf64368",
+      "source_spec_hash": "d8c851daad8e55be8df1d9e5679b11cf526fbd54e98896e4d017ee2d3d8a4a7d",
+      "design_sha256": "bf899d99c04d5fa4b22010c43d9702df548ad3f14357ffa3312f0a21e8c14fd8",
+      "template_version": "5.3.1"
+    },
+    {
+      "path": "template_preview.svg",
+      "sha256": "a29b538587c8977a9f7d0d561c8e61991e40a2857a4be7c456c6606813ab9dc3",
+      "model_id": "GB-US-DUTCH-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_dutch_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "c63a83bdd6eadb37c0837e6990d9ad65936da56ecd0a1340cafe59031cf64368",
+      "source_spec_hash": "d8c851daad8e55be8df1d9e5679b11cf526fbd54e98896e4d017ee2d3d8a4a7d",
+      "design_sha256": "bf899d99c04d5fa4b22010c43d9702df548ad3f14357ffa3312f0a21e8c14fd8",
+      "template_version": "5.3.1"
+    },
+    {
+      "path": "validation_report.json",
+      "sha256": "c0805ddf02bb9fcbc07515fd9360e23646036534f1a98c281011aabd86dc757b",
+      "model_id": "GB-US-DUTCH-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_dutch_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "c63a83bdd6eadb37c0837e6990d9ad65936da56ecd0a1340cafe59031cf64368",
+      "source_spec_hash": "d8c851daad8e55be8df1d9e5679b11cf526fbd54e98896e4d017ee2d3d8a4a7d",
+      "design_sha256": "bf899d99c04d5fa4b22010c43d9702df548ad3f14357ffa3312f0a21e8c14fd8",
+      "template_version": "5.3.1"
+    }
+  ]
+}

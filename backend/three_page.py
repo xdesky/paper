@@ -116,8 +116,8 @@ def plan_classic(template, structure=None, accessories=None):
     extras=gifts+([chimney] if chimney is not None else [])
     p2=pack_around_wall([(p['id'],p['shape']) for p in extras],'BACK_WALLS',back)
     tree_items=[(f'TREE_{i+1}',tree['shape']) for i,tree in enumerate(trees)]
-    if structure is not None:
-        support=next(u for u in units if u not in walls)
+    support=next((u for u in units if u not in walls),None) if structure is not None else None
+    if support is not None:
         tree_items.append(('SUPPORT',support.shape()))
     base_placements=[Placement('BASE',base_piece['shape'],0,18,35)]
     try:
@@ -128,30 +128,30 @@ def plan_classic(template, structure=None, accessories=None):
 
 
 def compact_layout(template, structure):
-    """Return the enlarged three-sheet layout when the parts fit the selected paper."""
+    """Return the three-sheet layout when the parts fit the selected paper."""
     from .accessories import display_pieces
     from .chimney import piece as chimney_piece
     from .roof_cap import layout as roof_layout
 
     units=structure[2]
     if (template.get('category')!='gingerbread-houses' or not template.get('roof_overhang_mm')
-            or len(units)!=3):
+            or len(units)!=(2 if template.get('single_layer_roof') else 3)):
         return template,None
-    enlarged={**template,'roof_rake_mm':template.get('roof_rake_mm',6)+5,
-              'roof_overhang_mm':template['roof_overhang_mm']+5,'roof_corner_radius_mm':template.get('roof_corner_radius_mm',4)}
+    compact={**template,'roof_corner_radius_mm':template.get('roof_corner_radius_mm',4)}
     try:
-        roofs=roof_layout(enlarged)
+        roofs=roof_layout(compact)
         if len(roofs)!=1 or len(roofs[0])!=1:
             return template,None
         roof=roofs[0][0][0]
-        base_piece,trees,gifts=display_pieces(enlarged)
-        chimney=chimney_piece(enlarged)
-        plan=plan_classic(enlarged,structure,(roof,base_piece,trees,gifts,chimney))
+        base_piece,trees,gifts=display_pieces(compact)
+        chimney=chimney_piece(compact)
+        plan=plan_classic(compact,structure,(roof,base_piece,trees,gifts,chimney))
     except ValueError:
         return template,None
 
     wall_units={f'{pid}_WALLS':u for u in units for pid in ('FRONT','BACK') if pid in u.ids}
-    wall_units['SUPPORT']=next(u for u in units if any(pid.startswith('ROOF') for pid in u.ids))
+    if not template.get('single_layer_roof'):
+        wall_units['SUPPORT']=next(u for u in units if any(pid.startswith('ROOF') for pid in u.ids))
     pieces={'ROOF':roof,'BASE':base_piece,**{f'TREE_{i+1}':p for i,p in enumerate(trees)},
             **{p['id']:p for p in gifts}}
     if chimney is not None:
@@ -168,4 +168,4 @@ def compact_layout(template, structure):
             else:
                 page['accessories'].append((pieces[placement.id],placement))
         pages.append(page)
-    return enlarged,pages
+    return compact,pages

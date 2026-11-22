@@ -1,0 +1,39 @@
+# {"design_sha256":"6f0558410de0fc057151607c7ee998c9447300d5b01c6caf7b71a765d2c1f1a6","geometry_sha256":"acfb5691488a364ea8c763882034bca417b96fa2d5847bd16cd35c7596a2e9c0","model_id":"GB-CLASSIC","project_id":"gb_classic-wall-tabs","revision":1,"source_spec_hash":"6b39beb41941e26ca37ff2b8b17138930cf1607f3847346ac2bcf5581ee59d47","template_version":"5.3.1","version":"gingerbread-4.0.0"}
+g FRONT
+v -45.0 -35.0 0
+v 45.0 -35.0 0
+v 45.0 -35.0 85
+v 0.0 -35.0 130
+v -45.0 -35.0 85
+f 1 2 3 4 5
+g RIGHT
+v 45.0 -35.0 0
+v 45.0 35.0 0
+v 45.0 35.0 85
+v 45.0 -35.0 85
+f 6 7 8 9
+g BACK
+v 45.0 35.0 0
+v -45.0 35.0 0
+v -45.0 35.0 85
+v 0.0 35.0 130
+v 45.0 35.0 85
+f 10 11 12 13 14
+g LEFT
+v -45.0 35.0 0
+v -45.0 -35.0 0
+v -45.0 -35.0 85
+v -45.0 35.0 85
+f 15 16 17 18
+g ROOF_RIGHT
+v 45.0 -35.0 85.0
+v 45.0 35.0 85.0
+v 0.0 35.0 130.0
+v 0.0 -35.0 130.0
+f 19 20 21 22
+g ROOF_LEFT
+v -45.0 35.0 85.0
+v -45.0 -35.0 85.0
+v 0.0 -35.0 130.0
+v 0.0 35.0 130.0
+f 23 24 25 26

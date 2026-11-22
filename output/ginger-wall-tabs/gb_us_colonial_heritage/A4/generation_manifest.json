@@ -1,0 +1,283 @@
+{
+  "model_id": "GB-US-COLONIAL-HERITAGE",
+  "version": "gingerbread-4.0.0",
+  "project_id": "gb_us_colonial_heritage-wall-tabs",
+  "revision": 1,
+  "geometry_sha256": "d915f5d846feb0b64ed811650ee58d982d19833b67537a249f21feb30e533868",
+  "source_spec_hash": "71f3f11fdf0a1d06cc0bfef49c8c3b77ff14fb0accb0cd6c73e4e53973901c66",
+  "design_sha256": "03e741b4ff8c2ba37888e3704a443c0cda51fb1e108b1c88f18ab90a9f969d5b",
+  "template_version": "5.3.0",
+  "input": {
+    "preset": "gb_us_colonial_heritage",
+    "project_id": "gb_us_colonial_heritage-wall-tabs",
+    "revision": 1,
+    "paper": "A4"
+  },
+  "template": {
+    "id": "gb_us_colonial_heritage",
+    "name": "Colonial · Heritage Christmas",
+    "subtitle": "Colonial / Heritage Christmas",
+    "collection": "American Premium",
+    "model_family": "colonial",
+    "architecture": "Colonial",
+    "finish": "Heritage Christmas",
+    "profile": [
+      [
+        0,
+        0
+      ],
+      [
+        0.5,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "material": "brick",
+    "premium": true,
+    "width": 85,
+    "depth": 65,
+    "wall_height": 105,
+    "roof_rise": 30,
+    "wall": "#b97946",
+    "roof": "#943f4a",
+    "accent": "#bf394a",
+    "trim": "#fff7e5",
+    "background": "#ebe9df",
+    "motif": "american",
+    "difficulty": "Intermediate",
+    "description": "Colonial with festive icing, candy details, and glowing windows. Includes a snowy base, a slotted tree, and two gift boxes. Customize the patterns and add your own name.",
+    "roof_overhang_mm": 9,
+    "roof_rake_mm": 11,
+    "category": "gingerbread-houses",
+    "categories": [
+      "gingerbread-houses",
+      "american-places",
+      "seasonal-holiday"
+    ],
+    "roof_corner_radius_mm": 4
+  },
+  "qa_status": "PASS",
+  "algorithm": "gable-house-1.0; three-sheet rigid placement",
+  "physical_assembly": "NOT_TESTED",
+  "artifacts": [
+    {
+      "path": "accessories.pdf",
+      "sha256": "1d8c9af3c6444501a988e2b79d61c2541098786799208adfc09889152b087be0",
+      "model_id": "GB-US-COLONIAL-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "d915f5d846feb0b64ed811650ee58d982d19833b67537a249f21feb30e533868",
+      "source_spec_hash": "71f3f11fdf0a1d06cc0bfef49c8c3b77ff14fb0accb0cd6c73e4e53973901c66",
+      "design_sha256": "03e741b4ff8c2ba37888e3704a443c0cda51fb1e108b1c88f18ab90a9f969d5b",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "accessories_guide.pdf",
+      "sha256": "976b331a38d4e539e14b65cff32de43db64d8ea2ab37814a439ae6c12b961d86",
+      "model_id": "GB-US-COLONIAL-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "d915f5d846feb0b64ed811650ee58d982d19833b67537a249f21feb30e533868",
+      "source_spec_hash": "71f3f11fdf0a1d06cc0bfef49c8c3b77ff14fb0accb0cd6c73e4e53973901c66",
+      "design_sha256": "03e741b4ff8c2ba37888e3704a443c0cda51fb1e108b1c88f18ab90a9f969d5b",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "assembly_guide.pdf",
+      "sha256": "6345150e99596a7d143f91dbabedfa5b42bb589adff79e349a2e0efc0e95898c",
+      "model_id": "GB-US-COLONIAL-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "d915f5d846feb0b64ed811650ee58d982d19833b67537a249f21feb30e533868",
+      "source_spec_hash": "71f3f11fdf0a1d06cc0bfef49c8c3b77ff14fb0accb0cd6c73e4e53973901c66",
+      "design_sha256": "03e741b4ff8c2ba37888e3704a443c0cda51fb1e108b1c88f18ab90a9f969d5b",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_001.svg",
+      "sha256": "2cb01627663bddb54f0b90686395e22c7363e8be85926cd8340efcc415cff8ef",
+      "model_id": "GB-US-COLONIAL-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "d915f5d846feb0b64ed811650ee58d982d19833b67537a249f21feb30e533868",
+      "source_spec_hash": "71f3f11fdf0a1d06cc0bfef49c8c3b77ff14fb0accb0cd6c73e4e53973901c66",
+      "design_sha256": "03e741b4ff8c2ba37888e3704a443c0cda51fb1e108b1c88f18ab90a9f969d5b",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_002.svg",
+      "sha256": "958e4469fc6650c3c66ef0338f5e0ec4d95cd101c02da5f44b2635178d98341c",
+      "model_id": "GB-US-COLONIAL-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "d915f5d846feb0b64ed811650ee58d982d19833b67537a249f21feb30e533868",
+      "source_spec_hash": "71f3f11fdf0a1d06cc0bfef49c8c3b77ff14fb0accb0cd6c73e4e53973901c66",
+      "design_sha256": "03e741b4ff8c2ba37888e3704a443c0cda51fb1e108b1c88f18ab90a9f969d5b",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_003.svg",
+      "sha256": "03401cae48c4de9762dad0c08f115982f40d9575ebd9107bce3ef052cfe6368b",
+      "model_id": "GB-US-COLONIAL-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "d915f5d846feb0b64ed811650ee58d982d19833b67537a249f21feb30e533868",
+      "source_spec_hash": "71f3f11fdf0a1d06cc0bfef49c8c3b77ff14fb0accb0cd6c73e4e53973901c66",
+      "design_sha256": "03e741b4ff8c2ba37888e3704a443c0cda51fb1e108b1c88f18ab90a9f969d5b",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "display_scene.obj",
+      "sha256": "a246bb461758be044831e9d815a7191e959af5926ed28e07c2118ea8e526dd42",
+      "model_id": "GB-US-COLONIAL-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "d915f5d846feb0b64ed811650ee58d982d19833b67537a249f21feb30e533868",
+      "source_spec_hash": "71f3f11fdf0a1d06cc0bfef49c8c3b77ff14fb0accb0cd6c73e4e53973901c66",
+      "design_sha256": "03e741b4ff8c2ba37888e3704a443c0cda51fb1e108b1c88f18ab90a9f969d5b",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "model.obj",
+      "sha256": "3b78c4b7f8d1e67ad67ec1bdbe949ecd62aea2ab2818dd1e469d154634c7ea1d",
+      "model_id": "GB-US-COLONIAL-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "d915f5d846feb0b64ed811650ee58d982d19833b67537a249f21feb30e533868",
+      "source_spec_hash": "71f3f11fdf0a1d06cc0bfef49c8c3b77ff14fb0accb0cd6c73e4e53973901c66",
+      "design_sha256": "03e741b4ff8c2ba37888e3704a443c0cda51fb1e108b1c88f18ab90a9f969d5b",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "model_3d_preview.png",
+      "sha256": "b385dcc3719daed2f78a6549f343d42eb93d3abee3f00b0b03892a34c648bf2a",
+      "model_id": "GB-US-COLONIAL-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "d915f5d846feb0b64ed811650ee58d982d19833b67537a249f21feb30e533868",
+      "source_spec_hash": "71f3f11fdf0a1d06cc0bfef49c8c3b77ff14fb0accb0cd6c73e4e53973901c66",
+      "design_sha256": "03e741b4ff8c2ba37888e3704a443c0cda51fb1e108b1c88f18ab90a9f969d5b",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "model_spec.json",
+      "sha256": "7a9ed4b873120f375df96723e8c45a4d2a4a9630141669d24d14ded813dae0f2",
+      "model_id": "GB-US-COLONIAL-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "d915f5d846feb0b64ed811650ee58d982d19833b67537a249f21feb30e533868",
+      "source_spec_hash": "71f3f11fdf0a1d06cc0bfef49c8c3b77ff14fb0accb0cd6c73e4e53973901c66",
+      "design_sha256": "03e741b4ff8c2ba37888e3704a443c0cda51fb1e108b1c88f18ab90a9f969d5b",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "printable_a4.pdf",
+      "sha256": "98e5f3aa95b63a83ff4ad8c8a068a7e567845dfe14a6acc6a8edbf4c4c78f374",
+      "model_id": "GB-US-COLONIAL-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "d915f5d846feb0b64ed811650ee58d982d19833b67537a249f21feb30e533868",
+      "source_spec_hash": "71f3f11fdf0a1d06cc0bfef49c8c3b77ff14fb0accb0cd6c73e4e53973901c66",
+      "design_sha256": "03e741b4ff8c2ba37888e3704a443c0cda51fb1e108b1c88f18ab90a9f969d5b",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "printable_a4_coloring.pdf",
+      "sha256": "912ee9b4927bc410428a06c8d0acdcce3b9bd91c855e66878c28e52dc7646d38",
+      "model_id": "GB-US-COLONIAL-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "d915f5d846feb0b64ed811650ee58d982d19833b67537a249f21feb30e533868",
+      "source_spec_hash": "71f3f11fdf0a1d06cc0bfef49c8c3b77ff14fb0accb0cd6c73e4e53973901c66",
+      "design_sha256": "03e741b4ff8c2ba37888e3704a443c0cda51fb1e108b1c88f18ab90a9f969d5b",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "printable_preview.png",
+      "sha256": "b1fad29f0e3af21a4f25c521657c62bc2674e6677e5f164f132d6da9cbc2f134",
+      "model_id": "GB-US-COLONIAL-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "d915f5d846feb0b64ed811650ee58d982d19833b67537a249f21feb30e533868",
+      "source_spec_hash": "71f3f11fdf0a1d06cc0bfef49c8c3b77ff14fb0accb0cd6c73e4e53973901c66",
+      "design_sha256": "03e741b4ff8c2ba37888e3704a443c0cda51fb1e108b1c88f18ab90a9f969d5b",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "svg_pages/page_001.svg",
+      "sha256": "b86b8a66734b7eca4651763d7053e4e53dbd4611cb7402c64b1d73722edb5958",
+      "model_id": "GB-US-COLONIAL-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "d915f5d846feb0b64ed811650ee58d982d19833b67537a249f21feb30e533868",
+      "source_spec_hash": "71f3f11fdf0a1d06cc0bfef49c8c3b77ff14fb0accb0cd6c73e4e53973901c66",
+      "design_sha256": "03e741b4ff8c2ba37888e3704a443c0cda51fb1e108b1c88f18ab90a9f969d5b",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "svg_pages/page_002.svg",
+      "sha256": "802c522210b0e9b6576b669573ac64be5cedebbb8ec33a7e33ec0de340fe9d90",
+      "model_id": "GB-US-COLONIAL-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "d915f5d846feb0b64ed811650ee58d982d19833b67537a249f21feb30e533868",
+      "source_spec_hash": "71f3f11fdf0a1d06cc0bfef49c8c3b77ff14fb0accb0cd6c73e4e53973901c66",
+      "design_sha256": "03e741b4ff8c2ba37888e3704a443c0cda51fb1e108b1c88f18ab90a9f969d5b",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "svg_pages/page_003.svg",
+      "sha256": "c7bc4c73eecf941d56541c4158b168de30f07851341b43d6802f5ad63c65744b",
+      "model_id": "GB-US-COLONIAL-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "d915f5d846feb0b64ed811650ee58d982d19833b67537a249f21feb30e533868",
+      "source_spec_hash": "71f3f11fdf0a1d06cc0bfef49c8c3b77ff14fb0accb0cd6c73e4e53973901c66",
+      "design_sha256": "03e741b4ff8c2ba37888e3704a443c0cda51fb1e108b1c88f18ab90a9f969d5b",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "template_preview.svg",
+      "sha256": "ad486b72aaa1b5725d43e8b66c0d30251f266d71455ec6b48137f62d93bb3bc2",
+      "model_id": "GB-US-COLONIAL-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "d915f5d846feb0b64ed811650ee58d982d19833b67537a249f21feb30e533868",
+      "source_spec_hash": "71f3f11fdf0a1d06cc0bfef49c8c3b77ff14fb0accb0cd6c73e4e53973901c66",
+      "design_sha256": "03e741b4ff8c2ba37888e3704a443c0cda51fb1e108b1c88f18ab90a9f969d5b",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "validation_report.json",
+      "sha256": "b90a4fb5a3009d777d1817aea600a0310a7fa69b93ac75a69aee03a2462e474c",
+      "model_id": "GB-US-COLONIAL-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "d915f5d846feb0b64ed811650ee58d982d19833b67537a249f21feb30e533868",
+      "source_spec_hash": "71f3f11fdf0a1d06cc0bfef49c8c3b77ff14fb0accb0cd6c73e4e53973901c66",
+      "design_sha256": "03e741b4ff8c2ba37888e3704a443c0cda51fb1e108b1c88f18ab90a9f969d5b",
+      "template_version": "5.3.0"
+    }
+  ]
+}

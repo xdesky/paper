@@ -1,0 +1,328 @@
+{
+  "model_id": "GB-COMPLEX-VILLAGE-ROSE",
+  "version": "gingerbread-4.0.0",
+  "project_id": "gb_complex_village_rose-wall-tabs",
+  "revision": 1,
+  "geometry_sha256": "71a84c5fe43217ee1d73c2f09592f79f6af3416fc70fb099a30c827429d9c4d5",
+  "source_spec_hash": "62a280be501230432471aaf1d5e0cd18e98ac72815ffc1f778fa18e1eafec6d4",
+  "design_sha256": "36fd96cd6d78c66860e6b8244ef7fb19735f4aae66a909d7da0c77f847638e42",
+  "template_version": "5.3.0",
+  "input": {
+    "preset": "gb_complex_village_rose",
+    "project_id": "gb_complex_village_rose-wall-tabs",
+    "revision": 1,
+    "paper": "US Letter"
+  },
+  "template": {
+    "id": "gb_complex_village_rose",
+    "name": "Triple Gable Village · Rose Candy",
+    "subtitle": "Triple Gable Village / Rose Candy",
+    "collection": "Advanced Christmas",
+    "model_family": "complex_village",
+    "architecture": "Triple Gable Village",
+    "finish": "Rose Candy",
+    "profile": [
+      [
+        0,
+        0
+      ],
+      [
+        0.16666666666666666,
+        0.8
+      ],
+      [
+        0.3333333333333333,
+        0
+      ],
+      [
+        0.5,
+        1
+      ],
+      [
+        0.6666666666666666,
+        0
+      ],
+      [
+        0.8333333333333334,
+        0.8
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "bay_count": 3,
+    "bay_splits": [
+      0.3333333333333333,
+      0.6666666666666666
+    ],
+    "bay_split": 0.3333333333333333,
+    "material": "board",
+    "premium": true,
+    "width": 120,
+    "depth": 52,
+    "wall_height": 62,
+    "roof_rise": 36,
+    "wall": "#e5a7ae",
+    "roof": "#d36e88",
+    "accent": "#b92c52",
+    "trim": "#fff9ef",
+    "background": "#f8e9ed",
+    "motif": "american",
+    "difficulty": "Advanced",
+    "description": "Triple Gable Village with festive icing, candy details, and glowing windows. Includes a snowy base, a slotted tree, and two gift boxes. Customize the patterns and add your own name.",
+    "roof_overhang_mm": 4,
+    "roof_rake_mm": 6,
+    "category": "gingerbread-houses",
+    "categories": [
+      "gingerbread-houses",
+      "seasonal-holiday",
+      "fantasy-storybook"
+    ]
+  },
+  "qa_status": "PASS",
+  "algorithm": "gable-house-1.0; v1.2 rigid pairing + shelf packing",
+  "physical_assembly": "NOT_TESTED",
+  "artifacts": [
+    {
+      "path": "accessories.pdf",
+      "sha256": "29ee10a84153f324af47cab5928412b890eb8d1db2d3cf71274af20e86a1dcca",
+      "model_id": "GB-COMPLEX-VILLAGE-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_village_rose-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "71a84c5fe43217ee1d73c2f09592f79f6af3416fc70fb099a30c827429d9c4d5",
+      "source_spec_hash": "62a280be501230432471aaf1d5e0cd18e98ac72815ffc1f778fa18e1eafec6d4",
+      "design_sha256": "36fd96cd6d78c66860e6b8244ef7fb19735f4aae66a909d7da0c77f847638e42",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "accessories_guide.pdf",
+      "sha256": "245483debeb9537dfc745f3a7e5a64638dea1075796fc75bb9decb1b6b4a2db2",
+      "model_id": "GB-COMPLEX-VILLAGE-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_village_rose-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "71a84c5fe43217ee1d73c2f09592f79f6af3416fc70fb099a30c827429d9c4d5",
+      "source_spec_hash": "62a280be501230432471aaf1d5e0cd18e98ac72815ffc1f778fa18e1eafec6d4",
+      "design_sha256": "36fd96cd6d78c66860e6b8244ef7fb19735f4aae66a909d7da0c77f847638e42",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "assembly_guide.pdf",
+      "sha256": "530886a4c496ed8cbf1db120932577354b84d75cfe411d95e5620ce9df564663",
+      "model_id": "GB-COMPLEX-VILLAGE-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_village_rose-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "71a84c5fe43217ee1d73c2f09592f79f6af3416fc70fb099a30c827429d9c4d5",
+      "source_spec_hash": "62a280be501230432471aaf1d5e0cd18e98ac72815ffc1f778fa18e1eafec6d4",
+      "design_sha256": "36fd96cd6d78c66860e6b8244ef7fb19735f4aae66a909d7da0c77f847638e42",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_001.svg",
+      "sha256": "b9fa1d46c23e057c828709a973270ba9b5df187e06578f4d4a1cb94478c4580b",
+      "model_id": "GB-COMPLEX-VILLAGE-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_village_rose-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "71a84c5fe43217ee1d73c2f09592f79f6af3416fc70fb099a30c827429d9c4d5",
+      "source_spec_hash": "62a280be501230432471aaf1d5e0cd18e98ac72815ffc1f778fa18e1eafec6d4",
+      "design_sha256": "36fd96cd6d78c66860e6b8244ef7fb19735f4aae66a909d7da0c77f847638e42",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_002.svg",
+      "sha256": "892dbb0734282d56e7a7b3590d7411a78424bf2bca440af39af6c4abce70ea0e",
+      "model_id": "GB-COMPLEX-VILLAGE-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_village_rose-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "71a84c5fe43217ee1d73c2f09592f79f6af3416fc70fb099a30c827429d9c4d5",
+      "source_spec_hash": "62a280be501230432471aaf1d5e0cd18e98ac72815ffc1f778fa18e1eafec6d4",
+      "design_sha256": "36fd96cd6d78c66860e6b8244ef7fb19735f4aae66a909d7da0c77f847638e42",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_003.svg",
+      "sha256": "571ee930ce9f16ce7ff5026b77ff6d9b7c7bb65f7b4dd63feb3aaf4d7a4821e4",
+      "model_id": "GB-COMPLEX-VILLAGE-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_village_rose-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "71a84c5fe43217ee1d73c2f09592f79f6af3416fc70fb099a30c827429d9c4d5",
+      "source_spec_hash": "62a280be501230432471aaf1d5e0cd18e98ac72815ffc1f778fa18e1eafec6d4",
+      "design_sha256": "36fd96cd6d78c66860e6b8244ef7fb19735f4aae66a909d7da0c77f847638e42",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_004.svg",
+      "sha256": "8b4f5992aa185ca20c1cc15bb16f8981c302c0015ffaab47dd11f4dc7bde6850",
+      "model_id": "GB-COMPLEX-VILLAGE-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_village_rose-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "71a84c5fe43217ee1d73c2f09592f79f6af3416fc70fb099a30c827429d9c4d5",
+      "source_spec_hash": "62a280be501230432471aaf1d5e0cd18e98ac72815ffc1f778fa18e1eafec6d4",
+      "design_sha256": "36fd96cd6d78c66860e6b8244ef7fb19735f4aae66a909d7da0c77f847638e42",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "display_scene.obj",
+      "sha256": "ab4fae995647daa14731d32e68b277d44bc329e4316d36798dcf72cfec3d23fd",
+      "model_id": "GB-COMPLEX-VILLAGE-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_village_rose-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "71a84c5fe43217ee1d73c2f09592f79f6af3416fc70fb099a30c827429d9c4d5",
+      "source_spec_hash": "62a280be501230432471aaf1d5e0cd18e98ac72815ffc1f778fa18e1eafec6d4",
+      "design_sha256": "36fd96cd6d78c66860e6b8244ef7fb19735f4aae66a909d7da0c77f847638e42",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "model.obj",
+      "sha256": "2dafce6026cf75f0117dcad37832dc14ff0f9bf3a1fd35755ddae43110b8cef7",
+      "model_id": "GB-COMPLEX-VILLAGE-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_village_rose-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "71a84c5fe43217ee1d73c2f09592f79f6af3416fc70fb099a30c827429d9c4d5",
+      "source_spec_hash": "62a280be501230432471aaf1d5e0cd18e98ac72815ffc1f778fa18e1eafec6d4",
+      "design_sha256": "36fd96cd6d78c66860e6b8244ef7fb19735f4aae66a909d7da0c77f847638e42",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "model_3d_preview.png",
+      "sha256": "3e8335440b0f48abd14cc61a2ac29df7fd3f35df9bc452e47b0957c9f5837945",
+      "model_id": "GB-COMPLEX-VILLAGE-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_village_rose-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "71a84c5fe43217ee1d73c2f09592f79f6af3416fc70fb099a30c827429d9c4d5",
+      "source_spec_hash": "62a280be501230432471aaf1d5e0cd18e98ac72815ffc1f778fa18e1eafec6d4",
+      "design_sha256": "36fd96cd6d78c66860e6b8244ef7fb19735f4aae66a909d7da0c77f847638e42",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "model_spec.json",
+      "sha256": "20dd14dc0199e79338cf6e0273a687c20f116dfc3cb4377e1db341b912416ec6",
+      "model_id": "GB-COMPLEX-VILLAGE-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_village_rose-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "71a84c5fe43217ee1d73c2f09592f79f6af3416fc70fb099a30c827429d9c4d5",
+      "source_spec_hash": "62a280be501230432471aaf1d5e0cd18e98ac72815ffc1f778fa18e1eafec6d4",
+      "design_sha256": "36fd96cd6d78c66860e6b8244ef7fb19735f4aae66a909d7da0c77f847638e42",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "printable_preview.png",
+      "sha256": "01c039be9feded95b3930c1ed23bc2c6c5180c66dcea2b21490c5fe4bb575c01",
+      "model_id": "GB-COMPLEX-VILLAGE-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_village_rose-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "71a84c5fe43217ee1d73c2f09592f79f6af3416fc70fb099a30c827429d9c4d5",
+      "source_spec_hash": "62a280be501230432471aaf1d5e0cd18e98ac72815ffc1f778fa18e1eafec6d4",
+      "design_sha256": "36fd96cd6d78c66860e6b8244ef7fb19735f4aae66a909d7da0c77f847638e42",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "printable_us_letter.pdf",
+      "sha256": "8fa34989ee1fe750fda5e4050a981e42a4f35ecebdb0bb66a7024ee4cfbd29bd",
+      "model_id": "GB-COMPLEX-VILLAGE-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_village_rose-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "71a84c5fe43217ee1d73c2f09592f79f6af3416fc70fb099a30c827429d9c4d5",
+      "source_spec_hash": "62a280be501230432471aaf1d5e0cd18e98ac72815ffc1f778fa18e1eafec6d4",
+      "design_sha256": "36fd96cd6d78c66860e6b8244ef7fb19735f4aae66a909d7da0c77f847638e42",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "printable_us_letter_coloring.pdf",
+      "sha256": "4aa5249b362a59d6ae53ff444726a01755c342173f0b5ce6c4f07ee1bc7cb11b",
+      "model_id": "GB-COMPLEX-VILLAGE-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_village_rose-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "71a84c5fe43217ee1d73c2f09592f79f6af3416fc70fb099a30c827429d9c4d5",
+      "source_spec_hash": "62a280be501230432471aaf1d5e0cd18e98ac72815ffc1f778fa18e1eafec6d4",
+      "design_sha256": "36fd96cd6d78c66860e6b8244ef7fb19735f4aae66a909d7da0c77f847638e42",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "svg_pages/page_001.svg",
+      "sha256": "88caad5c6a1fff009de349c7f03270c0b93fb4d5914101dcce31de02f95849a6",
+      "model_id": "GB-COMPLEX-VILLAGE-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_village_rose-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "71a84c5fe43217ee1d73c2f09592f79f6af3416fc70fb099a30c827429d9c4d5",
+      "source_spec_hash": "62a280be501230432471aaf1d5e0cd18e98ac72815ffc1f778fa18e1eafec6d4",
+      "design_sha256": "36fd96cd6d78c66860e6b8244ef7fb19735f4aae66a909d7da0c77f847638e42",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "svg_pages/page_002.svg",
+      "sha256": "4b8c71f5f51b4c4a2bb1d78f28fc8dd0354ad36bf9989ef3959b6d878634329f",
+      "model_id": "GB-COMPLEX-VILLAGE-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_village_rose-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "71a84c5fe43217ee1d73c2f09592f79f6af3416fc70fb099a30c827429d9c4d5",
+      "source_spec_hash": "62a280be501230432471aaf1d5e0cd18e98ac72815ffc1f778fa18e1eafec6d4",
+      "design_sha256": "36fd96cd6d78c66860e6b8244ef7fb19735f4aae66a909d7da0c77f847638e42",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "svg_pages/page_003.svg",
+      "sha256": "3eda899f97a65370d9078aed8811789b8112f470327e655d8648d45035e33a2f",
+      "model_id": "GB-COMPLEX-VILLAGE-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_village_rose-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "71a84c5fe43217ee1d73c2f09592f79f6af3416fc70fb099a30c827429d9c4d5",
+      "source_spec_hash": "62a280be501230432471aaf1d5e0cd18e98ac72815ffc1f778fa18e1eafec6d4",
+      "design_sha256": "36fd96cd6d78c66860e6b8244ef7fb19735f4aae66a909d7da0c77f847638e42",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "svg_pages/page_004.svg",
+      "sha256": "9c4afd4e210ae66ff76c72095a4e2d4e8e8854dfb2cfeb654f3413ffd54ad711",
+      "model_id": "GB-COMPLEX-VILLAGE-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_village_rose-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "71a84c5fe43217ee1d73c2f09592f79f6af3416fc70fb099a30c827429d9c4d5",
+      "source_spec_hash": "62a280be501230432471aaf1d5e0cd18e98ac72815ffc1f778fa18e1eafec6d4",
+      "design_sha256": "36fd96cd6d78c66860e6b8244ef7fb19735f4aae66a909d7da0c77f847638e42",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "template_preview.svg",
+      "sha256": "047bb0583393fcd7eedca316dbc2b269af7f4064edc803984dd0a44d0615782b",
+      "model_id": "GB-COMPLEX-VILLAGE-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_village_rose-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "71a84c5fe43217ee1d73c2f09592f79f6af3416fc70fb099a30c827429d9c4d5",
+      "source_spec_hash": "62a280be501230432471aaf1d5e0cd18e98ac72815ffc1f778fa18e1eafec6d4",
+      "design_sha256": "36fd96cd6d78c66860e6b8244ef7fb19735f4aae66a909d7da0c77f847638e42",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "validation_report.json",
+      "sha256": "2404a1f2ade57d144520ac06c0d758c1954e83c6f493c325734e5337d123204f",
+      "model_id": "GB-COMPLEX-VILLAGE-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_village_rose-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "71a84c5fe43217ee1d73c2f09592f79f6af3416fc70fb099a30c827429d9c4d5",
+      "source_spec_hash": "62a280be501230432471aaf1d5e0cd18e98ac72815ffc1f778fa18e1eafec6d4",
+      "design_sha256": "36fd96cd6d78c66860e6b8244ef7fb19735f4aae66a909d7da0c77f847638e42",
+      "template_version": "5.3.0"
+    }
+  ]
+}

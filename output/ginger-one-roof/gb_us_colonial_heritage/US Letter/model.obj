@@ -1,0 +1,39 @@
+# {"design_sha256":"e6b4473d4cf18dd3836a86c92ae992283b3a6ad9fb78a200572dd4551766bd13","geometry_sha256":"d915f5d846feb0b64ed811650ee58d982d19833b67537a249f21feb30e533868","model_id":"GB-US-COLONIAL-HERITAGE","project_id":"gb_us_colonial_heritage-one-roof","revision":1,"source_spec_hash":"0041b3a68ceaeabd441a5ed0ea79e91128c6ba5f597506a52f1786b7ecd0eff6","template_version":"5.6.0","version":"gingerbread-4.0.0"}
+g FRONT
+v -42.5 -32.5 0
+v 42.5 -32.5 0
+v 42.5 -32.5 105
+v 0.0 -32.5 135
+v -42.5 -32.5 105
+f 1 2 3 4 5
+g BACK
+v -42.5 32.5 105
+v 0.0 32.5 135
+v 42.5 32.5 105
+v 42.5 32.5 0
+v -42.5 32.5 0
+f 6 7 8 9 10
+g RIGHT
+v 42.5 -32.5 0
+v 42.5 32.5 0
+v 42.5 32.5 105
+v 42.5 -32.5 105
+f 11 12 13 14
+g LEFT
+v -42.5 32.5 0
+v -42.5 -32.5 0
+v -42.5 -32.5 105
+v -42.5 32.5 105
+f 15 16 17 18
+g ROOF_1
+v 0.0 -32.5 135.0
+v 0.0 32.5 135.0
+v -42.5 32.5 105.0
+v -42.5 -32.5 105.0
+f 19 20 21 22
+g ROOF_2
+v 42.5 -32.5 105.0
+v 42.5 32.5 105.0
+v 0.0 32.5 135.0
+v 0.0 -32.5 135.0
+f 23 24 25 26

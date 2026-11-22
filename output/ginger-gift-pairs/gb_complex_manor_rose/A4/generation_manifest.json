@@ -1,0 +1,312 @@
+{
+  "model_id": "GB-COMPLEX-MANOR-ROSE",
+  "version": "gingerbread-4.0.0",
+  "project_id": "gb_complex_manor_rose-gift-pairs",
+  "revision": 1,
+  "geometry_sha256": "f5b2b9a04fb031d01ba388a0e1d9cf6c9ec1da887c75aef230bc47b4f704d3d5",
+  "source_spec_hash": "34cb412573bed15a27f72734988fe74d722bb489a5a2a9a4a65287670efdb214",
+  "design_sha256": "353d67c1601089cb4d39c0be361f222a7a5a10070291b137b4d3f324a640aa55",
+  "template_version": "5.7.0",
+  "input": {
+    "preset": "gb_complex_manor_rose",
+    "project_id": "gb_complex_manor_rose-gift-pairs",
+    "revision": 1,
+    "paper": "A4"
+  },
+  "template": {
+    "id": "gb_complex_manor_rose",
+    "name": "Double Gambrel Manor · Rose Candy",
+    "subtitle": "Double Gambrel Manor / Rose Candy",
+    "collection": "Advanced Christmas",
+    "model_family": "complex_manor",
+    "architecture": "Double Gambrel Manor",
+    "finish": "Rose Candy",
+    "profile": [
+      [
+        0,
+        0
+      ],
+      [
+        0.09,
+        0.72
+      ],
+      [
+        0.25,
+        1
+      ],
+      [
+        0.41,
+        0.72
+      ],
+      [
+        0.5,
+        0
+      ],
+      [
+        0.59,
+        0.72
+      ],
+      [
+        0.75,
+        1
+      ],
+      [
+        0.91,
+        0.72
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "bay_count": 2,
+    "bay_splits": [
+      0.5
+    ],
+    "bay_split": 0.5,
+    "material": "board",
+    "premium": true,
+    "width": 118,
+    "depth": 54,
+    "wall_height": 65,
+    "roof_rise": 40,
+    "wall": "#e5a7ae",
+    "roof": "#d36e88",
+    "accent": "#b92c52",
+    "trim": "#fff9ef",
+    "background": "#f8e9ed",
+    "motif": "american",
+    "difficulty": "Advanced",
+    "description": "Double Gambrel Manor with festive icing, candy details, and glowing windows. Includes a snowy base, a slotted tree, and two gift boxes. Customize the patterns and add your own name.",
+    "roof_overhang_mm": 10,
+    "roof_rake_mm": 10,
+    "single_layer_roof": true,
+    "category": "gingerbread-houses",
+    "categories": [
+      "gingerbread-houses",
+      "seasonal-holiday",
+      "fantasy-storybook"
+    ]
+  },
+  "qa_status": "PASS",
+  "algorithm": "gable-house-1.0; v1.2 rigid pairing + shelf packing",
+  "physical_assembly": "NOT_TESTED",
+  "artifacts": [
+    {
+      "path": "accessories.pdf",
+      "sha256": "62c0fdae7bf051c3b2bc2ae6dd228e0ac003a7c701c0fb294aa57eda3d6d977d",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_rose-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "f5b2b9a04fb031d01ba388a0e1d9cf6c9ec1da887c75aef230bc47b4f704d3d5",
+      "source_spec_hash": "34cb412573bed15a27f72734988fe74d722bb489a5a2a9a4a65287670efdb214",
+      "design_sha256": "353d67c1601089cb4d39c0be361f222a7a5a10070291b137b4d3f324a640aa55",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "accessories_guide.pdf",
+      "sha256": "e1b96e00f871188c4c2d37d7d55fb05a729331db4f1d0462885a680e18535cb5",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_rose-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "f5b2b9a04fb031d01ba388a0e1d9cf6c9ec1da887c75aef230bc47b4f704d3d5",
+      "source_spec_hash": "34cb412573bed15a27f72734988fe74d722bb489a5a2a9a4a65287670efdb214",
+      "design_sha256": "353d67c1601089cb4d39c0be361f222a7a5a10070291b137b4d3f324a640aa55",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "assembly_guide.pdf",
+      "sha256": "a7ecfda5d0d6a5e0dc26c330aaa456e70c1470743be94de95b15a995287cc872",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_rose-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "f5b2b9a04fb031d01ba388a0e1d9cf6c9ec1da887c75aef230bc47b4f704d3d5",
+      "source_spec_hash": "34cb412573bed15a27f72734988fe74d722bb489a5a2a9a4a65287670efdb214",
+      "design_sha256": "353d67c1601089cb4d39c0be361f222a7a5a10070291b137b4d3f324a640aa55",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_001.svg",
+      "sha256": "e624e573c6876a81b02ea6b7df02afb408203dc24c9b7a248d44d5d78d4209dc",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_rose-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "f5b2b9a04fb031d01ba388a0e1d9cf6c9ec1da887c75aef230bc47b4f704d3d5",
+      "source_spec_hash": "34cb412573bed15a27f72734988fe74d722bb489a5a2a9a4a65287670efdb214",
+      "design_sha256": "353d67c1601089cb4d39c0be361f222a7a5a10070291b137b4d3f324a640aa55",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_002.svg",
+      "sha256": "b9c3e7e78117eb1620f5b7b5d673278baccf7cd873d2ec5bf66c5911889735fe",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_rose-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "f5b2b9a04fb031d01ba388a0e1d9cf6c9ec1da887c75aef230bc47b4f704d3d5",
+      "source_spec_hash": "34cb412573bed15a27f72734988fe74d722bb489a5a2a9a4a65287670efdb214",
+      "design_sha256": "353d67c1601089cb4d39c0be361f222a7a5a10070291b137b4d3f324a640aa55",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_003.svg",
+      "sha256": "7e822552ca29f0bdf0ef3cb292dcb32ef99122dd2e928d45a29fb15315a27095",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_rose-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "f5b2b9a04fb031d01ba388a0e1d9cf6c9ec1da887c75aef230bc47b4f704d3d5",
+      "source_spec_hash": "34cb412573bed15a27f72734988fe74d722bb489a5a2a9a4a65287670efdb214",
+      "design_sha256": "353d67c1601089cb4d39c0be361f222a7a5a10070291b137b4d3f324a640aa55",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "display_scene.obj",
+      "sha256": "cd21c4741a9399a8caa9fac32215d56497f359b4ae5b26d66213f3ce6d9afd09",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_rose-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "f5b2b9a04fb031d01ba388a0e1d9cf6c9ec1da887c75aef230bc47b4f704d3d5",
+      "source_spec_hash": "34cb412573bed15a27f72734988fe74d722bb489a5a2a9a4a65287670efdb214",
+      "design_sha256": "353d67c1601089cb4d39c0be361f222a7a5a10070291b137b4d3f324a640aa55",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "model.obj",
+      "sha256": "1bd3fe54f36f9d22fde86e5a67e489435e6132c8a0a3b64fa6298500141dc330",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_rose-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "f5b2b9a04fb031d01ba388a0e1d9cf6c9ec1da887c75aef230bc47b4f704d3d5",
+      "source_spec_hash": "34cb412573bed15a27f72734988fe74d722bb489a5a2a9a4a65287670efdb214",
+      "design_sha256": "353d67c1601089cb4d39c0be361f222a7a5a10070291b137b4d3f324a640aa55",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "model_3d_preview.png",
+      "sha256": "57a7ed4dcd9adda6ce47ea34c4d60adc15128ce17128d664e7482e3fc326752f",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_rose-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "f5b2b9a04fb031d01ba388a0e1d9cf6c9ec1da887c75aef230bc47b4f704d3d5",
+      "source_spec_hash": "34cb412573bed15a27f72734988fe74d722bb489a5a2a9a4a65287670efdb214",
+      "design_sha256": "353d67c1601089cb4d39c0be361f222a7a5a10070291b137b4d3f324a640aa55",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "model_spec.json",
+      "sha256": "9b8eba471e9616a1e00af5ecb6086ff6d806be006e2dc65bbf289a1340d5637e",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_rose-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "f5b2b9a04fb031d01ba388a0e1d9cf6c9ec1da887c75aef230bc47b4f704d3d5",
+      "source_spec_hash": "34cb412573bed15a27f72734988fe74d722bb489a5a2a9a4a65287670efdb214",
+      "design_sha256": "353d67c1601089cb4d39c0be361f222a7a5a10070291b137b4d3f324a640aa55",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "printable_a4.pdf",
+      "sha256": "2c93250ec5f1b3322cf41d708fc3cf66cbbfbd93917a349f6b03d36353eb9bf5",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_rose-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "f5b2b9a04fb031d01ba388a0e1d9cf6c9ec1da887c75aef230bc47b4f704d3d5",
+      "source_spec_hash": "34cb412573bed15a27f72734988fe74d722bb489a5a2a9a4a65287670efdb214",
+      "design_sha256": "353d67c1601089cb4d39c0be361f222a7a5a10070291b137b4d3f324a640aa55",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "printable_a4_coloring.pdf",
+      "sha256": "d41ca13cd9934007ddfa03351387d0082018dcadbae4fb692051fed4774d2f79",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_rose-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "f5b2b9a04fb031d01ba388a0e1d9cf6c9ec1da887c75aef230bc47b4f704d3d5",
+      "source_spec_hash": "34cb412573bed15a27f72734988fe74d722bb489a5a2a9a4a65287670efdb214",
+      "design_sha256": "353d67c1601089cb4d39c0be361f222a7a5a10070291b137b4d3f324a640aa55",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "printable_preview.png",
+      "sha256": "5b3938e3e81e8293a8f35b7592fef900d5c0a2b8eac901e97136b1cfb4523fff",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_rose-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "f5b2b9a04fb031d01ba388a0e1d9cf6c9ec1da887c75aef230bc47b4f704d3d5",
+      "source_spec_hash": "34cb412573bed15a27f72734988fe74d722bb489a5a2a9a4a65287670efdb214",
+      "design_sha256": "353d67c1601089cb4d39c0be361f222a7a5a10070291b137b4d3f324a640aa55",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "svg_pages/page_001.svg",
+      "sha256": "ebb09741bb25d42caaac4beb17f5341520a2e9deb1cf1c4a382543b9e868d6ef",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_rose-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "f5b2b9a04fb031d01ba388a0e1d9cf6c9ec1da887c75aef230bc47b4f704d3d5",
+      "source_spec_hash": "34cb412573bed15a27f72734988fe74d722bb489a5a2a9a4a65287670efdb214",
+      "design_sha256": "353d67c1601089cb4d39c0be361f222a7a5a10070291b137b4d3f324a640aa55",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "svg_pages/page_002.svg",
+      "sha256": "9c462f56892b96149aaf90b42e1eb3c1d78b6b7f22512df1583145f5603dd3a4",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_rose-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "f5b2b9a04fb031d01ba388a0e1d9cf6c9ec1da887c75aef230bc47b4f704d3d5",
+      "source_spec_hash": "34cb412573bed15a27f72734988fe74d722bb489a5a2a9a4a65287670efdb214",
+      "design_sha256": "353d67c1601089cb4d39c0be361f222a7a5a10070291b137b4d3f324a640aa55",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "svg_pages/page_003.svg",
+      "sha256": "23ac138e6e4937fb148cca32dbc4c16e468137a44d005bfe5f808256deec3df5",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_rose-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "f5b2b9a04fb031d01ba388a0e1d9cf6c9ec1da887c75aef230bc47b4f704d3d5",
+      "source_spec_hash": "34cb412573bed15a27f72734988fe74d722bb489a5a2a9a4a65287670efdb214",
+      "design_sha256": "353d67c1601089cb4d39c0be361f222a7a5a10070291b137b4d3f324a640aa55",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "template_preview.svg",
+      "sha256": "a6dfb97582aa1e500d42a2141caa907d3caf80b21a2439ca561a64b42db5cde9",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_rose-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "f5b2b9a04fb031d01ba388a0e1d9cf6c9ec1da887c75aef230bc47b4f704d3d5",
+      "source_spec_hash": "34cb412573bed15a27f72734988fe74d722bb489a5a2a9a4a65287670efdb214",
+      "design_sha256": "353d67c1601089cb4d39c0be361f222a7a5a10070291b137b4d3f324a640aa55",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "validation_report.json",
+      "sha256": "ff4ba3a428c0e6c86c0d20350f2d4562b0ac3369f0c315b28d31d97ffade6fc1",
+      "model_id": "GB-COMPLEX-MANOR-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_rose-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "f5b2b9a04fb031d01ba388a0e1d9cf6c9ec1da887c75aef230bc47b4f704d3d5",
+      "source_spec_hash": "34cb412573bed15a27f72734988fe74d722bb489a5a2a9a4a65287670efdb214",
+      "design_sha256": "353d67c1601089cb4d39c0be361f222a7a5a10070291b137b4d3f324a640aa55",
+      "template_version": "5.7.0"
+    }
+  ]
+}

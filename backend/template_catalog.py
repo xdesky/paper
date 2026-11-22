@@ -2,7 +2,7 @@
 import re
 import unicodedata
 
-CATALOG_VERSION = '5.2.1'
+CATALOG_VERSION = '5.6.1'
 TEMPLATES = [
     dict(id='gb_classic', roof_corner_radius_mm=0, name='Ngôi nhà bánh gừng', subtitle='Noel cổ điển', collection='Truyền thống', width=90, depth=70, wall_height=85, roof_rise=45, wall='#b97946', roof='#8b4139', accent='#bf443d', trim='#fff5dc', background='#f4e8d7', motif='classic', difficulty='Dễ', description='Bánh gừng nâu ấm, mái đỏ và những đường kem trắng. Mẫu mở đầu cho một ngôi làng Noel trên bàn.'),
     dict(id='gb_candy', name='Tiệm kẹo Giáng sinh', subtitle='Candy Cane Lane', collection='Kẹo ngọt', width=100, depth=70, wall_height=85, roof_rise=42, wall='#d99478', roof='#d25762', accent='#bc3046', trim='#fff7e7', background='#f9e7e8', motif='candy', difficulty='Dễ', description='Mái hồng dâu, cửa viền kẹo gậy và ô cửa sáng vàng. Những viên kẹo được in trực tiếp trên mặt giấy.'),
@@ -73,12 +73,17 @@ for model_id,title,w,d,h,r,profile,splits,architecture in COMPLEX_MODELS:
             material='board',premium=True,width=w,depth=d,wall_height=h,roof_rise=r,
             wall=wall,roof=roof,accent=accent,trim=trim,background=bg,motif='american',difficulty='Nâng cao',
             description=f'{title}: {len(profile)-1} mặt mái thật, nhiều nếp gấp và mối ghép hơn. {label} với kem tuyết, kẹo và cửa vòm. Có bản màu và bản nét để tự tô; không có ống khói rời.'))
+def has_two_roof_faces(template):
+    profile=template.get('profile')
+    return not profile or len(profile)==3
+
+
 for template in TEMPLATES:
-    template.update(roof_overhang_mm=4,roof_rake_mm=6)
-    if template['id'] in ('gb_classic','gb_candy','gb_forest','gb_chalet','gb_frost','gb_mini') or template.get('model_family') in ('cape_cod','colonial','saltbox','dutch','craftsman','farmhouse','ranch'):
+    template.update(roof_overhang_mm=10,roof_rake_mm=10,single_layer_roof=True)
+    if template['id'] in ('gb_classic','gb_candy','gb_forest','gb_chalet','gb_frost','gb_mini') or template.get('model_family') in ('cape_cod','colonial','saltbox','craftsman','farmhouse','ranch'):
         # Tall/slender houses keep their silhouette free of a chimney.
-        if template['wall_height'] < 95 and template['wall_height']+template['roof_rise'] <= 140:
-            template.update(chimney=True,chimney_placement='longest_slope')
+        if has_two_roof_faces(template) and template['wall_height'] < 95 and template['wall_height']+template['roof_rise'] <= 140:
+            template.update(chimney=True,chimney_placement='longest_slope',chimney_growth_mm=10)
 # US English catalog presentation; dimensions and IDs remain stable.
 ENGLISH_NAMES = {
  'gb_classic':'Classic Gingerbread House','gb_candy':'Christmas Candy Shop',
@@ -136,7 +141,7 @@ for mid,title,subtitle,coat,light,dark,accent,species in CHARACTER_STARTERS:
 
 for t in TEMPLATES:
     if not t.get('category'):t['category']='gingerbread-houses'
-    memberships=list(t.get('categories', ['gingerbread-houses'] if t['category']=='gingerbread-houses' else []))
+    memberships=list(t.get('categories', [t['category']]))
     if t['id'].startswith('gb_us_') or t.get('model_family','').startswith('two_bay_'):
         memberships.append('american-places')
     if t['category']=='gingerbread-houses':
@@ -161,5 +166,5 @@ def public_template(t):
     accessories=(['Foldable cuboid body','Printed character details'] if character else ['Display base','Slotted tree','Two 3D gift props'] if miniature else ['Overhanging snowy roof','Snowy base','Slotted tree','Two 3D gift boxes'])
     return {**t, 'version': CATALOG_VERSION, 'dimensions_mm': [t['width'], t['depth'], t['wall_height'] + t['roof_rise']],
             'paper': 'US Letter', 'accessories': accessories+(['3D chimney'] if t.get('chimney') else []), 'physical_assembly': 'NOT_TESTED',
-            'construction': ('Original blocky paper character made from foldable cuboid nets. Facial details are printed; small parts assemble with glue tabs.' if character else 'Open-bottom miniature storefront with a separate display base, printable signboard, and striped awning. Doors and windows are printed details.' if miniature else 'Open-bottom paper house with a separate snowy base. The two-layer roof overhangs the front, back, and outer slopes. Doors and windows are printed details. No interior rooms or separate porch.') + (' Includes an open-top 3D chimney with sloped glue tabs.' if t.get('chimney') else ''),
+            'construction': ('Original blocky paper character made from foldable cuboid nets. Facial details are printed; small parts assemble with glue tabs.' if character else 'Open-bottom miniature storefront with a separate display base, printable signboard, and striped awning. Doors and windows are printed details.' if miniature else 'Open-bottom paper house with a separate snowy base. The roof overhangs the front, back, and outer slopes. Doors and windows are printed details. No interior rooms or separate porch.') + (' Includes an open-top 3D chimney with sloped glue tabs.' if t.get('chimney') else ''),
             'preview_url': f"/api/templates/{t['id']}/{thumbnail_name(t)}.jpg"}

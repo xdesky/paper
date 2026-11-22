@@ -25,3 +25,20 @@ def test_two_bay_roof_and_a4_export(template,tmp_path):
     assert len([s for s in spec['geometry']['seams'] if s['fold_direction']=='VALLEY_FROM_PRINTED_OUTSIDE'])==1
     assert 'data-personal-name' in spec['appearance']['panels']['FRONT']
     assert (tmp_path/'printable_a4.pdf').read_bytes().startswith(b'%PDF')
+
+@pytest.mark.parametrize('paper',['A4','US Letter'])
+def test_all_house_roof_joints_use_wall_tabs(paper):
+    configure_engine(base,paper)
+    for template in TEMPLATES:
+        if template['category']=='blocky-characters':
+            continue
+        panels,seams,units,_,_=model(template)
+        for seam in seams:
+            mates=seam['occurrences']
+            roof=[mate for mate in mates if mate['panel'].startswith('ROOF')]
+            if len(roof)==1:
+                wall=next(mate for mate in mates if mate!=roof[0])
+                assert wall['edge'] in panels[wall['panel']].tabs,template['id']
+                assert roof[0]['edge'] not in panels[roof[0]['panel']].tabs,template['id']
+        component_area=sum(panel.square.area+sum(tab.area for tab in panel.tabs.values()) for panel in panels.values())
+        assert sum(unit.shape().area for unit in units)==pytest.approx(component_area,abs=1e-5)

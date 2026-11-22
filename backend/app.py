@@ -268,22 +268,30 @@ def create_app(data_dir=None, seed=False):
     @app.get('/api/templates')
     @lru_cache(maxsize=1)
     def templates():
-        from .gingerbread import model
+        from .gingerbread import print_structure
         from .blocky import spec_for
+        catalog_layouts=Path(__file__).with_name('static')/'catalog-layouts.json'
+        published=json.loads(catalog_layouts.read_text(encoding='utf-8'))
+        layouts=published['presets'] if published['version']==CATALOG_VERSION else {}
         result=[]
         for t in TEMPLATES:
+            if t['id'] in layouts:
+                result.append({**public_template(t),**layouts[t['id']]})
+                continue
             if t.get('category')=='blocky-characters':
                 spec=spec_for(t,'US Letter','catalog',1)
                 result.append({**public_template(t),'sheet_count':1,'house_sheet_count':1,'house_cut_pieces':len(spec['geometry']['model']['parts']),'accessory_cut_pieces':0,'cut_pieces':len(spec['geometry']['model']['parts']),'face_count':len(spec['geometry']['panels']),'fold_hinges':0,'glue_seams':len(spec['geometry']['model']['parts'])*4})
                 continue
-            structure=model(t)
+            structure=print_structure(t)
             panels,seams,units,pages,_=structure
+            printed_panels={pid for u in units for pid in u.ids}
+            printed_seams=[s for s in seams if any(m['panel'] in printed_panels for m in s['occurrences'])]
             from .three_page import compact_layout
             from .roof_cap import metadata
             print_template,compact_pages=compact_layout(t,structure)
             cap=metadata(print_template)
             from .accessories import layout as accessory_layout
-            result.append({**public_template(t),'sheet_count':len(compact_pages) if compact_pages else len(pages)+len(accessory_layout(t)),'roof_cap':cap,'house_sheet_count':len(compact_pages or pages),'house_cut_pieces':len(units),'accessory_cut_pieces':5+cap['cut_pieces']+int(bool(t.get('chimney'))),'cut_pieces':len(units)+5+cap['cut_pieces']+int(bool(t.get('chimney'))),'face_count':len(panels),'fold_hinges':sum(s['hinge'] for s in seams),'glue_seams':sum(not s['hinge'] for s in seams)})
+            result.append({**public_template(t),'sheet_count':len(compact_pages) if compact_pages else len(pages)+len(accessory_layout(t)),'roof_cap':cap,'house_sheet_count':len(compact_pages or pages),'house_cut_pieces':len(units),'accessory_cut_pieces':5+cap['cut_pieces']+int(bool(t.get('chimney'))),'cut_pieces':len(units)+5+cap['cut_pieces']+int(bool(t.get('chimney'))),'face_count':len(panels),'fold_hinges':sum(bool(u.hinge_id) for u in units),'glue_seams':sum(not s['hinge'] for s in printed_seams)})
         return result
 
     @app.get('/api/template-categories')
@@ -440,6 +448,15 @@ def create_app(data_dir=None, seed=False):
             create_download_archive(root)
         media = {'.svg': 'image/svg+xml', '.obj': 'text/plain', '.zip': 'application/zip'}.get(target.suffix) or mimetypes.guess_type(target.name)[0] or 'application/octet-stream'
         return FileResponse(target, media_type=media, filename=target.name if download else None, headers={'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff'})
+
+    @app.get('/favicon.ico', include_in_schema=False)
+    def favicon():
+        return FileResponse(Path(__file__).with_name('static') / 'favicon.ico',
+                            media_type='image/x-icon', headers={'Cache-Control':'public, max-age=3600'})
+
+    @app.get('/.well-known/appspecific/com.chrome.devtools.json', include_in_schema=False)
+    def chrome_devtools():
+        return Response(status_code=204)
 
     dist = ROOT / 'frontend/dist'
     if dist.exists():

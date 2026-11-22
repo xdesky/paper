@@ -19,7 +19,7 @@ import zipfile
 import numpy as np
 from shapely.geometry import Polygon
 
-from .template_catalog import BY_ID, CATALOG_VERSION
+from .template_catalog import BY_ID, CATALOG_VERSION, has_two_roof_faces
 from .paper import printable_filename
 ROOT = Path(__file__).resolve().parents[1]
 os.environ.setdefault('MPLCONFIGDIR', str(ROOT / '.mpl-cache'))
@@ -54,6 +54,32 @@ class Panel:
     def seg(self, e):
         i = int(e)
         return self.points[i], self.points[(i+1) % len(self.points)]
+
+
+def wall_roof_tab(panel,edge,depth=5):
+    """Taper the ends of a wall tab where it borders a concave roof valley."""
+    index=int(edge)
+    a,b=(np.asarray(point) for point in panel.seg(edge))
+    length=math.dist(a,b)
+    direction=(b-a)/length
+    normal=np.array([direction[1],-direction[0]])
+    chamfer=min(8.0,length*.17)
+
+    def valley_chamfer(previous,vertex,following):
+        incoming=vertex-previous
+        outgoing=following-vertex
+        turn=math.atan2(incoming[0]*outgoing[1]-incoming[1]*outgoing[0],
+                        float(incoming@outgoing))
+        if turn>=0:
+            return chamfer
+        opening=math.pi+turn
+        return max(chamfer,depth/math.tan(opening/2)+.5)
+
+    start=valley_chamfer(np.asarray(panel.points[index-1]),a,b)
+    end=valley_chamfer(a,b,np.asarray(panel.points[(index+2)%len(panel.points)]))
+    if start==end==chamfer:
+        return base.base.flap_for_edge(*panel.seg(edge),depth=depth)
+    return Polygon([a,b,b-end*direction+depth*normal,a+start*direction+depth*normal])
 
 
 def model(t):
@@ -123,7 +149,8 @@ def model(t):
             if len(roof_mates)==1:
                 owner=next(m for m in seam['occurrences'] if m!=roof_mates[0])
             p=panels[owner['panel']]
-            p.tabs[owner['edge']]=base.base.flap_for_edge(*p.seg(owner['edge']),depth=5)
+            edge=owner['edge']
+            p.tabs[edge]=wall_roof_tab(p,edge) if len(roof_mates)==1 else base.base.flap_for_edge(*p.seg(edge),depth=5)
     # Open-bottom wall edges receive fold-out tabs for attachment to the base.
     for index, edge in enumerate(boundary,1):
         mate=edge['mate'];panel=panels[mate['panel']];edge_id=mate['edge']
@@ -137,6 +164,14 @@ def model(t):
     if not all(base.fits(u) for u in units):
         raise ValueError('Catalog model exceeds printable bounds; scaling is forbidden')
     pages=base.pack_units(units)
+    return panels,seams,units,pages,boundary
+
+
+def print_structure(t):
+    panels,seams,units,pages,boundary=model(t)
+    if t.get('single_layer_roof'):
+        units=[u for u in units if not all(pid.startswith('ROOF') for pid in u.ids)]
+        pages=base.pack_units(units)
     return panels,seams,units,pages,boundary
 
 
@@ -439,12 +474,14 @@ def generate(request,out,progress=lambda stage:None):
         from .design_options import apply_design
         t=apply_design(t,request['design'])
     if request.get('personal_name'):t={**t,'personal_name':request['personal_name']}
+    if t.get('chimney') and not has_two_roof_faces(t):
+        t={**t,'chimney':False}
     out.mkdir(parents=True,exist_ok=True)
     fontdir=Path(matplotlib.get_data_path())/'fonts/ttf'
     for name,file in [(base.base.FONT,'DejaVuSans.ttf'),(base.base.FONT_BOLD,'DejaVuSans-Bold.ttf')]:
         if name not in pdfmetrics.getRegisteredFontNames():pdfmetrics.registerFont(TTFont(name,str(fontdir/file)))
     progress('Build Geometry')
-    structure=model(t)
+    structure=print_structure(t)
     panels,seams,units,pages,boundary=structure
     from .three_page import compact_layout
     from .accessories import layout as accessory_layout
@@ -562,12 +599,16 @@ def generate(request,out,progress=lambda stage:None):
            'Physical assembly has not been tested.']
     if t.get('bay_count',1) > 1:
         steps[5]='5. Join roof units: fold ridges outward and valleys inward.'
+    if t.get('single_layer_roof'):
+        steps[5]='5. Cut and fold the overhanging roof from the accessory sheets.'
     for i,text in enumerate(steps):gt(12,139-i*10,text,8)
     gt(12,19,'Recommended: 160–220 gsm cardstock. Test-fit before gluing.',8)
     gt(12,10,identity['model_id']+' | '+identity['geometry_sha256'][:16],6)
     guide.showPage();gt(12,264,'JOINTS & FOLDS',14,True)
     y=246
-    for s in seams:
+    printed_panels={pid for u in units for pid in u.ids}
+    printed_seams=[s for s in seams if any(m['panel'] in printed_panels for m in s['occurrences'])]
+    for s in printed_seams:
         if y<48:
             guide.showPage();gt(12,264,'JOINTS & FOLDS (continued)',14,True);y=246
         mates=' + '.join(m['panel'] for m in s['occurrences'])
@@ -623,7 +664,7 @@ def generate(request,out,progress=lambda stage:None):
     from .coloring import export as export_coloring
     tests.extend(export_coloring(t,out,identity,panels,units,pages))
     report={**identity,'overall_status':'PASS' if all(x['status']=='PASS' for x in tests) else 'FAIL','physical_assembly':'NOT_TESTED','tests':tests,
-            'summary':{'sheets':spec['sheet_count'],'accessory_cut_pieces':spec['accessory_cut_pieces'],'cut_pieces':len(units)+spec['accessory_cut_pieces'],'fold_hinges':sum(bool(u.hinge_id) for u in units),'glue_seams':sum(not s['hinge'] for s in seams),'accessory_fold_hinges':10+cap_info['fold_hinges']+8*int(bool(t.get('chimney'))),'accessory_glue_seams':14+cap_info['glue_seams']+5*int(bool(t.get('chimney'))),'flat_continuous_joins':0,'faces_or_tiles':len(panels)}}
+            'summary':{'sheets':spec['sheet_count'],'accessory_cut_pieces':spec['accessory_cut_pieces'],'cut_pieces':len(units)+spec['accessory_cut_pieces'],'fold_hinges':sum(bool(u.hinge_id) for u in units),'glue_seams':sum(not s['hinge'] for s in printed_seams),'accessory_fold_hinges':10+cap_info['fold_hinges']+8*int(bool(t.get('chimney'))),'accessory_glue_seams':14+cap_info['glue_seams']+5*int(bool(t.get('chimney'))),'flat_continuous_joins':0,'faces_or_tiles':len(panels)}}
     (out/'validation_report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2), encoding="utf-8")
     if report['overall_status']!='PASS':raise RuntimeError(canonical([t for t in tests if t['status']=='FAIL']))
     packing='three-sheet rigid placement' if compact_pages else 'v1.2 rigid pairing + shelf packing'
@@ -641,7 +682,8 @@ def validate(t,panels,seams,units,pages,boundary,out):
     import fitz
     tests=[]
     def check(name,ok,detail):tests.append({'name':name,'status':'PASS' if bool(ok) else 'FAIL','detail':detail})
-    check('all_faces_placed_once',Counter(pid for u in units for pid in u.ids)==Counter(panels.keys()),f'{len(panels)} panels')
+    expected_panels={pid for pid in panels if not (t.get('single_layer_roof') and pid.startswith('ROOF'))}
+    check('all_faces_placed_once',Counter(pid for u in units for pid in u.ids)==Counter(expected_panels),f'{len(expected_panels)} structural panels on print sheets')
     check('open_bottom_boundary_only',len(boundary)==4 and all(abs(v[2])<1e-6 for b in boundary for v in b['endpoints']),'Intentional open-bottom shell')
     check('seam_pairs_unique',len({s['id'] for s in seams})==len(seams) and all(len(s['occurrences'])==2 for s in seams),len(seams))
     lengths=[];endpoints=[]
@@ -656,6 +698,14 @@ def validate(t,panels,seams,units,pages,boundary,out):
     check('seam_3d_endpoints',all(endpoints),'Reverse-winding shared 3D endpoints')
     check('rigid_unfold_area',all(abs(Polygon([u.transform(pid,p) for p in panels[pid].points]).area-panels[pid].square.area)<1e-5 for u in units for pid in u.ids),'No scaling or reflection')
     check('tabs_only_on_glue_seams',all(sum(m['edge'] in panels[m['panel']].tabs for m in s['occurrences'])==(0 if s['hinge'] else 1) for s in seams),'No hinge tabs; one tab per glue seam')
+    roof_wall_mates=[
+        (wall,roof) for s in seams for wall,roof in (s['occurrences'],s['occurrences'][::-1])
+        if not wall['panel'].startswith('ROOF') and roof['panel'].startswith('ROOF')
+    ]
+    check('roof_wall_tabs_on_walls',all(
+        wall['edge'] in panels[wall['panel']].tabs and roof['edge'] not in panels[roof['panel']].tabs
+        for wall,roof in roof_wall_mates
+    ),'Every roof-to-wall joint has its glue tab on the wall edge')
     check('valid_connected_outlines',all(u.shape().is_valid and u.shape().geom_type=='Polygon' for u in units),'Connected cut polygons')
     from shapely.geometry import LineString
     hinges=[]
@@ -665,7 +715,7 @@ def validate(t,panels,seams,units,pages,boundary,out):
         segments=[[u.transform(m['panel'],p) for p in panels[m['panel']].seg(m['edge'])] for m in s['occurrences']]
         hinges.append(math.dist(segments[0][0],segments[1][1])<1e-5 and math.dist(segments[0][1],segments[1][0])<1e-5 and u.shape().boundary.intersection(LineString(segments[0])).length<1e-5)
     check('hinges_coincident_and_not_cut',all(hinges),'Three interior uncut creases')
-    check('face_plus_tab_area_conserved',abs(sum(p.square.area+sum(tab.area for tab in p.tabs.values()) for p in panels.values())-sum(u.shape().area for u in units))<1e-5,'No overlaps within connected units')
+    check('face_plus_tab_area_conserved',abs(sum(p.square.area+sum(tab.area for tab in p.tabs.values()) for pid,p in panels.items() if pid in expected_panels)-sum(u.shape().area for u in units))<1e-5,'No overlaps within connected units')
     check('no_inter_piece_overlap',all(a.shape().intersection(b.shape()).area<1e-5 for i,a in enumerate(units) for b in units[i+1:] if a.sheet==b.sheet),'No page collisions')
     check('printable_bounds',all(base.BODY[0]-1e-5<=b[0] and base.BODY[1]-1e-5<=b[1] and b[2]<=base.BODY[2]+1e-5 and b[3]<=base.BODY[3]+1e-5 for b in [u.shape().bounds for u in units]),base.BODY)
     xyz=np.array([v for p in panels.values() for v in p.vertices]);dims=np.ptp(xyz,axis=0)
@@ -716,7 +766,10 @@ def validate(t,panels,seams,units,pages,boundary,out):
     check('pdf_cut_vectors_match_geometry',all(pdf_cuts),pdf_cuts)
     check('pdf_fold_count',all(pdf_hinges),pdf_hinges)
     check('pdf_40mm_calibration',all(pdf_cal),pdf_cal)
-    check('pdf_codes_on_glue_tabs_only',all(words[s['id']]==(0 if s['hinge'] else 1) for s in seams) and not label_errors,label_errors or 'One concealed code per glue tab; none on decorated faces')
+    check('pdf_codes_on_glue_tabs_only',all(
+        words[s['id']]==sum(m['panel'] in expected_panels and m['edge'] in panels[m['panel']].tabs for m in s['occurrences'])
+        for s in seams
+    ) and not label_errors,label_errors or 'One concealed code per printed glue tab; none on decorated faces')
     check('pdf_no_face_names_on_artwork',all(words[pid]==0 for pid in panels),'Panel names moved to assembly map')
     check('pdf_text_margins',not clipped,clipped)
     svg_checks=[]
@@ -730,6 +783,7 @@ def validate(t,panels,seams,units,pages,boundary,out):
     with fitz.open(out/'assembly_guide.pdf') as guide:
         clipped_guide=[word[4] for p in guide for word in p.get_text('words') if word[0]<0 or word[1]<0 or word[2]>p.rect.width or word[3]>p.rect.height]
         map_words=Counter(w[4] for p in list(guide)[2:] for w in p.get_text('words'))
-        check('guide_seam_map_has_both_mates',all(map_words[s['id']]==2 for s in seams),'All seam pairs labeled on reference diagrams')
-        check('guide_complete_within_page',len(guide)==1+math.ceil(len(seams)/23)+len(pages) and not clipped_guide,clipped_guide)
+        mate_counts=[sum(m['panel'] in expected_panels for m in s['occurrences']) for s in seams]
+        check('guide_seam_map_has_both_mates',all(map_words[s['id']]==count for s,count in zip(seams,mate_counts)),'All printed mates labeled on reference diagrams')
+        check('guide_complete_within_page',len(guide)==1+math.ceil(sum(count>0 for count in mate_counts)/23)+len(pages) and not clipped_guide,clipped_guide)
     return tests

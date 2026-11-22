@@ -5,7 +5,7 @@ from shapely.geometry import Polygon, Point
 
 
 def build(t):
-    from .gingerbread import model,Panel,base,decorations
+    from .gingerbread import model,Panel,base
     e=float(t.get('roof_overhang_mm',0))
     if not e:return {},[],[],[]
     rake=float(t.get('roof_rake_mm',6));lift=.4
@@ -26,16 +26,17 @@ def build(t):
         if not all('CAP_'+m['panel'] in caps for m in s['occurrences']):continue
         mates=[dict(panel='CAP_'+m['panel'],edge=m['edge']) for m in s['occurrences']]
         capseams.append(dict(id='R'+str(len(capseams)+1),occurrences=mates,length_mm=t['depth']+2*rake,fold_degrees=s['fold_degrees'],hinge=False))
+    lookup={s['id']:s for s in capseams}
     used=set()
     for s in capseams:
-        ids={m['panel'] for m in s['occurrences']}
-        s['hinge']=not (ids&used)
+        ids=tuple(m['panel'] for m in s['occurrences'])
+        # A fold-connected blank is optional when the full-size roof exceeds the sheet.
+        s['hinge']=not used.intersection(ids) and base.fits(base.construct_unit(ids,s['id'],caps,lookup))
         if s['hinge']:used.update(ids)
         for m in s['occurrences']:caps[m['panel']].edges[m['edge']]=s['id']
         if not s['hinge']:
             owner=s['occurrences'][0];p=caps[owner['panel']]
             p.tabs[owner['edge']]=base.base.flap_for_edge(*p.seg(owner['edge']),depth=3)
-    lookup={s['id']:s for s in capseams}
     units=[base.construct_unit(tuple(m['panel'] for m in s['occurrences']),s['id'],caps,lookup) for s in capseams if s['hinge']]
     placed={pid for u in units for pid in u.ids}
     units.extend(base.construct_unit((pid,),None,caps,lookup) for pid in caps if pid not in placed)
@@ -119,7 +120,8 @@ def validate(t):
     from shapely.geometry import Point,LineString
     caps,seams,units,pages=build(t)
     if not caps:return []
-    shell=model(t)[0];coverage=True;parallel=True;matching=True;hinges=True
+    shell,shell_seams,_,_,_=model(t)
+    coverage=True;parallel=True;matching=True;hinges=True;overhang=True
     for pid,p in caps.items():
         source=shell[pid.removeprefix('CAP_')]
         origin=np.array(source.vertices[0]);normal=np.cross(np.subtract(source.vertices[1],origin),np.subtract(source.vertices[2],origin));normal/=np.linalg.norm(normal)
@@ -128,8 +130,17 @@ def validate(t):
         for v in source.vertices:
             local=np.linalg.lstsq(basis.T,np.array(v)+[0,0,.4],rcond=None)[0]
             coverage &= p.square.buffer(1e-5).covers(Point(local[0],local[1]))
-        coverage &= abs(min(v[1] for v in p.vertices)+t['depth']/2+t.get('roof_rake_mm',6))<1e-5
-        coverage &= abs(max(v[1] for v in p.vertices)-t['depth']/2-t.get('roof_rake_mm',6))<1e-5
+        rake=t.get('roof_rake_mm',6)
+        overhang &= abs(min(v[1] for v in p.vertices)+t['depth']/2+rake)<1e-5
+        overhang &= abs(max(v[1] for v in p.vertices)-t['depth']/2-rake)<1e-5
+        slope_axis=np.subtract(source.vertices[3],source.vertices[0])
+        slope_axis/=np.linalg.norm(slope_axis)
+        offsets=[np.dot(np.array(v)-origin-[0,0,.4],slope_axis) for v in p.vertices]
+        wall_edges={int(m['edge']) for seam in shell_seams for m in seam['occurrences']
+                    if m['panel']==source.id and any(o['panel'] in ('LEFT','RIGHT') for o in seam['occurrences'])}
+        extension=t['roof_overhang_mm']
+        overhang &= abs(min(offsets)-(-extension if 0 in wall_edges else 0))<1e-5
+        overhang &= abs(max(offsets)-(source.square.bounds[3]+(extension if 2 in wall_edges else 0)))<1e-5
     for s in seams:
         points=[]
         for m in s['occurrences']:
@@ -141,5 +152,5 @@ def validate(t):
         segments=[[u.transform(m['panel'],q) for q in caps[m['panel']].seg(m['edge'])] for m in s['occurrences']]
         hinges &= math.dist(segments[0][0],segments[1][1])<1e-5 and math.dist(segments[0][1],segments[1][0])<1e-5 and u.shape().boundary.intersection(LineString(segments[0])).length<1e-5
     area=abs(sum(p.square.area+sum(tab.area for tab in p.tabs.values()) for p in caps.values())-sum(u.shape().area for u in units))<1e-5
-    tests=[('roof_cap_covers_support',coverage),('roof_cap_parallel_to_support',parallel),('roof_cap_3d_seams',matching),('roof_cap_uncut_hinges',hinges),('roof_cap_area_no_overlap',area)]
+    tests=[('roof_cap_overhang_dimensions',overhang),('roof_cap_covers_support',coverage),('roof_cap_parallel_to_support',parallel),('roof_cap_3d_seams',matching),('roof_cap_uncut_hinges',hinges),('roof_cap_area_no_overlap',area)]
     return [dict(name=name,status='PASS' if ok else 'FAIL',detail=f"{t.get('roof_rake_mm',6):g} mm front/back; {t.get('roof_overhang_mm',0):g} mm along outer slope") for name,ok in tests]

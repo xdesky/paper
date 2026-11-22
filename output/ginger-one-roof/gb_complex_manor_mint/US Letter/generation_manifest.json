@@ -1,0 +1,312 @@
+{
+  "model_id": "GB-COMPLEX-MANOR-MINT",
+  "version": "gingerbread-4.0.0",
+  "project_id": "gb_complex_manor_mint-one-roof",
+  "revision": 1,
+  "geometry_sha256": "78ee3f029514f4f04f57beb9c5eeda8af9cd6a2111b471a96f13e4aa8458e0dd",
+  "source_spec_hash": "c750ec59653ffac760c81faaacbb7cd649795af047fdc738ff5c1afee36095d7",
+  "design_sha256": "a951fc6a50b4ddb94755c9a589d8b4870847b522ea1780e0811f211ef25a1ee1",
+  "template_version": "5.6.0",
+  "input": {
+    "preset": "gb_complex_manor_mint",
+    "project_id": "gb_complex_manor_mint-one-roof",
+    "revision": 1,
+    "paper": "US Letter"
+  },
+  "template": {
+    "id": "gb_complex_manor_mint",
+    "name": "Double Gambrel Manor · Peppermint Mint",
+    "subtitle": "Double Gambrel Manor / Peppermint Mint",
+    "collection": "Advanced Christmas",
+    "model_family": "complex_manor",
+    "architecture": "Double Gambrel Manor",
+    "finish": "Peppermint Mint",
+    "profile": [
+      [
+        0,
+        0
+      ],
+      [
+        0.09,
+        0.72
+      ],
+      [
+        0.25,
+        1
+      ],
+      [
+        0.41,
+        0.72
+      ],
+      [
+        0.5,
+        0
+      ],
+      [
+        0.59,
+        0.72
+      ],
+      [
+        0.75,
+        1
+      ],
+      [
+        0.91,
+        0.72
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "bay_count": 2,
+    "bay_splits": [
+      0.5
+    ],
+    "bay_split": 0.5,
+    "material": "board",
+    "premium": true,
+    "width": 118,
+    "depth": 54,
+    "wall_height": 65,
+    "roof_rise": 40,
+    "wall": "#99c8b5",
+    "roof": "#579d87",
+    "accent": "#ce3045",
+    "trim": "#fff9ef",
+    "background": "#e5f3ec",
+    "motif": "american",
+    "difficulty": "Advanced",
+    "description": "Double Gambrel Manor with festive icing, candy details, and glowing windows. Includes a snowy base, a slotted tree, and two gift boxes. Customize the patterns and add your own name.",
+    "roof_overhang_mm": 10,
+    "roof_rake_mm": 10,
+    "single_layer_roof": true,
+    "category": "gingerbread-houses",
+    "categories": [
+      "gingerbread-houses",
+      "seasonal-holiday",
+      "fantasy-storybook"
+    ]
+  },
+  "qa_status": "PASS",
+  "algorithm": "gable-house-1.0; v1.2 rigid pairing + shelf packing",
+  "physical_assembly": "NOT_TESTED",
+  "artifacts": [
+    {
+      "path": "accessories.pdf",
+      "sha256": "7993086a60fbe351c30d0ea00de0697ea9a59b9fed2933e3b00f02c311d24570",
+      "model_id": "GB-COMPLEX-MANOR-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_mint-one-roof",
+      "revision": 1,
+      "geometry_sha256": "78ee3f029514f4f04f57beb9c5eeda8af9cd6a2111b471a96f13e4aa8458e0dd",
+      "source_spec_hash": "c750ec59653ffac760c81faaacbb7cd649795af047fdc738ff5c1afee36095d7",
+      "design_sha256": "a951fc6a50b4ddb94755c9a589d8b4870847b522ea1780e0811f211ef25a1ee1",
+      "template_version": "5.6.0"
+    },
+    {
+      "path": "accessories_guide.pdf",
+      "sha256": "d62a69bb8a80b2608e8142eb5186c7fb2f720affdc8ef49d5b4246d284232a2a",
+      "model_id": "GB-COMPLEX-MANOR-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_mint-one-roof",
+      "revision": 1,
+      "geometry_sha256": "78ee3f029514f4f04f57beb9c5eeda8af9cd6a2111b471a96f13e4aa8458e0dd",
+      "source_spec_hash": "c750ec59653ffac760c81faaacbb7cd649795af047fdc738ff5c1afee36095d7",
+      "design_sha256": "a951fc6a50b4ddb94755c9a589d8b4870847b522ea1780e0811f211ef25a1ee1",
+      "template_version": "5.6.0"
+    },
+    {
+      "path": "assembly_guide.pdf",
+      "sha256": "56d19de905f1e033372298ea07933933ed08253360de42c00776eb655a7b8446",
+      "model_id": "GB-COMPLEX-MANOR-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_mint-one-roof",
+      "revision": 1,
+      "geometry_sha256": "78ee3f029514f4f04f57beb9c5eeda8af9cd6a2111b471a96f13e4aa8458e0dd",
+      "source_spec_hash": "c750ec59653ffac760c81faaacbb7cd649795af047fdc738ff5c1afee36095d7",
+      "design_sha256": "a951fc6a50b4ddb94755c9a589d8b4870847b522ea1780e0811f211ef25a1ee1",
+      "template_version": "5.6.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_001.svg",
+      "sha256": "222455c8825222b855c1e5d3b948d88c861c2f53c9f4cc6a9a15c702ede5b7fd",
+      "model_id": "GB-COMPLEX-MANOR-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_mint-one-roof",
+      "revision": 1,
+      "geometry_sha256": "78ee3f029514f4f04f57beb9c5eeda8af9cd6a2111b471a96f13e4aa8458e0dd",
+      "source_spec_hash": "c750ec59653ffac760c81faaacbb7cd649795af047fdc738ff5c1afee36095d7",
+      "design_sha256": "a951fc6a50b4ddb94755c9a589d8b4870847b522ea1780e0811f211ef25a1ee1",
+      "template_version": "5.6.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_002.svg",
+      "sha256": "2d879cddd4648aeb911a63bfdb6e921cfce0bbed189d675d88c58f62620c3c94",
+      "model_id": "GB-COMPLEX-MANOR-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_mint-one-roof",
+      "revision": 1,
+      "geometry_sha256": "78ee3f029514f4f04f57beb9c5eeda8af9cd6a2111b471a96f13e4aa8458e0dd",
+      "source_spec_hash": "c750ec59653ffac760c81faaacbb7cd649795af047fdc738ff5c1afee36095d7",
+      "design_sha256": "a951fc6a50b4ddb94755c9a589d8b4870847b522ea1780e0811f211ef25a1ee1",
+      "template_version": "5.6.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_003.svg",
+      "sha256": "5881ef53c92991c80fd06e5ae6bd99083d9da926a5ce9bdb6178c51f9aa032d7",
+      "model_id": "GB-COMPLEX-MANOR-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_mint-one-roof",
+      "revision": 1,
+      "geometry_sha256": "78ee3f029514f4f04f57beb9c5eeda8af9cd6a2111b471a96f13e4aa8458e0dd",
+      "source_spec_hash": "c750ec59653ffac760c81faaacbb7cd649795af047fdc738ff5c1afee36095d7",
+      "design_sha256": "a951fc6a50b4ddb94755c9a589d8b4870847b522ea1780e0811f211ef25a1ee1",
+      "template_version": "5.6.0"
+    },
+    {
+      "path": "display_scene.obj",
+      "sha256": "20888c8348e8a47021d828bdbd9258ae237d9d7df0cbe13d4d819eaf05e6fce5",
+      "model_id": "GB-COMPLEX-MANOR-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_mint-one-roof",
+      "revision": 1,
+      "geometry_sha256": "78ee3f029514f4f04f57beb9c5eeda8af9cd6a2111b471a96f13e4aa8458e0dd",
+      "source_spec_hash": "c750ec59653ffac760c81faaacbb7cd649795af047fdc738ff5c1afee36095d7",
+      "design_sha256": "a951fc6a50b4ddb94755c9a589d8b4870847b522ea1780e0811f211ef25a1ee1",
+      "template_version": "5.6.0"
+    },
+    {
+      "path": "model.obj",
+      "sha256": "b7353957934d3a71a49e3f4de8702f96957b993dcc086129b66258b76d9740b4",
+      "model_id": "GB-COMPLEX-MANOR-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_mint-one-roof",
+      "revision": 1,
+      "geometry_sha256": "78ee3f029514f4f04f57beb9c5eeda8af9cd6a2111b471a96f13e4aa8458e0dd",
+      "source_spec_hash": "c750ec59653ffac760c81faaacbb7cd649795af047fdc738ff5c1afee36095d7",
+      "design_sha256": "a951fc6a50b4ddb94755c9a589d8b4870847b522ea1780e0811f211ef25a1ee1",
+      "template_version": "5.6.0"
+    },
+    {
+      "path": "model_3d_preview.png",
+      "sha256": "7295b9bfb3eb8bdf23546ec3f382f5910952906a6b54bd3e057119204d0dc051",
+      "model_id": "GB-COMPLEX-MANOR-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_mint-one-roof",
+      "revision": 1,
+      "geometry_sha256": "78ee3f029514f4f04f57beb9c5eeda8af9cd6a2111b471a96f13e4aa8458e0dd",
+      "source_spec_hash": "c750ec59653ffac760c81faaacbb7cd649795af047fdc738ff5c1afee36095d7",
+      "design_sha256": "a951fc6a50b4ddb94755c9a589d8b4870847b522ea1780e0811f211ef25a1ee1",
+      "template_version": "5.6.0"
+    },
+    {
+      "path": "model_spec.json",
+      "sha256": "56ee532db6580bf2b62f31473715d1ed27146d5ec34afc0ad7c54d04634180b6",
+      "model_id": "GB-COMPLEX-MANOR-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_mint-one-roof",
+      "revision": 1,
+      "geometry_sha256": "78ee3f029514f4f04f57beb9c5eeda8af9cd6a2111b471a96f13e4aa8458e0dd",
+      "source_spec_hash": "c750ec59653ffac760c81faaacbb7cd649795af047fdc738ff5c1afee36095d7",
+      "design_sha256": "a951fc6a50b4ddb94755c9a589d8b4870847b522ea1780e0811f211ef25a1ee1",
+      "template_version": "5.6.0"
+    },
+    {
+      "path": "printable_preview.png",
+      "sha256": "103bfec59f977c5fe6d9a5ec3b8d0e2da5df9fadf6da152bf848b40a5f0c6e79",
+      "model_id": "GB-COMPLEX-MANOR-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_mint-one-roof",
+      "revision": 1,
+      "geometry_sha256": "78ee3f029514f4f04f57beb9c5eeda8af9cd6a2111b471a96f13e4aa8458e0dd",
+      "source_spec_hash": "c750ec59653ffac760c81faaacbb7cd649795af047fdc738ff5c1afee36095d7",
+      "design_sha256": "a951fc6a50b4ddb94755c9a589d8b4870847b522ea1780e0811f211ef25a1ee1",
+      "template_version": "5.6.0"
+    },
+    {
+      "path": "printable_us_letter.pdf",
+      "sha256": "8604f966745b47132f7359f0709179ffcac850fee06abb322edd996731e99ace",
+      "model_id": "GB-COMPLEX-MANOR-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_mint-one-roof",
+      "revision": 1,
+      "geometry_sha256": "78ee3f029514f4f04f57beb9c5eeda8af9cd6a2111b471a96f13e4aa8458e0dd",
+      "source_spec_hash": "c750ec59653ffac760c81faaacbb7cd649795af047fdc738ff5c1afee36095d7",
+      "design_sha256": "a951fc6a50b4ddb94755c9a589d8b4870847b522ea1780e0811f211ef25a1ee1",
+      "template_version": "5.6.0"
+    },
+    {
+      "path": "printable_us_letter_coloring.pdf",
+      "sha256": "3fc4b41b99a27cce63f8b132c9d0dce271a454df245b274eb080acf11a7fcf16",
+      "model_id": "GB-COMPLEX-MANOR-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_mint-one-roof",
+      "revision": 1,
+      "geometry_sha256": "78ee3f029514f4f04f57beb9c5eeda8af9cd6a2111b471a96f13e4aa8458e0dd",
+      "source_spec_hash": "c750ec59653ffac760c81faaacbb7cd649795af047fdc738ff5c1afee36095d7",
+      "design_sha256": "a951fc6a50b4ddb94755c9a589d8b4870847b522ea1780e0811f211ef25a1ee1",
+      "template_version": "5.6.0"
+    },
+    {
+      "path": "svg_pages/page_001.svg",
+      "sha256": "fc6713b3cefbb3353737f8e1df7fa4fb207af65ba1924f06dcdb652f9f858283",
+      "model_id": "GB-COMPLEX-MANOR-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_mint-one-roof",
+      "revision": 1,
+      "geometry_sha256": "78ee3f029514f4f04f57beb9c5eeda8af9cd6a2111b471a96f13e4aa8458e0dd",
+      "source_spec_hash": "c750ec59653ffac760c81faaacbb7cd649795af047fdc738ff5c1afee36095d7",
+      "design_sha256": "a951fc6a50b4ddb94755c9a589d8b4870847b522ea1780e0811f211ef25a1ee1",
+      "template_version": "5.6.0"
+    },
+    {
+      "path": "svg_pages/page_002.svg",
+      "sha256": "049ceb5fcaf96e22fd638ff1b7342ff02d9f7a049d833344d422e3d98f49beda",
+      "model_id": "GB-COMPLEX-MANOR-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_mint-one-roof",
+      "revision": 1,
+      "geometry_sha256": "78ee3f029514f4f04f57beb9c5eeda8af9cd6a2111b471a96f13e4aa8458e0dd",
+      "source_spec_hash": "c750ec59653ffac760c81faaacbb7cd649795af047fdc738ff5c1afee36095d7",
+      "design_sha256": "a951fc6a50b4ddb94755c9a589d8b4870847b522ea1780e0811f211ef25a1ee1",
+      "template_version": "5.6.0"
+    },
+    {
+      "path": "svg_pages/page_003.svg",
+      "sha256": "4f5b125ace8fb58f78968c344ebab55adf24a571ee70cb45763b9add6b05a398",
+      "model_id": "GB-COMPLEX-MANOR-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_mint-one-roof",
+      "revision": 1,
+      "geometry_sha256": "78ee3f029514f4f04f57beb9c5eeda8af9cd6a2111b471a96f13e4aa8458e0dd",
+      "source_spec_hash": "c750ec59653ffac760c81faaacbb7cd649795af047fdc738ff5c1afee36095d7",
+      "design_sha256": "a951fc6a50b4ddb94755c9a589d8b4870847b522ea1780e0811f211ef25a1ee1",
+      "template_version": "5.6.0"
+    },
+    {
+      "path": "template_preview.svg",
+      "sha256": "2e717f2304a1ba88d9ba8ecaeb3a4e6fe6c9061b3f3092dfbf2d5ff2a89a1b29",
+      "model_id": "GB-COMPLEX-MANOR-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_mint-one-roof",
+      "revision": 1,
+      "geometry_sha256": "78ee3f029514f4f04f57beb9c5eeda8af9cd6a2111b471a96f13e4aa8458e0dd",
+      "source_spec_hash": "c750ec59653ffac760c81faaacbb7cd649795af047fdc738ff5c1afee36095d7",
+      "design_sha256": "a951fc6a50b4ddb94755c9a589d8b4870847b522ea1780e0811f211ef25a1ee1",
+      "template_version": "5.6.0"
+    },
+    {
+      "path": "validation_report.json",
+      "sha256": "e4060e28837d3f7fa974d54703c9fa677c79546279c4d87665002b2fd8c89396",
+      "model_id": "GB-COMPLEX-MANOR-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_manor_mint-one-roof",
+      "revision": 1,
+      "geometry_sha256": "78ee3f029514f4f04f57beb9c5eeda8af9cd6a2111b471a96f13e4aa8458e0dd",
+      "source_spec_hash": "c750ec59653ffac760c81faaacbb7cd649795af047fdc738ff5c1afee36095d7",
+      "design_sha256": "a951fc6a50b4ddb94755c9a589d8b4870847b522ea1780e0811f211ef25a1ee1",
+      "template_version": "5.6.0"
+    }
+  ]
+}

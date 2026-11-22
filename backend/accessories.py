@@ -117,7 +117,9 @@ def display_pieces(t):
     bw,bd=t['width']+60,t['depth']+70
     base_piece=dict(id='BASE',shape=box(0,0,bw,bd),art=base_art(t),folds=[],labels=[])
     trees=[tree_print_piece(i==0,t.get('design',{}).get('tree','classic')) for i in range(2)]
-    gifts=[gift_net(20,'A','#bb3f58',t.get('design',{}).get('gift','classic')),gift_net(16,'B','#397f76',t.get('design',{}).get('gift','classic'))]
+    from .design_options import gift_style_pair
+    gift_styles=gift_style_pair(t.get('design',{}).get('gift','classic'))
+    gifts=[gift_net(20,'A','#bb3f58',gift_styles[0]),gift_net(16,'B','#397f76',gift_styles[1])]
     return base_piece,trees,gifts
 
 
@@ -171,13 +173,15 @@ def scene(t):
         shape=tree_piece(i==0,t.get('design',{}).get('tree','classic'));pts=list(shape.exterior.coords)[:-1]
         xyz=[(tx+x-16,ty,z) if i==0 else (tx,ty+x-16,z) for x,z in pts]
         add(f'TREE_{i+1}',pts,xyz,tree_art(shape,t.get('design',{}).get('tree','classic')))
+    from .design_options import gift_style_pair
+    gift_styles=gift_style_pair(t.get('design',{}).get('gift','classic'))
     for k,(size,color,cy) in enumerate([(20,'#bb3f58',-t['depth']/2-14),(16,'#397f76',-t['depth']/2+8)]):
         net=gift_net(size,chr(65+k),color);cx=t['width']/2+13
         pts=[(0,0),(size,0),(size,size),(0,size)]
         for face,fn in net['maps'].items():
             verts=[(fn(x,y)[0]+cx,fn(x,y)[1]+cy,fn(x,y)[2]) for x,y in pts]
             from .confectionery import gift_art
-            shapes=gift_art(size,color,face=='TOP',t.get('design',{}).get('gift','classic'))
+            shapes=gift_art(size,color,face=='TOP',gift_styles[k])
             add(f'GIFT_{k+1}_{face}',pts,verts,shapes)
     from .roof_cap import build,artwork as cap_art
     caps,_,_,_=build(t)
@@ -185,7 +189,7 @@ def scene(t):
     from .chimney import geometry as chimney_geometry,artwork as chimney_art
     chimney=chimney_geometry(t)
     if chimney:
-        for p in chimney['panels']:add(p['id'],p['points'],p['vertices'],chimney_art(p))
+        for p in chimney['panels']:add(p['id'],p['points'],p['vertices'],chimney_art(t,p))
     return dict(panels=panels,appearance=art,artwork=artwork,base_mm=[bw,bd],tree_height_mm=65,gift_sizes_mm=[20,16])
 
 
@@ -300,8 +304,16 @@ def export(t,out,identity,first_page,*,append_print=True):
                'The roof cap is a separate part. It does not alter the wall frame or base.',
                'The 0.4 mm model offset represents paper and glue. Test-fit before gluing.',
                'Physical assembly has not been tested. Use cardstock for firm roof edges.']
+        if t.get('single_layer_roof'):
+            notes[0]='1. Assemble the walls using the house guide.'
+            notes[3]='4. Test-fit the roof on the walls and center it over the house.'
+            notes[5]='6. Apply glue to the upper wall tabs and attach them under the roof.'
+            notes[7]='The overhanging roof attaches directly to the wall tabs.'
+            notes[8]='Dry-fit the roof and check for equal overhangs before gluing.'
         if t.get('bay_count',1) > 1:
-            notes[3]='4. Ridges fold outward; valleys fold inward. Match the structural roof.'
+            notes[2]='3. Fold ridges outward and valleys inward. Match the R labels.'
+            if not t.get('single_layer_roof'):
+                notes[3]='4. Test-fit the roof cap on the structural roof.'
         for i,text in enumerate(notes):gt(12,base.PAGE_H-32-i*12,text,8)
         guide_pages=[[entry for entry in page if entry[0]['id']!='CHIMNEY'] for page in roof_pages]
         guide_pages += [[entry for entry in page if entry[0]['id']=='CHIMNEY'] for page in roof_pages]

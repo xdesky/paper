@@ -1,0 +1,316 @@
+{
+  "model_id": "GB-TWO-FARMSTEAD-HERITAGE",
+  "version": "gingerbread-4.0.0",
+  "project_id": "gb_two_farmstead_heritage-wall-tabs",
+  "revision": 1,
+  "geometry_sha256": "e5d0b45322c7c55c993dba5f3c75225a83536276ed391282bb3f3a62bc41c0c2",
+  "source_spec_hash": "9c19d62c20423b8dbc28db726059c9b949ccbce4c90afa6f7b884e8c62f64446",
+  "design_sha256": "ed3c71214fb8c597d4f6bfd47661302b8cfd3ddac084ebe58983151ce26b1e45",
+  "template_version": "5.3.0",
+  "input": {
+    "preset": "gb_two_farmstead_heritage",
+    "project_id": "gb_two_farmstead_heritage-wall-tabs",
+    "revision": 1,
+    "paper": "A4"
+  },
+  "template": {
+    "id": "gb_two_farmstead_heritage",
+    "name": "Christmas Farmstead · Heritage Christmas",
+    "subtitle": "Double Gable Farmhouse / Heritage Christmas",
+    "collection": "Two-Bay Houses",
+    "model_family": "two_bay_farmstead",
+    "architecture": "Double Gable Farmhouse",
+    "finish": "Heritage Christmas",
+    "profile": [
+      [
+        0,
+        0
+      ],
+      [
+        0.24,
+        1
+      ],
+      [
+        0.48,
+        0
+      ],
+      [
+        0.74,
+        0.86
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "bay_split": 0.48,
+    "bay_count": 2,
+    "material": "board",
+    "premium": true,
+    "width": 120,
+    "depth": 56,
+    "wall_height": 68,
+    "roof_rise": 38,
+    "wall": "#b97946",
+    "roof": "#943f4a",
+    "accent": "#bf394a",
+    "trim": "#fff7e5",
+    "background": "#ebe9df",
+    "motif": "american",
+    "difficulty": "Intermediate",
+    "description": "Double Gable Farmhouse with festive icing, candy details, and glowing windows. Includes a snowy base, a slotted tree, and two gift boxes. Customize the patterns and add your own name.",
+    "roof_overhang_mm": 4,
+    "roof_rake_mm": 6,
+    "category": "gingerbread-houses",
+    "categories": [
+      "gingerbread-houses",
+      "american-places",
+      "seasonal-holiday"
+    ]
+  },
+  "qa_status": "PASS",
+  "algorithm": "gable-house-1.0; v1.2 rigid pairing + shelf packing",
+  "physical_assembly": "NOT_TESTED",
+  "artifacts": [
+    {
+      "path": "accessories.pdf",
+      "sha256": "64704643087aea3bb7eaf07d1565fcdc0ddd3b56a4ce16292e8f843c88b5dd7f",
+      "model_id": "GB-TWO-FARMSTEAD-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_farmstead_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "e5d0b45322c7c55c993dba5f3c75225a83536276ed391282bb3f3a62bc41c0c2",
+      "source_spec_hash": "9c19d62c20423b8dbc28db726059c9b949ccbce4c90afa6f7b884e8c62f64446",
+      "design_sha256": "ed3c71214fb8c597d4f6bfd47661302b8cfd3ddac084ebe58983151ce26b1e45",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "accessories_guide.pdf",
+      "sha256": "904c7818fb4dfbb2a78fa5c7783ebd867958ba39232acd50f878e339ce9879fe",
+      "model_id": "GB-TWO-FARMSTEAD-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_farmstead_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "e5d0b45322c7c55c993dba5f3c75225a83536276ed391282bb3f3a62bc41c0c2",
+      "source_spec_hash": "9c19d62c20423b8dbc28db726059c9b949ccbce4c90afa6f7b884e8c62f64446",
+      "design_sha256": "ed3c71214fb8c597d4f6bfd47661302b8cfd3ddac084ebe58983151ce26b1e45",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "assembly_guide.pdf",
+      "sha256": "e34ec2b3f3f8d5366a3cf9dba7c2af9091c0c770dcf9197daa23e074f1250803",
+      "model_id": "GB-TWO-FARMSTEAD-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_farmstead_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "e5d0b45322c7c55c993dba5f3c75225a83536276ed391282bb3f3a62bc41c0c2",
+      "source_spec_hash": "9c19d62c20423b8dbc28db726059c9b949ccbce4c90afa6f7b884e8c62f64446",
+      "design_sha256": "ed3c71214fb8c597d4f6bfd47661302b8cfd3ddac084ebe58983151ce26b1e45",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_001.svg",
+      "sha256": "a19ee4c5c7b62b0dfe7fc0969ed51fc39f076501f33034cfb4e3f27a8cde02fd",
+      "model_id": "GB-TWO-FARMSTEAD-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_farmstead_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "e5d0b45322c7c55c993dba5f3c75225a83536276ed391282bb3f3a62bc41c0c2",
+      "source_spec_hash": "9c19d62c20423b8dbc28db726059c9b949ccbce4c90afa6f7b884e8c62f64446",
+      "design_sha256": "ed3c71214fb8c597d4f6bfd47661302b8cfd3ddac084ebe58983151ce26b1e45",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_002.svg",
+      "sha256": "8582fb436b24baee7b94ad1c4835c9f1765ab664bba7aa7d53ed1b5c0b2fbc4f",
+      "model_id": "GB-TWO-FARMSTEAD-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_farmstead_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "e5d0b45322c7c55c993dba5f3c75225a83536276ed391282bb3f3a62bc41c0c2",
+      "source_spec_hash": "9c19d62c20423b8dbc28db726059c9b949ccbce4c90afa6f7b884e8c62f64446",
+      "design_sha256": "ed3c71214fb8c597d4f6bfd47661302b8cfd3ddac084ebe58983151ce26b1e45",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_003.svg",
+      "sha256": "bf35e474ae52810c00453b00d1bff24eb7c10265e2169782ccb9bd5f82fa6930",
+      "model_id": "GB-TWO-FARMSTEAD-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_farmstead_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "e5d0b45322c7c55c993dba5f3c75225a83536276ed391282bb3f3a62bc41c0c2",
+      "source_spec_hash": "9c19d62c20423b8dbc28db726059c9b949ccbce4c90afa6f7b884e8c62f64446",
+      "design_sha256": "ed3c71214fb8c597d4f6bfd47661302b8cfd3ddac084ebe58983151ce26b1e45",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_004.svg",
+      "sha256": "0219897eb0a43f26dbc4dbae5214e621156696d6d1ddd2156c75119ef4369336",
+      "model_id": "GB-TWO-FARMSTEAD-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_farmstead_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "e5d0b45322c7c55c993dba5f3c75225a83536276ed391282bb3f3a62bc41c0c2",
+      "source_spec_hash": "9c19d62c20423b8dbc28db726059c9b949ccbce4c90afa6f7b884e8c62f64446",
+      "design_sha256": "ed3c71214fb8c597d4f6bfd47661302b8cfd3ddac084ebe58983151ce26b1e45",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "display_scene.obj",
+      "sha256": "266c62b0c98c7fe0cfbb5d3a440cdad3ce70d37e38e89fd0ef7f746b722f8c27",
+      "model_id": "GB-TWO-FARMSTEAD-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_farmstead_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "e5d0b45322c7c55c993dba5f3c75225a83536276ed391282bb3f3a62bc41c0c2",
+      "source_spec_hash": "9c19d62c20423b8dbc28db726059c9b949ccbce4c90afa6f7b884e8c62f64446",
+      "design_sha256": "ed3c71214fb8c597d4f6bfd47661302b8cfd3ddac084ebe58983151ce26b1e45",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "model.obj",
+      "sha256": "aa78df1e669bf14ae21dec9950baba3cf6d7e94fae1d36066e9b05aca2c34a88",
+      "model_id": "GB-TWO-FARMSTEAD-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_farmstead_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "e5d0b45322c7c55c993dba5f3c75225a83536276ed391282bb3f3a62bc41c0c2",
+      "source_spec_hash": "9c19d62c20423b8dbc28db726059c9b949ccbce4c90afa6f7b884e8c62f64446",
+      "design_sha256": "ed3c71214fb8c597d4f6bfd47661302b8cfd3ddac084ebe58983151ce26b1e45",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "model_3d_preview.png",
+      "sha256": "cb7fe05e7b6ff76189441bccf872f0e80edf93adfbff0e26fc5008dd90168658",
+      "model_id": "GB-TWO-FARMSTEAD-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_farmstead_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "e5d0b45322c7c55c993dba5f3c75225a83536276ed391282bb3f3a62bc41c0c2",
+      "source_spec_hash": "9c19d62c20423b8dbc28db726059c9b949ccbce4c90afa6f7b884e8c62f64446",
+      "design_sha256": "ed3c71214fb8c597d4f6bfd47661302b8cfd3ddac084ebe58983151ce26b1e45",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "model_spec.json",
+      "sha256": "715e29b7417a93470ebd0126eb4ddf939a8468d150fe761e8350731fca53b08e",
+      "model_id": "GB-TWO-FARMSTEAD-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_farmstead_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "e5d0b45322c7c55c993dba5f3c75225a83536276ed391282bb3f3a62bc41c0c2",
+      "source_spec_hash": "9c19d62c20423b8dbc28db726059c9b949ccbce4c90afa6f7b884e8c62f64446",
+      "design_sha256": "ed3c71214fb8c597d4f6bfd47661302b8cfd3ddac084ebe58983151ce26b1e45",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "printable_a4.pdf",
+      "sha256": "bff68bce6b201d0c3279e4429d5f18826f91fc0a3ddceb2c8b9cc43b2701d1b1",
+      "model_id": "GB-TWO-FARMSTEAD-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_farmstead_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "e5d0b45322c7c55c993dba5f3c75225a83536276ed391282bb3f3a62bc41c0c2",
+      "source_spec_hash": "9c19d62c20423b8dbc28db726059c9b949ccbce4c90afa6f7b884e8c62f64446",
+      "design_sha256": "ed3c71214fb8c597d4f6bfd47661302b8cfd3ddac084ebe58983151ce26b1e45",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "printable_a4_coloring.pdf",
+      "sha256": "6e6b686f64dc29f2163991120bfb5219fc80b09e62901c3928362bf7c99c718e",
+      "model_id": "GB-TWO-FARMSTEAD-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_farmstead_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "e5d0b45322c7c55c993dba5f3c75225a83536276ed391282bb3f3a62bc41c0c2",
+      "source_spec_hash": "9c19d62c20423b8dbc28db726059c9b949ccbce4c90afa6f7b884e8c62f64446",
+      "design_sha256": "ed3c71214fb8c597d4f6bfd47661302b8cfd3ddac084ebe58983151ce26b1e45",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "printable_preview.png",
+      "sha256": "0a886f9e60874341a93ae6cc14fb37c9a4ea3ec20087f3d7c5957e4074efe30f",
+      "model_id": "GB-TWO-FARMSTEAD-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_farmstead_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "e5d0b45322c7c55c993dba5f3c75225a83536276ed391282bb3f3a62bc41c0c2",
+      "source_spec_hash": "9c19d62c20423b8dbc28db726059c9b949ccbce4c90afa6f7b884e8c62f64446",
+      "design_sha256": "ed3c71214fb8c597d4f6bfd47661302b8cfd3ddac084ebe58983151ce26b1e45",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "svg_pages/page_001.svg",
+      "sha256": "d0ddb45a46615803d07d8e561dd207f06886cca5124800ed9830f4773b0b1c5c",
+      "model_id": "GB-TWO-FARMSTEAD-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_farmstead_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "e5d0b45322c7c55c993dba5f3c75225a83536276ed391282bb3f3a62bc41c0c2",
+      "source_spec_hash": "9c19d62c20423b8dbc28db726059c9b949ccbce4c90afa6f7b884e8c62f64446",
+      "design_sha256": "ed3c71214fb8c597d4f6bfd47661302b8cfd3ddac084ebe58983151ce26b1e45",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "svg_pages/page_002.svg",
+      "sha256": "4fa0877aacfceb6b37af489440ecaa980f4bdc0f0f2436abf9a2a002393535ea",
+      "model_id": "GB-TWO-FARMSTEAD-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_farmstead_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "e5d0b45322c7c55c993dba5f3c75225a83536276ed391282bb3f3a62bc41c0c2",
+      "source_spec_hash": "9c19d62c20423b8dbc28db726059c9b949ccbce4c90afa6f7b884e8c62f64446",
+      "design_sha256": "ed3c71214fb8c597d4f6bfd47661302b8cfd3ddac084ebe58983151ce26b1e45",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "svg_pages/page_003.svg",
+      "sha256": "091f4910e698d939b2bdd9714ac898c808efb41b24a34440f1f0e1f65b5b8b91",
+      "model_id": "GB-TWO-FARMSTEAD-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_farmstead_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "e5d0b45322c7c55c993dba5f3c75225a83536276ed391282bb3f3a62bc41c0c2",
+      "source_spec_hash": "9c19d62c20423b8dbc28db726059c9b949ccbce4c90afa6f7b884e8c62f64446",
+      "design_sha256": "ed3c71214fb8c597d4f6bfd47661302b8cfd3ddac084ebe58983151ce26b1e45",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "svg_pages/page_004.svg",
+      "sha256": "a131660bfcf29c5a5f0b09a1e0cb8afa1a67d31d73522175e886e452440ae7f1",
+      "model_id": "GB-TWO-FARMSTEAD-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_farmstead_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "e5d0b45322c7c55c993dba5f3c75225a83536276ed391282bb3f3a62bc41c0c2",
+      "source_spec_hash": "9c19d62c20423b8dbc28db726059c9b949ccbce4c90afa6f7b884e8c62f64446",
+      "design_sha256": "ed3c71214fb8c597d4f6bfd47661302b8cfd3ddac084ebe58983151ce26b1e45",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "template_preview.svg",
+      "sha256": "4558f782d87f149e59102181e3a0c833c059ad1bb803840fa7e33c55fb1b26e0",
+      "model_id": "GB-TWO-FARMSTEAD-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_farmstead_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "e5d0b45322c7c55c993dba5f3c75225a83536276ed391282bb3f3a62bc41c0c2",
+      "source_spec_hash": "9c19d62c20423b8dbc28db726059c9b949ccbce4c90afa6f7b884e8c62f64446",
+      "design_sha256": "ed3c71214fb8c597d4f6bfd47661302b8cfd3ddac084ebe58983151ce26b1e45",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "validation_report.json",
+      "sha256": "2615a9d131c106d97d7c6affc205f9b98816152e7002bd9ce493027c175f5aa5",
+      "model_id": "GB-TWO-FARMSTEAD-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_farmstead_heritage-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "e5d0b45322c7c55c993dba5f3c75225a83536276ed391282bb3f3a62bc41c0c2",
+      "source_spec_hash": "9c19d62c20423b8dbc28db726059c9b949ccbce4c90afa6f7b884e8c62f64446",
+      "design_sha256": "ed3c71214fb8c597d4f6bfd47661302b8cfd3ddac084ebe58983151ce26b1e45",
+      "template_version": "5.3.0"
+    }
+  ]
+}

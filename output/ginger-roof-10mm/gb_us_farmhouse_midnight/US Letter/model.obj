@@ -1,0 +1,39 @@
+# {"design_sha256":"ff45afcacaee8090323a47c2e308589f3031e5c54927b1668648a33a09923623","geometry_sha256":"3f9310200f96ab05f2d84e3e00a3588edcf019e72ba3ce0afe934bad5e587a0c","model_id":"GB-US-FARMHOUSE-MIDNIGHT","project_id":"gb_us_farmhouse_midnight-roof-10mm","revision":1,"source_spec_hash":"81dacfd13b60e7e37e5e08b74739b9ae7d3fcca643a3d8fcc93d17ccb48fd345","template_version":"5.5.0","version":"gingerbread-4.0.0"}
+g FRONT
+v -39.0 -36.0 0
+v 39.0 -36.0 0
+v 39.0 -36.0 105
+v 0.0 -36.0 153
+v -39.0 -36.0 105
+f 1 2 3 4 5
+g BACK
+v -39.0 36.0 105
+v 0.0 36.0 153
+v 39.0 36.0 105
+v 39.0 36.0 0
+v -39.0 36.0 0
+f 6 7 8 9 10
+g RIGHT
+v 39.0 -36.0 0
+v 39.0 36.0 0
+v 39.0 36.0 105
+v 39.0 -36.0 105
+f 11 12 13 14
+g LEFT
+v -39.0 36.0 0
+v -39.0 -36.0 0
+v -39.0 -36.0 105
+v -39.0 36.0 105
+f 15 16 17 18
+g ROOF_1
+v 0.0 -36.0 153.0
+v 0.0 36.0 153.0
+v -39.0 36.0 105.0
+v -39.0 -36.0 105.0
+f 19 20 21 22
+g ROOF_2
+v 39.0 -36.0 105.0
+v 39.0 36.0 105.0
+v 0.0 36.0 153.0
+v 0.0 -36.0 153.0
+f 23 24 25 26

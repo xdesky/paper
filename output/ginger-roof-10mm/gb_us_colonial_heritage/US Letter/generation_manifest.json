@@ -1,0 +1,283 @@
+{
+  "model_id": "GB-US-COLONIAL-HERITAGE",
+  "version": "gingerbread-4.0.0",
+  "project_id": "gb_us_colonial_heritage-roof-10mm",
+  "revision": 1,
+  "geometry_sha256": "d915f5d846feb0b64ed811650ee58d982d19833b67537a249f21feb30e533868",
+  "source_spec_hash": "de186dcac25cc9e832c1d4180f66998f50be297fbef2d31aa80b3ba0fae5f7db",
+  "design_sha256": "2e7f4adf49bdc4c3d07828ffa88a7d64e02b5b6fadbc7def596a36b811cad122",
+  "template_version": "5.5.0",
+  "input": {
+    "preset": "gb_us_colonial_heritage",
+    "project_id": "gb_us_colonial_heritage-roof-10mm",
+    "revision": 1,
+    "paper": "US Letter"
+  },
+  "template": {
+    "id": "gb_us_colonial_heritage",
+    "name": "Colonial · Heritage Christmas",
+    "subtitle": "Colonial / Heritage Christmas",
+    "collection": "American Premium",
+    "model_family": "colonial",
+    "architecture": "Colonial",
+    "finish": "Heritage Christmas",
+    "profile": [
+      [
+        0,
+        0
+      ],
+      [
+        0.5,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "material": "brick",
+    "premium": true,
+    "width": 85,
+    "depth": 65,
+    "wall_height": 105,
+    "roof_rise": 30,
+    "wall": "#b97946",
+    "roof": "#943f4a",
+    "accent": "#bf394a",
+    "trim": "#fff7e5",
+    "background": "#ebe9df",
+    "motif": "american",
+    "difficulty": "Intermediate",
+    "description": "Colonial with festive icing, candy details, and glowing windows. Includes a snowy base, a slotted tree, and two gift boxes. Customize the patterns and add your own name.",
+    "roof_overhang_mm": 10,
+    "roof_rake_mm": 10,
+    "category": "gingerbread-houses",
+    "categories": [
+      "gingerbread-houses",
+      "american-places",
+      "seasonal-holiday"
+    ],
+    "roof_corner_radius_mm": 4
+  },
+  "qa_status": "PASS",
+  "algorithm": "gable-house-1.0; three-sheet rigid placement",
+  "physical_assembly": "NOT_TESTED",
+  "artifacts": [
+    {
+      "path": "accessories.pdf",
+      "sha256": "2485ebd7155c455517aa6e78fb56b62a479a0c845a472619e0ae329edb197002",
+      "model_id": "GB-US-COLONIAL-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_heritage-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "d915f5d846feb0b64ed811650ee58d982d19833b67537a249f21feb30e533868",
+      "source_spec_hash": "de186dcac25cc9e832c1d4180f66998f50be297fbef2d31aa80b3ba0fae5f7db",
+      "design_sha256": "2e7f4adf49bdc4c3d07828ffa88a7d64e02b5b6fadbc7def596a36b811cad122",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "accessories_guide.pdf",
+      "sha256": "e082772284c1bb4e0083a451b9561251e04633198513fdb9706bdfb6cc638ab3",
+      "model_id": "GB-US-COLONIAL-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_heritage-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "d915f5d846feb0b64ed811650ee58d982d19833b67537a249f21feb30e533868",
+      "source_spec_hash": "de186dcac25cc9e832c1d4180f66998f50be297fbef2d31aa80b3ba0fae5f7db",
+      "design_sha256": "2e7f4adf49bdc4c3d07828ffa88a7d64e02b5b6fadbc7def596a36b811cad122",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "assembly_guide.pdf",
+      "sha256": "5923347569fa0453289eea6f2b226d373c79f7c80c4ad5c0e085c65ee02b93eb",
+      "model_id": "GB-US-COLONIAL-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_heritage-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "d915f5d846feb0b64ed811650ee58d982d19833b67537a249f21feb30e533868",
+      "source_spec_hash": "de186dcac25cc9e832c1d4180f66998f50be297fbef2d31aa80b3ba0fae5f7db",
+      "design_sha256": "2e7f4adf49bdc4c3d07828ffa88a7d64e02b5b6fadbc7def596a36b811cad122",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_001.svg",
+      "sha256": "60bd9225ac8e85b41d71b6ae608fa5394161cfd47e8772a0c71463a594171189",
+      "model_id": "GB-US-COLONIAL-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_heritage-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "d915f5d846feb0b64ed811650ee58d982d19833b67537a249f21feb30e533868",
+      "source_spec_hash": "de186dcac25cc9e832c1d4180f66998f50be297fbef2d31aa80b3ba0fae5f7db",
+      "design_sha256": "2e7f4adf49bdc4c3d07828ffa88a7d64e02b5b6fadbc7def596a36b811cad122",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_002.svg",
+      "sha256": "b2a1c1539d3f4740b664d88a15bb93c16a249e9711c11b34d889df8747b96ae4",
+      "model_id": "GB-US-COLONIAL-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_heritage-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "d915f5d846feb0b64ed811650ee58d982d19833b67537a249f21feb30e533868",
+      "source_spec_hash": "de186dcac25cc9e832c1d4180f66998f50be297fbef2d31aa80b3ba0fae5f7db",
+      "design_sha256": "2e7f4adf49bdc4c3d07828ffa88a7d64e02b5b6fadbc7def596a36b811cad122",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_003.svg",
+      "sha256": "a5d3e65b1dc8e0d2a0cc872d63f89c6021f886d9f5a74840139f808e1fd07ceb",
+      "model_id": "GB-US-COLONIAL-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_heritage-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "d915f5d846feb0b64ed811650ee58d982d19833b67537a249f21feb30e533868",
+      "source_spec_hash": "de186dcac25cc9e832c1d4180f66998f50be297fbef2d31aa80b3ba0fae5f7db",
+      "design_sha256": "2e7f4adf49bdc4c3d07828ffa88a7d64e02b5b6fadbc7def596a36b811cad122",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "display_scene.obj",
+      "sha256": "32735b8a5116f42cc7227532bac615c3f03aea7eeefbb00ea310c53aeb021798",
+      "model_id": "GB-US-COLONIAL-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_heritage-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "d915f5d846feb0b64ed811650ee58d982d19833b67537a249f21feb30e533868",
+      "source_spec_hash": "de186dcac25cc9e832c1d4180f66998f50be297fbef2d31aa80b3ba0fae5f7db",
+      "design_sha256": "2e7f4adf49bdc4c3d07828ffa88a7d64e02b5b6fadbc7def596a36b811cad122",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "model.obj",
+      "sha256": "e306a781508cc7d55c1f1296009ecd7bc53bcfb857bfb6810936cd4e3b1fcb2e",
+      "model_id": "GB-US-COLONIAL-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_heritage-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "d915f5d846feb0b64ed811650ee58d982d19833b67537a249f21feb30e533868",
+      "source_spec_hash": "de186dcac25cc9e832c1d4180f66998f50be297fbef2d31aa80b3ba0fae5f7db",
+      "design_sha256": "2e7f4adf49bdc4c3d07828ffa88a7d64e02b5b6fadbc7def596a36b811cad122",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "model_3d_preview.png",
+      "sha256": "186314015bb404bc8c7a3f2af0cda976158c8dbb04ac72b02cff64ce648885e3",
+      "model_id": "GB-US-COLONIAL-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_heritage-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "d915f5d846feb0b64ed811650ee58d982d19833b67537a249f21feb30e533868",
+      "source_spec_hash": "de186dcac25cc9e832c1d4180f66998f50be297fbef2d31aa80b3ba0fae5f7db",
+      "design_sha256": "2e7f4adf49bdc4c3d07828ffa88a7d64e02b5b6fadbc7def596a36b811cad122",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "model_spec.json",
+      "sha256": "9f4fcd373fd713d448e8c558b6e807858bc80d364d771444bb0b1042b11687e9",
+      "model_id": "GB-US-COLONIAL-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_heritage-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "d915f5d846feb0b64ed811650ee58d982d19833b67537a249f21feb30e533868",
+      "source_spec_hash": "de186dcac25cc9e832c1d4180f66998f50be297fbef2d31aa80b3ba0fae5f7db",
+      "design_sha256": "2e7f4adf49bdc4c3d07828ffa88a7d64e02b5b6fadbc7def596a36b811cad122",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "printable_preview.png",
+      "sha256": "69a563adeeefd87fe58569dd231dfb505693183c7c97576013e8712d5a9ea3f5",
+      "model_id": "GB-US-COLONIAL-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_heritage-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "d915f5d846feb0b64ed811650ee58d982d19833b67537a249f21feb30e533868",
+      "source_spec_hash": "de186dcac25cc9e832c1d4180f66998f50be297fbef2d31aa80b3ba0fae5f7db",
+      "design_sha256": "2e7f4adf49bdc4c3d07828ffa88a7d64e02b5b6fadbc7def596a36b811cad122",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "printable_us_letter.pdf",
+      "sha256": "67def8174213cad783d27d1b970d3012d3b1fbad82d1e5ea077740282a6770f4",
+      "model_id": "GB-US-COLONIAL-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_heritage-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "d915f5d846feb0b64ed811650ee58d982d19833b67537a249f21feb30e533868",
+      "source_spec_hash": "de186dcac25cc9e832c1d4180f66998f50be297fbef2d31aa80b3ba0fae5f7db",
+      "design_sha256": "2e7f4adf49bdc4c3d07828ffa88a7d64e02b5b6fadbc7def596a36b811cad122",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "printable_us_letter_coloring.pdf",
+      "sha256": "16b8bcb1cec7ff0a75327e3d9f25f8d5acd9ffb51dab200e7f6dbf663c9c1204",
+      "model_id": "GB-US-COLONIAL-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_heritage-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "d915f5d846feb0b64ed811650ee58d982d19833b67537a249f21feb30e533868",
+      "source_spec_hash": "de186dcac25cc9e832c1d4180f66998f50be297fbef2d31aa80b3ba0fae5f7db",
+      "design_sha256": "2e7f4adf49bdc4c3d07828ffa88a7d64e02b5b6fadbc7def596a36b811cad122",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "svg_pages/page_001.svg",
+      "sha256": "0d4a2f1ee9796cdc09755ac94ececdd3074125a826418e93c8fa96b8d6757494",
+      "model_id": "GB-US-COLONIAL-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_heritage-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "d915f5d846feb0b64ed811650ee58d982d19833b67537a249f21feb30e533868",
+      "source_spec_hash": "de186dcac25cc9e832c1d4180f66998f50be297fbef2d31aa80b3ba0fae5f7db",
+      "design_sha256": "2e7f4adf49bdc4c3d07828ffa88a7d64e02b5b6fadbc7def596a36b811cad122",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "svg_pages/page_002.svg",
+      "sha256": "199f146a27a546d7d42ba52681c7535950dc35bdde3e6338301f53b51b68c058",
+      "model_id": "GB-US-COLONIAL-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_heritage-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "d915f5d846feb0b64ed811650ee58d982d19833b67537a249f21feb30e533868",
+      "source_spec_hash": "de186dcac25cc9e832c1d4180f66998f50be297fbef2d31aa80b3ba0fae5f7db",
+      "design_sha256": "2e7f4adf49bdc4c3d07828ffa88a7d64e02b5b6fadbc7def596a36b811cad122",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "svg_pages/page_003.svg",
+      "sha256": "649d38c2f368dbee6221e9b54d9ae58585bf5ff2e1c39795e6af19fe382a4951",
+      "model_id": "GB-US-COLONIAL-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_heritage-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "d915f5d846feb0b64ed811650ee58d982d19833b67537a249f21feb30e533868",
+      "source_spec_hash": "de186dcac25cc9e832c1d4180f66998f50be297fbef2d31aa80b3ba0fae5f7db",
+      "design_sha256": "2e7f4adf49bdc4c3d07828ffa88a7d64e02b5b6fadbc7def596a36b811cad122",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "template_preview.svg",
+      "sha256": "f7f8c3a32ad9c336387b41d1c5b2c905fd2fd8d8614f9adfe86e5cda2facd10c",
+      "model_id": "GB-US-COLONIAL-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_heritage-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "d915f5d846feb0b64ed811650ee58d982d19833b67537a249f21feb30e533868",
+      "source_spec_hash": "de186dcac25cc9e832c1d4180f66998f50be297fbef2d31aa80b3ba0fae5f7db",
+      "design_sha256": "2e7f4adf49bdc4c3d07828ffa88a7d64e02b5b6fadbc7def596a36b811cad122",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "validation_report.json",
+      "sha256": "7d369b8abeae27bb304a6dc20edbf7fb35beca93c0a82a94744924be1eba4c6b",
+      "model_id": "GB-US-COLONIAL-HERITAGE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_heritage-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "d915f5d846feb0b64ed811650ee58d982d19833b67537a249f21feb30e533868",
+      "source_spec_hash": "de186dcac25cc9e832c1d4180f66998f50be297fbef2d31aa80b3ba0fae5f7db",
+      "design_sha256": "2e7f4adf49bdc4c3d07828ffa88a7d64e02b5b6fadbc7def596a36b811cad122",
+      "template_version": "5.5.0"
+    }
+  ]
+}

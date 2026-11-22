@@ -1,0 +1,283 @@
+{
+  "model_id": "GB-US-COLONIAL-MIDNIGHT",
+  "version": "gingerbread-4.0.0",
+  "project_id": "gb_us_colonial_midnight-roof-10mm",
+  "revision": 1,
+  "geometry_sha256": "ec754a735fca8200bdb19c7194f8d1e0945433f75c41dcc6fc074423ad9348c6",
+  "source_spec_hash": "2027c411dada9373535ea9071d7945b96c3f54c3e5eda9119b863d38cb1c2627",
+  "design_sha256": "fc3a17f9f3d2eb62839b618a36ef0bb68ba0d6ec226c09d597e4481a69cbf70a",
+  "template_version": "5.5.0",
+  "input": {
+    "preset": "gb_us_colonial_midnight",
+    "project_id": "gb_us_colonial_midnight-roof-10mm",
+    "revision": 1,
+    "paper": "US Letter"
+  },
+  "template": {
+    "id": "gb_us_colonial_midnight",
+    "name": "Colonial · Midnight & Gold",
+    "subtitle": "Colonial / Midnight & Gold",
+    "collection": "American Premium",
+    "model_family": "colonial",
+    "architecture": "Colonial",
+    "finish": "Midnight & Gold",
+    "profile": [
+      [
+        0,
+        0
+      ],
+      [
+        0.5,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "material": "brick",
+    "premium": true,
+    "width": 85,
+    "depth": 65,
+    "wall_height": 105,
+    "roof_rise": 30,
+    "wall": "#344c60",
+    "roof": "#29313f",
+    "accent": "#bb8648",
+    "trim": "#f5e8c6",
+    "background": "#e5e9ee",
+    "motif": "american",
+    "difficulty": "Intermediate",
+    "description": "Colonial with festive icing, candy details, and glowing windows. Includes a snowy base, a slotted tree, and two gift boxes. Customize the patterns and add your own name.",
+    "roof_overhang_mm": 10,
+    "roof_rake_mm": 10,
+    "category": "gingerbread-houses",
+    "categories": [
+      "gingerbread-houses",
+      "american-places",
+      "seasonal-holiday"
+    ],
+    "roof_corner_radius_mm": 4
+  },
+  "qa_status": "PASS",
+  "algorithm": "gable-house-1.0; three-sheet rigid placement",
+  "physical_assembly": "NOT_TESTED",
+  "artifacts": [
+    {
+      "path": "accessories.pdf",
+      "sha256": "a1c7f36248d05f500f659b08ff5b7b9b5e16a7cb79bb9287837411594c7bfd95",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_midnight-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "ec754a735fca8200bdb19c7194f8d1e0945433f75c41dcc6fc074423ad9348c6",
+      "source_spec_hash": "2027c411dada9373535ea9071d7945b96c3f54c3e5eda9119b863d38cb1c2627",
+      "design_sha256": "fc3a17f9f3d2eb62839b618a36ef0bb68ba0d6ec226c09d597e4481a69cbf70a",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "accessories_guide.pdf",
+      "sha256": "e082772284c1bb4e0083a451b9561251e04633198513fdb9706bdfb6cc638ab3",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_midnight-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "ec754a735fca8200bdb19c7194f8d1e0945433f75c41dcc6fc074423ad9348c6",
+      "source_spec_hash": "2027c411dada9373535ea9071d7945b96c3f54c3e5eda9119b863d38cb1c2627",
+      "design_sha256": "fc3a17f9f3d2eb62839b618a36ef0bb68ba0d6ec226c09d597e4481a69cbf70a",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "assembly_guide.pdf",
+      "sha256": "ce2bc3e346329eafeae1ab80aecf4632b0e1ecc0286febe251f71d37d427e40d",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_midnight-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "ec754a735fca8200bdb19c7194f8d1e0945433f75c41dcc6fc074423ad9348c6",
+      "source_spec_hash": "2027c411dada9373535ea9071d7945b96c3f54c3e5eda9119b863d38cb1c2627",
+      "design_sha256": "fc3a17f9f3d2eb62839b618a36ef0bb68ba0d6ec226c09d597e4481a69cbf70a",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_001.svg",
+      "sha256": "c22eaf97bd063caee495df4ac69d86fa43440d9729a135d42aa7b8a038537f1a",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_midnight-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "ec754a735fca8200bdb19c7194f8d1e0945433f75c41dcc6fc074423ad9348c6",
+      "source_spec_hash": "2027c411dada9373535ea9071d7945b96c3f54c3e5eda9119b863d38cb1c2627",
+      "design_sha256": "fc3a17f9f3d2eb62839b618a36ef0bb68ba0d6ec226c09d597e4481a69cbf70a",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_002.svg",
+      "sha256": "e338f51b12a1b388384589c511b421f8b0e4bab289691623e38842e2f4f8c44a",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_midnight-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "ec754a735fca8200bdb19c7194f8d1e0945433f75c41dcc6fc074423ad9348c6",
+      "source_spec_hash": "2027c411dada9373535ea9071d7945b96c3f54c3e5eda9119b863d38cb1c2627",
+      "design_sha256": "fc3a17f9f3d2eb62839b618a36ef0bb68ba0d6ec226c09d597e4481a69cbf70a",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_003.svg",
+      "sha256": "8662894d0a939f9ed3af36bce553e754208c38a82a6e48892df1a807c51a13b7",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_midnight-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "ec754a735fca8200bdb19c7194f8d1e0945433f75c41dcc6fc074423ad9348c6",
+      "source_spec_hash": "2027c411dada9373535ea9071d7945b96c3f54c3e5eda9119b863d38cb1c2627",
+      "design_sha256": "fc3a17f9f3d2eb62839b618a36ef0bb68ba0d6ec226c09d597e4481a69cbf70a",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "display_scene.obj",
+      "sha256": "ce795f985091d3d10ae8040370aad46aa06799c01ee2ec425eba91394107d06e",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_midnight-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "ec754a735fca8200bdb19c7194f8d1e0945433f75c41dcc6fc074423ad9348c6",
+      "source_spec_hash": "2027c411dada9373535ea9071d7945b96c3f54c3e5eda9119b863d38cb1c2627",
+      "design_sha256": "fc3a17f9f3d2eb62839b618a36ef0bb68ba0d6ec226c09d597e4481a69cbf70a",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "model.obj",
+      "sha256": "ccf88154be997c99dd63860f5cca667182a60b5a296f3850e0328173ff90d065",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_midnight-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "ec754a735fca8200bdb19c7194f8d1e0945433f75c41dcc6fc074423ad9348c6",
+      "source_spec_hash": "2027c411dada9373535ea9071d7945b96c3f54c3e5eda9119b863d38cb1c2627",
+      "design_sha256": "fc3a17f9f3d2eb62839b618a36ef0bb68ba0d6ec226c09d597e4481a69cbf70a",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "model_3d_preview.png",
+      "sha256": "b4f072cba8b6e46d36d578a9780554fc091280c8a7461c9254bc65866fde1aec",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_midnight-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "ec754a735fca8200bdb19c7194f8d1e0945433f75c41dcc6fc074423ad9348c6",
+      "source_spec_hash": "2027c411dada9373535ea9071d7945b96c3f54c3e5eda9119b863d38cb1c2627",
+      "design_sha256": "fc3a17f9f3d2eb62839b618a36ef0bb68ba0d6ec226c09d597e4481a69cbf70a",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "model_spec.json",
+      "sha256": "627e4f8ce1f094df3c771eb4bce83020fbb4371163bff9b303c7e6a1882adc04",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_midnight-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "ec754a735fca8200bdb19c7194f8d1e0945433f75c41dcc6fc074423ad9348c6",
+      "source_spec_hash": "2027c411dada9373535ea9071d7945b96c3f54c3e5eda9119b863d38cb1c2627",
+      "design_sha256": "fc3a17f9f3d2eb62839b618a36ef0bb68ba0d6ec226c09d597e4481a69cbf70a",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "printable_preview.png",
+      "sha256": "fe310c8ff8b8bef44eac528a7c0b7d56426904bbaac8dffcd2183fbd32199157",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_midnight-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "ec754a735fca8200bdb19c7194f8d1e0945433f75c41dcc6fc074423ad9348c6",
+      "source_spec_hash": "2027c411dada9373535ea9071d7945b96c3f54c3e5eda9119b863d38cb1c2627",
+      "design_sha256": "fc3a17f9f3d2eb62839b618a36ef0bb68ba0d6ec226c09d597e4481a69cbf70a",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "printable_us_letter.pdf",
+      "sha256": "1e1fa96cef96598dc36539722e33509ae3c56eaa0a46daa35ee8d89eb3087d94",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_midnight-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "ec754a735fca8200bdb19c7194f8d1e0945433f75c41dcc6fc074423ad9348c6",
+      "source_spec_hash": "2027c411dada9373535ea9071d7945b96c3f54c3e5eda9119b863d38cb1c2627",
+      "design_sha256": "fc3a17f9f3d2eb62839b618a36ef0bb68ba0d6ec226c09d597e4481a69cbf70a",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "printable_us_letter_coloring.pdf",
+      "sha256": "d4d0701f262bb72c8ad003ce7f8552b98d440942f2ee42934864d3526973bd9a",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_midnight-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "ec754a735fca8200bdb19c7194f8d1e0945433f75c41dcc6fc074423ad9348c6",
+      "source_spec_hash": "2027c411dada9373535ea9071d7945b96c3f54c3e5eda9119b863d38cb1c2627",
+      "design_sha256": "fc3a17f9f3d2eb62839b618a36ef0bb68ba0d6ec226c09d597e4481a69cbf70a",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "svg_pages/page_001.svg",
+      "sha256": "523aa9641977c1ea295574a9c95bf5c1d46c175b8f8574305c6735521709543d",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_midnight-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "ec754a735fca8200bdb19c7194f8d1e0945433f75c41dcc6fc074423ad9348c6",
+      "source_spec_hash": "2027c411dada9373535ea9071d7945b96c3f54c3e5eda9119b863d38cb1c2627",
+      "design_sha256": "fc3a17f9f3d2eb62839b618a36ef0bb68ba0d6ec226c09d597e4481a69cbf70a",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "svg_pages/page_002.svg",
+      "sha256": "6fbcb612a554662e106f9e1ad341c7fca848b97c886f618d27625ab909f8a5ee",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_midnight-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "ec754a735fca8200bdb19c7194f8d1e0945433f75c41dcc6fc074423ad9348c6",
+      "source_spec_hash": "2027c411dada9373535ea9071d7945b96c3f54c3e5eda9119b863d38cb1c2627",
+      "design_sha256": "fc3a17f9f3d2eb62839b618a36ef0bb68ba0d6ec226c09d597e4481a69cbf70a",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "svg_pages/page_003.svg",
+      "sha256": "ebcc1d4175c375424f1650bd688e38205ae1087c4b8b995983f74283566e7710",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_midnight-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "ec754a735fca8200bdb19c7194f8d1e0945433f75c41dcc6fc074423ad9348c6",
+      "source_spec_hash": "2027c411dada9373535ea9071d7945b96c3f54c3e5eda9119b863d38cb1c2627",
+      "design_sha256": "fc3a17f9f3d2eb62839b618a36ef0bb68ba0d6ec226c09d597e4481a69cbf70a",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "template_preview.svg",
+      "sha256": "2d68497c7f578160618a744af79d53ac0cf5ce9887d295ee9aface27a598c4e6",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_midnight-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "ec754a735fca8200bdb19c7194f8d1e0945433f75c41dcc6fc074423ad9348c6",
+      "source_spec_hash": "2027c411dada9373535ea9071d7945b96c3f54c3e5eda9119b863d38cb1c2627",
+      "design_sha256": "fc3a17f9f3d2eb62839b618a36ef0bb68ba0d6ec226c09d597e4481a69cbf70a",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "validation_report.json",
+      "sha256": "f22e78e7c28fed5ace8acc7e0376ba96df861deaca1308de17a7ef20726b3ab4",
+      "model_id": "GB-US-COLONIAL-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_colonial_midnight-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "ec754a735fca8200bdb19c7194f8d1e0945433f75c41dcc6fc074423ad9348c6",
+      "source_spec_hash": "2027c411dada9373535ea9071d7945b96c3f54c3e5eda9119b863d38cb1c2627",
+      "design_sha256": "fc3a17f9f3d2eb62839b618a36ef0bb68ba0d6ec226c09d597e4481a69cbf70a",
+      "template_version": "5.5.0"
+    }
+  ]
+}

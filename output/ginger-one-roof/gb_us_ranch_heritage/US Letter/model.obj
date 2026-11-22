@@ -1,0 +1,39 @@
+# {"design_sha256":"8322e4e967d9120b4687a4e3302eaa449aef38d747c3ae0605a0738538112e6e","geometry_sha256":"594bef5b6e2a9bfaee41665e6c8cfce697d094b43c042c2ae0c9d0c60a243753","model_id":"GB-US-RANCH-HERITAGE","project_id":"gb_us_ranch_heritage-one-roof","revision":1,"source_spec_hash":"0aa04aae1895185bf80d287554f11ba73e755799e4dc2841cc1305223447f9fc","template_version":"5.6.0","version":"gingerbread-4.0.0"}
+g FRONT
+v -57.5 -30.0 0
+v 57.5 -30.0 0
+v 57.5 -30.0 58
+v 0.0 -30.0 78
+v -57.5 -30.0 58
+f 1 2 3 4 5
+g BACK
+v -57.5 30.0 58
+v 0.0 30.0 78
+v 57.5 30.0 58
+v 57.5 30.0 0
+v -57.5 30.0 0
+f 6 7 8 9 10
+g RIGHT
+v 57.5 -30.0 0
+v 57.5 30.0 0
+v 57.5 30.0 58
+v 57.5 -30.0 58
+f 11 12 13 14
+g LEFT
+v -57.5 30.0 0
+v -57.5 -30.0 0
+v -57.5 -30.0 58
+v -57.5 30.0 58
+f 15 16 17 18
+g ROOF_1
+v 0.0 -30.0 78.0
+v 0.0 30.0 78.0
+v -57.5 30.0 58.0
+v -57.5 -30.0 58.0
+f 19 20 21 22
+g ROOF_2
+v 57.5 -30.0 58.0
+v 57.5 30.0 58.0
+v 0.0 30.0 78.0
+v 0.0 -30.0 78.0
+f 23 24 25 26

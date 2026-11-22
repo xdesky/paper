@@ -18,12 +18,18 @@ def sha(value):
 
 
 def generate(request, out, progress=lambda stage: None):
-    if request['preset'].startswith('pc_'):
-        from .blocky import generate as generate_blocky
-        return generate_blocky(request,out,progress)
-    if request['preset'].startswith('gb_'):
+    from .template_catalog import BY_ID
+
+    preset = request['preset']
+    template = BY_ID.get(preset)
+    if template is not None:
+        if template['category'] == 'blocky-characters':
+            from .blocky import generate as generate_blocky
+            return generate_blocky(request, out, progress)
         from .gingerbread import generate as generate_house
         return generate_house(request, out, progress)
+    if preset not in ('cube_100', 'cube_200', 'cube_300', 'house_frame'):
+        raise ValueError(f'Unsupported preset: {preset}')
     import matplotlib
     from reportlab.pdfbase import pdfmetrics
     from reportlab.pdfbase.ttfonts import TTFont
@@ -63,10 +69,7 @@ def generate(request, out, progress=lambda stage: None):
             return _original(*args, **kwargs)
         setattr(engine, name, wrapped)
     try:
-        preset = request['preset']
         size = int(preset.split('_')[1]) if preset.startswith('cube_') else None
-        if preset not in ('cube_100', 'cube_200', 'cube_300', 'house_frame'):
-            raise ValueError('Unsupported Phase A preset')
         progress('Validate Input')
         report = engine.build('cube' if size else 'house', out, size)
     finally:

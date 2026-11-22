@@ -1,0 +1,293 @@
+{
+  "model_id": "GB-TWO-COTTAGE-MIDNIGHT",
+  "version": "gingerbread-4.0.0",
+  "project_id": "gb_two_cottage_midnight-one-roof",
+  "revision": 1,
+  "geometry_sha256": "ee5be33326f7ee316e9f311c98fcdb51b764c60fe21a0d788452d035fbc34c81",
+  "source_spec_hash": "0ded16e1cee2bf8e69d638682e1df8a2d6d01d419ef6e28fa6b7f5994772410a",
+  "design_sha256": "86c32e5932400385b8874ab84a9c6dab8cd68eeb58bd865bde98359604052b6f",
+  "template_version": "5.6.0",
+  "input": {
+    "preset": "gb_two_cottage_midnight",
+    "project_id": "gb_two_cottage_midnight-one-roof",
+    "revision": 1,
+    "paper": "A4"
+  },
+  "template": {
+    "id": "gb_two_cottage_midnight",
+    "name": "Storybook Duo · Midnight & Gold",
+    "subtitle": "Main & Side Cottage / Midnight & Gold",
+    "collection": "Two-Bay Houses",
+    "model_family": "two_bay_cottage",
+    "architecture": "Main & Side Cottage",
+    "finish": "Midnight & Gold",
+    "profile": [
+      [
+        0,
+        0
+      ],
+      [
+        0.29,
+        1
+      ],
+      [
+        0.58,
+        0
+      ],
+      [
+        0.79,
+        0.72
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "bay_split": 0.58,
+    "bay_count": 2,
+    "material": "board",
+    "premium": true,
+    "width": 118,
+    "depth": 54,
+    "wall_height": 64,
+    "roof_rise": 40,
+    "wall": "#344c60",
+    "roof": "#29313f",
+    "accent": "#bb8648",
+    "trim": "#f5e8c6",
+    "background": "#e5e9ee",
+    "motif": "american",
+    "difficulty": "Intermediate",
+    "description": "Main & Side Cottage with festive icing, candy details, and glowing windows. Includes a snowy base, a slotted tree, and two gift boxes. Customize the patterns and add your own name.",
+    "roof_overhang_mm": 10,
+    "roof_rake_mm": 10,
+    "single_layer_roof": true,
+    "category": "gingerbread-houses",
+    "categories": [
+      "gingerbread-houses",
+      "american-places",
+      "seasonal-holiday"
+    ]
+  },
+  "qa_status": "PASS",
+  "algorithm": "gable-house-1.0; v1.2 rigid pairing + shelf packing",
+  "physical_assembly": "NOT_TESTED",
+  "artifacts": [
+    {
+      "path": "accessories.pdf",
+      "sha256": "399ec3a2e948f83b4b683dac87ce54894ad4a7e73abac07fa2ab35891645f479",
+      "model_id": "GB-TWO-COTTAGE-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_cottage_midnight-one-roof",
+      "revision": 1,
+      "geometry_sha256": "ee5be33326f7ee316e9f311c98fcdb51b764c60fe21a0d788452d035fbc34c81",
+      "source_spec_hash": "0ded16e1cee2bf8e69d638682e1df8a2d6d01d419ef6e28fa6b7f5994772410a",
+      "design_sha256": "86c32e5932400385b8874ab84a9c6dab8cd68eeb58bd865bde98359604052b6f",
+      "template_version": "5.6.0"
+    },
+    {
+      "path": "accessories_guide.pdf",
+      "sha256": "cd20d091658e5e475f9ceea5da4905fea76756e0385f9d64a2af35c5a44336e1",
+      "model_id": "GB-TWO-COTTAGE-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_cottage_midnight-one-roof",
+      "revision": 1,
+      "geometry_sha256": "ee5be33326f7ee316e9f311c98fcdb51b764c60fe21a0d788452d035fbc34c81",
+      "source_spec_hash": "0ded16e1cee2bf8e69d638682e1df8a2d6d01d419ef6e28fa6b7f5994772410a",
+      "design_sha256": "86c32e5932400385b8874ab84a9c6dab8cd68eeb58bd865bde98359604052b6f",
+      "template_version": "5.6.0"
+    },
+    {
+      "path": "assembly_guide.pdf",
+      "sha256": "3aa6beea51b67b1cc89f9ac6f8d614f37960af5ffb2a18f8878fd00886b3b98d",
+      "model_id": "GB-TWO-COTTAGE-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_cottage_midnight-one-roof",
+      "revision": 1,
+      "geometry_sha256": "ee5be33326f7ee316e9f311c98fcdb51b764c60fe21a0d788452d035fbc34c81",
+      "source_spec_hash": "0ded16e1cee2bf8e69d638682e1df8a2d6d01d419ef6e28fa6b7f5994772410a",
+      "design_sha256": "86c32e5932400385b8874ab84a9c6dab8cd68eeb58bd865bde98359604052b6f",
+      "template_version": "5.6.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_001.svg",
+      "sha256": "9b88297206de2531ffdbf22826e61215f9a00bf49bb36058d887a0640c00ca81",
+      "model_id": "GB-TWO-COTTAGE-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_cottage_midnight-one-roof",
+      "revision": 1,
+      "geometry_sha256": "ee5be33326f7ee316e9f311c98fcdb51b764c60fe21a0d788452d035fbc34c81",
+      "source_spec_hash": "0ded16e1cee2bf8e69d638682e1df8a2d6d01d419ef6e28fa6b7f5994772410a",
+      "design_sha256": "86c32e5932400385b8874ab84a9c6dab8cd68eeb58bd865bde98359604052b6f",
+      "template_version": "5.6.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_002.svg",
+      "sha256": "d0acc3a934efe8de8e9093333957419ce62b49d12955170ba0e47761afaf84f1",
+      "model_id": "GB-TWO-COTTAGE-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_cottage_midnight-one-roof",
+      "revision": 1,
+      "geometry_sha256": "ee5be33326f7ee316e9f311c98fcdb51b764c60fe21a0d788452d035fbc34c81",
+      "source_spec_hash": "0ded16e1cee2bf8e69d638682e1df8a2d6d01d419ef6e28fa6b7f5994772410a",
+      "design_sha256": "86c32e5932400385b8874ab84a9c6dab8cd68eeb58bd865bde98359604052b6f",
+      "template_version": "5.6.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_003.svg",
+      "sha256": "37d7ffed181cf23c03979fa1ecad8a83af3f80c4d2f4d08679079c8439fa162a",
+      "model_id": "GB-TWO-COTTAGE-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_cottage_midnight-one-roof",
+      "revision": 1,
+      "geometry_sha256": "ee5be33326f7ee316e9f311c98fcdb51b764c60fe21a0d788452d035fbc34c81",
+      "source_spec_hash": "0ded16e1cee2bf8e69d638682e1df8a2d6d01d419ef6e28fa6b7f5994772410a",
+      "design_sha256": "86c32e5932400385b8874ab84a9c6dab8cd68eeb58bd865bde98359604052b6f",
+      "template_version": "5.6.0"
+    },
+    {
+      "path": "display_scene.obj",
+      "sha256": "977b287309a192f362b7d9b9dfa8ad89c84bed86db9e3ed8a184298a38079f9a",
+      "model_id": "GB-TWO-COTTAGE-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_cottage_midnight-one-roof",
+      "revision": 1,
+      "geometry_sha256": "ee5be33326f7ee316e9f311c98fcdb51b764c60fe21a0d788452d035fbc34c81",
+      "source_spec_hash": "0ded16e1cee2bf8e69d638682e1df8a2d6d01d419ef6e28fa6b7f5994772410a",
+      "design_sha256": "86c32e5932400385b8874ab84a9c6dab8cd68eeb58bd865bde98359604052b6f",
+      "template_version": "5.6.0"
+    },
+    {
+      "path": "model.obj",
+      "sha256": "36378e740d1c20c57add49465ee9a9e852304ca0d5731c66d3d68990c40a1b66",
+      "model_id": "GB-TWO-COTTAGE-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_cottage_midnight-one-roof",
+      "revision": 1,
+      "geometry_sha256": "ee5be33326f7ee316e9f311c98fcdb51b764c60fe21a0d788452d035fbc34c81",
+      "source_spec_hash": "0ded16e1cee2bf8e69d638682e1df8a2d6d01d419ef6e28fa6b7f5994772410a",
+      "design_sha256": "86c32e5932400385b8874ab84a9c6dab8cd68eeb58bd865bde98359604052b6f",
+      "template_version": "5.6.0"
+    },
+    {
+      "path": "model_3d_preview.png",
+      "sha256": "c9987453e2a21f08ef04aac6c0b93d42ecb28f83ddb8987246bb8b0adb85f3d0",
+      "model_id": "GB-TWO-COTTAGE-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_cottage_midnight-one-roof",
+      "revision": 1,
+      "geometry_sha256": "ee5be33326f7ee316e9f311c98fcdb51b764c60fe21a0d788452d035fbc34c81",
+      "source_spec_hash": "0ded16e1cee2bf8e69d638682e1df8a2d6d01d419ef6e28fa6b7f5994772410a",
+      "design_sha256": "86c32e5932400385b8874ab84a9c6dab8cd68eeb58bd865bde98359604052b6f",
+      "template_version": "5.6.0"
+    },
+    {
+      "path": "model_spec.json",
+      "sha256": "b2a7a6c69b9dc069c07da715aee29b201f6cfb70704f7a1f133e64b894b50c4e",
+      "model_id": "GB-TWO-COTTAGE-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_cottage_midnight-one-roof",
+      "revision": 1,
+      "geometry_sha256": "ee5be33326f7ee316e9f311c98fcdb51b764c60fe21a0d788452d035fbc34c81",
+      "source_spec_hash": "0ded16e1cee2bf8e69d638682e1df8a2d6d01d419ef6e28fa6b7f5994772410a",
+      "design_sha256": "86c32e5932400385b8874ab84a9c6dab8cd68eeb58bd865bde98359604052b6f",
+      "template_version": "5.6.0"
+    },
+    {
+      "path": "printable_a4.pdf",
+      "sha256": "71f8f9c1b85ff54d9ce583c09637254722768eff5bf341e964613d171cf4a453",
+      "model_id": "GB-TWO-COTTAGE-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_cottage_midnight-one-roof",
+      "revision": 1,
+      "geometry_sha256": "ee5be33326f7ee316e9f311c98fcdb51b764c60fe21a0d788452d035fbc34c81",
+      "source_spec_hash": "0ded16e1cee2bf8e69d638682e1df8a2d6d01d419ef6e28fa6b7f5994772410a",
+      "design_sha256": "86c32e5932400385b8874ab84a9c6dab8cd68eeb58bd865bde98359604052b6f",
+      "template_version": "5.6.0"
+    },
+    {
+      "path": "printable_a4_coloring.pdf",
+      "sha256": "2beea2ba7549cb3bd4d6e5a96dd21ecadcca6322beec0dede26f8612eef99ce6",
+      "model_id": "GB-TWO-COTTAGE-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_cottage_midnight-one-roof",
+      "revision": 1,
+      "geometry_sha256": "ee5be33326f7ee316e9f311c98fcdb51b764c60fe21a0d788452d035fbc34c81",
+      "source_spec_hash": "0ded16e1cee2bf8e69d638682e1df8a2d6d01d419ef6e28fa6b7f5994772410a",
+      "design_sha256": "86c32e5932400385b8874ab84a9c6dab8cd68eeb58bd865bde98359604052b6f",
+      "template_version": "5.6.0"
+    },
+    {
+      "path": "printable_preview.png",
+      "sha256": "9e9637565ebb97452b4d0f6c1dde183ecfc887bd53203b6da602a725e2bdbe26",
+      "model_id": "GB-TWO-COTTAGE-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_cottage_midnight-one-roof",
+      "revision": 1,
+      "geometry_sha256": "ee5be33326f7ee316e9f311c98fcdb51b764c60fe21a0d788452d035fbc34c81",
+      "source_spec_hash": "0ded16e1cee2bf8e69d638682e1df8a2d6d01d419ef6e28fa6b7f5994772410a",
+      "design_sha256": "86c32e5932400385b8874ab84a9c6dab8cd68eeb58bd865bde98359604052b6f",
+      "template_version": "5.6.0"
+    },
+    {
+      "path": "svg_pages/page_001.svg",
+      "sha256": "edd3cf4a683c9959e2399e2f916949db7615ba4daf069bcaa63727297a8b33f5",
+      "model_id": "GB-TWO-COTTAGE-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_cottage_midnight-one-roof",
+      "revision": 1,
+      "geometry_sha256": "ee5be33326f7ee316e9f311c98fcdb51b764c60fe21a0d788452d035fbc34c81",
+      "source_spec_hash": "0ded16e1cee2bf8e69d638682e1df8a2d6d01d419ef6e28fa6b7f5994772410a",
+      "design_sha256": "86c32e5932400385b8874ab84a9c6dab8cd68eeb58bd865bde98359604052b6f",
+      "template_version": "5.6.0"
+    },
+    {
+      "path": "svg_pages/page_002.svg",
+      "sha256": "3c7bdb8f0a0536c1e59c6c0fb843c1545d77dcccc8ff6584e582990850820cff",
+      "model_id": "GB-TWO-COTTAGE-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_cottage_midnight-one-roof",
+      "revision": 1,
+      "geometry_sha256": "ee5be33326f7ee316e9f311c98fcdb51b764c60fe21a0d788452d035fbc34c81",
+      "source_spec_hash": "0ded16e1cee2bf8e69d638682e1df8a2d6d01d419ef6e28fa6b7f5994772410a",
+      "design_sha256": "86c32e5932400385b8874ab84a9c6dab8cd68eeb58bd865bde98359604052b6f",
+      "template_version": "5.6.0"
+    },
+    {
+      "path": "svg_pages/page_003.svg",
+      "sha256": "fcd4c8c4fd9d6bbbd4367ec7c35c95e2ef5a8bfe7402168092a3d5fe84ece233",
+      "model_id": "GB-TWO-COTTAGE-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_cottage_midnight-one-roof",
+      "revision": 1,
+      "geometry_sha256": "ee5be33326f7ee316e9f311c98fcdb51b764c60fe21a0d788452d035fbc34c81",
+      "source_spec_hash": "0ded16e1cee2bf8e69d638682e1df8a2d6d01d419ef6e28fa6b7f5994772410a",
+      "design_sha256": "86c32e5932400385b8874ab84a9c6dab8cd68eeb58bd865bde98359604052b6f",
+      "template_version": "5.6.0"
+    },
+    {
+      "path": "template_preview.svg",
+      "sha256": "5e7518db4978c4a3efcc387cf82907a9473b718a9d44e85e15d63063b1821969",
+      "model_id": "GB-TWO-COTTAGE-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_cottage_midnight-one-roof",
+      "revision": 1,
+      "geometry_sha256": "ee5be33326f7ee316e9f311c98fcdb51b764c60fe21a0d788452d035fbc34c81",
+      "source_spec_hash": "0ded16e1cee2bf8e69d638682e1df8a2d6d01d419ef6e28fa6b7f5994772410a",
+      "design_sha256": "86c32e5932400385b8874ab84a9c6dab8cd68eeb58bd865bde98359604052b6f",
+      "template_version": "5.6.0"
+    },
+    {
+      "path": "validation_report.json",
+      "sha256": "dbc6edc4052388eb7450d678313943ba22562444c872baa9df2194cd348e3258",
+      "model_id": "GB-TWO-COTTAGE-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_cottage_midnight-one-roof",
+      "revision": 1,
+      "geometry_sha256": "ee5be33326f7ee316e9f311c98fcdb51b764c60fe21a0d788452d035fbc34c81",
+      "source_spec_hash": "0ded16e1cee2bf8e69d638682e1df8a2d6d01d419ef6e28fa6b7f5994772410a",
+      "design_sha256": "86c32e5932400385b8874ab84a9c6dab8cd68eeb58bd865bde98359604052b6f",
+      "template_version": "5.6.0"
+    }
+  ]
+}

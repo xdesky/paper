@@ -15,6 +15,12 @@ OPTIONS={
  'gift':[('classic','Classic Gift'),('stripes','Candy Stripes'),('dots','Polka Dots'),('snowflake','Snowflake Gift'),('holly','Holly Gift'),('stars','Golden Stars')],
 }
 
+def gift_style_pair(style):
+    """Keep the selected style on gift A and give gift B the next distinct style."""
+    styles=[option[0] for option in OPTIONS['gift']]
+    index=styles.index(style) if style in styles else 0
+    return style,styles[(index+1)%len(styles)]
+
 def apply_design(t,design):
     values=DesignOptions(**(design or {})).model_dump()
     return {**t,'design':values} if values!=DesignOptions().model_dump() else dict(t)

@@ -1,0 +1,320 @@
+{
+  "model_id": "GB-COMPLEX-TOWER-ROSE",
+  "version": "gingerbread-4.0.0",
+  "project_id": "gb_complex_tower_rose-roof-10mm",
+  "revision": 1,
+  "geometry_sha256": "c516c8c71ad7c7a40c99d67df533f817f75094935b19af28e2539077d922ce73",
+  "source_spec_hash": "5cdce189399e1d1a14b59d5fce08db7d45e8a5acebecb39a1810620760a886a6",
+  "design_sha256": "197042bd68c6651973b1f15bdece3a791404fcdb53421b07fcf2d126f9cb4c8a",
+  "template_version": "5.5.0",
+  "input": {
+    "preset": "gb_complex_tower_rose",
+    "project_id": "gb_complex_tower_rose-roof-10mm",
+    "revision": 1,
+    "paper": "US Letter"
+  },
+  "template": {
+    "id": "gb_complex_tower_rose",
+    "name": "Candy Mansard Tower · Rose Candy",
+    "subtitle": "Mansard Candy Tower / Rose Candy",
+    "collection": "Advanced Christmas",
+    "model_family": "complex_tower",
+    "architecture": "Mansard Candy Tower",
+    "finish": "Rose Candy",
+    "profile": [
+      [
+        0,
+        0
+      ],
+      [
+        0.14,
+        0.72
+      ],
+      [
+        0.3,
+        1
+      ],
+      [
+        0.7,
+        1
+      ],
+      [
+        0.86,
+        0.72
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "bay_count": 1,
+    "bay_splits": [],
+    "material": "board",
+    "premium": true,
+    "width": 80,
+    "depth": 60,
+    "wall_height": 108,
+    "roof_rise": 42,
+    "wall": "#e5a7ae",
+    "roof": "#d36e88",
+    "accent": "#b92c52",
+    "trim": "#fff9ef",
+    "background": "#f8e9ed",
+    "motif": "american",
+    "difficulty": "Advanced",
+    "description": "Mansard Candy Tower with festive icing, candy details, and glowing windows. Includes a snowy base, a slotted tree, and two gift boxes. Customize the patterns and add your own name.",
+    "roof_overhang_mm": 10,
+    "roof_rake_mm": 10,
+    "category": "gingerbread-houses",
+    "categories": [
+      "gingerbread-houses",
+      "seasonal-holiday",
+      "fantasy-storybook"
+    ]
+  },
+  "qa_status": "PASS",
+  "algorithm": "gable-house-1.0; v1.2 rigid pairing + shelf packing",
+  "physical_assembly": "NOT_TESTED",
+  "artifacts": [
+    {
+      "path": "accessories.pdf",
+      "sha256": "b515e436456727cbc84d12b06ac6180377db027e154113d2afd9cb70cb91efe3",
+      "model_id": "GB-COMPLEX-TOWER-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_tower_rose-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "c516c8c71ad7c7a40c99d67df533f817f75094935b19af28e2539077d922ce73",
+      "source_spec_hash": "5cdce189399e1d1a14b59d5fce08db7d45e8a5acebecb39a1810620760a886a6",
+      "design_sha256": "197042bd68c6651973b1f15bdece3a791404fcdb53421b07fcf2d126f9cb4c8a",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "accessories_guide.pdf",
+      "sha256": "4d5d7435e061e0fa89a809f51391c4af7454f2a9d4b9e1aaf87edb5a15541654",
+      "model_id": "GB-COMPLEX-TOWER-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_tower_rose-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "c516c8c71ad7c7a40c99d67df533f817f75094935b19af28e2539077d922ce73",
+      "source_spec_hash": "5cdce189399e1d1a14b59d5fce08db7d45e8a5acebecb39a1810620760a886a6",
+      "design_sha256": "197042bd68c6651973b1f15bdece3a791404fcdb53421b07fcf2d126f9cb4c8a",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "assembly_guide.pdf",
+      "sha256": "1895e5dd31e262ed5d7f7f6a06a8caf22bea27da33b8b87f63d3b15d1f4a1ab8",
+      "model_id": "GB-COMPLEX-TOWER-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_tower_rose-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "c516c8c71ad7c7a40c99d67df533f817f75094935b19af28e2539077d922ce73",
+      "source_spec_hash": "5cdce189399e1d1a14b59d5fce08db7d45e8a5acebecb39a1810620760a886a6",
+      "design_sha256": "197042bd68c6651973b1f15bdece3a791404fcdb53421b07fcf2d126f9cb4c8a",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_001.svg",
+      "sha256": "358183cb952ed63b9d62e9a3c02e92d365fa74b8e9335a3ecca4ffb9f08c7314",
+      "model_id": "GB-COMPLEX-TOWER-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_tower_rose-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "c516c8c71ad7c7a40c99d67df533f817f75094935b19af28e2539077d922ce73",
+      "source_spec_hash": "5cdce189399e1d1a14b59d5fce08db7d45e8a5acebecb39a1810620760a886a6",
+      "design_sha256": "197042bd68c6651973b1f15bdece3a791404fcdb53421b07fcf2d126f9cb4c8a",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_002.svg",
+      "sha256": "8d734f41272c38cf17c8d60bbce91415566e63fa4d89099ca70ca1129364e730",
+      "model_id": "GB-COMPLEX-TOWER-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_tower_rose-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "c516c8c71ad7c7a40c99d67df533f817f75094935b19af28e2539077d922ce73",
+      "source_spec_hash": "5cdce189399e1d1a14b59d5fce08db7d45e8a5acebecb39a1810620760a886a6",
+      "design_sha256": "197042bd68c6651973b1f15bdece3a791404fcdb53421b07fcf2d126f9cb4c8a",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_003.svg",
+      "sha256": "1077b0cd3c65ab8aa2bbdd37c2047426b2af8d27975264a8b9a2af78bb958b41",
+      "model_id": "GB-COMPLEX-TOWER-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_tower_rose-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "c516c8c71ad7c7a40c99d67df533f817f75094935b19af28e2539077d922ce73",
+      "source_spec_hash": "5cdce189399e1d1a14b59d5fce08db7d45e8a5acebecb39a1810620760a886a6",
+      "design_sha256": "197042bd68c6651973b1f15bdece3a791404fcdb53421b07fcf2d126f9cb4c8a",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_004.svg",
+      "sha256": "b73a92c819a7f7a356478476224b90603bd02b510ce2ddf30d7a7f730fb02d52",
+      "model_id": "GB-COMPLEX-TOWER-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_tower_rose-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "c516c8c71ad7c7a40c99d67df533f817f75094935b19af28e2539077d922ce73",
+      "source_spec_hash": "5cdce189399e1d1a14b59d5fce08db7d45e8a5acebecb39a1810620760a886a6",
+      "design_sha256": "197042bd68c6651973b1f15bdece3a791404fcdb53421b07fcf2d126f9cb4c8a",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "display_scene.obj",
+      "sha256": "4eb12798ef15a5e345920934162deee0a3e037947c9a968d412ba3c834bc1d70",
+      "model_id": "GB-COMPLEX-TOWER-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_tower_rose-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "c516c8c71ad7c7a40c99d67df533f817f75094935b19af28e2539077d922ce73",
+      "source_spec_hash": "5cdce189399e1d1a14b59d5fce08db7d45e8a5acebecb39a1810620760a886a6",
+      "design_sha256": "197042bd68c6651973b1f15bdece3a791404fcdb53421b07fcf2d126f9cb4c8a",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "model.obj",
+      "sha256": "da44a5fd7d1c5ac5ffba68d479e07d933402f2832de005fd01ec0acfc2e71910",
+      "model_id": "GB-COMPLEX-TOWER-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_tower_rose-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "c516c8c71ad7c7a40c99d67df533f817f75094935b19af28e2539077d922ce73",
+      "source_spec_hash": "5cdce189399e1d1a14b59d5fce08db7d45e8a5acebecb39a1810620760a886a6",
+      "design_sha256": "197042bd68c6651973b1f15bdece3a791404fcdb53421b07fcf2d126f9cb4c8a",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "model_3d_preview.png",
+      "sha256": "dcf0e4e1f4fd01a47591cb2ef13f288f181a518362f3e73d2d25f6701980a303",
+      "model_id": "GB-COMPLEX-TOWER-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_tower_rose-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "c516c8c71ad7c7a40c99d67df533f817f75094935b19af28e2539077d922ce73",
+      "source_spec_hash": "5cdce189399e1d1a14b59d5fce08db7d45e8a5acebecb39a1810620760a886a6",
+      "design_sha256": "197042bd68c6651973b1f15bdece3a791404fcdb53421b07fcf2d126f9cb4c8a",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "model_spec.json",
+      "sha256": "0b066b06b1d77851d631f397d4296a9f11087904bc5eabedbb1161900d9ffa8c",
+      "model_id": "GB-COMPLEX-TOWER-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_tower_rose-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "c516c8c71ad7c7a40c99d67df533f817f75094935b19af28e2539077d922ce73",
+      "source_spec_hash": "5cdce189399e1d1a14b59d5fce08db7d45e8a5acebecb39a1810620760a886a6",
+      "design_sha256": "197042bd68c6651973b1f15bdece3a791404fcdb53421b07fcf2d126f9cb4c8a",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "printable_preview.png",
+      "sha256": "dc6be339878df939f27844a40e6094ac57cdcff566c039eb8980487c44c5d55a",
+      "model_id": "GB-COMPLEX-TOWER-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_tower_rose-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "c516c8c71ad7c7a40c99d67df533f817f75094935b19af28e2539077d922ce73",
+      "source_spec_hash": "5cdce189399e1d1a14b59d5fce08db7d45e8a5acebecb39a1810620760a886a6",
+      "design_sha256": "197042bd68c6651973b1f15bdece3a791404fcdb53421b07fcf2d126f9cb4c8a",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "printable_us_letter.pdf",
+      "sha256": "5372de7b098810a48b483b364cf481261b23b3ba187f2dff447e9ca9fa1324d7",
+      "model_id": "GB-COMPLEX-TOWER-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_tower_rose-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "c516c8c71ad7c7a40c99d67df533f817f75094935b19af28e2539077d922ce73",
+      "source_spec_hash": "5cdce189399e1d1a14b59d5fce08db7d45e8a5acebecb39a1810620760a886a6",
+      "design_sha256": "197042bd68c6651973b1f15bdece3a791404fcdb53421b07fcf2d126f9cb4c8a",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "printable_us_letter_coloring.pdf",
+      "sha256": "b50c2b454f2de42eee32e6fddb373e8b5e3f5594431cd6b4024fd411700afce2",
+      "model_id": "GB-COMPLEX-TOWER-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_tower_rose-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "c516c8c71ad7c7a40c99d67df533f817f75094935b19af28e2539077d922ce73",
+      "source_spec_hash": "5cdce189399e1d1a14b59d5fce08db7d45e8a5acebecb39a1810620760a886a6",
+      "design_sha256": "197042bd68c6651973b1f15bdece3a791404fcdb53421b07fcf2d126f9cb4c8a",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "svg_pages/page_001.svg",
+      "sha256": "520cbdf6eee6c6d8fb439b9a5ea684753cd85092a643d09f58e1a7edadcab2ff",
+      "model_id": "GB-COMPLEX-TOWER-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_tower_rose-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "c516c8c71ad7c7a40c99d67df533f817f75094935b19af28e2539077d922ce73",
+      "source_spec_hash": "5cdce189399e1d1a14b59d5fce08db7d45e8a5acebecb39a1810620760a886a6",
+      "design_sha256": "197042bd68c6651973b1f15bdece3a791404fcdb53421b07fcf2d126f9cb4c8a",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "svg_pages/page_002.svg",
+      "sha256": "87ba244815fc5a9ed2ed24fbd4b1cdcfa95af2ecb59c1844ae50976088b7ee48",
+      "model_id": "GB-COMPLEX-TOWER-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_tower_rose-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "c516c8c71ad7c7a40c99d67df533f817f75094935b19af28e2539077d922ce73",
+      "source_spec_hash": "5cdce189399e1d1a14b59d5fce08db7d45e8a5acebecb39a1810620760a886a6",
+      "design_sha256": "197042bd68c6651973b1f15bdece3a791404fcdb53421b07fcf2d126f9cb4c8a",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "svg_pages/page_003.svg",
+      "sha256": "0712fd46984a5bde36a1ebc5a2e308cf985c516471b54dd7ab6dea468dbcfa93",
+      "model_id": "GB-COMPLEX-TOWER-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_tower_rose-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "c516c8c71ad7c7a40c99d67df533f817f75094935b19af28e2539077d922ce73",
+      "source_spec_hash": "5cdce189399e1d1a14b59d5fce08db7d45e8a5acebecb39a1810620760a886a6",
+      "design_sha256": "197042bd68c6651973b1f15bdece3a791404fcdb53421b07fcf2d126f9cb4c8a",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "svg_pages/page_004.svg",
+      "sha256": "bf0d58c143939d83649fb537e834acc1d040ac03e20e15680258039f8b000d30",
+      "model_id": "GB-COMPLEX-TOWER-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_tower_rose-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "c516c8c71ad7c7a40c99d67df533f817f75094935b19af28e2539077d922ce73",
+      "source_spec_hash": "5cdce189399e1d1a14b59d5fce08db7d45e8a5acebecb39a1810620760a886a6",
+      "design_sha256": "197042bd68c6651973b1f15bdece3a791404fcdb53421b07fcf2d126f9cb4c8a",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "template_preview.svg",
+      "sha256": "562c4c4cca4564fc426272808cdc31d5b88afb46c3643993d4bd5c64755ad6c5",
+      "model_id": "GB-COMPLEX-TOWER-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_tower_rose-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "c516c8c71ad7c7a40c99d67df533f817f75094935b19af28e2539077d922ce73",
+      "source_spec_hash": "5cdce189399e1d1a14b59d5fce08db7d45e8a5acebecb39a1810620760a886a6",
+      "design_sha256": "197042bd68c6651973b1f15bdece3a791404fcdb53421b07fcf2d126f9cb4c8a",
+      "template_version": "5.5.0"
+    },
+    {
+      "path": "validation_report.json",
+      "sha256": "9269aa9ec622d68b94dbd8ac73eb98b452ee8ecdda41154164f845a118c8aee3",
+      "model_id": "GB-COMPLEX-TOWER-ROSE",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_tower_rose-roof-10mm",
+      "revision": 1,
+      "geometry_sha256": "c516c8c71ad7c7a40c99d67df533f817f75094935b19af28e2539077d922ce73",
+      "source_spec_hash": "5cdce189399e1d1a14b59d5fce08db7d45e8a5acebecb39a1810620760a886a6",
+      "design_sha256": "197042bd68c6651973b1f15bdece3a791404fcdb53421b07fcf2d126f9cb4c8a",
+      "template_version": "5.5.0"
+    }
+  ]
+}

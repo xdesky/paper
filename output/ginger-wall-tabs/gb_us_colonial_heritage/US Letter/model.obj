@@ -1,0 +1,39 @@
+# {"design_sha256":"03e741b4ff8c2ba37888e3704a443c0cda51fb1e108b1c88f18ab90a9f969d5b","geometry_sha256":"d915f5d846feb0b64ed811650ee58d982d19833b67537a249f21feb30e533868","model_id":"GB-US-COLONIAL-HERITAGE","project_id":"gb_us_colonial_heritage-wall-tabs","revision":1,"source_spec_hash":"b9f2071b6f1e8ee3656ead7eb40b50aa619cd448df25a7681f31981e8a0d27f8","template_version":"5.3.0","version":"gingerbread-4.0.0"}
+g FRONT
+v -42.5 -32.5 0
+v 42.5 -32.5 0
+v 42.5 -32.5 105
+v 0.0 -32.5 135
+v -42.5 -32.5 105
+f 1 2 3 4 5
+g BACK
+v -42.5 32.5 105
+v 0.0 32.5 135
+v 42.5 32.5 105
+v 42.5 32.5 0
+v -42.5 32.5 0
+f 6 7 8 9 10
+g RIGHT
+v 42.5 -32.5 0
+v 42.5 32.5 0
+v 42.5 32.5 105
+v 42.5 -32.5 105
+f 11 12 13 14
+g LEFT
+v -42.5 32.5 0
+v -42.5 -32.5 0
+v -42.5 -32.5 105
+v -42.5 32.5 105
+f 15 16 17 18
+g ROOF_1
+v 0.0 -32.5 135.0
+v 0.0 32.5 135.0
+v -42.5 32.5 105.0
+v -42.5 -32.5 105.0
+f 19 20 21 22
+g ROOF_2
+v 42.5 -32.5 105.0
+v 42.5 32.5 105.0
+v 0.0 32.5 135.0
+v 0.0 -32.5 135.0
+f 23 24 25 26

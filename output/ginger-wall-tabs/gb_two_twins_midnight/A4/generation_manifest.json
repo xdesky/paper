@@ -1,0 +1,316 @@
+{
+  "model_id": "GB-TWO-TWINS-MIDNIGHT",
+  "version": "gingerbread-4.0.0",
+  "project_id": "gb_two_twins_midnight-wall-tabs",
+  "revision": 1,
+  "geometry_sha256": "23d412e57fc9798b0f88268cbe8b26d01313f4eab89c3c36cd423bcc0f7455c6",
+  "source_spec_hash": "2f8c84407926ad16fc5d332c2bff84233eb423c72712d1ba2cb34bc09251862e",
+  "design_sha256": "c2bc085129dee3a6698c8578c597362c41930fe1e7125d92953ad5e4c0f185de",
+  "template_version": "5.3.0",
+  "input": {
+    "preset": "gb_two_twins_midnight",
+    "project_id": "gb_two_twins_midnight-wall-tabs",
+    "revision": 1,
+    "paper": "A4"
+  },
+  "template": {
+    "id": "gb_two_twins_midnight",
+    "name": "Twin Gable Cottage · Midnight & Gold",
+    "subtitle": "Twin Gable / Midnight & Gold",
+    "collection": "Two-Bay Houses",
+    "model_family": "two_bay_twins",
+    "architecture": "Twin Gable",
+    "finish": "Midnight & Gold",
+    "profile": [
+      [
+        0,
+        0
+      ],
+      [
+        0.25,
+        1
+      ],
+      [
+        0.5,
+        0
+      ],
+      [
+        0.75,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "bay_split": 0.5,
+    "bay_count": 2,
+    "material": "board",
+    "premium": true,
+    "width": 112,
+    "depth": 52,
+    "wall_height": 60,
+    "roof_rise": 36,
+    "wall": "#344c60",
+    "roof": "#29313f",
+    "accent": "#bb8648",
+    "trim": "#f5e8c6",
+    "background": "#e5e9ee",
+    "motif": "american",
+    "difficulty": "Intermediate",
+    "description": "Twin Gable with festive icing, candy details, and glowing windows. Includes a snowy base, a slotted tree, and two gift boxes. Customize the patterns and add your own name.",
+    "roof_overhang_mm": 4,
+    "roof_rake_mm": 6,
+    "category": "gingerbread-houses",
+    "categories": [
+      "gingerbread-houses",
+      "american-places",
+      "seasonal-holiday"
+    ]
+  },
+  "qa_status": "PASS",
+  "algorithm": "gable-house-1.0; v1.2 rigid pairing + shelf packing",
+  "physical_assembly": "NOT_TESTED",
+  "artifacts": [
+    {
+      "path": "accessories.pdf",
+      "sha256": "7cb851febccd5a30aabacbe9d94427148a34eec1f57a9c3e89bb83186b25a83a",
+      "model_id": "GB-TWO-TWINS-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_twins_midnight-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "23d412e57fc9798b0f88268cbe8b26d01313f4eab89c3c36cd423bcc0f7455c6",
+      "source_spec_hash": "2f8c84407926ad16fc5d332c2bff84233eb423c72712d1ba2cb34bc09251862e",
+      "design_sha256": "c2bc085129dee3a6698c8578c597362c41930fe1e7125d92953ad5e4c0f185de",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "accessories_guide.pdf",
+      "sha256": "2a76037b3515fdd7d677ee4b1d8ac4f930b6bf621ab25d6748bd6f1fa2ce459a",
+      "model_id": "GB-TWO-TWINS-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_twins_midnight-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "23d412e57fc9798b0f88268cbe8b26d01313f4eab89c3c36cd423bcc0f7455c6",
+      "source_spec_hash": "2f8c84407926ad16fc5d332c2bff84233eb423c72712d1ba2cb34bc09251862e",
+      "design_sha256": "c2bc085129dee3a6698c8578c597362c41930fe1e7125d92953ad5e4c0f185de",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "assembly_guide.pdf",
+      "sha256": "ff69cb5babb7401106ad858530efdd3966e2a8ad6a7f6449d887219d8bfc5cdb",
+      "model_id": "GB-TWO-TWINS-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_twins_midnight-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "23d412e57fc9798b0f88268cbe8b26d01313f4eab89c3c36cd423bcc0f7455c6",
+      "source_spec_hash": "2f8c84407926ad16fc5d332c2bff84233eb423c72712d1ba2cb34bc09251862e",
+      "design_sha256": "c2bc085129dee3a6698c8578c597362c41930fe1e7125d92953ad5e4c0f185de",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_001.svg",
+      "sha256": "f478480e76129e820e37497d684aff754c882d66a171dae2a16b9c5f2e3b4290",
+      "model_id": "GB-TWO-TWINS-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_twins_midnight-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "23d412e57fc9798b0f88268cbe8b26d01313f4eab89c3c36cd423bcc0f7455c6",
+      "source_spec_hash": "2f8c84407926ad16fc5d332c2bff84233eb423c72712d1ba2cb34bc09251862e",
+      "design_sha256": "c2bc085129dee3a6698c8578c597362c41930fe1e7125d92953ad5e4c0f185de",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_002.svg",
+      "sha256": "9406cdc7b83b083b4fb3ea3b2e7bd8e970ff58fa15b6985615ab9984a9d84a59",
+      "model_id": "GB-TWO-TWINS-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_twins_midnight-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "23d412e57fc9798b0f88268cbe8b26d01313f4eab89c3c36cd423bcc0f7455c6",
+      "source_spec_hash": "2f8c84407926ad16fc5d332c2bff84233eb423c72712d1ba2cb34bc09251862e",
+      "design_sha256": "c2bc085129dee3a6698c8578c597362c41930fe1e7125d92953ad5e4c0f185de",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_003.svg",
+      "sha256": "6b48b7251b7c1027d2cc96ca0a7c4ebb5752391262dda07efd89406adc1d7a92",
+      "model_id": "GB-TWO-TWINS-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_twins_midnight-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "23d412e57fc9798b0f88268cbe8b26d01313f4eab89c3c36cd423bcc0f7455c6",
+      "source_spec_hash": "2f8c84407926ad16fc5d332c2bff84233eb423c72712d1ba2cb34bc09251862e",
+      "design_sha256": "c2bc085129dee3a6698c8578c597362c41930fe1e7125d92953ad5e4c0f185de",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_004.svg",
+      "sha256": "b73b371aed6b300c81280838ce4adb74b3c03f4baa4e46b4fc3d67bb4bc9f137",
+      "model_id": "GB-TWO-TWINS-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_twins_midnight-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "23d412e57fc9798b0f88268cbe8b26d01313f4eab89c3c36cd423bcc0f7455c6",
+      "source_spec_hash": "2f8c84407926ad16fc5d332c2bff84233eb423c72712d1ba2cb34bc09251862e",
+      "design_sha256": "c2bc085129dee3a6698c8578c597362c41930fe1e7125d92953ad5e4c0f185de",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "display_scene.obj",
+      "sha256": "40a646a248644703cbda24a94cf93babc770ecb73d1ddf380427020b7ed9d142",
+      "model_id": "GB-TWO-TWINS-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_twins_midnight-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "23d412e57fc9798b0f88268cbe8b26d01313f4eab89c3c36cd423bcc0f7455c6",
+      "source_spec_hash": "2f8c84407926ad16fc5d332c2bff84233eb423c72712d1ba2cb34bc09251862e",
+      "design_sha256": "c2bc085129dee3a6698c8578c597362c41930fe1e7125d92953ad5e4c0f185de",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "model.obj",
+      "sha256": "62320d4ea8afaaf4b437457c44d891ca97baf97622f31f82a1bbcd4165d1e1ef",
+      "model_id": "GB-TWO-TWINS-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_twins_midnight-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "23d412e57fc9798b0f88268cbe8b26d01313f4eab89c3c36cd423bcc0f7455c6",
+      "source_spec_hash": "2f8c84407926ad16fc5d332c2bff84233eb423c72712d1ba2cb34bc09251862e",
+      "design_sha256": "c2bc085129dee3a6698c8578c597362c41930fe1e7125d92953ad5e4c0f185de",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "model_3d_preview.png",
+      "sha256": "33080633b17047d9ff2896747d961894fff31862b8f739251120f706bf7bc2d7",
+      "model_id": "GB-TWO-TWINS-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_twins_midnight-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "23d412e57fc9798b0f88268cbe8b26d01313f4eab89c3c36cd423bcc0f7455c6",
+      "source_spec_hash": "2f8c84407926ad16fc5d332c2bff84233eb423c72712d1ba2cb34bc09251862e",
+      "design_sha256": "c2bc085129dee3a6698c8578c597362c41930fe1e7125d92953ad5e4c0f185de",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "model_spec.json",
+      "sha256": "965d4d2498ce895d099acf4c6ccdc90e0b2f3f39af829e0180b1e5a34c914c7c",
+      "model_id": "GB-TWO-TWINS-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_twins_midnight-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "23d412e57fc9798b0f88268cbe8b26d01313f4eab89c3c36cd423bcc0f7455c6",
+      "source_spec_hash": "2f8c84407926ad16fc5d332c2bff84233eb423c72712d1ba2cb34bc09251862e",
+      "design_sha256": "c2bc085129dee3a6698c8578c597362c41930fe1e7125d92953ad5e4c0f185de",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "printable_a4.pdf",
+      "sha256": "b8e1a2e246e4f123593ce86ff000661261fd0820d94f885a5c77253edcbe7b78",
+      "model_id": "GB-TWO-TWINS-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_twins_midnight-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "23d412e57fc9798b0f88268cbe8b26d01313f4eab89c3c36cd423bcc0f7455c6",
+      "source_spec_hash": "2f8c84407926ad16fc5d332c2bff84233eb423c72712d1ba2cb34bc09251862e",
+      "design_sha256": "c2bc085129dee3a6698c8578c597362c41930fe1e7125d92953ad5e4c0f185de",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "printable_a4_coloring.pdf",
+      "sha256": "b6e70da27a992f2196b50d300e00bf268c8c9c61ccffb8d5c1ee5797b35e3305",
+      "model_id": "GB-TWO-TWINS-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_twins_midnight-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "23d412e57fc9798b0f88268cbe8b26d01313f4eab89c3c36cd423bcc0f7455c6",
+      "source_spec_hash": "2f8c84407926ad16fc5d332c2bff84233eb423c72712d1ba2cb34bc09251862e",
+      "design_sha256": "c2bc085129dee3a6698c8578c597362c41930fe1e7125d92953ad5e4c0f185de",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "printable_preview.png",
+      "sha256": "9e0eb5163ed5018302f02c8e6b4a59638273b794b4765c4a01aaf696b0685bb4",
+      "model_id": "GB-TWO-TWINS-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_twins_midnight-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "23d412e57fc9798b0f88268cbe8b26d01313f4eab89c3c36cd423bcc0f7455c6",
+      "source_spec_hash": "2f8c84407926ad16fc5d332c2bff84233eb423c72712d1ba2cb34bc09251862e",
+      "design_sha256": "c2bc085129dee3a6698c8578c597362c41930fe1e7125d92953ad5e4c0f185de",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "svg_pages/page_001.svg",
+      "sha256": "35affdfcd9da52f56b2e54cf450e903931860a54d1a951d70ecdad6ede443559",
+      "model_id": "GB-TWO-TWINS-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_twins_midnight-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "23d412e57fc9798b0f88268cbe8b26d01313f4eab89c3c36cd423bcc0f7455c6",
+      "source_spec_hash": "2f8c84407926ad16fc5d332c2bff84233eb423c72712d1ba2cb34bc09251862e",
+      "design_sha256": "c2bc085129dee3a6698c8578c597362c41930fe1e7125d92953ad5e4c0f185de",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "svg_pages/page_002.svg",
+      "sha256": "ffa081a0e725fc1b9af6c9bcb664da14a5b86e98bbfca16f22b2e6bebda5389e",
+      "model_id": "GB-TWO-TWINS-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_twins_midnight-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "23d412e57fc9798b0f88268cbe8b26d01313f4eab89c3c36cd423bcc0f7455c6",
+      "source_spec_hash": "2f8c84407926ad16fc5d332c2bff84233eb423c72712d1ba2cb34bc09251862e",
+      "design_sha256": "c2bc085129dee3a6698c8578c597362c41930fe1e7125d92953ad5e4c0f185de",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "svg_pages/page_003.svg",
+      "sha256": "2877381731d808c03cabf2bb9fdcc953c2d5f17777e2ef61a8441e622f573c82",
+      "model_id": "GB-TWO-TWINS-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_twins_midnight-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "23d412e57fc9798b0f88268cbe8b26d01313f4eab89c3c36cd423bcc0f7455c6",
+      "source_spec_hash": "2f8c84407926ad16fc5d332c2bff84233eb423c72712d1ba2cb34bc09251862e",
+      "design_sha256": "c2bc085129dee3a6698c8578c597362c41930fe1e7125d92953ad5e4c0f185de",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "svg_pages/page_004.svg",
+      "sha256": "48823646fedc2d67a872af8f3d00f756ff1383b294808e7ba2fd738fa6fd34eb",
+      "model_id": "GB-TWO-TWINS-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_twins_midnight-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "23d412e57fc9798b0f88268cbe8b26d01313f4eab89c3c36cd423bcc0f7455c6",
+      "source_spec_hash": "2f8c84407926ad16fc5d332c2bff84233eb423c72712d1ba2cb34bc09251862e",
+      "design_sha256": "c2bc085129dee3a6698c8578c597362c41930fe1e7125d92953ad5e4c0f185de",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "template_preview.svg",
+      "sha256": "57e0fa7b42cfc40ce548d75d9675f5d0ff0037e242953c0d3e2fc2c4c7730a37",
+      "model_id": "GB-TWO-TWINS-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_twins_midnight-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "23d412e57fc9798b0f88268cbe8b26d01313f4eab89c3c36cd423bcc0f7455c6",
+      "source_spec_hash": "2f8c84407926ad16fc5d332c2bff84233eb423c72712d1ba2cb34bc09251862e",
+      "design_sha256": "c2bc085129dee3a6698c8578c597362c41930fe1e7125d92953ad5e4c0f185de",
+      "template_version": "5.3.0"
+    },
+    {
+      "path": "validation_report.json",
+      "sha256": "51bbfa8c5ec11c7b4023a59dd3822ce724a139857556a14b99b04ee7494475f2",
+      "model_id": "GB-TWO-TWINS-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_two_twins_midnight-wall-tabs",
+      "revision": 1,
+      "geometry_sha256": "23d412e57fc9798b0f88268cbe8b26d01313f4eab89c3c36cd423bcc0f7455c6",
+      "source_spec_hash": "2f8c84407926ad16fc5d332c2bff84233eb423c72712d1ba2cb34bc09251862e",
+      "design_sha256": "c2bc085129dee3a6698c8578c597362c41930fe1e7125d92953ad5e4c0f185de",
+      "template_version": "5.3.0"
+    }
+  ]
+}

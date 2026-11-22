@@ -27,9 +27,10 @@ def test_template_end_to_end(client,template):
     spec=client.get(f'/api/projects/{pid}/geometry').json()
     report=client.get(f'/api/projects/{pid}/validation').json()
     from backend.accessories import layout as accessory_layout
-    if spec['roof_cap']['rake_mm']>template.get('roof_rake_mm',6):
-        assert spec['sheet_count']==3
-    else:
+    assert spec['roof_cap']['rake_mm']==spec['roof_cap']['slope_extension_mm']==10
+    assert spec['roof_cap']['cut_pieces']>=1
+    assert all(not pid.startswith('ROOF') for unit in spec['print_units'] for pid in unit['panel_ids'])
+    if spec['sheet_count']!=3:
         assert spec['sheet_count']==spec['house_sheet_count']+len(accessory_layout(template))
     assert len(spec['scene_accessories']['panels'])==15+len(spec['geometry']['panels'])-4+4*int(bool(template.get('chimney')))
     assert spec['scene_accessories']['gift_sizes_mm']==[20,16]
@@ -43,16 +44,17 @@ def test_template_end_to_end(client,template):
     assert len(spec['geometry']['panels'])==4+len(template.get('profile',[(0,0),(.5,1),(1,0)]))-1
     assert len(spec['geometry']['seams'])==3*len(spec['geometry']['panels'])-7
     assert report['summary']['fold_hinges']==sum(bool(u['fold_code']) for u in spec['print_units'])
-    assert report['summary']['glue_seams']==len(spec['geometry']['seams'])-report['summary']['fold_hinges']
+    printed_panels={pid for unit in spec['print_units'] for pid in unit['panel_ids']}
+    printed_seams=[s for s in spec['geometry']['seams'] if any(m['panel'] in printed_panels for m in s['mates'])]
+    assert report['summary']['glue_seams']==len(printed_seams)-report['summary']['fold_hinges']
     assert spec['geometry']['model']['height_mm']==template['wall_height']+template['roof_rise']
     assert len(spec['appearance']['panels'])==4+len(template.get('profile',[(0,0),(.5,1),(1,0)]))-1
     archive=client.get(f'/api/projects/{pid}/artifacts/project.zip?download=true')
     assert archive.status_code==200 and archive.headers['content-type']=='application/zip'
     manifest=client.get(f'/api/projects/{pid}/artifacts/generation_manifest.json').json()
     expected_template=template
-    if spec['roof_cap']['rake_mm']>template.get('roof_rake_mm',6):
-        expected_template={**template,'roof_rake_mm':template['roof_rake_mm']+5,
-                           'roof_overhang_mm':template['roof_overhang_mm']+5,'roof_corner_radius_mm':template.get('roof_corner_radius_mm',4)}
+    if spec['roof_cap']['corner_radius_mm']:
+        expected_template={**template,'roof_corner_radius_mm':spec['roof_cap']['corner_radius_mm']}
     assert manifest['template']==expected_template
     assert manifest['input']['template']==template
     with zipfile.ZipFile(io.BytesIO(archive.content)) as z:
@@ -71,9 +73,17 @@ def test_template_end_to_end(client,template):
     assert client.get(f'/api/projects/{pid}/print').status_code==409
 
 
-def test_catalog_and_previews(client):
+def test_catalog_and_previews(client,monkeypatch):
+    from backend import gingerbread
+
+    def unexpected_layout(template):
+        pytest.fail(f"Listing {template['id']} must use published print counts")
+
+    monkeypatch.setattr(gingerbread,'print_structure',unexpected_layout)
     catalog=client.get('/api/templates').json()
     assert len(catalog)==len(TEMPLATES)
+    miniature=next(c for c in client.get('/api/template-categories').json() if c['id']=='miniature-worlds')
+    assert miniature['status']=='available' and miniature['template_count']==3
     for t in catalog:
         assert t['sheet_count']>0 and t['physical_assembly']=='NOT_TESTED'
         r=client.get(t['preview_url'])

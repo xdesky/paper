@@ -1,0 +1,321 @@
+{
+  "model_id": "GB-COMPLEX-TOWER-MINT",
+  "version": "gingerbread-4.0.0",
+  "project_id": "gb_complex_tower_mint-gift-pairs",
+  "revision": 1,
+  "geometry_sha256": "079faa76505c9fba76536578172881ed06d37d33101079c75a55d48df204fc89",
+  "source_spec_hash": "306cd4e28c3839164de119f43d58e923cf134e06a78af23e8aa1634de1288b74",
+  "design_sha256": "daa4c3343b765f6f799e031dc5df518b01deb0bb65d7d4b22aea4a7017e5859c",
+  "template_version": "5.7.0",
+  "input": {
+    "preset": "gb_complex_tower_mint",
+    "project_id": "gb_complex_tower_mint-gift-pairs",
+    "revision": 1,
+    "paper": "A4"
+  },
+  "template": {
+    "id": "gb_complex_tower_mint",
+    "name": "Candy Mansard Tower · Peppermint Mint",
+    "subtitle": "Mansard Candy Tower / Peppermint Mint",
+    "collection": "Advanced Christmas",
+    "model_family": "complex_tower",
+    "architecture": "Mansard Candy Tower",
+    "finish": "Peppermint Mint",
+    "profile": [
+      [
+        0,
+        0
+      ],
+      [
+        0.14,
+        0.72
+      ],
+      [
+        0.3,
+        1
+      ],
+      [
+        0.7,
+        1
+      ],
+      [
+        0.86,
+        0.72
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "bay_count": 1,
+    "bay_splits": [],
+    "material": "board",
+    "premium": true,
+    "width": 80,
+    "depth": 60,
+    "wall_height": 108,
+    "roof_rise": 42,
+    "wall": "#99c8b5",
+    "roof": "#579d87",
+    "accent": "#ce3045",
+    "trim": "#fff9ef",
+    "background": "#e5f3ec",
+    "motif": "american",
+    "difficulty": "Advanced",
+    "description": "Mansard Candy Tower with festive icing, candy details, and glowing windows. Includes a snowy base, a slotted tree, and two gift boxes. Customize the patterns and add your own name.",
+    "roof_overhang_mm": 10,
+    "roof_rake_mm": 10,
+    "single_layer_roof": true,
+    "category": "gingerbread-houses",
+    "categories": [
+      "gingerbread-houses",
+      "seasonal-holiday",
+      "fantasy-storybook"
+    ]
+  },
+  "qa_status": "PASS",
+  "algorithm": "gable-house-1.0; v1.2 rigid pairing + shelf packing",
+  "physical_assembly": "NOT_TESTED",
+  "artifacts": [
+    {
+      "path": "accessories.pdf",
+      "sha256": "669cde13a09aafc207571ea59fa1dad1a29face6b96efdd8b56d3c6fe90cb2c7",
+      "model_id": "GB-COMPLEX-TOWER-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_tower_mint-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "079faa76505c9fba76536578172881ed06d37d33101079c75a55d48df204fc89",
+      "source_spec_hash": "306cd4e28c3839164de119f43d58e923cf134e06a78af23e8aa1634de1288b74",
+      "design_sha256": "daa4c3343b765f6f799e031dc5df518b01deb0bb65d7d4b22aea4a7017e5859c",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "accessories_guide.pdf",
+      "sha256": "a03d4894c8a2b58e82b75d78a2c7079f1d10e57478bf00f8087789b873eda0f6",
+      "model_id": "GB-COMPLEX-TOWER-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_tower_mint-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "079faa76505c9fba76536578172881ed06d37d33101079c75a55d48df204fc89",
+      "source_spec_hash": "306cd4e28c3839164de119f43d58e923cf134e06a78af23e8aa1634de1288b74",
+      "design_sha256": "daa4c3343b765f6f799e031dc5df518b01deb0bb65d7d4b22aea4a7017e5859c",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "assembly_guide.pdf",
+      "sha256": "7533036f59a7aafe8130de353ff26d272174fd2f05ebf39198b43e672072d564",
+      "model_id": "GB-COMPLEX-TOWER-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_tower_mint-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "079faa76505c9fba76536578172881ed06d37d33101079c75a55d48df204fc89",
+      "source_spec_hash": "306cd4e28c3839164de119f43d58e923cf134e06a78af23e8aa1634de1288b74",
+      "design_sha256": "daa4c3343b765f6f799e031dc5df518b01deb0bb65d7d4b22aea4a7017e5859c",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_001.svg",
+      "sha256": "c437b63c56acd64a65c984b59850f6d8679989e3c1a56dc191dde8050eab7e34",
+      "model_id": "GB-COMPLEX-TOWER-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_tower_mint-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "079faa76505c9fba76536578172881ed06d37d33101079c75a55d48df204fc89",
+      "source_spec_hash": "306cd4e28c3839164de119f43d58e923cf134e06a78af23e8aa1634de1288b74",
+      "design_sha256": "daa4c3343b765f6f799e031dc5df518b01deb0bb65d7d4b22aea4a7017e5859c",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_002.svg",
+      "sha256": "733f16404214ccee80698ed4fa69da2a419d847b700aa91d48a9ffff674f5073",
+      "model_id": "GB-COMPLEX-TOWER-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_tower_mint-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "079faa76505c9fba76536578172881ed06d37d33101079c75a55d48df204fc89",
+      "source_spec_hash": "306cd4e28c3839164de119f43d58e923cf134e06a78af23e8aa1634de1288b74",
+      "design_sha256": "daa4c3343b765f6f799e031dc5df518b01deb0bb65d7d4b22aea4a7017e5859c",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_003.svg",
+      "sha256": "c597f203b94b0b75f63f0c996a0a29d7e1b59007592b00168753c7cec160f2c3",
+      "model_id": "GB-COMPLEX-TOWER-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_tower_mint-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "079faa76505c9fba76536578172881ed06d37d33101079c75a55d48df204fc89",
+      "source_spec_hash": "306cd4e28c3839164de119f43d58e923cf134e06a78af23e8aa1634de1288b74",
+      "design_sha256": "daa4c3343b765f6f799e031dc5df518b01deb0bb65d7d4b22aea4a7017e5859c",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_004.svg",
+      "sha256": "530cfbb32c0d86cb06427b92cdff310c12ffdf0d66d7b8f1ebbfa7d7245c8c07",
+      "model_id": "GB-COMPLEX-TOWER-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_tower_mint-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "079faa76505c9fba76536578172881ed06d37d33101079c75a55d48df204fc89",
+      "source_spec_hash": "306cd4e28c3839164de119f43d58e923cf134e06a78af23e8aa1634de1288b74",
+      "design_sha256": "daa4c3343b765f6f799e031dc5df518b01deb0bb65d7d4b22aea4a7017e5859c",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "display_scene.obj",
+      "sha256": "c1bb43b873d8997cc902e72a04e7e9e965bf42ac8e5e9f841fcf33c279c910c4",
+      "model_id": "GB-COMPLEX-TOWER-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_tower_mint-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "079faa76505c9fba76536578172881ed06d37d33101079c75a55d48df204fc89",
+      "source_spec_hash": "306cd4e28c3839164de119f43d58e923cf134e06a78af23e8aa1634de1288b74",
+      "design_sha256": "daa4c3343b765f6f799e031dc5df518b01deb0bb65d7d4b22aea4a7017e5859c",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "model.obj",
+      "sha256": "c7f5bbe4c784afaa2df0a110f1aca5e7955bc68ebd3e5b2911dc3fdcf2ada5d0",
+      "model_id": "GB-COMPLEX-TOWER-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_tower_mint-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "079faa76505c9fba76536578172881ed06d37d33101079c75a55d48df204fc89",
+      "source_spec_hash": "306cd4e28c3839164de119f43d58e923cf134e06a78af23e8aa1634de1288b74",
+      "design_sha256": "daa4c3343b765f6f799e031dc5df518b01deb0bb65d7d4b22aea4a7017e5859c",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "model_3d_preview.png",
+      "sha256": "58a729a2babaa8e7b91ae1f6d062bc67852f9749884d52624c2207a86b043a71",
+      "model_id": "GB-COMPLEX-TOWER-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_tower_mint-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "079faa76505c9fba76536578172881ed06d37d33101079c75a55d48df204fc89",
+      "source_spec_hash": "306cd4e28c3839164de119f43d58e923cf134e06a78af23e8aa1634de1288b74",
+      "design_sha256": "daa4c3343b765f6f799e031dc5df518b01deb0bb65d7d4b22aea4a7017e5859c",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "model_spec.json",
+      "sha256": "871b7964cb6fc342973b9352273d17e18b463b96d619f7b0c469883eb984e785",
+      "model_id": "GB-COMPLEX-TOWER-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_tower_mint-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "079faa76505c9fba76536578172881ed06d37d33101079c75a55d48df204fc89",
+      "source_spec_hash": "306cd4e28c3839164de119f43d58e923cf134e06a78af23e8aa1634de1288b74",
+      "design_sha256": "daa4c3343b765f6f799e031dc5df518b01deb0bb65d7d4b22aea4a7017e5859c",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "printable_a4.pdf",
+      "sha256": "3be07564d52133d654cd0f53a8bf4bbec1973e549d11f438404efe05688f30d7",
+      "model_id": "GB-COMPLEX-TOWER-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_tower_mint-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "079faa76505c9fba76536578172881ed06d37d33101079c75a55d48df204fc89",
+      "source_spec_hash": "306cd4e28c3839164de119f43d58e923cf134e06a78af23e8aa1634de1288b74",
+      "design_sha256": "daa4c3343b765f6f799e031dc5df518b01deb0bb65d7d4b22aea4a7017e5859c",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "printable_a4_coloring.pdf",
+      "sha256": "29067588a0aa7a5d9db2d2ad917d09cf99ed42cde7ceca1f74dd75294730dcfd",
+      "model_id": "GB-COMPLEX-TOWER-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_tower_mint-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "079faa76505c9fba76536578172881ed06d37d33101079c75a55d48df204fc89",
+      "source_spec_hash": "306cd4e28c3839164de119f43d58e923cf134e06a78af23e8aa1634de1288b74",
+      "design_sha256": "daa4c3343b765f6f799e031dc5df518b01deb0bb65d7d4b22aea4a7017e5859c",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "printable_preview.png",
+      "sha256": "29341daa0c05ccc54ded58f438bce7be11a1128abe45d67785c347bf12ef0453",
+      "model_id": "GB-COMPLEX-TOWER-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_tower_mint-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "079faa76505c9fba76536578172881ed06d37d33101079c75a55d48df204fc89",
+      "source_spec_hash": "306cd4e28c3839164de119f43d58e923cf134e06a78af23e8aa1634de1288b74",
+      "design_sha256": "daa4c3343b765f6f799e031dc5df518b01deb0bb65d7d4b22aea4a7017e5859c",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "svg_pages/page_001.svg",
+      "sha256": "baafc7b1f0d20c22e85669985d870c113e7d48eff80e0ce160aa398d1f1b6ce6",
+      "model_id": "GB-COMPLEX-TOWER-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_tower_mint-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "079faa76505c9fba76536578172881ed06d37d33101079c75a55d48df204fc89",
+      "source_spec_hash": "306cd4e28c3839164de119f43d58e923cf134e06a78af23e8aa1634de1288b74",
+      "design_sha256": "daa4c3343b765f6f799e031dc5df518b01deb0bb65d7d4b22aea4a7017e5859c",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "svg_pages/page_002.svg",
+      "sha256": "348a1cb4e111631e70feb5da3d54f120ae24b5a994713b3d87e2ee540daf81ef",
+      "model_id": "GB-COMPLEX-TOWER-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_tower_mint-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "079faa76505c9fba76536578172881ed06d37d33101079c75a55d48df204fc89",
+      "source_spec_hash": "306cd4e28c3839164de119f43d58e923cf134e06a78af23e8aa1634de1288b74",
+      "design_sha256": "daa4c3343b765f6f799e031dc5df518b01deb0bb65d7d4b22aea4a7017e5859c",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "svg_pages/page_003.svg",
+      "sha256": "a57a640b1f52bf29fe69e32dfde8662222ea87bbc504d7c2ec6fc45570aff842",
+      "model_id": "GB-COMPLEX-TOWER-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_tower_mint-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "079faa76505c9fba76536578172881ed06d37d33101079c75a55d48df204fc89",
+      "source_spec_hash": "306cd4e28c3839164de119f43d58e923cf134e06a78af23e8aa1634de1288b74",
+      "design_sha256": "daa4c3343b765f6f799e031dc5df518b01deb0bb65d7d4b22aea4a7017e5859c",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "svg_pages/page_004.svg",
+      "sha256": "fb25b8d7d1591614bbc39bc2f01458c7eea2a4bbba17584db0832520d122fd86",
+      "model_id": "GB-COMPLEX-TOWER-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_tower_mint-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "079faa76505c9fba76536578172881ed06d37d33101079c75a55d48df204fc89",
+      "source_spec_hash": "306cd4e28c3839164de119f43d58e923cf134e06a78af23e8aa1634de1288b74",
+      "design_sha256": "daa4c3343b765f6f799e031dc5df518b01deb0bb65d7d4b22aea4a7017e5859c",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "template_preview.svg",
+      "sha256": "bfaa2217a3ee79038450a999c61e0a3fc5a80468d9e86abc8f5c92719e1536b4",
+      "model_id": "GB-COMPLEX-TOWER-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_tower_mint-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "079faa76505c9fba76536578172881ed06d37d33101079c75a55d48df204fc89",
+      "source_spec_hash": "306cd4e28c3839164de119f43d58e923cf134e06a78af23e8aa1634de1288b74",
+      "design_sha256": "daa4c3343b765f6f799e031dc5df518b01deb0bb65d7d4b22aea4a7017e5859c",
+      "template_version": "5.7.0"
+    },
+    {
+      "path": "validation_report.json",
+      "sha256": "83df823b09aa20627d992ebea0de789e1328932c659c8557f13da3160cc0e035",
+      "model_id": "GB-COMPLEX-TOWER-MINT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_complex_tower_mint-gift-pairs",
+      "revision": 1,
+      "geometry_sha256": "079faa76505c9fba76536578172881ed06d37d33101079c75a55d48df204fc89",
+      "source_spec_hash": "306cd4e28c3839164de119f43d58e923cf134e06a78af23e8aa1634de1288b74",
+      "design_sha256": "daa4c3343b765f6f799e031dc5df518b01deb0bb65d7d4b22aea4a7017e5859c",
+      "template_version": "5.7.0"
+    }
+  ]
+}

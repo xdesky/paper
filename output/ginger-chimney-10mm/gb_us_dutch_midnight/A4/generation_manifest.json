@@ -1,0 +1,317 @@
+{
+  "model_id": "GB-US-DUTCH-MIDNIGHT",
+  "version": "gingerbread-4.0.0",
+  "project_id": "gb_us_dutch_midnight-chimney-10mm",
+  "revision": 1,
+  "geometry_sha256": "ff1cac204fe9fbe9c76a61b960a53487bc0d2c08f1816043fe12fed7a9ba797a",
+  "source_spec_hash": "55654567db24c60949086951ebd779494fb5620ee7510523ffd64987297ea86b",
+  "design_sha256": "fe897bae96b28f2421675d27b1697b4a980528a46382f0f92db6b864bf1cf23f",
+  "template_version": "5.4.0",
+  "input": {
+    "preset": "gb_us_dutch_midnight",
+    "project_id": "gb_us_dutch_midnight-chimney-10mm",
+    "revision": 1,
+    "paper": "A4"
+  },
+  "template": {
+    "id": "gb_us_dutch_midnight",
+    "name": "Dutch Colonial · Midnight & Gold",
+    "subtitle": "Dutch Colonial / Midnight & Gold",
+    "collection": "American Premium",
+    "model_family": "dutch",
+    "architecture": "Dutch Colonial",
+    "finish": "Midnight & Gold",
+    "profile": [
+      [
+        0,
+        0
+      ],
+      [
+        0.18,
+        0.72
+      ],
+      [
+        0.5,
+        1
+      ],
+      [
+        0.82,
+        0.72
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "material": "shingle",
+    "premium": true,
+    "width": 90,
+    "depth": 65,
+    "wall_height": 80,
+    "roof_rise": 48,
+    "wall": "#344c60",
+    "roof": "#29313f",
+    "accent": "#bb8648",
+    "trim": "#f5e8c6",
+    "background": "#e5e9ee",
+    "motif": "american",
+    "difficulty": "Intermediate",
+    "description": "Dutch Colonial with festive icing, candy details, and glowing windows. Includes a snowy base, a slotted tree, and two gift boxes. Customize the patterns and add your own name.",
+    "roof_overhang_mm": 4,
+    "roof_rake_mm": 6,
+    "chimney": true,
+    "chimney_placement": "longest_slope",
+    "chimney_growth_mm": 10,
+    "category": "gingerbread-houses",
+    "categories": [
+      "gingerbread-houses",
+      "american-places",
+      "seasonal-holiday"
+    ]
+  },
+  "qa_status": "PASS",
+  "algorithm": "gable-house-1.0; v1.2 rigid pairing + shelf packing",
+  "physical_assembly": "NOT_TESTED",
+  "artifacts": [
+    {
+      "path": "accessories.pdf",
+      "sha256": "c2333ad943a82db7bc5380bdbf45f55333005369bc6053ea688d73af6a3ba4f1",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_dutch_midnight-chimney-10mm",
+      "revision": 1,
+      "geometry_sha256": "ff1cac204fe9fbe9c76a61b960a53487bc0d2c08f1816043fe12fed7a9ba797a",
+      "source_spec_hash": "55654567db24c60949086951ebd779494fb5620ee7510523ffd64987297ea86b",
+      "design_sha256": "fe897bae96b28f2421675d27b1697b4a980528a46382f0f92db6b864bf1cf23f",
+      "template_version": "5.4.0"
+    },
+    {
+      "path": "accessories_guide.pdf",
+      "sha256": "127ecf7ed578b71b0b57e6af86084e02f3bdda3427d8f65cbc3984e9556f6b6e",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_dutch_midnight-chimney-10mm",
+      "revision": 1,
+      "geometry_sha256": "ff1cac204fe9fbe9c76a61b960a53487bc0d2c08f1816043fe12fed7a9ba797a",
+      "source_spec_hash": "55654567db24c60949086951ebd779494fb5620ee7510523ffd64987297ea86b",
+      "design_sha256": "fe897bae96b28f2421675d27b1697b4a980528a46382f0f92db6b864bf1cf23f",
+      "template_version": "5.4.0"
+    },
+    {
+      "path": "assembly_guide.pdf",
+      "sha256": "a4bbe60b15f25f661290d45e00869823ada5f432a4785c332831e203fe4d4eed",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_dutch_midnight-chimney-10mm",
+      "revision": 1,
+      "geometry_sha256": "ff1cac204fe9fbe9c76a61b960a53487bc0d2c08f1816043fe12fed7a9ba797a",
+      "source_spec_hash": "55654567db24c60949086951ebd779494fb5620ee7510523ffd64987297ea86b",
+      "design_sha256": "fe897bae96b28f2421675d27b1697b4a980528a46382f0f92db6b864bf1cf23f",
+      "template_version": "5.4.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_001.svg",
+      "sha256": "0a3798e4683b606ab3c3a6d5db73169dd518155114023100741a833d5d587d50",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_dutch_midnight-chimney-10mm",
+      "revision": 1,
+      "geometry_sha256": "ff1cac204fe9fbe9c76a61b960a53487bc0d2c08f1816043fe12fed7a9ba797a",
+      "source_spec_hash": "55654567db24c60949086951ebd779494fb5620ee7510523ffd64987297ea86b",
+      "design_sha256": "fe897bae96b28f2421675d27b1697b4a980528a46382f0f92db6b864bf1cf23f",
+      "template_version": "5.4.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_002.svg",
+      "sha256": "ad56a966ebbccfa3b052b83ff25fa9a1567c792300b56ed27f667c0da6b71474",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_dutch_midnight-chimney-10mm",
+      "revision": 1,
+      "geometry_sha256": "ff1cac204fe9fbe9c76a61b960a53487bc0d2c08f1816043fe12fed7a9ba797a",
+      "source_spec_hash": "55654567db24c60949086951ebd779494fb5620ee7510523ffd64987297ea86b",
+      "design_sha256": "fe897bae96b28f2421675d27b1697b4a980528a46382f0f92db6b864bf1cf23f",
+      "template_version": "5.4.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_003.svg",
+      "sha256": "d4c2e2c6b787c7d8bf3789766d1496d62155e44e56a71db0c5513a2a81262638",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_dutch_midnight-chimney-10mm",
+      "revision": 1,
+      "geometry_sha256": "ff1cac204fe9fbe9c76a61b960a53487bc0d2c08f1816043fe12fed7a9ba797a",
+      "source_spec_hash": "55654567db24c60949086951ebd779494fb5620ee7510523ffd64987297ea86b",
+      "design_sha256": "fe897bae96b28f2421675d27b1697b4a980528a46382f0f92db6b864bf1cf23f",
+      "template_version": "5.4.0"
+    },
+    {
+      "path": "coloring_svg_pages/page_004.svg",
+      "sha256": "1b5bfd30453325d82378a897d042385e9850f50f23344271375fe86aa17ef77e",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_dutch_midnight-chimney-10mm",
+      "revision": 1,
+      "geometry_sha256": "ff1cac204fe9fbe9c76a61b960a53487bc0d2c08f1816043fe12fed7a9ba797a",
+      "source_spec_hash": "55654567db24c60949086951ebd779494fb5620ee7510523ffd64987297ea86b",
+      "design_sha256": "fe897bae96b28f2421675d27b1697b4a980528a46382f0f92db6b864bf1cf23f",
+      "template_version": "5.4.0"
+    },
+    {
+      "path": "display_scene.obj",
+      "sha256": "2496c4298bb9bc996f4b2fcbfa44de1d0c1bb484376a229f2c19f11450b56583",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_dutch_midnight-chimney-10mm",
+      "revision": 1,
+      "geometry_sha256": "ff1cac204fe9fbe9c76a61b960a53487bc0d2c08f1816043fe12fed7a9ba797a",
+      "source_spec_hash": "55654567db24c60949086951ebd779494fb5620ee7510523ffd64987297ea86b",
+      "design_sha256": "fe897bae96b28f2421675d27b1697b4a980528a46382f0f92db6b864bf1cf23f",
+      "template_version": "5.4.0"
+    },
+    {
+      "path": "model.obj",
+      "sha256": "3233f6a51b572110de11c87a6bd8bbb13da4f63b879aa16a3d8ffe2bb098440b",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_dutch_midnight-chimney-10mm",
+      "revision": 1,
+      "geometry_sha256": "ff1cac204fe9fbe9c76a61b960a53487bc0d2c08f1816043fe12fed7a9ba797a",
+      "source_spec_hash": "55654567db24c60949086951ebd779494fb5620ee7510523ffd64987297ea86b",
+      "design_sha256": "fe897bae96b28f2421675d27b1697b4a980528a46382f0f92db6b864bf1cf23f",
+      "template_version": "5.4.0"
+    },
+    {
+      "path": "model_3d_preview.png",
+      "sha256": "72a4fa9167bdba301c74aca35c8fef21699bccc76af64f03d3e8b2e2338560e9",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_dutch_midnight-chimney-10mm",
+      "revision": 1,
+      "geometry_sha256": "ff1cac204fe9fbe9c76a61b960a53487bc0d2c08f1816043fe12fed7a9ba797a",
+      "source_spec_hash": "55654567db24c60949086951ebd779494fb5620ee7510523ffd64987297ea86b",
+      "design_sha256": "fe897bae96b28f2421675d27b1697b4a980528a46382f0f92db6b864bf1cf23f",
+      "template_version": "5.4.0"
+    },
+    {
+      "path": "model_spec.json",
+      "sha256": "429958bae862fe449dad10302fc6477dd14b35c75ff3fbc268abac431f10d3ed",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_dutch_midnight-chimney-10mm",
+      "revision": 1,
+      "geometry_sha256": "ff1cac204fe9fbe9c76a61b960a53487bc0d2c08f1816043fe12fed7a9ba797a",
+      "source_spec_hash": "55654567db24c60949086951ebd779494fb5620ee7510523ffd64987297ea86b",
+      "design_sha256": "fe897bae96b28f2421675d27b1697b4a980528a46382f0f92db6b864bf1cf23f",
+      "template_version": "5.4.0"
+    },
+    {
+      "path": "printable_a4.pdf",
+      "sha256": "602f80e80f017f8fd753fc1bb8f3bca9ca525628346b53c655fb911ea353e1db",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_dutch_midnight-chimney-10mm",
+      "revision": 1,
+      "geometry_sha256": "ff1cac204fe9fbe9c76a61b960a53487bc0d2c08f1816043fe12fed7a9ba797a",
+      "source_spec_hash": "55654567db24c60949086951ebd779494fb5620ee7510523ffd64987297ea86b",
+      "design_sha256": "fe897bae96b28f2421675d27b1697b4a980528a46382f0f92db6b864bf1cf23f",
+      "template_version": "5.4.0"
+    },
+    {
+      "path": "printable_a4_coloring.pdf",
+      "sha256": "b2400d6cd669edb4603c3641b84ce0a1a8dd61ac2c306658d06ff266301a7aa4",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_dutch_midnight-chimney-10mm",
+      "revision": 1,
+      "geometry_sha256": "ff1cac204fe9fbe9c76a61b960a53487bc0d2c08f1816043fe12fed7a9ba797a",
+      "source_spec_hash": "55654567db24c60949086951ebd779494fb5620ee7510523ffd64987297ea86b",
+      "design_sha256": "fe897bae96b28f2421675d27b1697b4a980528a46382f0f92db6b864bf1cf23f",
+      "template_version": "5.4.0"
+    },
+    {
+      "path": "printable_preview.png",
+      "sha256": "ae2e3afca431cf9ae6659e250ce279330f995e6cb4af66b8042b2ab59c177049",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_dutch_midnight-chimney-10mm",
+      "revision": 1,
+      "geometry_sha256": "ff1cac204fe9fbe9c76a61b960a53487bc0d2c08f1816043fe12fed7a9ba797a",
+      "source_spec_hash": "55654567db24c60949086951ebd779494fb5620ee7510523ffd64987297ea86b",
+      "design_sha256": "fe897bae96b28f2421675d27b1697b4a980528a46382f0f92db6b864bf1cf23f",
+      "template_version": "5.4.0"
+    },
+    {
+      "path": "svg_pages/page_001.svg",
+      "sha256": "c404b87f7269db4c734542e6369a40f4e8bcb52a400082b78a18a99225f3b4d8",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_dutch_midnight-chimney-10mm",
+      "revision": 1,
+      "geometry_sha256": "ff1cac204fe9fbe9c76a61b960a53487bc0d2c08f1816043fe12fed7a9ba797a",
+      "source_spec_hash": "55654567db24c60949086951ebd779494fb5620ee7510523ffd64987297ea86b",
+      "design_sha256": "fe897bae96b28f2421675d27b1697b4a980528a46382f0f92db6b864bf1cf23f",
+      "template_version": "5.4.0"
+    },
+    {
+      "path": "svg_pages/page_002.svg",
+      "sha256": "68e68f6e48a813fa03628ad6a1b468d47eea0652577e0a6da43a99e4d92676cd",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_dutch_midnight-chimney-10mm",
+      "revision": 1,
+      "geometry_sha256": "ff1cac204fe9fbe9c76a61b960a53487bc0d2c08f1816043fe12fed7a9ba797a",
+      "source_spec_hash": "55654567db24c60949086951ebd779494fb5620ee7510523ffd64987297ea86b",
+      "design_sha256": "fe897bae96b28f2421675d27b1697b4a980528a46382f0f92db6b864bf1cf23f",
+      "template_version": "5.4.0"
+    },
+    {
+      "path": "svg_pages/page_003.svg",
+      "sha256": "37dc29d52fd45ae3c138e7aa756a1c70f099bf4e951df9c2021ffa28a5d3ca03",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_dutch_midnight-chimney-10mm",
+      "revision": 1,
+      "geometry_sha256": "ff1cac204fe9fbe9c76a61b960a53487bc0d2c08f1816043fe12fed7a9ba797a",
+      "source_spec_hash": "55654567db24c60949086951ebd779494fb5620ee7510523ffd64987297ea86b",
+      "design_sha256": "fe897bae96b28f2421675d27b1697b4a980528a46382f0f92db6b864bf1cf23f",
+      "template_version": "5.4.0"
+    },
+    {
+      "path": "svg_pages/page_004.svg",
+      "sha256": "5f0a28a651087943f235bbeddc0f5bffede8127dfcf1e2e82e4e950e60c8e591",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_dutch_midnight-chimney-10mm",
+      "revision": 1,
+      "geometry_sha256": "ff1cac204fe9fbe9c76a61b960a53487bc0d2c08f1816043fe12fed7a9ba797a",
+      "source_spec_hash": "55654567db24c60949086951ebd779494fb5620ee7510523ffd64987297ea86b",
+      "design_sha256": "fe897bae96b28f2421675d27b1697b4a980528a46382f0f92db6b864bf1cf23f",
+      "template_version": "5.4.0"
+    },
+    {
+      "path": "template_preview.svg",
+      "sha256": "8886c7ee52a3610e8db080a251e5a4faad2e3229cf98f66e75f77a00a1a2b531",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_dutch_midnight-chimney-10mm",
+      "revision": 1,
+      "geometry_sha256": "ff1cac204fe9fbe9c76a61b960a53487bc0d2c08f1816043fe12fed7a9ba797a",
+      "source_spec_hash": "55654567db24c60949086951ebd779494fb5620ee7510523ffd64987297ea86b",
+      "design_sha256": "fe897bae96b28f2421675d27b1697b4a980528a46382f0f92db6b864bf1cf23f",
+      "template_version": "5.4.0"
+    },
+    {
+      "path": "validation_report.json",
+      "sha256": "beb0043e20dc62ba284bb774f0107ca07c6858d8cd9d00c29b8de0585ff86ff6",
+      "model_id": "GB-US-DUTCH-MIDNIGHT",
+      "version": "gingerbread-4.0.0",
+      "project_id": "gb_us_dutch_midnight-chimney-10mm",
+      "revision": 1,
+      "geometry_sha256": "ff1cac204fe9fbe9c76a61b960a53487bc0d2c08f1816043fe12fed7a9ba797a",
+      "source_spec_hash": "55654567db24c60949086951ebd779494fb5620ee7510523ffd64987297ea86b",
+      "design_sha256": "fe897bae96b28f2421675d27b1697b4a980528a46382f0f92db6b864bf1cf23f",
+      "template_version": "5.4.0"
+    }
+  ]
+}
