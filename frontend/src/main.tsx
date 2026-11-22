@@ -71,7 +71,7 @@ function App(){
  const stylePicker=<BinarySwitch label="Print style" off="Full color" on="Coloring pages" checked={printStyle==='coloring'} disabled={!hasColoring} onChange={checked=>setPrintStyle(checked?'coloring':'color')}/>;
  const download=(name:string)=>`/api/projects/${selected}/artifacts/${name}?download=true`;
 
- return <div className="app-shell">
+ return <div className="app-shell min-h-screen bg-[#fffaf0] text-slate-800">
   <aside className="sidebar"><a className="brand" href="/#workspace" onClick={e=>{e.preventDefault();setTab('workspace');}}><span className="brand-icon">◇</span><span>Print Play Magic<small>PAPERCRAFT STUDIO</small></span></a><div className="side-caption">CREATE & MAKE</div>
    <button className={tab==='templates'?'nav active':'nav'} onClick={()=>setTab('templates')}>⌂ <span>Template library</span></button><button className={tab==='workspace'?'nav active':'nav'} onClick={()=>setTab('workspace')}>▧ <span>Workspace</span></button><button className={tab==='projects'?'nav active':'nav'} onClick={()=>setTab('projects')}>▤ <span>My projects</span></button><button className={tab==='account'?'nav active':'nav'} onClick={()=>setTab('account')}>○ <span>Account</span></button>
    <div className="side-caption projects-title">PROJECTS <button aria-label="Add project" onClick={()=>account.user?setNewOpen(true):setTab('account')}>＋</button></div>{projects.length>0&&<div className="project-list">{projects.map(p=><button key={p.id} className={selected===p.id?'project selected':'project'} onClick={()=>{setSelected(p.id);setTab('workspace');}}><span>◇</span><span>{p.name}<small>{statuses[p.status]}</small></span></button>)}</div>}
