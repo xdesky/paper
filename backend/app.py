@@ -26,6 +26,7 @@ from .personalization import normalize_name
 from .design_options import DesignOptions,OPTIONS,apply_design
 from .accounts import Accounts,CURRENT_USER
 from .billing import Billing
+from . import city_builder as city
 from .template_catalog import BY_ID, TEMPLATES, CATEGORY_CATALOG, CATALOG_VERSION, public_template, thumbnail_name
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -135,6 +136,7 @@ def create_app(data_dir=None, seed=False):
         CREATE TABLE IF NOT EXISTS projects(id TEXT PRIMARY KEY, name TEXT NOT NULL, preset TEXT NOT NULL, revision INTEGER NOT NULL, result_revision INTEGER, status TEXT NOT NULL, created_at TEXT, updated_at TEXT);
         CREATE TABLE IF NOT EXISTS jobs(id TEXT PRIMARY KEY, project_id TEXT NOT NULL, revision INTEGER, status TEXT NOT NULL, stage TEXT, error TEXT, created_at TEXT, updated_at TEXT);
         CREATE TABLE IF NOT EXISTS revisions(project_id TEXT, revision INTEGER, snapshot TEXT, created_at TEXT, PRIMARY KEY(project_id,revision));
+        CREATE TABLE IF NOT EXISTS city_projects(id TEXT PRIMARY KEY,name TEXT NOT NULL,owner_id TEXT NOT NULL,scene_json TEXT NOT NULL,updated_at TEXT NOT NULL);
         ''')
         if 'paper' not in {row['name'] for row in db.execute('PRAGMA table_info(projects)')}:
             db.execute("ALTER TABLE projects ADD COLUMN paper TEXT NOT NULL DEFAULT 'US Letter'")
@@ -143,6 +145,7 @@ def create_app(data_dir=None, seed=False):
 
         if 'design' not in {row['name'] for row in db.execute('PRAGMA table_info(projects)')}:
             db.execute("ALTER TABLE projects ADD COLUMN design TEXT NOT NULL DEFAULT '{}'")
+        db.execute('CREATE INDEX IF NOT EXISTS city_projects_owner ON city_projects(owner_id,updated_at)')
 
     accounts=Accounts(connection)
     billing=Billing(accounts)
@@ -239,6 +242,71 @@ def create_app(data_dir=None, seed=False):
 
     accounts.install(app)
     billing.install(app)
+
+    @app.get('/api/city/assets')
+    def city_assets():
+        return city.list_city_assets()
+
+    @app.get('/api/city/assets/{asset_id}/model')
+    def city_asset_model(asset_id: str):
+        return city.asset_model(asset_id)
+
+    @app.get('/api/city/assets/{asset_id}/pdf')
+    def city_asset_pdf(asset_id: str, paper: Literal['US Letter','A4']='US Letter'):
+        target=city._template_pdf(data,asset_id,paper)
+        return FileResponse(target,media_type='application/pdf',filename=f'{asset_id}-{paper.lower().replace(" ","-")}.pdf',headers={'Cache-Control':'no-store','X-Content-Type-Options':'nosniff'})
+
+    @app.get('/api/city/projects')
+    def city_projects():
+        with connection() as db:
+            rows=db.execute('SELECT * FROM city_projects WHERE owner_id=? ORDER BY updated_at DESC',(CURRENT_USER.get(),)).fetchall()
+        return [city.serialize_city(row) for row in rows]
+
+    @app.post('/api/city/projects',status_code=201)
+    def city_new_project(body:city.CityCreate):
+        city.validate_city_occupancy(body)
+        project_id=uuid.uuid4().hex;stamp=now();payload=body.model_dump(by_alias=True,exclude={'name'})
+        with connection() as db:
+            db.execute('INSERT INTO city_projects(id,name,owner_id,scene_json,updated_at) VALUES(?,?,?,?,?)',(project_id,body.name,CURRENT_USER.get(),json.dumps(payload,separators=(',',':')),stamp))
+            row=db.execute('SELECT * FROM city_projects WHERE id=?',(project_id,)).fetchone()
+        return city.serialize_city(row)
+
+    @app.get('/api/city/projects/{city_id}')
+    def city_get_project(city_id:str):
+        with connection() as db:row=db.execute('SELECT * FROM city_projects WHERE id=? AND owner_id=?',(city_id,CURRENT_USER.get())).fetchone()
+        if not row:raise HTTPException(404,'City project not found.')
+        return city.serialize_city(row)
+
+    @app.put('/api/city/projects/{city_id}')
+    def city_save_project(city_id:str,body:city.CityProjectInput):
+        city.validate_city_occupancy(body)
+        payload=body.model_dump(by_alias=True,exclude={'name'});stamp=now()
+        with connection() as db:
+            cursor=db.execute('UPDATE city_projects SET name=?,scene_json=?,updated_at=? WHERE id=? AND owner_id=?',(body.name,json.dumps(payload,separators=(',',':')),stamp,city_id,CURRENT_USER.get()))
+            if cursor.rowcount==0:raise HTTPException(404,'City project not found.')
+            row=db.execute('SELECT * FROM city_projects WHERE id=?',(city_id,)).fetchone()
+        return city.serialize_city(row)
+
+    @app.delete('/api/city/projects/{city_id}',status_code=204)
+    def city_delete_project(city_id:str):
+        with connection() as db:
+            cursor=db.execute('DELETE FROM city_projects WHERE id=? AND owner_id=?',(city_id,CURRENT_USER.get()))
+        if cursor.rowcount==0:raise HTTPException(404,'City project not found.')
+
+    @app.post('/api/city/projects/{city_id}/preflight')
+    def city_print_preflight(city_id:str,body:city.CityPreflight):
+        if body.project_id!=city_id:raise HTTPException(422,'Project ID does not match the request URL.')
+        with connection() as db:row=db.execute('SELECT * FROM city_projects WHERE id=? AND owner_id=?',(city_id,CURRENT_USER.get())).fetchone()
+        if not row:raise HTTPException(404,'City project not found.')
+        return city.city_preflight(data,city.serialize_city(row),body.selected_object_ids,body.paper)
+
+    @app.post('/api/city/projects/{city_id}/export')
+    def city_export(city_id:str,body:city.CityPreflight):
+        if body.project_id!=city_id:raise HTTPException(422,'Project ID does not match the request URL.')
+        with connection() as db:row=db.execute('SELECT * FROM city_projects WHERE id=? AND owner_id=?',(city_id,CURRENT_USER.get())).fetchone()
+        if not row:raise HTTPException(404,'City project not found.')
+        payload,preflight=city.export_city_pdf(data,city.serialize_city(row),body.selected_object_ids,body.paper)
+        return Response(payload,media_type='application/pdf',headers={'Content-Disposition':f'attachment; filename="mini-city-{city_id}.pdf"','X-City-PDF-Pages':str(preflight['totalPages']),'X-Content-Type-Options':'nosniff','Cache-Control':'no-store'})
 
     @app.get('/api/health')
     def health():

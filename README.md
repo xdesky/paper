@@ -10,7 +10,7 @@ Dependencies và frontend production đã được cài/build tại workspace n�
 ./scripts/start-local.sh
 ```
 
-Mở http://127.0.0.1:8000. Nếu server đã chạy thì mở URL trực tiếp. API docs: http://127.0.0.1:8000/docs.
+Mở http://127.0.0.1:8005. Nếu server đã chạy thì mở URL trực tiếp. API docs: http://127.0.0.1:8005/docs.
 
 Lần chạy đầu trên database trống tự tạo bốn dự án mẫu và Generate Cube 100 mm. Các mẫu khác bấm Generate để tạo. Generate tự lưu thiết lập đang chỉnh. Mỗi lần tạo lại dùng revision mới; bản đã xuất không bị ghi đè. Khi đổi mẫu, bản cũ bị chặn tải cho đến khi revision mới đạt QA.
 
@@ -34,14 +34,14 @@ cp .env.example .env
 Development sau khi cài đặt, dùng hai terminal:
 
 ```sh
-.venv/bin/python -m uvicorn backend.app:app --host 127.0.0.1 --port 8000 --reload
+.venv/bin/python -m uvicorn backend.app:app --host 127.0.0.1 --port 8005 --reload
 ```
 
 ```sh
 pnpm --dir frontend dev
 ```
 
-Frontend dev: http://127.0.0.1:5173; Vite proxy `/api` về backend 8000. Chỉ `start-local.sh` tự nạp `.env`; khi chạy uvicorn trực tiếp, export biến môi trường cần dùng. Không dùng nhiều uvicorn workers: SQLite/job runner hiện thiết kế cho một process server.
+Frontend dev: http://127.0.0.1:5173; Vite proxy `/api` về backend 8005. Chỉ `start-local.sh` tự nạp `.env`; khi chạy uvicorn trực tiếp, export biến môi trường cần dùng. Không dùng nhiều uvicorn workers: SQLite/job runner hiện thiết kế cho một process server.
 
 ## Docker (cấu hình có sẵn, chưa kiểm thử trên máy này)
 
@@ -49,7 +49,7 @@ Frontend dev: http://127.0.0.1:5173; Vite proxy `/api` về backend 8000. Chỉ 
 docker compose up --build
 ```
 
-Mở http://127.0.0.1:8000. Dữ liệu lưu trong named volume `studio-data`. Máy triển khai hiện không có Docker, nên không coi image build/run là đã được xác minh.
+Mở http://127.0.0.1:8005. Dữ liệu lưu trong named volume `studio-data`. Máy triển khai hiện không có Docker, nên không coi image build/run là đã được xác minh.
 
 ## Chức năng đã triển khai
 
@@ -68,7 +68,7 @@ Mở http://127.0.0.1:8000. Dữ liệu lưu trong named volume `studio-data`. M
 ```sh
 .venv/bin/python -m pytest tests -q
 ./scripts/build-frontend.sh
-# Cần server ở cổng 8000 và Google Chrome đã cài:
+# Cần server ở cổng 8005 và Google Chrome đã cài:
 cd frontend
 pnpm exec playwright test
 ```
@@ -109,7 +109,7 @@ API: `/api/health`, `/api/presets`, `/api/projects`, `/api/projects/{id}` (GET/P
 
 ## Kho template nhà bánh gừng Noel
 
-Mở mục **Kho template Noel** trên sidebar, hoặc URL `http://127.0.0.1:8000/#templates`.
+Mở mục **Kho template Noel** trên sidebar, hoặc URL `http://127.0.0.1:8005/#templates`.
 
 Bộ sưu tập đầu tiên có 6 mẫu: Ngôi nhà bánh gừng, Tiệm kẹo Giáng sinh, Căn nhà rừng thông, Chalet phủ tuyết, Ngôi nhà băng đường, Nhà bánh gừng mini. Có tìm kiếm, lọc bộ sưu tập, lưu yêu thích trên trình duyệt và xem thông số chi tiết.
 
@@ -231,3 +231,40 @@ Two-option paper and print-style selectors use keyboard-accessible switches with
 ### Accounts and saved projects
 
 Account registration/sign-in is now required to create and access projects. The public Template library remains available without signing in. My projects saves each account's designs separately. See [ACCOUNTS.md](ACCOUNTS.md) for persistent storage, optional one-time Lifetime checkout, deployment settings, and deliberate migration of existing local projects. Purchases are disabled until payment configuration is supplied.
+
+## Mini City Builder V2
+
+Open **City Builder** from the studio sidebar, or visit `/studio#city-builder`. City Builder is a separate workspace; the original model editor and all V1 template/export flows remain available at `/studio`.
+
+### Create and edit a village
+
+1. Sign in, choose **Start a new village**, or reopen one of the account-owned saved villages.
+2. Search the V1 gingerbread-house and miniature-storefront library. Drag a thumbnail onto the grid, or select it and click a grid cell.
+3. Select a placed model to inspect its dimensions and revision. Drag it to move; rotate in quarter turns; duplicate or delete. Invalid or overlapping placements are rejected without changing the project.
+4. Orbit by dragging the canvas; use the camera controls for top-down/isometric and reset. Use grid settings to configure columns, rows, and cell size.
+5. Changes autosave to the signed-in account. **Backup JSON** downloads a project copy; the home screen imports supported JSON backups. Unresolved asset IDs are retained and shown as warnings rather than substituted.
+
+For a ready-to-open example, import [`docs/examples/christmas-village.json`](docs/examples/christmas-village.json) from the City Builder home screen. It uses four actual V1 house templates and can be edited, saved, and printed like any other village.
+
+Keyboard shortcuts: **R** rotates the active template or selected model; **Delete** removes the selection; **Ctrl/Cmd+Z** undo; **Ctrl/Cmd+Shift+Z** redo; **Ctrl/Cmd+D** duplicates; **Escape** cancels placement. Text inputs keep normal keyboard behavior.
+
+### Grid, assets, and storage
+
+- New villages start at 12 × 12 cells with 100 mm cells. The grid supports up to 32 × 32 cells; cell size is 60–500 mm. Each village supports up to 100 objects.
+- Footprints are conservatively computed from the V1 display-base dimensions and `ceil(size / cellSize)`, swapping width/depth at 90°/270°. Each record uses the occupied rectangle's top-left cell; the rendered V1 assembly pivots around its footprint center. The grid is an editor aid and is not a printed city base.
+- The city asset adapter reads `backend/template_catalog.py`; 3D geometry and vector artwork come from `backend/gingerbread.py` and `backend/accessories.py`. Template PDFs are made by the existing generator and cached by catalog revision, asset, and paper format. No screenshot-sized or guessed printable dimensions are used.
+- City projects live in the separate `city_projects` SQLite table with the current signed-in account's owner ID. The additive migration leaves V1 projects and artifact revisions unchanged.
+- To add an asset, add a valid V1 house/storefront entry to `backend/template_catalog.py` with its measured `width`, `depth`, `wall_height`, and `roof_rise`, and use category `gingerbread-houses` or `miniature-worlds`. Existing geometry/artwork/PDF adapters discover it from the catalog. Keep it out of City Builder until the normal V1 template/generation validation succeeds.
+
+### Print and export
+
+**Print & Export** preflight generates or verifies each unique V1 template in the selected US Letter or A4 format, checks PDF page boxes against the native paper size, groups by asset revision, and reports actual page count and copy quantity. Export order is deterministic. Every physical instance contributes a complete copy of the template's vector PDF page set; there is no fit-to-page scaling or rasterization. The combined file starts with a reduced city reference map, model inventory, orientation/coordinates, print instructions, and a 50 mm calibration ruler. The map is explicitly labeled **not a printable base**; no physical base or road tiles are generated.
+
+Exports are capped at 200 pages and 100 MiB. Missing, corrupt, or stale templates block export with a specific error; there is no silent omission. Print house pages at **Actual Size / 100%**, disable **Fit to Page**, and measure the ruler before cutting. Software checks do not establish physical assembly: no manual print/cut/fold/glue trial has been completed for this feature.
+
+### City Builder API and checks
+
+- `GET /api/city/assets`, `GET /api/city/assets/{asset_id}/model`, and `/pdf` expose the catalog adapter and generated template files.
+- `GET/POST /api/city/projects`, `GET/PUT/DELETE /api/city/projects/{id}` use owner-scoped account sessions.
+- `POST /api/city/projects/{id}/preflight` reports actual printable pages; `POST /api/city/projects/{id}/export` returns the merged PDF.
+- Focused city integration tests: `.venv/bin/python -m pytest tests/test_city_builder.py -q`. Browser coverage: `cd frontend && pnpm exec playwright test e2e/city-builder.spec.ts` (start the local app first). Full backend regression suite: `.venv/bin/python -m pytest tests -q`; production frontend build: `./scripts/build-frontend.sh`.

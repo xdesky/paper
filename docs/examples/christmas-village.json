@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "name": "Christmas Village Demo",
+  "grid": {
+    "columns": 12,
+    "rows": 12,
+    "cellSizeMm": 100
+  },
+  "objects": [
+    {
+      "id": "demo-evergreen-cottage",
+      "assetId": "gb_forest",
+      "assetRevision": "5.7.1",
+      "xCell": 1,
+      "zCell": 1,
+      "rotationDeg": 0
+    },
+    {
+      "id": "demo-classic-house",
+      "assetId": "gb_classic",
+      "assetRevision": "5.7.1",
+      "xCell": 4,
+      "zCell": 1,
+      "rotationDeg": 0
+    },
+    {
+      "id": "demo-sugar-snow",
+      "assetId": "gb_frost",
+      "assetRevision": "5.7.1",
+      "xCell": 1,
+      "zCell": 4,
+      "rotationDeg": 90
+    },
+    {
+      "id": "demo-candy-shop",
+      "assetId": "gb_candy",
+      "assetRevision": "5.7.1",
+      "xCell": 4,
+      "zCell": 4,
+      "rotationDeg": 0
+    }
+  ]
+}

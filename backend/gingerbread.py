@@ -247,6 +247,9 @@ def base_decorations(t,p):
 
 
 def decorations(t,p):
+    if t.get('motif')=='gingerbread_village':
+        from .personalization import nameplate
+        return premium_decorations(t,p)+nameplate(t,p)
     from .confectionery import house_art
     from .personalization import nameplate
     return house_art(t,p)+nameplate(t,p)
@@ -254,12 +257,64 @@ def decorations(t,p):
 
 def premium_decorations(t,p):
     """Architectural vector finishes shared by preview, texture, PDF and SVG."""
+    from .coloring import COLORING
     w=p.square.bounds[2];h=p.square.bounds[3];shapes=[]
-    trim=t['trim'];accent=t['accent'];roof=p.id.startswith('ROOF')
-    def line(points,color=trim,width=.45):shapes.append(dict(type='line',points=points,stroke=color,width=width))
-    def rect(x,y,a,b,color):shapes.append(dict(type='polygon',points=[(x,y),(x+a,y),(x+a,y+b),(x,y+b)],fill=color))
-    def circle(x,y,r,color):shapes.append(dict(type='circle',center=[x,y],radius=r,fill=color))
-    shapes.append(dict(type='polygon',points=p.points,fill=t['roof'] if roof else t['wall']))
+    trim=t['trim'];accent=t['accent'];roof=p.id.startswith('ROOF');coloring=COLORING.get()
+    def line(points,color=trim,width=.45):shapes.append(dict(type='line',points=points,stroke='#222222' if coloring else color,width=.3 if coloring else width))
+    def rect(x,y,a,b,color):shapes.append(dict(type='polygon',points=[(x,y),(x+a,y),(x+a,y+b),(x,y+b)],fill='#ffffff' if coloring else color,**({'stroke':'#222222','width':.3} if coloring else {})))
+    def circle(x,y,r,color):shapes.append(dict(type='circle',center=[x,y],radius=r,fill='#ffffff' if coloring else color,**({'stroke':'#222222','width':.3} if coloring else {})))
+    shapes.append(dict(type='polygon',points=p.points,fill='#ffffff' if coloring else t['roof'] if roof else t['wall'],**({'stroke':'#222222','width':.3} if coloring else {})))
+    if t.get('motif')=='gingerbread_village':
+        if roof:
+            # Fine, warm scored lines make the baked roof read as shingles.
+            for row,y in enumerate(np.arange(5,h-2,7)):
+                line([(2,float(y)),(w-2,float(y))],'#b8784d',.55)
+                for x in np.arange(8+(row%2)*5,w-4,13):
+                    line([(float(x),float(y)),(float(x),float(min(y+3,h-2)))],'#b8784d',.45)
+            line([(1,1),(w-1,1)],trim,1)
+            return shapes
+        wh=min(t['wall_height'],h);front=p.id=='FRONT';back=p.id=='BACK'
+        # A restrained cookie-brick score and pale icing cornice frame each wall.
+        for row,y in enumerate(np.arange(7,wh-3,10)):
+            line([(3,float(y)),(w-3,float(y))],'#a85d36',.35)
+            for x in np.arange(5+(row%2)*6,w-4,13):
+                line([(float(x),float(y)),(float(x),float(min(y+4,wh-2)))],'#a85d36',.3)
+        rect(2,wh-4,w-4,2.2,trim)
+        for x in (2,w-4):rect(x,2,2,wh-6,trim)
+
+        def window(x,y,ww,hh,lit):
+            rect(x-ww/2-1.3,y-hh/2-1.3,ww+2.6,hh+2.6,'#70422d')
+            rect(x-ww/2,y-hh/2,ww,hh,'#f2b846' if lit else '#38271f')
+            if lit:
+                rect(x-ww/2+1,y-hh/2+1,ww*.32,hh-2,'#ffdf86')
+            line([(x,y-hh/2),(x,y+hh/2)],'#d5a16a',.8)
+            line([(x-ww/2,y),(x+ww/2,y)],'#d5a16a',.8)
+            rect(x-ww/2-2,y+hh/2,ww+4,1.2,trim)
+
+        rows=t.get('window_rows',2) if front or back else max(1,t.get('window_rows',2)-1)
+        cols=t.get('window_columns',2) if front or back else 1
+        ww=min(9.5,w/(cols+1)*.48);hh=min(13,wh/(rows+1)*.5)
+        for row in range(rows):
+            cy=wh*(.16+(row+1)*(.68/(rows+1)))
+            for col in range(cols):
+                cx=w*(col+1)/(cols+1)
+                # Alternate dark, unlit panes with softly glowing ones.
+                window(cx,cy,ww,hh,(row+col+(1 if back else 0))%3!=0)
+        if front:
+            dw=min(14,w*.2);dh=min(29,wh*.36)
+            rect(w/2-dw/2-1.5,2,dw+3,dh+2,'#70422d')
+            rect(w/2-dw/2,3,dw,dh,'#543323')
+            rect(w/2-dw*.30,dh*.57,dw*.60,dh*.27,'#efbd5a')
+            line([(w/2,dh*.56),(w/2,dh*.85)],'#d5a16a',.75)
+            circle(w/2+dw*.31,dh*.42,1.1,'#efc15a')
+            rect(w/2-dw/2-2,2,dw+4,1.2,trim)
+        if (front or back) and t.get('roof_rise',0)>20 and len(p.points)>4:
+            # One small amber attic window anchors the gable without candy motifs.
+            gx=w/2;gy=wh+t['roof_rise']*.36
+            if gy+4<p.square.bounds[3]:window(gx,gy,6,8,True)
+        if front and t.get('facade_style') in ('spire','mansard'):
+            circle(w*.14,wh-10,1.2,'#eab65b');circle(w*.86,wh-10,1.2,'#eab65b')
+        return shapes
     if roof:
         return shapes
     wh=min(t['wall_height'],h);material=t['material']

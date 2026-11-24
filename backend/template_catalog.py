@@ -2,7 +2,7 @@
 import re
 import unicodedata
 
-CATALOG_VERSION = '5.6.1'
+CATALOG_VERSION = '5.7.1'
 TEMPLATES = [
     dict(id='gb_classic', roof_corner_radius_mm=0, name='Ngôi nhà bánh gừng', subtitle='Noel cổ điển', collection='Truyền thống', width=90, depth=70, wall_height=85, roof_rise=45, wall='#b97946', roof='#8b4139', accent='#bf443d', trim='#fff5dc', background='#f4e8d7', motif='classic', difficulty='Dễ', description='Bánh gừng nâu ấm, mái đỏ và những đường kem trắng. Mẫu mở đầu cho một ngôi làng Noel trên bàn.'),
     dict(id='gb_candy', name='Tiệm kẹo Giáng sinh', subtitle='Candy Cane Lane', collection='Kẹo ngọt', width=100, depth=70, wall_height=85, roof_rise=42, wall='#d99478', roof='#d25762', accent='#bc3046', trim='#fff7e7', background='#f9e7e8', motif='candy', difficulty='Dễ', description='Mái hồng dâu, cửa viền kẹo gậy và ô cửa sáng vàng. Những viên kẹo được in trực tiếp trên mặt giấy.'),
@@ -11,6 +11,24 @@ TEMPLATES = [
     dict(id='gb_frost', name='Ngôi nhà băng đường', subtitle='Sugar & Snow', collection='Kẹo ngọt', width=75, depth=65, wall_height=115, roof_rise=37.5, wall='#b9cdd3', roof='#668da3', accent='#6f90a9', trim='#fffdf3', background='#e7eff3', motif='snow', difficulty='Dễ', description='Dáng nhà cao, xanh băng và bông tuyết bằng đường. Cửa và các chi tiết đều là họa tiết trang trí in màu.'),
     dict(id='gb_mini', name='Nhà bánh gừng mini', subtitle='Little Christmas Village', collection='Mini', width=60, depth=50, wall_height=60, roof_rise=30, wall='#c98d55', roof='#a94839', accent='#37816a', trim='#fff7e6', background='#f3ecdb', motif='mini', difficulty='Dễ', description='Một căn nhà nhỏ 60 × 50 × 90 mm cho kệ sách và tiểu cảnh Noel. Có thể tạo nhiều bản để dựng thành làng.'),
 ]
+# A small gingerbread main street inspired by the reference: warm baked-cookie
+# colors, varied narrow silhouettes, tall dark window recesses, and gentle amber light.
+GINGERBREAD_VILLAGE = [
+    ('gb_village_candlelight','Candlelight Rowhouse',70,56,82,42,[(0,0),(.5,1),(1,0)],2,2,'gable'),
+    ('gb_village_golden_window','Golden Window Townhouse',74,58,106,34,[(0,0),(.5,1),(1,0)],3,2,'gable'),
+    ('gb_village_sugar_spire','Sugar Spire House',64,56,72,88,[(0,0),(.5,1),(1,0)],2,2,'spire'),
+    ('gb_village_honeycomb','Honeycomb Corner House',82,62,80,50,[(0,0),(.5,1),(1,0)],2,3,'gable'),
+    ('gb_village_mansard','Amber Mansard House',76,60,92,40,[(0,0),(.12,.68),(.5,1),(.88,.68),(1,0)],3,2,'mansard'),
+    ('gb_village_saltbox','Warm Hearth Saltbox',84,62,88,48,[(0,0),(.68,1),(1,.48)],2,3,'saltbox'),
+]
+for mid,title,w,d,h,r,profile,rows,cols,facade in GINGERBREAD_VILLAGE:
+    TEMPLATES.append(dict(id=mid,name=title,subtitle='Gingerbread Main Street',collection='Gingerbread Village',
+        model_family='gingerbread_village',architecture=title,profile=[list(point) for point in profile],
+        premium=True,material='brick',motif='gingerbread_village',facade_style=facade,
+        window_rows=rows,window_columns=cols,finish='Amber Glow',width=w,depth=d,wall_height=h,roof_rise=r,
+        wall='#b96b3d',roof='#8d4e30',accent='#583323',trim='#f3d5ae',background='#f4e3ca',
+        difficulty='Trung bình',
+        description=f'{title}: a narrow baked-cookie townhouse with {rows} rows of warm glowing windows and a detailed {facade} roofline. Designed to build a cozy Christmas village.'))
 # Ten architectural silhouettes, two curated Christmas finishes each.
 AMERICAN_MODELS = [
     ('cape_cod','Cape Cod',90,65,70,45,[(0,0),(.5,1),(1,0)],'shingle'),
@@ -99,7 +117,10 @@ for t in TEMPLATES:
     t['collection']={'Truyền thống':'Classics','Kẹo ngọt':'Candy Lane','Thiên nhiên':'Woodland','Nhà 2 gian':'Two-Bay Houses','Noel nâng cao':'Advanced Christmas'}.get(t['collection'],t['collection'])
     t['difficulty']={'Dễ':'Easy','Trung bình':'Intermediate','Nâng cao':'Advanced'}[t['difficulty']]
     if t['id']=='gb_classic':t['subtitle']='A Christmas Classic'
-    t['description']=f"{t.get('architecture',t['name'])} with festive icing, candy details, and glowing windows. Includes a snowy base, a slotted tree, and two gift boxes. Customize the patterns and add your own name."
+    if t.get('motif')=='gingerbread_village':
+        t['description']=f"{t['architecture']} with a warm baked-cookie finish, dark recessed-looking windows, amber lights, and a distinctive {t['facade_style']} roofline. A coordinated design for building a cozy Christmas village."
+    else:
+        t['description']=f"{t.get('architecture',t['name'])} with festive icing, candy details, and glowing windows. Includes a snowy base, a slotted tree, and two gift boxes. Customize the patterns and add your own name."
 # Stable top-level taxonomy. Finish, style, and difficulty stay separate.
 CATEGORY_CATALOG = [
     {'id':'gingerbread-houses','name':'Gingerbread Houses','status':'available'},
@@ -125,6 +146,21 @@ for mid,title,subtitle,wall,roof,accent,trim,bg,motif,w,d,h,r in MINIATURE_START
         width=w,depth=d,wall_height=h,roof_rise=r,wall=wall,roof=roof,accent=accent,trim=trim,background=bg,motif=motif,difficulty='Easy',premium=False,chimney=False)
     item['description']=f'A tiny printable {title.lower()} for building a paper Main Street. Includes a 3D gabled shell, overhanging roof, display base, slotted tree, and two gift props. Personalize the storefront and print at home.'
     TEMPLATES.append(item)
+
+# These designs explicitly include a chimney, including tall silhouettes that
+# are normally kept clear of one. All use the longest roof slope.
+CHIMNEY_MODELS = {
+    'gb_forest',
+    'gb_frost',
+    'gb_us_colonial_heritage',
+    'gb_us_colonial_midnight',
+    'mini_bookshop',
+    'mini_corner_cafe',
+    'mini_flower_shop',
+}
+for template in TEMPLATES:
+    if template['id'] in CHIMNEY_MODELS:
+        template.update(chimney=True, chimney_placement='longest_slope', chimney_growth_mm=10)
 
 # Original low-poly / voxel-inspired characters. Silhouette, palette and faces
 # are independently designed; no franchise characters, textures, or logos.
@@ -157,7 +193,8 @@ def thumbnail_name(t):
     name = unicodedata.normalize('NFKD', name).encode('ascii', 'ignore').decode('ascii').lower()
     slug = re.sub(r'[^a-z0-9]+', '-', name).strip('-') or 'model'
     identifier = re.sub(r'[^a-z0-9]+', '-', t['id'].lower()).strip('-')
-    return f'{slug}-{identifier}-papercraft-template'
+    version=CATALOG_VERSION.replace('.','-')
+    return f'{slug}-{identifier}-v{version}-papercraft-template'
 
 
 def public_template(t):

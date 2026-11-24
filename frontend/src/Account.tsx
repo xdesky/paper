@@ -1,5 +1,5 @@
 import {useEffect,useState} from 'react';
-export type User={id:string;email:string;display_name:string;plan:'starter'|'lifetime'};
+export type User={id:string;email:string;display_name:string;plan:'starter'|'lifetime';is_admin:boolean;is_active:boolean};
 export type AccountState={user:User|null;project_limit:number|null;project_count:number};
 type Plan={name:string;configured:boolean;mode:string;one_time:boolean;free_project_limit:number;amount?:number;currency?:string};
 async function request<T>(path:string,method='GET',body?:unknown):Promise<T>{
@@ -27,7 +27,7 @@ export function Account({state,onRefresh,onSignOut}:{state:AccountState;onRefres
     <div className="auth-tabs" role="group" aria-label="Account access"><button aria-pressed={mode==='login'} onClick={()=>{setMode('login');setError('');}}>Sign in</button><button aria-pressed={mode==='register'} onClick={()=>{setMode('register');setError('');}}>Create account</button></div>
     <form key={mode} onSubmit={e=>{e.preventDefault();const f=new FormData(e.currentTarget);void run(async()=>{await request('/auth/'+(mode==='login'?'login':'register'),'POST',{email:f.get('email'),password:f.get('password'),...(mode==='register'?{display_name:f.get('display_name')}:{})});await onRefresh();});}}>
      {mode==='register'&&<label>Your name<input name="display_name" autoComplete="name" maxLength={80} required disabled={busy}/></label>}
-     <label>Email address<input name="email" type="email" autoComplete="email" maxLength={254} required disabled={busy}/></label>
+     <label>{mode==='login'?'Email or username':'Email address'}<input name="email" type={mode==='login'?'text':'email'} autoComplete={mode==='login'?'username':'email'} maxLength={254} required disabled={busy}/></label>
      <label>Password<input name="password" type="password" autoComplete={mode==='register'?'new-password':'current-password'} minLength={10} maxLength={128} required disabled={busy}/></label>
      <p className="hint">Use at least 10 characters. Your password is never stored as plain text.</p>
      <button className="primary" disabled={busy}>{busy?'Please wait…':mode==='register'?'Create account':'Sign in'}</button>

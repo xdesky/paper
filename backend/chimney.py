@@ -18,10 +18,9 @@ def geometry(t):
         # Preserve already-generated v4.3 snapshots.
         a,b=max((ab for ab in segments if (ab[0][0]+ab[1][0])/2>=w/2),key=lambda ab:ab[1][0]-ab[0][0])
     growth=t.get('chimney_growth_mm',0)
-    # Scale the complete chimney down by one third while preserving its
-    # square footprint and proportions. Growth remains part of the original
-    # design size so older templates retain the same relative treatment.
-    size=(min(14,(b[0]-a[0])*.42,d*.22)+growth)*2/3
+    # Enlarge the square footprint by 1.5x while keeping the chimney's
+    # existing wall height unchanged.
+    size=min(14,(b[0]-a[0])*.42,d*.22)+growth
     if size>b[0]-a[0]:
         # A square base must sit entirely on one roof face.
         fitting=[segment for segment in segments if segment[1][0]-segment[0][0]>=size]

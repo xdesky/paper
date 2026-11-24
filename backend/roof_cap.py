@@ -48,6 +48,19 @@ def build(t):
 def artwork(t,p):
     from .gingerbread import Panel
     from .confectionery import house_art, Painter, CREAM, RED, GREEN
+    if t.get('motif')=='gingerbread_village':
+        from .coloring import COLORING
+        # This collection follows the baked-cookie village reference: scored
+        # shingles and a clean overhang instead of piped icing and candy.
+        brush=Painter(p.square)
+        brush.polygon(p.points,'#ffffff' if COLORING.get() else t['roof'])
+        width,height=p.square.bounds[2:]
+        for row,y in enumerate(np.arange(5,height-2,7)):
+            brush.line([(2,float(y)),(width-2,float(y))],'#7c442c',.55)
+            for x in np.arange(8+(row%2)*5,width-4,13):
+                brush.line([(float(x),float(y)),(float(x),float(min(y+3,height-2)))],'#7c442c',.45)
+        brush.line([(1,1),(width-1,1)],t['trim'],.9)
+        return brush.shapes
     # Use roof artwork rather than the wall motifs selected by CAP_ IDs.
     result=house_art(t,Panel('ROOF_CAP',p.points,p.vertices))
     brush=Painter(p.square);w,h=p.square.bounds[2:]
