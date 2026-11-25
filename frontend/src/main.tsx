@@ -5,6 +5,7 @@ import {BinarySwitch} from './BinarySwitch';
 import {Account,type AccountState} from './Account';
 import {AdminUsers} from './AdminUsers';
 import {CityBuilder} from './CityBuilder';
+import {ChristmasCollection} from './ChristmasCollection';
 import {ProjectLibrary} from './ProjectLibrary';
 import {ModelViewer} from './ModelViewer';
 import {PersonalizeHouse} from './PersonalizeHouse';
@@ -28,7 +29,7 @@ function App(){
  const [projects,setProjects]=useState<Project[]>([]),[selected,setSelected]=useState(''),[error,setError]=useState('');
  const [spec,setSpec]=useState<Spec|null>(null),[qa,setQA]=useState<QA|null>(null),[pages,setPages]=useState<{number:number;url:string}[]>([]),[files,setFiles]=useState<{name:string;url:string}[]>([]);
  const [job,setJob]=useState<Job|null>(null),[seam,setSeam]=useState(''),[zoom,setZoom]=useState(100),[wire,setWire]=useState(false),[tab,setTabState]=useState(readTab);
- function readTab(){if(location.pathname!=='/'&&location.pathname!=='/studio')return 'templates';const route=location.hash.slice(1).split('/')[0];return ['account','templates','workspace','projects','admin','city-builder'].includes(route)?route:'projects';}
+ function readTab(){if(location.pathname!=='/'&&location.pathname!=='/studio')return 'templates';const route=location.hash.slice(1).split('/')[0];return ['account','templates','workspace','projects','admin','city-builder','christmas'].includes(route)?route:'projects';}
  function setTab(value:string){setTabState(value);history.pushState(null,'','/studio#'+value);window.dispatchEvent(new PopStateEvent('popstate'));}
  useEffect(()=>{const changed=()=>setTabState(readTab());window.addEventListener('hashchange',changed);window.addEventListener('popstate',changed);return()=>{window.removeEventListener('hashchange',changed);window.removeEventListener('popstate',changed);};},[]);
  const [draft,setDraft]=useState<{id:string;name:string;preset:string;paper:string;personal_name:string;design:Design}|null>(null),[busy,setBusy]=useState(false),[newOpen,setNewOpen]=useState(false);
@@ -74,9 +75,10 @@ function App(){
  const download=(name:string)=>`/api/projects/${selected}/artifacts/${name}?download=true`;
 
  if(tab==='city-builder')return <CityBuilder onBack={()=>setTab('projects')} onSignIn={()=>setTab('account')} signedIn={!!account.user}/>;
+ if(tab==='christmas')return <ChristmasCollection onBack={()=>setTab('templates')}/>;
  return <div className="app-shell min-h-screen bg-[#fffaf0] text-slate-800">
   <aside className="sidebar"><a className="brand" href="/#workspace" onClick={e=>{e.preventDefault();setTab('workspace');}}><span className="brand-icon">◇</span><span>Print Play Magic<small>PAPERCRAFT STUDIO</small></span></a><div className="side-caption">CREATE & MAKE</div>
-   <button className={tab==='templates'?'nav active':'nav'} onClick={()=>setTab('templates')}>⌂ <span>Template library</span></button><button className={tab==='workspace'?'nav active':'nav'} onClick={()=>setTab('workspace')}>▧ <span>Workspace</span></button><button className={tab==='projects'?'nav active':'nav'} onClick={()=>setTab('projects')}>▤ <span>My projects</span></button><button className={tab==='city-builder'?'nav active':'nav'} onClick={()=>setTab('city-builder')}>▦ <span>City Builder</span></button><button className={tab==='account'?'nav active':'nav'} onClick={()=>setTab('account')}>○ <span>Account</span></button>{account.user?.is_admin&&<button className={tab==='admin'?'nav active':'nav'} onClick={()=>setTab('admin')}>⚙ <span>User management</span></button>}
+   <button className={tab==='templates'?'nav active':'nav'} onClick={()=>setTab('templates')}>⌂ <span>Template library</span></button><button className={tab==='christmas'?'nav active':'nav'} onClick={()=>setTab('christmas')}>✧ <span>Christmas Collection</span></button><button className={tab==='workspace'?'nav active':'nav'} onClick={()=>setTab('workspace')}>▧ <span>Workspace</span></button><button className={tab==='projects'?'nav active':'nav'} onClick={()=>setTab('projects')}>▤ <span>My projects</span></button><button className={tab==='city-builder'?'nav active':'nav'} onClick={()=>setTab('city-builder')}>▦ <span>City Builder</span></button><button className={tab==='account'?'nav active':'nav'} onClick={()=>setTab('account')}>○ <span>Account</span></button>{account.user?.is_admin&&<button className={tab==='admin'?'nav active':'nav'} onClick={()=>setTab('admin')}>⚙ <span>User management</span></button>}
    <div className="side-caption projects-title">PROJECTS <button aria-label="Add project" onClick={()=>account.user?setNewOpen(true):setTab('account')}>＋</button></div>{projects.length>0&&<div className="project-list">{projects.map(p=><button key={p.id} className={selected===p.id?'project selected':'project'} onClick={()=>{setSelected(p.id);setTab('workspace');}}><span>◇</span><span>{p.name}<small>{statuses[p.status]}</small></span></button>)}</div>}
    <button className="new-project" onClick={()=>account.user?setNewOpen(true):setTab('account')}>＋ New project</button><div className="side-bottom"><span className="dot"/> Print-ready designs<small>Made to print. Built to fit.</small></div>
   </aside>

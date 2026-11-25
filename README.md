@@ -268,3 +268,13 @@ Exports are capped at 200 pages and 100 MiB. Missing, corrupt, or stale template
 - `GET/POST /api/city/projects`, `GET/PUT/DELETE /api/city/projects/{id}` use owner-scoped account sessions.
 - `POST /api/city/projects/{id}/preflight` reports actual printable pages; `POST /api/city/projects/{id}/export` returns the merged PDF.
 - Focused city integration tests: `.venv/bin/python -m pytest tests/test_city_builder.py -q`. Browser coverage: `cd frontend && pnpm exec playwright test e2e/city-builder.spec.ts` (start the local app first). Full backend regression suite: `.venv/bin/python -m pytest tests -q`; production frontend build: `./scripts/build-frontend.sh`.
+
+## Christmas Magic Collection
+
+Open **Christmas Collection** in the studio sidebar or visit `/studio#christmas`. The library contains ten original parametric products: Gingerbread House, Christmas Tree, Santa Claus, Christmas Reindeer, Christmas Snowman, Santa's Sleigh, Nutcracker Soldier, Christmas Star Lantern, Christmas Ornament, and Christmas Gift Box. The 3D viewer uses polygonal components and vector face artwork; size changes apply uniform millimeter scaling. Five color editions, detail toggles, exploded view, sequential assembly hints, and interactive orbit/zoom/pan are available.
+
+Printable panels are projected from the same 3D face vertices, paired by exact 3D edge endpoints, and assembled into vector sheets with one 6 mm glue tab per paired seam. Large panels are divided at shared edges and remain at 100% scale; no automatic shrinking is applied. Choose US Letter, A4, or A3. Downloads include color PDF in the selected format, Coloring PDF, SVG for the selected format, assembly guide, preview PNG, textured GLB, product configuration, validation report, and full ZIP package. Recommended cardstock is 160–220 gsm. The star lantern is designed for a battery LED only; do not use a candle.
+
+The product library also feeds **City Builder** as printable assets, so these models can be placed beside the existing houses and storefronts. In mixed city exports, A3 is available for Christmas products; legacy house templates keep their supported US Letter/A4 formats and are rejected clearly if an unsupported mixed paper is selected. Generated reports distinguish geometry and printable checks from `physicalAssembly: NOT_TESTED`; no physical fit or assembly has been claimed.
+
+The supplied brief referenced ten concept images, but the pasted-text attachment contained no image files. These models follow its written geometry and palette descriptions. Focused tests: `.venv/bin/python -m pytest tests/test_christmas_collection.py -q`.

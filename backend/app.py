@@ -243,6 +243,51 @@ def create_app(data_dir=None, seed=False):
     accounts.install(app)
     billing.install(app)
 
+    @app.get('/api/christmas/products')
+    def christmas_products():
+        from .christmas_collection import list_products
+        return list_products()
+
+    @app.get('/api/christmas/products/{product_id}/model')
+    def christmas_product_model(product_id:str,size_mm:float|None=None,style:Literal['classic','gingerbread','pastel','nordic','coloring']='classic',detail:bool=True):
+        from .christmas_collection import build_model
+        try:model=build_model(product_id,size_mm,style,detail)
+        except KeyError:raise HTTPException(404,'Christmas product not found.')
+        except ValueError as exc:raise HTTPException(422,str(exc))
+        return {k:v for k,v in model.items() if k not in ('meshes','palette')}
+
+    @app.get('/api/christmas/products/{product_id}/preview.png')
+    def christmas_product_preview(product_id:str,size_mm:float|None=None,style:Literal['classic','gingerbread','pastel','nordic','coloring']='classic',detail:bool=True):
+        from .christmas_collection import BY_ID,build_model,_preview_png
+        if product_id not in BY_ID:raise HTTPException(404,'Christmas product not found.')
+        key=city.hashlib.sha256(f'{product_id}:{size_mm}:{style}:{detail}'.encode()).hexdigest()[:20]
+        target=data/'christmas-preview'/f'{key}.png'
+        if not target.is_file():
+            target.parent.mkdir(parents=True,exist_ok=True)
+            try:_preview_png(build_model(product_id,size_mm,style,detail),target)
+            except ValueError as exc:raise HTTPException(422,str(exc))
+        return FileResponse(target,media_type='image/png',headers={'Cache-Control':'public, max-age=3600','X-Content-Type-Options':'nosniff'})
+
+    @app.get('/api/christmas/products/{product_id}/files/{filename}')
+    def christmas_product_file(product_id:str,filename:str,size_mm:float|None=None,style:Literal['classic','gingerbread','pastel','nordic','coloring']='classic',paper:Literal['US Letter','A4','A3']='US Letter',detail:bool=True):
+        from .christmas_collection import BY_ID,generate_bundle,package_key,safe_file
+        if product_id not in BY_ID:raise HTTPException(404,'Christmas product not found.')
+        filename=safe_file(filename)
+        if not filename:raise HTTPException(404,'Christmas export file not found.')
+        key=package_key(product_id,size_mm or BY_ID[product_id]['size'],style,detail,paper);folder=data/'christmas-products'/key
+        expected=folder/'Validation_Report.json'
+        if not expected.is_file():
+            try:generate_bundle(product_id,folder,size_mm,style,detail,paper)
+            except ValueError as exc:raise HTTPException(422,str(exc))
+            except Exception as exc:raise HTTPException(422,f'Could not generate a printable kit: {exc}')
+        if filename.endswith('.pdf') and filename!='Assembly_Guide.pdf' and filename!='Printable_Coloring.pdf':filename=f'Printable_Color_{paper.replace(" ","")}.pdf'
+        if filename=='Printable.svg':filename='Printable_'+('USLetter' if paper=='US Letter' else paper.replace(' ',''))+'.svg'
+        target=folder/filename
+        if not target.is_file():raise HTTPException(404,f'{filename} is unavailable for this product.')
+        if filename.endswith('.svg'):
+            return FileResponse(target,media_type='image/svg+xml',headers={'Content-Disposition':f'inline; filename="{filename}"','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'})
+        return FileResponse(target,filename=filename,headers={'Cache-Control':'no-store','X-Content-Type-Options':'nosniff'})
+
     @app.get('/api/city/assets')
     def city_assets():
         return city.list_city_assets()
@@ -252,7 +297,7 @@ def create_app(data_dir=None, seed=False):
         return city.asset_model(asset_id)
 
     @app.get('/api/city/assets/{asset_id}/pdf')
-    def city_asset_pdf(asset_id: str, paper: Literal['US Letter','A4']='US Letter'):
+    def city_asset_pdf(asset_id: str, paper: Literal['US Letter','A4','A3']='US Letter'):
         target=city._template_pdf(data,asset_id,paper)
         return FileResponse(target,media_type='application/pdf',filename=f'{asset_id}-{paper.lower().replace(" ","-")}.pdf',headers={'Cache-Control':'no-store','X-Content-Type-Options':'nosniff'})
 
