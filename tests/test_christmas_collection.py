@@ -1,8 +1,10 @@
 import json
+import math
 from pathlib import Path
 import struct
 
 import pymupdf
+from PIL import Image
 
 from backend import christmas_collection as collection
 from tests.support import TestClient, create_app
@@ -14,11 +16,16 @@ def test_all_products_are_parametric_closed_meshes_and_uniformly_sized():
         model=collection.build_model(product['id'])
         assert model['unpairedEdges']==[],product['id']
         assert model['surfaces'] and model['components']
-        assert max(model['boundsMm']['size'])==product['size']
+        assert math.isclose(max(model['boundsMm']['size']),product['size'],abs_tol=1e-6)
         assert all(len(face['vertices_3d_mm'])>=3 for face in model['surfaces'])
         scaled=collection.build_model(product['id'],product['size']/2)
-        assert max(scaled['boundsMm']['size'])==product['size']/2
+        assert math.isclose(max(scaled['boundsMm']['size']),product['size']/2,abs_tol=1e-6)
         assert len(collection._pages(model,'US Letter','classic'))>0
+    tree=collection.build_model('xm02_christmas_tree')
+    top={part.id:max(v[2] for v in verts) for part,verts,_ in tree['meshes']}
+    assert top['five_point_star']>top['bough_tier_4']
+    assert any(part.id=='face_print' for part,_,_ in collection.build_model('xm03_santa_claus')['meshes'])
+    assert any(part.id=='face_print' for part,_,_ in collection.build_model('xm05_christmas_snowman')['meshes'])
 
 
 def test_product_package_has_native_vector_pdfs_svg_glb_guide_and_status(tmp_path):
@@ -35,6 +42,8 @@ def test_product_package_has_native_vector_pdfs_svg_glb_guide_and_status(tmp_pat
         assert len(coloring)>0 and '100%' in ' '.join(coloring[0].get_text().split())
     assert (out/'Assembly_Guide.pdf').is_file() and (out/'Printable.svg').is_file()
     assert (out/'Preview.png').read_bytes()[:8]==b'\x89PNG\r\n\x1a\n'
+    with Image.open(out/'Preview.png') as preview:
+        assert len(preview.convert('RGB').getcolors(800*800) or [])>50
     glb=(out/'Model.glb').read_bytes();assert glb[:4]==b'glTF' and struct.unpack('<I',glb[8:12])[0]==len(glb)
     config=json.loads((out/'Product_Config.json').read_text());assert config['sizeMm']==100 and config['scaleRule']=='uniform'
     assert (out/'Full_Package.zip').is_file()

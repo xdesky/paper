@@ -4,7 +4,9 @@ type ModelCategory={id:string;name:string;status:'available'|'planned';template_
 export function TemplateLibrary({templates,onUse,onPersonalize,busy}:{templates:HouseTemplate[];onUse:(template:HouseTemplate)=>void;onPersonalize:(template:HouseTemplate)=>void;busy:boolean}){
  const [categories,setCategories]=useState<ModelCategory[]>([]);
  useEffect(()=>{fetch('/api/template-categories').then(r=>r.ok?r.json():[]).then(setCategories).catch(()=>{});},[]);
- const [query,setQuery]=useState(''),[category,setCategory]=useState('all'),[detailId,setDetailId]=useState(readTemplateId),[onlySaved,setOnlySaved]=useState(false);
+ // Open on the gingerbread collection so the house catalog reads as one
+ // destination; the category chips still expose the rest of the library.
+ const [query,setQuery]=useState(''),[category,setCategory]=useState('gingerbread-houses'),[detailId,setDetailId]=useState(readTemplateId),[onlySaved,setOnlySaved]=useState(false);
  function readTemplateId(){if(location.pathname==='/'||location.pathname==='/studio')return '';const match=location.pathname.match(/^\/([^/]+)\/?$/)||location.hash.match(/^#templates\/([^/]+)$/);if(!match)return '';try{return decodeURIComponent(match[1]);}catch{return '__invalid__';}}
  const detail=templates.find(t=>t.id===detailId)||null;
  const [shareMessage,setShareMessage]=useState(''),[shareFallback,setShareFallback]=useState('');

@@ -258,9 +258,9 @@ def create_app(data_dir=None, seed=False):
 
     @app.get('/api/christmas/products/{product_id}/preview.png')
     def christmas_product_preview(product_id:str,size_mm:float|None=None,style:Literal['classic','gingerbread','pastel','nordic','coloring']='classic',detail:bool=True):
-        from .christmas_collection import BY_ID,build_model,_preview_png
+        from .christmas_collection import BY_ID,VERSION,build_model,_preview_png
         if product_id not in BY_ID:raise HTTPException(404,'Christmas product not found.')
-        key=city.hashlib.sha256(f'{product_id}:{size_mm}:{style}:{detail}'.encode()).hexdigest()[:20]
+        key=hashlib.sha256(f'{VERSION}:{product_id}:{size_mm}:{style}:{detail}'.encode()).hexdigest()[:20]
         target=data/'christmas-preview'/f'{key}.png'
         if not target.is_file():
             target.parent.mkdir(parents=True,exist_ok=True)
